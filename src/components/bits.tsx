@@ -100,10 +100,16 @@ export function RepoLine({ repo, stats, size = "sm" }: { repo: string; stats?: R
 export function Empty({ title, body, action }: { title: string; body: string; action?: ReactNode }) {
   return (
     <div className="flex flex-col items-center rounded-3xl border border-dashed border-line px-6 py-14 text-center">
-      <svg width="44" height="44" viewBox="0 0 32 32" aria-hidden>
-        <path d="M5 25a11 11 0 0 1 22 0Z" fill="var(--faint)" />
-        <rect x="3" y="25" width="26" height="3" rx="1.5" fill="var(--faint)" />
-        <circle cx="24.5" cy="7.5" r="3" fill="var(--star)" />
+      <svg width="48" height="48" viewBox="0 0 64 64" aria-hidden>
+        <path
+          d="M5 32C13.5 18.5 22.5 13 32 13s18.5 5.5 27 19c-8.5 13.5-17.5 19-27 19S13.5 45.5 5 32Z"
+          fill="none"
+          stroke="var(--faint)"
+          strokeWidth="5"
+          strokeLinejoin="round"
+        />
+        <circle cx="32" cy="32" r="11" fill="var(--faint)" opacity="0.5" />
+        <circle cx="37.5" cy="26.5" r="3.6" fill="var(--star)" />
       </svg>
       <h2 className="mt-4 text-[18px] font-semibold">{title}</h2>
       <p className="mt-1 max-w-sm text-[15px] text-muted">{body}</p>

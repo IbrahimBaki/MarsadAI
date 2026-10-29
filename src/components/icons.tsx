@@ -113,11 +113,18 @@ export const LogoutIcon = (p: P) => (
 );
 
 /** The Marsad mark: an observatory dome with a lit star. */
+// Marsad's mark: an eye with a lens for an iris and the amber "signal" highlight.
 export const Mark = ({ size = 28 }: { size?: number }) => (
-  <svg width={size} height={size} viewBox="0 0 32 32" aria-hidden>
-    <path d="M5 25a11 11 0 0 1 22 0Z" fill="var(--ink)" />
-    <path d="M14.2 14.4 19 25h-3.2l-3.9-9.7Z" fill="var(--ground)" />
-    <rect x="3" y="25" width="26" height="3" rx="1.5" fill="var(--ink)" />
-    <circle cx="24.5" cy="7.5" r="3" fill="var(--star)" />
+  <svg width={size} height={size} viewBox="0 0 64 64" aria-hidden>
+    <path
+      d="M5 32C13.5 18.5 22.5 13 32 13s18.5 5.5 27 19c-8.5 13.5-17.5 19-27 19S13.5 45.5 5 32Z"
+      fill="none"
+      stroke="var(--ink)"
+      strokeWidth="5.5"
+      strokeLinejoin="round"
+    />
+    <circle cx="32" cy="32" r="12" fill="var(--accent)" />
+    <circle cx="32" cy="32" r="5" fill="#10162a" />
+    <circle cx="37.5" cy="26.5" r="3.6" fill="var(--star)" />
   </svg>
 );

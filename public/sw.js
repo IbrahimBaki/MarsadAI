@@ -1,5 +1,5 @@
 // Marsad service worker: works offline with the last loaded feed.
-const VERSION = "v1";
+const VERSION = "v2";
 const STATIC = `marsad-static-${VERSION}`;
 const RUNTIME = `marsad-runtime-${VERSION}`;
 
