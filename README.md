@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# مرصد — Marsad
 
-## Getting Started
+كل جديد في عالم الـ AI، متفلتر يوم بيوم: Claude وskills وMCP وأدوات المطورين والموديلات وLaravel والمونتاج والتصميم.
 
-First, run the development server:
+- **المحتوى**: كل يوم مهمة مجدولة بتدوّر وتكتب `content/YYYY-MM-DD.json` حسب [DIGEST_GUIDE.md](DIGEST_GUIDE.md)، وتعمل push، فيعمل Vercel deploy لوحده.
+- **الحالة لكل مستخدم** (شوفته / المفضلة): Upstash Redis من Vercel Marketplace.
+- **الدخول**: يوزرات بسيطة من متغير البيئة `AUTH_USERS`.
+- **PWA**: تقدر تثبّته على الموبايل، وبيفتح آخر محتوى حمّلته حتى من غير نت.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## النشر على Vercel (مرة واحدة)
+
+1. على Vercel: **Add New → Project** وبعدين اعمل Import للريبو ده. الإعدادات الافتراضية تمام.
+2. في **Settings → Environment Variables** ضيف:
+   - `AUTH_SECRET`: نص عشوائي طويل (`openssl rand -base64 32`)
+   - `AUTH_USERS`: مثلاً `ibrahim:كلمة-سر-قوية`
+3. في **Storage → Marketplace** اختار **Upstash** ← **Redis**، واعمل Create واربطه بالمشروع. الـ env vars هتتضاف لوحدها.
+4. اعمل **Redeploy** عشان المتغيرات الجديدة تشتغل.
+
+## إضافة مستخدم
+
+ضيفه في `AUTH_USERS` وافصل بين المستخدمين بـ `;`:
+
+```
+ibrahim:pass1;sara:pass2
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ولو مش عايز الباسورد مكتوب صريح:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run hash-password -- sara "her-password"
+# sara:scrypt.<salt>.<hash>  ← حط السطر ده مكان sara:pass2
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+وبعد أي تعديل في المتغيرات اعمل Redeploy.
 
-## Learn More
+## تطوير محلي
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm install
+npm run dev        # http://localhost:3000 ، اليوزر demo / demo
+npm run validate   # يتأكد إن ملفات content سليمة
+npm run known      # كل اللينكات اللي اتنشرت قبل كده
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+من غير Redis، الـ Seen والمفضلة بيتخزنوا في الذاكرة وبيضيعوا لما السيرفر يقف.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## الأقسام
 
-## Deploy on Vercel
+معرّفة في `src/lib/sections.ts`. لو ضفت قسم، ضيفه كمان في جدول الأقسام في `DIGEST_GUIDE.md`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## اسم التطبيق
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+موجود في مكان واحد بس: `src/lib/config.ts`.
