@@ -9,12 +9,13 @@ import { ItemRow } from "./ItemRow";
 import { useUserState } from "./useUserState";
 import { CloseIcon, LogoutIcon, Mark, MoonIcon, SearchIcon, SunIcon } from "./icons";
 
-type View = "new" | "all" | "fav" | "seen";
+type View = "new" | "all" | "essentials" | "fav" | "seen";
 type Filters = { view: View; section: SectionId | null; hot: boolean; q: string };
 
 const VIEWS: { id: View; label: string }[] = [
   { id: "new", label: "جديد" },
   { id: "all", label: "الكل" },
+  { id: "essentials", label: "الأساسيات" },
   { id: "fav", label: "المفضلة" },
   { id: "seen", label: "شوفته" },
 ];
@@ -133,22 +134,38 @@ export function Feed() {
 
   const { seen, fav, set } = state;
   const items = useMemo(() => feed?.items ?? [], [feed]);
+  const essentials = useMemo(() => feed?.essentials ?? [], [feed]);
+  const isEss = filters.view === "essentials";
 
-  const unseenBySection = useMemo(() => {
-    const counts = new Map<SectionId | "all", number>([["all", 0]]);
-    for (const it of items) {
-      if (seen.has(it.id)) continue;
-      counts.set(it.section, (counts.get(it.section) ?? 0) + 1);
-      counts.set("all", (counts.get("all") ?? 0) + 1);
-    }
-    return counts;
-  }, [items, seen]);
+  const countUnseen = useCallback(
+    (list: FeedItem[]) => {
+      const counts = new Map<SectionId | "all", number>([["all", 0]]);
+      for (const it of list) {
+        if (seen.has(it.id)) continue;
+        counts.set(it.section, (counts.get(it.section) ?? 0) + 1);
+        counts.set("all", (counts.get("all") ?? 0) + 1);
+      }
+      return counts;
+    },
+    [seen],
+  );
+  const unseenDaily = useMemo(() => countUnseen(items), [countUnseen, items]);
+  const unseenEss = useMemo(() => countUnseen(essentials), [countUnseen, essentials]);
+  // Section counts follow what's being browsed: daily news, or the essentials library.
+  const unseenBySection = isEss ? unseenEss : unseenDaily;
+
+  const passesFilters = useCallback(
+    (it: FeedItem) =>
+      (!filters.section || it.section === filters.section) &&
+      (!filters.hot || it.importance === 3) &&
+      matches(it, filters.q),
+    [filters.section, filters.hot, filters.q],
+  );
 
   const visible = useMemo(() => {
+    if (filters.view === "essentials") return [];
     return items.filter((it) => {
-      if (filters.section && it.section !== filters.section) return false;
-      if (filters.hot && it.importance < 3) return false;
-      if (!matches(it, filters.q)) return false;
+      if (!passesFilters(it)) return false;
       if (pinned.has(it.id)) return true;
       switch (filters.view) {
         case "new":
@@ -161,7 +178,30 @@ export function Feed() {
           return true;
       }
     });
-  }, [items, filters, seen, fav, pinned]);
+  }, [items, filters.view, passesFilters, seen, fav, pinned]);
+
+  // Essentials show in their own view, and also in Favorites / Seen.
+  const visibleEss = useMemo(() => {
+    const v = filters.view;
+    if (v !== "essentials" && v !== "fav" && v !== "seen") return [];
+    return essentials.filter((it) => {
+      if (!passesFilters(it)) return false;
+      if (v === "essentials" || pinned.has(it.id)) return true;
+      return v === "fav" ? fav.has(it.id) : seen.has(it.id);
+    });
+  }, [essentials, filters.view, passesFilters, seen, fav, pinned]);
+
+  const essGroups = useMemo(
+    () =>
+      SECTIONS.map((sec) => ({
+        section: sec,
+        list: visibleEss
+          .filter((it) => it.section === sec.id)
+          .sort((a, b) => b.importance - a.importance),
+        all: essentials.filter((it) => it.section === sec.id),
+      })).filter((g) => g.list.length > 0),
+    [visibleEss, essentials],
+  );
 
   const groups = useMemo(() => {
     const byDay = new Map<string, FeedItem[]>();
@@ -253,7 +293,8 @@ export function Feed() {
     window.location.href = "/login";
   };
 
-  const totalUnseen = unseenBySection.get("all") ?? 0;
+  const totalUnseen = unseenDaily.get("all") ?? 0;
+  const sectionTotal = unseenBySection.get("all") ?? 0;
   const filtering = filters.section || filters.hot || filters.q;
   const update = (patch: Partial<Filters>) => setFilters((f) => ({ ...f, ...patch }));
 
@@ -292,6 +333,21 @@ export function Feed() {
     );
   };
 
+  const hotLabel = isEss ? "ابدأ بيهم" : "المهم بس";
+  const hotChip = (
+    <button
+      type="button"
+      onClick={() => update({ hot: !filters.hot })}
+      aria-pressed={filters.hot}
+      className={`inline-flex shrink-0 items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-[14px] ${
+        filters.hot ? "border-star bg-star-soft text-ink" : "border-line bg-surface text-ink"
+      }`}
+    >
+      <span className={`block size-2 rounded-full ${filters.hot ? "star-lit" : "star-dim"}`} />
+      {hotLabel}
+    </button>
+  );
+
   return (
     <div className="mx-auto w-full max-w-6xl lg:grid lg:grid-cols-[250px_minmax(0,1fr)] lg:gap-10 lg:px-6">
       {/* Sidebar (desktop) */}
@@ -306,12 +362,12 @@ export function Feed() {
           </div>
 
           <nav aria-label="الأقسام" className="flex flex-col gap-0.5">
-            {sectionButton(null, "كل الأقسام", totalUnseen, false)}
+            {sectionButton(null, "كل الأقسام", sectionTotal, false)}
             {SECTIONS.map((s) => sectionButton(s.id, s.name, unseenBySection.get(s.id) ?? 0, false))}
           </nav>
 
           <label className="flex cursor-pointer items-center justify-between gap-3 rounded-lg px-3 py-2 text-[14.5px] hover:bg-surface/60">
-            المهم بس
+            {hotLabel}
             <input
               type="checkbox"
               checked={filters.hot}
@@ -375,8 +431,8 @@ export function Feed() {
             )}
           </div>
 
-          <div className="mt-3 flex items-center gap-2">
-            <div role="tablist" aria-label="العرض" className="flex rounded-xl bg-sunken p-1">
+          <div className="mt-3 flex items-center">
+            <div role="tablist" aria-label="العرض" className="flex w-full rounded-xl bg-sunken p-1 sm:w-auto">
               {VIEWS.map((v) => {
                 const active = filters.view === v.id;
                 const count =
@@ -388,32 +444,23 @@ export function Feed() {
                     aria-selected={active}
                     type="button"
                     onClick={() => update({ view: v.id })}
-                    className={`whitespace-nowrap rounded-lg px-2.5 py-1.5 text-[14px] sm:px-4 ${
+                    className={`flex-1 whitespace-nowrap rounded-lg px-2 py-1.5 text-[14px] sm:flex-none sm:px-4 ${
                       active ? "bg-surface font-medium text-ink shadow-[0_1px_2px_rgb(0_0_0/0.08)]" : "text-muted"
                     }`}
                   >
                     {v.label}
-                    {count ? <span className="ms-1.5 tabular-nums text-faint">{nf.format(count)}</span> : null}
+                    {count ? <span className="ms-1 tabular-nums text-faint">{nf.format(count)}</span> : null}
                   </button>
                 );
               })}
             </div>
-            <button
-              type="button"
-              onClick={() => update({ hot: !filters.hot })}
-              aria-pressed={filters.hot}
-              className={`ms-auto whitespace-nowrap rounded-xl border px-3 py-2 text-[13.5px] lg:hidden ${
-                filters.hot ? "border-star bg-star-soft text-ink" : "border-line text-muted"
-              }`}
-            >
-              المهم بس
-            </button>
           </div>
         </div>
 
         {/* Section chips (mobile / tablet) */}
         <div className="no-scrollbar flex gap-2 overflow-x-auto px-4 pb-3 lg:hidden">
-          {sectionButton(null, "الكل", totalUnseen, true)}
+          {hotChip}
+          {sectionButton(null, "الكل", sectionTotal, true)}
           {SECTIONS.map((s) => sectionButton(s.id, s.name, unseenBySection.get(s.id) ?? 0, true))}
         </div>
 
@@ -438,16 +485,23 @@ export function Feed() {
           />
         )}
 
-        {feed && groups.length === 0 && (
+        {feed && groups.length === 0 && essGroups.length === 0 && (
           <EmptyFor
             filters={filters}
-            hasItems={items.length > 0}
+            hasItems={items.length + essentials.length > 0}
             clear={() => {
               setQuery("");
               setFilters({ view: "all", section: null, hot: false, q: "" });
             }}
             showAll={() => update({ view: "all" })}
           />
+        )}
+
+        {isEss && essGroups.length > 0 && !filtering && (
+          <p className="mx-4 mb-5 max-w-[68ch] text-[15px] leading-7 text-muted lg:mx-1">
+            أهم الأدوات والمصادر الموجودة فعلاً في كل قسم، اللي تستاهل تعرفها حتى لو مش جديدة. علّم اللي
+            تعرفه أو جربته، والباقي يفضل منوّر لحد ما توصله.
+          </p>
         )}
 
         <div className="flex flex-col gap-8 px-2 sm:px-4 lg:px-0">
@@ -503,6 +557,52 @@ export function Feed() {
                     <ItemRow
                       key={item.id}
                       item={item}
+                      seen={seen.has(item.id)}
+                      fav={fav.has(item.id)}
+                      onSeen={onSeen}
+                      onFav={onFav}
+                      onTag={onTag}
+                      onShare={onShare}
+                    />
+                  ))}
+                </div>
+              </section>
+            );
+          })}
+
+          {essGroups.length > 0 && !isEss && (
+            <h2 className="-mb-4 mt-2 px-2 text-[21px] font-semibold leading-8 sm:px-1">من الأساسيات</h2>
+          )}
+          {essGroups.map(({ section, list, all }) => {
+            const unseenCount = all.filter((i) => !seen.has(i.id)).length;
+            return (
+              <section
+                key={section.id}
+                aria-labelledby={`sec-${section.id}`}
+                style={{ "--h": section.hue } as CSSProperties}
+              >
+                <header className="mb-3 px-2 sm:px-1">
+                  <div className="flex flex-wrap items-center gap-x-3">
+                    <span className="sec-bg size-2.5 rounded-full" />
+                    <h2 id={`sec-${section.id}`} className="text-[20px] font-semibold leading-8">
+                      {section.name}
+                    </h2>
+                    {isEss && (
+                      <span className="ms-auto whitespace-nowrap text-[13px] tabular-nums text-faint">
+                        {unseenCount === 0
+                          ? "عارفهم كلهم"
+                          : `${nf.format(all.length - unseenCount)} من ${nf.format(all.length)} شوفتهم`}
+                      </span>
+                    )}
+                  </div>
+                  {isEss && <p className="mt-0.5 text-[14.5px] text-muted">{section.hint}</p>}
+                </header>
+                <div className="divide-y divide-line overflow-hidden rounded-2xl border border-line bg-surface">
+                  {list.map((item) => (
+                    <ItemRow
+                      key={item.id}
+                      item={item}
+                      essential
                       seen={seen.has(item.id)}
                       fav={fav.has(item.id)}
                       onSeen={onSeen}

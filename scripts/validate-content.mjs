@@ -1,11 +1,12 @@
 #!/usr/bin/env node
-// Validates every content/YYYY-MM-DD.json file. Exits 1 on any error.
-// Usage: npm run validate            (all files)
-//        npm run validate -- 2026-10-29   (one day)
-import { readFileSync, readdirSync } from "node:fs";
+// Validates content/YYYY-MM-DD.json files and content/essentials.json. Exits 1 on any error.
+// Usage: npm run validate                 (everything)
+//        npm run validate -- 2026-10-29   (one day + essentials)
+import { readFileSync, readdirSync, existsSync } from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 
-const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const contentDir = path.join(root, "content");
 const sectionsSrc = readFileSync(path.join(root, "src/lib/sections.ts"), "utf8");
 const SECTIONS = new Set([...sectionsSrc.matchAll(/\{\s*id:\s*"([a-z]+)"/g)].map((m) => m[1]));
@@ -18,29 +19,22 @@ const files = readdirSync(contentDir)
   .filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f))
   .filter((f) => !only || f === `${only}.json`)
   .sort();
+if (only && files.length === 0) {
+  console.error(`✗ content/${only}.json not found`);
+  process.exit(1);
+}
 
 const errors = [];
-const ids = new Map();
-const urls = new Map();
+const ids = new Map(); // ids are unique across daily files AND essentials
 let count = 0;
 
-for (const file of files) {
+function checkItems(file, items, urls) {
   const where = (m) => errors.push(`${file}: ${m}`);
-  let d;
-  try {
-    d = JSON.parse(readFileSync(path.join(contentDir, file), "utf8"));
-  } catch (e) {
-    where(`invalid JSON — ${e.message}`);
-    continue;
-  }
-  if (d.date !== file.replace(".json", "")) where(`"date" must equal the file name`);
-  if (!DAY.test(d.date ?? "")) where(`bad "date"`);
-  if (typeof d.headline !== "string" || d.headline.length < 10) where(`"headline" is missing or too short`);
-  if (!Array.isArray(d.items) || d.items.length === 0) {
+  if (!Array.isArray(items) || items.length === 0) {
     where(`"items" must be a non-empty array`);
-    continue;
+    return;
   }
-  d.items.forEach((it, i) => {
+  items.forEach((it, i) => {
     const at = (m) => where(`items[${i}] (${it?.id ?? "?"}): ${m}`);
     count++;
     if (!ID.test(it.id ?? "")) at(`"id" must be lowercase kebab-case, 3–90 chars`);
@@ -68,9 +62,36 @@ for (const file of files) {
   });
 }
 
+// Essentials first, so a daily item reusing an essentials id is reported against the daily file.
+const essentialsFile = path.join(contentDir, "essentials.json");
+if (existsSync(essentialsFile)) {
+  try {
+    const e = JSON.parse(readFileSync(essentialsFile, "utf8"));
+    if (!DAY.test(e.updated ?? "")) errors.push(`essentials.json: "updated" must be YYYY-MM-DD`);
+    checkItems("essentials.json", e.items, new Map());
+  } catch (e) {
+    errors.push(`essentials.json: invalid JSON — ${e.message}`);
+  }
+}
+
+const dailyUrls = new Map();
+for (const file of files) {
+  let d;
+  try {
+    d = JSON.parse(readFileSync(path.join(contentDir, file), "utf8"));
+  } catch (e) {
+    errors.push(`${file}: invalid JSON — ${e.message}`);
+    continue;
+  }
+  if (d.date !== file.replace(".json", "")) errors.push(`${file}: "date" must equal the file name`);
+  if (typeof d.headline !== "string" || d.headline.length < 10)
+    errors.push(`${file}: "headline" is missing or too short`);
+  checkItems(file, d.items, dailyUrls);
+}
+
 if (errors.length) {
   console.error(errors.map((e) => `✗ ${e}`).join("\n"));
   console.error(`\n${errors.length} problem(s).`);
   process.exit(1);
 }
-console.log(`✓ ${files.length} day file(s), ${count} item(s) — all valid.`);
+console.log(`✓ ${files.length} day file(s) + essentials, ${count} item(s) — all valid.`);

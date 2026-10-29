@@ -39,6 +39,16 @@ worth his time, and why** — not a news dump.
 
 If today's file already exists, stop — the digest already ran.
 
+## Essentials library
+
+`content/essentials.json` holds the evergreen "must know" tools and references per section
+(the app's «الأساسيات» view). `npm run known` lists them with `essentials` instead of a date.
+
+- Don't add an essential to the daily digest just because it exists. Only report it when
+  something genuinely new happened to it (a major release, a pricing change), and say what's new.
+- Leave `essentials.json` alone in the daily run, unless a tool has clearly become a standard
+  in its section. Then add it there (id starting with `ess-`, same item schema) and bump `updated`.
+
 ## Schema
 
 ```json

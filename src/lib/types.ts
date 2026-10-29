@@ -32,12 +32,19 @@ export type Digest = {
   items: Item[];
 };
 
-/** Item as served to the client, with its digest date attached. */
+/** Evergreen "must know" items per section, in content/essentials.json. */
+export type Essentials = {
+  updated: string;
+  items: Item[];
+};
+
+/** Item as served to the client, with its digest date attached ("" for essentials). */
 export type FeedItem = Item & { date: string };
 
 export type FeedPayload = {
   days: { date: string; headline: string }[];
   items: FeedItem[];
+  essentials: FeedItem[];
 };
 
 export type UserState = {

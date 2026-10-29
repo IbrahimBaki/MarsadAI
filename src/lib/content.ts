@@ -1,7 +1,7 @@
 import "server-only";
 import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
-import type { Digest, FeedPayload, FeedItem } from "./types";
+import type { Digest, Essentials, FeedPayload, FeedItem } from "./types";
 
 const CONTENT_DIR = path.join(process.cwd(), "content");
 const DAY_FILE = /^\d{4}-\d{2}-\d{2}\.json$/;
@@ -11,7 +11,7 @@ export async function loadFeed(): Promise<FeedPayload> {
   try {
     files = (await readdir(CONTENT_DIR)).filter((f) => DAY_FILE.test(f));
   } catch {
-    return { days: [], items: [] };
+    return { days: [], items: [], essentials: [] };
   }
   files.sort().reverse(); // newest first
 
@@ -28,5 +28,11 @@ export async function loadFeed(): Promise<FeedPayload> {
       items.push({ ...item, date: digest.date });
     }
   }
-  return { days, items };
+  let essentials: FeedItem[] = [];
+  try {
+    const raw = JSON.parse(await readFile(path.join(CONTENT_DIR, "essentials.json"), "utf8")) as Essentials;
+    essentials = raw.items.map((item) => ({ ...item, date: "" }));
+  } catch {}
+
+  return { days, items, essentials };
 }

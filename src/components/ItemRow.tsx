@@ -18,6 +18,8 @@ const KIND_LABEL: Record<ItemKind, string> = {
 
 type Props = {
   item: FeedItem;
+  /** Item from the essentials library rather than a daily digest. */
+  essential?: boolean;
   seen: boolean;
   fav: boolean;
   onSeen: (id: string, on: boolean) => void;
@@ -26,7 +28,7 @@ type Props = {
   onShare: (item: FeedItem) => void;
 };
 
-function ItemRowBase({ item, seen, fav, onSeen, onFav, onTag, onShare }: Props) {
+function ItemRowBase({ item, essential, seen, fav, onSeen, onFav, onTag, onShare }: Props) {
   const section = SECTION_BY_ID[item.section];
   const style = { "--h": section?.hue ?? 220 } as CSSProperties;
   const hot = item.importance === 3;
@@ -58,7 +60,7 @@ function ItemRowBase({ item, seen, fav, onSeen, onFav, onTag, onShare }: Props) 
             </span>
             {hot && (
               <span className="rounded-full bg-star-soft px-2 py-px text-[12px] font-medium text-ink">
-                لازم تشوفه
+                {essential ? "ابدأ بيه" : "لازم تشوفه"}
               </span>
             )}
           </div>

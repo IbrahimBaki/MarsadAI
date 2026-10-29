@@ -3,6 +3,7 @@
 كل جديد في عالم الـ AI، متفلتر يوم بيوم: Claude وskills وMCP وأدوات المطورين والموديلات وLaravel والمونتاج والتصميم.
 
 - **المحتوى**: كل يوم مهمة مجدولة بتدوّر وتكتب `content/YYYY-MM-DD.json` حسب [DIGEST_GUIDE.md](DIGEST_GUIDE.md)، وتعمل push، فيعمل Vercel deploy لوحده.
+- **الأساسيات**: `content/essentials.json` فيه أهم الأدوات والمصادر الموجودة فعلاً في كل قسم.
 - **الحالة لكل مستخدم** (شوفته / المفضلة): Upstash Redis من Vercel Marketplace.
 - **الدخول**: يوزرات بسيطة من متغير البيئة `AUTH_USERS`.
 - **PWA**: تقدر تثبّته على الموبايل، وبيفتح آخر محتوى حمّلته حتى من غير نت.
@@ -37,7 +38,7 @@ npm run hash-password -- sara "her-password"
 
 ```bash
 npm install
-npm run dev        # http://localhost:3000 ، اليوزر demo / demo
+npm run dev        # http://localhost:3000 ، اليوزر demo والباسورد demo
 npm run validate   # يتأكد إن ملفات content سليمة
 npm run known      # كل اللينكات اللي اتنشرت قبل كده
 ```
