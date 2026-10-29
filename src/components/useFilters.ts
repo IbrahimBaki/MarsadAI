@@ -2,7 +2,7 @@
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useMemo } from "react";
-import { SECTION_BY_ID, type SectionId } from "@/lib/sections";
+import { SECTION_META, type SectionId } from "@/lib/sections";
 import type { PricingModel } from "@/lib/types";
 
 export type Filters = {
@@ -35,7 +35,7 @@ export function useFilters(defaultView = "new") {
     const p = params.get("p");
     return {
       v: params.get("v") ?? defaultView,
-      s: s && SECTION_BY_ID[s] ? s : null,
+      s: s && SECTION_META[s] ? s : null,
       k: params.get("k"),
       p: p === "free" || p === "freemium" || p === "paid" ? p : null,
       hot: params.get("hot") === "1",

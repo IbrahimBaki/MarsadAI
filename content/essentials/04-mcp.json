@@ -9,15 +9,46 @@
       "summary": "المواصفة الرسمية للبروتوكول، وشرح للمفاهيم الأساسية زي tools وresources وprompts والـ transports والـ auth، ومعاها SDKs رسمية لأكتر من لغة وأدلة لبناء server أو client.",
       "why": "لازم تفهم الأساس ده لو هتعمل MCP server يربط Claude بالـ ERP بتاعك، أو لو هتقيّم أمان server قبل ما تركّبه.",
       "about": "MCP معيار مفتوح بيحدد إزاي تطبيقات الـ AI بتتكلم مع الأدوات والبيانات. الـ server بيعرض tools، يعني أفعال زي إنشاء فاتورة أو تشغيل query، وresources، يعني بيانات تتقري، وprompts جاهزة. والـ client، زي Claude Code أو Cursor، بيوصل له محلياً عن طريق stdio، أو عن بعد عن طريق Streamable HTTP ومعاه OAuth.\n\nالموقع فيه SDKs رسمية لـ TypeScript وPython وJava وKotlin وC# وGo وPHP وRuby وRust وSwift، ومعاها MCP Inspector لاختبار أي server.",
-      "features": ["المواصفة الكاملة وتاريخ الإصدارات", "SDKs رسمية لـ ١٠ لغات منها PHP", "MCP Inspector للاختبار", "أدلة الأمان والـ auth"],
+      "features": [
+        "المواصفة الكاملة وتاريخ الإصدارات",
+        "SDKs رسمية لـ ١٠ لغات منها PHP",
+        "MCP Inspector للاختبار",
+        "أدلة الأمان والـ auth"
+      ],
       "url": "https://modelcontextprotocol.io/",
       "source": "modelcontextprotocol.io",
       "importance": 2,
-      "tags": ["MCP", "spec", "docs"],
+      "tags": [
+        "MCP",
+        "spec",
+        "docs"
+      ],
       "links": [
-        { "label": "الموقع", "url": "https://modelcontextprotocol.io/" },
-        { "label": "مدونة MCP", "url": "https://blog.modelcontextprotocol.io/" }
-      ]
+        {
+          "label": "الموقع",
+          "url": "https://modelcontextprotocol.io/"
+        },
+        {
+          "label": "مدونة MCP",
+          "url": "https://blog.modelcontextprotocol.io/"
+        }
+      ],
+      "en": {
+        "title": "Model Context Protocol: the official site and specification",
+        "summary": "The protocol's official specification, with explanations of the core concepts like tools, resources, prompts, transports and auth, plus official SDKs for many languages and guides for building a server or client.",
+        "why": "You need these fundamentals if you'll build an MCP server that connects Claude to your ERP, or if you want to judge a server's security before installing it.",
+        "about": "MCP is an open standard for how AI applications talk to tools and data. A server exposes tools, meaning actions like creating an invoice or running a query; resources, meaning data to read; and ready-made prompts. A client, like Claude Code or Cursor, connects to it locally over stdio, or remotely over Streamable HTTP with OAuth.\n\nThe site has official SDKs for TypeScript, Python, Java, Kotlin, C#, Go, PHP, Ruby, Rust and Swift, plus MCP Inspector for testing any server.",
+        "features": [
+          "The full spec and version history",
+          "Official SDKs for 10 languages including PHP",
+          "MCP Inspector for testing",
+          "Security and auth guides"
+        ],
+        "links": [
+          "Website",
+          "MCP blog"
+        ]
+      }
     },
     {
       "id": "ess-mcp-registry",
@@ -27,12 +58,32 @@
       "summary": "الكتالوج الرسمي للـ MCP servers المتاحة للناس، ومعاه API، والـ clients والمواقع التانية بتسحب منه. كل server فيه بيانات تشغيله ومصدره.",
       "why": "أوثق مكان تدوّر فيه على server لخدمة معينة، بدل ما تركّب أي ريبو مجهول من GitHub.",
       "about": "الـ registry ده مشروع مجتمعي تحت مظلة MCP. أي حد بينشر server بيسجّل فيه الـ metadata: الاسم، وطريقة التشغيل (npm أو PyPI أو Docker أو remote)، ومصدره.\n\nأدوات تانية زي GitHub وVS Code ومواقع الكتالوجات بتبني على الـ API بتاعه. وتقدر تتصفحه، أو تستخدم الـ API مباشرة في أدواتك.",
-      "features": ["كتالوج رسمي مفتوح", "API عامة", "بيانات التشغيل والمصدر لكل server"],
-      "pricing": { "model": "free" },
+      "features": [
+        "كتالوج رسمي مفتوح",
+        "API عامة",
+        "بيانات التشغيل والمصدر لكل server"
+      ],
+      "pricing": {
+        "model": "free"
+      },
       "url": "https://registry.modelcontextprotocol.io/",
       "source": "registry.modelcontextprotocol.io",
       "importance": 2,
-      "tags": ["MCP", "registry"]
+      "tags": [
+        "MCP",
+        "registry"
+      ],
+      "en": {
+        "title": "MCP Registry: the official server registry",
+        "summary": "The official catalog of publicly available MCP servers, with an API that other clients and sites pull from. Every server lists how to run it and where it comes from.",
+        "why": "The most trustworthy place to look for a server for a given service, instead of installing some unknown GitHub repo.",
+        "about": "The registry is a community project under the MCP umbrella. Anyone who publishes a server registers its metadata there: the name, how to run it (npm, PyPI, Docker or remote) and its source.\n\nOther tools like GitHub, VS Code and catalog sites build on its API. You can browse it or use the API directly in your own tools.",
+        "features": [
+          "An open, official catalog",
+          "A public API",
+          "Run details and source for every server"
+        ]
+      }
     },
     {
       "id": "ess-official-mcp-servers",
@@ -43,12 +94,33 @@
       "summary": "قايمة متجمعة فيها الـ MCP servers الرسمية بس، اللي عاملاها الشركة صاحبة المنتج نفسها، أو مشاريع مفتوحة المصدر مستخدمة على نطاق واسع. من غير forks ولا مشاريع مهجورة.",
       "why": "الـ MCP server بيقرا بياناتك وبيعمل حاجات بالنيابة عنك، فمين اللي عامله مهم جداً. ابدأ من هنا.",
       "about": "VoltAgent عملت القايمة دي عشان تحل مشكلة الثقة: آلاف الـ servers موجودة، وكتير منها غير رسمية أو متروكة. القايمة متقسمة حسب المجال: Cloud وDevOps، وقواعد البيانات، والـ observability، والبراوزر والويب، وغيرها.\n\nالرادار في المرصد بيتابع الإضافات الجديدة فيها.",
-      "features": ["servers رسمية بس", "متقسمة حسب المجال", "من غير forks أو مشاريع مهجورة"],
-      "pricing": { "model": "oss" },
+      "features": [
+        "servers رسمية بس",
+        "متقسمة حسب المجال",
+        "من غير forks أو مشاريع مهجورة"
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/VoltAgent/official-mcp-servers",
       "source": "github.com",
       "importance": 2,
-      "tags": ["MCP", "awesome list", "official"]
+      "tags": [
+        "MCP",
+        "awesome list",
+        "official"
+      ],
+      "en": {
+        "title": "Official MCP Servers: only the official ones",
+        "summary": "A curated list containing only official MCP servers, built by the company behind the product itself, or widely used open-source projects. No forks and no abandoned projects.",
+        "why": "An MCP server reads your data and acts on your behalf, so who built it matters a lot. Start here.",
+        "about": "VoltAgent made this list to solve the trust problem: thousands of servers exist and many are unofficial or abandoned. It's organised by domain: cloud and DevOps, databases, observability, browser and web, and more.\n\nMarsad's radar tracks new additions to it.",
+        "features": [
+          "Official servers only",
+          "Organised by domain",
+          "No forks or abandoned projects"
+        ]
+      }
     },
     {
       "id": "ess-context7",
@@ -59,18 +131,68 @@
       "summary": "بيجيب للـ agent دوكيومنتيشن الإصدار الصح من المكتبة وأمثلة كود حقيقية منها، بدل ما يعتمد على اللي اتعلمه وممكن يكون قديم. بيشتغل كـ MCP server أو كـ CLI مع skill.",
       "why": "بيقلل الأكواد اللي فيها APIs قديمة أو مش موجودة أصلاً، خصوصاً مع إصدارات Laravel وFilament وLivewire الجديدة.",
       "about": "مشكلة كل الموديلات إن معرفتها بتقف عند تاريخ معين، فبتكتب كود لإصدارات قديمة. Context7 فهرس دوكيومنتيشن لآلاف المكتبات، والـ agent بيطلب منه الجزء اللي محتاجه بالظبط.\n\nفيه طريقتين: CLI + Skills، وفيها skill بتعلّم الـ agent يستخدم أوامر ctx7 من غير MCP. أو MCP server بيدّي الـ agent أدوات الدوكيومنتيشن مباشرة.\n\nبتكتب \"use context7\" في الـ prompt، أو تحدد المكتبة بالـ ID بتاعها. والمفتاح المجاني بيدّيك حدود استخدام أعلى.",
-      "features": ["دوكيومنتيشن الإصدار الصح", "أمثلة كود من المصدر", "وضع MCP أو CLI + skill", "تقدر تحدد المكتبة بالـ ID"],
-      "install": [{ "label": "الإعداد التلقائي (محتاج Node 22.13+)", "cmd": "npx ctx7 setup --claude" }],
-      "usage": ["اعمل migration لجدول الطلبات بـ Laravel 13. use context7", "Implement auth with Supabase. use library /supabase/supabase"],
-      "pricing": { "model": "freemium", "note": "مفتاح مجاني بحدود استخدام، وخطط أعلى مدفوعة" },
+      "features": [
+        "دوكيومنتيشن الإصدار الصح",
+        "أمثلة كود من المصدر",
+        "وضع MCP أو CLI + skill",
+        "تقدر تحدد المكتبة بالـ ID"
+      ],
+      "install": [
+        {
+          "label": "الإعداد التلقائي (محتاج Node 22.13+)",
+          "cmd": "npx ctx7 setup --claude"
+        }
+      ],
+      "usage": [
+        "اعمل migration لجدول الطلبات بـ Laravel 13. use context7",
+        "Implement auth with Supabase. use library /supabase/supabase"
+      ],
+      "pricing": {
+        "model": "freemium",
+        "note": "مفتاح مجاني بحدود استخدام، وخطط أعلى مدفوعة"
+      },
       "url": "https://github.com/upstash/context7",
       "source": "github.com",
       "importance": 3,
-      "tags": ["MCP", "docs", "context"],
+      "tags": [
+        "MCP",
+        "docs",
+        "context"
+      ],
       "links": [
-        { "label": "GitHub", "url": "https://github.com/upstash/context7" },
-        { "label": "إعداد الـ clients التانية", "url": "https://context7.com/docs/resources/all-clients" }
-      ]
+        {
+          "label": "GitHub",
+          "url": "https://github.com/upstash/context7"
+        },
+        {
+          "label": "إعداد الـ clients التانية",
+          "url": "https://context7.com/docs/resources/all-clients"
+        }
+      ],
+      "en": {
+        "title": "Context7: up-to-date docs for any library inside your agent",
+        "summary": "It gives the agent the right version's documentation and real code examples from the library, instead of relying on what it learned, which may be outdated. Works as an MCP server or as a CLI with a skill.",
+        "why": "It cuts down on code that uses outdated or non-existent APIs, especially with new Laravel, Filament and Livewire releases.",
+        "about": "Every model's knowledge stops at some date, so it writes code for old versions. Context7 indexes the documentation of thousands of libraries, and the agent asks it for exactly the part it needs.\n\nThere are two ways to use it: CLI + Skills, where a skill teaches the agent to use the ctx7 commands without MCP; or an MCP server that gives the agent documentation tools directly.\n\nWrite \"use context7\" in the prompt, or name the library by its ID. A free key gives you higher usage limits.",
+        "features": [
+          "Docs for the right version",
+          "Code examples from the source",
+          "MCP mode or CLI + skill",
+          "Name the library by its ID"
+        ],
+        "usage": [
+          "Create a migration for the orders table in Laravel 13. use context7",
+          "Implement auth with Supabase. use library /supabase/supabase"
+        ],
+        "install": [
+          "Automatic setup (needs Node 22.13+)"
+        ],
+        "links": [
+          "GitHub",
+          "Setup for other clients"
+        ],
+        "pricingNote": "Free key with usage limits; higher paid plans"
+      }
     },
     {
       "id": "ess-playwright-mcp",
@@ -88,24 +210,75 @@
         "headless للسيرفر والـ CI"
       ],
       "install": [
-        { "label": "في Claude Code", "cmd": "claude mcp add playwright npx @playwright/mcp@latest" },
-        { "label": "أي client تاني", "cmd": "{\n  \"mcpServers\": {\n    \"playwright\": {\n      \"command\": \"npx\",\n      \"args\": [\"@playwright/mcp@latest\"]\n    }\n  }\n}" }
+        {
+          "label": "في Claude Code",
+          "cmd": "claude mcp add playwright npx @playwright/mcp@latest"
+        },
+        {
+          "label": "أي client تاني",
+          "cmd": "{\n  \"mcpServers\": {\n    \"playwright\": {\n      \"command\": \"npx\",\n      \"args\": [\"@playwright/mcp@latest\"]\n    }\n  }\n}"
+        }
       ],
       "usage": [
         "افتح localhost:8000/invoices وجرّب تضيف فاتورة جديدة، وقولي لو فيه أي error في الـ console.",
         "اتأكد إن فلتر التاريخ في جدول الطلبات بيرجّع نتايج صح."
       ],
-      "requirements": ["Node.js 18 أو أحدث"],
-      "pricing": { "model": "oss" },
+      "requirements": [
+        "Node.js 18 أو أحدث"
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/microsoft/playwright-mcp",
       "source": "github.com",
       "importance": 3,
-      "tags": ["MCP", "browser", "testing", "Playwright"],
-      "alternatives": ["ess-chrome-devtools-mcp", "ess-browser-use"],
+      "tags": [
+        "MCP",
+        "browser",
+        "testing",
+        "Playwright"
+      ],
+      "alternatives": [
+        "ess-chrome-devtools-mcp",
+        "ess-browser-use"
+      ],
       "links": [
-        { "label": "GitHub", "url": "https://github.com/microsoft/playwright-mcp" },
-        { "label": "موقع Playwright", "url": "https://playwright.dev/" }
-      ]
+        {
+          "label": "GitHub",
+          "url": "https://github.com/microsoft/playwright-mcp"
+        },
+        {
+          "label": "موقع Playwright",
+          "url": "https://playwright.dev/"
+        }
+      ],
+      "en": {
+        "title": "Playwright MCP: let the agent drive a real browser",
+        "summary": "An MCP server from Microsoft built on Playwright. The agent opens pages, clicks, fills forms and reads the page, using the accessibility tree instead of screenshots, so it's faster and more precise.",
+        "why": "After Claude changes a screen in the ERP, it can open it itself, try the form and the DataTable, and confirm there are no errors before telling you it's done.",
+        "about": "Instead of the model looking at a screenshot and guessing where the buttons are, Playwright MCP gives it the page as structured text with every element, its name and its role. That makes it faster, cheaper in tokens and more accurate when clicking and typing. It can still take a screenshot when needed.\n\nIt works with Chromium, Firefox and WebKit, headed or headless, with settings for the profile, viewport and proxy. It can also read console messages and network requests.",
+        "features": [
+          "Full control: navigate, click, type and upload files",
+          "Accessibility snapshots instead of images",
+          "Chromium, Firefox and WebKit",
+          "Headless for servers and CI"
+        ],
+        "usage": [
+          "Open localhost:8000/invoices, try adding a new invoice, and tell me if there are any console errors.",
+          "Check that the date filter on the orders table returns the right results."
+        ],
+        "requirements": [
+          "Node.js 18 or later"
+        ],
+        "install": [
+          "In Claude Code",
+          "Any other client"
+        ],
+        "links": [
+          "GitHub",
+          "Playwright website"
+        ]
+      }
     },
     {
       "id": "ess-chrome-devtools-mcp",
@@ -116,19 +289,69 @@
       "summary": "MCP server رسمي من فريق Chrome بيدّي الـ agent أدوات DevTools: يقرا الـ console errors والـ network requests، ويسجّل performance traces ويحللها، ويتحكم في الصفحة.",
       "why": "مفيد جداً في debugging مشاكل الـ AJAX والـ DataTables، لأن الـ agent بيشوف الـ request والـ response الحقيقيين، وبيحلل بطء الصفحات.",
       "about": "الفرق بينه وبين Playwright MCP إن ده متخصص في الـ debugging والأداء. بيسجّل performance trace ويطلّع منها insights زي LCP والحاجات اللي بتعطّل الصفحة، وبيقرا الـ network بالتفصيل، والـ console، ويقدر يعمل emulation لشبكة بطيئة أو CPU ضعيف.\n\nمحتاج Node LTS وChrome stable.",
-      "features": ["performance traces وتحليلها", "network requests بالتفصيل", "console errors", "emulation للشبكة والـ CPU"],
-      "install": [
-        { "label": "في Claude Code", "cmd": "claude mcp add chrome-devtools npx chrome-devtools-mcp@latest" },
-        { "label": "أي client تاني", "cmd": "{\n  \"mcpServers\": {\n    \"chrome-devtools\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"chrome-devtools-mcp@latest\"]\n    }\n  }\n}" }
+      "features": [
+        "performance traces وتحليلها",
+        "network requests بالتفصيل",
+        "console errors",
+        "emulation للشبكة والـ CPU"
       ],
-      "usage": ["Check the performance of http://localhost:8000/dashboard", "ليه جدول العملاء مش بيحمّل؟ بص على الـ network والـ console."],
-      "requirements": ["Node.js LTS", "Chrome stable"],
-      "pricing": { "model": "oss" },
+      "install": [
+        {
+          "label": "في Claude Code",
+          "cmd": "claude mcp add chrome-devtools npx chrome-devtools-mcp@latest"
+        },
+        {
+          "label": "أي client تاني",
+          "cmd": "{\n  \"mcpServers\": {\n    \"chrome-devtools\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"chrome-devtools-mcp@latest\"]\n    }\n  }\n}"
+        }
+      ],
+      "usage": [
+        "Check the performance of http://localhost:8000/dashboard",
+        "ليه جدول العملاء مش بيحمّل؟ بص على الـ network والـ console."
+      ],
+      "requirements": [
+        "Node.js LTS",
+        "Chrome stable"
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
       "source": "github.com",
       "importance": 2,
-      "tags": ["MCP", "debugging", "performance", "Chrome"],
-      "alternatives": ["ess-playwright-mcp"]
+      "tags": [
+        "MCP",
+        "debugging",
+        "performance",
+        "Chrome"
+      ],
+      "alternatives": [
+        "ess-playwright-mcp"
+      ],
+      "en": {
+        "title": "Chrome DevTools MCP: let the agent see the console, network and performance",
+        "summary": "An official MCP server from the Chrome team that gives the agent DevTools: it reads console errors and network requests, records and analyses performance traces, and controls the page.",
+        "why": "Very useful for debugging AJAX and DataTables issues, since the agent sees the real request and response, and for analysing slow pages.",
+        "about": "Unlike Playwright MCP, this one specialises in debugging and performance. It records a performance trace and extracts insights like LCP and what's blocking the page, reads network traffic in detail and the console, and can emulate a slow network or a weak CPU.\n\nIt needs Node LTS and Chrome stable.",
+        "features": [
+          "Performance traces and analysis",
+          "Detailed network requests",
+          "Console errors",
+          "Network and CPU emulation"
+        ],
+        "usage": [
+          "Check the performance of http://localhost:8000/dashboard",
+          "Why isn't the customers table loading? Look at the network and the console."
+        ],
+        "requirements": [
+          "Node.js LTS",
+          "Chrome stable"
+        ],
+        "install": [
+          "In Claude Code",
+          "Any other client"
+        ]
+      }
     },
     {
       "id": "ess-github-mcp-server",
@@ -139,16 +362,49 @@
       "summary": "MCP server من GitHub نفسها بيخلي الـ agent يتعامل مع الريبوز والـ issues والـ PRs والـ Actions والـ code search والـ security alerts. فيه نسخة remote جاهزة، أو تشغّله محلياً بـ Docker.",
       "why": "يخلي Claude يقرا الـ issue، ويفتح الـ PR، ويتابع الـ CI، ويرد على الـ review، من غير ما تسيب الترمينال.",
       "about": "النسخة الـ remote على api.githubcopilot.com/mcp بتتوصل بـ OAuth، فمفيش حاجة تسطّبها. والنسخة المحلية بتشتغل بـ Docker ومعاها Personal Access Token.\n\nالأدوات متقسمة لـ toolsets، زي repos وissues وpull_requests وactions وcode_security، وتقدر تفعّل اللي محتاجه بس عشان متملاش الـ context، أو تشغّله read-only.",
-      "features": ["issues وPRs وreviews", "GitHub Actions والـ CI", "code search وsecurity alerts", "toolsets ووضع read-only"],
-      "install": [
-        { "label": "محلياً في Claude Code (بـ Docker)", "cmd": "claude mcp add github -e GITHUB_PERSONAL_ACCESS_TOKEN=$GITHUB_PAT -- docker run -i --rm -e GITHUB_PERSONAL_ACCESS_TOKEN ghcr.io/github/github-mcp-server" },
-        { "label": "أو الـ remote server", "cmd": "https://api.githubcopilot.com/mcp/" }
+      "features": [
+        "issues وPRs وreviews",
+        "GitHub Actions والـ CI",
+        "code search وsecurity alerts",
+        "toolsets ووضع read-only"
       ],
-      "pricing": { "model": "oss" },
+      "install": [
+        {
+          "label": "محلياً في Claude Code (بـ Docker)",
+          "cmd": "claude mcp add github -e GITHUB_PERSONAL_ACCESS_TOKEN=$GITHUB_PAT -- docker run -i --rm -e GITHUB_PERSONAL_ACCESS_TOKEN ghcr.io/github/github-mcp-server"
+        },
+        {
+          "label": "أو الـ remote server",
+          "cmd": "https://api.githubcopilot.com/mcp/"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/github/github-mcp-server",
       "source": "github.com",
       "importance": 2,
-      "tags": ["MCP", "GitHub", "CI"]
+      "tags": [
+        "MCP",
+        "GitHub",
+        "CI"
+      ],
+      "en": {
+        "title": "The official GitHub MCP Server",
+        "summary": "An MCP server from GitHub itself that lets the agent work with repos, issues, PRs, Actions, code search and security alerts. There's a ready-made remote version, or you can run it locally with Docker.",
+        "why": "Claude can read the issue, open the PR, follow CI and reply to the review without you leaving the terminal.",
+        "about": "The remote version at api.githubcopilot.com/mcp connects with OAuth, so there's nothing to install. The local version runs in Docker with a Personal Access Token.\n\nTools are grouped into toolsets such as repos, issues, pull_requests, actions and code_security, and you can enable only what you need so it doesn't fill the context, or run it read-only.",
+        "features": [
+          "Issues, PRs and reviews",
+          "GitHub Actions and CI",
+          "Code search and security alerts",
+          "Toolsets and read-only mode"
+        ],
+        "install": [
+          "Locally in Claude Code (with Docker)",
+          "Or the remote server"
+        ]
+      }
     },
     {
       "id": "ess-serena",
@@ -159,21 +415,70 @@
       "summary": "MCP server بيدّي الـ agent أدوات زي بتاعة الـ IDE: يلاقي تعريف أي class أو function، ومين بيستخدمها، ويعدّل أو يعمل refactor على مستوى الـ symbol، بدل البحث في النص وأرقام السطور.",
       "why": "في مشروع كبير زي Company-ERP، الـ agent بيوصل للكود اللي محتاجه أسرع وبـ tokens أقل، وبيدعم PHP، وفيه backend بيشتغل مع PhpStorm.",
       "about": "Serena بيستخدم language servers، أو plugin لـ JetBrains، عشان يفهم الكود فهم حقيقي: الـ symbols والعلاقات بينها. فالـ agent بيقدر يسأل \"فين تعريف الكلاس ده\" أو \"مين بيستدعي الـ method دي\"، ويعدّل جسم function معينة من غير ما يقرا الملف كله.\n\nبيدعم أكتر من ٤٠ لغة، منها PHP. وصاحبه بينصح تسطّبه بـ uv مباشرة، مش من الـ marketplaces لأن الأوامر اللي فيها قديمة.",
-      "features": ["بحث وتعديل على مستوى الـ symbol", "references وتعريفات", "أكتر من ٤٠ لغة منها PHP", "backend لـ JetBrains"],
-      "install": [
-        { "label": "سطّب بـ uv", "cmd": "uv tool install -p 3.13 serena-agent" },
-        { "label": "وبعدين", "cmd": "serena init" }
+      "features": [
+        "بحث وتعديل على مستوى الـ symbol",
+        "references وتعريفات",
+        "أكتر من ٤٠ لغة منها PHP",
+        "backend لـ JetBrains"
       ],
-      "requirements": ["uv"],
-      "pricing": { "model": "oss" },
+      "install": [
+        {
+          "label": "سطّب بـ uv",
+          "cmd": "uv tool install -p 3.13 serena-agent"
+        },
+        {
+          "label": "وبعدين",
+          "cmd": "serena init"
+        }
+      ],
+      "requirements": [
+        "uv"
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/oraios/serena",
       "source": "github.com",
       "importance": 2,
-      "tags": ["MCP", "code intelligence", "LSP", "PHP"],
+      "tags": [
+        "MCP",
+        "code intelligence",
+        "LSP",
+        "PHP"
+      ],
       "links": [
-        { "label": "GitHub", "url": "https://github.com/oraios/serena" },
-        { "label": "إعداد الـ clients", "url": "https://oraios.github.io/serena/02-usage/030_clients.html" }
-      ]
+        {
+          "label": "GitHub",
+          "url": "https://github.com/oraios/serena"
+        },
+        {
+          "label": "إعداد الـ clients",
+          "url": "https://oraios.github.io/serena/02-usage/030_clients.html"
+        }
+      ],
+      "en": {
+        "title": "Serena: the agent understands code by symbols, like an IDE",
+        "summary": "An MCP server that gives the agent IDE-like tools: find the definition of any class or function and who uses it, and edit or refactor at the symbol level, instead of text search and line numbers.",
+        "why": "In a large project like Company-ERP, the agent reaches the code it needs faster and with fewer tokens. It supports PHP and has a backend that works with PhpStorm.",
+        "about": "Serena uses language servers, or a JetBrains plugin, to truly understand code: the symbols and how they relate. So the agent can ask \"where is this class defined\" or \"who calls this method\", and edit the body of a specific function without reading the whole file.\n\nIt supports more than 40 languages, including PHP. Its author recommends installing it directly with uv rather than from marketplaces, whose commands are out of date.",
+        "features": [
+          "Symbol-level search and editing",
+          "References and definitions",
+          "40+ languages including PHP",
+          "A JetBrains backend"
+        ],
+        "requirements": [
+          "uv"
+        ],
+        "install": [
+          "Install with uv",
+          "Then"
+        ],
+        "links": [
+          "GitHub",
+          "Client setup"
+        ]
+      }
     },
     {
       "id": "ess-firecrawl-mcp",
@@ -184,17 +489,55 @@
       "summary": "بيدّي الـ agent بحث في الويب، وتحويل أي صفحة لـ Markdown نضيف أو JSON، وcrawl لموقع كامل. فيه server مستضاف بيشتغل من غير مفتاح للبحث والـ scraping بحدود.",
       "why": "لما تحتاج الـ agent يقرا دوكيومنتيشن أو صفحات من النت بشكل نضيف من غير HTML زيادة.",
       "about": "Firecrawl بيحوّل أي صفحة، حتى لو بتعتمد على JavaScript، لـ Markdown نضيف للموديل، أو لـ JSON منظم حسب schema. ومعاه بحث في الويب، وفي مصادر للمطورين زي GitHub issues والـ READMEs والدوكيومنتيشن.\n\nالـ server المستضاف https://mcp.firecrawl.dev/v2/mcp بيشتغل من غير مفتاح للـ scrape والـ search والـ parse بحدود. وباقي الأدوات، زي crawl وmap وagent، محتاجة مفتاح.",
-      "features": ["أي صفحة لـ Markdown أو JSON", "بحث في الويب ومصادر المطورين", "crawl وmap لموقع كامل", "server مستضاف من غير مفتاح"],
-      "install": [
-        { "label": "الـ server المستضاف", "cmd": "https://mcp.firecrawl.dev/v2/mcp" },
-        { "label": "أو محلياً بمفتاح", "cmd": "env FIRECRAWL_API_KEY=fc-YOUR_API_KEY npx -y firecrawl-mcp" }
+      "features": [
+        "أي صفحة لـ Markdown أو JSON",
+        "بحث في الويب ومصادر المطورين",
+        "crawl وmap لموقع كامل",
+        "server مستضاف من غير مفتاح"
       ],
-      "pricing": { "model": "freemium", "note": "حدود مجانية، والاستخدام الأكبر مدفوع" },
+      "install": [
+        {
+          "label": "الـ server المستضاف",
+          "cmd": "https://mcp.firecrawl.dev/v2/mcp"
+        },
+        {
+          "label": "أو محلياً بمفتاح",
+          "cmd": "env FIRECRAWL_API_KEY=fc-YOUR_API_KEY npx -y firecrawl-mcp"
+        }
+      ],
+      "pricing": {
+        "model": "freemium",
+        "note": "حدود مجانية، والاستخدام الأكبر مدفوع"
+      },
       "url": "https://github.com/firecrawl/firecrawl-mcp-server",
       "source": "github.com",
       "importance": 1,
-      "tags": ["MCP", "web scraping", "search"],
-      "alternatives": ["ess-firecrawl", "ess-crawl4ai"]
+      "tags": [
+        "MCP",
+        "web scraping",
+        "search"
+      ],
+      "alternatives": [
+        "ess-firecrawl",
+        "ess-crawl4ai"
+      ],
+      "en": {
+        "title": "Firecrawl MCP: web search and scraping inside your agent",
+        "summary": "It gives the agent web search, turns any page into clean Markdown or JSON, and crawls entire sites. A hosted server works without a key for search and scraping, within limits.",
+        "why": "When you need the agent to read docs or web pages cleanly, without extra HTML.",
+        "about": "Firecrawl turns any page, even JavaScript-heavy ones, into clean Markdown for the model, or structured JSON that follows a schema. It also searches the web and developer sources like GitHub issues, READMEs and documentation.\n\nThe hosted server at https://mcp.firecrawl.dev/v2/mcp works without a key for scrape, search and parse, within limits. The other tools, like crawl, map and agent, need a key.",
+        "features": [
+          "Any page to Markdown or JSON",
+          "Web and developer-source search",
+          "Crawl and map whole sites",
+          "A hosted server with no key needed"
+        ],
+        "install": [
+          "The hosted server",
+          "Or locally with a key"
+        ],
+        "pricingNote": "Free limits; heavier use is paid"
+      }
     },
     {
       "id": "ess-supabase-mcp",
@@ -205,17 +548,60 @@
       "summary": "MCP server رسمي من Supabase. الـ agent يقدر يصمم الجداول، ويعمل migrations، ويشغّل SQL، ويقرا الـ logs، ويدوّر في دوكيومنتيشن Supabase. وفيه وضع read-only وتحديد مشروع واحد.",
       "why": "لو بتبني مشروع جانبي على Supabase، الـ agent يقدر يظبط الداتابيز من غير ما تفتح الـ dashboard. بس اقرا إرشادات الأمان الأول.",
       "about": "الـ server ده remote على mcp.supabase.com، وبيطلب منك تسجّل دخول لـ Supabase وتختار المؤسسة.\n\nSupabase بتنصح بشدة: استخدمه مع مشروع تطوير مش production، وفعّل read_only، وحدد project_ref عشان يشتغل على مشروع واحد بس، ووافق على كل tool call بنفسك. السبب إن الـ LLM ممكن يتخدع ببيانات جوه الجداول (prompt injection).",
-      "features": ["تصميم الجداول والـ migrations", "تشغيل SQL", "logs ودوكيومنتيشن", "read-only ومشروع واحد"],
-      "install": [{ "label": "إعداد الـ client", "cmd": "{\n  \"mcpServers\": {\n    \"supabase\": {\n      \"type\": \"http\",\n      \"url\": \"https://mcp.supabase.com/mcp?read_only=true\"\n    }\n  }\n}" }],
-      "pricing": { "model": "oss", "note": "الـ server مجاني، وSupabase نفسها فيها خطة مجانية" },
+      "features": [
+        "تصميم الجداول والـ migrations",
+        "تشغيل SQL",
+        "logs ودوكيومنتيشن",
+        "read-only ومشروع واحد"
+      ],
+      "install": [
+        {
+          "label": "إعداد الـ client",
+          "cmd": "{\n  \"mcpServers\": {\n    \"supabase\": {\n      \"type\": \"http\",\n      \"url\": \"https://mcp.supabase.com/mcp?read_only=true\"\n    }\n  }\n}"
+        }
+      ],
+      "pricing": {
+        "model": "oss",
+        "note": "الـ server مجاني، وSupabase نفسها فيها خطة مجانية"
+      },
       "url": "https://github.com/supabase-community/supabase-mcp",
       "source": "github.com",
       "importance": 1,
-      "tags": ["MCP", "Supabase", "Postgres"],
+      "tags": [
+        "MCP",
+        "Supabase",
+        "Postgres"
+      ],
       "links": [
-        { "label": "GitHub", "url": "https://github.com/supabase-community/supabase-mcp" },
-        { "label": "إرشادات الأمان", "url": "https://supabase.com/docs/guides/ai-tools/mcp#security-risks" }
-      ]
+        {
+          "label": "GitHub",
+          "url": "https://github.com/supabase-community/supabase-mcp"
+        },
+        {
+          "label": "إرشادات الأمان",
+          "url": "https://supabase.com/docs/guides/ai-tools/mcp#security-risks"
+        }
+      ],
+      "en": {
+        "title": "Supabase MCP: let the agent manage a Supabase database",
+        "summary": "An official MCP server from Supabase. The agent can design tables, run migrations and SQL, read logs and search the Supabase docs. There's a read-only mode and a single-project scope.",
+        "why": "If you're building a side project on Supabase, the agent can set up the database without you opening the dashboard. Read the security guidance first, though.",
+        "about": "The server is remote at mcp.supabase.com and asks you to sign in to Supabase and choose an organization.\n\nSupabase strongly recommends using it with a development project, not production; turning on read_only; setting project_ref so it works on one project only; and approving every tool call yourself. The reason is that the LLM can be tricked by data inside the tables (prompt injection).",
+        "features": [
+          "Table design and migrations",
+          "Run SQL",
+          "Logs and docs",
+          "Read-only and single-project"
+        ],
+        "install": [
+          "Client configuration"
+        ],
+        "links": [
+          "GitHub",
+          "Security guidance"
+        ],
+        "pricingNote": "The server is free, and Supabase itself has a free plan"
+      }
     },
     {
       "id": "ess-mcp-reference-servers",
@@ -226,13 +612,43 @@
       "summary": "ريبو فيه servers مرجعية من فريق MCP، زي filesystem وgit وfetch وmemory وsequential thinking وtime، ومعاها فهرس للـ servers الرسمية والمجتمعية.",
       "why": "أحسن أمثلة تتعلم منها لو هتكتب server بنفسك، وبعضها مفيد يتستخدم على طول، زي fetch وmemory.",
       "about": "الـ servers دي معمولة كأمثلة تعليمية توضح إمكانيات البروتوكول والـ SDKs، ومش منتجات كاملة. منها: Filesystem لعمليات الملفات بصلاحيات، وGit، وFetch لجلب صفحات وتحويلها لـ Markdown، وMemory لذاكرة على شكل knowledge graph، وSequential Thinking للتفكير خطوة بخطوة، وTime.\n\nالـ README كمان فيه لينكات للـ registry والكتالوجات.",
-      "features": ["filesystem وgit وfetch", "memory بـ knowledge graph", "sequential thinking", "أمثلة بالـ SDKs الرسمية"],
-      "install": [{ "label": "مثال: fetch في Claude Code", "cmd": "claude mcp add fetch -- uvx mcp-server-fetch" }],
-      "pricing": { "model": "oss" },
+      "features": [
+        "filesystem وgit وfetch",
+        "memory بـ knowledge graph",
+        "sequential thinking",
+        "أمثلة بالـ SDKs الرسمية"
+      ],
+      "install": [
+        {
+          "label": "مثال: fetch في Claude Code",
+          "cmd": "claude mcp add fetch -- uvx mcp-server-fetch"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/modelcontextprotocol/servers",
       "source": "github.com",
       "importance": 1,
-      "tags": ["MCP", "examples"]
+      "tags": [
+        "MCP",
+        "examples"
+      ],
+      "en": {
+        "title": "The MCP reference servers",
+        "summary": "A repo of reference servers from the MCP team, such as filesystem, git, fetch, memory, sequential thinking and time, plus an index of official and community servers.",
+        "why": "The best examples to learn from if you'll write a server yourself, and some are useful as-is, like fetch and memory.",
+        "about": "These servers are teaching examples that show what the protocol and SDKs can do; they aren't complete products. They include Filesystem for file operations with permissions, Git, Fetch for retrieving pages and converting them to Markdown, Memory for knowledge-graph memory, Sequential Thinking for step-by-step reasoning, and Time.\n\nThe README also links to the registry and catalogs.",
+        "features": [
+          "filesystem, git and fetch",
+          "Knowledge-graph memory",
+          "Sequential thinking",
+          "Examples with the official SDKs"
+        ],
+        "install": [
+          "Example: fetch in Claude Code"
+        ]
+      }
     },
     {
       "id": "ess-awesome-mcp-servers",
@@ -243,12 +659,32 @@
       "summary": "قايمة ضخمة بالـ MCP servers متقسمة حسب المجال، زي قواعد البيانات وأدوات المطورين والبراوزر والملفات والخدمات السحابية. وبيتضاف لها مئات الـ servers كل أسبوعين.",
       "why": "الرادار في المرصد بيتابع الإضافات الجديدة فيها كل يوم ويوريهالك متقسمة.",
       "about": "أنشط قايمة MCP على GitHub، وكل server جنبه علامات للغة، ومكان التشغيل (محلي أو سحابي)، والأنظمة اللي بيدعمها. وبسبب حجمها، الجودة متفاوتة، فقبل ما تركّب حاجة، شوف صاحبها وآخر تحديث ليها.\n\nفي الرادار هتلاقي الإضافات الجديدة مجمّعة تحت اسم القايمة.",
-      "features": ["أكبر قايمة MCP", "متقسمة حسب المجال", "علامات للغة ومكان التشغيل"],
-      "pricing": { "model": "oss" },
+      "features": [
+        "أكبر قايمة MCP",
+        "متقسمة حسب المجال",
+        "علامات للغة ومكان التشغيل"
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/punkpeye/awesome-mcp-servers",
       "source": "github.com",
       "importance": 1,
-      "tags": ["MCP", "awesome list"]
+      "tags": [
+        "MCP",
+        "awesome list"
+      ],
+      "en": {
+        "title": "awesome-mcp-servers: the largest community index",
+        "summary": "A huge list of MCP servers organised by domain, such as databases, developer tools, browsers, files and cloud services. Hundreds of servers are added every couple of weeks.",
+        "why": "Marsad's radar tracks new additions to it every day and shows them to you sorted.",
+        "about": "The most active MCP list on GitHub. Each server has badges for its language, where it runs (local or cloud) and the operating systems it supports. Because of its size, quality varies, so check the author and the last update before installing anything.\n\nIn the radar you'll find the new additions grouped under the list's name.",
+        "features": [
+          "The largest MCP list",
+          "Organised by domain",
+          "Badges for language and where it runs"
+        ]
+      }
     }
   ]
 }

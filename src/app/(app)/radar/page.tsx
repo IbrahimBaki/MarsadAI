@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { APP } from "@/lib/config";
+import { pageTitle } from "@/lib/locale-server";
 import { RadarPage } from "@/components/pages/RadarPage";
 
-export const metadata: Metadata = { title: `الرادار | ${APP.name}` };
+export async function generateMetadata(): Promise<Metadata> {
+  return { title: await pageTitle((t) => t.radar.title) };
+}
 
 export default function Radar() {
   return (

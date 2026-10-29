@@ -10,13 +10,46 @@
       "summary": "Claude Code فيه أمر /security-review جاهز بيراجع التغييرات اللي لسه متعملهاش commit ويدوّر على ثغرات. ونفس التحليل متاح كـ GitHub Action بتعلّق على كل PR.",
       "why": "قبل أي push لكود بيتعامل مع صلاحيات أو مدفوعات في الـ ERP، أمر واحد بيدّيك مراجعة أمان سريعة.",
       "about": "الأمر /security-review موجود في Claude Code من غير ما تسطب حاجة. بيحلل التغييرات المعلقة، ويدوّر على ثغرات زي injection والـ auth والـ authorization وتسريب البيانات والـ XSS، ويشرح كل مشكلة وإزاي تتصلح، وبيحاول يقلل الإنذارات الكاذبة.\n\nالـ GitHub Action بيعمل نفس الشغل على الـ PRs، بيحلل الملفات اللي اتغيرت بس ويكتب تعليقات. وتقدر تعدّل الأمر بنفسك وتضيف قواعد خاصة بمشروعك.",
-      "features": ["أمر جاهز في Claude Code", "GitHub Action للـ PRs", "بيحلل التغييرات بس", "قابل للتخصيص"],
-      "install": [{ "label": "من جوه Claude Code", "cmd": "/security-review" }],
-      "pricing": { "model": "oss", "note": "مجاني، وبيستخدم حدود Claude بتاعتك" },
+      "features": [
+        "أمر جاهز في Claude Code",
+        "GitHub Action للـ PRs",
+        "بيحلل التغييرات بس",
+        "قابل للتخصيص"
+      ],
+      "install": [
+        {
+          "label": "من جوه Claude Code",
+          "cmd": "/security-review"
+        }
+      ],
+      "pricing": {
+        "model": "oss",
+        "note": "مجاني، وبيستخدم حدود Claude بتاعتك"
+      },
       "url": "https://github.com/anthropics/claude-code-security-review",
       "source": "github.com",
       "importance": 3,
-      "tags": ["security", "code review", "Claude Code"]
+      "tags": [
+        "security",
+        "code review",
+        "Claude Code"
+      ],
+      "en": {
+        "title": "/security-review: security review with Claude in the terminal and on PRs",
+        "summary": "Claude Code has a built-in /security-review command that reviews your uncommitted changes for vulnerabilities. The same analysis is available as a GitHub Action that comments on every PR.",
+        "why": "Before pushing any code that touches permissions or payments in the ERP, one command gives you a quick security review.",
+        "about": "/security-review ships with Claude Code; there's nothing to install. It analyses pending changes for vulnerabilities like injection, authentication and authorization flaws, data exposure and XSS, explains each issue and how to fix it, and tries to keep false positives low.\n\nThe GitHub Action does the same on PRs, analysing only the changed files and writing comments. You can customise the command and add rules specific to your project.",
+        "features": [
+          "A built-in Claude Code command",
+          "A GitHub Action for PRs",
+          "Analyses only the changes",
+          "Customisable"
+        ],
+        "install": [
+          "From inside Claude Code"
+        ],
+        "pricingNote": "Free; it uses your Claude limits"
+      }
     },
     {
       "id": "ess-snyk-agent-scan",
@@ -27,16 +60,49 @@
       "summary": "أداة (اسمها كان mcp-scan) بتدوّر على مكونات الـ agents اللي على جهازك، زي الـ MCP servers والـ skills وإعدادات الأدوات، وبتفحصها من prompt injection والثغرات والـ tool poisoning.",
       "why": "قبل ما تركّب skill أو MCP server من GitHub، افحصه. الـ skills والـ servers ليها صلاحيات على ملفاتك وبياناتك.",
       "about": "Invariant Labs عملت mcp-scan، وبعد ما Snyk استحوذت عليها بقى اسمه Snyk Agent Scan. بيكتشف إعدادات Claude وCursor وVS Code وغيرهم، ويفحص وصف الأدوات والـ skills من تعليمات مخفية بتحاول تخدع الـ agent، ومن تغيّر الأدوات بعد ما وافقت عليها، ومن أنماط خطيرة.\n\nبيتشغّل بـ uvx من غير تسطيب، أو كـ binary. ومفيش npm package رسمي ليه.",
-      "features": ["اكتشاف الـ MCP servers والـ skills", "فحص prompt injection", "tool poisoning وتغيّر الأدوات", "من غير تسطيب بـ uvx"],
-      "install": [
-        { "label": "افحص كل حاجة على جهازك", "cmd": "uvx snyk-agent-scan@latest" },
-        { "label": "افحص skills معينة", "cmd": "uvx snyk-agent-scan@latest ~/.claude/skills" }
+      "features": [
+        "اكتشاف الـ MCP servers والـ skills",
+        "فحص prompt injection",
+        "tool poisoning وتغيّر الأدوات",
+        "من غير تسطيب بـ uvx"
       ],
-      "pricing": { "model": "oss" },
+      "install": [
+        {
+          "label": "افحص كل حاجة على جهازك",
+          "cmd": "uvx snyk-agent-scan@latest"
+        },
+        {
+          "label": "افحص skills معينة",
+          "cmd": "uvx snyk-agent-scan@latest ~/.claude/skills"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/invariantlabs-ai/mcp-scan",
       "source": "github.com",
       "importance": 2,
-      "tags": ["MCP", "skills", "prompt injection"]
+      "tags": [
+        "MCP",
+        "skills",
+        "prompt injection"
+      ],
+      "en": {
+        "title": "Snyk Agent Scan: scan the MCP servers and skills on your machine",
+        "summary": "A tool (formerly mcp-scan) that discovers the agent components on your machine, like MCP servers, skills and tool configs, and scans them for prompt injection, vulnerabilities and tool poisoning.",
+        "why": "Before installing a skill or MCP server from GitHub, scan it. Skills and servers have access to your files and data.",
+        "about": "Invariant Labs built mcp-scan, and after Snyk acquired them it became Snyk Agent Scan. It discovers the configs of Claude, Cursor, VS Code and others, and scans tool and skill descriptions for hidden instructions that try to trick the agent, for tools that change after you approved them, and for dangerous patterns.\n\nIt runs with uvx without installing, or as a binary. There's no official npm package.",
+        "features": [
+          "Discovers MCP servers and skills",
+          "Prompt injection scanning",
+          "Tool poisoning and tool changes",
+          "No install needed with uvx"
+        ],
+        "install": [
+          "Scan everything on your machine",
+          "Scan specific skills"
+        ]
+      }
     },
     {
       "id": "ess-owasp-llm-top10",
@@ -46,11 +112,32 @@
       "summary": "مشروع OWASP لأمان الـ AI: قايمة Top 10 لمخاطر تطبيقات الـ LLM، زي prompt injection وتسريب البيانات والصلاحيات الزيادة، ومعاها إرشادات للـ agentic AI.",
       "why": "قبل ما تضيف agent ليه أدوات على بيانات حقيقية في الـ ERP، القايمة دي بتوريك أهم حاجات لازم تحمي منها.",
       "about": "القايمة بتغطي: Prompt Injection المباشر وغير المباشر، وكشف المعلومات الحساسة، ومخاطر الـ supply chain في الموديلات والـ plugins، وتسميم البيانات، والتعامل غير الآمن مع المخرجات، والصلاحيات الزيادة (Excessive Agency)، وتسريب الـ system prompt، وضعف الـ vectors والـ embeddings، والمعلومات الغلط، والاستهلاك غير المحدود.\n\nوالمشروع فيه كمان إرشادات خاصة بالـ agents والـ MCP.",
-      "features": ["Top 10 لمخاطر الـ LLM", "إرشادات للـ agents", "أمثلة هجمات وطرق حماية", "مجاني ومفتوح"],
+      "features": [
+        "Top 10 لمخاطر الـ LLM",
+        "إرشادات للـ agents",
+        "أمثلة هجمات وطرق حماية",
+        "مجاني ومفتوح"
+      ],
       "url": "https://genai.owasp.org/",
       "source": "genai.owasp.org",
       "importance": 2,
-      "tags": ["security", "OWASP", "LLM"]
+      "tags": [
+        "security",
+        "OWASP",
+        "LLM"
+      ],
+      "en": {
+        "title": "OWASP GenAI Security: the top risks for LLM apps and agents",
+        "summary": "OWASP's AI security project: a Top 10 of risks for LLM applications, like prompt injection, data leakage and excessive permissions, plus guidance for agentic AI.",
+        "why": "Before you add an agent with tools over real ERP data, this list shows the most important things to protect against.",
+        "about": "The list covers direct and indirect prompt injection, sensitive information disclosure, supply chain risks in models and plugins, data poisoning, improper output handling, excessive agency, system prompt leakage, vector and embedding weaknesses, misinformation, and unbounded consumption.\n\nThe project also has guidance specific to agents and MCP.",
+        "features": [
+          "Top 10 LLM risks",
+          "Guidance for agents",
+          "Attack examples and defences",
+          "Free and open"
+        ]
+      }
     },
     {
       "id": "ess-semgrep",
@@ -61,16 +148,51 @@
       "summary": "أداة static analysis مفتوحة المصدر لأكتر من ٣٠ لغة منها PHP. بتلاقي bugs وثغرات، وبتفرض قواعد كود بتكتبها بشكل شبه الكود نفسه. وفيه نسخة مدفوعة بتحليل أعمق.",
       "why": "تقدر تكتب قاعدة زي \"ممنوع DB::raw بمدخلات المستخدم\" وتشغّلها على كل PR أو كـ hook بعد تعديلات Claude.",
       "about": "Semgrep بيفهم بنية الكود مش النص بس، فالقاعدة بتتكتب بشكل شبه الكود اللي بتدوّر عليه. فيه آلاف القواعد الجاهزة للأمان وأفضل الممارسات، ومنها قواعد لـ Laravel وPHP.\n\nالنسخة المجانية (Community) بتحلل جوه الـ function أو الملف بس، والنسخة المدفوعة فيها تحليل بين الملفات وتتبع للبيانات، وبتقلل الإنذارات الكاذبة.",
-      "features": ["أكتر من ٣٠ لغة منها PHP", "قواعد بشكل الكود", "آلاف القواعد الجاهزة", "سريع في الـ CI"],
-      "install": [
-        { "label": "pipx", "cmd": "pipx install semgrep" },
-        { "label": "شغّله", "cmd": "semgrep scan --config auto" }
+      "features": [
+        "أكتر من ٣٠ لغة منها PHP",
+        "قواعد بشكل الكود",
+        "آلاف القواعد الجاهزة",
+        "سريع في الـ CI"
       ],
-      "pricing": { "model": "freemium", "note": "Community مجانية، والتحليل الأعمق مدفوع" },
+      "install": [
+        {
+          "label": "pipx",
+          "cmd": "pipx install semgrep"
+        },
+        {
+          "label": "شغّله",
+          "cmd": "semgrep scan --config auto"
+        }
+      ],
+      "pricing": {
+        "model": "freemium",
+        "note": "Community مجانية، والتحليل الأعمق مدفوع"
+      },
       "url": "https://semgrep.dev",
       "source": "semgrep.dev",
       "importance": 1,
-      "tags": ["SAST", "static analysis", "PHP"]
+      "tags": [
+        "SAST",
+        "static analysis",
+        "PHP"
+      ],
+      "en": {
+        "title": "Semgrep: fast static analysis with rules you write",
+        "summary": "An open-source static analysis tool for 30+ languages including PHP. It finds bugs and vulnerabilities and enforces code rules you write in a form that looks like the code itself. A paid version does deeper analysis.",
+        "why": "You can write a rule like \"no DB::raw with user input\" and run it on every PR or as a hook after Claude's edits.",
+        "about": "Semgrep understands code structure, not just text, so rules are written to look like the code you're searching for. There are thousands of ready-made rules for security and best practices, including rules for Laravel and PHP.\n\nThe free Community edition analyses within a single function or file; the paid version adds cross-file analysis and data-flow tracking and reduces false positives.",
+        "features": [
+          "30+ languages including PHP",
+          "Rules that look like code",
+          "Thousands of ready-made rules",
+          "Fast in CI"
+        ],
+        "install": [
+          "pipx",
+          "Run it"
+        ],
+        "pricingNote": "Community is free; deeper analysis is paid"
+      }
     },
     {
       "id": "ess-trivy",
@@ -81,16 +203,49 @@
       "summary": "scanner واحد بيفحص Docker images وملفات المشروع وKubernetes وIaC: ثغرات في الباكدجات (CVEs)، وأسرار متسربة، وإعدادات غلط، ورخص، وبيطلّع SBOM.",
       "why": "بأمر واحد تعرف لو الـ Docker images بتاعة الـ ERP، أو composer.lock، فيها باكدجات عليها ثغرات معروفة.",
       "about": "Trivy عنده targets، زي container images وfilesystem وgit repos وKubernetes، وscanners بتدوّر على ثغرات الباكدجات (منها composer وnpm)، والأسرار، والـ misconfigurations في Dockerfile وTerraform وKubernetes، والرخص.\n\nبيشتغل في الـ CI بسهولة، وفيه GitHub Action.",
-      "features": ["CVEs في الباكدجات والـ images", "أسرار متسربة", "misconfigurations في IaC", "SBOM"],
-      "install": [
-        { "label": "Homebrew", "cmd": "brew install trivy" },
-        { "label": "افحص المشروع", "cmd": "trivy fs --scanners vuln,secret,misconfig ." }
+      "features": [
+        "CVEs في الباكدجات والـ images",
+        "أسرار متسربة",
+        "misconfigurations في IaC",
+        "SBOM"
       ],
-      "pricing": { "model": "oss" },
+      "install": [
+        {
+          "label": "Homebrew",
+          "cmd": "brew install trivy"
+        },
+        {
+          "label": "افحص المشروع",
+          "cmd": "trivy fs --scanners vuln,secret,misconfig ."
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://trivy.dev",
       "source": "trivy.dev",
       "importance": 1,
-      "tags": ["containers", "CVE", "Docker"]
+      "tags": [
+        "containers",
+        "CVE",
+        "Docker"
+      ],
+      "en": {
+        "title": "Trivy: all-round security scanning for containers and code",
+        "summary": "One scanner for Docker images, project files, Kubernetes and IaC: package vulnerabilities (CVEs), leaked secrets, misconfigurations and licenses, and it generates SBOMs.",
+        "why": "One command tells you whether the ERP's Docker images or composer.lock contain packages with known vulnerabilities.",
+        "about": "Trivy has targets, like container images, the filesystem, git repos and Kubernetes, and scanners that look for package vulnerabilities (including composer and npm), secrets, misconfigurations in Dockerfiles, Terraform and Kubernetes, and licenses.\n\nIt runs easily in CI and has a GitHub Action.",
+        "features": [
+          "CVEs in packages and images",
+          "Leaked secrets",
+          "IaC misconfigurations",
+          "SBOM"
+        ],
+        "install": [
+          "Homebrew",
+          "Scan the project"
+        ]
+      }
     },
     {
       "id": "ess-trufflehog",
@@ -101,14 +256,49 @@
       "summary": "بيدوّر على الـ API keys والباسوردات والـ tokens المتسربة في git وGitHub وS3 والملفات وغيرهم، وبيتحقق إذا كان السر لسه شغال فعلاً، فبيقلل الإنذارات الكاذبة جداً.",
       "why": "قبل ما تفتح ريبو أو تشاركه، أو بعد ما agent عدّل ملفات كتير، تتأكد إن مفيش .env أو مفتاح API اتعمله commit.",
       "about": "TruffleHog فيه أكتر من ٨٠٠ detector لأنواع أسرار مختلفة. أهم ميزة فيه الـ verification: بيجرب السر على الخدمة نفسها عشان يعرف لو لسه شغال. بيفحص كل تاريخ git، مش الملفات الحالية بس، وكمان GitHub orgs وDocker images.\n\nبيشتغل كـ pre-commit hook أو في الـ CI.",
-      "features": ["أكتر من ٨٠٠ نوع سر", "بيتحقق إن السر شغال", "تاريخ git كامل", "pre-commit وCI"],
-      "install": [{ "label": "افحص ريبو بـ Docker", "cmd": "docker run --rm -it -v \"$PWD:/pwd\" trufflesecurity/trufflehog:latest git file:///pwd" }],
-      "pricing": { "model": "oss", "note": "مفتوح المصدر، وفيه نسخة Enterprise" },
+      "features": [
+        "أكتر من ٨٠٠ نوع سر",
+        "بيتحقق إن السر شغال",
+        "تاريخ git كامل",
+        "pre-commit وCI"
+      ],
+      "install": [
+        {
+          "label": "افحص ريبو بـ Docker",
+          "cmd": "docker run --rm -it -v \"$PWD:/pwd\" trufflesecurity/trufflehog:latest git file:///pwd"
+        }
+      ],
+      "pricing": {
+        "model": "oss",
+        "note": "مفتوح المصدر، وفيه نسخة Enterprise"
+      },
       "url": "https://github.com/trufflesecurity/trufflehog",
       "source": "github.com",
       "importance": 1,
-      "tags": ["secrets", "git", "security"],
-      "alternatives": ["ess-gitleaks"]
+      "tags": [
+        "secrets",
+        "git",
+        "security"
+      ],
+      "alternatives": [
+        "ess-gitleaks"
+      ],
+      "en": {
+        "title": "TruffleHog: finds leaked secrets and checks if they still work",
+        "summary": "It searches for leaked API keys, passwords and tokens in git, GitHub, S3, files and more, and verifies whether each secret is still live, which cuts false positives dramatically.",
+        "why": "Before opening up or sharing a repo, or after an agent has edited lots of files, make sure no .env or API key got committed.",
+        "about": "TruffleHog has 800+ detectors for different kinds of secrets. Its key feature is verification: it tries the secret against the service itself to see whether it still works. It scans the full git history, not just current files, as well as GitHub orgs and Docker images.\n\nIt runs as a pre-commit hook or in CI.",
+        "features": [
+          "800+ secret types",
+          "Verifies the secret is live",
+          "Full git history",
+          "Pre-commit and CI"
+        ],
+        "install": [
+          "Scan a repo with Docker"
+        ],
+        "pricingNote": "Open source, with an Enterprise version"
+      }
     },
     {
       "id": "ess-gitleaks",
@@ -119,14 +309,46 @@
       "summary": "أداة خفيفة وسريعة بتلاقي الأسرار في الكود وتاريخ git، ومناسبة كـ pre-commit hook. صاحبها أعلن إنها اكتملت وهتاخد تصليحات أمان بس، وبيركز على مشروع جديد اسمه Betterleaks.",
       "why": "pre-commit hook بيمنعك أنت أو الـ agent من عمل commit لمفتاح بالغلط.",
       "about": "Gitleaks بيستخدم قواعد regex وentropy لاكتشاف الأسرار، وسريع جداً، وبيدعم ملف .gitleaksignore والـ baseline. ومستخدم كتير كـ pre-commit hook وفي GitHub Actions.\n\nملحوظة: صاحبه قال إن المشروع feature complete، وإن الإصدارات الجاية هتبقى تصليحات أمان بس، وإنه بيركز على Betterleaks.",
-      "features": ["سريع وخفيف", "pre-commit hook", "GitHub Action", "baseline وignore"],
-      "install": [{ "label": "Homebrew", "cmd": "brew install gitleaks" }],
-      "pricing": { "model": "oss" },
+      "features": [
+        "سريع وخفيف",
+        "pre-commit hook",
+        "GitHub Action",
+        "baseline وignore"
+      ],
+      "install": [
+        {
+          "label": "Homebrew",
+          "cmd": "brew install gitleaks"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/gitleaks/gitleaks",
       "source": "github.com",
       "importance": 1,
-      "tags": ["secrets", "pre-commit"],
-      "alternatives": ["ess-trufflehog"]
+      "tags": [
+        "secrets",
+        "pre-commit"
+      ],
+      "alternatives": [
+        "ess-trufflehog"
+      ],
+      "en": {
+        "title": "Gitleaks: fast secret scanning for git",
+        "summary": "A light, fast tool that finds secrets in code and git history, well suited as a pre-commit hook. Its author has declared it complete, with security fixes only from now on, and is focusing on a new project called Betterleaks.",
+        "why": "A pre-commit hook that stops you, or the agent, from committing a key by mistake.",
+        "about": "Gitleaks uses regex and entropy rules to detect secrets, is very fast, and supports a .gitleaksignore file and baselines. It's widely used as a pre-commit hook and in GitHub Actions.\n\nNote: its author says the project is feature complete, future releases will be security fixes only, and he's focusing on Betterleaks.",
+        "features": [
+          "Fast and light",
+          "Pre-commit hook",
+          "GitHub Action",
+          "Baseline and ignore"
+        ],
+        "install": [
+          "Homebrew"
+        ]
+      }
     },
     {
       "id": "ess-socket-dev",
@@ -136,12 +358,37 @@
       "summary": "بيحلل الباكدجات في npm وPyPI وComposer وغيرهم قبل ما تسطّبها، وبيكشف السلوك المريب: كود install مريب، وتحميل من النت، وobfuscation، وtyposquatting. وفيه GitHub app بتعلّق على الـ PRs.",
       "why": "الـ agents بتقترح وتسطب باكدجات كتير، وأحياناً بأسماء مش موجودة أصلاً (slopsquatting). Socket بيمسك ده قبل ما يوصل للمشروع.",
       "about": "أدوات زي npm audit بتدوّر على ثغرات معروفة بس. Socket بيحلل سلوك الباكدج نفسه: هل بيشغّل scripts وقت التسطيب، أو بيوصل للنت، أو بيقرا متغيرات البيئة، أو فيه كود متشفّر، أو اسمه قريب من باكدج مشهور.\n\nفيه GitHub app بتعلّق على أي PR بيضيف dependency خطيرة، وCLI بيلف حوالين npm. وبيدعم Composer.",
-      "features": ["تحليل سلوك الباكدجات", "npm وPyPI وComposer", "GitHub app للـ PRs", "كشف typosquatting"],
-      "pricing": { "model": "freemium", "note": "مجاني للمشاريع المفتوحة والفرق الصغيرة" },
+      "features": [
+        "تحليل سلوك الباكدجات",
+        "npm وPyPI وComposer",
+        "GitHub app للـ PRs",
+        "كشف typosquatting"
+      ],
+      "pricing": {
+        "model": "freemium",
+        "note": "مجاني للمشاريع المفتوحة والفرق الصغيرة"
+      },
       "url": "https://socket.dev",
       "source": "socket.dev",
       "importance": 1,
-      "tags": ["supply chain", "npm", "Composer"]
+      "tags": [
+        "supply chain",
+        "npm",
+        "Composer"
+      ],
+      "en": {
+        "title": "Socket: protection from malicious packages",
+        "summary": "It analyses packages on npm, PyPI, Composer and more before you install them, and flags suspicious behaviour: install scripts, network downloads, obfuscation and typosquatting. A GitHub app comments on PRs.",
+        "why": "Agents suggest and install lots of packages, sometimes with names that don't even exist (slopsquatting). Socket catches that before it reaches your project.",
+        "about": "Tools like npm audit only look for known vulnerabilities. Socket analyses the package's own behaviour: does it run scripts at install time, reach the network, read environment variables, contain obfuscated code, or have a name close to a popular package?\n\nThe GitHub app comments on any PR that adds a risky dependency, and a CLI wraps npm. It supports Composer.",
+        "features": [
+          "Package behaviour analysis",
+          "npm, PyPI and Composer",
+          "A GitHub app for PRs",
+          "Typosquatting detection"
+        ],
+        "pricingNote": "Free for open-source projects and small teams"
+      }
     }
   ]
 }

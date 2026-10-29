@@ -62,7 +62,8 @@ export function useUserState() {
   const [user, setUser] = useState<string | null>(null);
   const [persistent, setPersistent] = useState(true);
   const [ready, setReady] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  /** "offline" (using the cached copy) or "queued" (changes waiting to sync). */
+  const [error, setError] = useState<"offline" | "queued" | null>(null);
   const latest = useRef({ seen, fav });
   useEffect(() => {
     latest.current = { seen, fav };
@@ -97,7 +98,7 @@ export function useUserState() {
         setUser(data.user);
         setPersistent(data.persistent);
       })
-      .catch(() => setError("مش قادر أوصل للسيرفر، شغال على النسخة المحفوظة على الجهاز."))
+      .catch(() => setError("offline"))
       .finally(() => setReady(true));
 
     const onOnline = () =>
@@ -137,7 +138,7 @@ export function useUserState() {
       .then(() => setError(null))
       .catch(() => {
         writePending([...readPending(), op]);
-        setError("التغيير اتحفظ على الجهاز، وهيتبعت للسيرفر أول ما النت يرجع.");
+        setError("queued");
       });
   }, []);
 

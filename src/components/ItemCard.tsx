@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { memo } from "react";
-import { KIND_LABEL, SECTION_BY_ID } from "@/lib/sections";
+import { useLocale } from "./LocaleProvider";
 import type { FeedItem, RepoStats } from "@/lib/types";
 import { BookmarkIcon, CheckIcon, ShareIcon } from "./icons";
 import { CodeBox, PriceChip, RepoLine, secStyle } from "./bits";
@@ -20,7 +20,8 @@ type Props = {
 };
 
 function ItemCardBase({ item, stats, seen, fav, onSeen, onFav, onShare, compact }: Props) {
-  const section = SECTION_BY_ID[item.section];
+  const { t, tx } = useLocale();
+  const section = tx.SECTION_BY_ID[item.section];
   const hot = item.importance === 3;
   const detail = `/item/${item.id}`;
 
@@ -36,7 +37,7 @@ function ItemCardBase({ item, stats, seen, fav, onSeen, onFav, onShare, compact 
               <span className="text-[15.5px] font-bold leading-6">{item.title.split(":")[0]}</span>
               {hot && (
                 <span className="rounded-full bg-star-soft px-2 py-px text-[11.5px] font-semibold text-star-ink">
-                  ابدأ بيه
+                  {t.card.startHere}
                 </span>
               )}
             </span>
@@ -44,7 +45,7 @@ function ItemCardBase({ item, stats, seen, fav, onSeen, onFav, onShare, compact 
             <span className="line-clamp-2 text-[13.5px] leading-[22px] text-muted">{item.summary}</span>
             <span className="mt-1.5 flex flex-wrap items-center gap-2">
               <PriceChip pricing={item.pricing} />
-              <span className="text-[12px] text-faint">{KIND_LABEL[item.kind] ?? item.kind}</span>
+              <span className="text-[12px] text-faint">{tx.KIND_LABEL[item.kind] ?? item.kind}</span>
             </span>
           </span>
         </Link>
@@ -52,8 +53,8 @@ function ItemCardBase({ item, stats, seen, fav, onSeen, onFav, onShare, compact 
           type="button"
           onClick={() => onSeen(item.id, !seen)}
           aria-pressed={seen}
-          aria-label={seen ? "رجّعه لسه مجربتوش" : "علّمه إني جربته"}
-          title={seen ? "جربته" : "علّمه إني جربته"}
+          aria-label={seen ? t.card.markUntried : t.card.markTried}
+          title={seen ? t.card.tried : t.card.markTried}
           className={`grid size-8 shrink-0 place-items-center self-start rounded-full ${
             seen ? "bg-ink text-ground" : "shadow-[inset_0_0_0_1.5px_var(--line)] text-transparent hover:text-faint"
           }`}
@@ -70,17 +71,17 @@ function ItemCardBase({ item, stats, seen, fav, onSeen, onFav, onShare, compact 
         <button
           type="button"
           onClick={() => onSeen(item.id, !seen)}
-          aria-label={seen ? "رجّعه جديد" : "علّمه إني شوفته"}
+          aria-label={seen ? t.card.markNew : t.card.markSeen}
           className="-m-2 grid size-6 place-items-center p-2"
         >
           <span className={`block size-2 rounded-full ${seen ? "shadow-[inset_0_0_0_1.5px_var(--faint)]" : "unseen-dot"}`} />
         </button>
-        <span className="sec-fg font-semibold">{section?.name.split(" و ")[0]}</span>
-        <span className="text-faint">{KIND_LABEL[item.kind] ?? item.kind}</span>
+        <span className="sec-fg font-semibold">{section?.short}</span>
+        <span className="text-faint">{tx.KIND_LABEL[item.kind] ?? item.kind}</span>
         <PriceChip pricing={item.pricing} />
         {hot && (
           <span className="ms-auto rounded-full bg-star-soft px-2 py-0.5 font-semibold text-star-ink">
-            {item.essential ? "ابدأ بيه" : "لازم تشوفه"}
+            {item.essential ? t.card.startHere : t.card.mustSee}
           </span>
         )}
       </div>
@@ -100,7 +101,7 @@ function ItemCardBase({ item, stats, seen, fav, onSeen, onFav, onShare, compact 
 
       {item.why && (
         <p className="sec-soft mt-3 rounded-xl px-3.5 py-2.5 text-[14px] leading-[23px] text-ink-2">
-          <b className="sec-fg font-semibold">ليه يهمك: </b>
+          <b className="sec-fg font-semibold">{t.card.why}</b>
           {item.why}
         </p>
       )}
@@ -122,13 +123,13 @@ function ItemCardBase({ item, stats, seen, fav, onSeen, onFav, onShare, compact 
           }`}
         >
           <CheckIcon width={17} height={17} />
-          {seen ? "شوفته" : "علّمه شوفته"}
+          {seen ? t.card.seen : t.card.markSeen}
         </button>
         <button
           type="button"
           onClick={() => onFav(item.id, !fav)}
           aria-pressed={fav}
-          aria-label={fav ? "شيله من المفضلة" : "ضيفه للمفضلة"}
+          aria-label={fav ? t.card.removeFav : t.card.addFav}
           className={`grid size-9 place-items-center rounded-[10px] hover:bg-sunken ${fav ? "text-star" : "text-muted"}`}
         >
           <BookmarkIcon filled={fav} width={18} height={18} />
@@ -136,7 +137,7 @@ function ItemCardBase({ item, stats, seen, fav, onSeen, onFav, onShare, compact 
         <button
           type="button"
           onClick={() => onShare(item)}
-          aria-label="شارك"
+          aria-label={t.card.share}
           className="grid size-9 place-items-center rounded-[10px] text-muted hover:bg-sunken"
         >
           <ShareIcon width={17} height={17} />
@@ -145,7 +146,7 @@ function ItemCardBase({ item, stats, seen, fav, onSeen, onFav, onShare, compact 
           href={detail}
           className="ms-auto inline-flex h-9 items-center rounded-[10px] px-3 text-[13px] font-semibold text-accent hover:bg-accent-soft"
         >
-          التفاصيل
+          {t.card.details}
         </Link>
         <a
           href={item.url}
@@ -154,7 +155,7 @@ function ItemCardBase({ item, stats, seen, fav, onSeen, onFav, onShare, compact 
           onClick={() => onSeen(item.id, true)}
           className="inline-flex h-9 items-center rounded-[10px] bg-ink px-3.5 text-[13px] font-semibold text-ground"
         >
-          افتح
+          {t.card.open}
         </a>
       </div>
     </article>

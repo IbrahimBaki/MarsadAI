@@ -1,13 +1,15 @@
 import type { MetadataRoute } from "next";
 import { APP } from "@/lib/config";
+import { MESSAGES } from "@/lib/i18n";
 
 export default function manifest(): MetadataRoute.Manifest {
+  const t = MESSAGES.en;
   return {
-    name: `${APP.name} — ${APP.latinName}`,
-    short_name: APP.name,
-    description: APP.tagline,
-    lang: "ar",
-    dir: "rtl",
+    name: `${APP.latinName} · ${APP.arabicName}`,
+    short_name: APP.latinName,
+    description: `${t.app.tagline} — ${t.app.by}`,
+    lang: "en",
+    dir: "auto",
     start_url: "/",
     scope: "/",
     display: "standalone",
@@ -20,10 +22,10 @@ export default function manifest(): MetadataRoute.Manifest {
       { src: "/icons/maskable-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
     ],
     shortcuts: [
-      { name: "الجديد", url: "/" },
-      { name: "الرادار", url: "/radar" },
-      { name: "الأساسيات", url: "/library" },
-      { name: "المفضلة", url: "/?v=fav" },
+      { name: t.nav.latest, url: "/" },
+      { name: t.nav.radar, url: "/radar" },
+      { name: t.nav.library, url: "/library" },
+      { name: t.nav.favorites, url: "/?v=fav" },
     ],
   };
 }

@@ -9,13 +9,42 @@
       "summary": "أداة AI جوه Figma بتحوّل الوصف أو التصميم لـ prototype تفاعلي ليه كود حقيقي، وبتعدّل عليه بالكلام وإنت لسه جوه Figma. ومعاها Figma MCP server بيدّي الـ agents سياق التصميم.",
       "why": "تجرّب UX شاشة جديدة في الـ ERP وتورّيها للمستخدمين قبل ما تكتب كود. وMCP بيخلي Claude يبني من تصميم Figma بدقة.",
       "about": "في Figma Make بتكتب الفكرة، أو تدّيله frame من تصميمك، فيبني تطبيق صغير شغال: أزرار بتشتغل، وفورمز، وتنقل بين الشاشات. وتعدّل بالكلام أو في الكود مباشرة، وتنشره بلينك.\n\nوFigma عندها Dev Mode MCP server بيدّي Claude Code أو Cursor تفاصيل التصميم: المقاسات والألوان والـ components والـ variables، فالكود يطلع مطابق.",
-      "features": ["prototype تفاعلي من وصف", "تعديل بالكلام أو بالكود", "نشر بلينك", "MCP server للـ agents"],
-      "pricing": { "model": "freemium", "note": "credits محدودة في الخطة المجانية، وأكتر في المدفوعة" },
+      "features": [
+        "prototype تفاعلي من وصف",
+        "تعديل بالكلام أو بالكود",
+        "نشر بلينك",
+        "MCP server للـ agents"
+      ],
+      "pricing": {
+        "model": "freemium",
+        "note": "credits محدودة في الخطة المجانية، وأكتر في المدفوعة"
+      },
       "url": "https://www.figma.com/make/",
       "source": "figma.com",
       "importance": 2,
-      "tags": ["UI", "prototype", "Figma", "MCP"],
-      "alternatives": ["ess-google-stitch", "ess-v0"]
+      "tags": [
+        "UI",
+        "prototype",
+        "Figma",
+        "MCP"
+      ],
+      "alternatives": [
+        "ess-google-stitch",
+        "ess-v0"
+      ],
+      "en": {
+        "title": "Figma Make: from a description to a working prototype",
+        "summary": "An AI tool inside Figma that turns a description or a design into an interactive prototype with real code, which you refine in words without leaving Figma. The Figma MCP server gives agents the design context.",
+        "why": "Try out the UX of a new ERP screen and show it to users before writing code. The MCP lets Claude build from a Figma design accurately.",
+        "about": "In Figma Make you write the idea, or give it a frame from your design, and it builds a small working app: buttons that work, forms, and navigation between screens. You refine it in words or directly in the code, and publish it with a link.\n\nFigma also has a Dev Mode MCP server that gives Claude Code or Cursor the design details: sizes, colors, components and variables, so the code comes out matching.",
+        "features": [
+          "Interactive prototypes from a description",
+          "Edit in words or in code",
+          "Publish with a link",
+          "An MCP server for agents"
+        ],
+        "pricingNote": "Limited credits on the free plan, more on paid plans"
+      }
     },
     {
       "id": "ess-google-stitch",
@@ -25,12 +54,37 @@
       "summary": "أداة من Google Labs بتولّد شاشات UI للموبايل والويب من وصف أو صورة أو sketch، وتقدر تصدّر الناتج لـ Figma أو تاخده HTML وCSS.",
       "why": "طريقة سريعة تطلّع بيها أكتر من فكرة لتصميم شاشة قبل ما تختار واحدة.",
       "about": "Stitch بيستخدم موديلات Gemini. بتوصف الشاشة، أو ترفع wireframe أو screenshot، فيطلّع تصميم كامل. وتعدّل بالكلام، وتولّد أكتر من variant، وتربط الشاشات في flow.\n\nالتصدير لـ Figma بيحافظ على الطبقات، وفيه كود front-end تبدأ منه.",
-      "features": ["شاشات من وصف أو صورة", "variants متعددة", "تصدير لـ Figma", "كود HTML وCSS"],
-      "pricing": { "model": "free", "note": "مجاني من Google Labs بحدود شهرية" },
+      "features": [
+        "شاشات من وصف أو صورة",
+        "variants متعددة",
+        "تصدير لـ Figma",
+        "كود HTML وCSS"
+      ],
+      "pricing": {
+        "model": "free",
+        "note": "مجاني من Google Labs بحدود شهرية"
+      },
       "url": "https://stitch.withgoogle.com/",
       "source": "stitch.withgoogle.com",
       "importance": 2,
-      "tags": ["UI", "Google", "design"]
+      "tags": [
+        "UI",
+        "Google",
+        "design"
+      ],
+      "en": {
+        "title": "Google Stitch: UI design from a description",
+        "summary": "A Google Labs tool that generates mobile and web UI screens from a description, an image or a sketch, and exports the result to Figma or as HTML and CSS.",
+        "why": "A quick way to produce several ideas for a screen design before you pick one.",
+        "about": "Stitch uses Gemini models. Describe the screen, or upload a wireframe or screenshot, and it produces a complete design. You refine it in words, generate several variants and link screens into a flow.\n\nExport to Figma keeps the layers, and there's front-end code to start from.",
+        "features": [
+          "Screens from a description or image",
+          "Multiple variants",
+          "Export to Figma",
+          "HTML and CSS code"
+        ],
+        "pricingNote": "Free from Google Labs with monthly limits"
+      }
     },
     {
       "id": "ess-v0",
@@ -40,12 +94,37 @@
       "summary": "بيولّد واجهات وتطبيقات كاملة بـ React وNext.js وTailwind وshadcn/ui من وصف أو صورة، وتعدّل بالكلام، وتنشر على Vercel أو تاخد الكود لمشروعك.",
       "why": "مناسب للـ dashboards والأدوات الداخلية السريعة، زي المرصد ده، والكود اللي بيطلع نضيف وقابل للتعديل.",
       "about": "v0 بيكتب كود حقيقي بـ shadcn/ui، فتقدر تنسخ component واحد لمشروعك، أو تاخد المشروع كله. وفيه preview لايف، وتعديل بالكلام أو باختيار عنصر في الـ preview، وربط بـ GitHub، ونشر بضغطة.\n\nوفيه credits مجانية شهرية، وخطط مدفوعة.",
-      "features": ["React وTailwind وshadcn", "preview وتعديل لايف", "ربط بـ GitHub", "نشر على Vercel"],
-      "pricing": { "model": "freemium", "note": "credits شهرية مجانية، والباقي باشتراك" },
+      "features": [
+        "React وTailwind وshadcn",
+        "preview وتعديل لايف",
+        "ربط بـ GitHub",
+        "نشر على Vercel"
+      ],
+      "pricing": {
+        "model": "freemium",
+        "note": "credits شهرية مجانية، والباقي باشتراك"
+      },
       "url": "https://v0.app/",
       "source": "v0.app",
       "importance": 2,
-      "tags": ["UI", "React", "Vercel"]
+      "tags": [
+        "UI",
+        "React",
+        "Vercel"
+      ],
+      "en": {
+        "title": "v0 by Vercel: ready React apps from a description",
+        "summary": "It generates complete UIs and apps with React, Next.js, Tailwind and shadcn/ui from a description or an image. Refine in words, then deploy to Vercel or take the code into your project.",
+        "why": "Good for dashboards and quick internal tools, like Marsad itself, and the code it produces is clean and editable.",
+        "about": "v0 writes real code with shadcn/ui, so you can copy a single component into your project or take the whole project. There's a live preview, editing in words or by selecting an element in the preview, GitHub integration and one-click deploys.\n\nThere are free monthly credits and paid plans.",
+        "features": [
+          "React, Tailwind and shadcn",
+          "Live preview and editing",
+          "GitHub integration",
+          "Deploy to Vercel"
+        ],
+        "pricingNote": "Free monthly credits; the rest is a subscription"
+      }
     },
     {
       "id": "ess-midjourney",
@@ -55,12 +134,36 @@
       "summary": "من أشهر أدوات توليد الصور وأقواها في الستايل الفني والإضاءة والتكوين. فيه موقع للتوليد والتعديل، ومراجع للستايل والشخصيات، وتحريك الصور لفيديو قصير.",
       "why": "مناسب للـ moodboards والكونسبتات وصور البراند اللي محتاجة إحساس فني مميز.",
       "about": "Midjourney بيتميز بالجماليات: الإضاءة، والتكوين، والستايلات الفنية. بتشتغل من الموقع، وفيه Style References تقلّد بيها ستايل صورة، وCharacter References لثبات شخصية، وEditor لتعديل أجزاء من الصورة وتوسيعها، وتحويل الصور لفيديو قصير.\n\nكله باشتراك شهري، ومفيش خطة مجانية دايمة.",
-      "features": ["جودة فنية عالية", "مراجع للستايل والشخصيات", "تعديل وتوسيع", "تحريك الصور"],
-      "pricing": { "model": "paid", "note": "اشتراك شهري" },
+      "features": [
+        "جودة فنية عالية",
+        "مراجع للستايل والشخصيات",
+        "تعديل وتوسيع",
+        "تحريك الصور"
+      ],
+      "pricing": {
+        "model": "paid",
+        "note": "اشتراك شهري"
+      },
       "url": "https://www.midjourney.com/",
       "source": "midjourney.com",
       "importance": 2,
-      "tags": ["توليد صور", "art"]
+      "tags": [
+        "توليد صور",
+        "art"
+      ],
+      "en": {
+        "title": "Midjourney: high-quality artistic images",
+        "summary": "One of the best-known image generators and the strongest at artistic style, lighting and composition. It has a website for generating and editing, style and character references, and animating images into short videos.",
+        "why": "Good for moodboards, concepts and brand imagery that need a distinctive artistic feel.",
+        "about": "Midjourney stands out for aesthetics: lighting, composition and artistic styles. You work from the website, with Style References to mimic an image's style, Character References for a consistent character, an Editor for changing and extending parts of an image, and image-to-video animation.\n\nEverything is a monthly subscription; there's no permanent free plan.",
+        "features": [
+          "High artistic quality",
+          "Style and character references",
+          "Edit and extend",
+          "Animate images"
+        ],
+        "pricingNote": "Monthly subscription"
+      }
     },
     {
       "id": "ess-ideogram",
@@ -70,12 +173,35 @@
       "summary": "أداة توليد صور معروفة بإنها بتكتب النص جوه الصورة صح، فمناسبة للبوسترات واللوجوهات والتصميمات اللي فيها كلام. وفيها Canvas للتعديل والتوسيع.",
       "why": "لما تحتاج بوستر أو صورة سوشيال فيها عنوان واضح ومقروء.",
       "about": "Ideogram ركّز من الأول على الـ typography، فالنص في الصور بيطلع مقروء ومن غير أخطاء غالباً. فيه Magic Prompt بيحسّن وصفك، وستايلات جاهزة، وCanvas للتعديل وتوسيع الصورة، وAPI.\n\nفيه استخدام مجاني بحدود، وخطط مدفوعة.",
-      "features": ["نص مقروء جوه الصور", "Canvas للتعديل", "ستايلات جاهزة", "API"],
-      "pricing": { "model": "freemium" },
+      "features": [
+        "نص مقروء جوه الصور",
+        "Canvas للتعديل",
+        "ستايلات جاهزة",
+        "API"
+      ],
+      "pricing": {
+        "model": "freemium"
+      },
       "url": "https://ideogram.ai/",
       "source": "ideogram.ai",
       "importance": 2,
-      "tags": ["توليد صور", "typography", "بوسترات"]
+      "tags": [
+        "توليد صور",
+        "typography",
+        "بوسترات"
+      ],
+      "en": {
+        "title": "Ideogram: images with correct text",
+        "summary": "An image generator known for rendering text inside images correctly, so it suits posters, logos and designs with words. It has a Canvas for editing and extending.",
+        "why": "When you need a poster or a social image with a clear, readable headline.",
+        "about": "Ideogram focused on typography from the start, so text in its images usually comes out readable and error-free. It has Magic Prompt to improve your description, ready-made styles, a Canvas for editing and extending images, and an API.\n\nThere's free usage with limits, plus paid plans.",
+        "features": [
+          "Readable text inside images",
+          "Canvas for editing",
+          "Ready-made styles",
+          "API"
+        ]
+      }
     },
     {
       "id": "ess-recraft",
@@ -85,12 +211,35 @@
       "summary": "أداة توليد صور معمولة للمصممين. بتطلّع SVG حقيقي قابل للتعديل، وبتقدر تثبّت ستايل البراند والألوان، فهي مناسبة للوجوهات والأيقونات والـ illustrations.",
       "why": "ملفات الـ vector اللي بتطلعها تقدر تستخدمها مباشرة في الويب والطباعة، زي أيقونات Dokkanx أو الـ ERP، من غير ما تعيد رسمها.",
       "about": "Recraft بيولّد صور raster وvector، والـ SVG بيطلع بطبقات تقدر تعدّلها. فيه custom styles بتثبّت بيها شكل البراند، وتحكم في palette الألوان، وmockups، وأدوات تعديل زي شيل الخلفية والتكبير. وفيه API.",
-      "features": ["SVG حقيقي قابل للتعديل", "ستايل ثابت للبراند", "تحكم في الألوان", "API"],
-      "pricing": { "model": "freemium" },
+      "features": [
+        "SVG حقيقي قابل للتعديل",
+        "ستايل ثابت للبراند",
+        "تحكم في الألوان",
+        "API"
+      ],
+      "pricing": {
+        "model": "freemium"
+      },
       "url": "https://www.recraft.ai/",
       "source": "recraft.ai",
       "importance": 2,
-      "tags": ["vector", "logo", "branding"]
+      "tags": [
+        "vector",
+        "logo",
+        "branding"
+      ],
+      "en": {
+        "title": "Recraft: vector logos and icons",
+        "summary": "An image generator made for designers. It outputs real, editable SVG and can lock in your brand style and colors, so it suits logos, icons and illustrations.",
+        "why": "The vector files it produces can be used directly on the web and in print, like icons for Dokkanx or the ERP, without redrawing them.",
+        "about": "Recraft generates both raster and vector images, and the SVG comes out in editable layers. There are custom styles to lock in your brand's look, palette control, mockups, and editing tools like background removal and upscaling. There's also an API.",
+        "features": [
+          "Real, editable SVG",
+          "A consistent brand style",
+          "Color control",
+          "API"
+        ]
+      }
     },
     {
       "id": "ess-krea",
@@ -100,12 +249,34 @@
       "summary": "منصة بتجمع موديلات كتير للصور والفيديو، ومعاها توليد لحظي وإنت بترسم، وتكبير وتحسين للصور، وتدريب على ستايلك الخاص.",
       "why": "مفيدة لو حابب تجرب موديلات مختلفة من غير ما تعمل اشتراك في كل واحد لوحده.",
       "about": "Krea بيدّيك وصول لموديلات كتير من مزودين مختلفين في واجهة واحدة، ومعاها Realtime: بترسم أو تحرك أشكال فالصورة بتتولد لحظياً. وفيه Enhancer لتكبير الصور وتحسينها، وتدريب LoRA على ستايل أو منتج.",
-      "features": ["موديلات كتير في مكان واحد", "توليد لحظي وإنت بترسم", "تكبير وتحسين", "تدريب على ستايلك"],
-      "pricing": { "model": "freemium" },
+      "features": [
+        "موديلات كتير في مكان واحد",
+        "توليد لحظي وإنت بترسم",
+        "تكبير وتحسين",
+        "تدريب على ستايلك"
+      ],
+      "pricing": {
+        "model": "freemium"
+      },
       "url": "https://www.krea.ai/",
       "source": "krea.ai",
       "importance": 1,
-      "tags": ["توليد صور", "upscale"]
+      "tags": [
+        "توليد صور",
+        "upscale"
+      ],
+      "en": {
+        "title": "Krea: every image and video model in one place",
+        "summary": "A platform that brings together many image and video models, with real-time generation as you draw, image upscaling and enhancement, and training on your own style.",
+        "why": "Useful if you want to try different models without subscribing to each one separately.",
+        "about": "Krea gives you access to many models from different providers in one interface, plus Realtime: you draw or move shapes and the image generates instantly. There's an Enhancer for upscaling and improving images, and LoRA training on a style or a product.",
+        "features": [
+          "Many models in one place",
+          "Real-time generation as you draw",
+          "Upscaling and enhancement",
+          "Training on your style"
+        ]
+      }
     },
     {
       "id": "ess-comfyui",
@@ -116,13 +287,44 @@
       "summary": "أقوى واجهة مفتوحة المصدر لتوليد الصور والفيديو والصوت. بتبني pipelines بالـ nodes، وبتشغّل عليها الموديلات المفتوحة محلياً، وإنت متحكم في كل خطوة.",
       "why": "لو عندك كارت شاشة كويس وعايز تتحكم في كل حاجة، أو تشغّل workflows ثابتة لمنتجات من غير ما تدفع على كل صورة.",
       "about": "في ComfyUI كل خطوة node: تحميل الموديل، والـ prompt، والـ sampling، والتعديل، والتكبير، وبتوصلهم ببعض. والـ workflow بيتحفظ كملف JSON، أو جوه الصورة نفسها، فتعيد استخدامه أو تشاركه.\n\nبيدعم معظم الموديلات المفتوحة للصور والفيديو، وفيه ComfyUI Manager لتسطيب الـ custom nodes، وcomfy-cli، وتطبيق ديسكتوب.",
-      "features": ["pipelines بالـ nodes", "موديلات مفتوحة محلياً", "workflows بتتحفظ وتتشارك", "custom nodes كتير"],
-      "install": [{ "label": "comfy-cli", "cmd": "pip install comfy-cli && comfy install" }],
-      "pricing": { "model": "oss" },
+      "features": [
+        "pipelines بالـ nodes",
+        "موديلات مفتوحة محلياً",
+        "workflows بتتحفظ وتتشارك",
+        "custom nodes كتير"
+      ],
+      "install": [
+        {
+          "label": "comfy-cli",
+          "cmd": "pip install comfy-cli && comfy install"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://www.comfy.org",
       "source": "comfy.org",
       "importance": 1,
-      "tags": ["open source", "local", "workflows"]
+      "tags": [
+        "open source",
+        "local",
+        "workflows"
+      ],
+      "en": {
+        "title": "ComfyUI: node-based image and video generation on your machine",
+        "summary": "The most powerful open-source interface for generating images, video and audio. You build node pipelines and run open models on them locally, controlling every step.",
+        "why": "If you have a good GPU and want control over everything, or want to run fixed product workflows without paying per image.",
+        "about": "In ComfyUI every step is a node: loading the model, the prompt, sampling, editing and upscaling, and you wire them together. The workflow is saved as a JSON file, or inside the image itself, so you can reuse or share it.\n\nIt supports most open image and video models, and there's ComfyUI Manager for installing custom nodes, comfy-cli, and a desktop app.",
+        "features": [
+          "Node-based pipelines",
+          "Open models run locally",
+          "Workflows you can save and share",
+          "Lots of custom nodes"
+        ],
+        "install": [
+          "comfy-cli"
+        ]
+      }
     },
     {
       "id": "ess-penpot",
@@ -133,12 +335,35 @@
       "summary": "منصة تصميم مفتوحة المصدر للفرق، تستضيفها بنفسك أو تستخدمها أونلاين. بتعتمد على معايير الويب (SVG وCSS)، فالـ handoff للمبرمجين أدق، وفيها components وdesign tokens وflex وgrid layout.",
       "why": "لو عايز أداة تصميم للفريق من غير اشتراكات وبياناتك على سيرفرك، وده متماشي مع خبرتك في الـ self-hosting.",
       "about": "Penpot بيرسم بـ SVG، والـ layouts بتتعمل بـ CSS Flexbox وGrid، فاللي بتصممه قريب جداً من اللي هيتكتب كود، ووضع Inspect بيدّي CSS جاهز. فيه components وvariants، وdesign tokens، وprototyping، وتعاون لايف، وplugins، وAPI.\n\nبرخصة MPL 2.0، ومجاني أونلاين أو على سيرفرك بـ Docker.",
-      "features": ["مفتوح المصدر وself-hosted", "Flex وGrid زي CSS", "design tokens وcomponents", "Inspect بيدّي CSS"],
-      "pricing": { "model": "oss" },
+      "features": [
+        "مفتوح المصدر وself-hosted",
+        "Flex وGrid زي CSS",
+        "design tokens وcomponents",
+        "Inspect بيدّي CSS"
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://penpot.app",
       "source": "penpot.app",
       "importance": 1,
-      "tags": ["design", "Figma alternative", "self-hosted"]
+      "tags": [
+        "design",
+        "Figma alternative",
+        "self-hosted"
+      ],
+      "en": {
+        "title": "Penpot: an open-source Figma alternative",
+        "summary": "An open-source design platform for teams that you can self-host or use online. It's based on web standards (SVG and CSS), so handoff to developers is more precise, with components, design tokens, and flex and grid layout.",
+        "why": "If you want a team design tool with no subscriptions and your data on your own server, which fits your self-hosting experience.",
+        "about": "Penpot draws in SVG, and layouts use CSS Flexbox and Grid, so what you design is very close to what will be coded, and Inspect mode gives you ready CSS. It has components and variants, design tokens, prototyping, live collaboration, plugins and an API.\n\nIt's MPL 2.0 licensed and free online or on your own server with Docker.",
+        "features": [
+          "Open source and self-hosted",
+          "Flex and Grid like CSS",
+          "Design tokens and components",
+          "Inspect gives you CSS"
+        ]
+      }
     }
   ]
 }

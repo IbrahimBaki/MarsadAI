@@ -1,14 +1,16 @@
 "use client";
 
 import { useState, type CSSProperties, type ReactNode } from "react";
-import { PRICING_LABEL, SECTION_BY_ID, type SectionId } from "@/lib/sections";
+import { SECTION_META, type SectionId } from "@/lib/sections";
 import type { Item, RepoStats } from "@/lib/types";
-import { formatCount, monogram } from "@/lib/format";
+import { monogram } from "@/lib/format";
+import { useLocale } from "./LocaleProvider";
 import { CheckIcon, CopyIcon, StarIcon } from "./icons";
 
-export const secStyle = (id: SectionId) => ({ "--c": SECTION_BY_ID[id]?.color ?? "#5c7cfa" }) as CSSProperties;
+export const secStyle = (id: SectionId) => ({ "--c": SECTION_META[id]?.color ?? "#5c7cfa" }) as CSSProperties;
 
 export function PriceChip({ pricing, size = "sm" }: { pricing: Item["pricing"]; size?: "sm" | "md" }) {
+  const { t, tx } = useLocale();
   if (!pricing) return null;
   const tone =
     pricing.model === "paid"
@@ -17,7 +19,7 @@ export function PriceChip({ pricing, size = "sm" }: { pricing: Item["pricing"]; 
         ? "bg-star-soft text-star-ink"
         : "bg-ok text-ok-ink";
   const label =
-    pricing.model === "oss" ? "مجاني · مفتوح المصدر" : PRICING_LABEL[pricing.model] ?? pricing.model;
+    pricing.model === "oss" ? t.price.ossFull : tx.PRICING_LABEL[pricing.model] ?? pricing.model;
   return (
     <span
       className={`inline-flex items-center rounded-md font-semibold whitespace-nowrap ${tone} ${
@@ -30,6 +32,7 @@ export function PriceChip({ pricing, size = "sm" }: { pricing: Item["pricing"]; 
 }
 
 export function CodeBox({ cmd, label }: { cmd: string; label?: string }) {
+  const { t } = useLocale();
   const [copied, setCopied] = useState(false);
   const copy = async () => {
     try {
@@ -54,7 +57,7 @@ export function CodeBox({ cmd, label }: { cmd: string; label?: string }) {
         <button
           type="button"
           onClick={copy}
-          aria-label={copied ? "اتنسخ" : "انسخ الأمر"}
+          aria-label={copied ? t.code.copied : t.code.copy}
           className="grid size-7 shrink-0 place-items-center rounded-lg bg-code-btn text-code-ink/80 hover:text-code-ink"
         >
           {copied ? <CheckIcon width={15} height={15} /> : <CopyIcon width={15} height={15} />}
@@ -65,6 +68,7 @@ export function CodeBox({ cmd, label }: { cmd: string; label?: string }) {
 }
 
 export function RepoLine({ repo, stats, size = "sm" }: { repo: string; stats?: RepoStats; size?: "sm" | "lg" }) {
+  const { f } = useLocale();
   return (
     <div className="flex items-center gap-2.5">
       <span
@@ -82,7 +86,7 @@ export function RepoLine({ repo, stats, size = "sm" }: { repo: string; stats?: R
         {stats && size === "sm" && (
           <div className="flex flex-wrap items-center gap-x-3 text-[12.5px] text-muted">
             <span className="inline-flex items-center gap-1">
-              <StarIcon width={13} height={13} /> {formatCount(stats.stars)}
+              <StarIcon width={13} height={13} /> {f.count(stats.stars)}
             </span>
             {stats.language && <span className="ltr">{stats.language}</span>}
             {stats.release && <span className="ltr">{stats.release.tag}</span>}

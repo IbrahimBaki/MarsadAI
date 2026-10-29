@@ -1,6 +1,6 @@
 import type { SectionId } from "./sections";
 
-/** 3 = لازم تشوفه / ابدأ بيه, 2 = مفيد, 1 = للعلم */
+/** 3 = must see / start here, 2 = useful, 1 = FYI */
 export type Importance = 1 | 2 | 3;
 
 export type ItemKind =
@@ -41,11 +41,29 @@ export type Item = {
   /** Ids of related items (or plain names). */
   alternatives?: string[];
   links?: { label: string; url: string }[];
+  /** English version of the text fields. Arrays line up index by index with the Arabic ones. */
+  en?: ItemEnglish;
+};
+
+export type ItemEnglish = {
+  title: string;
+  summary: string;
+  why: string;
+  about?: string;
+  features?: string[];
+  usage?: string[];
+  requirements?: string[];
+  /** Labels for `install`, same order. */
+  install?: string[];
+  /** Labels for `links`, same order. */
+  links?: string[];
+  pricingNote?: string;
 };
 
 export type Digest = {
   date: string; // YYYY-MM-DD
   headline: string;
+  headline_en?: string;
   items: Item[];
 };
 
@@ -65,6 +83,8 @@ export type RadarEntry = {
   heading?: string;
   repo?: string;
   tag?: string;
+  /** Previous release tag, for release entries. */
+  previous?: string;
   stars?: number;
 };
 
@@ -79,7 +99,7 @@ export type RepoStats = {
 };
 
 export type FeedPayload = {
-  days: { date: string; headline: string }[];
+  days: { date: string; headline: string; headline_en?: string }[];
   items: FeedItem[];
   essentials: FeedItem[];
   radar: RadarEntry[];

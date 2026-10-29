@@ -17,19 +17,64 @@
         "guidelines لـ Laravel وFilament وLivewire وPest"
       ],
       "install": [
-        { "label": "سطّب الباكدج", "cmd": "composer require laravel/boost --dev" },
-        { "label": "وظبّطه للـ agent", "cmd": "php artisan boost:install" }
+        {
+          "label": "سطّب الباكدج",
+          "cmd": "composer require laravel/boost --dev"
+        },
+        {
+          "label": "وظبّطه للـ agent",
+          "cmd": "php artisan boost:install"
+        }
       ],
-      "usage": ["آخر error في الـ log سببه إيه؟ صلّحه.", "اعمل migration جديدة لجدول المرتجعات بعد ما تشوف الـ schema الحالي."],
-      "pricing": { "model": "oss" },
+      "usage": [
+        "آخر error في الـ log سببه إيه؟ صلّحه.",
+        "اعمل migration جديدة لجدول المرتجعات بعد ما تشوف الـ schema الحالي."
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://laravel.com/docs/boost",
       "source": "laravel.com",
       "importance": 3,
-      "tags": ["Laravel", "MCP", "Claude Code"],
+      "tags": [
+        "Laravel",
+        "MCP",
+        "Claude Code"
+      ],
       "links": [
-        { "label": "الدوكيومنتيشن", "url": "https://laravel.com/docs/boost" },
-        { "label": "GitHub", "url": "https://github.com/laravel/boost" }
-      ]
+        {
+          "label": "الدوكيومنتيشن",
+          "url": "https://laravel.com/docs/boost"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/laravel/boost"
+        }
+      ],
+      "en": {
+        "title": "Laravel Boost: make your agent understand your Laravel project",
+        "summary": "An official package with an MCP server and AI guidelines. It gives the agent project tools: read the schema, run tinker, inspect logs and routes, and search docs matched to the exact package versions you have.",
+        "why": "The single most important thing to install if you use Claude Code on Laravel: it sharply reduces wrong code and guesswork, and sets up CLAUDE.md with Laravel rules.",
+        "about": "Boost does two things. First, an MCP server with tools that work on your real project: database-schema, database-query, tinker, list-routes, read-log-entries, last-error, browser-logs, get-config and search-docs. That last one searches Laravel and package documentation for the exact versions you have installed.\n\nSecond, AI guidelines: rules written for Laravel, Filament, Livewire, Inertia, Pest and Tailwind that are written into the agent's files like CLAUDE.md, so the code it produces follows the right approach for your versions.\n\nThe boost:install command asks which tools you use and sets everything up.",
+        "features": [
+          "Read the schema, run queries and tinker",
+          "Logs, routes and the last error",
+          "Docs search matched to your versions",
+          "Guidelines for Laravel, Filament, Livewire and Pest"
+        ],
+        "usage": [
+          "What caused the last error in the log? Fix it.",
+          "Create a new migration for the returns table after checking the current schema."
+        ],
+        "install": [
+          "Install the package",
+          "Set it up for your agent"
+        ],
+        "links": [
+          "Documentation",
+          "GitHub"
+        ]
+      }
     },
     {
       "id": "ess-laravel-ai-sdk-docs",
@@ -40,14 +85,50 @@
       "summary": "API موحد لـ OpenAI وAnthropic وGemini وغيرهم، بأسلوب Laravel: agents بأدوات وstructured output، وصور، وصوت، وembeddings، وclassification، وfailover بين المزودين، وأدوات للتيستات.",
       "why": "ده الأساس لأي feature فيها AI جوه Company-ERP، وأحسن من إنك تكلم الـ APIs مباشرة. ومن 1.0 فيه موافقة على الـ tools قبل التنفيذ.",
       "about": "الـ SDK بيخليك تعرّف agent ككلاس فيه instructions وtools وschema للمخرجات، وتستدعيه زي أي service. بيدعم المحادثات المحفوظة، والـ streaming للواجهة بـ Vercel AI وAG-UI، والـ queues.\n\nفيه failover أوتوماتيك بين المزودين لو واحد وقع أو خلّص الحد، وtool search بيحمّل الأدوات النادرة لما تتطلب بس، وأدوات تيست بتعمل fake للمزودين.\n\nمن 1.0: الـ Approvable tools بتوقف لحد ما حد يوافق، وclassification سريعة ورخيصة للقرارات البسيطة، وmiddleware لكل خطوة.",
-      "features": ["agents بأدوات وstructured output", "failover بين المزودين", "tools بتستنى موافقة", "fakes للتيستات"],
-      "install": [{ "label": "composer", "cmd": "composer require laravel/ai" }],
-      "pricing": { "model": "oss", "note": "الباكدج مجاني، وبتدفع لمزود الموديل" },
+      "features": [
+        "agents بأدوات وstructured output",
+        "failover بين المزودين",
+        "tools بتستنى موافقة",
+        "fakes للتيستات"
+      ],
+      "install": [
+        {
+          "label": "composer",
+          "cmd": "composer require laravel/ai"
+        }
+      ],
+      "pricing": {
+        "model": "oss",
+        "note": "الباكدج مجاني، وبتدفع لمزود الموديل"
+      },
       "url": "https://laravel.com/docs/ai-sdk",
       "source": "laravel.com",
       "importance": 3,
-      "tags": ["Laravel", "AI SDK", "agents"],
-      "alternatives": ["ess-prism-php", "ess-neuron-ai"]
+      "tags": [
+        "Laravel",
+        "AI SDK",
+        "agents"
+      ],
+      "alternatives": [
+        "ess-prism-php",
+        "ess-neuron-ai"
+      ],
+      "en": {
+        "title": "Laravel AI SDK: the official way to add AI to your app",
+        "summary": "A unified API for OpenAI, Anthropic, Gemini and others, the Laravel way: agents with tools and structured output, images, audio, embeddings, classification, failover between providers, and testing tools.",
+        "why": "This is the foundation for any AI feature inside Company-ERP, and better than calling the APIs directly. Since 1.0, tools can require approval before they run.",
+        "about": "The SDK lets you define an agent as a class with instructions, tools and an output schema, and call it like any service. It supports stored conversations, streaming to the UI via Vercel AI and AG-UI, and queues.\n\nIt has automatic failover between providers if one goes down or hits its limit, tool search that loads rarely used tools only when requested, and testing tools that fake the providers.\n\nNew in 1.0: Approvable tools pause until someone approves, fast and cheap classification for simple decisions, and middleware for every step.",
+        "features": [
+          "Agents with tools and structured output",
+          "Failover between providers",
+          "Tools that wait for approval",
+          "Fakes for tests"
+        ],
+        "install": [
+          "composer"
+        ],
+        "pricingNote": "The package is free; you pay the model provider"
+      }
     },
     {
       "id": "ess-laravel-mcp",
@@ -58,17 +139,58 @@
       "summary": "باكدج رسمي بتعمل بيه MCP server جوه تطبيق Laravel. بتعرّف tools وresources وprompts بكلاسات، وبتستخدم معاها الـ auth والـ validation العاديين بتوعك.",
       "why": "تخلي Claude أو أي agent يكلم بيانات الـ ERP، زي التقارير والمخزون والطلبات، من خلال أدوات إنت متحكم فيها وفي صلاحياتها بـ Spatie.",
       "about": "بتعمل server class وتسجّله في routes/ai.php، إما web server على HTTP لأي agent برّه، أو local server بيشتغل بـ artisan.\n\nكل tool كلاس فيه description وschema للمدخلات والـ handle. وتقدر تحمي الـ server بـ Sanctum أو OAuth، وتستخدم الـ policies والـ gates العادية. وفيه MCP Inspector للتجربة، وأدوات تيست.",
-      "features": ["tools وresources وprompts بكلاسات", "web server أو local", "auth بـ Sanctum أو OAuth", "Inspector وتيستات"],
-      "install": [{ "label": "composer", "cmd": "composer require laravel/mcp" }],
-      "pricing": { "model": "oss" },
+      "features": [
+        "tools وresources وprompts بكلاسات",
+        "web server أو local",
+        "auth بـ Sanctum أو OAuth",
+        "Inspector وتيستات"
+      ],
+      "install": [
+        {
+          "label": "composer",
+          "cmd": "composer require laravel/mcp"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://laravel.com/docs/mcp",
       "source": "laravel.com",
       "importance": 2,
-      "tags": ["Laravel", "MCP", "ERP"],
+      "tags": [
+        "Laravel",
+        "MCP",
+        "ERP"
+      ],
       "links": [
-        { "label": "الدوكيومنتيشن", "url": "https://laravel.com/docs/mcp" },
-        { "label": "GitHub", "url": "https://github.com/laravel/mcp" }
-      ]
+        {
+          "label": "الدوكيومنتيشن",
+          "url": "https://laravel.com/docs/mcp"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/laravel/mcp"
+        }
+      ],
+      "en": {
+        "title": "Laravel MCP: turn your app into an MCP server",
+        "summary": "An official package for building an MCP server inside a Laravel app. You define tools, resources and prompts as classes, using your usual auth and validation.",
+        "why": "Let Claude or any agent talk to your ERP data, like reports, inventory and orders, through tools you control, with permissions handled by Spatie.",
+        "about": "You create a server class and register it in routes/ai.php, either as a web server over HTTP for any outside agent, or a local server that runs through artisan.\n\nEach tool is a class with a description, an input schema and a handle method. You can protect the server with Sanctum or OAuth and use your normal policies and gates. There's an MCP Inspector for trying it out, plus testing tools.",
+        "features": [
+          "Tools, resources and prompts as classes",
+          "Web or local server",
+          "Auth with Sanctum or OAuth",
+          "Inspector and tests"
+        ],
+        "install": [
+          "composer"
+        ],
+        "links": [
+          "Documentation",
+          "GitHub"
+        ]
+      }
     },
     {
       "id": "ess-laravel-sdk-boost-mcp",
@@ -78,11 +200,31 @@
       "summary": "مقال من Laravel بيشرح الفرق بين أدوات الـ AI الرسمية التلاتة: الـ SDK بيضيف AI لتطبيقك، وBoost بيساعد الـ agent وهو بيكتب الكود، وMCP بيخلي تطبيقك نفسه أداة للـ agents.",
       "why": "بيوضح لك الصورة كاملة في ٥ دقايق قبل ما تقرر تبدأ بأنهي واحدة في Company-ERP.",
       "about": "الأدوات التلاتة بتحل مشاكل مختلفة. Laravel AI SDK لما تحب تطبيقك يستخدم AI، زي تلخيص أو تصنيف أو agent جوه التطبيق. Laravel Boost لما تحب أداة البرمجة، زي Claude Code، تفهم مشروعك وتكتب كود Laravel صح. وLaravel MCP لما تحب agents برّه التطبيق تتعامل مع بياناته وأفعاله.\n\nوممكن تستخدم التلاتة مع بعض في نفس المشروع.",
-      "features": ["متى تستخدم كل أداة", "أمثلة لكل حالة", "إزاي يشتغلوا مع بعض"],
+      "features": [
+        "متى تستخدم كل أداة",
+        "أمثلة لكل حالة",
+        "إزاي يشتغلوا مع بعض"
+      ],
       "url": "https://laravel.com/blog/laravel-ai-sdk-boost-or-mcp-which-tool-do-you-need",
       "source": "laravel.com",
       "importance": 2,
-      "tags": ["Laravel", "AI SDK", "Boost", "MCP"]
+      "tags": [
+        "Laravel",
+        "AI SDK",
+        "Boost",
+        "MCP"
+      ],
+      "en": {
+        "title": "AI SDK, Boost or MCP? Which one to pick",
+        "summary": "A Laravel article explaining the difference between the three official AI tools: the SDK adds AI to your app, Boost helps the agent while it writes code, and MCP turns your app itself into a tool for agents.",
+        "why": "It gives you the full picture in 5 minutes before you decide which one to start with in Company-ERP.",
+        "about": "The three tools solve different problems. Laravel AI SDK is for when you want your app to use AI, like summarising, classifying or an in-app agent. Laravel Boost is for when you want your coding tool, like Claude Code, to understand your project and write correct Laravel code. Laravel MCP is for when you want agents outside the app to work with its data and actions.\n\nYou can use all three together in the same project.",
+        "features": [
+          "When to use each tool",
+          "Examples for each case",
+          "How they work together"
+        ]
+      }
     },
     {
       "id": "ess-prism-php",
@@ -93,14 +235,48 @@
       "summary": "باكدج Laravel بواجهة fluent للتعامل مع الموديلات: نصوص، ومحادثات بأكتر من خطوة، وtools، وstructured output، وembeddings، وصور، وstreaming، مع مزودين كتير.",
       "why": "بديل ناضج ليه مجتمع كبير، يستاهل تعرفه لو المشروع على إصدار Laravel مش مدعوم في الـ SDK الرسمي، أو لو محتاج مزود معين.",
       "about": "Prism عمله TJ Miller قبل الـ SDK الرسمي، وبقى من أشهر باكدجات الـ AI في Laravel. الواجهة شبه Laravel: Prism::text()->using(Provider::Anthropic, ...)->withPrompt(...)->asText().\n\nبيدعم Anthropic وOpenAI وGemini وOllama وMistral وGroq وDeepSeek وxAI وغيرهم، والـ tools، والـ structured output بـ schemas، والـ embeddings، وأدوات تيست بـ fakes.",
-      "features": ["واجهة fluent بأسلوب Laravel", "مزودين كتير منهم Ollama", "tools وstructured output", "fakes للتيستات"],
-      "install": [{ "label": "composer", "cmd": "composer require prism-php/prism" }],
-      "pricing": { "model": "oss" },
+      "features": [
+        "واجهة fluent بأسلوب Laravel",
+        "مزودين كتير منهم Ollama",
+        "tools وstructured output",
+        "fakes للتيستات"
+      ],
+      "install": [
+        {
+          "label": "composer",
+          "cmd": "composer require prism-php/prism"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://prismphp.com",
       "source": "prismphp.com",
       "importance": 2,
-      "tags": ["Laravel", "PHP", "LLM"],
-      "alternatives": ["ess-laravel-ai-sdk-docs", "ess-neuron-ai"]
+      "tags": [
+        "Laravel",
+        "PHP",
+        "LLM"
+      ],
+      "alternatives": [
+        "ess-laravel-ai-sdk-docs",
+        "ess-neuron-ai"
+      ],
+      "en": {
+        "title": "Prism: a popular LLM library for Laravel",
+        "summary": "A Laravel package with a fluent interface for working with models: text, multi-step conversations, tools, structured output, embeddings, images and streaming, across many providers.",
+        "why": "A mature alternative with a big community, worth knowing if your project is on a Laravel version the official SDK doesn't support, or you need a specific provider.",
+        "about": "Prism was created by TJ Miller before the official SDK and became one of the most popular AI packages in Laravel. The interface feels like Laravel: Prism::text()->using(Provider::Anthropic, ...)->withPrompt(...)->asText().\n\nIt supports Anthropic, OpenAI, Gemini, Ollama, Mistral, Groq, DeepSeek, xAI and more, plus tools, structured output with schemas, embeddings, and testing helpers with fakes.",
+        "features": [
+          "A fluent, Laravel-style interface",
+          "Many providers including Ollama",
+          "Tools and structured output",
+          "Fakes for tests"
+        ],
+        "install": [
+          "composer"
+        ]
+      }
     },
     {
       "id": "ess-neuron-ai",
@@ -111,14 +287,48 @@
       "summary": "framework لبناء agents بـ PHP: tools، وRAG مع vector stores، وworkflows بأكتر من خطوة ومعاها human-in-the-loop، وstructured output، ومراقبة بـ Inspector. بيشتغل مع Laravel ومن غيره.",
       "why": "مناسب لو محتاج workflow فيه أكتر من agent أو RAG على مستندات الشركة جوه الـ ERP، وكله PHP.",
       "about": "Neuron AI معمول من فريق Inspector، وبيقدّم الـ agent ككلاس PHP فيه provider وinstructions وtools.\n\nفيه RAG كامل، من الـ data loaders لتقسيم المستندات للـ embeddings للـ vector stores زي Pinecone وQdrant وElasticsearch، وWorkflows بتقدر توقف تستنى موافقة إنسان وتكمّل، وstructured output، وMCP connector، ومراقبة لكل خطوة.",
-      "features": ["agents بأدوات", "RAG مع vector stores", "workflows وhuman-in-the-loop", "MCP connector"],
-      "install": [{ "label": "composer", "cmd": "composer require neuron-core/neuron-ai" }],
-      "pricing": { "model": "oss" },
+      "features": [
+        "agents بأدوات",
+        "RAG مع vector stores",
+        "workflows وhuman-in-the-loop",
+        "MCP connector"
+      ],
+      "install": [
+        {
+          "label": "composer",
+          "cmd": "composer require neuron-core/neuron-ai"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://neuron-ai.dev",
       "source": "neuron-ai.dev",
       "importance": 2,
-      "tags": ["PHP", "agents", "RAG"],
-      "alternatives": ["ess-laravel-ai-sdk-docs", "ess-prism-php"]
+      "tags": [
+        "PHP",
+        "agents",
+        "RAG"
+      ],
+      "alternatives": [
+        "ess-laravel-ai-sdk-docs",
+        "ess-prism-php"
+      ],
+      "en": {
+        "title": "Neuron AI: an agent framework for PHP",
+        "summary": "A framework for building agents in PHP: tools, RAG with vector stores, multi-step workflows with human-in-the-loop, structured output, and monitoring with Inspector. Works with or without Laravel.",
+        "why": "A good fit if you need a multi-agent workflow or RAG over company documents inside the ERP, all in PHP.",
+        "about": "Neuron AI is built by the Inspector team and presents an agent as a PHP class with a provider, instructions and tools.\n\nIt has complete RAG, from data loaders to document splitting to embeddings to vector stores like Pinecone, Qdrant and Elasticsearch; Workflows that can pause for human approval and continue; structured output; an MCP connector; and monitoring of every step.",
+        "features": [
+          "Agents with tools",
+          "RAG with vector stores",
+          "Workflows and human-in-the-loop",
+          "MCP connector"
+        ],
+        "install": [
+          "composer"
+        ]
+      }
     },
     {
       "id": "ess-openai-php-laravel",
@@ -129,16 +339,49 @@
       "summary": "أشهر client لـ OpenAI API في Laravel، ومعاه facade وconfig وfakes للتيستات. وبيشتغل كمان مع أي API متوافق مع OpenAI، زي OpenRouter أو Ollama.",
       "why": "هتلاقيه في مشاريع كتير. ومفيد لو محتاج endpoint معين من OpenAI مش موجود في المكتبات الأعلى مستوى.",
       "about": "الباكدج ده من Nuno Maduro وSandro Gehri، وبيغلّف openai-php/client لـ Laravel. بيدّيك OpenAI facade لكل endpoints الـ API: responses، وchat، وembeddings، وimages، وaudio، وfiles، وassistants، ومعاه OpenAI::fake() للتيستات.\n\nتقدر تغيّر الـ base URI وتستخدمه مع أي مزود متوافق.",
-      "features": ["كل endpoints الـ OpenAI", "facade وconfig", "fakes للتيستات", "مزودين متوافقين"],
-      "install": [
-        { "label": "composer", "cmd": "composer require openai-php/laravel" },
-        { "label": "الإعداد", "cmd": "php artisan openai:install" }
+      "features": [
+        "كل endpoints الـ OpenAI",
+        "facade وconfig",
+        "fakes للتيستات",
+        "مزودين متوافقين"
       ],
-      "pricing": { "model": "oss" },
+      "install": [
+        {
+          "label": "composer",
+          "cmd": "composer require openai-php/laravel"
+        },
+        {
+          "label": "الإعداد",
+          "cmd": "php artisan openai:install"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/openai-php/laravel",
       "source": "github.com",
       "importance": 1,
-      "tags": ["Laravel", "OpenAI", "PHP"]
+      "tags": [
+        "Laravel",
+        "OpenAI",
+        "PHP"
+      ],
+      "en": {
+        "title": "openai-php/laravel: the popular OpenAI client",
+        "summary": "The most popular OpenAI API client for Laravel, with a facade, config and fakes for tests. It also works with any OpenAI-compatible API, like OpenRouter or Ollama.",
+        "why": "You'll find it in many projects, and it's useful when you need a specific OpenAI endpoint that higher-level libraries don't cover.",
+        "about": "This package from Nuno Maduro and Sandro Gehri wraps openai-php/client for Laravel. It gives you an OpenAI facade for every API endpoint: responses, chat, embeddings, images, audio, files and assistants, plus OpenAI::fake() for tests.\n\nYou can change the base URI and use it with any compatible provider.",
+        "features": [
+          "Every OpenAI endpoint",
+          "Facade and config",
+          "Fakes for tests",
+          "Compatible providers"
+        ],
+        "install": [
+          "composer",
+          "Setup"
+        ]
+      }
     },
     {
       "id": "ess-filament",
@@ -149,16 +392,49 @@
       "summary": "أشهر framework لبناء لوحات التحكم في Laravel: جداول بفلاتر وactions، وفورمز reactive، وinfolists، وnotifications، وwidgets. مبني على Livewire وTailwind.",
       "why": "شاشات الـ CRUD والتقارير اللي بتاخد وقت في الـ ERP بتطلع في دقايق. وBoost فيه guidelines ليه، فالـ agent بيكتبه صح.",
       "about": "Filament بيدّيك components متكاملة: Tables لعرض وفلترة بيانات كتير مع bulk actions، وForms بحقول reactive وvalidation، وActions بـ modals، وInfolists للعرض، وNotifications، وWidgets للـ dashboards. والـ Panels بتجمع ده في لوحة فيها navigation وauth وmulti-tenancy.\n\nفيه ecosystem كبير من الـ plugins، وكل حاجة قابلة للتخصيص.",
-      "features": ["جداول وفورمز وactions جاهزة", "panels بـ auth وmulti-tenancy", "widgets للـ dashboards", "plugins كتير"],
-      "install": [
-        { "label": "composer", "cmd": "composer require filament/filament" },
-        { "label": "panel جديد", "cmd": "php artisan filament:install --panels" }
+      "features": [
+        "جداول وفورمز وactions جاهزة",
+        "panels بـ auth وmulti-tenancy",
+        "widgets للـ dashboards",
+        "plugins كتير"
       ],
-      "pricing": { "model": "oss" },
+      "install": [
+        {
+          "label": "composer",
+          "cmd": "composer require filament/filament"
+        },
+        {
+          "label": "panel جديد",
+          "cmd": "php artisan filament:install --panels"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://filamentphp.com",
       "source": "filamentphp.com",
       "importance": 2,
-      "tags": ["Laravel", "admin panel", "Livewire"]
+      "tags": [
+        "Laravel",
+        "admin panel",
+        "Livewire"
+      ],
+      "en": {
+        "title": "Filament: admin panels and full apps, fast",
+        "summary": "The most popular framework for building dashboards in Laravel: tables with filters and actions, reactive forms, infolists, notifications and widgets. Built on Livewire and Tailwind.",
+        "why": "The CRUD screens and reports that take time in the ERP come together in minutes, and Boost has guidelines for it, so the agent writes it correctly.",
+        "about": "Filament gives you integrated components: Tables for displaying and filtering lots of data with bulk actions, Forms with reactive fields and validation, Actions with modals, Infolists for display, Notifications, and Widgets for dashboards. Panels combine all of this into an admin with navigation, auth and multi-tenancy.\n\nThere's a large plugin ecosystem, and everything is customisable.",
+        "features": [
+          "Ready-made tables, forms and actions",
+          "Panels with auth and multi-tenancy",
+          "Dashboard widgets",
+          "Lots of plugins"
+        ],
+        "install": [
+          "composer",
+          "New panel"
+        ]
+      }
     },
     {
       "id": "ess-livewire",
@@ -169,13 +445,44 @@
       "summary": "framework لـ Laravel بيخليك تعمل components تفاعلية بـ PHP وBlade، من غير ما تكتب JavaScript كتير. وهو الأساس اللي Filament مبني عليه.",
       "why": "بديل حديث لنمط jQuery وeasyAjax في الشاشات التفاعلية: validation لايف، وجداول بتتحدث، وفورمز على كذا خطوة.",
       "about": "كل component في Livewire كلاس PHP ومعاه Blade view. الـ properties بتتربط بالـ inputs بـ wire:model، والـ methods بتتنادى من الواجهة بـ wire:click، وLivewire بيبعت طلبات AJAX ويحدّث الجزء اللي اتغيّر بس.\n\nبيشتغل مع Alpine.js للتفاعل على جهة الـ client، وفيه lazy loading، وpagination، ورفع ملفات، وnavigate للتنقل كأنه SPA.",
-      "features": ["components بـ PHP وBlade", "wire:model وwire:click", "رفع ملفات وpagination", "تنقل زي SPA"],
-      "install": [{ "label": "composer", "cmd": "composer require livewire/livewire" }],
-      "pricing": { "model": "oss" },
+      "features": [
+        "components بـ PHP وBlade",
+        "wire:model وwire:click",
+        "رفع ملفات وpagination",
+        "تنقل زي SPA"
+      ],
+      "install": [
+        {
+          "label": "composer",
+          "cmd": "composer require livewire/livewire"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://livewire.laravel.com",
       "source": "livewire.laravel.com",
       "importance": 1,
-      "tags": ["Laravel", "frontend", "PHP"]
+      "tags": [
+        "Laravel",
+        "frontend",
+        "PHP"
+      ],
+      "en": {
+        "title": "Livewire: interactive UIs without leaving PHP",
+        "summary": "A Laravel framework for building interactive components in PHP and Blade without writing much JavaScript. It's the foundation Filament is built on.",
+        "why": "A modern alternative to the jQuery and easyAjax pattern for interactive screens: live validation, tables that refresh, and multi-step forms.",
+        "about": "Each Livewire component is a PHP class with a Blade view. Properties bind to inputs with wire:model, methods are called from the UI with wire:click, and Livewire sends AJAX requests and updates only the part that changed.\n\nIt works with Alpine.js for client-side interactivity, and has lazy loading, pagination, file uploads, and navigate for SPA-like navigation.",
+        "features": [
+          "Components in PHP and Blade",
+          "wire:model and wire:click",
+          "File uploads and pagination",
+          "SPA-like navigation"
+        ],
+        "install": [
+          "composer"
+        ]
+      }
     },
     {
       "id": "ess-pest",
@@ -186,13 +493,44 @@
       "summary": "framework تيستات لـ PHP بأسلوب بسيط ومقروء، مبني على PHPUnit. فيه architecture testing، وbrowser testing، وmutation testing، وتشغيل متوازي. ونزل منه Pest v5.",
       "why": "لو عايز تشتغل بالـ TDD مع Claude، التيستات المقروءة بتسهّل عليه يفهم المطلوب. والـ arch tests بتحمي حدود الـ modules في الـ ERP.",
       "about": "في Pest التيست بيبقى it('calculates invoice total', function () {...}) مع expect()->toBe()، فبيبقى أقصر وأوضح من PHPUnit، ومتوافق معاه.\n\nفيه Architecture testing، زي إن الـ Modules ميعتمدوش على بعض أو إن الـ controllers متستخدمش DB مباشرة، وBrowser testing، وMutation testing بيقيس جودة التيستات، وتشغيل متوازي.\n\nالشعار الجديد بتاعهم \"للمطورين وللـ AI agents\".",
-      "features": ["أسلوب مقروء فوق PHPUnit", "architecture testing", "browser وmutation testing", "تشغيل متوازي"],
-      "install": [{ "label": "composer", "cmd": "composer require pestphp/pest --dev --with-all-dependencies" }],
-      "pricing": { "model": "oss" },
+      "features": [
+        "أسلوب مقروء فوق PHPUnit",
+        "architecture testing",
+        "browser وmutation testing",
+        "تشغيل متوازي"
+      ],
+      "install": [
+        {
+          "label": "composer",
+          "cmd": "composer require pestphp/pest --dev --with-all-dependencies"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://pestphp.com",
       "source": "pestphp.com",
       "importance": 2,
-      "tags": ["PHP", "testing", "TDD"]
+      "tags": [
+        "PHP",
+        "testing",
+        "TDD"
+      ],
+      "en": {
+        "title": "Pest: cleaner PHP tests, for developers and agents",
+        "summary": "A PHP testing framework with a simple, readable style built on PHPUnit. It has architecture testing, browser testing, mutation testing and parallel runs. Pest v5 is out.",
+        "why": "If you want to do TDD with Claude, readable tests make it easier for it to understand what's required, and arch tests protect your ERP's module boundaries.",
+        "about": "In Pest a test looks like it('calculates invoice total', function () {...}) with expect()->toBe(), so it's shorter and clearer than PHPUnit while staying compatible with it.\n\nIt has architecture testing, for example that Modules don't depend on each other or that controllers don't use the DB directly; browser testing; mutation testing that measures test quality; and parallel runs.\n\nTheir new tagline is \"for developers and AI agents\".",
+        "features": [
+          "A readable style on top of PHPUnit",
+          "Architecture testing",
+          "Browser and mutation testing",
+          "Parallel runs"
+        ],
+        "install": [
+          "composer"
+        ]
+      }
     },
     {
       "id": "ess-larastan",
@@ -203,16 +541,49 @@
       "summary": "extension لـ PHPStan بيفهم سحر Laravel، زي الـ facades والـ Eloquent والـ container، فبيلقط الأخطاء قبل ما الكود يشتغل، بمستويات صرامة تختارها.",
       "why": "شغّله كـ hook بعد تعديلات Claude: أي method مش موجودة أو type غلط بيتمسك على طول قبل ما يوصل للـ review.",
       "about": "PHPStan لوحده مش بيفهم الحاجات اللي Laravel بيحلّها وقت التشغيل. Larastan بيشغّل الـ container بتاع التطبيق عشان يعرف الـ types دي.\n\nبتبدأ بمستوى منخفض وتعلّيه تدريجياً، وتقدر تعمل baseline للأخطاء القديمة وتركّز على الكود الجديد بس. وبيشتغل كويس جداً مع الـ agents كأداة تحقق.",
-      "features": ["بيفهم Eloquent والـ facades", "مستويات صرامة", "baseline للكود القديم", "مناسب كـ hook للـ agent"],
-      "install": [
-        { "label": "composer", "cmd": "composer require --dev \"larastan/larastan:^3.0\"" },
-        { "label": "شغّله", "cmd": "./vendor/bin/phpstan analyse" }
+      "features": [
+        "بيفهم Eloquent والـ facades",
+        "مستويات صرامة",
+        "baseline للكود القديم",
+        "مناسب كـ hook للـ agent"
       ],
-      "pricing": { "model": "oss" },
+      "install": [
+        {
+          "label": "composer",
+          "cmd": "composer require --dev \"larastan/larastan:^3.0\""
+        },
+        {
+          "label": "شغّله",
+          "cmd": "./vendor/bin/phpstan analyse"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/larastan/larastan",
       "source": "github.com",
       "importance": 2,
-      "tags": ["Laravel", "static analysis", "PHPStan"]
+      "tags": [
+        "Laravel",
+        "static analysis",
+        "PHPStan"
+      ],
+      "en": {
+        "title": "Larastan: static analysis for Laravel with PHPStan",
+        "summary": "A PHPStan extension that understands Laravel's magic, like facades, Eloquent and the container, so it catches errors before the code runs, at a strictness level you choose.",
+        "why": "Run it as a hook after Claude's edits: any missing method or wrong type gets caught immediately, before it reaches review.",
+        "about": "PHPStan alone doesn't understand what Laravel resolves at runtime. Larastan boots the application's container to learn those types.\n\nYou start at a low level and raise it gradually, and you can create a baseline for existing errors and focus only on new code. It works very well with agents as a verification tool.",
+        "features": [
+          "Understands Eloquent and facades",
+          "Strictness levels",
+          "A baseline for legacy code",
+          "Works well as an agent hook"
+        ],
+        "install": [
+          "composer",
+          "Run it"
+        ]
+      }
     }
   ]
 }

@@ -9,13 +9,41 @@
       "summary": "بيعمل transcript للفيديو، وتعدّل الفيديو بإنك تمسح أو تنقل كلام من النص نفسه. وفيه شيل للكلمات الزيادة زي \"يعني\" و\"إمم\"، وتحسين للصوت، وagent بينفّذ تعديلات بالأوامر.",
       "why": "أسرع طريقة تمنتج بيها فيديو فيه كلام، زي الشروحات والبودكاست والفيديوهات التعليمية للفريق.",
       "about": "في Descript الفيديو بيتحول لنص، وأي تعديل في النص بيتنفذ على الفيديو: تمسح جملة فتختفي من الفيديو، وتنقل فقرة فتتنقل. ومعاه أدوات AI: شيل الـ filler words والسكتات، وStudio Sound لتحسين الصوت، وEye Contact، وتوليد clips قصيرة من الفيديو الطويل، وdubbing.\n\nوفيه agent اسمه Underlord بتقول له التعديل اللي عايزه بالكلام فينفّذه.",
-      "features": ["تعديل الفيديو من النص", "شيل الكلمات الزيادة والسكتات", "تحسين الصوت", "agent للتعديلات بالأوامر"],
-      "pricing": { "model": "freemium", "note": "خطة مجانية محدودة، والباقي باشتراك" },
+      "features": [
+        "تعديل الفيديو من النص",
+        "شيل الكلمات الزيادة والسكتات",
+        "تحسين الصوت",
+        "agent للتعديلات بالأوامر"
+      ],
+      "pricing": {
+        "model": "freemium",
+        "note": "خطة مجانية محدودة، والباقي باشتراك"
+      },
       "url": "https://www.descript.com/",
       "source": "descript.com",
       "importance": 3,
-      "tags": ["مونتاج", "transcript", "بودكاست"],
-      "alternatives": ["ess-capcut", "ess-opusclip"]
+      "tags": [
+        "مونتاج",
+        "transcript",
+        "بودكاست"
+      ],
+      "alternatives": [
+        "ess-capcut",
+        "ess-opusclip"
+      ],
+      "en": {
+        "title": "Descript: edit video like you edit text",
+        "summary": "It transcribes your video, and you edit the video by deleting or moving words in the transcript itself. It removes filler words like \"um\", improves audio, and has an agent that makes edits on command.",
+        "why": "The fastest way to edit talking videos, like walkthroughs, podcasts and training videos for the team.",
+        "about": "In Descript the video becomes text, and every edit to the text applies to the video: delete a sentence and it disappears from the video, move a paragraph and it moves. AI tools include removing filler words and silences, Studio Sound for audio cleanup, Eye Contact, generating short clips from long videos, and dubbing.\n\nThere's an agent called Underlord: tell it the edit you want in words and it does it.",
+        "features": [
+          "Edit video from the transcript",
+          "Remove filler words and silences",
+          "Audio enhancement",
+          "An agent for edits on command"
+        ],
+        "pricingNote": "Limited free plan; the rest is a subscription"
+      }
     },
     {
       "id": "ess-capcut",
@@ -25,12 +53,37 @@
       "summary": "برنامج مونتاج على الموبايل والكمبيوتر والويب، فيه أدوات AI كتير: كابشن وترجمة أوتوماتيك، وشيل الخلفية، وتحويل الفيديو الطويل لمقاطع قصيرة، وأصوات، وtemplates.",
       "why": "أسهل اختيار للريلز والشورتس، والكابشن الأوتوماتيك بالعربي فيه كويس.",
       "about": "CapCut من ByteDance، ومعمول للمحتوى القصير بالذات. فيه captions أوتوماتيك بلغات كتير منها العربي، وتعديل بالـ templates، وشيل الخلفية من غير green screen، وتتبع الحركة، وtext-to-speech، وتحويل الفيديو الطويل لـ shorts.\n\nفيه نسخة مجانية، وميزات كتير محتاجة Pro.",
-      "features": ["كابشن أوتوماتيك بالعربي", "شيل الخلفية", "templates للسوشيال", "موبايل وكمبيوتر وويب"],
-      "pricing": { "model": "freemium", "note": "مجاني بميزات أساسية، وPro مدفوع" },
+      "features": [
+        "كابشن أوتوماتيك بالعربي",
+        "شيل الخلفية",
+        "templates للسوشيال",
+        "موبايل وكمبيوتر وويب"
+      ],
+      "pricing": {
+        "model": "freemium",
+        "note": "مجاني بميزات أساسية، وPro مدفوع"
+      },
       "url": "https://www.capcut.com/",
       "source": "capcut.com",
       "importance": 2,
-      "tags": ["مونتاج", "سوشيال", "captions"]
+      "tags": [
+        "مونتاج",
+        "سوشيال",
+        "captions"
+      ],
+      "en": {
+        "title": "CapCut: fast editing for social media",
+        "summary": "An editor for mobile, desktop and web with lots of AI tools: automatic captions and translation, background removal, turning long videos into short clips, voices and templates.",
+        "why": "The easiest choice for reels and shorts, and its automatic Arabic captions are good.",
+        "about": "CapCut is from ByteDance and built especially for short-form content. It has automatic captions in many languages including Arabic, template-based editing, background removal without a green screen, motion tracking, text-to-speech, and long-to-shorts conversion.\n\nThere's a free version, and many features require Pro.",
+        "features": [
+          "Automatic Arabic captions",
+          "Background removal",
+          "Social media templates",
+          "Mobile, desktop and web"
+        ],
+        "pricingNote": "Free with basic features; Pro is paid"
+      }
     },
     {
       "id": "ess-davinci-resolve",
@@ -40,12 +93,37 @@
       "summary": "برنامج احترافي للمونتاج وتصحيح الألوان والصوت والمؤثرات، والنسخة المجانية فيها حاجات كتير. وفيه أدوات AI من DaVinci Neural Engine، زي العزل الصوتي، وتتبع العناصر، والكابشن.",
       "why": "لو عايز تتعلم مونتاج بجد من غير اشتراك، ده أقوى اختيار مجاني، وبيشتغل على Linux Mint كمان.",
       "about": "DaVinci Resolve من Blackmagic Design، ومستخدم في أفلام ومسلسلات. فيه صفحات لكل مرحلة: Cut وEdit للمونتاج، وColor لتصحيح الألوان (وده أقوى حاجة فيه)، وFairlight للصوت، وFusion للمؤثرات.\n\nأدوات الـ Neural Engine، زي Voice Isolation وMagic Mask والـ transcription، بعضها في النسخة المجانية وبعضها في Studio المدفوعة (مرة واحدة من غير اشتراك).",
-      "features": ["مونتاج وألوان وصوت ومؤثرات", "أدوات AI من Neural Engine", "النسخة المجانية قوية", "بيشتغل على Linux"],
-      "pricing": { "model": "freemium", "note": "النسخة العادية مجانية، وStudio بشراء مرة واحدة" },
+      "features": [
+        "مونتاج وألوان وصوت ومؤثرات",
+        "أدوات AI من Neural Engine",
+        "النسخة المجانية قوية",
+        "بيشتغل على Linux"
+      ],
+      "pricing": {
+        "model": "freemium",
+        "note": "النسخة العادية مجانية، وStudio بشراء مرة واحدة"
+      },
       "url": "https://www.blackmagicdesign.com/products/davinciresolve",
       "source": "blackmagicdesign.com",
       "importance": 2,
-      "tags": ["مونتاج", "color grading", "Linux"]
+      "tags": [
+        "مونتاج",
+        "color grading",
+        "Linux"
+      ],
+      "en": {
+        "title": "DaVinci Resolve: professional, free editing that runs on Linux",
+        "summary": "Professional software for editing, color grading, audio and effects, with a very capable free version. It has AI tools from the DaVinci Neural Engine, like voice isolation, object tracking and captions.",
+        "why": "If you want to learn editing properly without a subscription, it's the strongest free option, and it runs on Linux Mint too.",
+        "about": "DaVinci Resolve is from Blackmagic Design and is used on films and series. It has a page for each stage: Cut and Edit for editing, Color for grading (its biggest strength), Fairlight for audio, and Fusion for effects.\n\nNeural Engine tools like Voice Isolation, Magic Mask and transcription are partly in the free version and partly in the paid Studio (a one-time purchase, no subscription).",
+        "features": [
+          "Editing, color, audio and effects",
+          "AI tools from the Neural Engine",
+          "A powerful free version",
+          "Runs on Linux"
+        ],
+        "pricingNote": "The standard version is free; Studio is a one-time purchase"
+      }
     },
     {
       "id": "ess-elevenlabs",
@@ -55,12 +133,37 @@
       "summary": "منصة للصوت فيها: تحويل النص لكلام بلغات كتير منها العربي، ونسخ صوتك، ودبلجة الفيديو لأي لغة، وتحويل الكلام لنص، ومؤثرات صوتية، وموسيقى، وvoice agents. وكله بالـ API كمان.",
       "why": "هتحتاجه في أي فيديو فيه تعليق صوتي أو دبلجة، والعربي فيه من أحسن الموجود. ولو عملت voice agent لخدمة العملاء، ده الأساس.",
       "about": "ElevenLabs بدأت بالـ text-to-speech، وبقت منصة صوت كاملة: مكتبة أصوات كبيرة، وVoice Cloning من عينة صوتك، وDubbing بيترجم الفيديو ويحافظ على صوت المتكلم، وSpeech-to-Text بدقة عالية، وSound Effects وMusic من وصف، وInstant Soundtracks بتعمل موسيقى ومؤثرات لأي فيديو، وAgents للمكالمات.\n\nفيه خطة مجانية بحدود شهرية، وAPI لكل حاجة.",
-      "features": ["text-to-speech بالعربي", "نسخ الصوت والدبلجة", "مؤثرات وموسيقى", "API وvoice agents"],
-      "pricing": { "model": "freemium", "note": "حدود مجانية شهرية، والباقي باشتراك أو بالاستخدام" },
+      "features": [
+        "text-to-speech بالعربي",
+        "نسخ الصوت والدبلجة",
+        "مؤثرات وموسيقى",
+        "API وvoice agents"
+      ],
+      "pricing": {
+        "model": "freemium",
+        "note": "حدود مجانية شهرية، والباقي باشتراك أو بالاستخدام"
+      },
       "url": "https://elevenlabs.io/",
       "source": "elevenlabs.io",
       "importance": 3,
-      "tags": ["صوت", "دبلجة", "TTS"]
+      "tags": [
+        "صوت",
+        "دبلجة",
+        "TTS"
+      ],
+      "en": {
+        "title": "ElevenLabs: AI voices, dubbing, music and sound effects",
+        "summary": "An audio platform with text-to-speech in many languages including Arabic, voice cloning, video dubbing into any language, speech-to-text, sound effects, music and voice agents, all available via API too.",
+        "why": "You'll need it for any video with a voiceover or dubbing, and its Arabic is among the best available. If you build a customer-service voice agent, this is the foundation.",
+        "about": "ElevenLabs started with text-to-speech and became a full audio platform: a large voice library, Voice Cloning from a sample of your voice, Dubbing that translates video while keeping the speaker's voice, high-accuracy Speech-to-Text, Sound Effects and Music from a description, Instant Soundtracks that create music and effects for any video, and Agents for calls.\n\nThere's a free plan with monthly limits and an API for everything.",
+        "features": [
+          "Arabic text-to-speech",
+          "Voice cloning and dubbing",
+          "Sound effects and music",
+          "API and voice agents"
+        ],
+        "pricingNote": "Free monthly limits; the rest by subscription or usage"
+      }
     },
     {
       "id": "ess-runway",
@@ -70,13 +173,40 @@
       "summary": "من أوائل منصات الفيديو بالـ AI. بيولّد فيديو من نص أو صورة، ويعدّل في فيديو موجود، وفيه أدوات زي شيل العناصر، وتغيير الستايل، والتحكم في الكاميرا.",
       "why": "مناسب لما تحتاج تعدّل لقطة موجودة عندك، مش بس تولّد لقطة جديدة من الصفر.",
       "about": "Runway بيقدّم موديلات Gen لتوليد الفيديو، وأدوات تعديل: تغيّر ستايل فيديو موجود، أو تشيل عنصر، أو تمد اللقطة، أو تتحكم في حركة الكاميرا. وفيه workflows بتربط الأدوات ببعض، وAPI.\n\nفيه credits مجانية للتجربة، والباقي باشتراك.",
-      "features": ["فيديو من نص أو صورة", "تعديل فيديو موجود", "تحكم في الكاميرا", "API"],
-      "pricing": { "model": "freemium", "note": "credits مجانية للتجربة، والباقي باشتراك" },
+      "features": [
+        "فيديو من نص أو صورة",
+        "تعديل فيديو موجود",
+        "تحكم في الكاميرا",
+        "API"
+      ],
+      "pricing": {
+        "model": "freemium",
+        "note": "credits مجانية للتجربة، والباقي باشتراك"
+      },
       "url": "https://runwayml.com/",
       "source": "runwayml.com",
       "importance": 2,
-      "tags": ["توليد فيديو", "مونتاج"],
-      "alternatives": ["ess-kling", "ess-google-flow"]
+      "tags": [
+        "توليد فيديو",
+        "مونتاج"
+      ],
+      "alternatives": [
+        "ess-kling",
+        "ess-google-flow"
+      ],
+      "en": {
+        "title": "Runway: a studio for generating and editing video",
+        "summary": "One of the first AI video platforms. It generates video from text or an image, edits existing footage, and has tools like object removal, style changes and camera control.",
+        "why": "A good fit when you need to edit a shot you already have, not just generate a new one from scratch.",
+        "about": "Runway offers Gen models for video generation plus editing tools: change the style of existing video, remove an object, extend a shot or control camera movement. There are workflows that chain tools together, and an API.\n\nThere are free credits to try it; the rest is a subscription.",
+        "features": [
+          "Video from text or an image",
+          "Edit existing video",
+          "Camera control",
+          "API"
+        ],
+        "pricingNote": "Free trial credits; the rest is a subscription"
+      }
     },
     {
       "id": "ess-google-flow",
@@ -86,12 +216,37 @@
       "summary": "أداة من Google لصناعة الفيديو بموديلات Veo. بتبني فيها مشاهد من لقطات، وتتحكم في الكاميرا، وتحافظ على نفس الشخصيات والعناصر من لقطة للتانية، والصوت بيتولد مع الفيديو.",
       "why": "مناسبة لو بتعمل قصة أو إعلان من أكتر من لقطة لازم يبانوا مترابطين.",
       "about": "Flow معمول للقصص: بتعرّف الشخصيات والأماكن والعناصر كـ ingredients، وتستخدمها في لقطات مختلفة فتفضل ثابتة، وتجمّع اللقطات في scene builder، وتتحكم في حركة الكاميرا، وتمد اللقطات.\n\nبيستخدم موديلات Veo اللي بتولّد صوت وحوار مع الفيديو. ومتاح ضمن اشتراكات Google AI بحدود مختلفة.",
-      "features": ["ingredients لثبات الشخصيات", "scene builder", "تحكم في الكاميرا", "صوت مع الفيديو"],
-      "pricing": { "model": "paid", "note": "ضمن اشتراكات Google AI بحدود مختلفة" },
+      "features": [
+        "ingredients لثبات الشخصيات",
+        "scene builder",
+        "تحكم في الكاميرا",
+        "صوت مع الفيديو"
+      ],
+      "pricing": {
+        "model": "paid",
+        "note": "ضمن اشتراكات Google AI بحدود مختلفة"
+      },
       "url": "https://blog.google/technology/ai/google-flow-veo-ai-filmmaking-tool/",
       "source": "blog.google",
       "importance": 2,
-      "tags": ["توليد فيديو", "Veo", "Google"]
+      "tags": [
+        "توليد فيديو",
+        "Veo",
+        "Google"
+      ],
+      "en": {
+        "title": "Google Flow: filmmaking with Veo models",
+        "summary": "A Google tool for making video with Veo models. You build scenes from shots, control the camera, keep the same characters and objects consistent from shot to shot, and audio is generated with the video.",
+        "why": "A good fit if you're making a story or an ad from several shots that need to feel connected.",
+        "about": "Flow is built for stories: you define characters, places and objects as ingredients and reuse them across shots so they stay consistent, assemble shots in a scene builder, control camera movement and extend shots.\n\nIt uses Veo models that generate sound and dialogue along with the video. It's available within Google AI subscriptions at different limits.",
+        "features": [
+          "Ingredients for consistent characters",
+          "Scene builder",
+          "Camera control",
+          "Audio with the video"
+        ],
+        "pricingNote": "Included in Google AI subscriptions at different limits"
+      }
     },
     {
       "id": "ess-kling",
@@ -101,12 +256,36 @@
       "summary": "منصة Kling لتوليد الفيديو من نص أو صورة. معروفة بحركة واقعية وفيزيا مقنعة، وبتقبل صور وفيديوهات كمراجع عشان الشخصيات تفضل ثابتة. وKling 4.0 بيعمل لحد ٣٠ ثانية 4K.",
       "why": "من أحسن الاختيارات لما تحتاج لقطة شكلها حقيقي لفيديو أو إعلان.",
       "about": "Kling من Kuaishou. بيولّد فيديو من نص أو صورة، أو من صورة للبداية وصورة للنهاية، وفيه lip sync، وتعديل حركة، ومراجع متعددة للشخصيات والعناصر والأصوات.\n\nفي الإصدار 4.0 المدة بقت لحد ٣٠ ثانية في مرة واحدة بدقة 4K وصوت ستيريو، ولحد ١٥ مرجع. وفيه API.",
-      "features": ["حركة واقعية", "مراجع متعددة لثبات الشخصيات", "لحد ٣٠ ثانية 4K", "API"],
-      "pricing": { "model": "freemium", "note": "credits يومية مجانية محدودة، والباقي باشتراك" },
+      "features": [
+        "حركة واقعية",
+        "مراجع متعددة لثبات الشخصيات",
+        "لحد ٣٠ ثانية 4K",
+        "API"
+      ],
+      "pricing": {
+        "model": "freemium",
+        "note": "credits يومية مجانية محدودة، والباقي باشتراك"
+      },
       "url": "https://klingai.com/",
       "source": "klingai.com",
       "importance": 2,
-      "tags": ["توليد فيديو", "Kling"]
+      "tags": [
+        "توليد فيديو",
+        "Kling"
+      ],
+      "en": {
+        "title": "Kling AI: one of the strongest video models",
+        "summary": "Kling's platform for generating video from text or an image. Known for realistic motion and convincing physics, it accepts images and videos as references to keep characters consistent. Kling 4.0 produces up to 30 seconds in 4K.",
+        "why": "One of the best choices when you need a realistic-looking shot for a video or an ad.",
+        "about": "Kling is from Kuaishou. It generates video from text or an image, or from a start frame and an end frame, with lip sync, motion editing, and multiple references for characters, objects and voices.\n\nIn version 4.0 a single generation can run up to 30 seconds in 4K with stereo audio and up to 15 references. There's an API.",
+        "features": [
+          "Realistic motion",
+          "Multiple references for consistent characters",
+          "Up to 30 seconds in 4K",
+          "API"
+        ],
+        "pricingNote": "Limited free daily credits; the rest is a subscription"
+      }
     },
     {
       "id": "ess-opusclip",
@@ -116,12 +295,34 @@
       "summary": "بيحلل الفيديو الطويل ويطلّع منه أقوى اللحظات كمقاطع قصيرة، بكابشن وreframe أوتوماتيك للموبايل، ومعاها تقييم لفرصة انتشار كل مقطع، وجدولة للنشر.",
       "why": "بيوفر ساعات لو عندك لايفات أو شروحات طويلة وعايز تطلع منها ريلز.",
       "about": "بترفع الفيديو أو تحط لينك، فيلاقي المقاطع اللي ليها بداية ونهاية واضحة، ويقصّها، ويعمل لها reframe عمودي يتابع المتكلم، ويضيف كابشن متحرك. وكل مقطع بياخد Virality Score.\n\nوتقدر تعدّل عليها، وتضيف B-roll، وتنشرها مباشرة على المنصات.",
-      "features": ["اختيار أقوى اللحظات", "reframe عمودي ذكي", "كابشن متحرك", "جدولة النشر"],
-      "pricing": { "model": "freemium" },
+      "features": [
+        "اختيار أقوى اللحظات",
+        "reframe عمودي ذكي",
+        "كابشن متحرك",
+        "جدولة النشر"
+      ],
+      "pricing": {
+        "model": "freemium"
+      },
       "url": "https://www.opus.pro/",
       "source": "opus.pro",
       "importance": 1,
-      "tags": ["shorts", "repurposing"]
+      "tags": [
+        "shorts",
+        "repurposing"
+      ],
+      "en": {
+        "title": "OpusClip: long videos into short clips",
+        "summary": "It analyses a long video and pulls out the strongest moments as short clips, with captions and automatic vertical reframing, a virality score for each clip, and scheduled publishing.",
+        "why": "It saves hours if you have livestreams or long walkthroughs and want to turn them into reels.",
+        "about": "Upload a video or paste a link, and it finds segments with a clear beginning and end, cuts them, reframes them vertically to follow the speaker, and adds animated captions. Each clip gets a Virality Score.\n\nYou can edit them, add B-roll and publish directly to the platforms.",
+        "features": [
+          "Picks the strongest moments",
+          "Smart vertical reframing",
+          "Animated captions",
+          "Scheduled publishing"
+        ]
+      }
     },
     {
       "id": "ess-whisper",
@@ -132,17 +333,54 @@
       "summary": "موديل مفتوح من OpenAI لتحويل الكلام لنص بلغات كتير منها العربي، وللترجمة للإنجليزي. بيشتغل محلياً، فمناسب لعمل subtitles لفيديوهاتك من غير ما ترفعها.",
       "why": "subtitles عربي لفيديوهاتك، أو تفريغ اجتماعات الفريق، ببلاش وعلى جهازك.",
       "about": "Whisper اتدرب على مئات آلاف الساعات بلغات كتير، وبيطلّع ملفات SRT وVTT جاهزة للـ subtitles. فيه أحجام مختلفة من tiny لـ large، والكبيرة أدق وأبطأ. ومحتاج ffmpeg.\n\nوفيه نسخ أسرع من المجتمع، زي faster-whisper وwhisper.cpp.",
-      "features": ["لغات كتير منها العربي", "SRT وVTT للـ subtitles", "بيشتغل محلياً", "أحجام مختلفة"],
-      "install": [
-        { "label": "ffmpeg الأول", "cmd": "sudo apt update && sudo apt install ffmpeg" },
-        { "label": "وبعدين Whisper", "cmd": "pip install -U openai-whisper" },
-        { "label": "استخدام", "cmd": "whisper video.mp4 --language Arabic --output_format srt" }
+      "features": [
+        "لغات كتير منها العربي",
+        "SRT وVTT للـ subtitles",
+        "بيشتغل محلياً",
+        "أحجام مختلفة"
       ],
-      "pricing": { "model": "oss" },
+      "install": [
+        {
+          "label": "ffmpeg الأول",
+          "cmd": "sudo apt update && sudo apt install ffmpeg"
+        },
+        {
+          "label": "وبعدين Whisper",
+          "cmd": "pip install -U openai-whisper"
+        },
+        {
+          "label": "استخدام",
+          "cmd": "whisper video.mp4 --language Arabic --output_format srt"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/openai/whisper",
       "source": "github.com",
       "importance": 2,
-      "tags": ["subtitles", "speech-to-text", "عربي"]
+      "tags": [
+        "subtitles",
+        "speech-to-text",
+        "عربي"
+      ],
+      "en": {
+        "title": "Whisper: speech-to-text on your own machine",
+        "summary": "An open model from OpenAI for transcribing speech in many languages, including Arabic, and translating into English. It runs locally, so it's good for subtitling your videos without uploading them.",
+        "why": "Arabic subtitles for your videos, or transcripts of team meetings, for free and on your own machine.",
+        "about": "Whisper was trained on hundreds of thousands of hours across many languages and outputs SRT and VTT files ready for subtitles. It comes in sizes from tiny to large; the larger ones are more accurate and slower. It needs ffmpeg.\n\nThere are faster community versions like faster-whisper and whisper.cpp.",
+        "features": [
+          "Many languages including Arabic",
+          "SRT and VTT subtitles",
+          "Runs locally",
+          "Several model sizes"
+        ],
+        "install": [
+          "ffmpeg first",
+          "Then Whisper",
+          "Usage"
+        ]
+      }
     }
   ]
 }

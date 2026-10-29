@@ -4,7 +4,7 @@ import { existsSync } from "node:fs";
 import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import { cache } from "react";
-import { SECTION_BY_ID, type SectionId } from "./sections";
+import { SECTION_META, type SectionId } from "./sections";
 import type { Digest, FeedItem, FeedPayload, Item, RadarEntry, RepoStats } from "./types";
 
 const ROOT = process.cwd();
@@ -41,7 +41,7 @@ async function loadRadar(): Promise<RadarEntry[]> {
   const files = (await listJson(SIGNALS_DIR, DAY_FILE)).reverse().slice(0, RADAR_DAYS);
   const out: RadarEntry[] = [];
   const seen = new Set<string>();
-  const section = (s: string): SectionId => (SECTION_BY_ID[s as SectionId] ? (s as SectionId) : "devtools");
+  const section = (s: string): SectionId => (SECTION_META[s as SectionId] ? (s as SectionId) : "devtools");
   for (const f of files) {
     const s = await readJson<Signals>(path.join(SIGNALS_DIR, f));
     if (!s) continue;
@@ -51,7 +51,7 @@ async function loadRadar(): Promise<RadarEntry[]> {
       seen.add(id);
       out.push({
         id, type: "release", section: section(r.section), date: s.date, title: `${r.repo} ${r.tag}`,
-        url: r.url, desc: r.previous ? `الإصدار اللي قبله: ${r.previous}` : "", repo: r.repo, tag: r.tag,
+        url: r.url, desc: "", repo: r.repo, tag: r.tag, previous: r.previous ?? undefined,
       });
     }
     for (const t of s.trending ?? []) {
@@ -97,7 +97,7 @@ export const loadFeed = cache(async (): Promise<FeedPayload> => {
   for (const file of (await listJson(CONTENT_DIR, DAY_FILE)).reverse()) {
     const digest = await readJson<Digest>(path.join(CONTENT_DIR, file));
     if (!digest) continue;
-    days.push({ date: digest.date, headline: digest.headline });
+    days.push({ date: digest.date, headline: digest.headline, headline_en: digest.headline_en });
     for (const item of digest.items) {
       if (ids.has(item.id)) continue;
       ids.add(item.id);

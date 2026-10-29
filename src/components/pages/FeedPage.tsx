@@ -2,9 +2,8 @@
 
 import Link from "next/link";
 import { useMemo } from "react";
-import { SECTION_BY_ID } from "@/lib/sections";
 import { matches } from "@/lib/search";
-import { dayLabel, formatCount, nf } from "@/lib/format";
+import { useLocale } from "../LocaleProvider";
 import type { FeedItem } from "@/lib/types";
 import { useApp } from "../AppContext";
 import { ItemCard } from "../ItemCard";
@@ -14,10 +13,6 @@ import { useItemActions } from "../useItemActions";
 import { Empty, Skeleton, secStyle } from "../bits";
 import { StarIcon } from "../icons";
 
-const VIEWS = [
-  { id: "new", label: "جديد" },
-  { id: "all", label: "الكل" },
-] as const;
 
 function passes(it: FeedItem, f: Filters) {
   return (
@@ -31,6 +26,11 @@ function passes(it: FeedItem, f: Filters) {
 
 export function FeedPage() {
   const { feed, loadError, user } = useApp();
+  const { t, f, tx } = useLocale();
+  const VIEWS = [
+    { id: "new", label: t.feed.new },
+    { id: "all", label: t.feed.all },
+  ] as const;
   const { filters, update } = useFilters("new");
   const { onSeen, onFav, onShare, markAll } = useItemActions();
   const { seen, fav } = user;
@@ -80,12 +80,12 @@ export function FeedPage() {
 
   const unseenTotal = useMemo(() => items.filter((i) => !seen.has(i.id)).length, [items, seen]);
   const filtering = Boolean(filters.s || filters.k || filters.p || filters.hot || filters.q);
-  const section = filters.s ? SECTION_BY_ID[filters.s] : null;
+  const section = filters.s ? tx.SECTION_BY_ID[filters.s] : null;
 
-  const title = v === "fav" ? "المفضلة" : v === "seen" ? "شوفته أو جربته" : section ? section.name : null;
+  const title = v === "fav" ? t.nav.favorites : v === "seen" ? t.nav.seen : section ? section.name : null;
 
   const tabs = !isFavOrSeen ? (
-    <div role="tablist" aria-label="العرض" className="card flex !rounded-2xl p-1 text-[14px]">
+    <div role="tablist" aria-label={t.nav.views} className="card flex !rounded-2xl p-1 text-[14px]">
       {VIEWS.map((t) => (
         <button
           key={t.id}
@@ -96,7 +96,7 @@ export function FeedPage() {
           className={`rounded-xl px-4 py-2 ${v === t.id ? "bg-ink font-semibold text-ground" : "text-ink-2"}`}
         >
           {t.label}
-          {t.id === "new" && unseenTotal > 0 && <span className="ms-1.5 text-[12.5px] opacity-70">{nf.format(unseenTotal)}</span>}
+          {t.id === "new" && unseenTotal > 0 && <span className="ms-1.5 text-[12.5px] opacity-70">{f.num(unseenTotal)}</span>}
         </button>
       ))}
     </div>
@@ -118,20 +118,20 @@ export function FeedPage() {
         <FilterBar
           filters={filters}
           update={update}
-          placeholder="دوّر في الأخبار والأدوات والريبوز"
+          placeholder={t.feed.placeholder}
           kinds={kinds}
-          hotLabel="المهم بس"
+          hotLabel={t.feed.hot}
           tabs={tabs}
         />
 
         {!feed && !loadError && <Skeleton />}
         {loadError && (
           <Empty
-            title="مقدرتش أحمّل المحتوى"
-            body="اتأكد إن النت شغال وجرّب تاني."
+            title={t.feed.loadErrorTitle}
+            body={t.feed.loadErrorBody}
             action={
               <button type="button" onClick={() => window.location.reload()} className="rounded-xl bg-ink px-4 py-2 text-[14.5px] font-semibold text-ground">
-                حمّل تاني
+                {t.feed.reload}
               </button>
             }
           />
@@ -145,7 +145,7 @@ export function FeedPage() {
           if (key === "essentials") {
             return (
               <section key={key} className="flex flex-col gap-3">
-                <h2 className="px-1 text-[22px] font-bold">من الأساسيات</h2>
+                <h2 className="px-1 text-[22px] font-bold">{t.feed.fromEssentials}</h2>
                 <div className="grid grid-cols-1 gap-3 xl:grid-cols-2">
                   {list.map((item) => (
                     <ItemCard key={item.id} item={item} stats={item.repo ? stats[item.repo] : undefined} seen={seen.has(item.id)} fav={fav.has(item.id)} onSeen={onSeen} onFav={onFav} onShare={onShare} />
@@ -154,7 +154,7 @@ export function FeedPage() {
               </section>
             );
           }
-          const label = dayLabel(key);
+          const label = f.day(key);
           const all = dayItems.get(key) ?? [];
           const unseenCount = all.filter((i) => !seen.has(i.id)).length;
           const headline = headlineOf.get(key);
@@ -176,11 +176,11 @@ export function FeedPage() {
                       <div className="h-full rounded-full bg-ink" style={{ width: `${all.length ? ((all.length - unseenCount) / all.length) * 100 : 0}%` }} />
                     </div>
                     <span className="whitespace-nowrap text-[13px] text-muted">
-                      {unseenCount === 0 ? "شوفت اليوم كله" : `${nf.format(unseenCount)} جديد من ${nf.format(all.length)}`}
+                      {unseenCount === 0 ? t.feed.daySeen : t.feed.newOf(f.num(unseenCount), f.num(all.length))}
                     </span>
                     {unseenCount > 0 && (
                       <button type="button" onClick={() => markAll(all.map((i) => i.id))} className="whitespace-nowrap rounded-lg px-1 py-1 text-[13px] font-semibold text-accent">
-                        علّم الكل
+                        {t.feed.markAll}
                       </button>
                     )}
                   </div>
@@ -203,6 +203,7 @@ export function FeedPage() {
 
 function Rail() {
   const { feed, user } = useApp();
+  const { t, f } = useLocale();
   const trending = useMemo(() => (feed?.radar ?? []).filter((r) => r.type === "trending").sort((a, b) => (b.stars ?? 0) - (a.stars ?? 0)).slice(0, 5), [feed]);
   const releases = useMemo(() => (feed?.radar ?? []).filter((r) => r.type === "release").slice(0, 6), [feed]);
   const next = useMemo(
@@ -211,17 +212,17 @@ function Rail() {
   );
   if (!feed) return null;
   return (
-    <aside aria-label="جانبي" className="sticky top-5 hidden max-h-[calc(100dvh-40px)] w-[300px] shrink-0 flex-col gap-4 overflow-y-auto 2xl:flex">
+    <aside aria-label={t.feed.side} className="sticky top-5 hidden max-h-[calc(100dvh-40px)] w-[300px] shrink-0 flex-col gap-4 overflow-y-auto 2xl:flex">
       {trending.length > 0 && (
         <section className="rounded-[20px] bg-code p-5 text-code-ink">
-          <h2 className="text-[16px] font-bold text-white">صاعد على GitHub</h2>
-          <p className="mb-2 text-[13px] text-code-muted">ريبوز جديدة بتجمع نجوم بسرعة</p>
+          <h2 className="text-[16px] font-bold text-white">{t.feed.trendingTitle}</h2>
+          <p className="mb-2 text-[13px] text-code-muted">{t.feed.trendingSub}</p>
           {trending.map((r) => (
             <Link key={r.id} href={`/radar?q=${encodeURIComponent(r.title)}`} className="flex items-center gap-2 border-t border-white/10 py-2.5">
               <span className="ltr min-w-0 flex-1 truncate text-start font-mono text-[12.5px]">{r.title}</span>
               <span className="inline-flex items-center gap-1 text-[12.5px] font-semibold text-star">
                 <StarIcon width={12} height={12} />
-                {formatCount(r.stars ?? 0)}
+                {f.count(r.stars ?? 0)}
               </span>
             </Link>
           ))}
@@ -229,7 +230,7 @@ function Rail() {
       )}
       {releases.length > 0 && (
         <section className="card p-5">
-          <h2 className="mb-2 text-[16px] font-bold">إصدارات جديدة</h2>
+          <h2 className="mb-2 text-[16px] font-bold">{t.feed.releasesTitle}</h2>
           {releases.map((r) => (
             <a key={r.id} href={r.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border-t border-line py-2 text-[13px]">
               <span className="ltr min-w-0 flex-1 truncate text-start font-mono">{r.repo}</span>
@@ -237,18 +238,18 @@ function Rail() {
             </a>
           ))}
           <Link href="/radar" className="mt-2 inline-block text-[13px] font-semibold text-accent">
-            كل الرادار
+            {t.feed.allRadar}
           </Link>
         </section>
       )}
       {next.length > 0 && (
         <section className="card p-5">
-          <h2 className="mb-2 text-[16px] font-bold">كمّل الأساسيات</h2>
+          <h2 className="mb-2 text-[16px] font-bold">{t.feed.continueTitle}</h2>
           {next.map((e) => (
             <Link key={e.id} href={`/item/${e.id}`} className="flex items-center gap-2 border-t border-line py-2.5 text-[14px]">
               <span className="min-w-0 flex-1 truncate">{e.title.split(":")[0]}</span>
               <span className={`text-[12px] ${e.pricing?.model === "paid" ? "text-paid-ink" : e.pricing?.model === "freemium" ? "text-star-ink" : "text-ok-ink"}`}>
-                {e.pricing?.model === "paid" ? "مدفوع" : e.pricing?.model === "freemium" ? "فيه مجاني" : "مجاني"}
+                {e.pricing?.model === "paid" ? t.feed.railPaid : e.pricing?.model === "freemium" ? t.feed.railFreemium : t.feed.railFree}
               </span>
             </Link>
           ))}
@@ -259,23 +260,25 @@ function Rail() {
 }
 
 function EmptyState({ v, filtering, clear, showAll }: { v: string; filtering: boolean; clear: () => void; showAll: () => void }) {
+  const { t } = useLocale();
+  const e = t.empty;
   if (filtering)
     return (
       <Empty
-        title="مفيش نتايج"
-        body="مفيش حاجة بالفلاتر دي."
-        action={<button type="button" onClick={clear} className="rounded-xl bg-ink px-4 py-2 text-[14.5px] font-semibold text-ground">امسح الفلاتر</button>}
+        title={e.noResults}
+        body={e.noResultsBody}
+        action={<button type="button" onClick={clear} className="rounded-xl bg-ink px-4 py-2 text-[14.5px] font-semibold text-ground">{e.clearFilters}</button>}
       />
     );
   if (v === "new")
     return (
       <Empty
-        title="خلّصت كل الجديد"
-        body="مفيش حاجة لسه مشفتهاش. الملخص الجاي هيوصل بكرة الصبح، ولحد ما يوصل بص على الرادار أو الأساسيات."
-        action={<button type="button" onClick={showAll} className="rounded-xl bg-ink px-4 py-2 text-[14.5px] font-semibold text-ground">اعرض الكل</button>}
+        title={e.caughtUp}
+        body={e.caughtUpBody}
+        action={<button type="button" onClick={showAll} className="rounded-xl bg-ink px-4 py-2 text-[14.5px] font-semibold text-ground">{e.showAll}</button>}
       />
     );
-  if (v === "fav") return <Empty title="مفيش مفضلة لسه" body="دوس على علامة الحفظ في أي حاجة عايز ترجعلها بعدين." />;
-  if (v === "seen") return <Empty title="مشفتش حاجة لسه" body="اللي تعلّمه إنك شوفته أو جربته هيظهر هنا." />;
-  return <Empty title="لسه مفيش ملخصات" body="أول ملخص هيوصل لما المهمة اليومية تشتغل." />;
+  if (v === "fav") return <Empty title={e.noFav} body={e.noFavBody} />;
+  if (v === "seen") return <Empty title={e.noSeen} body={e.noSeenBody} />;
+  return <Empty title={e.noDigests} body={e.noDigestsBody} />;
 }

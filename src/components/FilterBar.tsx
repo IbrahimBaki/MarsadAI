@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { KIND_LABEL } from "@/lib/sections";
-import { nf } from "@/lib/format";
+import { useLocale } from "./LocaleProvider";
 import type { Filters } from "./useFilters";
 import { BoltIcon, CloseIcon, SearchIcon } from "./icons";
 
@@ -18,6 +17,7 @@ type Props = {
 };
 
 export function FilterBar({ filters, update, placeholder, kinds, showPrice = true, hotLabel, tabs }: Props) {
+  const { t, f, tx } = useLocale();
   const [q, setQ] = useState(filters.q);
   const ref = useRef<HTMLInputElement>(null);
   const latest = useRef(filters.q);
@@ -68,12 +68,12 @@ export function FilterBar({ filters, update, placeholder, kinds, showPrice = tru
             onChange={(e) => setQ(e.target.value)}
             onKeyDown={(e) => e.key === "Escape" && setQ("")}
             placeholder={placeholder}
-            aria-label="بحث"
+            aria-label={t.filter.search}
             enterKeyHint="search"
             className="min-w-0 flex-1 bg-transparent text-[15.5px] text-ink outline-none placeholder:text-faint [&::-webkit-search-cancel-button]:hidden"
           />
           {q ? (
-            <button type="button" onClick={() => setQ("")} aria-label="امسح البحث" className="rounded-lg p-1 hover:bg-sunken">
+            <button type="button" onClick={() => setQ("")} aria-label={t.filter.clear} className="rounded-lg p-1 hover:bg-sunken">
               <CloseIcon width={18} height={18} />
             </button>
           ) : (
@@ -94,9 +94,9 @@ export function FilterBar({ filters, update, placeholder, kinds, showPrice = tru
           <>
             {(
               [
-                ["free", "مجاني"],
-                ["freemium", "فيه خطة مجانية"],
-                ["paid", "مدفوع"],
+                ["free", t.filter.free],
+                ["freemium", t.filter.freemium],
+                ["paid", t.filter.paid],
               ] as const
             ).map(([p, label]) => (
               <button
@@ -122,8 +122,8 @@ export function FilterBar({ filters, update, placeholder, kinds, showPrice = tru
               aria-pressed={filters.k === k}
               className={chip(filters.k === k)}
             >
-              {KIND_LABEL[k] ?? k}
-              <span className="text-[12px] text-faint">{nf.format(n)}</span>
+              {tx.KIND_LABEL[k] ?? k}
+              <span className="text-[12px] text-faint">{f.num(n)}</span>
             </button>
           ))}
       </div>

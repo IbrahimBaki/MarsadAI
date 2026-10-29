@@ -2,6 +2,8 @@
 
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import type { FeedItem, FeedPayload } from "@/lib/types";
+import { localizeFeed } from "@/lib/localize";
+import { useLocale } from "./LocaleProvider";
 import { useUserState } from "./useUserState";
 
 type UserState = ReturnType<typeof useUserState>;
@@ -20,7 +22,9 @@ type AppValue = {
 const Ctx = createContext<AppValue | null>(null);
 
 export function AppProvider({ children }: { children: ReactNode }) {
-  const [feed, setFeed] = useState<FeedPayload | null>(null);
+  const [raw, setFeed] = useState<FeedPayload | null>(null);
+  const { locale } = useLocale();
+  const feed = useMemo(() => (raw ? localizeFeed(raw, locale) : null), [raw, locale]);
   const [loadError, setLoadError] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [toast, setToast] = useState<AppValue["toast"]>(null);

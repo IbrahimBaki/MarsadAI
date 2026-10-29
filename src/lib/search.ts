@@ -22,6 +22,9 @@ function haystack(item: Searchable) {
     const parts: string[] = [];
     for (const f of FIELDS) if (typeof item[f] === "string") parts.push(item[f] as string);
     for (const f of ["tags", "features"]) if (Array.isArray(item[f])) parts.push((item[f] as string[]).join(" "));
+    // Match in both languages, whichever one is on screen.
+    const en = item.en as Record<string, unknown> | undefined;
+    if (en) for (const f of ["title", "summary", "why"]) if (typeof en[f] === "string") parts.push(en[f] as string);
     h = normalize(parts.join(" \n "));
     cache.set(item, h);
   }

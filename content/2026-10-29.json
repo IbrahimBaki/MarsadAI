@@ -1,6 +1,7 @@
 {
   "date": "2026-10-29",
   "headline": "Claude Duet نزل كـ preview، وLaravel AI SDK وصل للإصدار المستقر 1.0، وGemini 4 Argon بقى متاح للكل بنص السعر لحد آخر نوفمبر، وKling 4.0 بقى بيعمل فيديو ٣٠ ثانية 4K في مرة واحدة.",
+  "headline_en": "Claude Duet arrives as a preview, Laravel AI SDK hits a stable 1.0, Gemini 4 Argon is generally available at half price until the end of November, and Kling 4.0 now makes 30-second 4K video in a single generation.",
   "items": [
     {
       "id": "claude-duet-research-preview",
@@ -42,7 +43,29 @@
           "label": "تغطية VKTR للإطلاق",
           "url": "https://www.vktr.com/ai-platforms/claude-duet-anthropic-previews-an-ai-agent-that-messages-you-first/"
         }
-      ]
+      ],
+      "en": {
+        "title": "Claude Duet: an always-on agent that keeps working with your laptop closed",
+        "summary": "Anthropic opened a research preview of the Claude Duet app on October 21. It's an agent built on Opus 5.5 that runs on its own cloud VM, so it keeps working even when your device is off.",
+        "why": "It's currently only for Pro and Max accounts in the US via a waitlist, so what matters is the direction: agents now work on their own in the background.",
+        "about": "Claude Duet is a standalone app where Claude works as a proactive agent. It doesn't wait for you to ask: every morning it reviews your email and calendar and lays out your priorities, and it can write and send emails, buy things through Link and Shop Pay, and reach more than 6,000 connectors.\n\nIt runs on its own VM in the cloud, so it carries on even when your laptop or phone is closed. Before anything important, like a payment, signing documents or deleting something, it stops and asks you. Some things are off-limits even with your approval, like transferring money or accessing someone else's account.\n\nIt's available for Pro and Max accounts in the US only, on iOS, Android and claude.ai, with access by invitation in batches from the waitlist. It uses the same usage limits as regular chats.",
+        "features": [
+          "Reviews email and calendar every morning and lays out priorities",
+          "Writes and sends emails and buys things with your approval",
+          "Reaches 6,000+ connectors",
+          "Asks before any payment, signature or deletion"
+        ],
+        "requirements": [
+          "A Pro or Max subscription",
+          "A US account (for now)",
+          "An invitation from the waitlist"
+        ],
+        "links": [
+          "Claude Duet page and waitlist",
+          "VKTR's launch coverage"
+        ],
+        "pricingNote": "Included with Pro or Max"
+      }
     },
     {
       "id": "claude-code-october-2026-releases",
@@ -83,7 +106,26 @@
           "label": "ملخص إصدارات أكتوبر",
           "url": "https://www.havoptic.com/releases/claude-code/2026/10"
         }
-      ]
+      ],
+      "en": {
+        "title": "Claude Code up to v2.1.312: a tighter sandbox and safer large-file edits",
+        "summary": "More than 20 releases shipped in October. The most important: shell startup files now run inside the sandbox, the Monitor tool came to Bedrock, Vertex and Foundry, and MCP now reconnects properly after your machine sleeps.",
+        "why": "You use the Claude Code CLI every day, so update. And if you have hooks or .bashrc setup that assumes it runs outside the sandbox, review it.",
+        "about": "October was packed with Claude Code releases, mostly focused on security and stability.\n\nFrom October 20 to 27: v2.1.305 improved tool compatibility across providers like Vertex and Bedrock. v2.1.306 fixed a false \"Not logged in\" message with claude -p in cloud sessions. v2.1.307 fixed MCP reconnects after the machine sleeps or the keychain locks. v2.1.309 tightened the sandbox and permissions, and shell startup files now run inside the sandbox. v2.1.310 added the Monitor tool for Bedrock, Vertex and Foundry. v2.1.311 fixed startup hangs and sessions that stopped suddenly. And v2.1.312 added custom OIDC claims and made editing large files safer.",
+        "features": [
+          "Shell startup files run inside the sandbox",
+          "The Monitor tool on Bedrock, Vertex and Foundry",
+          "Better MCP reconnects after sleep",
+          "Safer edits to large files"
+        ],
+        "install": [
+          "Update Claude Code"
+        ],
+        "links": [
+          "Releases on GitHub",
+          "October release roundup"
+        ]
+      }
     },
     {
       "id": "claude-sonnet-haiku-5-5",
@@ -110,7 +152,19 @@
         "Haiku 5.5",
         "API",
         "أسعار"
-      ]
+      ],
+      "en": {
+        "title": "Claude Sonnet 5.5 and Haiku 5.5 launched in October",
+        "summary": "Sonnet 5.5 launched on October 1 and, according to Anthropic, is more than 30% faster than Sonnet 5, priced at $2 input and $10 output per million tokens. A week later Haiku 5.5 arrived at 10 cents per million input tokens.",
+        "why": "If you use the API in your projects, Haiku 5.5 at that price is a great fit for lots of small tasks like classification and summarisation.",
+        "about": "Anthropic released two models in the same month.\n\nSonnet 5.5, on October 1: more than 30% faster than Sonnet 5 according to the company, priced at $2 per million input tokens and $10 for output, and it scored 70.6 on Terminal-Bench 4.0. These numbers are Anthropic's own.\n\nHaiku 5.5, on October 8: the small, fast model, at just 10 cents per million input tokens. It suits high-volume repetitive tasks like classification, log summarisation and request routing.",
+        "features": [
+          "Sonnet 5.5 is 30%+ faster than Sonnet 5",
+          "Sonnet 5.5 at $2 / $10 per million tokens",
+          "Haiku 5.5 at 10 cents per million input tokens"
+        ],
+        "pricingNote": "Usage-based via the API"
+      }
     },
     {
       "id": "claude-platform-opentelemetry-beta",
@@ -138,7 +192,21 @@
           "label": "الدوكيومنتيشن",
           "url": "https://platform.claude.com/docs/en/manage-claude/opentelemetry"
         }
-      ]
+      ],
+      "en": {
+        "title": "Tracing agents with OpenTelemetry on Claude Platform",
+        "summary": "Since October 14, as a public beta: you can send traces for Messages API requests, Managed Agents sessions and the SDKs to any observability tool that accepts OTLP.",
+        "why": "If you'll build AI features inside Company-ERP, this lets you see every step the agent took and how long it took, without hand-writing logging.",
+        "about": "Claude Platform now supports OpenTelemetry tracing as a public beta. You can send traces for Messages API requests, Claude Managed Agents sessions and the SDKs to any observability platform that accepts an OTLP endpoint, such as Grafana, Honeycomb or Langfuse.\n\nBy default it sends metadata only. There's a full mode that also sends prompts and responses, in which case you need to watch access permissions and retention where you send them.\n\nSetup: for the API, an admin adds a destination in the Claude Console. For the SDK, you register a tracer provider in your client. Spans aren't guaranteed to all arrive, so for usage accounting Anthropic recommends the Usage API.",
+        "features": [
+          "Traces for the Messages API, Managed Agents and SDKs",
+          "Works with any OTLP platform",
+          "Metadata only by default, with an optional full mode"
+        ],
+        "links": [
+          "Documentation"
+        ]
+      }
     },
     {
       "id": "obra-superpowers-skills",
@@ -175,7 +243,22 @@
       ],
       "alternatives": [
         "ess-superclaude"
-      ]
+      ],
+      "en": {
+        "title": "Superpowers reaches v7: a complete skills framework for coding agents",
+        "summary": "A ready-made set of skills that teaches the agent to work methodically: plan before writing code, work with TDD, debug systematically, and review its work before saying it's done.",
+        "why": "It installs straight into Claude Code, and it's worth comparing with the workflow you use in Squad-Kit; you might borrow some ideas.",
+        "about": "Superpowers is an open-source skills library by Jesse Vincent that turns a coding agent from something that writes code immediately into an engineer following clear steps.\n\nThe skills kick in on their own depending on the situation. Starting a new feature, it brainstorms and then writes a plan. Fixing a bug, it follows systematic debugging. And before saying it's done, it reviews and confirms the tests pass.\n\nIt installs as a Claude Code plugin from its marketplace, and also works with other agents that support skills.",
+        "features": [
+          "Brainstorm and plan before code",
+          "TDD: the test first, then the code",
+          "Systematic, step-by-step debugging",
+          "Reviews its work before saying it's done"
+        ],
+        "install": [
+          "From the official Claude Code marketplace"
+        ]
+      }
     },
     {
       "id": "thedotmack-claude-mem",
@@ -202,7 +285,19 @@
         "Claude Code",
         "memory",
         "plugin"
-      ]
+      ],
+      "en": {
+        "title": "claude-mem: memory across Claude Code sessions",
+        "summary": "A plugin that records what happened in each session, compresses it, and brings back the right summary in the next session, so the agent remembers your project's decisions and context without you explaining them again.",
+        "why": "If you find yourself re-explaining your module structure in every new session, this solves exactly that.",
+        "about": "Claude Code's problem is that every new session starts with no memory, and the only thing carried from session to session is CLAUDE.md.\n\nclaude-mem fixes this with hooks that record what happened in the session: the files changed, the decisions made and the problems solved. It then compresses that into summaries and stores them, and when you start a new session it injects only the relevant context, without filling up the context window.\n\nIt's one of the most popular plugins around Claude Code, with more than 100,000 stars.",
+        "features": [
+          "Automatic capture of every session via hooks",
+          "Sessions compressed into summaries",
+          "The right context injected into the next session",
+          "Search across past sessions"
+        ]
+      }
     },
     {
       "id": "graphify-codebase-knowledge-graph",
@@ -229,7 +324,19 @@
         "code graph",
         "context",
         "architecture"
-      ]
+      ],
+      "en": {
+        "title": "Graphify: turn code and docs into a knowledge graph you can query",
+        "summary": "A tool that analyses code locally via AST and builds a graph of the relationships between files, classes, functions and docs. You can then ask it questions, or give it to the agent as context instead of having it read files one by one.",
+        "why": "Useful for a large modular project like Company-ERP, especially when you need to know the impact of a change before making it.",
+        "about": "In large projects the agent wastes lots of tokens reading files to understand how they relate. Graphify does static AST analysis of the code on your machine and builds a knowledge graph of files, classes, functions and who calls whom, together with the documentation.\n\nThen you can query the graph, like \"what depends on this class?\" or \"what will this change affect?\", or connect it to the agent so it fetches exactly the context it needs.",
+        "features": [
+          "Local AST analysis; your code never leaves your machine",
+          "A graph of relationships between files, classes and functions",
+          "Links code to documentation",
+          "Query it or give it to the agent as context"
+        ]
+      }
     },
     {
       "id": "1password-for-agents",
@@ -255,7 +362,19 @@
         "أمان",
         "agents",
         "credentials"
-      ]
+      ],
+      "en": {
+        "title": "1Password for Agents: the agent signs in without ever seeing the password",
+        "summary": "Announced on October 22. Agents can sign in to sites and services using your vault, the password itself never reaches the model, and you approve the permissions.",
+        "why": "As soon as you consider letting an agent work with your dashboards or servers, this is the safe way, instead of putting credentials in the prompt or a .env file.",
+        "about": "One of the biggest security problems with agents is that they need to sign in, and the easiest solution, which is also the most dangerous, is to hand them the password directly.\n\n1Password for Agents lets the agent request access while 1Password fills in the details from the vault itself, so the model never sees the password and it never ends up in logs. You approve the permissions and can see where the agent signed in.\n\nIt's still waitlist-only.",
+        "features": [
+          "The password never reaches the model",
+          "Permission approval from 1Password",
+          "A log of every time the agent signed in"
+        ],
+        "pricingNote": "Requires a 1Password subscription; still waitlist-only"
+      }
     },
     {
       "id": "gemini-4-argon-ga-pricing",
@@ -281,7 +400,19 @@
         "Google",
         "Gemini 4",
         "أسعار"
-      ]
+      ],
+      "en": {
+        "title": "Gemini 4 Argon is generally available, and the price doubles on December 1",
+        "summary": "Google made Gemini 4 Argon generally available on October 15 at an introductory price of $2 input and $10 output per million tokens until November 30, after which it becomes $4 and $20.",
+        "why": "If you want to compare it with Claude on one of your tasks, try it before the end of November while you pay half price.",
+        "about": "Gemini 4 Argon is the large model of Google's new generation. It became generally available on October 15 on the API, and for Pro subscribers inside Antigravity, Google's coding environment.\n\nThe introductory price is $2 per million input tokens and $10 for output until November 30; from December 1 it's $4 and $20, double.",
+        "features": [
+          "Available on the API and inside Antigravity",
+          "Introductory $2 / $10 pricing until November 30",
+          "From December 1: $4 / $20"
+        ],
+        "pricingNote": "Usage-based via the API"
+      }
     },
     {
       "id": "openai-12-hour-prompt-caching",
@@ -303,7 +434,18 @@
         "OpenAI",
         "API",
         "تكلفة"
-      ]
+      ],
+      "en": {
+        "title": "OpenAI now caches prompts for up to 12 hours",
+        "summary": "The API can now keep the prompt cache for up to 12 hours, so agents that come back hours later still pay the cheaper cached-input price. Writing to this long cache costs more than the regular one, though.",
+        "why": "Important if you're costing a feature with an agent that runs all day, or comparing providers.",
+        "about": "Prompt caching bills the fixed part of a prompt, like instructions, tool definitions and context, at a much cheaper rate when it repeats. The catch is that the regular cache expires after minutes.\n\nOpenAI added an option to keep the cache for up to 12 hours, aimed at agents that run all day and come back hours later. Writing to this long cache costs more, so the savings only show if the prompt is reused several times through the day.",
+        "features": [
+          "Cache for up to 12 hours",
+          "Built for agents that run all day",
+          "Cache writes cost more than usual"
+        ]
+      }
     },
     {
       "id": "laravel-ai-sdk-1-0",
@@ -353,7 +495,28 @@
       "alternatives": [
         "ess-prism-php",
         "ess-neuron-ai"
-      ]
+      ],
+      "en": {
+        "title": "Laravel AI SDK 1.0: tool approvals, classification and frontend streaming",
+        "summary": "The first stable release. Tools can pause the agent until someone approves, rejects or edits the call, there's fast classification for simple decisions, and streaming compatible with Vercel AI and AG-UI. There are breaking changes.",
+        "why": "This is the official route for adding AI inside Company-ERP, and tool approvals in particular matter for any ERP operation that changes real data.",
+        "about": "Laravel AI SDK reached its first stable release. The highlights:\n\nApprovable tools: any tool that implements the Approvable contract pauses the agent until someone approves it, rejects it with a reason the model sees, or edits its arguments. That's crucial for any operation that writes to the database.\n\nClassification: a new capability for quick decisions, like routing tickets or filtering comments, with Boolean, Choice or Score questions, plus Str::decide for yes-or-no questions.\n\nFrontend streaming: it reads requests and streams responses with the Vercel Chat protocol and AG-UI, so it works with libraries like CopilotKit.\n\nAlso: middleware that runs on every step of the agent, tool search that loads rarely used tools only when requested, and code execution in the provider's sandbox.\n\nThere are breaking changes in conversation storage, middleware and token usage, so read the upgrade guide first.",
+        "features": [
+          "Tools that wait for approval before running",
+          "Fast, cheap classification",
+          "Streaming with Vercel AI and AG-UI",
+          "Middleware for every step",
+          "Tool search and code execution"
+        ],
+        "install": [
+          "Install or update the SDK"
+        ],
+        "links": [
+          "Release news on Laravel News",
+          "Documentation"
+        ],
+        "pricingNote": "The package is free; you pay the model provider"
+      }
     },
     {
       "id": "kling-4-0-launch",
@@ -383,7 +546,19 @@
       "alternatives": [
         "ess-runway",
         "ess-google-flow"
-      ]
+      ],
+      "en": {
+        "title": "Kling 4.0: video up to 30 seconds in 4K in a single generation",
+        "summary": "Kuaishou launched Kling 4.0 on October 15. It generates a 3- to 30-second shot in one go and accepts up to 15 references across images, videos, audio and elements.",
+        "why": "30 seconds in one go means less cutting and stitching in the edit, and multiple references make it easier to keep the same character and style across every shot.",
+        "about": "Kling 4.0 generates video up to 30 seconds in 4K in one go, with the duration chosen to the second from 3 to 30, plus stereo audio.\n\nIts biggest feature is references: you can give it up to 15 references across images, videos, audio and elements, so the same character, product or style stays consistent across shots. That has been the biggest problem in AI video.",
+        "features": [
+          "Up to 30 seconds in one go",
+          "4K resolution and stereo audio",
+          "Up to 15 references for consistent characters"
+        ],
+        "pricingNote": "Limited free credits; the rest is a subscription"
+      }
     },
     {
       "id": "elevenlabs-instant-soundtracks",
@@ -408,7 +583,18 @@
         "صوت",
         "مونتاج",
         "ElevenLabs"
-      ]
+      ],
+      "en": {
+        "title": "ElevenLabs Instant Soundtracks: music and sound effects for any video, automatically",
+        "summary": "Upload a video and it composes original music and places sound effects on the action. The API returns the music and effects as separate files.",
+        "why": "It takes over the most tedious part of editing, sound design, and getting separate files keeps you in control of the final mix.",
+        "about": "ElevenLabs' Instant Soundtracks analyses the video you upload, composes original music to fit its pace, and places sound effects on the action, like footsteps, doors or transitions.\n\nIf you use it through the API, you can get the music and effects as separate files and adjust the mix yourself in your editor.",
+        "features": [
+          "Original music on the video's rhythm",
+          "Sound effects placed on the action",
+          "Music and effects as separate files via the API"
+        ]
+      }
     },
     {
       "id": "mirelo-sfx-2-0",
@@ -433,7 +619,18 @@
         "صوت",
         "مونتاج",
         "foley"
-      ]
+      ],
+      "en": {
+        "title": "Mirelo SFX 2.0: removes music, keeps the dialogue and adds foley",
+        "summary": "It strips unwanted music from a video while keeping the dialogue intact, then adds effects, foley and ambient sound. It works on videos up to 10 minutes long.",
+        "why": "A quick fix for copyrighted music in a video you need to republish, without losing the original audio.",
+        "about": "Mirelo SFX 2.0 separates a video's audio into layers. It removes the music and keeps the dialogue clean, then builds new sound for the scene: effects, foley like footsteps and clothing rustle, and ambient sound for the location.\n\nIt works on videos up to 10 minutes long.",
+        "features": [
+          "Removes music and keeps dialogue",
+          "Adds foley, effects and ambience",
+          "Videos up to 10 minutes"
+        ]
+      }
     },
     {
       "id": "flux-3-max-video-fal",
@@ -459,7 +656,19 @@
         "توليد فيديو",
         "FLUX",
         "API"
-      ]
+      ],
+      "en": {
+        "title": "FLUX 3 Max on fal: video from text or an image at an introductory price",
+        "summary": "A video model from Black Forest Labs that generates from text or an image. The introductory price on fal is 4.25 cents per second at 720p until November 7, then 17 cents.",
+        "why": "If you'll try video generation via API, the price difference is big until November 7.",
+        "about": "FLUX 3 Max is the first video model from Black Forest Labs, the makers of the FLUX image models. It generates video from text or an image and is available via API on fal.\n\nThe introductory price is 4.25 cents per second at 720p until November 7; after that the base price is 17 cents per second, four times as much.",
+        "features": [
+          "Video from text or an image",
+          "Available via API on fal",
+          "Introductory price until November 7"
+        ],
+        "pricingNote": "Per second via fal"
+      }
     },
     {
       "id": "canva-craft-image-model",
@@ -487,7 +696,20 @@
         "توليد صور",
         "Canva",
         "MCP"
-      ]
+      ],
+      "en": {
+        "title": "Canva Craft: Canva's first image model, built for design",
+        "summary": "Launched on October 22. It first plans the placement and size of elements and the text, then generates an image up to 2K with readable text. You can turn the result into editable layers.",
+        "why": "Readable text and editable layers make it better suited to posters and social posts than general image models.",
+        "about": "Canva Craft works in two stages. First it understands the request and makes a plan: where the elements go, their sizes, the visual hierarchy and the text. Then it generates the image at up to 2K, in more than 30 aspect ratios.\n\nIt was trained on designer-made Canva templates rather than photographs, so the output looks like a design, not a photo, and its text is readable. You can turn the image into a layered design with Magic Layers and edit any element on its own.\n\nIt's available to all Canva users from the Dream Lab tab and through the Canva API, and is coming soon inside ChatGPT and Gemini via the Canva MCP, along with two cheaper versions.",
+        "features": [
+          "Plans the composition before generating",
+          "Readable text inside the image",
+          "Up to 2K and 30+ aspect ratios",
+          "Converts into editable layers"
+        ],
+        "pricingNote": "Available to all Canva users"
+      }
     }
   ]
 }

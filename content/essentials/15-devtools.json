@@ -10,12 +10,37 @@
       "summary": "Warp بقى agentic development environment: ترمينال حديث فيه coding agent مدمج، أو تشغّل فيه Claude Code أو Codex وتديرهم من مكان واحد. والكود بقى مفتوح المصدر (AGPL، والـ UI framework برخصة MIT).",
       "why": "إنت شغال على Warp أصلاً، فالجديد يهمك: إدارة أكتر من CLI agent في نفس المكان، والكود بقى مفتوح.",
       "about": "Warp بدأ كترمينال سريع مكتوب بـ Rust، بـ blocks للأوامر ومحرر حديث. وبعدين بقى بيئة للـ agents: فيه agent مدمج، وتقدر تشغّل فيه Claude Code أو Codex أو أي CLI agent وتتابعهم، ومعاه Warp Drive لمشاركة الأوامر والـ workflows مع الفريق.\n\nمؤخراً الريبو بقى مفتوح المصدر: الـ UI framework برخصة MIT، والباقي AGPLv3. وOpenAI الراعي المؤسس للريبو الجديد، وworkflows إدارة الـ agents الجديدة شغالة بموديلات GPT.",
-      "features": ["agent مدمج أو أي CLI agent", "إدارة أكتر من agent", "blocks ومحرر حديث", "Warp Drive للفريق"],
-      "pricing": { "model": "freemium", "note": "التطبيق مجاني بحدود للـ AI، وخطط مدفوعة" },
+      "features": [
+        "agent مدمج أو أي CLI agent",
+        "إدارة أكتر من agent",
+        "blocks ومحرر حديث",
+        "Warp Drive للفريق"
+      ],
+      "pricing": {
+        "model": "freemium",
+        "note": "التطبيق مجاني بحدود للـ AI، وخطط مدفوعة"
+      },
       "url": "https://www.warp.dev",
       "source": "warp.dev",
       "importance": 2,
-      "tags": ["terminal", "agents", "Rust"]
+      "tags": [
+        "terminal",
+        "agents",
+        "Rust"
+      ],
+      "en": {
+        "title": "Warp: an agentic development environment born from the terminal, now open source",
+        "summary": "Warp is now an agentic development environment: a modern terminal with a built-in coding agent, where you can also run Claude Code or Codex and manage them in one place. The code is now open source (AGPL, with the UI framework under MIT).",
+        "why": "You already use Warp, so the news matters: manage several CLI agents in one place, and the code is now open.",
+        "about": "Warp started as a fast terminal written in Rust, with command blocks and a modern editor. It then became an environment for agents: it has a built-in agent, you can run Claude Code, Codex or any CLI agent in it and follow them, and Warp Drive lets you share commands and workflows with your team.\n\nRecently the repo went open source: the UI framework under MIT and the rest under AGPLv3. OpenAI is the founding sponsor of the new repo, and the new agent-management workflows run on GPT models.",
+        "features": [
+          "A built-in agent or any CLI agent",
+          "Manage several agents",
+          "Blocks and a modern editor",
+          "Warp Drive for teams"
+        ],
+        "pricingNote": "The app is free with AI limits; paid plans available"
+      }
     },
     {
       "id": "ess-repomix",
@@ -26,16 +51,49 @@
       "summary": "بيجمع كود المشروع كله، أو جزء منه، في ملف واحد منظم مناسب لأي AI، ومعاه عدد الـ tokens، وبيستبعد الملفات الحساسة والمتجاهلة. وفيه MCP server وموقع.",
       "why": "لما تحب تسأل موديل في محادثة عادية عن module كامل من الـ ERP، أو تحتاج review من موديل تاني.",
       "about": "Repomix بيحترم .gitignore، وبيفحص الأسرار بـ Secretlint عشان ميدخلش مفتاح بالغلط، وبيعدّ الـ tokens لكل ملف. والمخرج بصيغة XML أو Markdown أو نص.\n\nفيه compress بيشيل جسم الـ functions ويسيب التعريفات بس بـ tree-sitter، وده بيوفّر tokens كتير. وتقدر تشغّله على ريبو remote مباشرة، وفيه MCP server وextension للبراوزر.",
-      "features": ["ملف واحد منظم", "عدد الـ tokens", "فحص الأسرار", "compress للتعريفات بس"],
-      "install": [
-        { "label": "من غير تسطيب", "cmd": "npx repomix@latest" },
-        { "label": "module معين بس", "cmd": "npx repomix@latest --include \"Modules/Sales/**\" --compress" }
+      "features": [
+        "ملف واحد منظم",
+        "عدد الـ tokens",
+        "فحص الأسرار",
+        "compress للتعريفات بس"
       ],
-      "pricing": { "model": "oss" },
+      "install": [
+        {
+          "label": "من غير تسطيب",
+          "cmd": "npx repomix@latest"
+        },
+        {
+          "label": "module معين بس",
+          "cmd": "npx repomix@latest --include \"Modules/Sales/**\" --compress"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://repomix.com",
       "source": "repomix.com",
       "importance": 2,
-      "tags": ["context", "LLM", "CLI"]
+      "tags": [
+        "context",
+        "LLM",
+        "CLI"
+      ],
+      "en": {
+        "title": "Repomix: your whole repo in one file for AI",
+        "summary": "It packs all of a project's code, or part of it, into one organised file suited to any AI, with token counts, and excludes sensitive and ignored files. There's also an MCP server and a website.",
+        "why": "When you want to ask a model in a regular chat about an entire ERP module, or need a review from a different model.",
+        "about": "Repomix respects .gitignore, scans for secrets with Secretlint so no key slips in by mistake, and counts tokens per file. Output is XML, Markdown or plain text.\n\nThere's a compress mode that uses tree-sitter to strip function bodies and keep only the definitions, which saves a lot of tokens. You can run it on a remote repo directly, and there's an MCP server and a browser extension.",
+        "features": [
+          "One organised file",
+          "Token counts",
+          "Secret scanning",
+          "Compress to definitions only"
+        ],
+        "install": [
+          "No install needed",
+          "Just one module"
+        ]
+      }
     },
     {
       "id": "ess-gh-cli",
@@ -46,13 +104,44 @@
       "summary": "GitHub من الترمينال: PRs، وissues، وActions، وreleases، والـ API. وفيه دلوقتي أمر gh skill بيركّب Agent Skills، ومنها skill رسمية بتعلّم الـ agents يستخدموا gh.",
       "why": "Claude Code بيستخدم gh في الـ PRs والـ issues. والـ skill الرسمية بتخليه يستخدمه صح من غير ما يخمّن الأوامر.",
       "about": "gh بيخليك تفتح PR، وتراجعه، وتعمل merge، وتتابع الـ CI بـ gh run watch، وتعمل release، وتنادي أي API بـ gh api.\n\nالجديد إن gh بيدعم Agent Skills: gh skill install بيركّب skills من أي ريبو، وفيه skill رسمية من cli/cli للـ agents.",
-      "features": ["PRs وissues وActions", "gh api لأي endpoint", "gh skill لتسطيب الـ skills", "skill رسمية للـ agents"],
-      "install": [{ "label": "skill الـ agents", "cmd": "gh skill install cli/cli gh --scope user" }],
-      "pricing": { "model": "oss" },
+      "features": [
+        "PRs وissues وActions",
+        "gh api لأي endpoint",
+        "gh skill لتسطيب الـ skills",
+        "skill رسمية للـ agents"
+      ],
+      "install": [
+        {
+          "label": "skill الـ agents",
+          "cmd": "gh skill install cli/cli gh --scope user"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://cli.github.com",
       "source": "cli.github.com",
       "importance": 2,
-      "tags": ["GitHub", "CLI", "skills"]
+      "tags": [
+        "GitHub",
+        "CLI",
+        "skills"
+      ],
+      "en": {
+        "title": "GitHub CLI (gh), now with a skill for agents",
+        "summary": "GitHub from the terminal: PRs, issues, Actions, releases and the API. It now has a gh skill command that installs Agent Skills, including an official skill that teaches agents to use gh.",
+        "why": "Claude Code uses gh for PRs and issues, and the official skill makes it use it correctly without guessing commands.",
+        "about": "gh lets you open a PR, review it, merge it, follow CI with gh run watch, create a release and call any API with gh api.\n\nWhat's new is that gh supports Agent Skills: gh skill install installs skills from any repo, and there's an official skill from cli/cli for agents.",
+        "features": [
+          "PRs, issues and Actions",
+          "gh api for any endpoint",
+          "gh skill for installing skills",
+          "An official skill for agents"
+        ],
+        "install": [
+          "The agent skill"
+        ]
+      }
     },
     {
       "id": "ess-markitdown",
@@ -63,13 +152,44 @@
       "summary": "أداة Python من Microsoft بتحوّل PDF وWord وExcel وPowerPoint والصور والصوت وHTML وغيرهم لـ Markdown مناسب للموديلات، مع الحفاظ على العناوين والجداول. وفيه MCP server.",
       "why": "لو هتعمل RAG على مستندات الشركة، زي العقود وعروض الأسعار وملفات Excel، دي أسرع طريقة تحوّلها لنص منظم.",
       "about": "MarkItDown معمول للـ LLMs مش للعرض للبشر: بيحافظ على البنية، زي العناوين والقوايم والجداول والروابط، عشان الموديل يفهمها. بيدعم PDF وdocx وxlsx وpptx، والصور (EXIF وOCR)، والصوت (transcription)، وHTML وCSV وJSON وZIP وEPUB.\n\nتقدر تسطّب الإضافات اللي محتاجها بس، وفيه plugin للـ OCR، وMCP server.",
-      "features": ["PDF وOffice والصور والصوت", "بيحافظ على الجداول والعناوين", "إضافات اختيارية", "MCP server"],
-      "install": [{ "label": "pip", "cmd": "pip install 'markitdown[pdf, docx, pptx]'" }],
-      "pricing": { "model": "oss" },
+      "features": [
+        "PDF وOffice والصور والصوت",
+        "بيحافظ على الجداول والعناوين",
+        "إضافات اختيارية",
+        "MCP server"
+      ],
+      "install": [
+        {
+          "label": "pip",
+          "cmd": "pip install 'markitdown[pdf, docx, pptx]'"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/microsoft/markitdown",
       "source": "github.com",
       "importance": 2,
-      "tags": ["documents", "RAG", "Python"]
+      "tags": [
+        "documents",
+        "RAG",
+        "Python"
+      ],
+      "en": {
+        "title": "MarkItDown: any file to Markdown for LLMs",
+        "summary": "A Python tool from Microsoft that converts PDF, Word, Excel, PowerPoint, images, audio, HTML and more into model-friendly Markdown, keeping headings and tables. There's an MCP server.",
+        "why": "If you'll build RAG over company documents, like contracts, quotes and Excel files, it's the fastest way to turn them into structured text.",
+        "about": "MarkItDown is built for LLMs, not for human display: it preserves structure, like headings, lists, tables and links, so the model understands it. It supports PDF, docx, xlsx and pptx, images (EXIF and OCR), audio (transcription), HTML, CSV, JSON, ZIP and EPUB.\n\nYou can install only the extras you need, and there's an OCR plugin and an MCP server.",
+        "features": [
+          "PDF, Office, images and audio",
+          "Keeps tables and headings",
+          "Optional extras",
+          "MCP server"
+        ],
+        "install": [
+          "pip"
+        ]
+      }
     },
     {
       "id": "ess-lazygit",
@@ -80,13 +200,43 @@
       "summary": "واجهة ترمينال بسيطة لـ git: staging لسطور معينة، وinteractive rebase بسهولة، وcherry-pick، وstash، وحل الـ conflicts، وكله بالكيبورد.",
       "why": "بعد ما الـ agent يعدّل ملفات كتير، lazygit بيسهّل تراجع وتعمل commit لأجزاء معينة بس.",
       "about": "lazygit بيعرض الملفات والـ branches والـ commits والـ stash في panels. تقدر تعمل stage لسطر أو hunk، وrebase تفاعلي (تعدّل وتدمج وتحذف commits) بضغطة، وcherry-pick، وbisect، وundo.\n\nمكتوب بـ Go، وبيتسطب من مدير الحزم.",
-      "features": ["staging لسطور معينة", "interactive rebase سهل", "حل الـ conflicts", "undo"],
-      "install": [{ "label": "Homebrew", "cmd": "brew install lazygit" }],
-      "pricing": { "model": "oss" },
+      "features": [
+        "staging لسطور معينة",
+        "interactive rebase سهل",
+        "حل الـ conflicts",
+        "undo"
+      ],
+      "install": [
+        {
+          "label": "Homebrew",
+          "cmd": "brew install lazygit"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/jesseduffield/lazygit",
       "source": "github.com",
       "importance": 1,
-      "tags": ["git", "TUI"]
+      "tags": [
+        "git",
+        "TUI"
+      ],
+      "en": {
+        "title": "lazygit: a terminal UI for git",
+        "summary": "A simple terminal UI for git: stage specific lines, interactive rebase made easy, cherry-pick, stash and conflict resolution, all from the keyboard.",
+        "why": "After an agent edits lots of files, lazygit makes it easy to review and commit only specific parts.",
+        "about": "lazygit shows files, branches, commits and the stash in panels. You can stage a line or a hunk, run an interactive rebase (edit, squash and drop commits) with a keypress, cherry-pick, bisect and undo.\n\nIt's written in Go and installs from your package manager.",
+        "features": [
+          "Stage specific lines",
+          "Easy interactive rebase",
+          "Conflict resolution",
+          "Undo"
+        ],
+        "install": [
+          "Homebrew"
+        ]
+      }
     },
     {
       "id": "ess-lazydocker",
@@ -97,13 +247,43 @@
       "summary": "واجهة ترمينال لـ docker وdocker-compose: كل الـ containers والـ services في شاشة واحدة، ومعاها الـ logs والـ stats، وإعادة تشغيل وbuild وتنضيف بضغطة.",
       "why": "مع بيئة Docker Compose فيها خدمات كتير، بتشوف الـ logs والحالة من غير ما تفتح كذا ترمينال.",
       "about": "من نفس صاحب lazygit. بيعرض الـ services والـ containers والـ images والـ volumes، والـ logs لايف، والـ CPU والذاكرة، وتقدر تعيد تشغيل أو تعمل rebuild أو تدخل shell أو تنضّف الحاجات اللي مش مستخدمة.",
-      "features": ["كل الـ services في شاشة", "logs وstats لايف", "restart وrebuild بضغطة", "تنضيف الحاجات القديمة"],
-      "install": [{ "label": "Homebrew", "cmd": "brew install lazydocker" }],
-      "pricing": { "model": "oss" },
+      "features": [
+        "كل الـ services في شاشة",
+        "logs وstats لايف",
+        "restart وrebuild بضغطة",
+        "تنضيف الحاجات القديمة"
+      ],
+      "install": [
+        {
+          "label": "Homebrew",
+          "cmd": "brew install lazydocker"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/jesseduffield/lazydocker",
       "source": "github.com",
       "importance": 1,
-      "tags": ["Docker", "TUI"]
+      "tags": [
+        "Docker",
+        "TUI"
+      ],
+      "en": {
+        "title": "lazydocker: a terminal UI for Docker and Compose",
+        "summary": "A terminal UI for docker and docker-compose: all containers and services on one screen, with logs and stats, and restart, build and cleanup with a keypress.",
+        "why": "With a Docker Compose setup of many services, you see logs and status without opening several terminals.",
+        "about": "From the author of lazygit. It shows services, containers, images and volumes, live logs, CPU and memory, and lets you restart, rebuild, open a shell, or clean up unused resources.",
+        "features": [
+          "All services on one screen",
+          "Live logs and stats",
+          "Restart and rebuild with a keypress",
+          "Clean up old resources"
+        ],
+        "install": [
+          "Homebrew"
+        ]
+      }
     },
     {
       "id": "ess-ripgrep",
@@ -114,13 +294,44 @@
       "summary": "أداة بحث بالـ regex في الملفات، سريعة جداً، وبتحترم .gitignore وبتتجاهل الملفات المخفية والـ binary تلقائياً. وهي اللي Claude Code والـ editors بيستخدموها جوه.",
       "why": "لو مسطّبها، الـ agents وإنت بتلاقوا الحاجة في المشروع في لحظة.",
       "about": "rg بيدوّر recursively ويتجاهل vendor وnode_modules لو في .gitignore، وبيدعم أنواع الملفات (-t php)، والـ globs، والـ context، والبحث في الملفات المضغوطة. مكتوب بـ Rust ومعروف بسرعته.",
-      "features": ["سريع جداً", "بيحترم .gitignore", "فلترة بنوع الملف", "regex كامل"],
-      "install": [{ "label": "Ubuntu وMint", "cmd": "sudo apt install ripgrep" }],
-      "pricing": { "model": "oss" },
+      "features": [
+        "سريع جداً",
+        "بيحترم .gitignore",
+        "فلترة بنوع الملف",
+        "regex كامل"
+      ],
+      "install": [
+        {
+          "label": "Ubuntu وMint",
+          "cmd": "sudo apt install ripgrep"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/BurntSushi/ripgrep",
       "source": "github.com",
       "importance": 1,
-      "tags": ["search", "CLI", "Rust"]
+      "tags": [
+        "search",
+        "CLI",
+        "Rust"
+      ],
+      "en": {
+        "title": "ripgrep (rg): search much faster than grep",
+        "summary": "A regex search tool for files that's extremely fast, respects .gitignore and skips hidden and binary files automatically. It's what Claude Code and editors use under the hood.",
+        "why": "With it installed, both you and your agents find things in the project instantly.",
+        "about": "rg searches recursively and skips vendor and node_modules if they're in .gitignore. It supports file types (-t php), globs, context lines and searching compressed files. It's written in Rust and known for its speed.",
+        "features": [
+          "Extremely fast",
+          "Respects .gitignore",
+          "Filter by file type",
+          "Full regex"
+        ],
+        "install": [
+          "Ubuntu and Mint"
+        ]
+      }
     },
     {
       "id": "ess-fzf",
@@ -131,13 +342,44 @@
       "summary": "أداة بحث تقريبي تفاعلية: ملفات، وتاريخ الأوامر (Ctrl+R)، وbranches، وprocesses، أو أي قايمة. وبتتدمج مع الـ shell وvim وأدوات تانية.",
       "why": "Ctrl+R بـ fzf بيغيّر طريقة رجوعك للأوامر القديمة، زي أوامر artisan الطويلة.",
       "about": "fzf بياخد أي قايمة ويخليك تختار منها بكتابة أجزاء من الاسم. ومعاه key bindings للـ shell: Ctrl+T للملفات، وCtrl+R للتاريخ، وAlt+C للفولدرات، وpreview للملفات، وأمثلة لدمجه مع git.",
-      "features": ["بحث تقريبي سريع", "Ctrl+R وCtrl+T", "preview", "يتدمج مع أي أمر"],
-      "install": [{ "label": "Ubuntu وMint", "cmd": "sudo apt install fzf" }],
-      "pricing": { "model": "oss" },
+      "features": [
+        "بحث تقريبي سريع",
+        "Ctrl+R وCtrl+T",
+        "preview",
+        "يتدمج مع أي أمر"
+      ],
+      "install": [
+        {
+          "label": "Ubuntu وMint",
+          "cmd": "sudo apt install fzf"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/junegunn/fzf",
       "source": "github.com",
       "importance": 1,
-      "tags": ["CLI", "shell", "productivity"]
+      "tags": [
+        "CLI",
+        "shell",
+        "productivity"
+      ],
+      "en": {
+        "title": "fzf: a fuzzy finder for everything in the terminal",
+        "summary": "An interactive fuzzy finder: files, command history (Ctrl+R), branches, processes or any list. It integrates with the shell, vim and other tools.",
+        "why": "Ctrl+R with fzf changes how you get back to old commands, like long artisan commands.",
+        "about": "fzf takes any list and lets you pick from it by typing parts of the name. It comes with shell key bindings: Ctrl+T for files, Ctrl+R for history and Alt+C for folders, plus file previews and examples for combining it with git.",
+        "features": [
+          "Fast fuzzy search",
+          "Ctrl+R and Ctrl+T",
+          "Preview",
+          "Combines with any command"
+        ],
+        "install": [
+          "Ubuntu and Mint"
+        ]
+      }
     },
     {
       "id": "ess-zoxide",
@@ -148,13 +390,43 @@
       "summary": "بيفتكر الفولدرات اللي بتروحها كتير، فتكتب z erp يوديك على مشروع Company-ERP من أي مكان. ومعاه zi للاختيار التفاعلي بـ fzf.",
       "why": "بتتنقل بين مشاريع ومسارات طويلة طول اليوم، وده بيوفّر كتابة كتير.",
       "about": "zoxide بيرتب الفولدرات حسب عدد المرات وآخر مرة زرتها، وبيقفز للأنسب بأي جزء من الاسم. مكتوب بـ Rust، وبيشتغل مع bash وzsh وfish وغيرهم.",
-      "features": ["قفز بأي جزء من الاسم", "ترتيب ذكي", "zi تفاعلي", "كل الـ shells"],
-      "install": [{ "label": "Ubuntu وMint", "cmd": "sudo apt install zoxide" }],
-      "pricing": { "model": "oss" },
+      "features": [
+        "قفز بأي جزء من الاسم",
+        "ترتيب ذكي",
+        "zi تفاعلي",
+        "كل الـ shells"
+      ],
+      "install": [
+        {
+          "label": "Ubuntu وMint",
+          "cmd": "sudo apt install zoxide"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/ajeetdsouza/zoxide",
       "source": "github.com",
       "importance": 1,
-      "tags": ["shell", "productivity"]
+      "tags": [
+        "shell",
+        "productivity"
+      ],
+      "en": {
+        "title": "zoxide: a smarter cd",
+        "summary": "It remembers the folders you visit most, so typing z erp takes you to the Company-ERP project from anywhere. zi gives you interactive selection with fzf.",
+        "why": "You move between projects and long paths all day, and this saves a lot of typing.",
+        "about": "zoxide ranks folders by how often and how recently you visited them, and jumps to the best match from any part of the name. It's written in Rust and works with bash, zsh, fish and more.",
+        "features": [
+          "Jump by any part of the name",
+          "Smart ranking",
+          "Interactive zi",
+          "Every shell"
+        ],
+        "install": [
+          "Ubuntu and Mint"
+        ]
+      }
     },
     {
       "id": "ess-atuin",
@@ -165,13 +437,43 @@
       "summary": "بيستبدل تاريخ الـ shell بقاعدة SQLite فيها سياق كل أمر: الفولدر، والمدة، والنتيجة. وبحث قوي، ومزامنة مشفرة بين أجهزتك.",
       "why": "تلاقي الأمر اللي شغّلته على السيرفر من أسبوعين، بالفولدر اللي كنت فيه، من أي جهاز.",
       "about": "Atuin بيسجل كل أمر ومعاه exit code والمدة والفولدر والجهاز، وبيدّيك واجهة بحث بفلاتر (المشروع الحالي، والجهاز ده، والكل). والمزامنة اختيارية ومشفرة end-to-end، وتقدر تستضيف سيرفر المزامنة بنفسك.",
-      "features": ["تاريخ في SQLite بالسياق", "بحث بفلاتر", "مزامنة مشفرة", "سيرفر تستضيفه بنفسك"],
-      "install": [{ "label": "سكريبت التسطيب", "cmd": "curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh" }],
-      "pricing": { "model": "oss" },
+      "features": [
+        "تاريخ في SQLite بالسياق",
+        "بحث بفلاتر",
+        "مزامنة مشفرة",
+        "سيرفر تستضيفه بنفسك"
+      ],
+      "install": [
+        {
+          "label": "سكريبت التسطيب",
+          "cmd": "curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://atuin.sh",
       "source": "atuin.sh",
       "importance": 1,
-      "tags": ["shell", "history"]
+      "tags": [
+        "shell",
+        "history"
+      ],
+      "en": {
+        "title": "Atuin: shell history in a database, synced",
+        "summary": "It replaces your shell history with a SQLite database that stores each command's context: the folder, duration and result. Powerful search and encrypted sync across your machines.",
+        "why": "Find the command you ran on the server two weeks ago, along with the folder you were in, from any machine.",
+        "about": "Atuin records every command with its exit code, duration, folder and host, and gives you a search UI with filters (current project, this machine, everything). Sync is optional and end-to-end encrypted, and you can self-host the sync server.",
+        "features": [
+          "History in SQLite with context",
+          "Search with filters",
+          "Encrypted sync",
+          "A self-hostable server"
+        ],
+        "install": [
+          "Install script"
+        ]
+      }
     },
     {
       "id": "ess-starship",
@@ -182,13 +484,43 @@
       "summary": "prompt بيعرض اللي محتاجه: الـ branch وحالة git، وإصدار PHP أو Node، والـ Docker context، ومدة آخر أمر، وبيتظبط بملف TOML واحد.",
       "why": "تشوف إصدار PHP والـ branch على طول، فمتشغّلش أمر على branch أو بيئة غلط.",
       "about": "Starship مكتوب بـ Rust وسريع جداً، وبيشتغل مع bash وzsh وfish وPowerShell. كل module بيظهر لما يكون مناسب بس، زي إصدار PHP في مشروع PHP. والإعداد في starship.toml، وفيه presets جاهزة.",
-      "features": ["أي shell", "git وإصدارات اللغات", "سريع جداً", "إعداد TOML وpresets"],
-      "install": [{ "label": "سكريبت التسطيب", "cmd": "curl -sS https://starship.rs/install.sh | sh" }],
-      "pricing": { "model": "oss" },
+      "features": [
+        "أي shell",
+        "git وإصدارات اللغات",
+        "سريع جداً",
+        "إعداد TOML وpresets"
+      ],
+      "install": [
+        {
+          "label": "سكريبت التسطيب",
+          "cmd": "curl -sS https://starship.rs/install.sh | sh"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://starship.rs",
       "source": "starship.rs",
       "importance": 1,
-      "tags": ["shell", "prompt"]
+      "tags": [
+        "shell",
+        "prompt"
+      ],
+      "en": {
+        "title": "Starship: a fast, rich prompt for any shell",
+        "summary": "A prompt that shows what you need: the branch and git status, the PHP or Node version, the Docker context and the last command's duration, all configured in one TOML file.",
+        "why": "You see the PHP version and branch at a glance, so you don't run a command on the wrong branch or environment.",
+        "about": "Starship is written in Rust and is very fast. It works with bash, zsh, fish and PowerShell. Each module appears only when relevant, like the PHP version in a PHP project. Configuration lives in starship.toml, and there are ready-made presets.",
+        "features": [
+          "Any shell",
+          "Git and language versions",
+          "Very fast",
+          "TOML config and presets"
+        ],
+        "install": [
+          "Install script"
+        ]
+      }
     },
     {
       "id": "ess-ghostty",
@@ -199,12 +531,34 @@
       "summary": "terminal emulator سريع، بيستخدم الـ GPU، وبواجهة native على Linux وmacOS، ومعاه ميزات حديثة كتير. وفيه libghostty تقدر تدمجها في تطبيقات تانية.",
       "why": "لو حابب ترمينال خفيف جداً جنب Warp، مثلاً للجلسات الطويلة مع Claude Code.",
       "about": "Ghostty عمله Mitchell Hashimoto، مؤسس HashiCorp. بيركز على السرعة والواجهة الأصلية لكل نظام، يعني GTK على Linux وAppKit على macOS، وبيدعم ميزات حديثة زي الـ splits والـ tabs والـ themes وkitty graphics protocol.\n\nوبقى فيه libghostty كمكتبة للتطبيقات التانية.",
-      "features": ["GPU وسريع", "واجهة native", "splits وtabs وthemes", "libghostty"],
-      "pricing": { "model": "oss" },
+      "features": [
+        "GPU وسريع",
+        "واجهة native",
+        "splits وtabs وthemes",
+        "libghostty"
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://ghostty.org",
       "source": "ghostty.org",
       "importance": 1,
-      "tags": ["terminal", "Linux"]
+      "tags": [
+        "terminal",
+        "Linux"
+      ],
+      "en": {
+        "title": "Ghostty: a fast, native terminal",
+        "summary": "A fast, GPU-accelerated terminal emulator with a native UI on Linux and macOS and plenty of modern features. libghostty lets you embed it in other apps.",
+        "why": "If you want a very light terminal alongside Warp, for example for long sessions with Claude Code.",
+        "about": "Ghostty is by Mitchell Hashimoto, the founder of HashiCorp. It focuses on speed and a native UI on each platform, meaning GTK on Linux and AppKit on macOS, and supports modern features like splits, tabs, themes and the kitty graphics protocol.\n\nThere's now libghostty as a library for other applications.",
+        "features": [
+          "GPU-accelerated and fast",
+          "Native UI",
+          "Splits, tabs and themes",
+          "libghostty"
+        ]
+      }
     }
   ]
 }

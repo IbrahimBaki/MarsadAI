@@ -10,16 +10,50 @@
       "summary": "مجموعة components مصممة كويس، مبنية على Radix وTailwind. بتتنسخ في مشروعك بدل ما تتسطب كباكدج، فتعدّل فيها براحتك. وبقت الأساس اللي معظم أدوات توليد الواجهات بالـ AI بتبني عليه.",
       "why": "لو هتبني واجهة React، أو هتخلي agent يبنيها، shadcn هو اللي الموديلات بتكتبه أحسن حاجة. وفيه registry وMCP server للـ agents.",
       "about": "الفكرة إن shadcn مش مكتبة بتسطّبها، الـ CLI بيحط كود الـ component نفسه جوه مشروعك، فتملكه بالكامل. فيه components كتير زي Button وDialog وTable وForm وCommand، وblocks جاهزة للـ dashboards والـ login.\n\nفيه registry تقدر تعمل منه مكتبة components خاصة بفريقك، ومعاه MCP server بيخلي الـ agent يتصفح ويركّب الـ components. وv0 وأدوات كتير بتطلّع كود shadcn.",
-      "features": ["الكود في مشروعك وتملكه", "Radix + Tailwind", "blocks جاهزة", "registry وMCP للـ agents"],
-      "install": [
-        { "label": "ابدأ في مشروعك", "cmd": "npx shadcn@latest init" },
-        { "label": "ضيف component", "cmd": "npx shadcn@latest add button" }
+      "features": [
+        "الكود في مشروعك وتملكه",
+        "Radix + Tailwind",
+        "blocks جاهزة",
+        "registry وMCP للـ agents"
       ],
-      "pricing": { "model": "oss" },
+      "install": [
+        {
+          "label": "ابدأ في مشروعك",
+          "cmd": "npx shadcn@latest init"
+        },
+        {
+          "label": "ضيف component",
+          "cmd": "npx shadcn@latest add button"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://ui.shadcn.com",
       "source": "ui.shadcn.com",
       "importance": 3,
-      "tags": ["React", "UI", "Tailwind", "components"]
+      "tags": [
+        "React",
+        "UI",
+        "Tailwind",
+        "components"
+      ],
+      "en": {
+        "title": "shadcn/ui: components you copy into your project and own",
+        "summary": "A set of well-designed components built on Radix and Tailwind. They're copied into your project instead of installed as a package, so you can change them freely. It's become the base most AI UI generators build on.",
+        "why": "If you'll build a React UI, or have an agent build it, shadcn is what models write best. There's also a registry and an MCP server for agents.",
+        "about": "The idea is that shadcn isn't a library you install: the CLI puts the component's code itself inside your project, so you fully own it. There are many components like Button, Dialog, Table, Form and Command, plus ready-made blocks for dashboards and login pages.\n\nThere's a registry you can use to build your team's own component library, and an MCP server that lets the agent browse and install components. v0 and many other tools output shadcn code.",
+        "features": [
+          "The code lives in your project and you own it",
+          "Radix + Tailwind",
+          "Ready-made blocks",
+          "Registry and MCP for agents"
+        ],
+        "install": [
+          "Start in your project",
+          "Add a component"
+        ]
+      }
     },
     {
       "id": "ess-tailwindcss",
@@ -30,13 +64,44 @@
       "summary": "الـ CSS framework المبني على utility classes. في v4 بقى engine جديد أسرع بكتير، والإعداد بقى من جوه CSS بـ @theme بدل ملف JS، ودعم مدمج لـ container queries والـ dark mode.",
       "why": "مستخدم في Laravel وFilament وshadcn وكل أدوات الـ AI تقريباً، فلازم تعرف الطريقة الجديدة في v4.",
       "about": "Tailwind بيخليك تكتب الستايل في الـ HTML بـ classes صغيرة، والـ build بيطلّع الـ CSS اللي استخدمته بس.\n\nv4 غيّر حاجات كتير: engine جديد مكتوب بـ Rust أسرع بكتير، والإعداد بقى في CSS بـ @import \"tailwindcss\" و@theme للـ tokens بدل tailwind.config.js، واكتشاف الملفات أوتوماتيك، وcontainer queries مدمجة، وألوان بـ OKLCH، وplugin لـ Vite.",
-      "features": ["engine أسرع بكتير", "إعداد من CSS بـ @theme", "container queries مدمجة", "plugin لـ Vite"],
-      "install": [{ "label": "مع Vite", "cmd": "npm install tailwindcss @tailwindcss/vite" }],
-      "pricing": { "model": "oss" },
+      "features": [
+        "engine أسرع بكتير",
+        "إعداد من CSS بـ @theme",
+        "container queries مدمجة",
+        "plugin لـ Vite"
+      ],
+      "install": [
+        {
+          "label": "مع Vite",
+          "cmd": "npm install tailwindcss @tailwindcss/vite"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://tailwindcss.com",
       "source": "tailwindcss.com",
       "importance": 2,
-      "tags": ["CSS", "Tailwind", "frontend"]
+      "tags": [
+        "CSS",
+        "Tailwind",
+        "frontend"
+      ],
+      "en": {
+        "title": "Tailwind CSS v4",
+        "summary": "The utility-class CSS framework. v4 has a much faster new engine, configuration moved into CSS with @theme instead of a JS file, and built-in support for container queries and dark mode.",
+        "why": "It's used in Laravel, Filament, shadcn and almost every AI tool, so you need to know the new v4 way.",
+        "about": "Tailwind lets you write styles in the HTML with small classes, and the build outputs only the CSS you used.\n\nv4 changed a lot: a new, much faster engine written in Rust; configuration in CSS with @import \"tailwindcss\" and @theme for tokens instead of tailwind.config.js; automatic content detection; built-in container queries; OKLCH colors; and a Vite plugin.",
+        "features": [
+          "A much faster engine",
+          "Configuration in CSS with @theme",
+          "Built-in container queries",
+          "A Vite plugin"
+        ],
+        "install": [
+          "With Vite"
+        ]
+      }
     },
     {
       "id": "ess-nextjs",
@@ -47,13 +112,44 @@
       "summary": "framework لـ React من Vercel: App Router، وServer Components، وstreaming، وroute handlers، وmiddleware (بقى اسمه proxy). والإصدار 16 غيّر حاجات كتير، فاقرا الدوكيومنتيشن قبل ما تكتب.",
       "why": "المرصد ده نفسه مبني بيه. وخد بالك إن الموديلات بتكتب أحياناً بطريقة الإصدارات القديمة، فالدوكيومنتيشن المحلية في node_modules مهمة.",
       "about": "Next.js بيجمع الـ routing بالملفات، والـ rendering على السيرفر والـ client، والـ API routes في مشروع واحد. أهم مفاهيمه: App Router، وServer Components بتشتغل على السيرفر من غير JavaScript للـ client، وServer Actions، والـ caching.\n\nفي الإصدارات الأخيرة: Turbopack بقى الافتراضي، والـ middleware اتغيّر اسمه لـ proxy، وفيه cache components. والإصدار بيحط دوكيومنتيشن جوه node_modules/next/dist/docs عشان الـ agents تقراها.",
-      "features": ["App Router وServer Components", "Turbopack افتراضي", "proxy بدل middleware", "دوكيومنتيشن محلية للـ agents"],
-      "install": [{ "label": "مشروع جديد", "cmd": "npx create-next-app@latest" }],
-      "pricing": { "model": "oss" },
+      "features": [
+        "App Router وServer Components",
+        "Turbopack افتراضي",
+        "proxy بدل middleware",
+        "دوكيومنتيشن محلية للـ agents"
+      ],
+      "install": [
+        {
+          "label": "مشروع جديد",
+          "cmd": "npx create-next-app@latest"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://nextjs.org",
       "source": "nextjs.org",
       "importance": 2,
-      "tags": ["React", "Next.js", "fullstack"]
+      "tags": [
+        "React",
+        "Next.js",
+        "fullstack"
+      ],
+      "en": {
+        "title": "Next.js: the most popular React framework",
+        "summary": "Vercel's React framework: App Router, Server Components, streaming, route handlers and middleware (now called proxy). Version 16 changed a lot, so read the docs before you write code.",
+        "why": "Marsad itself is built with it. Note that models sometimes write in the style of older versions, so the local docs in node_modules matter.",
+        "about": "Next.js combines file-based routing, server and client rendering, and API routes in one project. Its key concepts: the App Router, Server Components that run on the server without client JavaScript, Server Actions, and caching.\n\nIn recent releases Turbopack became the default, middleware was renamed to proxy, and there are cache components. Releases ship documentation inside node_modules/next/dist/docs so agents can read it.",
+        "features": [
+          "App Router and Server Components",
+          "Turbopack by default",
+          "proxy instead of middleware",
+          "Local docs for agents"
+        ],
+        "install": [
+          "New project"
+        ]
+      }
     },
     {
       "id": "ess-vite",
@@ -64,13 +160,44 @@
       "summary": "dev server سريع جداً مبني على ES modules، وbuild بـ Rolldown للـ production. ده الـ bundler الافتراضي في Laravel وVue وكتير من مشاريع React.",
       "why": "Laravel بيستخدمه افتراضياً، ففهم الإعدادات والـ plugins بتاعته بيوفّر عليك وقت لما حاجة في الـ assets تبوظ.",
       "about": "Vite بيخدم الملفات للبراوزر كـ ES modules في التطوير من غير ما يعمل bundle لكل حاجة، فالبداية فورية والـ HMR سريع. وفي الـ production بيعمل bundle محسّن بـ Rolldown، وده bundler جديد مكتوب بـ Rust.\n\nفيه plugins لـ React وVue وSvelte وTailwind، وlaravel-vite-plugin بيربطه بـ Blade.",
-      "features": ["dev server فوري وHMR", "build بـ Rolldown", "plugins لكل framework", "مدمج في Laravel"],
-      "install": [{ "label": "مشروع جديد", "cmd": "npm create vite@latest" }],
-      "pricing": { "model": "oss" },
+      "features": [
+        "dev server فوري وHMR",
+        "build بـ Rolldown",
+        "plugins لكل framework",
+        "مدمج في Laravel"
+      ],
+      "install": [
+        {
+          "label": "مشروع جديد",
+          "cmd": "npm create vite@latest"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://vite.dev",
       "source": "vite.dev",
       "importance": 1,
-      "tags": ["build tool", "frontend", "Laravel"]
+      "tags": [
+        "build tool",
+        "frontend",
+        "Laravel"
+      ],
+      "en": {
+        "title": "Vite: the standard frontend build tool",
+        "summary": "A very fast dev server built on ES modules, with Rolldown builds for production. It's the default bundler in Laravel, Vue and many React projects.",
+        "why": "Laravel uses it by default, so understanding its config and plugins saves you time when something in your assets breaks.",
+        "about": "In development Vite serves files to the browser as ES modules without bundling everything, so startup is instant and HMR is fast. For production it creates an optimised bundle with Rolldown, a new bundler written in Rust.\n\nThere are plugins for React, Vue, Svelte and Tailwind, and laravel-vite-plugin connects it to Blade.",
+        "features": [
+          "Instant dev server and HMR",
+          "Rolldown builds",
+          "Plugins for every framework",
+          "Built into Laravel"
+        ],
+        "install": [
+          "New project"
+        ]
+      }
     },
     {
       "id": "ess-tanstack-query",
@@ -81,13 +208,44 @@
       "summary": "مكتبة بتتعامل مع جلب البيانات من السيرفر: caching، وإعادة الجلب، والـ pagination، والـ mutations، والـ optimistic updates. بتشتغل مع React وVue وSolid وSvelte وAngular.",
       "why": "لو هتعمل واجهة React أو Vue لـ API الـ ERP، دي بتوفّر عليك كل منطق التحميل والأخطاء والـ cache اللي بتكتبه بإيدك.",
       "about": "بدل ما تكتب useEffect وstate للـ loading والـ error والبيانات في كل شاشة، بتستخدم useQuery بمفتاح ودالة جلب. والمكتبة بتعمل cache، وتعيد الجلب لما الشاشة ترجع، وتلغي الطلبات القديمة، وتدعم infinite scroll.\n\nوuseMutation للتعديلات، ومعاها invalidation للبيانات اللي اتأثرت، وoptimistic updates. ومعاها Devtools.",
-      "features": ["caching وإعادة جلب ذكية", "pagination وinfinite scroll", "mutations وoptimistic updates", "React وVue وغيرهم"],
-      "install": [{ "label": "React", "cmd": "npm i @tanstack/react-query" }],
-      "pricing": { "model": "oss" },
+      "features": [
+        "caching وإعادة جلب ذكية",
+        "pagination وinfinite scroll",
+        "mutations وoptimistic updates",
+        "React وVue وغيرهم"
+      ],
+      "install": [
+        {
+          "label": "React",
+          "cmd": "npm i @tanstack/react-query"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://tanstack.com/query",
       "source": "tanstack.com",
       "importance": 1,
-      "tags": ["React", "data fetching", "cache"]
+      "tags": [
+        "React",
+        "data fetching",
+        "cache"
+      ],
+      "en": {
+        "title": "TanStack Query: managing server data in the UI",
+        "summary": "A library for fetching server data: caching, refetching, pagination, mutations and optimistic updates. Works with React, Vue, Solid, Svelte and Angular.",
+        "why": "If you'll build a React or Vue UI for the ERP's API, it saves you all the loading, error and cache logic you'd otherwise write by hand.",
+        "about": "Instead of writing useEffect and state for loading, error and data on every screen, you use useQuery with a key and a fetch function. The library caches, refetches when the screen comes back into focus, cancels stale requests and supports infinite scroll.\n\nuseMutation handles changes, with invalidation of affected data and optimistic updates. Devtools are included.",
+        "features": [
+          "Caching and smart refetching",
+          "Pagination and infinite scroll",
+          "Mutations and optimistic updates",
+          "React, Vue and more"
+        ],
+        "install": [
+          "React"
+        ]
+      }
     },
     {
       "id": "ess-alpinejs",
@@ -98,13 +256,44 @@
       "summary": "framework صغير بيضيف تفاعل للـ HTML بـ attributes زي x-data وx-show وx-on. شغال مع Livewire وFilament، وبديل حديث لـ jQuery في الصفحات المعمولة بـ Blade.",
       "why": "لو لسه بتستخدم jQuery في شاشات Blade، Alpine بيدّيك نفس الحاجات (dropdowns وmodals وtabs) بكود أقل وأوضح.",
       "about": "Alpine بيخليك تكتب الـ state والسلوك في الـ HTML نفسه: x-data للـ state، وx-show وx-if للإظهار، وx-on للأحداث، وx-model للربط، وx-for للتكرار. وحجمه صغير جداً.\n\nفيه plugins رسمية زي Mask للـ inputs، وIntersect، وPersist، وFocus. ومدمج في Livewire 3 وما بعده.",
-      "features": ["attributes بسيطة في الـ HTML", "حجم صغير جداً", "plugins رسمية", "مدمج مع Livewire"],
-      "install": [{ "label": "npm", "cmd": "npm install alpinejs" }],
-      "pricing": { "model": "oss" },
+      "features": [
+        "attributes بسيطة في الـ HTML",
+        "حجم صغير جداً",
+        "plugins رسمية",
+        "مدمج مع Livewire"
+      ],
+      "install": [
+        {
+          "label": "npm",
+          "cmd": "npm install alpinejs"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://alpinejs.dev",
       "source": "alpinejs.dev",
       "importance": 1,
-      "tags": ["JavaScript", "Blade", "Livewire"]
+      "tags": [
+        "JavaScript",
+        "Blade",
+        "Livewire"
+      ],
+      "en": {
+        "title": "Alpine.js: lightweight interactivity inside your HTML",
+        "summary": "A tiny framework that adds interactivity to HTML with attributes like x-data, x-show and x-on. It works with Livewire and Filament and is a modern alternative to jQuery on Blade pages.",
+        "why": "If you still use jQuery on Blade screens, Alpine gives you the same things (dropdowns, modals and tabs) with less, clearer code.",
+        "about": "Alpine lets you write state and behaviour in the HTML itself: x-data for state, x-show and x-if for visibility, x-on for events, x-model for binding and x-for for loops. It's very small.\n\nThere are official plugins like Mask for inputs, Intersect, Persist and Focus. It's built into Livewire 3 and later.",
+        "features": [
+          "Simple attributes in your HTML",
+          "Very small",
+          "Official plugins",
+          "Built into Livewire"
+        ],
+        "install": [
+          "npm"
+        ]
+      }
     },
     {
       "id": "ess-htmx",
@@ -115,13 +304,44 @@
       "summary": "مكتبة بتخليك تعمل AJAX وتحديثات جزئية للصفحة وWebSockets وSSE بـ attributes في الـ HTML، والسيرفر بيرجّع HTML جاهز بدل JSON.",
       "why": "قريب جداً من أسلوب easyAjax اللي بتستخدمه، بس بشكل قياسي: hx-post وhx-target وhx-swap من غير JavaScript.",
       "about": "مع htmx أي عنصر يقدر يبعت طلب: hx-get وhx-post وhx-put وhx-delete، وhx-target بيحدد مكان الرد، وhx-swap بيحدد طريقة التبديل، وhx-trigger بيحدد إمتى. والسيرفر، يعني Laravel، بيرجّع partial view.\n\nده بيخلي الواجهة تفاعلية من غير SPA، وكل المنطق يفضل على السيرفر.",
-      "features": ["AJAX بـ attributes", "السيرفر بيرجّع HTML", "WebSockets وSSE", "من غير build step"],
-      "install": [{ "label": "npm", "cmd": "npm install htmx.org" }],
-      "pricing": { "model": "oss" },
+      "features": [
+        "AJAX بـ attributes",
+        "السيرفر بيرجّع HTML",
+        "WebSockets وSSE",
+        "من غير build step"
+      ],
+      "install": [
+        {
+          "label": "npm",
+          "cmd": "npm install htmx.org"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://htmx.org",
       "source": "htmx.org",
       "importance": 1,
-      "tags": ["HTML", "AJAX", "hypermedia"]
+      "tags": [
+        "HTML",
+        "AJAX",
+        "hypermedia"
+      ],
+      "en": {
+        "title": "htmx: AJAX straight from your HTML",
+        "summary": "A library for AJAX, partial page updates, WebSockets and SSE using HTML attributes, with the server returning ready HTML instead of JSON.",
+        "why": "Very close to the easyAjax style you use, but standard: hx-post, hx-target and hx-swap with no JavaScript.",
+        "about": "With htmx any element can send a request: hx-get, hx-post, hx-put and hx-delete; hx-target sets where the response goes, hx-swap how it's swapped in, and hx-trigger when. The server, Laravel in your case, returns a partial view.\n\nThat makes the UI interactive without a SPA, with all the logic staying on the server.",
+        "features": [
+          "AJAX through attributes",
+          "The server returns HTML",
+          "WebSockets and SSE",
+          "No build step"
+        ],
+        "install": [
+          "npm"
+        ]
+      }
     },
     {
       "id": "ess-motion",
@@ -132,13 +352,46 @@
       "summary": "مكتبة أنيميشن مفتوحة المصدر (اللي كان اسمها Framer Motion). API بسيط، وengine بيجمع JavaScript مع APIs البراوزر لأنيميشن ناعم بـ 120fps، ومعاها gestures وlayout animations.",
       "why": "لما تحب تضيف حركة محسوبة لواجهة، زي drawer أو قايمة بتتفتح، دي الطريقة القياسية، وفيه دليل لاستخدامها مع الـ AI.",
       "about": "Motion بيدّيك components زي motion.div بـ props للـ animate والـ transitions، وAnimatePresence لأنيميشن الخروج، وlayout animations لما العناصر تتحرك، وgestures زي drag وhover وtap، وscroll animations.\n\nفيه نسخ لـ React وVue وJavaScript عادي، وقسم في الدوكيومنتيشن عن استخدامها مع أدوات الـ AI.",
-      "features": ["API بسيط", "layout وexit animations", "gestures وscroll", "React وVue وJS"],
-      "install": [{ "label": "npm", "cmd": "npm install motion" }],
-      "pricing": { "model": "oss", "note": "المكتبة مجانية، وفيه Motion+ مدفوعة بأمثلة وأدوات إضافية" },
+      "features": [
+        "API بسيط",
+        "layout وexit animations",
+        "gestures وscroll",
+        "React وVue وJS"
+      ],
+      "install": [
+        {
+          "label": "npm",
+          "cmd": "npm install motion"
+        }
+      ],
+      "pricing": {
+        "model": "oss",
+        "note": "المكتبة مجانية، وفيه Motion+ مدفوعة بأمثلة وأدوات إضافية"
+      },
       "url": "https://motion.dev",
       "source": "motion.dev",
       "importance": 1,
-      "tags": ["animation", "React", "Vue"]
+      "tags": [
+        "animation",
+        "React",
+        "Vue"
+      ],
+      "en": {
+        "title": "Motion: professional animation for React, Vue and JavaScript",
+        "summary": "An open-source animation library (formerly Framer Motion). A simple API and an engine that combines JavaScript with browser APIs for smooth 120fps animation, plus gestures and layout animations.",
+        "why": "When you want deliberate motion in a UI, like a drawer or a menu opening, this is the standard approach, and there's a guide to using it with AI.",
+        "about": "Motion gives you components like motion.div with props for animate and transitions, AnimatePresence for exit animations, layout animations when elements move, gestures like drag, hover and tap, and scroll animations.\n\nThere are versions for React, Vue and plain JavaScript, and a docs section on using it with AI tools.",
+        "features": [
+          "A simple API",
+          "Layout and exit animations",
+          "Gestures and scroll",
+          "React, Vue and JS"
+        ],
+        "install": [
+          "npm"
+        ],
+        "pricingNote": "The library is free; Motion+ is paid, with extra examples and tools"
+      }
     }
   ]
 }

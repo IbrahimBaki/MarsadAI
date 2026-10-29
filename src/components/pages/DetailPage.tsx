@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
-import { KIND_LABEL, PRICING_LABEL, SECTION_BY_ID } from "@/lib/sections";
-import { ago, dayLabel, formatCount, monogram, shortDate } from "@/lib/format";
+import { monogram } from "@/lib/format";
+import { useLocale } from "../LocaleProvider";
 import { useApp } from "../AppContext";
 import { useItemActions } from "../useItemActions";
 import { CodeBox, Empty, PriceChip, Skeleton, secStyle } from "../bits";
@@ -13,6 +13,8 @@ export function DetailPage() {
   const { id } = useParams<{ id: string }>();
   const router = useRouter();
   const { feed, byId, user } = useApp();
+  const { t, f, tx } = useLocale();
+  const d = t.detail;
   const { onSeen, onFav, onShare } = useItemActions();
 
   if (!feed) return <div className="pt-4"><Skeleton /></div>;
@@ -20,11 +22,11 @@ export function DetailPage() {
   if (!item)
     return (
       <div className="pt-6">
-        <Empty title="العنصر ده مش موجود" body="ممكن يكون اتشال أو اللينك غلط." action={<Link href="/" className="rounded-xl bg-ink px-4 py-2 text-[14.5px] font-semibold text-ground">ارجع للرئيسية</Link>} />
+        <Empty title={d.notFound} body={d.notFoundBody} action={<Link href="/" className="rounded-xl bg-ink px-4 py-2 text-[14.5px] font-semibold text-ground">{d.home}</Link>} />
       </div>
     );
 
-  const section = SECTION_BY_ID[item.section];
+  const section = tx.SECTION_BY_ID[item.section];
   const stats = item.repo ? feed.stats[item.repo] : undefined;
   const seen = user.seen.has(item.id);
   const fav = user.fav.has(item.id);
@@ -34,28 +36,28 @@ export function DetailPage() {
 
   const statBoxes: { label: string; value: string }[] = [];
   if (stats) {
-    statBoxes.push({ label: "النجوم", value: formatCount(stats.stars) });
-    if (stats.release) statBoxes.push({ label: "آخر إصدار", value: stats.release.tag });
-    if (stats.license) statBoxes.push({ label: "الرخصة", value: stats.license });
-    if (stats.language) statBoxes.push({ label: "اللغة", value: stats.language });
-    statBoxes.push({ label: "آخر تحديث", value: ago(stats.pushedAt) });
+    statBoxes.push({ label: d.stars, value: f.count(stats.stars) });
+    if (stats.release) statBoxes.push({ label: d.release, value: stats.release.tag });
+    if (stats.license) statBoxes.push({ label: d.license, value: stats.license });
+    if (stats.language) statBoxes.push({ label: d.language, value: stats.language });
+    statBoxes.push({ label: d.updated, value: f.ago(stats.pushedAt) });
   }
 
   return (
     <article style={secStyle(item.section)} className="mx-auto flex max-w-[860px] flex-col gap-4 pt-1">
       <div className="flex items-center gap-2">
-        <button type="button" onClick={back} aria-label="رجوع" className="card grid size-11 place-items-center !rounded-[14px]">
+        <button type="button" onClick={back} aria-label={d.back} className="card grid size-11 place-items-center !rounded-[14px]">
           <BackIcon />
         </button>
         <span className="flex-1" />
-        <button type="button" onClick={() => onShare(item)} aria-label="شارك" className="grid size-11 place-items-center rounded-[14px] hover:bg-sunken">
+        <button type="button" onClick={() => onShare(item)} aria-label={t.card.share} className="grid size-11 place-items-center rounded-[14px] hover:bg-sunken">
           <ShareIcon />
         </button>
         <button
           type="button"
           onClick={() => onFav(item.id, !fav)}
           aria-pressed={fav}
-          aria-label={fav ? "شيله من المفضلة" : "ضيفه للمفضلة"}
+          aria-label={fav ? t.card.removeFav : t.card.addFav}
           className={`grid size-11 place-items-center rounded-[14px] hover:bg-sunken ${fav ? "text-star" : ""}`}
         >
           <BookmarkIcon filled={fav} />
@@ -67,10 +69,10 @@ export function DetailPage() {
           <Link href={`${item.essential ? "/library" : "/"}?s=${item.section}`} className="sec-soft sec-fg rounded-full px-2.5 py-1 font-semibold">
             {section?.name}
           </Link>
-          <span className="card rounded-full !rounded-full px-2.5 py-1 text-ink-2">{KIND_LABEL[item.kind] ?? item.kind}</span>
+          <span className="card rounded-full !rounded-full px-2.5 py-1 text-ink-2">{tx.KIND_LABEL[item.kind] ?? item.kind}</span>
           <PriceChip pricing={item.pricing} size="md" />
           {item.importance === 3 && (
-            <span className="rounded-full bg-star-soft px-2.5 py-1 font-semibold text-star-ink">{item.essential ? "ابدأ بيه" : "لازم تشوفه"}</span>
+            <span className="rounded-full bg-star-soft px-2.5 py-1 font-semibold text-star-ink">{item.essential ? t.card.startHere : t.card.mustSee}</span>
           )}
         </div>
         <div className="flex items-center gap-3.5">
@@ -84,7 +86,7 @@ export function DetailPage() {
         </div>
         <p className="text-[16.5px] leading-[28px] text-ink-2">{item.summary}</p>
         {!item.essential && item.date && (
-          <p className="text-[13px] text-faint">في ملخص {dayLabel(item.date).main} · المصدر {item.source}</p>
+          <p className="text-[13px] text-faint">{d.inDigest(f.day(item.date).main, item.source)}</p>
         )}
 
         {statBoxes.length > 0 && (
@@ -106,8 +108,8 @@ export function DetailPage() {
             onClick={() => onSeen(item.id, true)}
             className="flex h-12 flex-1 items-center justify-center gap-2 rounded-2xl bg-ink text-[15px] font-semibold text-ground"
           >
-            {item.repo ? "افتح على GitHub" : `افتح ${item.source}`}
-            <ExternalIcon width={17} height={17} className="-scale-x-100" />
+            {item.repo ? d.openGithub : d.openSource(item.source)}
+            <ExternalIcon width={17} height={17} className="rtl:-scale-x-100" />
           </a>
           <button
             type="button"
@@ -118,14 +120,14 @@ export function DetailPage() {
             }`}
           >
             <CheckIcon width={18} height={18} />
-            {seen ? (isTool ? "جربته" : "شوفته") : isTool ? "علّمه جربته" : "علّمه شوفته"}
+            {seen ? (isTool ? t.card.tried : t.card.seen) : isTool ? t.card.markTried : t.card.markSeen}
           </button>
         </div>
       </header>
 
       {paragraphs.length > 0 && (
-        <Block title="هو إيه">
-          <div className="prose-ar text-[15.5px] leading-[28px] text-ink-2">
+        <Block title={d.whatIs}>
+          <div className="prose text-[15.5px] leading-[28px] text-ink-2">
             {paragraphs.map((p, i) => (
               <p key={i} className="whitespace-pre-line">{p}</p>
             ))}
@@ -134,25 +136,25 @@ export function DetailPage() {
       )}
 
       <section className="sec-soft rounded-[20px] p-5">
-        <h2 className="sec-fg mb-1.5 text-[17px] font-bold">ليه يهمك إنت</h2>
+        <h2 className="sec-fg mb-1.5 text-[17px] font-bold">{d.why}</h2>
         <p className="text-[15.5px] leading-[27px]">{item.why}</p>
       </section>
 
       {item.install && item.install.length > 0 && (
-        <Block title="التسطيب والتشغيل">
+        <Block title={d.install}>
           <div className="flex flex-col gap-3">
             {item.install.map((s, i) => (
               <CodeBox key={i} label={s.label} cmd={s.cmd} />
             ))}
           </div>
           {item.requirements && item.requirements.length > 0 && (
-            <p className="mt-3 text-[14px] text-muted">محتاج: {item.requirements.join("، ")}</p>
+            <p className="mt-3 text-[14px] text-muted">{d.needs}{item.requirements.join(d.listSep)}</p>
           )}
         </Block>
       )}
 
       {item.features && item.features.length > 0 && (
-        <Block title="أهم الإمكانيات">
+        <Block title={d.features}>
           <ul className="flex flex-col gap-2">
             {item.features.map((f, i) => (
               <li key={i} className="flex gap-2.5 text-[15px] leading-[26px] text-ink-2">
@@ -165,7 +167,7 @@ export function DetailPage() {
       )}
 
       {item.usage && item.usage.length > 0 && (
-        <Block title="جرّب تقوله">
+        <Block title={d.tryAsking}>
           <div className="flex flex-col gap-2">
             {item.usage.map((u, i) => (
               <p key={i} dir="auto" className="rounded-xl bg-sunken px-3.5 py-2.5 text-[14.5px] leading-[24px]">
@@ -177,7 +179,7 @@ export function DetailPage() {
       )}
 
       {!item.install?.length && item.requirements && item.requirements.length > 0 && (
-        <Block title="المتطلبات">
+        <Block title={d.requirements}>
           <ul className="list-disc ps-5 text-[15px] leading-[26px] text-ink-2">
             {item.requirements.map((r, i) => (
               <li key={i}>{r}</li>
@@ -187,21 +189,21 @@ export function DetailPage() {
       )}
 
       {item.pricing && (
-        <Block title="السعر">
+        <Block title={d.price}>
           <div className="flex flex-wrap items-center gap-2.5">
             <PriceChip pricing={item.pricing} size="md" />
             <span className="text-[14.5px] text-ink-2">
               {item.pricing.note ??
                 (item.pricing.model === "oss"
-                  ? "مفتوح المصدر ومجاني بالكامل."
-                  : PRICING_LABEL[item.pricing.model])}
+                  ? d.ossNote
+                  : tx.PRICING_LABEL[item.pricing.model])}
             </span>
           </div>
         </Block>
       )}
 
       {item.alternatives && item.alternatives.length > 0 && (
-        <Block title="بدايل وأدوات قريبة">
+        <Block title={d.alternatives}>
           <div className="flex flex-wrap gap-2">
             {item.alternatives.map((a) => {
               const alt = byId.get(a);
@@ -218,7 +220,7 @@ export function DetailPage() {
       )}
 
       <section className="px-2 pb-6 pt-1">
-        <h2 className="mb-2 text-[14.5px] font-bold text-muted">المصادر</h2>
+        <h2 className="mb-2 text-[14.5px] font-bold text-muted">{d.sources}</h2>
         <div className="flex flex-col gap-1.5 text-[14.5px]">
           {(item.links?.length ? item.links : [{ label: item.source, url: item.url }]).map((l) => (
             <a key={l.url} href={l.url} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
@@ -235,7 +237,7 @@ export function DetailPage() {
             ))}
           </div>
         )}
-        {stats && <p className="mt-4 text-[12px] text-faint">أرقام GitHub من {shortDate(feed.statsUpdated ?? stats.pushedAt)}</p>}
+        {stats && <p className="mt-4 text-[12px] text-faint">{d.statsFrom(f.short(feed.statsUpdated ?? stats.pushedAt))}</p>}
       </section>
     </article>
   );

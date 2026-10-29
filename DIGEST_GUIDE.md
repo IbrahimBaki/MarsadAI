@@ -4,6 +4,9 @@ This file is the brief for the scheduled task that writes Marsad's daily digest.
 Follow it exactly. The output is one new file, `content/YYYY-MM-DD.json`, committed and pushed to `main`.
 Vercel deploys automatically on push.
 
+**The app is bilingual — English (default) and Arabic.** Every item is written in Arabic at the top
+level *and* in English inside its `en` block. The validator rejects items without a complete `en` block.
+
 ## Reader
 
 Ibrahim, a Laravel developer (modular ERP with nwidart modules, Spatie permissions, DataTables,
@@ -18,10 +21,10 @@ looking elsewhere.
 - `config/sections.json` — the 17 sections, grouped (AI for developers / software engineering /
   automation & productivity / creative). **Each section has a `scope`, `keywords` and `sources`.**
   This is your checklist: you research section by section.
-- `content/essentials/*.json` — the evergreen library ("الأساسيات"): the must-know tools per section.
+- `content/essentials/*.json` — the evergreen library ("Essentials" / "الأساسيات"): the must-know tools per section.
 - `signals/YYYY-MM-DD.json` — raw signals collected every morning by `scripts/collect.mjs`
   (GitHub Action at 07:17 Cairo): links newly added to watched awesome lists, new releases of
-  watched repos, and fast-growing new repos per topic. The app shows all of them raw in «الرادار».
+  watched repos, and fast-growing new repos per topic. The app shows all of them raw in the Radar («الرادار»).
 - `content/stats.json` — GitHub stars / releases for every repo the app references (also from the Action).
 
 ## Steps
@@ -49,7 +52,8 @@ looking elsewhere.
    writing — install commands must come from the README or official docs, never from memory.
    Check the README for "deprecated / archived / no longer maintained / moved" notices.
 6. Write `content/YYYY-MM-DD.json` (today's date in Africa/Cairo) using the schema below, with the
-   **full details** for each item (they power the details page).
+   **full details** for each item (they power the details page), in Arabic **and** English (`en`),
+   plus `headline_en`.
 7. Run `npm run validate -- YYYY-MM-DD` and fix every error.
 8. Commit with message `digest: YYYY-MM-DD (N items)` and push to `main`.
    If the push is rejected, `git pull --rebase origin main` and push again.
@@ -62,6 +66,7 @@ If today's file already exists, stop — the digest already ran.
 {
   "date": "2026-10-29",
   "headline": "One or two sentences in Arabic: the 2–3 things that matter most today.",
+  "headline_en": "The same headline in English.",
   "items": [
     {
       "id": "kebab-case-unique-id",
@@ -82,7 +87,19 @@ If today's file already exists, stop — the digest already ran.
       "url": "https://primary-source",
       "source": "domain.com",
       "importance": 3,
-      "tags": ["up to 6 short tags"]
+      "tags": ["up to 6 short tags"],
+      "en": {
+        "title": "English title",
+        "summary": "English summary, ≤ 480 chars",
+        "why": "English why, ≤ 380 chars",
+        "about": "English about, same paragraphs (\\n\\n)",
+        "features": ["same number of entries as features, same order"],
+        "usage": ["same count as usage (translate prompts; keep commands as-is)"],
+        "requirements": ["same count as requirements"],
+        "install": ["one English label per install step, same order (commands are shared)"],
+        "links": ["one English label per link, same order (URLs are shared)"],
+        "pricingNote": "English pricing.note, when pricing.note is set"
+      }
     }
   ]
 }
@@ -113,6 +130,8 @@ section file (id starting with `ess-`, same schema, `features` with at least 2 e
 
 - Arabic, light Egyptian register, clear and direct (like explaining to a developer friend).
   Keep product, library and technical names in English.
+- English (`en`, `headline_en`): plain, natural English with the same facts — a faithful
+  translation, not a rewrite. Western digits, no Arabic letters. Same tone rules as below.
 - No hype words, no exclamation marks, no emojis.
 - Put numbers and dates in the text when they matter (prices, limits, deadlines, versions).
 - `why` must be specific to the reader (his Laravel/ERP work, Claude Code workflow,

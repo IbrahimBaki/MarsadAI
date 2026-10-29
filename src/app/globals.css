@@ -3,6 +3,10 @@
 @import "@fontsource/ibm-plex-sans-arabic/500.css";
 @import "@fontsource/ibm-plex-sans-arabic/600.css";
 @import "@fontsource/ibm-plex-sans-arabic/700.css";
+@import "@fontsource/ibm-plex-sans/400.css";
+@import "@fontsource/ibm-plex-sans/500.css";
+@import "@fontsource/ibm-plex-sans/600.css";
+@import "@fontsource/ibm-plex-sans/700.css";
 @import "@fontsource/ibm-plex-mono/400.css";
 @import "@fontsource/ibm-plex-mono/500.css";
 
@@ -114,7 +118,7 @@
   --color-ok-ink: var(--ok-ink);
   --color-paid: var(--paid-bg);
   --color-paid-ink: var(--paid-ink);
-  --font-sans: "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --font-sans: "IBM Plex Sans", "IBM Plex Sans Arabic", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 }
 
@@ -177,9 +181,13 @@ body {
 
 /* Drawer */
 .drawer-panel {
+  transform: translateX(-100%);
+}
+[dir="rtl"] .drawer-panel {
   transform: translateX(100%);
 }
-.drawer-open .drawer-panel {
+.drawer-open .drawer-panel,
+[dir="rtl"] .drawer-open .drawer-panel {
   transform: translateX(0);
 }
 .drawer-scrim {
@@ -200,6 +208,6 @@ body {
 }
 
 /* Long text in the details page */
-.prose-ar p + p {
+.prose p + p {
   margin-top: 0.85em;
 }

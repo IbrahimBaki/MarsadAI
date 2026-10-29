@@ -18,11 +18,36 @@
       "url": "https://code.claude.com/docs/en/overview",
       "source": "code.claude.com",
       "importance": 3,
-      "tags": ["Claude Code", "docs"],
+      "tags": [
+        "Claude Code",
+        "docs"
+      ],
       "links": [
-        { "label": "الدوكيومنتيشن", "url": "https://code.claude.com/docs/en/overview" },
-        { "label": "ملخص كل الـ features", "url": "https://code.claude.com/docs/en/features-overview" }
-      ]
+        {
+          "label": "الدوكيومنتيشن",
+          "url": "https://code.claude.com/docs/en/overview"
+        },
+        {
+          "label": "ملخص كل الـ features",
+          "url": "https://code.claude.com/docs/en/features-overview"
+        }
+      ],
+      "en": {
+        "title": "The official Claude Code documentation",
+        "summary": "The official reference for everything in Claude Code: commands, settings, CLAUDE.md, permissions, MCP, hooks, subagents, plugins and running it in CI.",
+        "why": "The first place to look when you want to know what Claude Code can do, before searching for any outside tutorial. Plenty of features ship quietly and only show up here.",
+        "about": "The official Claude Code site is split into clear parts: getting started and installation, everyday workflows, configuration (settings.json, permissions and the sandbox), extending it (MCP, hooks, subagents, skills and plugins), running it in GitHub Actions and CI, and the SDK.\n\nThe pages most worth reading if you use it daily: Memory (how CLAUDE.md is read and from which folders), Settings (permissions and allow/deny), Slash commands, Hooks and Subagents. There's also a Features overview page that sums everything up in one place.",
+        "features": [
+          "How CLAUDE.md works and the order memory files are read",
+          "Permissions, the sandbox and settings.json",
+          "Full reference for hooks, subagents and plugins",
+          "Running in GitHub Actions and CI"
+        ],
+        "links": [
+          "Documentation",
+          "Features overview"
+        ]
+      }
     },
     {
       "id": "ess-claude-code-best-practices",
@@ -41,7 +66,23 @@
       "url": "https://www.anthropic.com/engineering/claude-code-best-practices",
       "source": "anthropic.com",
       "importance": 3,
-      "tags": ["Claude Code", "workflow", "CLAUDE.md"]
+      "tags": [
+        "Claude Code",
+        "workflow",
+        "CLAUDE.md"
+      ],
+      "en": {
+        "title": "Claude Code best practices from Anthropic",
+        "summary": "An article from the Anthropic team on working well with Claude Code: write a good CLAUDE.md, have it plan before it writes code, work test-first, and run several sessions in parallel.",
+        "why": "A single article that can change how you work every day, and its advice applies directly to a large project like Company-ERP.",
+        "about": "Written by the Anthropic team from their internal experience with Claude Code. The key ideas:\n\nSet up the environment: a CLAUDE.md with the project's commands, code style and warnings, plus pre-approved permissions so it doesn't keep asking.\n\nLet it read and plan first: \"read these files, make a plan, don't write code yet\", then implement. Words like \"think hard\" give it more thinking time.\n\nTDD: write the tests first, confirm they fail, then have it write code until they pass.\n\nGive it a target to check against: a screenshot of the expected design, tests, or an expected output.\n\nMultiple sessions: worktrees or separate checkouts, with one writing and another reviewing.",
+        "features": [
+          "How to write a useful CLAUDE.md",
+          "Workflow: read, plan, implement, commit",
+          "TDD with the agent",
+          "Running several sessions with worktrees"
+        ]
+      }
     },
     {
       "id": "ess-claude-code-subagents",
@@ -57,11 +98,31 @@
         "على مستوى المشروع أو على مستوى المستخدم",
         "بيتستدعى أوتوماتيك أو بالاسم"
       ],
-      "usage": ["/agents  ← تفتح قايمة الـ subagents وتعمل واحد جديد بمساعدة Claude"],
+      "usage": [
+        "/agents  ← تفتح قايمة الـ subagents وتعمل واحد جديد بمساعدة Claude"
+      ],
       "url": "https://code.claude.com/docs/en/sub-agents",
       "source": "code.claude.com",
       "importance": 2,
-      "tags": ["Claude Code", "subagents"]
+      "tags": [
+        "Claude Code",
+        "subagents"
+      ],
+      "en": {
+        "title": "Subagents in Claude Code",
+        "summary": "Create specialised agents, each with its own system prompt, tools and permissions, such as a reviewer or a testing agent. Each runs in a separate context, so your main session stays clean.",
+        "why": "You can build a subagent that understands your project's modules and permissions system and call it for any task without re-explaining the project.",
+        "about": "A subagent is a Markdown file with frontmatter for its name, description, allowed tools and model, followed by its system prompt. Put it in .claude/agents/ inside the project, or in ~/.claude/agents/ to make it available in all your projects.\n\nClaude calls it on its own when a task matches the description, or you ask for it by name. Each subagent runs in its own context, so long searches or reading lots of files don't fill up the main session; only the result comes back.\n\nUseful examples: a code-reviewer that reviews the diff after every change, a test-runner that runs the tests and fixes failures, and an explorer that searches the codebase and summarises.",
+        "features": [
+          "System prompt, tools and model per subagent",
+          "Context separate from the main session",
+          "Project-level or user-level",
+          "Invoked automatically or by name"
+        ],
+        "usage": [
+          "/agents  → opens the subagent list so you can create a new one with Claude's help"
+        ]
+      }
     },
     {
       "id": "ess-claude-code-hooks",
@@ -77,15 +138,46 @@
         "Stop وNotification للإشعارات",
         "matcher بالأداة أو بالمسار"
       ],
-      "usage": ["/hooks  ← تضيف أو تعدّل hooks من جوه Claude Code"],
+      "usage": [
+        "/hooks  ← تضيف أو تعدّل hooks من جوه Claude Code"
+      ],
       "url": "https://code.claude.com/docs/en/hooks",
       "source": "code.claude.com",
       "importance": 2,
-      "tags": ["Claude Code", "hooks", "automation"],
+      "tags": [
+        "Claude Code",
+        "hooks",
+        "automation"
+      ],
       "links": [
-        { "label": "مرجع الـ hooks", "url": "https://code.claude.com/docs/en/hooks" },
-        { "label": "دليل عملي للـ hooks", "url": "https://code.claude.com/docs/en/hooks-guide" }
-      ]
+        {
+          "label": "مرجع الـ hooks",
+          "url": "https://code.claude.com/docs/en/hooks"
+        },
+        {
+          "label": "دليل عملي للـ hooks",
+          "url": "https://code.claude.com/docs/en/hooks-guide"
+        }
+      ],
+      "en": {
+        "title": "Hooks in Claude Code",
+        "summary": "Shell commands that run automatically at specific moments: before or after any tool, when a session ends, or on every prompt. You can block certain commands, run a formatter, or send yourself a notification.",
+        "why": "For example, run Pint and PHPStan after every PHP file edit, or block any migrate:fresh before it slips through.",
+        "about": "Hooks are defined in settings.json and each one is tied to an event: PreToolUse before a tool runs (and can block it), PostToolUse after it, UserPromptSubmit on every message, Stop when Claude finishes, SessionStart, Notification and more.\n\nEach hook receives JSON with the event details, such as the tool name and the command or file. If it returns a specific exit code, or JSON with a decision, it can block the action and tell Claude why.\n\nThe difference from instructions in CLAUDE.md is that a hook is guaranteed to run; it isn't a suggestion the model might forget.",
+        "features": [
+          "PreToolUse can block dangerous commands",
+          "PostToolUse to run a formatter or linter",
+          "Stop and Notification for alerts",
+          "Match by tool or by path"
+        ],
+        "usage": [
+          "/hooks  → add or edit hooks from inside Claude Code"
+        ],
+        "links": [
+          "Hooks reference",
+          "Hooks guide"
+        ]
+      }
     },
     {
       "id": "ess-claude-plugins-official",
@@ -103,14 +195,42 @@
         "plugin نموذجي تتعلم منه تعمل بتاعك"
       ],
       "install": [
-        { "label": "تتصفح الـ plugins من جوه Claude Code", "cmd": "/plugin" },
-        { "label": "تركّب plugin بالاسم", "cmd": "/plugin install <plugin-name>@claude-plugins-official" }
+        {
+          "label": "تتصفح الـ plugins من جوه Claude Code",
+          "cmd": "/plugin"
+        },
+        {
+          "label": "تركّب plugin بالاسم",
+          "cmd": "/plugin install <plugin-name>@claude-plugins-official"
+        }
       ],
-      "pricing": { "model": "oss" },
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/anthropics/claude-plugins-official",
       "source": "github.com",
       "importance": 2,
-      "tags": ["Claude Code", "plugins", "marketplace"]
+      "tags": [
+        "Claude Code",
+        "plugins",
+        "marketplace"
+      ],
+      "en": {
+        "title": "The official Claude Code plugin marketplace",
+        "summary": "Anthropic's plugin directory, with internal plugins from Anthropic and plugins from partners and the community. Each plugin bundles commands, subagents, skills, hooks and MCP servers into a package you install with one command.",
+        "why": "The fastest way to get ready-made capabilities instead of building them yourself, and a good way to learn how to make a plugin for your team.",
+        "about": "This marketplace comes built into Claude Code as claude-plugins-official, so you don't need to add it.\n\nThe repo has two folders: plugins, which Anthropic builds and maintains, and external_plugins, from partners and the community. Anthropic notes that it doesn't review everything inside external plugins, such as their MCP servers and files, so only install what you trust.\n\nBrowse and install from /plugin inside Claude Code, or with a direct command if you know the name.",
+        "features": [
+          "Built into Claude Code from the start",
+          "Plugins from Anthropic and partners",
+          "Browse and install from /plugin",
+          "An example plugin to learn from when building your own"
+        ],
+        "install": [
+          "Browse plugins from inside Claude Code",
+          "Install a plugin by name"
+        ]
+      }
     },
     {
       "id": "ess-claude-agent-sdk",
@@ -128,20 +248,70 @@
         "دعم MCP"
       ],
       "install": [
-        { "label": "TypeScript", "cmd": "npm install @anthropic-ai/claude-agent-sdk" },
-        { "label": "Python", "cmd": "pip install claude-agent-sdk" }
+        {
+          "label": "TypeScript",
+          "cmd": "npm install @anthropic-ai/claude-agent-sdk"
+        },
+        {
+          "label": "Python",
+          "cmd": "pip install claude-agent-sdk"
+        }
       ],
-      "requirements": ["Node.js 18 أو أحدث (للـ TypeScript)"],
-      "pricing": { "model": "oss", "note": "المكتبة مجانية، وبتدفع لاستخدام Claude" },
+      "requirements": [
+        "Node.js 18 أو أحدث (للـ TypeScript)"
+      ],
+      "pricing": {
+        "model": "oss",
+        "note": "المكتبة مجانية، وبتدفع لاستخدام Claude"
+      },
       "url": "https://code.claude.com/docs/en/agent-sdk/overview",
       "source": "code.claude.com",
       "importance": 2,
-      "tags": ["Agent SDK", "agents", "TypeScript", "Python"],
+      "tags": [
+        "Agent SDK",
+        "agents",
+        "TypeScript",
+        "Python"
+      ],
       "links": [
-        { "label": "الدوكيومنتيشن", "url": "https://code.claude.com/docs/en/agent-sdk/overview" },
-        { "label": "ريبو TypeScript", "url": "https://github.com/anthropics/claude-agent-sdk-typescript" },
-        { "label": "ريبو Python", "url": "https://github.com/anthropics/claude-agent-sdk-python" }
-      ]
+        {
+          "label": "الدوكيومنتيشن",
+          "url": "https://code.claude.com/docs/en/agent-sdk/overview"
+        },
+        {
+          "label": "ريبو TypeScript",
+          "url": "https://github.com/anthropics/claude-agent-sdk-typescript"
+        },
+        {
+          "label": "ريبو Python",
+          "url": "https://github.com/anthropics/claude-agent-sdk-python"
+        }
+      ],
+      "en": {
+        "title": "Claude Agent SDK: build agents on the Claude Code engine",
+        "summary": "The same engine that powers Claude Code, as a TypeScript and Python library. Use it to build your own agents that understand code, edit files and run commands, with tools, permissions and subagents.",
+        "why": "If you want an internal agent for the team, like one that reviews PRs or answers questions about the project, this is the foundation to build on.",
+        "about": "The Agent SDK gives you Claude Code's agent loop ready to use: built-in tools for reading and writing files, running commands and searching, context management and compaction, permissions, MCP, subagents and hooks.\n\nYou define the system prompt, the allowed tools and how approvals work, and you receive messages as a stream.\n\nAvailable for TypeScript (Node 18 or later) and Python. Billing is per API usage, or from your subscription limits depending on the plan.",
+        "features": [
+          "File, shell and search tools built in",
+          "Context management and compaction",
+          "Permissions, hooks and subagents",
+          "MCP support"
+        ],
+        "requirements": [
+          "Node.js 18 or later (for TypeScript)"
+        ],
+        "install": [
+          "TypeScript",
+          "Python"
+        ],
+        "links": [
+          "Documentation",
+          "TypeScript repo",
+          "Python repo"
+        ],
+        "pricingNote": "The library is free; you pay for Claude usage"
+      }
     },
     {
       "id": "ess-claude-code-action",
@@ -158,13 +328,48 @@
         "ينفّذ التعديلات ويعمل لها push",
         "يدعم Bedrock وVertex وFoundry"
       ],
-      "install": [{ "label": "من جوه Claude Code في فولدر الريبو", "cmd": "/install-github-app" }],
-      "requirements": ["صلاحية admin على الريبو", "مفتاح Anthropic API أو مزود سحابي"],
-      "pricing": { "model": "oss", "note": "الـ Action مجاني، وبتدفع استخدام الـ API ودقايق GitHub Actions" },
+      "install": [
+        {
+          "label": "من جوه Claude Code في فولدر الريبو",
+          "cmd": "/install-github-app"
+        }
+      ],
+      "requirements": [
+        "صلاحية admin على الريبو",
+        "مفتاح Anthropic API أو مزود سحابي"
+      ],
+      "pricing": {
+        "model": "oss",
+        "note": "الـ Action مجاني، وبتدفع استخدام الـ API ودقايق GitHub Actions"
+      },
       "url": "https://github.com/anthropics/claude-code-action",
       "source": "github.com",
       "importance": 2,
-      "tags": ["GitHub Actions", "code review", "CI"]
+      "tags": [
+        "GitHub Actions",
+        "code review",
+        "CI"
+      ],
+      "en": {
+        "title": "Claude Code Action: Claude inside GitHub PRs and issues",
+        "summary": "An official GitHub Action. Write @claude in any PR or issue and it answers questions, reviews code, or implements the change and commits it. It can also run automatically on every PR.",
+        "why": "Have it do a first-pass review of every PR on the team before anyone looks, or write it an issue and let it open a PR on its own.",
+        "about": "This Action runs Claude Code inside GitHub Actions. It knows when to run based on the workflow: when someone writes @claude in a comment, when an issue is opened and assigned to it, or automatically on every PR with a prompt you define.\n\nIt can read the code and the diff, reply with comments, make changes and push them, and run tests. It works with the Anthropic API, Bedrock, Vertex or Microsoft Foundry.\n\nThe easiest way to install it is to run /install-github-app from inside Claude Code, which sets up the GitHub app and the secrets. You need to be an admin on the repo.",
+        "features": [
+          "@claude in any PR or issue",
+          "Automatic review on every PR",
+          "Implements changes and pushes them",
+          "Supports Bedrock, Vertex and Foundry"
+        ],
+        "requirements": [
+          "Admin access to the repo",
+          "An Anthropic API key or a cloud provider"
+        ],
+        "install": [
+          "From inside Claude Code in the repo folder"
+        ],
+        "pricingNote": "The Action is free; you pay for API usage and GitHub Actions minutes"
+      }
     },
     {
       "id": "ess-claude-cookbooks",
@@ -181,11 +386,29 @@
         "صور وجداول وPDF",
         "prompt caching وbatch لتقليل التكلفة"
       ],
-      "pricing": { "model": "oss" },
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/anthropics/claude-cookbooks",
       "source": "github.com",
       "importance": 1,
-      "tags": ["API", "أمثلة", "RAG"]
+      "tags": [
+        "API",
+        "أمثلة",
+        "RAG"
+      ],
+      "en": {
+        "title": "Claude Cookbooks: practical examples from Anthropic",
+        "summary": "Ready-made notebooks and code examples for common needs: tool use, RAG, prompt caching, structured output, agents, and working with images and PDFs.",
+        "why": "When you need to build a specific feature with the API, you'll usually find a close example here to start from instead of from scratch.",
+        "about": "A set of official examples from Anthropic, mostly Python Jupyter notebooks, though the ideas apply to any language. They're organised by topic: core skills like classification, summarisation and RAG; tool use and agents; multimodal work like reading images, tables and PDFs; cutting costs with prompt caching and batches; and integrations with tools like Pinecone and Wikipedia.\n\nYou need an API key to run the examples.",
+        "features": [
+          "RAG, classification and summarisation examples",
+          "Tool use and agents",
+          "Images, tables and PDFs",
+          "Prompt caching and batches to cut costs"
+        ]
+      }
     },
     {
       "id": "ess-prompt-engineering-guide",
@@ -195,11 +418,31 @@
       "summary": "الدليل الرسمي لكتابة prompts كويسة: إزاي تبقى واضح ومحدد، وتدّي أمثلة، وتستخدم XML tags، وتقسّم المهام الكبيرة لخطوات، وتخلي الموديل يفكر قبل ما يرد.",
       "why": "بيفرق في أي feature فيها AI، وفي أي CLAUDE.md أو skill أو subagent هتكتبه.",
       "about": "الدليل مرتب من الأساسي للمتقدم: إنك تبقى واضح ومباشر وتدّي السياق، وتستخدم أمثلة (multishot)، وتخلي الموديل يفكر خطوة بخطوة، وتفصل أجزاء الـ prompt بـ XML tags، وتدّيله دور في الـ system prompt، وتكتب بداية الرد بنفسك عشان توجّهه، وتقسّم المهمة على أكتر من prompt، ونصايح للـ context الطويل.\n\nوفيه أدوات في Console بتولّد وتحسّن الـ prompts.",
-      "features": ["الوضوح والسياق", "أمثلة متعددة", "XML tags لتنظيم الـ prompt", "تقسيم المهام على أكتر من prompt"],
+      "features": [
+        "الوضوح والسياق",
+        "أمثلة متعددة",
+        "XML tags لتنظيم الـ prompt",
+        "تقسيم المهام على أكتر من prompt"
+      ],
       "url": "https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview",
       "source": "docs.claude.com",
       "importance": 1,
-      "tags": ["prompting", "docs"]
+      "tags": [
+        "prompting",
+        "docs"
+      ],
+      "en": {
+        "title": "Anthropic's prompt engineering guide",
+        "summary": "The official guide to writing good prompts: be clear and specific, give examples, use XML tags, break big tasks into steps, and let the model think before it answers.",
+        "why": "It makes a difference in any AI feature, and in every CLAUDE.md, skill or subagent you write.",
+        "about": "The guide goes from basic to advanced: be clear and direct and give context, use examples (multishot), let the model think step by step, separate parts of the prompt with XML tags, give it a role in the system prompt, prefill the start of the response to steer it, chain the task across several prompts, and tips for long context.\n\nThe Console also has tools that generate and improve prompts.",
+        "features": [
+          "Clarity and context",
+          "Multiple examples",
+          "XML tags to structure the prompt",
+          "Chaining tasks across prompts"
+        ]
+      }
     }
   ]
 }

@@ -17,19 +17,64 @@
         "دعم LSP وMCP"
       ],
       "install": [
-        { "label": "سكريبت التسطيب", "cmd": "curl -fsSL https://opencode.ai/v2/install | bash" },
-        { "label": "أو عن طريق npm", "cmd": "npm i -g @opencode/cli@latest" }
+        {
+          "label": "سكريبت التسطيب",
+          "cmd": "curl -fsSL https://opencode.ai/v2/install | bash"
+        },
+        {
+          "label": "أو عن طريق npm",
+          "cmd": "npm i -g @opencode/cli@latest"
+        }
       ],
-      "pricing": { "model": "oss", "note": "مجاني، وبتدفع للمزود اللي بتستخدمه" },
+      "pricing": {
+        "model": "oss",
+        "note": "مجاني، وبتدفع للمزود اللي بتستخدمه"
+      },
       "url": "https://opencode.ai",
       "source": "opencode.ai",
       "importance": 2,
-      "tags": ["coding agent", "open source", "CLI", "TUI"],
-      "alternatives": ["ess-openai-codex-cli", "ess-kilocode", "ess-crush"],
+      "tags": [
+        "coding agent",
+        "open source",
+        "CLI",
+        "TUI"
+      ],
+      "alternatives": [
+        "ess-openai-codex-cli",
+        "ess-kilocode",
+        "ess-crush"
+      ],
       "links": [
-        { "label": "الموقع", "url": "https://opencode.ai" },
-        { "label": "GitHub", "url": "https://github.com/anomalyco/opencode" }
-      ]
+        {
+          "label": "الموقع",
+          "url": "https://opencode.ai"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/anomalyco/opencode"
+        }
+      ],
+      "en": {
+        "title": "OpenCode: an open-source coding agent for the terminal",
+        "summary": "One of the most active open-source coding agents. It runs in the terminal, has a desktop app, and works with many providers like Anthropic, OpenAI and Google, as well as local models.",
+        "why": "An open alternative to compare against Claude Code's ideas, or to use with a cheaper model for simple tasks.",
+        "about": "OpenCode is a coding agent with a very comfortable terminal UI (TUI) and a desktop app. Its biggest advantage is that it isn't tied to one provider: connect it with an Anthropic, OpenAI, Google or OpenRouter key, or a local model.\n\nIt has two modes: build for implementing, and plan for analysing without changing anything. It supports LSP to understand code, MCP, custom commands and agents, and you can share a session with a link.",
+        "features": [
+          "A powerful terminal TUI and a desktop app",
+          "Any model provider, or a local model",
+          "Plan mode for analysis without edits",
+          "LSP and MCP support"
+        ],
+        "install": [
+          "Install script",
+          "Or via npm"
+        ],
+        "links": [
+          "Website",
+          "GitHub"
+        ],
+        "pricingNote": "Free; you pay the provider you use"
+      }
     },
     {
       "id": "ess-openai-codex-cli",
@@ -47,15 +92,49 @@
         "تسجيل بحساب ChatGPT أو مفتاح API"
       ],
       "install": [
-        { "label": "npm", "cmd": "npm install -g @openai/codex" },
-        { "label": "أو السكريبت الرسمي", "cmd": "curl -fsSL https://chatgpt.com/codex/install.sh | sh" }
+        {
+          "label": "npm",
+          "cmd": "npm install -g @openai/codex"
+        },
+        {
+          "label": "أو السكريبت الرسمي",
+          "cmd": "curl -fsSL https://chatgpt.com/codex/install.sh | sh"
+        }
       ],
-      "pricing": { "model": "oss", "note": "الأداة مجانية، وبتحتاج اشتراك ChatGPT أو رصيد API" },
+      "pricing": {
+        "model": "oss",
+        "note": "الأداة مجانية، وبتحتاج اشتراك ChatGPT أو رصيد API"
+      },
       "url": "https://github.com/openai/codex",
       "source": "github.com",
       "importance": 2,
-      "tags": ["coding agent", "OpenAI", "CLI", "Rust"],
-      "alternatives": ["ess-opencode", "ess-antigravity-cli"]
+      "tags": [
+        "coding agent",
+        "OpenAI",
+        "CLI",
+        "Rust"
+      ],
+      "alternatives": [
+        "ess-opencode",
+        "ess-antigravity-cli"
+      ],
+      "en": {
+        "title": "Codex CLI from OpenAI",
+        "summary": "OpenAI's coding agent. It runs locally on your machine and is open source. It reads and edits code and runs commands inside a sandbox, with an IDE extension and a desktop app.",
+        "why": "Useful to know what the closest competitor does. Many people use it as a second opinion next to Claude Code for reviews.",
+        "about": "Codex CLI is written in Rust and runs locally. You sign in with a ChatGPT account (Plus, Pro or Business) or an API key. It runs inside a sandbox by default, with permission levels from read-only up to full access.\n\nThere's an extension for VS Code, Cursor and Windsurf, a desktop app you open with codex app, and a cloud version inside ChatGPT.",
+        "features": [
+          "Runs locally, written in Rust",
+          "Sandbox and permission levels",
+          "IDE extension and desktop app",
+          "Sign in with ChatGPT or an API key"
+        ],
+        "install": [
+          "npm",
+          "Or the official script"
+        ],
+        "pricingNote": "The tool is free; it needs a ChatGPT subscription or API credit"
+      }
     },
     {
       "id": "ess-antigravity-cli",
@@ -71,16 +150,50 @@
         "شغال بالحساب المجاني أو اشتراك Google AI",
         "دليل نقل من Gemini CLI"
       ],
-      "pricing": { "model": "freemium", "note": "فيه استخدام مجاني بحدود، وحدود أعلى مع Google AI Pro وUltra" },
+      "pricing": {
+        "model": "freemium",
+        "note": "فيه استخدام مجاني بحدود، وحدود أعلى مع Google AI Pro وUltra"
+      },
       "url": "https://antigravity.google/product/antigravity-cli",
       "source": "antigravity.google",
       "importance": 2,
-      "tags": ["Google", "Gemini", "CLI"],
+      "tags": [
+        "Google",
+        "Gemini",
+        "CLI"
+      ],
       "links": [
-        { "label": "Antigravity CLI", "url": "https://antigravity.google/product/antigravity-cli" },
-        { "label": "إعلان النقل من Gemini CLI", "url": "https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/" },
-        { "label": "دليل النقل", "url": "https://antigravity.google/docs/cli/gcli-migration" }
-      ]
+        {
+          "label": "Antigravity CLI",
+          "url": "https://antigravity.google/product/antigravity-cli"
+        },
+        {
+          "label": "إعلان النقل من Gemini CLI",
+          "url": "https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/"
+        },
+        {
+          "label": "دليل النقل",
+          "url": "https://antigravity.google/docs/cli/gcli-migration"
+        }
+      ],
+      "en": {
+        "title": "Antigravity CLI: Google's new agent (replacing Gemini CLI)",
+        "summary": "Since June 18, 2026, free Gemini CLI usage and Google AI Pro and Ultra subscriptions moved to Antigravity CLI (the agy command). Gemini CLI is now for enterprises only, and Antigravity is what supports Gemini 4 Argon.",
+        "why": "If you used Gemini CLI for free or planned to try it, this is the new home. Gemini CLI isn't tuned for Gemini 4.",
+        "about": "Google split its terminal tools into three:\n\nAntigravity CLI (the agy command): a multi-agent coding terminal built for Gemini 4 Argon and later models, for free accounts and Google AI Pro and Ultra subscriptions.\n\nGemini API CLI (the gemini-api command): a simple tool for calling Gemini models from scripts or from other agents like Claude Code. It isn't a coding agent.\n\nGemini CLI: now only for companies with Gemini Code Assist Standard or Enterprise.\n\nThere's an official guide for migrating your settings from Gemini CLI.",
+        "features": [
+          "Multiple agents in the same terminal",
+          "Tuned for Gemini 4 Argon",
+          "Works with a free account or a Google AI subscription",
+          "Migration guide from Gemini CLI"
+        ],
+        "links": [
+          "Antigravity CLI",
+          "Gemini CLI migration announcement",
+          "Migration guide"
+        ],
+        "pricingNote": "Free usage with limits; higher limits with Google AI Pro and Ultra"
+      }
     },
     {
       "id": "ess-cline",
@@ -97,17 +210,58 @@
         "يتابع الترمينال ويصلّح الأخطاء",
         "أي مزود موديلات، ودعم MCP"
       ],
-      "install": [{ "label": "الـ CLI", "cmd": "npm i -g cline" }],
-      "pricing": { "model": "oss", "note": "مجاني، وبتدفع للمزود اللي بتستخدمه" },
+      "install": [
+        {
+          "label": "الـ CLI",
+          "cmd": "npm i -g cline"
+        }
+      ],
+      "pricing": {
+        "model": "oss",
+        "note": "مجاني، وبتدفع للمزود اللي بتستخدمه"
+      },
       "url": "https://github.com/cline/cline",
       "source": "github.com",
       "importance": 2,
-      "tags": ["VS Code", "JetBrains", "coding agent"],
-      "alternatives": ["ess-kilocode", "ess-roo-code"],
+      "tags": [
+        "VS Code",
+        "JetBrains",
+        "coding agent"
+      ],
+      "alternatives": [
+        "ess-kilocode",
+        "ess-roo-code"
+      ],
       "links": [
-        { "label": "VS Code Marketplace", "url": "https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev" },
-        { "label": "JetBrains Marketplace", "url": "https://plugins.jetbrains.com/plugin/28247-cline" }
-      ]
+        {
+          "label": "VS Code Marketplace",
+          "url": "https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev"
+        },
+        {
+          "label": "JetBrains Marketplace",
+          "url": "https://plugins.jetbrains.com/plugin/28247-cline"
+        }
+      ],
+      "en": {
+        "title": "Cline: an open-source coding agent in VS Code, JetBrains and the terminal",
+        "summary": "One of the best-known open-source agents. It runs as an extension in VS Code and JetBrains, and as a CLI, and shows you every edit and command for approval before it runs.",
+        "why": "If you work in PhpStorm or VS Code and want an agent inside the editor itself with any model, it's one of the strongest choices.",
+        "about": "Cline reads the project, edits files and shows you the diff, and runs terminal commands and watches the output. So if the dev server throws an error, it sees it and fixes it. It can also open a browser and try the app.\n\nIt has two modes: Plan for planning and Act for implementing. Every step needs your approval unless you turn on auto-approve. It works with any provider and supports MCP.\n\nIt's on the VS Code Marketplace and the JetBrains Marketplace, and there's also a CLI and an SDK.",
+        "features": [
+          "Extension for VS Code and JetBrains",
+          "Approve every edit and command",
+          "Watches the terminal and fixes errors",
+          "Any model provider, with MCP support"
+        ],
+        "install": [
+          "The CLI"
+        ],
+        "links": [
+          "VS Code Marketplace",
+          "JetBrains Marketplace"
+        ],
+        "pricingNote": "Free; you pay the provider you use"
+      }
     },
     {
       "id": "ess-kilocode",
@@ -118,13 +272,46 @@
       "summary": "coding agent مفتوح المصدر، كـ extension للـ editors وكـ CLI. فيه أوضاع شغل مختلفة زي architect وcode وdebug، وبيشتغل مع مزودين كتير.",
       "why": "لو حابب تقسّم الشغل لأدوار، واحد يصمم وواحد ينفّذ وواحد يعمل debug، الأوضاع دي بتعمل كده جاهز.",
       "about": "Kilo Code بيجمع أفكار من Cline وRoo Code في منتج واحد. فيه أوضاع شغل لكل نوع مهمة، زي Architect للتخطيط والتصميم، وCode للتنفيذ، وDebug لتتبّع المشاكل، وتقدر تعمل أوضاع بنفسك.\n\nموجود كـ extension، وكـ CLI بيتسطب بـ npm أو brew أو سكريبت، وبيدعم MCP وأي مزود موديلات.",
-      "features": ["أوضاع architect وcode وdebug", "extension وCLI", "أي مزود موديلات", "دعم MCP"],
-      "install": [{ "label": "الـ CLI", "cmd": "npm install -g @kilocode/cli" }],
-      "pricing": { "model": "oss", "note": "مجاني، وبتدفع للمزود أو بتشحن رصيد من Kilo" },
+      "features": [
+        "أوضاع architect وcode وdebug",
+        "extension وCLI",
+        "أي مزود موديلات",
+        "دعم MCP"
+      ],
+      "install": [
+        {
+          "label": "الـ CLI",
+          "cmd": "npm install -g @kilocode/cli"
+        }
+      ],
+      "pricing": {
+        "model": "oss",
+        "note": "مجاني، وبتدفع للمزود أو بتشحن رصيد من Kilo"
+      },
       "url": "https://github.com/Kilo-Org/kilocode",
       "source": "github.com",
       "importance": 1,
-      "tags": ["coding agent", "VS Code", "CLI"]
+      "tags": [
+        "coding agent",
+        "VS Code",
+        "CLI"
+      ],
+      "en": {
+        "title": "Kilo Code: an open-source agent for the editor and terminal",
+        "summary": "An open-source coding agent as an editor extension and a CLI. It has different working modes like architect, code and debug, and works with many providers.",
+        "why": "If you like splitting work into roles, one designing, one implementing and one debugging, these modes do exactly that out of the box.",
+        "about": "Kilo Code combines ideas from Cline and Roo Code into one product. It has a mode for each kind of task, like Architect for planning and design, Code for implementing and Debug for tracking down problems, and you can create your own modes.\n\nIt's available as an extension and as a CLI installed with npm, brew or a script, and supports MCP and any model provider.",
+        "features": [
+          "Architect, code and debug modes",
+          "Extension and CLI",
+          "Any model provider",
+          "MCP support"
+        ],
+        "install": [
+          "The CLI"
+        ],
+        "pricingNote": "Free; you pay the provider or top up Kilo credit"
+      }
     },
     {
       "id": "ess-roo-code",
@@ -135,13 +322,45 @@
       "summary": "extension مفتوح المصدر لـ VS Code، بيشتغل كفريق: فيه أوضاع Code وArchitect وAsk وDebug، وتقدر تعمل أوضاع خاصة بيك بتعليمات وصلاحيات مختلفة.",
       "why": "مناسب لو حابب تفضل جوه VS Code وتتحكم في كل وضع: إيه الملفات اللي يقدر يعدّلها، وإيه الموديل اللي يستخدمه.",
       "about": "Roo Code بدأ كـ fork من Cline، وبعدين ركّز على الأوضاع المخصصة. كل وضع ليه تعليمات، وأدوات مسموحة، وموديل، وتقدر تحدد مثلاً إن وضع معين يعدّل ملفات .md بس.\n\nبيدعم MCP وأي مزود، وبيقدر يشغّل أوامر ويستخدم البراوزر. والتسطيب من VS Code Marketplace.",
-      "features": ["أوضاع مخصصة بصلاحيات مختلفة", "موديل مختلف لكل وضع", "دعم MCP", "أوامر وبراوزر"],
-      "pricing": { "model": "oss", "note": "مجاني، وبتدفع للمزود اللي بتستخدمه" },
+      "features": [
+        "أوضاع مخصصة بصلاحيات مختلفة",
+        "موديل مختلف لكل وضع",
+        "دعم MCP",
+        "أوامر وبراوزر"
+      ],
+      "pricing": {
+        "model": "oss",
+        "note": "مجاني، وبتدفع للمزود اللي بتستخدمه"
+      },
       "url": "https://github.com/RooCodeInc/Roo-Code",
       "source": "github.com",
       "importance": 1,
-      "tags": ["VS Code", "coding agent"],
-      "links": [{ "label": "VS Code Marketplace", "url": "https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline" }]
+      "tags": [
+        "VS Code",
+        "coding agent"
+      ],
+      "links": [
+        {
+          "label": "VS Code Marketplace",
+          "url": "https://marketplace.visualstudio.com/items?itemName=RooVeterinaryInc.roo-cline"
+        }
+      ],
+      "en": {
+        "title": "Roo Code: an AI team inside VS Code",
+        "summary": "An open-source VS Code extension that works like a team: Code, Architect, Ask and Debug modes, plus your own custom modes with different instructions and permissions.",
+        "why": "A good fit if you want to stay inside VS Code and control each mode: which files it may edit and which model it uses.",
+        "about": "Roo Code started as a fork of Cline and then focused on custom modes. Each mode has its own instructions, allowed tools and model, and you can, for example, restrict a mode to editing only .md files.\n\nIt supports MCP and any provider, and it can run commands and use the browser. Install it from the VS Code Marketplace.",
+        "features": [
+          "Custom modes with different permissions",
+          "A different model per mode",
+          "MCP support",
+          "Commands and browser"
+        ],
+        "links": [
+          "VS Code Marketplace"
+        ],
+        "pricingNote": "Free; you pay the provider you use"
+      }
     },
     {
       "id": "ess-aider",
@@ -152,16 +371,52 @@
       "summary": "من أقدم وأشهر أدوات البرمجة بالـ AI في الترمينال. بيشتغل مع أي موديل تقريباً، وبيعمل map للمشروع كله، وكل تعديل بيعمله بيبقى commit لوحده في git.",
       "why": "طريقته في التعامل مع git بتخلي التعديلات سهلة تراجعها أو ترجع فيها، وده مفيد في مشروع حساس.",
       "about": "Aider بيبني repo map، وهو خريطة مختصرة للكلاسات والدوال في المشروع، عشان الموديل يفهم الكود الكبير من غير ما يقرا كل الملفات. بتضيف الملفات اللي عايز تشتغل عليها للجلسة، وتطلب التعديل.\n\nكل تعديل بيتعمل له commit برسالة واضحة، فتقدر ترجع فيه بـ /undo. وبيشغّل الـ linter والتيستات ويصلّح اللي بيفشل، وبيدعم الأوامر الصوتية والصور.",
-      "features": ["repo map للمشاريع الكبيرة", "commit لكل تعديل و/undo", "lint وتيستات أوتوماتيك", "أي موديل تقريباً"],
-      "install": [
-        { "label": "المسطّب", "cmd": "python -m pip install aider-install" },
-        { "label": "وبعدين", "cmd": "aider-install" }
+      "features": [
+        "repo map للمشاريع الكبيرة",
+        "commit لكل تعديل و/undo",
+        "lint وتيستات أوتوماتيك",
+        "أي موديل تقريباً"
       ],
-      "pricing": { "model": "oss", "note": "مجاني، وبتدفع للمزود اللي بتستخدمه" },
+      "install": [
+        {
+          "label": "المسطّب",
+          "cmd": "python -m pip install aider-install"
+        },
+        {
+          "label": "وبعدين",
+          "cmd": "aider-install"
+        }
+      ],
+      "pricing": {
+        "model": "oss",
+        "note": "مجاني، وبتدفع للمزود اللي بتستخدمه"
+      },
       "url": "https://aider.chat/",
       "source": "aider.chat",
       "importance": 1,
-      "tags": ["coding agent", "git", "CLI", "Python"]
+      "tags": [
+        "coding agent",
+        "git",
+        "CLI",
+        "Python"
+      ],
+      "en": {
+        "title": "Aider: pair programming in the terminal",
+        "summary": "One of the oldest and best-known AI coding tools for the terminal. It works with almost any model, maps the whole project, and every edit becomes its own git commit.",
+        "why": "The way it handles git makes changes easy to review or roll back, which helps on a sensitive project.",
+        "about": "Aider builds a repo map, a compact map of the classes and functions in the project, so the model can understand a large codebase without reading every file. You add the files you want to work on to the session and ask for the change.\n\nEvery edit gets a commit with a clear message, so you can roll it back with /undo. It runs the linter and tests and fixes failures, and supports voice commands and images.",
+        "features": [
+          "Repo map for large projects",
+          "A commit per edit, plus /undo",
+          "Automatic lint and tests",
+          "Almost any model"
+        ],
+        "install": [
+          "The installer",
+          "Then"
+        ],
+        "pricingNote": "Free; you pay the provider you use"
+      }
     },
     {
       "id": "ess-goose",
@@ -172,13 +427,44 @@
       "summary": "agent مفتوح المصدر، كتطبيق ديسكتوب وCLI وAPI، وبقى جزء من Agentic AI Foundation في Linux Foundation. بيعمل أكتر من البرمجة: بيأتمت مهام ويتكامل مع أي MCP server.",
       "why": "لو عايز agent عام يتعامل مع ملفاتك وأدواتك وشغلك، مش الكود بس، ومن غير ما تتربط بشركة واحدة.",
       "about": "goose بدأ في Block (اللي عاملة Square وCash App)، وبعدين اتنقل للـ Agentic AI Foundation تحت Linux Foundation.\n\nبيشتغل محلياً، ومع أي موديل، وبيتوسع بالـ MCP servers اللي بيسميها extensions. وفيه recipes بتحفظ فيها workflow تعيد استخدامه أو تشاركه مع الفريق.",
-      "features": ["تطبيق ديسكتوب وCLI وAPI", "extensions بالـ MCP", "recipes لحفظ الـ workflows", "أي موديل"],
-      "install": [{ "label": "الـ CLI", "cmd": "curl -fsSL https://github.com/aaif-goose/goose/releases/download/stable/download_cli.sh | bash" }],
-      "pricing": { "model": "oss" },
+      "features": [
+        "تطبيق ديسكتوب وCLI وAPI",
+        "extensions بالـ MCP",
+        "recipes لحفظ الـ workflows",
+        "أي موديل"
+      ],
+      "install": [
+        {
+          "label": "الـ CLI",
+          "cmd": "curl -fsSL https://github.com/aaif-goose/goose/releases/download/stable/download_cli.sh | bash"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/aaif-goose/goose",
       "source": "github.com",
       "importance": 1,
-      "tags": ["agent", "MCP", "open source"]
+      "tags": [
+        "agent",
+        "MCP",
+        "open source"
+      ],
+      "en": {
+        "title": "goose: an open-source agent for code and tasks",
+        "summary": "An open-source agent as a desktop app, CLI and API, now part of the Agentic AI Foundation at the Linux Foundation. It goes beyond coding: it automates tasks and integrates with any MCP server.",
+        "why": "If you want a general agent that works with your files, tools and work, not just code, without being tied to one company.",
+        "about": "goose started at Block (the company behind Square and Cash App) and then moved to the Agentic AI Foundation under the Linux Foundation.\n\nIt runs locally, with any model, and is extended with MCP servers that it calls extensions. It has recipes for saving a workflow to reuse or share with your team.",
+        "features": [
+          "Desktop app, CLI and API",
+          "Extensions via MCP",
+          "Recipes for saving workflows",
+          "Any model"
+        ],
+        "install": [
+          "The CLI"
+        ]
+      }
     },
     {
       "id": "ess-crush",
@@ -189,16 +475,51 @@
       "summary": "agent للترمينال من Charm، اللي عاملين أدوات ترمينال مشهورة. تقدر تغيّر الموديل في نص الجلسة من غير ما تخسر السياق، وبيستخدم LSP عشان يفهم الكود، وبيدعم MCP.",
       "why": "لو بتحب تجربة ترمينال حلوة وعايز تبدّل بين موديلات في نفس الجلسة.",
       "about": "Crush بيشتغل مع أي موديل عن طريق API متوافق مع OpenAI أو Anthropic. تقدر تبدّل الموديل وإنت شغال والسياق بيفضل زي ما هو، وكل مشروع ليه جلسات منفصلة.\n\nبيستخدم LSP عشان ياخد سياق أدق، وبيتوسع بالـ MCP بأنواعه (http وstdio وsse)، وشغال على Linux وmacOS وWindows.\n\nالرخصة FSL-1.1-MIT: الكود متاح وتقدر تستخدمه، وبيتحول لـ MIT بعد مدة.",
-      "features": ["تبديل الموديل في نص الجلسة", "جلسات لكل مشروع", "LSP للسياق", "MCP بأنواعه"],
-      "install": [
-        { "label": "npm", "cmd": "npm install -g @charmland/crush" },
-        { "label": "أو Homebrew", "cmd": "brew install charmbracelet/tap/crush" }
+      "features": [
+        "تبديل الموديل في نص الجلسة",
+        "جلسات لكل مشروع",
+        "LSP للسياق",
+        "MCP بأنواعه"
       ],
-      "pricing": { "model": "free", "note": "مجاني، والرخصة FSL-1.1-MIT" },
+      "install": [
+        {
+          "label": "npm",
+          "cmd": "npm install -g @charmland/crush"
+        },
+        {
+          "label": "أو Homebrew",
+          "cmd": "brew install charmbracelet/tap/crush"
+        }
+      ],
+      "pricing": {
+        "model": "free",
+        "note": "مجاني، والرخصة FSL-1.1-MIT"
+      },
       "url": "https://github.com/charmbracelet/crush",
       "source": "github.com",
       "importance": 1,
-      "tags": ["coding agent", "TUI", "Go"]
+      "tags": [
+        "coding agent",
+        "TUI",
+        "Go"
+      ],
+      "en": {
+        "title": "Crush: a slick terminal coding agent from Charm",
+        "summary": "A terminal agent from Charm, the makers of popular terminal tools. You can switch models mid-session without losing context, it uses LSP to understand code, and it supports MCP.",
+        "why": "If you enjoy a polished terminal experience and want to switch between models within one session.",
+        "about": "Crush works with any model through an OpenAI- or Anthropic-compatible API. You can switch models while you work and the context stays intact, and each project has its own sessions.\n\nIt uses LSP for more precise context, is extended with MCP of every type (http, stdio and sse), and runs on Linux, macOS and Windows.\n\nThe license is FSL-1.1-MIT: the code is available and usable, and converts to MIT after a period.",
+        "features": [
+          "Switch models mid-session",
+          "Sessions per project",
+          "LSP for context",
+          "MCP of every type"
+        ],
+        "install": [
+          "npm",
+          "Or Homebrew"
+        ],
+        "pricingNote": "Free, licensed FSL-1.1-MIT"
+      }
     },
     {
       "id": "ess-claude-code-router",
@@ -209,13 +530,44 @@
       "summary": "تطبيق بيوصّل Claude Code وCodex وOpenCode وKilo Code وغيرهم بالمزودين اللي تختارهم. بيوجّه كل طلب لموديل معين، وبيحوّل لمزود تاني لو واحد وقع، وبيسجّل كل الطلبات.",
       "why": "تقدر تخلي المهام الخفيفة تروح لموديل أرخص، والتفكير المعقد يروح لموديل أقوى، من غير ما تغيّر الأداة اللي متعود عليها.",
       "about": "Claude Code Router بيقف في النص بين أداة البرمجة والمزود. بتحدد قواعد توجيه، زي إن مهام الخلفية تروح لموديل رخيص، والتفكير الطويل لموديل قوي، والـ context الكبير لموديل بيستحمله.\n\nفيه تطبيق ديسكتوب لـ Windows وmacOS وLinux، وCLI، وDocker. وبيدعم الـ failover بين المزودين، ومراقبة كل الطلبات.\n\nملحوظة: استخدام Claude Code مع موديلات غير Claude بيغيّر التجربة، ومش كل الـ features هتشتغل بنفس الجودة.",
-      "features": ["توجيه الطلبات لموديلات مختلفة", "failover بين المزودين", "تطبيق ديسكتوب وCLI وDocker", "مراقبة الطلبات"],
-      "install": [{ "label": "الـ CLI", "cmd": "npm install -g @musistudio/claude-code-router" }],
-      "pricing": { "model": "oss" },
+      "features": [
+        "توجيه الطلبات لموديلات مختلفة",
+        "failover بين المزودين",
+        "تطبيق ديسكتوب وCLI وDocker",
+        "مراقبة الطلبات"
+      ],
+      "install": [
+        {
+          "label": "الـ CLI",
+          "cmd": "npm install -g @musistudio/claude-code-router"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/musistudio/claude-code-router",
       "source": "github.com",
       "importance": 1,
-      "tags": ["Claude Code", "routing", "models"]
+      "tags": [
+        "Claude Code",
+        "routing",
+        "models"
+      ],
+      "en": {
+        "title": "Claude Code Router: run Claude Code and others on any provider",
+        "summary": "An app that connects Claude Code, Codex, OpenCode, Kilo Code and others to the providers you choose. It routes each request to a specific model, fails over to another provider if one goes down, and logs every request.",
+        "why": "Send light tasks to a cheaper model and complex reasoning to a stronger one, without changing the tool you're used to.",
+        "about": "Claude Code Router sits between your coding tool and the provider. You define routing rules, such as background tasks going to a cheap model, long reasoning to a strong model, and large contexts to a model that can handle them.\n\nIt has a desktop app for Windows, macOS and Linux, a CLI and Docker, and supports failover between providers and monitoring of every request.\n\nNote: using Claude Code with non-Claude models changes the experience, and not every feature will work equally well.",
+        "features": [
+          "Route requests to different models",
+          "Failover between providers",
+          "Desktop app, CLI and Docker",
+          "Request monitoring"
+        ],
+        "install": [
+          "The CLI"
+        ]
+      }
     },
     {
       "id": "ess-cursor",
@@ -225,16 +577,51 @@
       "summary": "editor مبني على VS Code، والـ AI جزء أساسي منه: إكمال كود ذكي، وagent بيعدّل في أكتر من ملف، وagents في الخلفية، وreview للـ PRs. من أشهر أدوات البرمجة بالـ AI.",
       "why": "حتى لو إنت مرتاح مع Claude Code، Cursor بيوضح لك إزاي الـ IDEs بتتطور، والـ tab completion فيه من الأقوى.",
       "about": "Cursor هو fork من VS Code، فالـ extensions والإعدادات بتاعتك بتشتغل فيه. أهم ما فيه: Tab completion بيتوقع التعديل الجاي مش السطر الجاي بس، وAgent بيعدّل ويشغّل أوامر، وBackground agents بتشتغل في الكلاود على branch منفصل، وBugbot بيراجع الـ PRs.\n\nبيستخدم موديلات من أكتر من مزود، منها Claude، وموديلات خاصة بيه. وفيه خطة مجانية محدودة، وخطط مدفوعة.",
-      "features": ["fork من VS Code", "Tab completion متقدم", "agent وbackground agents", "review للـ PRs"],
-      "pricing": { "model": "freemium", "note": "خطة مجانية محدودة، والباقي باشتراك شهري" },
+      "features": [
+        "fork من VS Code",
+        "Tab completion متقدم",
+        "agent وbackground agents",
+        "review للـ PRs"
+      ],
+      "pricing": {
+        "model": "freemium",
+        "note": "خطة مجانية محدودة، والباقي باشتراك شهري"
+      },
       "url": "https://cursor.com",
       "source": "cursor.com",
       "importance": 1,
-      "tags": ["IDE", "editor", "AI"],
+      "tags": [
+        "IDE",
+        "editor",
+        "AI"
+      ],
       "links": [
-        { "label": "الموقع", "url": "https://cursor.com" },
-        { "label": "الـ changelog", "url": "https://cursor.com/changelog" }
-      ]
+        {
+          "label": "الموقع",
+          "url": "https://cursor.com"
+        },
+        {
+          "label": "الـ changelog",
+          "url": "https://cursor.com/changelog"
+        }
+      ],
+      "en": {
+        "title": "Cursor: the AI-native IDE",
+        "summary": "An editor built on VS Code with AI at its core: smart code completion, an agent that edits across files, background agents and PR review. One of the most popular AI coding tools.",
+        "why": "Even if you're comfortable with Claude Code, Cursor shows you where IDEs are heading, and its tab completion is among the best.",
+        "about": "Cursor is a fork of VS Code, so your extensions and settings work in it. Highlights: Tab completion that predicts your next edit, not just the next line; an Agent that edits and runs commands; Background agents that work in the cloud on a separate branch; and Bugbot, which reviews PRs.\n\nIt uses models from several providers, including Claude, plus its own models. There's a limited free plan and paid plans.",
+        "features": [
+          "A VS Code fork",
+          "Advanced Tab completion",
+          "Agent and background agents",
+          "PR review"
+        ],
+        "links": [
+          "Website",
+          "Changelog"
+        ],
+        "pricingNote": "Limited free plan; the rest is a monthly subscription"
+      }
     },
     {
       "id": "ess-github-copilot",
@@ -244,13 +631,46 @@
       "summary": "مساعد GitHub للبرمجة جوه VS Code وJetBrains وغيرهم، ومعاه coding agent بتدّيله issue فيطلّع PR لوحده. وبيشتغل مع أكتر من موديل منهم Claude.",
       "why": "لو الفريق شغال على GitHub، الـ coding agent بتاع Copilot بيشتغل على الـ issues مباشرة وبيطلّع PRs جاهزة للمراجعة.",
       "about": "Copilot بقى أكتر من إكمال كود. فيه Chat وAgent mode جوه الـ editor، وCopilot coding agent اللي بتعمله assign على issue فيشتغل في بيئة GitHub Actions ويفتح PR، وcode review للـ PRs.\n\nبيسمح تختار الموديل، ومنهم موديلات Claude. وفيه خطة مجانية بحدود شهرية، وخطط Pro وBusiness وEnterprise.",
-      "features": ["إكمال كود وChat في الـ editor", "Agent mode", "coding agent بيحوّل الـ issues لـ PRs", "اختيار الموديل"],
-      "pricing": { "model": "freemium", "note": "خطة مجانية بحدود شهرية، وخطط مدفوعة" },
+      "features": [
+        "إكمال كود وChat في الـ editor",
+        "Agent mode",
+        "coding agent بيحوّل الـ issues لـ PRs",
+        "اختيار الموديل"
+      ],
+      "pricing": {
+        "model": "freemium",
+        "note": "خطة مجانية بحدود شهرية، وخطط مدفوعة"
+      },
       "url": "https://github.com/features/copilot",
       "source": "github.com",
       "importance": 1,
-      "tags": ["GitHub", "Copilot", "coding agent"],
-      "links": [{ "label": "تحديثات Copilot", "url": "https://github.blog/changelog/" }]
+      "tags": [
+        "GitHub",
+        "Copilot",
+        "coding agent"
+      ],
+      "links": [
+        {
+          "label": "تحديثات Copilot",
+          "url": "https://github.blog/changelog/"
+        }
+      ],
+      "en": {
+        "title": "GitHub Copilot and the Copilot coding agent",
+        "summary": "GitHub's coding assistant inside VS Code, JetBrains and more, with a coding agent you hand an issue to and it opens a PR on its own. It works with several models, including Claude.",
+        "why": "If your team is on GitHub, Copilot's coding agent works on issues directly and produces PRs ready for review.",
+        "about": "Copilot is now much more than code completion. There's Chat and Agent mode in the editor, the Copilot coding agent that you assign to an issue so it works in a GitHub Actions environment and opens a PR, and code review for PRs.\n\nYou can choose the model, including Claude models. There's a free plan with monthly limits, plus Pro, Business and Enterprise plans.",
+        "features": [
+          "Code completion and Chat in the editor",
+          "Agent mode",
+          "A coding agent that turns issues into PRs",
+          "Model choice"
+        ],
+        "links": [
+          "Copilot changelog"
+        ],
+        "pricingNote": "Free plan with monthly limits, plus paid plans"
+      }
     }
   ]
 }

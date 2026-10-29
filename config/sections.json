@@ -3,27 +3,45 @@
   "groups": [
     {
       "id": "ai",
-      "name": "AI للمبرمجين"
+      "name": {
+        "en": "AI for developers",
+        "ar": "AI للمبرمجين"
+      }
     },
     {
       "id": "eng",
-      "name": "هندسة البرمجيات"
+      "name": {
+        "en": "Software engineering",
+        "ar": "هندسة البرمجيات"
+      }
     },
     {
       "id": "auto",
-      "name": "أتمتة وإنتاجية"
+      "name": {
+        "en": "Automation & productivity",
+        "ar": "أتمتة وإنتاجية"
+      }
     },
     {
       "id": "creative",
-      "name": "إبداع"
+      "name": {
+        "en": "Creative",
+        "ar": "إبداع"
+      }
     }
   ],
   "sections": [
     {
       "id": "claude",
       "group": "ai",
-      "name": "Claude Code",
-      "hint": "تحديثات Claude Code والـ API والموديلات وكل منتجات Anthropic",
+      "name": {
+        "en": "Claude Code",
+        "ar": "Claude Code"
+      },
+      "hint": {
+        "en": "Claude Code, the API, new models and everything from Anthropic",
+        "ar": "تحديثات Claude Code والـ API والموديلات وكل منتجات Anthropic"
+      },
       "color": "#E2702A",
       "scope": "Claude Code releases and features, Claude apps, Anthropic API/SDK/Agent SDK changes, new Claude models, docs and engineering posts from Anthropic.",
       "keywords": [
@@ -44,8 +62,14 @@
     {
       "id": "agents",
       "group": "ai",
-      "name": "Coding agents",
-      "hint": "Cursor وCodex وGemini CLI وOpenCode وCline وغيرهم",
+      "name": {
+        "en": "Coding agents",
+        "ar": "Coding agents"
+      },
+      "hint": {
+        "en": "Cursor, Codex, Gemini CLI, OpenCode, Cline and more",
+        "ar": "Cursor وCodex وGemini CLI وOpenCode وCline وغيرهم"
+      },
       "color": "#3B5BDB",
       "scope": "AI coding agents, AI IDEs and editor extensions other than Claude Code: new tools, major releases, new capabilities, comparisons worth reading.",
       "keywords": [
@@ -71,8 +95,14 @@
     {
       "id": "skills",
       "group": "ai",
-      "name": "Skills و Plugins",
-      "hint": "skills وplugins وsubagents وworkflows جاهزة للـ agents",
+      "name": {
+        "en": "Skills & Plugins",
+        "ar": "Skills و Plugins"
+      },
+      "hint": {
+        "en": "Ready-made skills, plugins, subagents and workflows for agents",
+        "ar": "skills وplugins وsubagents وworkflows جاهزة للـ agents"
+      },
       "color": "#7048E8",
       "scope": "Agent Skills (SKILL.md), Claude Code plugins and marketplaces, subagent collections, slash-command packs, CLAUDE.md templates and agent workflow frameworks.",
       "keywords": [
@@ -94,8 +124,14 @@
     {
       "id": "mcp",
       "group": "ai",
-      "name": "MCP Servers",
-      "hint": "MCP servers جديدة، وconnectors، وتغييرات البروتوكول",
+      "name": {
+        "en": "MCP Servers",
+        "ar": "MCP Servers"
+      },
+      "hint": {
+        "en": "New MCP servers, connectors and protocol changes",
+        "ar": "MCP servers جديدة، وconnectors، وتغييرات البروتوكول"
+      },
       "color": "#0C8599",
       "scope": "New or notable MCP servers (especially official ones from vendors), MCP spec and SDK changes, MCP registries and gateways.",
       "keywords": [
@@ -114,8 +150,14 @@
     {
       "id": "llm",
       "group": "ai",
-      "name": "LLMs و APIs",
-      "hint": "موديلات جديدة، وتغييرات الأسعار والـ APIs، وRAG، والموديلات المحلية",
+      "name": {
+        "en": "LLMs & APIs",
+        "ar": "LLMs و APIs"
+      },
+      "hint": {
+        "en": "New models, pricing and API changes, RAG and local models",
+        "ar": "موديلات جديدة، وتغييرات الأسعار والـ APIs، وRAG، والموديلات المحلية"
+      },
       "color": "#1971C2",
       "scope": "New models from any lab, API and pricing changes, SDKs and agent frameworks, RAG/embeddings/evals tooling, local models and inference.",
       "keywords": [
@@ -139,8 +181,14 @@
     {
       "id": "backend",
       "group": "eng",
-      "name": "Backend و APIs",
-      "hint": "frameworks وأدوات الـ backend بأي لغة، والـ APIs والـ auth والـ queues",
+      "name": {
+        "en": "Backend & APIs",
+        "ar": "Backend و APIs"
+      },
+      "hint": {
+        "en": "Backend frameworks and tools in any language, APIs, auth and queues",
+        "ar": "frameworks وأدوات الـ backend بأي لغة، والـ APIs والـ auth والـ queues"
+      },
       "color": "#2B8A3E",
       "scope": "Backend frameworks and libraries (Node, Python, Go, etc.), API design, auth, queues, caching, background jobs — especially AI-assisted backend tooling.",
       "keywords": [
@@ -161,8 +209,14 @@
     {
       "id": "laravel",
       "group": "eng",
-      "name": "Laravel و PHP",
-      "hint": "إصدارات Laravel وباكدجاتها، وأدوات الـ AI لـ PHP",
+      "name": {
+        "en": "Laravel & PHP",
+        "ar": "Laravel و PHP"
+      },
+      "hint": {
+        "en": "Laravel releases and packages, plus AI tooling for PHP",
+        "ar": "إصدارات Laravel وباكدجاتها، وأدوات الـ AI لـ PHP"
+      },
       "color": "#E03131",
       "scope": "Laravel and PHP releases, notable packages, Laravel AI SDK/Boost/MCP, Filament/Livewire, PHP AI libraries and tutorials worth reading.",
       "keywords": [
@@ -184,8 +238,14 @@
     {
       "id": "frontend",
       "group": "eng",
-      "name": "Frontend و UI",
-      "hint": "React وNext وVue وCSS، ومكتبات الـ UI، والتحويل من تصميم لكود",
+      "name": {
+        "en": "Frontend & UI",
+        "ar": "Frontend و UI"
+      },
+      "hint": {
+        "en": "React, Next, Vue, CSS, UI libraries and design-to-code",
+        "ar": "React وNext وVue وCSS، ومكتبات الـ UI، والتحويل من تصميم لكود"
+      },
       "color": "#C2255C",
       "scope": "Frontend frameworks and releases, CSS, component libraries, UI kits, design-to-code and AI UI generation tools, frontend skills for agents.",
       "keywords": [
@@ -208,8 +268,14 @@
     {
       "id": "data",
       "group": "eng",
-      "name": "قواعد البيانات",
-      "hint": "Postgres وMySQL وRedis، والـ ORMs، والـ vector databases",
+      "name": {
+        "en": "Databases",
+        "ar": "قواعد البيانات"
+      },
+      "hint": {
+        "en": "Postgres, MySQL, Redis, ORMs and vector databases",
+        "ar": "Postgres وMySQL وRedis، والـ ORMs، والـ vector databases"
+      },
       "color": "#5C7CFA",
       "scope": "Databases, ORMs, migrations, query tooling, vector databases, data pipelines and AI-for-SQL tools.",
       "keywords": [
@@ -229,8 +295,14 @@
     {
       "id": "architecture",
       "group": "eng",
-      "name": "Architecture",
-      "hint": "تصميم الأنظمة والـ patterns وspec-driven development والتوثيق",
+      "name": {
+        "en": "Architecture",
+        "ar": "Architecture"
+      },
+      "hint": {
+        "en": "System design, patterns, spec-driven development and docs",
+        "ar": "تصميم الأنظمة والـ patterns وspec-driven development والتوثيق"
+      },
       "color": "#495057",
       "scope": "Software architecture and system design, design patterns, spec-driven development, ADRs and documentation tooling, AI-assisted architecture and code-understanding tools.",
       "keywords": [
@@ -250,8 +322,14 @@
     {
       "id": "testing",
       "group": "eng",
-      "name": "Testing و QA",
-      "hint": "Playwright، وتوليد التيستات، والـ code review بالـ AI",
+      "name": {
+        "en": "Testing & QA",
+        "ar": "Testing و QA"
+      },
+      "hint": {
+        "en": "Playwright, test generation and AI code review",
+        "ar": "Playwright، وتوليد التيستات، والـ code review بالـ AI"
+      },
       "color": "#0B7285",
       "scope": "Test frameworks, E2E/browser testing, AI test generation, AI code review bots, QA automation.",
       "keywords": [
@@ -271,8 +349,14 @@
     {
       "id": "devops",
       "group": "eng",
-      "name": "DevOps و Infra",
-      "hint": "Docker وCI/CD والسيرفرات والـ self-hosting والمراقبة",
+      "name": {
+        "en": "DevOps & Infra",
+        "ar": "DevOps و Infra"
+      },
+      "hint": {
+        "en": "Docker, CI/CD, servers, self-hosting and monitoring",
+        "ar": "Docker وCI/CD والسيرفرات والـ self-hosting والمراقبة"
+      },
       "color": "#1864AB",
       "scope": "Containers, CI/CD, self-hosting platforms, servers and Linux tooling, observability, cloud and deployment platforms, AI for ops.",
       "keywords": [
@@ -294,8 +378,14 @@
     {
       "id": "security",
       "group": "eng",
-      "name": "Security",
-      "hint": "أمان الكود والـ agents، والأسرار، وثغرات مهمة",
+      "name": {
+        "en": "Security",
+        "ar": "Security"
+      },
+      "hint": {
+        "en": "Securing code and agents, secrets, and major vulnerabilities",
+        "ar": "أمان الكود والـ agents، والأسرار، وثغرات مهمة"
+      },
       "color": "#862E9C",
       "scope": "Application and supply-chain security, secret scanning, SAST, security of AI agents and MCP (prompt injection, permissions), critical vulnerabilities in common stacks.",
       "keywords": [
@@ -315,8 +405,14 @@
     {
       "id": "automation",
       "group": "auto",
-      "name": "Automation و Workflows",
-      "hint": "n8n، والـ agents اللي بتشتغل لوحدها، وأتمتة البراوزر والمهام",
+      "name": {
+        "en": "Automation & Workflows",
+        "ar": "Automation و Workflows"
+      },
+      "hint": {
+        "en": "n8n, autonomous agents, browser and task automation",
+        "ar": "n8n، والـ agents اللي بتشتغل لوحدها، وأتمتة البراوزر والمهام"
+      },
       "color": "#E67700",
       "scope": "Workflow automation platforms, multi-agent orchestration, background/scheduled agents, browser automation and scraping for agents.",
       "keywords": [
@@ -336,8 +432,14 @@
     {
       "id": "devtools",
       "group": "auto",
-      "name": "أدوات المطوّر",
-      "hint": "الترمينال وgit والـ CLI وأدوات تزوّد إنتاجيتك",
+      "name": {
+        "en": "Developer tools",
+        "ar": "أدوات المطوّر"
+      },
+      "hint": {
+        "en": "The terminal, git, CLIs and tools that boost your productivity",
+        "ar": "الترمينال وgit والـ CLI وأدوات تزوّد إنتاجيتك"
+      },
       "color": "#5F3DC4",
       "scope": "Terminal apps, shells, git tools, CLI utilities, editors and productivity tools for developers.",
       "keywords": [
@@ -355,8 +457,14 @@
     {
       "id": "video",
       "group": "creative",
-      "name": "فيديو وصوت",
-      "hint": "توليد وتعديل الفيديو، والمونتاج، والأصوات والدبلجة",
+      "name": {
+        "en": "Video & Audio",
+        "ar": "فيديو وصوت"
+      },
+      "hint": {
+        "en": "Video generation and editing, audio, voices and dubbing",
+        "ar": "توليد وتعديل الفيديو، والمونتاج، والأصوات والدبلجة"
+      },
       "color": "#D6336C",
       "scope": "AI video generation and editing, editing software features, voice/TTS/dubbing, music and sound effects generation.",
       "keywords": [
@@ -375,8 +483,14 @@
     {
       "id": "design",
       "group": "creative",
-      "name": "صور وتصميم",
-      "hint": "توليد الصور، وأدوات الـ UI/UX، والبراندنج",
+      "name": {
+        "en": "Images & Design",
+        "ar": "صور وتصميم"
+      },
+      "hint": {
+        "en": "Image generation, UI/UX tools and branding",
+        "ar": "توليد الصور، وأدوات الـ UI/UX، والبراندنج"
+      },
       "color": "#B7791F",
       "scope": "Image generation models and tools, UI/UX design tools with AI, branding and vector tools.",
       "keywords": [
@@ -394,21 +508,63 @@
     }
   ],
   "kinds": {
-    "release": "إصدار",
-    "repo": "ريبو",
-    "skill": "Skill",
-    "plugin": "Plugin",
-    "mcp": "MCP",
-    "library": "مكتبة",
-    "tool": "أداة",
-    "model": "موديل",
-    "article": "مقال",
-    "video": "فيديو"
+    "release": {
+      "en": "Release",
+      "ar": "إصدار"
+    },
+    "repo": {
+      "en": "Repo",
+      "ar": "ريبو"
+    },
+    "skill": {
+      "en": "Skill",
+      "ar": "Skill"
+    },
+    "plugin": {
+      "en": "Plugin",
+      "ar": "Plugin"
+    },
+    "mcp": {
+      "en": "MCP",
+      "ar": "MCP"
+    },
+    "library": {
+      "en": "Library",
+      "ar": "مكتبة"
+    },
+    "tool": {
+      "en": "Tool",
+      "ar": "أداة"
+    },
+    "model": {
+      "en": "Model",
+      "ar": "موديل"
+    },
+    "article": {
+      "en": "Article",
+      "ar": "مقال"
+    },
+    "video": {
+      "en": "Video",
+      "ar": "فيديو"
+    }
   },
   "pricing": {
-    "oss": "مفتوح المصدر",
-    "free": "مجاني",
-    "freemium": "فيه خطة مجانية",
-    "paid": "مدفوع"
+    "oss": {
+      "en": "Open source",
+      "ar": "مفتوح المصدر"
+    },
+    "free": {
+      "en": "Free",
+      "ar": "مجاني"
+    },
+    "freemium": {
+      "en": "Freemium",
+      "ar": "فيه خطة مجانية"
+    },
+    "paid": {
+      "en": "Paid",
+      "ar": "مدفوع"
+    }
   }
 }

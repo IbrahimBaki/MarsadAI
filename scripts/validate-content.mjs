@@ -91,12 +91,38 @@ function checkItems(file, items, urls, { essential }) {
     if (it.links !== undefined &&
       (!Array.isArray(it.links) || it.links.some((x) => !isStr(x?.label) || !isUrl(x?.url))))
       at(`"links" must be [{label, url}]`);
+    checkEnglish(it, at, { essential });
     if (it.alternatives !== undefined) {
       if (!Array.isArray(it.alternatives) || it.alternatives.some((x) => !isStr(x)))
         at(`"alternatives" must be an array of ids`);
       else pendingAlternatives.push([file, it.id, it.alternatives]);
     }
   });
+}
+
+// The app is bilingual (English by default). Every text field needs its English twin in "en",
+// and arrays must line up index by index with the Arabic ones.
+function checkEnglish(it, at, { essential }) {
+  const en = it.en;
+  if (!en || typeof en !== "object") {
+    at(`"en" (the English version) is required`);
+    return;
+  }
+  for (const k of ["title", "summary", "why"]) if (!isStr(en[k])) at(`"en.${k}" is required`);
+  if (isStr(en.summary) && en.summary.length > 480) at(`"en.summary" is longer than 480 chars`);
+  if (isStr(en.why) && en.why.length > 380) at(`"en.why" is longer than 380 chars`);
+  if (isStr(it.about) && !isStr(en.about, 80)) at(`"en.about" is required, 80+ chars`);
+  for (const k of ["features", "usage", "requirements"]) {
+    if (it[k]?.length && (!Array.isArray(en[k]) || en[k].length !== it[k].length || en[k].some((x) => !isStr(x))))
+      at(`"en.${k}" must have the same number of entries as "${k}" (${it[k].length})`);
+  }
+  for (const k of ["install", "links"]) {
+    if (it[k]?.length && (!Array.isArray(en[k]) || en[k].length !== it[k].length || en[k].some((x) => !isStr(x))))
+      at(`"en.${k}" must be ${it[k].length} English label(s), one per entry in "${k}"`);
+  }
+  if (it.pricing?.note && !isStr(en.pricingNote)) at(`"en.pricingNote" is required when "pricing.note" is set`);
+  if (/[\u0600-\u06FF]/.test([en.title, en.summary, en.why].join(" "))) at(`"en" text contains Arabic letters`);
+  void essential;
 }
 
 // Essentials
@@ -126,6 +152,7 @@ for (const file of files) {
   }
   if (d.date !== file.replace(".json", "")) errors.push(`${file}: "date" must equal the file name`);
   if (!isStr(d.headline, 10)) errors.push(`${file}: "headline" is missing or too short`);
+  if (!isStr(d.headline_en, 10)) errors.push(`${file}: "headline_en" (English headline) is missing or too short`);
   checkItems(file, d.items, dailyUrls, { essential: false });
 }
 

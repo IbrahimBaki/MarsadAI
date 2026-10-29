@@ -36,7 +36,23 @@
       ],
       "alternatives": [
         "ess-supabase-mcp"
-      ]
+      ],
+      "en": {
+        "title": "Supabase: a complete Postgres platform",
+        "summary": "Hosted Postgres with auth, automatic REST and GraphQL APIs, realtime, file storage, edge functions and vector search with pgvector. Open source, and you can run it yourself.",
+        "why": "The fastest way to stand up a backend for a side project like Dokkanx or an internal tool, and it has an official MCP server for agents.",
+        "about": "Supabase positions itself as an open-source alternative to Firebase, but built on real Postgres. So you get full SQL, row level security for permissions, and extensions like pgvector.\n\nIt comes with Auth of every kind, an automatic API from your tables, Realtime for changes, Storage for files, Edge Functions on Deno, a comfortable dashboard, and a CLI for local development and migrations. There's a free plan for small projects.",
+        "features": [
+          "Real Postgres with RLS",
+          "Auth, storage and realtime",
+          "An automatic API from your tables",
+          "pgvector and an MCP server"
+        ],
+        "install": [
+          "CLI for local development"
+        ],
+        "pricingNote": "Free plan, or run it yourself for free"
+      }
     },
     {
       "id": "ess-pgvector",
@@ -69,7 +85,22 @@
         "Postgres",
         "vectors",
         "RAG"
-      ]
+      ],
+      "en": {
+        "title": "pgvector: vector search inside Postgres",
+        "summary": "A Postgres extension for storing embeddings next to your data and running similarity search, exact or approximate with HNSW and IVFFlat. It's the foundation for RAG without a separate database.",
+        "why": "If you'll build smart search or RAG over ERP data, like products, documents or tickets, pgvector saves you a second database.",
+        "about": "You add a vector column, store the embedding in it, and search with ORDER BY embedding <-> query LIMIT 10. It supports several distance metrics, HNSW and IVFFlat indexes for speed, and half-precision, binary or sparse vectors to save space.\n\nIt's supported on Supabase, Neon, RDS and most Postgres providers, and there's a ready Docker image. The Laravel AI SDK supports embeddings and Postgres.",
+        "features": [
+          "Vectors next to your data",
+          "HNSW and IVFFlat indexes",
+          "Half, binary and sparse vectors",
+          "Supported by most providers"
+        ],
+        "install": [
+          "Docker"
+        ]
+      }
     },
     {
       "id": "ess-qdrant",
@@ -103,7 +134,23 @@
         "vector database",
         "Rust",
         "RAG"
-      ]
+      ],
+      "en": {
+        "title": "Qdrant: a vector database written in Rust",
+        "summary": "A fast vector database written in Rust, with powerful payload filtering, hybrid search and quantization to cut memory. Runs in Docker or on Qdrant Cloud.",
+        "why": "If your embeddings grow very large, or you need complex filtering alongside search, Qdrant is stronger than pgvector.",
+        "about": "Qdrant stores points, each a vector with a JSON payload, and filters efficiently on the payload during search. It has multiple named vectors, sparse vectors for hybrid search, quantization, sharding and replication.\n\nThere are clients for Python, JS, Go and Rust, PHP via the community, and it integrates with Neuron AI.",
+        "features": [
+          "Fast search with filtering",
+          "Hybrid search",
+          "Quantization to save memory",
+          "Docker or Cloud"
+        ],
+        "install": [
+          "Docker"
+        ],
+        "pricingNote": "Open source; Qdrant Cloud has a free tier"
+      }
     },
     {
       "id": "ess-drizzle",
@@ -139,7 +186,22 @@
       ],
       "alternatives": [
         "ess-prisma"
-      ]
+      ],
+      "en": {
+        "title": "Drizzle ORM: a lightweight TypeScript ORM close to SQL",
+        "summary": "A ~7.4 kB TypeScript ORM with no dependencies that writes queries very close to SQL with full types. It supports Postgres, MySQL and SQLite and runs on any runtime, even the edge.",
+        "why": "If you'll write a TypeScript service that talks to the ERP database, Drizzle gives you types without hiding SQL.",
+        "about": "In Drizzle you define the schema in TypeScript and queries look like SQL, such as db.select().from(users).where(eq(users.id, 1)), or use the higher-level relational API.\n\nIt comes with drizzle-kit for migrations and Drizzle Studio for browsing data, and supports Neon, Turso, PlanetScale, Supabase and D1.",
+        "features": [
+          "Close to SQL, with types",
+          "Zero dependencies",
+          "Any runtime, even the edge",
+          "drizzle-kit and Studio"
+        ],
+        "install": [
+          "npm"
+        ]
+      }
     },
     {
       "id": "ess-prisma",
@@ -180,7 +242,24 @@
       ],
       "alternatives": [
         "ess-drizzle"
-      ]
+      ],
+      "en": {
+        "title": "Prisma 8: a TypeScript ORM built for agents",
+        "summary": "Prisma 8, still a release candidate, is a complete rewrite in TypeScript designed to be extensible and AI-agent friendly, with a command that syncs skills for agents. Prisma 7 stays supported for 18 months after 8.",
+        "why": "If you use Prisma, watch out for the big change in 8. And the idea of an ORM shipping skills for agents is a new direction worth following.",
+        "about": "Prisma ORM defines the schema in a schema.prisma file and generates a fully typed client, with migrations and Prisma Studio.\n\nIn Prisma 8 the team rewrote it in TypeScript to make it extensible and composable, and added a prisma skills sync command that puts skills for coding agents into your project. The final release is expected within weeks; until then there may be breaking changes.",
+        "features": [
+          "Typed schema and client",
+          "Migrations and Studio",
+          "Prisma 8 is written in TypeScript",
+          "Skills for agents"
+        ],
+        "install": [
+          "New project",
+          "Skills for agents"
+        ],
+        "pricingNote": "The ORM is free; Prisma's hosted services are paid"
+      }
     },
     {
       "id": "ess-redis",
@@ -214,7 +293,23 @@
         "Redis",
         "cache",
         "queues"
-      ]
+      ],
+      "en": {
+        "title": "Redis Open Source 8",
+        "summary": "The in-memory database used for caching, queues and sessions. From v8 it's called Redis Open Source and is back under an open license (AGPL), with vector sets, JSON and search built in.",
+        "why": "Laravel uses it for cache, queues and Horizon, and v8 added things like vector sets that could help with smart search.",
+        "about": "In v8, Redis Community Edition was renamed Redis Open Source and gained an AGPLv3 license option. This release merged what used to be separate modules, like JSON, search and the query engine, time series and probabilistic structures, and added a new type called vector sets for similarity search.\n\nThe easiest way to run it is Docker.",
+        "features": [
+          "Cache, queues and sessions",
+          "JSON and search built in",
+          "Vector sets",
+          "AGPL license from v8"
+        ],
+        "install": [
+          "Docker"
+        ],
+        "pricingNote": "Open source; Redis Cloud is paid"
+      }
     },
     {
       "id": "ess-dbeaver",
@@ -242,7 +337,20 @@
         "database",
         "SQL",
         "GUI"
-      ]
+      ],
+      "en": {
+        "title": "DBeaver: a free database tool for every kind of database",
+        "summary": "A free desktop tool for 100+ database types: a SQL editor, data editor, ER diagrams, export, import and migration, execution plans, and an AI chat for writing SQL.",
+        "why": "It runs on Linux and opens MySQL, Postgres and SQLite in one place, and the ER diagrams help you understand your modules' tables.",
+        "about": "DBeaver Community is free and open source, written in Java, so it runs on Linux, macOS and Windows. It has a SQL editor with autocomplete, in-grid data editing, ER diagrams from the schema, schema comparison, data transfer between different databases, execution plans, and an AI chat that turns questions into SQL.\n\nThere are also paid (PRO) editions with extra features.",
+        "features": [
+          "100+ database types",
+          "ER diagrams",
+          "Data transfer and schema comparison",
+          "AI chat for SQL"
+        ],
+        "pricingNote": "Community is free; PRO is paid"
+      }
     },
     {
       "id": "ess-meilisearch",
@@ -275,7 +383,23 @@
       "tags": [
         "search",
         "Laravel Scout"
-      ]
+      ],
+      "en": {
+        "title": "Meilisearch: fast, smart search out of the box",
+        "summary": "A search engine for full-text, semantic and hybrid search, with instant results, typo tolerance, filters and facets. Run it yourself or on Meilisearch Cloud; it integrates with Laravel Scout.",
+        "why": "If product or customer search in the ERP is slow or not smart, Meilisearch with Scout fixes that quickly.",
+        "about": "You send documents as JSON and search with a single request. It tolerates typos and supports filters, facets, sorting, synonyms and many languages. There's also semantic and hybrid search with embeddings.\n\nIt's officially supported by Laravel Scout, with a Docker image and an install script.",
+        "features": [
+          "Instant results with typo tolerance",
+          "Filters and facets",
+          "Hybrid search",
+          "Laravel Scout"
+        ],
+        "install": [
+          "Local install"
+        ],
+        "pricingNote": "Open source; Meilisearch Cloud is paid"
+      }
     },
     {
       "id": "ess-duckdb",
@@ -308,7 +432,22 @@
         "analytics",
         "SQL",
         "CSV"
-      ]
+      ],
+      "en": {
+        "title": "DuckDB: fast data analysis inside any program",
+        "summary": "An analytical database that runs inside the program itself with no server, and reads CSV, Parquet and JSON directly. It has a CLI and clients for Python, R, Java, Node and more.",
+        "why": "If you want to analyse a big ERP export with SQL in seconds, without loading it into MySQL.",
+        "about": "DuckDB is like SQLite but for analytics. You write SELECT * FROM 'sales.csv' directly, and it runs aggregations and joins over millions of rows very fast because it's columnar.\n\nIt reads and writes CSV, Parquet, JSON and Excel, and can connect to Postgres, MySQL and S3. There's also a version that runs in the browser.",
+        "features": [
+          "No server",
+          "SQL directly on CSV, Parquet and JSON",
+          "Very fast analytics",
+          "CLI and clients for every language"
+        ],
+        "install": [
+          "Python"
+        ]
+      }
     }
   ]
 }

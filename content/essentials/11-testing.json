@@ -10,18 +10,60 @@
       "summary": "CLI من Microsoft معمول مخصوص للـ coding agents زي Claude Code. بيعمل نفس شغل Playwright MCP، بس أوفر في الـ tokens، لأنه مش بيحمّل schemas الأدوات الكبيرة ولا شجرة الصفحة كلها في الـ context. ومعاه skills.",
       "why": "لو بتستخدم Playwright MCP مع Claude Code وحاسس إنه بياكل الـ context، جرّب ده: نفس النتيجة بتكلفة أقل، وده الاختيار اللي Microsoft بتنصح بيه للـ coding agents.",
       "about": "Playwright دلوقتي بيقدم تلات طرق: Playwright Test لتيستات الـ E2E، وPlaywright MCP للـ agents العامة، وPlaywright CLI للـ coding agents.\n\nالـ CLI بيخلي الـ agent ينفّذ أوامر قصيرة في الـ shell بدل ما يحمّل عشرات الأدوات بالـ schemas بتاعتها، وبيرجّع المعلومة المطلوبة بس. وفيه skills اختيارية بتعلّم الـ agent يستخدمه أحسن.\n\nبتقول للـ agent: اختبر flow معين باستخدام playwright-cli، وصوّر كل السيناريوهات.",
-      "features": ["معمول للـ coding agents", "أوفر في الـ tokens من MCP", "skills اختيارية", "Chromium وFirefox وWebKit"],
-      "install": [
-        { "label": "سطّب الـ CLI", "cmd": "npm install -g @playwright/cli@latest" },
-        { "label": "ضيف الـ skills", "cmd": "playwright-cli install --skills" }
+      "features": [
+        "معمول للـ coding agents",
+        "أوفر في الـ tokens من MCP",
+        "skills اختيارية",
+        "Chromium وFirefox وWebKit"
       ],
-      "usage": ["Test the \"create invoice\" flow on http://localhost:8000 using playwright-cli. Take screenshots for all scenarios."],
-      "pricing": { "model": "oss" },
+      "install": [
+        {
+          "label": "سطّب الـ CLI",
+          "cmd": "npm install -g @playwright/cli@latest"
+        },
+        {
+          "label": "ضيف الـ skills",
+          "cmd": "playwright-cli install --skills"
+        }
+      ],
+      "usage": [
+        "Test the \"create invoice\" flow on http://localhost:8000 using playwright-cli. Take screenshots for all scenarios."
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/microsoft/playwright-cli",
       "source": "github.com",
       "importance": 3,
-      "tags": ["Playwright", "browser", "Claude Code", "testing"],
-      "alternatives": ["ess-playwright-mcp", "ess-playwright"]
+      "tags": [
+        "Playwright",
+        "browser",
+        "Claude Code",
+        "testing"
+      ],
+      "alternatives": [
+        "ess-playwright-mcp",
+        "ess-playwright"
+      ],
+      "en": {
+        "title": "Playwright CLI: browser automation for coding agents with fewer tokens",
+        "summary": "A CLI from Microsoft built specifically for coding agents like Claude Code. It does the same job as Playwright MCP but is lighter on tokens, because it doesn't load large tool schemas or the whole page tree into context. It comes with skills.",
+        "why": "If you use Playwright MCP with Claude Code and feel it eats your context, try this: the same result at lower cost, and it's what Microsoft recommends for coding agents.",
+        "about": "Playwright now offers three paths: Playwright Test for E2E tests, Playwright MCP for general agents, and Playwright CLI for coding agents.\n\nThe CLI lets the agent run short shell commands instead of loading dozens of tools with their schemas, and returns only the information needed. Optional skills teach the agent to use it better.\n\nYou tell the agent: test a given flow using playwright-cli and take screenshots of every scenario.",
+        "features": [
+          "Built for coding agents",
+          "Lighter on tokens than MCP",
+          "Optional skills",
+          "Chromium, Firefox and WebKit"
+        ],
+        "usage": [
+          "Test the \"create invoice\" flow on http://localhost:8000 using playwright-cli. Take screenshots for all scenarios."
+        ],
+        "install": [
+          "Install the CLI",
+          "Add the skills"
+        ]
+      }
     },
     {
       "id": "ess-playwright",
@@ -32,17 +74,52 @@
       "summary": "framework لأتمتة البراوزر واختباره، بيشغّل Chromium وFirefox وWebKit بـ API واحد. فيه test runner كامل بـ auto-waiting وassertions ذكية وتشغيل متوازي، وأدوات زي codegen وtrace viewer وUI mode.",
       "why": "تيستات E2E لأهم flows في الـ ERP، زي الفاتورة والمرتجع والتقارير، بتمسك الأخطاء اللي الـ unit tests مش بتشوفها، والـ agents بتكتب تيستات Playwright كويس جداً.",
       "about": "Playwright Test بيعزل كل تيست في browser context منفصل، وبيستنى العناصر أوتوماتيك، فالتيستات مش بتبقى flaky. وفيه codegen بيسجّل اللي بتعمله ويحوّله لكود، وtrace viewer بيوريك كل خطوة بالـ screenshots والـ network، وUI mode للتطوير.\n\nبيشتغل في الـ CI بسهولة، وفيه reporters كتير. ولو التطبيق Laravel، تشغّل السيرفر وتوجّه التيستات له.",
-      "features": ["Chromium وFirefox وWebKit", "auto-waiting وتيستات معزولة", "codegen وtrace viewer", "تشغيل متوازي في الـ CI"],
-      "install": [
-        { "label": "مشروع تيستات جديد", "cmd": "npm init playwright@latest" },
-        { "label": "شغّل التيستات", "cmd": "npx playwright test" }
+      "features": [
+        "Chromium وFirefox وWebKit",
+        "auto-waiting وتيستات معزولة",
+        "codegen وtrace viewer",
+        "تشغيل متوازي في الـ CI"
       ],
-      "pricing": { "model": "oss" },
+      "install": [
+        {
+          "label": "مشروع تيستات جديد",
+          "cmd": "npm init playwright@latest"
+        },
+        {
+          "label": "شغّل التيستات",
+          "cmd": "npx playwright test"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://playwright.dev",
       "source": "playwright.dev",
       "importance": 2,
-      "tags": ["E2E", "testing", "browser"],
-      "alternatives": ["ess-playwright-cli"]
+      "tags": [
+        "E2E",
+        "testing",
+        "browser"
+      ],
+      "alternatives": [
+        "ess-playwright-cli"
+      ],
+      "en": {
+        "title": "Playwright Test: E2E tests for every browser",
+        "summary": "A framework for automating and testing browsers that drives Chromium, Firefox and WebKit through one API. It has a full test runner with auto-waiting, smart assertions and parallel runs, plus tools like codegen, the trace viewer and UI mode.",
+        "why": "E2E tests for the ERP's most important flows, like invoices, returns and reports, catch bugs unit tests miss, and agents write Playwright tests very well.",
+        "about": "Playwright Test isolates each test in its own browser context and waits for elements automatically, so tests aren't flaky. codegen records what you do and turns it into code, the trace viewer shows every step with screenshots and network, and UI mode helps during development.\n\nIt runs easily in CI and has many reporters. For a Laravel app, start the server and point the tests at it.",
+        "features": [
+          "Chromium, Firefox and WebKit",
+          "Auto-waiting and isolated tests",
+          "codegen and trace viewer",
+          "Parallel runs in CI"
+        ],
+        "install": [
+          "New test project",
+          "Run the tests"
+        ]
+      }
     },
     {
       "id": "ess-vitest",
@@ -53,13 +130,44 @@
       "summary": "test framework مبني على Vite، فبيستخدم نفس إعدادات مشروعك. متوافق مع Jest، وفيه watch mode سريع، وbrowser mode، وcoverage، وsnapshots.",
       "why": "لو عندك كود JavaScript في الـ ERP، زي حسابات في الواجهة أو components، Vitest أسهل وأسرع من Jest، ومتكامل مع Vite اللي Laravel بيستخدمه.",
       "about": "Vitest بيقرا vite.config ويستخدم نفس الـ plugins، فمفيش إعداد مكرر. الـ API متوافق مع Jest، زي describe وit وexpect، فالتحويل سهل. وفيه watch mode بيشغّل التيستات المتأثرة بس، وBrowser Mode بيشغّل التيستات في براوزر حقيقي، وcoverage، وUI.",
-      "features": ["نفس إعدادات Vite", "متوافق مع Jest", "watch mode سريع", "browser mode وcoverage"],
-      "install": [{ "label": "npm", "cmd": "npm install -D vitest" }],
-      "pricing": { "model": "oss" },
+      "features": [
+        "نفس إعدادات Vite",
+        "متوافق مع Jest",
+        "watch mode سريع",
+        "browser mode وcoverage"
+      ],
+      "install": [
+        {
+          "label": "npm",
+          "cmd": "npm install -D vitest"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://vitest.dev",
       "source": "vitest.dev",
       "importance": 1,
-      "tags": ["JavaScript", "testing", "Vite"]
+      "tags": [
+        "JavaScript",
+        "testing",
+        "Vite"
+      ],
+      "en": {
+        "title": "Vitest: fast JavaScript and TypeScript tests",
+        "summary": "A test framework built on Vite, so it uses your project's existing config. It's Jest-compatible, with a fast watch mode, browser mode, coverage and snapshots.",
+        "why": "If you have JavaScript in the ERP, like front-end calculations or components, Vitest is easier and faster than Jest and fits with the Vite that Laravel uses.",
+        "about": "Vitest reads vite.config and uses the same plugins, so there's no duplicated setup. Its API is Jest-compatible, with describe, it and expect, so migrating is easy. Watch mode reruns only affected tests, Browser Mode runs tests in a real browser, and there's coverage and a UI.",
+        "features": [
+          "Same config as Vite",
+          "Jest-compatible",
+          "Fast watch mode",
+          "Browser mode and coverage"
+        ],
+        "install": [
+          "npm"
+        ]
+      }
     },
     {
       "id": "ess-k6",
@@ -70,13 +178,45 @@
       "summary": "أداة load testing من Grafana. بتكتب السيناريو بـ JavaScript، وتحدد عدد المستخدمين والمدة، وتطلع تقرير بالـ response times والأخطاء. وأي جهاز عادي يقدر يولّد ضغط كبير.",
       "why": "قبل موسم ضغط أو إطلاق كبير، تقدر تعرف الـ API أو الـ endpoint التقيل في الـ ERP هيستحمل كام مستخدم.",
       "about": "في k6 التيست ملف JavaScript فيه الطلبات، وthresholds بتحدد النجاح والفشل، زي إن ٩٥٪ من الطلبات تبقى أقل من ٥٠٠ms. بيدعم سيناريوهات مختلفة: ضغط ثابت، وزيادة تدريجية، وspikes.\n\nالـ binary مكتوب بـ Go، فخفيف. وفيه extensions، وتكامل مع Grafana للنتايج، وGrafana Cloud k6 المدفوعة.",
-      "features": ["سيناريوهات بـ JavaScript", "thresholds للنجاح والفشل", "خفيف ومكتوب بـ Go", "تكامل مع Grafana"],
-      "install": [{ "label": "Docker", "cmd": "docker run --rm -i grafana/k6 run - <script.js" }],
-      "pricing": { "model": "oss", "note": "مفتوح المصدر، وفيه Grafana Cloud k6 مدفوعة" },
+      "features": [
+        "سيناريوهات بـ JavaScript",
+        "thresholds للنجاح والفشل",
+        "خفيف ومكتوب بـ Go",
+        "تكامل مع Grafana"
+      ],
+      "install": [
+        {
+          "label": "Docker",
+          "cmd": "docker run --rm -i grafana/k6 run - <script.js"
+        }
+      ],
+      "pricing": {
+        "model": "oss",
+        "note": "مفتوح المصدر، وفيه Grafana Cloud k6 مدفوعة"
+      },
       "url": "https://k6.io",
       "source": "k6.io",
       "importance": 1,
-      "tags": ["load testing", "performance"]
+      "tags": [
+        "load testing",
+        "performance"
+      ],
+      "en": {
+        "title": "k6: load testing as code",
+        "summary": "A load testing tool from Grafana. Write the scenario in JavaScript, set the number of users and the duration, and get a report of response times and errors. An ordinary machine can generate heavy load.",
+        "why": "Before a busy season or a big launch, find out how many users the ERP's heavy API or endpoint can handle.",
+        "about": "In k6 a test is a JavaScript file with the requests, plus thresholds that define pass and fail, such as 95% of requests under 500 ms. It supports different scenarios: constant load, gradual ramp-up and spikes.\n\nThe binary is written in Go, so it's lightweight. There are extensions, Grafana integration for results, and the paid Grafana Cloud k6.",
+        "features": [
+          "Scenarios in JavaScript",
+          "Pass/fail thresholds",
+          "Lightweight, written in Go",
+          "Grafana integration"
+        ],
+        "install": [
+          "Docker"
+        ],
+        "pricingNote": "Open source; Grafana Cloud k6 is paid"
+      }
     },
     {
       "id": "ess-stagehand",
@@ -87,16 +227,51 @@
       "summary": "framework من Browserbase بيجمع بين كود Playwright الدقيق وأوامر باللغة الطبيعية: act وextract وobserve، ومعاه agent كامل. بيشتغل محلياً أو في الكلاود، بـ TypeScript وPython.",
       "why": "مناسب لأتمتة مواقع خارجية متغيرة، زي سحب بيانات من بوابة مورد، لأنه بيعتمد على الـ AI في الأجزاء اللي بتتغير بس.",
       "about": "في Stagehand بتكتب الأجزاء الثابتة كود، وفي الأجزاء اللي ممكن تتغير بتقول له بالكلام: page.act(\"اضغط على تسجيل الدخول\") أو extract مع schema بـ Zod عشان يطلّع بيانات منظمة.\n\nبيحفظ الـ session، فبتسجّل دخول مرة واحدة بس، وبيعمل cache للأفعال اللي نجحت عشان تتكرر من غير AI.",
-      "features": ["act وextract وobserve باللغة الطبيعية", "extract بـ Zod schema", "session محفوظة", "cache للأفعال"],
-      "install": [
-        { "label": "TypeScript", "cmd": "pnpm add @browserbasehq/stagehand zod" },
-        { "label": "Python", "cmd": "pip install stagehand" }
+      "features": [
+        "act وextract وobserve باللغة الطبيعية",
+        "extract بـ Zod schema",
+        "session محفوظة",
+        "cache للأفعال"
       ],
-      "pricing": { "model": "oss", "note": "مفتوح المصدر، والتشغيل في Browserbase مدفوع" },
+      "install": [
+        {
+          "label": "TypeScript",
+          "cmd": "pnpm add @browserbasehq/stagehand zod"
+        },
+        {
+          "label": "Python",
+          "cmd": "pip install stagehand"
+        }
+      ],
+      "pricing": {
+        "model": "oss",
+        "note": "مفتوح المصدر، والتشغيل في Browserbase مدفوع"
+      },
       "url": "https://github.com/browserbase/stagehand",
       "source": "github.com",
       "importance": 1,
-      "tags": ["browser automation", "AI", "scraping"]
+      "tags": [
+        "browser automation",
+        "AI",
+        "scraping"
+      ],
+      "en": {
+        "title": "Stagehand: browser automation with code and AI together",
+        "summary": "A framework from Browserbase that combines precise Playwright code with natural-language commands: act, extract and observe, plus a full agent. Runs locally or in the cloud, in TypeScript and Python.",
+        "why": "Good for automating external sites that keep changing, like pulling data from a supplier portal, because it relies on AI only for the parts that change.",
+        "about": "In Stagehand you write the stable parts as code, and for the parts that may change you tell it in words: page.act(\"click the login button\"), or extract with a Zod schema to pull structured data.\n\nIt keeps the session so you only log in once, and caches actions that succeeded so they can repeat without AI.",
+        "features": [
+          "act, extract and observe in natural language",
+          "extract with a Zod schema",
+          "Persistent sessions",
+          "Action caching"
+        ],
+        "install": [
+          "TypeScript",
+          "Python"
+        ],
+        "pricingNote": "Open source; running on Browserbase is paid"
+      }
     },
     {
       "id": "ess-mailpit",
@@ -107,13 +282,44 @@
       "summary": "أداة صغيرة بتشتغل كـ SMTP server وتمسك كل الإيميلات اللي التطبيق بيبعتها، وتعرضها في واجهة ويب حديثة، ومعاها API للتيستات. وهي البديل المستمر لـ MailHog المتوقف.",
       "why": "Laravel Sail وHerd بيستخدموها. ومفيدة جداً عشان تختبر إيميلات الفواتير والإشعارات من غير ما توصل لعملاء حقيقيين.",
       "about": "بتوجّه MAIL_HOST في Laravel على Mailpit، فكل الإيميلات بتتجمع عنده. والواجهة بتعرض الـ HTML والنص والـ headers والمرفقات، وبتفحص التوافق مع برامج الإيميل وجودة الـ HTML، ومعاها API للتيستات الأوتوماتيك.\n\nbinary واحد من غير dependencies، أو Docker.",
-      "features": ["SMTP server يمسك كل الإيميلات", "واجهة ويب حديثة", "فحص HTML والتوافق", "API للتيستات"],
-      "install": [{ "label": "Docker", "cmd": "docker run -d -p 8025:8025 -p 1025:1025 axllent/mailpit" }],
-      "pricing": { "model": "oss" },
+      "features": [
+        "SMTP server يمسك كل الإيميلات",
+        "واجهة ويب حديثة",
+        "فحص HTML والتوافق",
+        "API للتيستات"
+      ],
+      "install": [
+        {
+          "label": "Docker",
+          "cmd": "docker run -d -p 8025:8025 -p 1025:1025 axllent/mailpit"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://mailpit.axllent.org",
       "source": "mailpit.axllent.org",
       "importance": 1,
-      "tags": ["email", "testing", "Laravel"]
+      "tags": [
+        "email",
+        "testing",
+        "Laravel"
+      ],
+      "en": {
+        "title": "Mailpit: test email locally",
+        "summary": "A small tool that acts as an SMTP server, catches every email your app sends and shows it in a modern web UI, with an API for tests. It's the maintained replacement for the discontinued MailHog.",
+        "why": "Laravel Sail and Herd use it, and it's very handy for testing invoice and notification emails without reaching real customers.",
+        "about": "Point MAIL_HOST in Laravel at Mailpit and every email collects there. The UI shows the HTML, text, headers and attachments, checks email-client compatibility and HTML quality, and offers an API for automated tests.\n\nIt's a single binary with no dependencies, or Docker.",
+        "features": [
+          "An SMTP server that catches every email",
+          "A modern web UI",
+          "HTML and compatibility checks",
+          "An API for tests"
+        ],
+        "install": [
+          "Docker"
+        ]
+      }
     },
     {
       "id": "ess-coderabbit",
@@ -123,13 +329,40 @@
       "summary": "خدمة بتعمل code review أوتوماتيك على كل PR في GitHub أو GitLab أو Bitbucket: ملخص للتغييرات، وتعليقات على السطور، واقتراحات، وتقدر ترد عليها وتتناقش معاها. وفيه CLI وextension للـ IDE.",
       "why": "طبقة review أولية للفريق تمسك الحاجات الواضحة قبل المراجعة البشرية، وبتتعلم من ردودكم.",
       "about": "بعد ما تركّب الـ app على الريبو، كل PR بياخد ملخص وwalkthrough للتغييرات، وتعليقات على السطور، واقتراحات تصليح بتقبلها بضغطة. وبتتعلم من ردود الفريق، وتقدر تحط لها قواعد خاصة بالمشروع.\n\nفيه CLI بيعمل review محلي قبل ما ترفع، وextension للـ VS Code. ومجاني للريبوز المفتوحة.",
-      "features": ["review أوتوماتيك على كل PR", "تعليقات واقتراحات على السطور", "بتتعلم من الفريق", "CLI وextension للـ IDE"],
-      "pricing": { "model": "freemium", "note": "مجاني للريبوز المفتوحة، ومدفوع للخاصة" },
+      "features": [
+        "review أوتوماتيك على كل PR",
+        "تعليقات واقتراحات على السطور",
+        "بتتعلم من الفريق",
+        "CLI وextension للـ IDE"
+      ],
+      "pricing": {
+        "model": "freemium",
+        "note": "مجاني للريبوز المفتوحة، ومدفوع للخاصة"
+      },
       "url": "https://www.coderabbit.ai",
       "source": "coderabbit.ai",
       "importance": 1,
-      "tags": ["code review", "PR", "AI"],
-      "alternatives": ["ess-claude-code-action"]
+      "tags": [
+        "code review",
+        "PR",
+        "AI"
+      ],
+      "alternatives": [
+        "ess-claude-code-action"
+      ],
+      "en": {
+        "title": "CodeRabbit: AI review on every PR",
+        "summary": "A service that reviews every PR automatically on GitHub, GitLab or Bitbucket: a summary of the changes, line comments and suggestions, and you can reply and discuss with it. There's also a CLI and an IDE extension.",
+        "why": "A first review layer for the team that catches the obvious things before human review, and it learns from your replies.",
+        "about": "Once you install the app on the repo, every PR gets a summary and walkthrough of the changes, line comments, and fix suggestions you accept with one click. It learns from the team's replies, and you can give it project-specific rules.\n\nThere's a CLI for local review before you push, and a VS Code extension. It's free for open-source repos.",
+        "features": [
+          "Automatic review on every PR",
+          "Line comments and suggestions",
+          "Learns from the team",
+          "CLI and IDE extension"
+        ],
+        "pricingNote": "Free for open-source repos; paid for private ones"
+      }
     }
   ]
 }

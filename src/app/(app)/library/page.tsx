@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { APP } from "@/lib/config";
+import { pageTitle } from "@/lib/locale-server";
 import { LibraryPage } from "@/components/pages/LibraryPage";
 
-export const metadata: Metadata = { title: `الأساسيات | ${APP.name}` };
+export async function generateMetadata(): Promise<Metadata> {
+  return { title: await pageTitle((t) => t.library.title) };
+}
 
 export default function Library() {
   return (

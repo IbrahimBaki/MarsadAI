@@ -1,9 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { SECTION_BY_ID } from "@/lib/sections";
 import { matches } from "@/lib/search";
-import { dayLabel, formatCount, nf } from "@/lib/format";
+import { useLocale } from "../LocaleProvider";
 import type { RadarEntry } from "@/lib/types";
 import { useApp } from "../AppContext";
 import { FilterBar } from "../FilterBar";
@@ -12,22 +11,18 @@ import { useItemActions } from "../useItemActions";
 import { Empty, Skeleton, secStyle } from "../bits";
 import { CheckIcon, ExternalIcon, StarIcon } from "../icons";
 
-const TYPES = [
-  { id: "all", label: "الكل" },
-  { id: "awesome", label: "إضافات جديدة" },
-  { id: "release", label: "إصدارات" },
-  { id: "trending", label: "صاعد" },
-] as const;
+const TYPES = ["all", "awesome", "release", "trending"] as const;
 const PAGE = 80;
 
 export function RadarPage() {
   const { feed, user } = useApp();
+  const { t, f, tx } = useLocale();
   const { filters, update } = useFilters("all");
   const { onSeen, markAll } = useItemActions();
   const [limit, setLimit] = useState(PAGE);
   const type = filters.v;
   const radar = useMemo(() => feed?.radar ?? [], [feed]);
-  const section = filters.s ? SECTION_BY_ID[filters.s] : null;
+  const section = filters.s ? tx.SECTION_BY_ID[filters.s] : null;
   const unseenOnly = filters.hot;
 
   const visible = useMemo(
@@ -61,21 +56,21 @@ export function RadarPage() {
   }, [radar, filters.s, user.seen]);
 
   const tabs = (
-    <div role="tablist" aria-label="النوع" className="card no-scrollbar flex max-w-full overflow-x-auto !rounded-2xl p-1 text-[14px]">
-      {TYPES.map((t) => (
+    <div role="tablist" aria-label={t.radar.type} className="card no-scrollbar flex max-w-full overflow-x-auto !rounded-2xl p-1 text-[14px]">
+      {TYPES.map((id) => (
         <button
-          key={t.id}
+          key={id}
           role="tab"
           type="button"
-          aria-selected={type === t.id}
+          aria-selected={type === id}
           onClick={() => {
             setLimit(PAGE);
-            update({ v: t.id });
+            update({ v: id });
           }}
-          className={`whitespace-nowrap rounded-xl px-3.5 py-2 ${type === t.id ? "bg-ink font-semibold text-ground" : "text-ink-2"}`}
+          className={`whitespace-nowrap rounded-xl px-3.5 py-2 ${type === id ? "bg-ink font-semibold text-ground" : "text-ink-2"}`}
         >
-          {t.label}
-          {counts[t.id] > 0 && <span className="ms-1.5 text-[12px] opacity-70">{nf.format(counts[t.id])}</span>}
+          {t.radar[id]}
+          {counts[id] > 0 && <span className="ms-1.5 text-[12px] opacity-70">{f.num(counts[id])}</span>}
         </button>
       ))}
     </div>
@@ -86,22 +81,20 @@ export function RadarPage() {
       <header style={section ? secStyle(section.id) : undefined} className="px-1 pt-2">
         <div className="flex items-center gap-2.5">
           {section && <span className="sec-bg size-3 rounded-[4px]" />}
-          <h1 className="text-[28px] font-bold leading-10">الرادار{section ? ` · ${section.name}` : ""}</h1>
+          <h1 className="text-[28px] font-bold leading-10">{t.radar.title}{section ? ` · ${section.name}` : ""}</h1>
         </div>
-        <p className="mt-1 max-w-[72ch] text-[15px] leading-7 text-ink-2">
-          كل اللي بيتضاف جديد في الـ awesome lists، وإصدارات الأدوات المهمة، والريبوز الجديدة اللي بتطلع بسرعة. بيتجمع أوتوماتيك كل يوم الصبح، فمش محتاج تفتح GitHub.
-        </p>
+        <p className="mt-1 max-w-[72ch] text-[15px] leading-7 text-ink-2">{t.radar.intro}</p>
       </header>
 
-      <FilterBar filters={filters} update={update} placeholder="دوّر في الإضافات والإصدارات" showPrice={false} hotLabel="اللي لسه مشفتوش" tabs={tabs} />
+      <FilterBar filters={filters} update={update} placeholder={t.radar.placeholder} showPrice={false} hotLabel={t.radar.unseen} tabs={tabs} />
 
       {!feed && <Skeleton />}
       {feed && visible.length === 0 && (
-        <Empty title="مفيش حاجة هنا" body={radar.length ? "مفيش نتايج بالفلاتر دي." : "الرادار هيتملي أول ما الـ collector يشتغل."} />
+        <Empty title={t.radar.emptyTitle} body={radar.length ? t.radar.emptyFiltered : t.radar.emptyNone} />
       )}
 
       {days.map(([date, list]) => {
-        const label = dayLabel(date);
+        const label = f.day(date);
         const lists = new Map<string, RadarEntry[]>();
         for (const r of list) {
           const key = r.type === "awesome" ? `awesome:${r.list}` : r.type;
@@ -115,7 +108,7 @@ export function RadarPage() {
               {label.sub && <span className="text-[14px] text-muted">{label.sub}</span>}
               {unseen.length > 0 && (
                 <button type="button" onClick={() => markAll(unseen.map((r) => r.id))} className="ms-auto text-[13px] font-semibold text-accent">
-                  علّم الكل شوفته
+                  {t.radar.markAll}
                 </button>
               )}
             </header>
@@ -123,14 +116,14 @@ export function RadarPage() {
               <div key={key} className="card overflow-hidden">
                 <div className="flex items-center gap-2 border-b border-line bg-sunken/50 px-4 py-2.5 text-[13.5px]">
                   <span className="font-semibold">
-                    {key === "release" ? "إصدارات جديدة" : key === "trending" ? "ريبوز صاعدة" : "اتضاف في"}
+                    {key === "release" ? t.radar.newReleases : key === "trending" ? t.radar.rising : t.radar.addedTo}
                   </span>
                   {key.startsWith("awesome:") && (
                     <a href={`https://github.com/${key.slice(8)}`} target="_blank" rel="noopener noreferrer" className="ltr font-mono text-[12.5px] text-accent">
                       {key.slice(8)}
                     </a>
                   )}
-                  <span className="ms-auto text-faint">{nf.format(rows.length)}</span>
+                  <span className="ms-auto text-faint">{f.num(rows.length)}</span>
                 </div>
                 <ul className="divide-y divide-line">
                   {rows.map((r) => (
@@ -145,7 +138,7 @@ export function RadarPage() {
 
       {visible.length > limit && (
         <button type="button" onClick={() => setLimit((l) => l + PAGE)} className="card mx-auto px-5 py-2.5 text-[14.5px] font-semibold">
-          اعرض أكتر ({nf.format(visible.length - limit)})
+          {t.radar.more(f.num(visible.length - limit))}
         </button>
       )}
     </div>
@@ -153,14 +146,16 @@ export function RadarPage() {
 }
 
 function Row({ r, seen, onSeen }: { r: RadarEntry; seen: boolean; onSeen: (id: string, on: boolean) => void }) {
-  const section = SECTION_BY_ID[r.section];
+  const { t, f, tx } = useLocale();
+  const section = tx.SECTION_BY_ID[r.section];
+  const desc = r.desc || (r.previous ? t.radar.previous(r.previous) : "");
   return (
     <li style={secStyle(r.section)} className={`flex gap-3 px-4 py-3 ${seen ? "opacity-60" : ""}`}>
       <button
         type="button"
         onClick={() => onSeen(r.id, !seen)}
         aria-pressed={seen}
-        aria-label={seen ? "رجّعه جديد" : "علّمه إني شوفته"}
+        aria-label={seen ? t.card.markNew : t.card.markSeen}
         className={`mt-1 grid size-6 shrink-0 place-items-center rounded-full ${seen ? "bg-ink text-ground" : "shadow-[inset_0_0_0_1.5px_var(--line)] text-transparent hover:text-faint"}`}
       >
         <CheckIcon width={13} height={13} strokeWidth={2.6} />
@@ -178,20 +173,20 @@ function Row({ r, seen, onSeen }: { r: RadarEntry; seen: boolean; onSeen: (id: s
           </a>
           {r.stars !== undefined && (
             <span className="inline-flex items-center gap-1 text-[12.5px] text-star-ink">
-              <StarIcon width={12} height={12} /> {formatCount(r.stars)}
+              <StarIcon width={12} height={12} /> {f.count(r.stars)}
             </span>
           )}
-          <span className="sec-fg text-[12px] font-semibold">{section?.name.split(" و ")[0]}</span>
+          <span className="sec-fg text-[12px] font-semibold">{section?.short}</span>
           {r.heading && <span className="ltr text-[12px] text-faint">{r.heading}</span>}
         </div>
-        {r.desc && (
+        {desc && (
           <p dir="auto" className="mt-0.5 line-clamp-2 text-[13.5px] leading-[22px] text-muted">
-            {r.desc}
+            {desc}
           </p>
         )}
       </div>
-      <a href={r.url} target="_blank" rel="noopener noreferrer" aria-label="افتح" className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-lg text-muted hover:bg-sunken">
-        <ExternalIcon width={16} height={16} className="-scale-x-100" />
+      <a href={r.url} target="_blank" rel="noopener noreferrer" aria-label={t.radar.open} className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-lg text-muted hover:bg-sunken">
+        <ExternalIcon width={16} height={16} className="rtl:-scale-x-100" />
       </a>
     </li>
   );

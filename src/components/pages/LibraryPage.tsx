@@ -2,9 +2,8 @@
 
 import Link from "next/link";
 import { useMemo } from "react";
-import { GROUPS, SECTION_BY_ID } from "@/lib/sections";
 import { matches } from "@/lib/search";
-import { nf } from "@/lib/format";
+import { useLocale } from "../LocaleProvider";
 import type { FeedItem } from "@/lib/types";
 import { useApp } from "../AppContext";
 import { ItemCard } from "../ItemCard";
@@ -27,6 +26,7 @@ function passes(it: FeedItem, f: Filters) {
 
 export function LibraryPage() {
   const { feed, user } = useApp();
+  const { t, tx } = useLocale();
   const { filters, update } = useFilters("all");
   const { onSeen, onFav, onShare } = useItemActions();
   const { seen, fav } = user;
@@ -44,7 +44,7 @@ export function LibraryPage() {
   }, [essentials, filters]);
 
   const narrowed = Boolean(filters.k || filters.p || filters.hot || filters.q);
-  const section = filters.s ? SECTION_BY_ID[filters.s] : null;
+  const section = filters.s ? tx.SECTION_BY_ID[filters.s] : null;
   const triedTotal = essentials.filter((e) => seen.has(e.id)).length;
 
   const card = (item: FeedItem) => (
@@ -71,22 +71,20 @@ export function LibraryPage() {
         </header>
       ) : (
         <header className="px-1 pt-2">
-          <h1 className="text-[28px] font-bold leading-10">الأساسيات</h1>
-          <p className="mt-1 max-w-[70ch] text-[15px] leading-7 text-ink-2">
-            أهم الأدوات والـ skills والريبوز والمصادر في كل مجال، اللي تستاهل تعرفها حتى لو مش جديدة. علّم على اللي جربته، والباقي هيفضل مستنيك.
-          </p>
+          <h1 className="text-[28px] font-bold leading-10">{t.library.title}</h1>
+          <p className="mt-1 max-w-[70ch] text-[15px] leading-7 text-ink-2">{t.library.intro}</p>
           {essentials.length > 0 && <Progress done={triedTotal} total={essentials.length} />}
         </header>
       )}
 
-      <FilterBar filters={filters} update={update} placeholder="دوّر في الأدوات والـ skills والريبوز" kinds={kinds} hotLabel="ابدأ بيهم" />
+      <FilterBar filters={filters} update={update} placeholder={t.library.placeholder} kinds={kinds} hotLabel={t.library.hot} />
 
       {!feed && <Skeleton />}
       {feed && visible.length === 0 && (
         <Empty
-          title="مفيش نتايج"
-          body="مفيش حاجة بالفلاتر دي في الأساسيات."
-          action={<button type="button" onClick={() => update({ k: null, p: null, hot: false, q: "" })} className="rounded-xl bg-ink px-4 py-2 text-[14.5px] font-semibold text-ground">امسح الفلاتر</button>}
+          title={t.empty.noResults}
+          body={t.library.noResultsBody}
+          action={<button type="button" onClick={() => update({ k: null, p: null, hot: false, q: "" })} className="rounded-xl bg-ink px-4 py-2 text-[14.5px] font-semibold text-ground">{t.empty.clearFilters}</button>}
         />
       )}
 
@@ -94,7 +92,7 @@ export function LibraryPage() {
         section ? (
           <div className="grid grid-cols-1 gap-2.5 md:grid-cols-2 2xl:grid-cols-3">{visible.map(card)}</div>
         ) : (
-          GROUPS.flatMap((g) => g.sections).map((s) => {
+          tx.GROUPS.flatMap((g) => g.sections).map((s) => {
             const list = visible.filter((i) => i.section === s.id);
             if (!list.length) return null;
             return (
@@ -106,7 +104,7 @@ export function LibraryPage() {
           })
         )
       ) : (
-        GROUPS.map((g) => {
+        tx.GROUPS.map((g) => {
           const sections = g.sections.filter((s) => visible.some((i) => i.section === s.id));
           if (!sections.length) return null;
           return (
@@ -131,16 +129,17 @@ export function LibraryPage() {
 }
 
 function SectionHeader({ id, name, hint, done, count, more }: { id: string; name: string; hint?: string; done?: number; count: number; more?: boolean }) {
+  const { t, f } = useLocale();
   return (
     <header className="flex flex-wrap items-center gap-x-3 gap-y-0.5 px-1">
       <span className="sec-bg size-3 rounded-[4px]" />
       <h3 className="text-[19px] font-bold">{name}</h3>
       <span className="text-[13px] text-faint">
-        {done !== undefined ? `جربت ${nf.format(done)} من ${nf.format(count)}` : nf.format(count)}
+        {done !== undefined ? t.library.tried(f.num(done), f.num(count)) : f.num(count)}
       </span>
       {more && (
         <Link href={`/library?s=${id}`} className="ms-auto text-[13.5px] font-semibold text-accent">
-          اعرض الكل
+          {t.library.showAll}
         </Link>
       )}
       {hint && <p className="w-full text-[14px] text-muted">{hint}</p>}
@@ -149,13 +148,14 @@ function SectionHeader({ id, name, hint, done, count, more }: { id: string; name
 }
 
 function Progress({ done, total, light }: { done: number; total: number; light?: boolean }) {
+  const { t, f } = useLocale();
   return (
     <div className="mt-3 flex items-center gap-3">
       <div className={`h-1.5 flex-1 overflow-hidden rounded-full ${light ? "bg-white/25" : "bg-sunken"}`} aria-hidden>
         <div className={`h-full rounded-full ${light ? "bg-white" : "bg-ink"}`} style={{ width: `${total ? (done / total) * 100 : 0}%` }} />
       </div>
       <span className={`whitespace-nowrap text-[13px] ${light ? "text-white/90" : "text-muted"}`}>
-        جربت {nf.format(done)} من {nf.format(total)}
+        {t.library.tried(f.num(done), f.num(total))}
       </span>
     </div>
   );

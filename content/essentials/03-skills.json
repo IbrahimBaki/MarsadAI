@@ -17,16 +17,50 @@
         "webapp-testing لاختبار الواجهات"
       ],
       "install": [
-        { "label": "ضيف الـ marketplace في Claude Code", "cmd": "/plugin marketplace add anthropics/skills" },
-        { "label": "ركّب skills الملفات", "cmd": "/plugin install document-skills@anthropic-agent-skills" },
-        { "label": "ركّب الأمثلة", "cmd": "/plugin install example-skills@anthropic-agent-skills" }
+        {
+          "label": "ضيف الـ marketplace في Claude Code",
+          "cmd": "/plugin marketplace add anthropics/skills"
+        },
+        {
+          "label": "ركّب skills الملفات",
+          "cmd": "/plugin install document-skills@anthropic-agent-skills"
+        },
+        {
+          "label": "ركّب الأمثلة",
+          "cmd": "/plugin install example-skills@anthropic-agent-skills"
+        }
       ],
-      "pricing": { "model": "oss" },
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/anthropics/skills",
       "source": "github.com",
       "importance": 3,
-      "tags": ["skills", "Anthropic", "official"],
-      "alternatives": ["ess-vercel-agent-skills"]
+      "tags": [
+        "skills",
+        "Anthropic",
+        "official"
+      ],
+      "alternatives": [
+        "ess-vercel-agent-skills"
+      ],
+      "en": {
+        "title": "Anthropic's official Skills repo",
+        "summary": "Anthropic's official skills: working with Word, Excel, PowerPoint and PDF files, design, building MCP servers, and a skill that helps you create new skills, plus examples to learn from.",
+        "why": "The best place to learn what a proper skill looks like, with skills you can use right away, like producing Excel or PDF reports from your ERP data.",
+        "about": "A skill is a folder with a SKILL.md file of instructions plus scripts and helper files. Claude loads it only when a task needs it, so it doesn't eat into the context all the time.\n\nThe repo has two kinds. Document skills, which Claude uses in the app itself to handle docx, xlsx, pptx and pdf, and which do serious work like formulas and formatting. And example skills, like art, design, mcp-builder, skill-creator and webapp-testing.\n\nThe repo follows the open Agent Skills standard, so these skills also work with other tools that support it.",
+        "features": [
+          "Skills for Word, Excel, PowerPoint and PDF files",
+          "skill-creator helps you write your own skills",
+          "mcp-builder for building MCP servers",
+          "webapp-testing for testing UIs"
+        ],
+        "install": [
+          "Add the marketplace in Claude Code",
+          "Install the document skills",
+          "Install the examples"
+        ]
+      }
     },
     {
       "id": "ess-agent-skills-standard",
@@ -36,11 +70,32 @@
       "summary": "المواصفة المفتوحة لصيغة الـ skills: فولدر فيه SKILL.md بـ frontmatter فيه الاسم والوصف، ومعاه scripts وملفات مساعدة. أدوات كتير بقت بتدعمها، زي Claude Code وCodex وCursor وCopilot وOpenCode.",
       "why": "لو هتكتب skills لفريقك، اكتبها على المعيار ده، فتشتغل مع أي أداة الفريق بيستخدمها، مش Claude بس.",
       "about": "Agent Skills بدأت كـ feature في Claude، وبعدين اتنشرت كمعيار مفتوح على agentskills.io.\n\nالفكرة الأساسية اسمها progressive disclosure: الـ agent بيشوف الاسم والوصف بس من كل skill، ولما المهمة تناسب، بيقرا الـ SKILL.md كامل، ولو احتاج بيقرا الملفات الإضافية أو يشغّل الـ scripts. وكده تقدر يكون عندك مئات الـ skills من غير ما تملا الـ context.\n\nالموقع فيه المواصفة، وأمثلة، وجدول بالأدوات اللي بتدعمها ومكان ملفاتها في كل أداة.",
-      "features": ["صيغة SKILL.md موحدة", "progressive disclosure لتوفير الـ context", "scripts وملفات مساعدة جوه الـ skill", "بتشتغل مع أدوات كتير"],
+      "features": [
+        "صيغة SKILL.md موحدة",
+        "progressive disclosure لتوفير الـ context",
+        "scripts وملفات مساعدة جوه الـ skill",
+        "بتشتغل مع أدوات كتير"
+      ],
       "url": "https://agentskills.io/",
       "source": "agentskills.io",
       "importance": 2,
-      "tags": ["skills", "standard", "SKILL.md"]
+      "tags": [
+        "skills",
+        "standard",
+        "SKILL.md"
+      ],
+      "en": {
+        "title": "Agent Skills: the open standard for SKILL.md files",
+        "summary": "The open specification for the skill format: a folder with a SKILL.md whose frontmatter holds the name and description, plus scripts and helper files. Many tools now support it, including Claude Code, Codex, Cursor, Copilot and OpenCode.",
+        "why": "If you write skills for your team, follow this standard so they work in whatever tool the team uses, not just Claude.",
+        "about": "Agent Skills began as a Claude feature and was then published as an open standard at agentskills.io.\n\nThe core idea is progressive disclosure: the agent sees only the name and description of each skill, and when a task fits, it reads the full SKILL.md, and if needed reads the extra files or runs the scripts. That way you can have hundreds of skills without filling the context.\n\nThe site has the spec, examples, and a table of the tools that support it and where each one keeps its files.",
+        "features": [
+          "A unified SKILL.md format",
+          "Progressive disclosure to save context",
+          "Scripts and helper files inside the skill",
+          "Works across many tools"
+        ]
+      }
     },
     {
       "id": "ess-superpowers",
@@ -51,14 +106,48 @@
       "summary": "framework من الـ skills بيخلي الـ agent يشتغل بطريقة منظمة: brainstorm وخطة الأول، وبعدين TDD، وdebugging منهجي، ومراجعة الكود قبل ما يقول خلصت.",
       "why": "لو حاسس إن Claude بيستعجل وبيكتب كود قبل ما يفهم المشكلة، الـ skills دي معمولة للمشكلة دي بالظبط.",
       "about": "Superpowers مكتبة skills عملها Jesse Vincent، وبتحوّل الـ agent من حاجة بتكتب كود على طول لمهندس بيمشي على خطوات.\n\nالـ skills بتشتغل لوحدها حسب الموقف. feature جديدة؟ brainstorm بأسئلة، وبعدين خطة مكتوبة متقسمة لمهام صغيرة، وبعدين تنفيذ بالـ TDD. bug؟ debugging منهجي يدوّر على السبب الحقيقي قبل ما يصلّح. وقبل ما يقول خلصت، verification بيتأكد إن كل حاجة شغالة فعلاً.\n\nمتاح في الـ marketplace الرسمي لـ Claude Code، وبيشتغل كمان مع Codex وAntigravity وغيرهم.",
-      "features": ["brainstorm وخطة قبل الكود", "TDD: التيست الأول", "systematic debugging", "verification قبل ما يقول خلصت"],
-      "install": [{ "label": "من الـ marketplace الرسمي في Claude Code", "cmd": "/plugin install superpowers@claude-plugins-official" }],
-      "pricing": { "model": "oss" },
+      "features": [
+        "brainstorm وخطة قبل الكود",
+        "TDD: التيست الأول",
+        "systematic debugging",
+        "verification قبل ما يقول خلصت"
+      ],
+      "install": [
+        {
+          "label": "من الـ marketplace الرسمي في Claude Code",
+          "cmd": "/plugin install superpowers@claude-plugins-official"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/obra/superpowers",
       "source": "github.com",
       "importance": 3,
-      "tags": ["skills", "TDD", "workflow", "Claude Code"],
-      "alternatives": ["ess-superclaude"]
+      "tags": [
+        "skills",
+        "TDD",
+        "workflow",
+        "Claude Code"
+      ],
+      "alternatives": [
+        "ess-superclaude"
+      ],
+      "en": {
+        "title": "Superpowers: the most popular skills collection for developers",
+        "summary": "A framework of skills that makes the agent work methodically: brainstorm and plan first, then TDD, systematic debugging, and code review before it says it's done.",
+        "why": "If you feel Claude rushes and writes code before understanding the problem, these skills were made for exactly that.",
+        "about": "Superpowers is a skills library by Jesse Vincent that turns the agent from something that starts writing code immediately into an engineer who follows steps.\n\nThe skills kick in on their own depending on the situation. A new feature? A brainstorm with questions, then a written plan broken into small tasks, then implementation with TDD. A bug? Systematic debugging that looks for the real cause before fixing. And before it says it's done, verification checks that everything actually works.\n\nIt's in the official Claude Code marketplace and also works with Codex, Antigravity and others.",
+        "features": [
+          "Brainstorm and plan before code",
+          "TDD: test first",
+          "Systematic debugging",
+          "Verification before it says it's done"
+        ],
+        "install": [
+          "From the official Claude Code marketplace"
+        ]
+      }
     },
     {
       "id": "ess-ui-ux-pro-max",
@@ -76,16 +165,51 @@
         "٢٢ stack منهم Laravel"
       ],
       "install": [
-        { "label": "ضيف الـ marketplace في Claude Code", "cmd": "/plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill" },
-        { "label": "ركّب الـ skill", "cmd": "/plugin install ui-ux-pro-max@ui-ux-pro-max-skill" },
-        { "label": "أو الـ CLI لأدوات تانية", "cmd": "npm install -g ui-ux-pro-max-cli" }
+        {
+          "label": "ضيف الـ marketplace في Claude Code",
+          "cmd": "/plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill"
+        },
+        {
+          "label": "ركّب الـ skill",
+          "cmd": "/plugin install ui-ux-pro-max@ui-ux-pro-max-skill"
+        },
+        {
+          "label": "أو الـ CLI لأدوات تانية",
+          "cmd": "npm install -g ui-ux-pro-max-cli"
+        }
       ],
-      "pricing": { "model": "oss" },
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
       "source": "github.com",
       "importance": 3,
-      "tags": ["design", "UI", "UX", "skills"],
-      "alternatives": ["ess-impeccable"]
+      "tags": [
+        "design",
+        "UI",
+        "UX",
+        "skills"
+      ],
+      "alternatives": [
+        "ess-impeccable"
+      ],
+      "en": {
+        "title": "UI UX Pro Max: a design brain for your agent",
+        "summary": "A skill with a large design database: 79 styles, 192 color palettes, 74 font pairings, 119 UX rules, and a Design System Generator that proposes a full design system for your type of product.",
+        "why": "It makes the interfaces Claude builds for you, like ERP screens or Dokkanx, look deliberate rather than random, and it supports Laravel, React, Vue and more.",
+        "about": "UI UX Pro Max gives the agent an organised reference to consult while designing instead of guessing.\n\nv2 added the Design System Generator: you describe the product, it classifies it among 192 product types such as SaaS, fintech, clinics, restaurants and dashboards, and proposes the page structure, style, colors, fonts, effects and things to avoid. It ends with a pre-delivery checklist: contrast, focus states, reduced motion and different screen sizes.\n\nIt supports 22 stacks, including Laravel, React, Next.js, Vue, shadcn/ui and Flutter.",
+        "features": [
+          "Design System Generator by product type",
+          "79 styles, 192 palettes and 74 font pairings",
+          "119 UX and accessibility rules",
+          "22 stacks including Laravel"
+        ],
+        "install": [
+          "Add the marketplace in Claude Code",
+          "Install the skill",
+          "Or the CLI for other tools"
+        ]
+      }
     },
     {
       "id": "ess-impeccable",
@@ -103,20 +227,70 @@
         "يشتغل في GitHub Actions"
       ],
       "install": [
-        { "label": "من فولدر المشروع", "cmd": "npx impeccable install" },
-        { "label": "وبعدين جوه الـ agent", "cmd": "/impeccable init" }
+        {
+          "label": "من فولدر المشروع",
+          "cmd": "npx impeccable install"
+        },
+        {
+          "label": "وبعدين جوه الـ agent",
+          "cmd": "/impeccable init"
+        }
       ],
-      "usage": ["/impeccable critique the pricing cards", "/impeccable audit checkout", "npx impeccable detect src/"],
-      "pricing": { "model": "oss" },
+      "usage": [
+        "/impeccable critique the pricing cards",
+        "/impeccable audit checkout",
+        "npx impeccable detect src/"
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/pbakaus/impeccable",
       "source": "github.com",
       "importance": 3,
-      "tags": ["design", "UI", "skills", "review"],
-      "alternatives": ["ess-ui-ux-pro-max"],
+      "tags": [
+        "design",
+        "UI",
+        "skills",
+        "review"
+      ],
+      "alternatives": [
+        "ess-ui-ux-pro-max"
+      ],
       "links": [
-        { "label": "GitHub", "url": "https://github.com/pbakaus/impeccable" },
-        { "label": "الدوكيومنتيشن", "url": "https://impeccable.style" }
-      ]
+        {
+          "label": "GitHub",
+          "url": "https://github.com/pbakaus/impeccable"
+        },
+        {
+          "label": "الدوكيومنتيشن",
+          "url": "https://impeccable.style"
+        }
+      ],
+      "en": {
+        "title": "Impeccable: a design language for your agent and an AI-slop detector",
+        "summary": "Clear design commands for the agent, like polish, bolder, quieter, harden, critique and audit, plus a detector that catches the clichéd look of AI-made design with 62 deterministic rules and no model.",
+        "why": "Instead of \"make it nicer\", you say /impeccable polish settings and it follows a specific playbook. critique and audit give you a real review of the interface.",
+        "about": "Impeccable is by Paul Bakaus and tackles the problem that every agent produces the same look: Inter everywhere, purple-to-blue gradients, and cards inside cards.\n\nYou start with /impeccable init once: it reads the project, asks what it can't infer, and writes PRODUCT.md. Then you use 24 commands on a specific target: critique scores against usability heuristics and ranks the problems, audit checks accessibility, performance and responsiveness with P0 to P3 priorities, and polish, bolder and quieter make changes.\n\nThere's also detect, which scans a folder or a live page against 62 rules with no API, and can run in GitHub Actions. It works with Claude Code, Cursor, Codex, Copilot and many other tools.",
+        "features": [
+          "24 design commands with specific goals",
+          "critique and audit with P0–P3 priorities",
+          "An AI-slop detector with 62 rules and no model",
+          "Runs in GitHub Actions"
+        ],
+        "usage": [
+          "/impeccable critique the pricing cards",
+          "/impeccable audit checkout",
+          "npx impeccable detect src/"
+        ],
+        "install": [
+          "From the project folder",
+          "Then inside the agent"
+        ],
+        "links": [
+          "GitHub",
+          "Documentation"
+        ]
+      }
     },
     {
       "id": "ess-wshobson-agents",
@@ -127,16 +301,49 @@
       "summary": "٩٤ plugin فيها أكتر من ٢٠٠ subagent وskills وcommands، متقسمة حسب المجال: Python وJS وbackend وقواعد بيانات وأمان وDevOps وتوثيق. وبتشتغل مع Claude Code وCodex وCursor وOpenCode وغيرهم.",
       "why": "بدل ما تكتب subagents من الصفر، ركّب الـ plugin اللي يخص المجال اللي إنت شغال فيه بس.",
       "about": "المكتبة دي marketplace كامل اسمه claude-code-workflows. كل plugin مركّز على مجال، فبتركّب اللي محتاجه بس ومش بتملا الـ context بحاجات مش بتستخدمها.\n\nفيه plugins للتطوير بلغات مختلفة، والـ backend والـ APIs، وقواعد البيانات، وأمان الكود، والـ code review، والـ DevOps، والتوثيق، والـ incident response. وفيه أداة plugin-eval بتقيّم جودة الـ skills.\n\nوتقدر كمان تركّب skills منفردة عن طريق gh skill أو npx skills.",
-      "features": ["٩٤ plugin وأكتر من ٢٠٠ subagent", "متقسمة حسب المجال", "بتشتغل مع أدوات كتير", "plugin-eval لتقييم الجودة"],
-      "install": [
-        { "label": "ضيف الـ marketplace", "cmd": "/plugin marketplace add wshobson/agents" },
-        { "label": "ركّب plugin، مثلاً", "cmd": "/plugin install python-development@claude-code-workflows" }
+      "features": [
+        "٩٤ plugin وأكتر من ٢٠٠ subagent",
+        "متقسمة حسب المجال",
+        "بتشتغل مع أدوات كتير",
+        "plugin-eval لتقييم الجودة"
       ],
-      "pricing": { "model": "oss" },
+      "install": [
+        {
+          "label": "ضيف الـ marketplace",
+          "cmd": "/plugin marketplace add wshobson/agents"
+        },
+        {
+          "label": "ركّب plugin، مثلاً",
+          "cmd": "/plugin install python-development@claude-code-workflows"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/wshobson/agents",
       "source": "github.com",
       "importance": 2,
-      "tags": ["subagents", "plugins", "skills"]
+      "tags": [
+        "subagents",
+        "plugins",
+        "skills"
+      ],
+      "en": {
+        "title": "wshobson/agents: a huge library of plugins, subagents and skills",
+        "summary": "94 plugins containing more than 200 subagents plus skills and commands, organised by domain: Python, JS, backend, databases, security, DevOps and documentation. Works with Claude Code, Codex, Cursor, OpenCode and more.",
+        "why": "Instead of writing subagents from scratch, install just the plugin for the domain you're working in.",
+        "about": "This library is a complete marketplace called claude-code-workflows. Each plugin focuses on one domain, so you install only what you need and don't fill the context with things you don't use.\n\nThere are plugins for development in different languages, backend and APIs, databases, code security, code review, DevOps, documentation and incident response. There's also a plugin-eval tool that scores skill quality.\n\nYou can also install individual skills with gh skill or npx skills.",
+        "features": [
+          "94 plugins and 200+ subagents",
+          "Organised by domain",
+          "Works with many tools",
+          "plugin-eval for quality scoring"
+        ],
+        "install": [
+          "Add the marketplace",
+          "Install a plugin, for example"
+        ]
+      }
     },
     {
       "id": "ess-superclaude",
@@ -147,17 +354,52 @@
       "summary": "framework بيضيف ٣٠ slash command (/sc:*)، و٢٠ agent متخصص، و٧ أوضاع شغل، وتكامل مع MCP servers اختيارية. بيغطي دورة التطوير كلها من الـ brainstorm لحد الـ deploy.",
       "why": "لو حابب أوامر جاهزة لكل مرحلة، زي /sc:analyze و/sc:implement و/sc:test، بدل ما تكتب prompts طويلة كل مرة.",
       "about": "SuperClaude بيحقن تعليمات سلوكية وبيرتب الأدوات، فيحوّل Claude Code لمنصة تطوير منظمة.\n\nبيضيف ٣٠ أمر بيبدأوا بـ /sc: للتحليل والتصميم والتنفيذ والتيستات والتوثيق والبحث، و٢٠ agent متخصص، و٧ أوضاع شغل بتغيّر أسلوب الرد. وفيه تكامل اختياري مع MCP servers زي Serena وContext7 وTavily.\n\nالإصدار المستقر بيتركب بـ pipx، وفيه marketplace للـ plugin. والمشروع مش تابع لـ Anthropic.",
-      "features": ["٣٠ أمر /sc:*", "٢٠ agent متخصص", "٧ أوضاع شغل", "MCP servers اختيارية"],
-      "install": [
-        { "label": "سطّب الأداة", "cmd": "pipx install superclaude" },
-        { "label": "وبعدين ركّب الأوامر", "cmd": "superclaude install" }
+      "features": [
+        "٣٠ أمر /sc:*",
+        "٢٠ agent متخصص",
+        "٧ أوضاع شغل",
+        "MCP servers اختيارية"
       ],
-      "pricing": { "model": "oss" },
+      "install": [
+        {
+          "label": "سطّب الأداة",
+          "cmd": "pipx install superclaude"
+        },
+        {
+          "label": "وبعدين ركّب الأوامر",
+          "cmd": "superclaude install"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/SuperClaude-Org/SuperClaude_Framework",
       "source": "github.com",
       "importance": 1,
-      "tags": ["Claude Code", "slash commands", "framework"],
-      "alternatives": ["ess-superpowers"]
+      "tags": [
+        "Claude Code",
+        "slash commands",
+        "framework"
+      ],
+      "alternatives": [
+        "ess-superpowers"
+      ],
+      "en": {
+        "title": "SuperClaude: a complete working framework on top of Claude Code",
+        "summary": "A framework that adds 30 slash commands (/sc:*), 20 specialised agents, 7 working modes and optional MCP server integrations, covering the whole development cycle from brainstorm to deploy.",
+        "why": "If you want ready-made commands for every stage, like /sc:analyze, /sc:implement and /sc:test, instead of writing long prompts every time.",
+        "about": "SuperClaude injects behavioural instructions and orchestrates tools, turning Claude Code into a structured development platform.\n\nIt adds 30 commands starting with /sc: for analysis, design, implementation, testing, documentation and research, 20 specialised agents, and 7 working modes that change how it responds. There's optional integration with MCP servers like Serena, Context7 and Tavily.\n\nThe stable release installs with pipx, and there's a plugin marketplace. The project isn't affiliated with Anthropic.",
+        "features": [
+          "30 /sc:* commands",
+          "20 specialised agents",
+          "7 working modes",
+          "Optional MCP servers"
+        ],
+        "install": [
+          "Install the tool",
+          "Then install the commands"
+        ]
+      }
     },
     {
       "id": "ess-claude-code-templates",
@@ -168,14 +410,52 @@
       "summary": "CLI وموقع فيهم مئات القوالب الجاهزة لـ Claude Code: agents، وcommands، وsettings، وhooks، وMCP integrations. بتختار اللي عايزه وبيتركب في المشروع بأمر واحد، وكمان فيه dashboard لتحليل جلساتك.",
       "why": "أسرع طريقة تجرب hook أو subagent معين في المشروع من غير ما تكتبه، وبعدين تعدّل عليه.",
       "about": "بتشغّل npx claude-code-templates من غير arguments، فيفتح لك قايمة تختار منها. أو بتحدد اللي عايزه مباشرة، زي --agent أو --command أو --hook أو --mcp أو --setting.\n\nوكمان فيه --analytics، وده dashboard بيحلل جلسات Claude Code بتاعتك ويوريك الاستخدام. والكتالوج كله تقدر تتصفحه على الموقع.",
-      "features": ["مئات القوالب الجاهزة", "تسطيب بأمر واحد", "agents وcommands وhooks وMCPs وsettings", "dashboard لتحليل الجلسات"],
-      "install": [{ "label": "القايمة التفاعلية", "cmd": "npx claude-code-templates@latest" }],
-      "usage": ["npx claude-code-templates@latest --agent development-tools/code-reviewer --yes", "npx claude-code-templates@latest --hook git/pre-commit-validation --yes"],
-      "pricing": { "model": "oss" },
+      "features": [
+        "مئات القوالب الجاهزة",
+        "تسطيب بأمر واحد",
+        "agents وcommands وhooks وMCPs وsettings",
+        "dashboard لتحليل الجلسات"
+      ],
+      "install": [
+        {
+          "label": "القايمة التفاعلية",
+          "cmd": "npx claude-code-templates@latest"
+        }
+      ],
+      "usage": [
+        "npx claude-code-templates@latest --agent development-tools/code-reviewer --yes",
+        "npx claude-code-templates@latest --hook git/pre-commit-validation --yes"
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/davila7/claude-code-templates",
       "source": "github.com",
       "importance": 2,
-      "tags": ["Claude Code", "templates", "hooks"]
+      "tags": [
+        "Claude Code",
+        "templates",
+        "hooks"
+      ],
+      "en": {
+        "title": "Claude Code Templates: a catalog of agents, commands, hooks and MCPs in one command",
+        "summary": "A CLI and website with hundreds of ready-made Claude Code templates: agents, commands, settings, hooks and MCP integrations. Pick what you want and it's installed into the project with one command, plus a dashboard for analysing your sessions.",
+        "why": "The fastest way to try a particular hook or subagent in your project without writing it, then tweak it.",
+        "about": "Run npx claude-code-templates with no arguments and it opens a menu to choose from. Or name what you want directly with --agent, --command, --hook, --mcp or --setting.\n\nThere's also --analytics, a dashboard that analyses your Claude Code sessions and shows your usage. You can browse the whole catalog on the website.",
+        "features": [
+          "Hundreds of ready-made templates",
+          "One-command install",
+          "Agents, commands, hooks, MCPs and settings",
+          "A dashboard for session analytics"
+        ],
+        "usage": [
+          "npx claude-code-templates@latest --agent development-tools/code-reviewer --yes",
+          "npx claude-code-templates@latest --hook git/pre-commit-validation --yes"
+        ],
+        "install": [
+          "Interactive menu"
+        ]
+      }
     },
     {
       "id": "ess-claude-mem",
@@ -186,16 +466,49 @@
       "summary": "plugin بيسجل اللي اتعمل في كل جلسة بالـ hooks، ويضغطه لملخصات، ويحقن السياق المناسب في الجلسة الجاية. وبيشتغل كمان مع OpenCode وAntigravity وغيرهم.",
       "why": "لو بتعيد شرح قرارات المشروع وبنية الـ modules كل جلسة، ده بيوفّر عليك الوقت ده.",
       "about": "claude-mem بيركّب hooks بتتابع الجلسة، يعني الملفات اللي اتعدّلت والقرارات والمشاكل اللي اتحلت، ومعاها worker service بيضغط ده لملخصات ويخزنه. ولما تبدأ جلسة جديدة، بيحقن السياق المناسب، وتقدر تدوّر في الجلسات اللي فاتت.\n\nخد بالك: npm install -g claude-mem بيسطّب المكتبة بس، ومش بيظبط الـ hooks. التسطيب الصح عن طريق npx claude-mem install أو /plugin.",
-      "features": ["تسجيل أوتوماتيك بالـ hooks", "ملخصات مضغوطة", "حقن السياق في الجلسة الجاية", "بحث في الجلسات اللي فاتت"],
-      "install": [
-        { "label": "التسطيب الكامل", "cmd": "npx claude-mem install" },
-        { "label": "أو من جوه Claude Code", "cmd": "/plugin marketplace add thedotmack/claude-mem" }
+      "features": [
+        "تسجيل أوتوماتيك بالـ hooks",
+        "ملخصات مضغوطة",
+        "حقن السياق في الجلسة الجاية",
+        "بحث في الجلسات اللي فاتت"
       ],
-      "pricing": { "model": "oss" },
+      "install": [
+        {
+          "label": "التسطيب الكامل",
+          "cmd": "npx claude-mem install"
+        },
+        {
+          "label": "أو من جوه Claude Code",
+          "cmd": "/plugin marketplace add thedotmack/claude-mem"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/thedotmack/claude-mem",
       "source": "github.com",
       "importance": 2,
-      "tags": ["memory", "Claude Code", "plugin"]
+      "tags": [
+        "memory",
+        "Claude Code",
+        "plugin"
+      ],
+      "en": {
+        "title": "claude-mem: long-term memory for Claude Code",
+        "summary": "A plugin that records what happened in each session through hooks, compresses it into summaries, and injects the right context into the next session. It also works with OpenCode, Antigravity and others.",
+        "why": "If you re-explain your project's decisions and module structure every session, this saves you that time.",
+        "about": "claude-mem installs hooks that follow the session, meaning the files changed, the decisions made and the problems solved, along with a worker service that compresses all that into summaries and stores them. When you start a new session it injects the relevant context, and you can search past sessions.\n\nWatch out: npm install -g claude-mem installs only the library and doesn't set up the hooks. The right install is npx claude-mem install or /plugin.",
+        "features": [
+          "Automatic capture via hooks",
+          "Compressed summaries",
+          "Context injected into the next session",
+          "Search across past sessions"
+        ],
+        "install": [
+          "Full install",
+          "Or from inside Claude Code"
+        ]
+      }
     },
     {
       "id": "ess-vercel-agent-skills",
@@ -206,13 +519,45 @@
       "summary": "مجموعة skills من Vercel على معيار Agent Skills: أفضل ممارسات React وNext.js للأداء، وأنماط الـ composition، وReact Native، وتحسين تكلفة وأداء مشاريع Vercel.",
       "why": "لو بتبني واجهات React أو Next.js، زي المرصد ده، الـ skills دي بتخلي الكود اللي الـ agent بيكتبه ماشي على توصيات Vercel نفسها.",
       "about": "الـ skills دي من فريق Vercel، وفيها: react-best-practices لأداء React وNext.js، وcomposition-patterns لتصميم components قابلة لإعادة الاستخدام، وreact-native-skills، وreact-view-transitions، وdeploy-to-vercel، وvercel-optimize اللي بيراجع تكلفة وأداء المشروع من الـ metrics.\n\nبتتركب لأي agent بيدعم المعيار عن طريق npx skills.",
-      "features": ["أداء React وNext.js", "أنماط الـ composition", "React Native", "مراجعة تكلفة مشاريع Vercel"],
-      "install": [{ "label": "ركّب الـ skills", "cmd": "npx skills add vercel-labs/agent-skills" }],
-      "pricing": { "model": "oss" },
+      "features": [
+        "أداء React وNext.js",
+        "أنماط الـ composition",
+        "React Native",
+        "مراجعة تكلفة مشاريع Vercel"
+      ],
+      "install": [
+        {
+          "label": "ركّب الـ skills",
+          "cmd": "npx skills add vercel-labs/agent-skills"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/vercel-labs/agent-skills",
       "source": "github.com",
       "importance": 2,
-      "tags": ["skills", "React", "Next.js", "Vercel"]
+      "tags": [
+        "skills",
+        "React",
+        "Next.js",
+        "Vercel"
+      ],
+      "en": {
+        "title": "Vercel Agent Skills: official skills for React, Next.js and Vercel",
+        "summary": "A set of skills from Vercel on the Agent Skills standard: React and Next.js performance best practices, composition patterns, React Native, and cost and performance tuning for Vercel projects.",
+        "why": "If you build React or Next.js interfaces, like Marsad itself, these skills keep the code the agent writes in line with Vercel's own recommendations.",
+        "about": "These skills come from the Vercel team: react-best-practices for React and Next.js performance, composition-patterns for designing reusable components, react-native-skills, react-view-transitions, deploy-to-vercel, and vercel-optimize, which reviews a project's cost and performance from its metrics.\n\nThey install into any agent that supports the standard via npx skills.",
+        "features": [
+          "React and Next.js performance",
+          "Composition patterns",
+          "React Native",
+          "Cost review for Vercel projects"
+        ],
+        "install": [
+          "Install the skills"
+        ]
+      }
     },
     {
       "id": "ess-skills-sh",
@@ -222,13 +567,42 @@
       "summary": "دليل للـ skills المنشورة على GitHub، ومعاه CLI بتركّب بيه أي skill لأي agent بيدعم المعيار بأمر واحد: npx skills add owner/repo.",
       "why": "بدل ما تنسخ فولدرات الـ skills بإيدك لكل أداة، أمر واحد بيحطها في المكان الصح.",
       "about": "skills.sh بيجمع الـ skills اللي على GitHub في مكان واحد، وريبوز كتير زي anthropics/skills وvercel-labs/agent-skills حاطة عليه badge.\n\nالـ CLI بياخد اسم الريبو، واختيارياً skill معينة بـ --skill، ويركّبها للـ agent بتاعك.",
-      "features": ["دليل للـ skills المنشورة", "تسطيب بأمر واحد", "يختار skill معينة من ريبو فيه كتير"],
-      "install": [{ "label": "مثال", "cmd": "npx skills add wshobson/agents --skill python-testing-patterns" }],
-      "pricing": { "model": "free" },
+      "features": [
+        "دليل للـ skills المنشورة",
+        "تسطيب بأمر واحد",
+        "يختار skill معينة من ريبو فيه كتير"
+      ],
+      "install": [
+        {
+          "label": "مثال",
+          "cmd": "npx skills add wshobson/agents --skill python-testing-patterns"
+        }
+      ],
+      "pricing": {
+        "model": "free"
+      },
       "url": "https://skills.sh/",
       "source": "skills.sh",
       "importance": 1,
-      "tags": ["skills", "CLI", "directory"]
+      "tags": [
+        "skills",
+        "CLI",
+        "directory"
+      ],
+      "en": {
+        "title": "skills.sh: a directory and CLI for installing skills",
+        "summary": "A directory of skills published on GitHub, with a CLI that installs any skill into any agent that supports the standard with one command: npx skills add owner/repo.",
+        "why": "Instead of copying skill folders by hand for each tool, one command puts them in the right place.",
+        "about": "skills.sh gathers the skills on GitHub in one place, and many repos like anthropics/skills and vercel-labs/agent-skills show its badge.\n\nThe CLI takes a repo name, and optionally a specific skill with --skill, and installs it for your agent.",
+        "features": [
+          "A directory of published skills",
+          "One-command install",
+          "Pick one skill from a repo that has many"
+        ],
+        "install": [
+          "Example"
+        ]
+      }
     },
     {
       "id": "ess-awesome-claude-code",
@@ -239,12 +613,32 @@
       "summary": "أشهر قايمة متجمعة لـ Claude Code: skills، وsubagents، وslash commands، وhooks، وملفات CLAUDE.md، وأدوات، وworkflows، وplugins، وmods.",
       "why": "الرادار في المرصد بيتابع الإضافات الجديدة فيها كل يوم، فهتشوف الجديد عندك من غير ما تفتحها.",
       "about": "القايمة دي بيراجعها صاحبها قبل الإضافة، فالجودة أعلى من القوائم اللي بتتولّد أوتوماتيك. متقسمة لأقسام: Agent Skills، وWorkflows، وTooling، وStatus lines، وHooks، وSlash commands، وCLAUDE.md files، وغيرها.\n\nكل عنصر جديد بيتضاف هنا هيظهر في الرادار في المرصد في نفس اليوم.",
-      "features": ["قايمة متراجعة مش متولّدة", "متقسمة حسب النوع", "الرادار بيتابعها يومياً"],
-      "pricing": { "model": "oss" },
+      "features": [
+        "قايمة متراجعة مش متولّدة",
+        "متقسمة حسب النوع",
+        "الرادار بيتابعها يومياً"
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/hesreallyhim/awesome-claude-code",
       "source": "github.com",
       "importance": 2,
-      "tags": ["awesome list", "Claude Code"]
+      "tags": [
+        "awesome list",
+        "Claude Code"
+      ],
+      "en": {
+        "title": "awesome-claude-code: the community index for everything around Claude Code",
+        "summary": "The best-known curated list for Claude Code: skills, subagents, slash commands, hooks, CLAUDE.md files, tools, workflows, plugins and mods.",
+        "why": "Marsad's radar tracks new additions to it every day, so you'll see what's new here without opening it.",
+        "about": "Its owner reviews entries before adding them, so the quality is higher than auto-generated lists. It's organised into sections: Agent Skills, Workflows, Tooling, Status lines, Hooks, Slash commands, CLAUDE.md files and more.\n\nEvery new entry added here appears in Marsad's radar the same day.",
+        "features": [
+          "Reviewed, not generated",
+          "Organised by type",
+          "Tracked daily by the radar"
+        ]
+      }
     },
     {
       "id": "ess-awesome-agent-skills",
@@ -255,12 +649,32 @@
       "summary": "قايمة skills من VoltAgent بتركز على الـ skills اللي فرق هندسية بتستخدمها فعلاً، ومنها skills رسمية من شركات زي Vercel وStripe وCloudflare. ومعاها جدول بمكان الـ skills في كل أداة.",
       "why": "أكبر مصدر للـ skills الرسمية من الشركات. والرادار بيتابع الإضافات الجديدة فيها كل يوم.",
       "about": "VoltAgent بتقول إن القايمة متجمعة بالإيد ومش متولّدة بالـ AI. فيها قسم للـ skills الرسمية من الشركات نفسها، وأقسام حسب المجال.\n\nوفيها جدول بيوضح كل أداة بتحط الـ skills فين، زي Claude Code وCodex وAntigravity وCursor وCopilot وOpenCode وWindsurf.",
-      "features": ["أكتر من ١٤٠٠ skill", "skills رسمية من الشركات", "جدول بمكان الـ skills في كل أداة"],
-      "pricing": { "model": "oss" },
+      "features": [
+        "أكتر من ١٤٠٠ skill",
+        "skills رسمية من الشركات",
+        "جدول بمكان الـ skills في كل أداة"
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/VoltAgent/awesome-agent-skills",
       "source": "github.com",
       "importance": 1,
-      "tags": ["awesome list", "skills"]
+      "tags": [
+        "awesome list",
+        "skills"
+      ],
+      "en": {
+        "title": "awesome-agent-skills: 1,400+ skills from real teams",
+        "summary": "A skills list from VoltAgent focused on skills engineering teams actually use, including official skills from companies like Vercel, Stripe and Cloudflare, plus a table of where each tool keeps its skills.",
+        "why": "The biggest source of official skills from companies, and the radar tracks new additions every day.",
+        "about": "VoltAgent says the list is hand-curated, not AI-generated. It has a section for official skills from the companies themselves, plus sections by domain.\n\nIt also has a table showing where each tool puts skills, including Claude Code, Codex, Antigravity, Cursor, Copilot, OpenCode and Windsurf.",
+        "features": [
+          "1,400+ skills",
+          "Official skills from companies",
+          "A table of skill locations per tool"
+        ]
+      }
     },
     {
       "id": "ess-awesome-claude-code-subagents",
@@ -271,12 +685,32 @@
       "summary": "مجموعة subagents جاهزة لـ Claude Code متقسمة حسب الدور: لغات وframeworks، وinfrastructure، وجودة وأمان، وبيانات وAI، وتجربة المطور، وغيرها.",
       "why": "لما تحتاج subagent لدور معين، زي Laravel specialist أو database optimizer، غالباً هتلاقيه هنا جاهز.",
       "about": "كل subagent ملف جاهز تحطه في .claude/agents/، وفيه الوصف والأدوات والتعليمات. القايمة متقسمة لفئات واضحة، ومنها subagents للغات والـ frameworks، ومن ضمنهم PHP وLaravel.\n\nالرادار في المرصد بيتابعها برضه.",
-      "features": ["أكتر من ١٦٠ subagent", "متقسمة حسب الدور", "ملفات جاهزة لـ .claude/agents"],
-      "pricing": { "model": "oss" },
+      "features": [
+        "أكتر من ١٦٠ subagent",
+        "متقسمة حسب الدور",
+        "ملفات جاهزة لـ .claude/agents"
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/VoltAgent/awesome-claude-code-subagents",
       "source": "github.com",
       "importance": 1,
-      "tags": ["awesome list", "subagents"]
+      "tags": [
+        "awesome list",
+        "subagents"
+      ],
+      "en": {
+        "title": "awesome-claude-code-subagents: 160+ ready-made subagents",
+        "summary": "A collection of ready-made Claude Code subagents organised by role: languages and frameworks, infrastructure, quality and security, data and AI, developer experience and more.",
+        "why": "When you need a subagent for a specific role, like a Laravel specialist or a database optimizer, you'll probably find it here ready to go.",
+        "about": "Each subagent is a ready file you drop into .claude/agents/, with a description, tools and instructions. The list is split into clear categories, including subagents for languages and frameworks such as PHP and Laravel.\n\nMarsad's radar tracks it too.",
+        "features": [
+          "160+ subagents",
+          "Organised by role",
+          "Ready files for .claude/agents"
+        ]
+      }
     }
   ]
 }

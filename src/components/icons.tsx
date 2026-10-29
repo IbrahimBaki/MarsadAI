@@ -55,8 +55,9 @@ export const CloseIcon = (p: P) => (
     <path d="M6 6l12 12M18 6 6 18" />
   </svg>
 );
+// Points "back" in both directions: right in Arabic, left in English.
 export const BackIcon = (p: P) => (
-  <svg {...base} {...p}>
+  <svg {...base} {...p} className={`ltr:-scale-x-100 ${p.className ?? ""}`}>
     <path d="M9 6l6 6-6 6" />
   </svg>
 );

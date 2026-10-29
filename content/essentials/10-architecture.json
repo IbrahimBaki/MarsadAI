@@ -10,18 +10,60 @@
       "summary": "toolkit مفتوح من GitHub بيدّي الـ agents خطوات منظمة: constitution للمبادئ، وبعدين spec، وبعدين خطة تقنية، وبعدين tasks، وبعدين تنفيذ. وكل خطوة بتطلّع ملف موثّق.",
       "why": "بدل ما تدّي Claude طلب كبير مرة واحدة، بتكتب الـ spec والخطة الأول. ده بيقلل اللف في المشاريع الكبيرة وبيسيب توثيق لكل feature.",
       "about": "الفكرة في spec-driven development إن المواصفة هي المصدر الأساسي، والكود بيتولّد منها. Spec Kit بيحوّل ده لأوامر للـ agent: /speckit-constitution يكتب مبادئ المشروع (جودة، وتيستات، وقيود)، و/speckit-specify يكتب المطلوب من غير تفاصيل تقنية، و/speckit-plan الخطة التقنية بالـ stack، و/speckit-tasks يقسّمها لمهام، و/speckit-implement ينفّذ.\n\nوفيه workflows للـ bugs، وextensions وpresets من الكتالوج. وبيشتغل مع Claude Code وCopilot وCursor وغيرهم.",
-      "features": ["constitution ثم spec ثم plan ثم tasks ثم تنفيذ", "ملفات موثقة لكل خطوة", "workflow للـ bugs", "بيشتغل مع agents كتير"],
-      "install": [
-        { "label": "سطّب الـ CLI", "cmd": "uv tool install specify-cli" },
-        { "label": "ابدأ مشروع", "cmd": "specify init my-project" }
+      "features": [
+        "constitution ثم spec ثم plan ثم tasks ثم تنفيذ",
+        "ملفات موثقة لكل خطوة",
+        "workflow للـ bugs",
+        "بيشتغل مع agents كتير"
       ],
-      "usage": ["/speckit-specify نظام مرتجعات للمبيعات بموافقة المدير ورصيد للعميل", "/speckit-plan Laravel 13 module جديد بـ nwidart مع Pest tests"],
-      "pricing": { "model": "oss" },
+      "install": [
+        {
+          "label": "سطّب الـ CLI",
+          "cmd": "uv tool install specify-cli"
+        },
+        {
+          "label": "ابدأ مشروع",
+          "cmd": "specify init my-project"
+        }
+      ],
+      "usage": [
+        "/speckit-specify نظام مرتجعات للمبيعات بموافقة المدير ورصيد للعميل",
+        "/speckit-plan Laravel 13 module جديد بـ nwidart مع Pest tests"
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/github/spec-kit",
       "source": "github.com",
       "importance": 3,
-      "tags": ["spec-driven", "planning", "agents"],
-      "alternatives": ["ess-bmad-method"]
+      "tags": [
+        "spec-driven",
+        "planning",
+        "agents"
+      ],
+      "alternatives": [
+        "ess-bmad-method"
+      ],
+      "en": {
+        "title": "Spec Kit: spec-driven development with coding agents",
+        "summary": "An open toolkit from GitHub that gives agents structured steps: a constitution for principles, then a spec, then a technical plan, then tasks, then implementation. Each step produces a documented file.",
+        "why": "Instead of giving Claude one big request, you write the spec and plan first. That reduces back-and-forth on large projects and leaves documentation for every feature.",
+        "about": "The idea of spec-driven development is that the specification is the primary source and code is generated from it. Spec Kit turns this into agent commands: /speckit-constitution writes the project's principles (quality, testing and constraints), /speckit-specify writes what's needed without technical detail, /speckit-plan writes the technical plan with the stack, /speckit-tasks breaks it into tasks, and /speckit-implement builds it.\n\nThere are workflows for bugs, plus extensions and presets from the catalog. It works with Claude Code, Copilot, Cursor and others.",
+        "features": [
+          "Constitution, then spec, plan, tasks and implementation",
+          "Documented files for every step",
+          "A workflow for bugs",
+          "Works with many agents"
+        ],
+        "usage": [
+          "/speckit-specify A sales returns system with manager approval and customer credit",
+          "/speckit-plan Laravel 13, a new nwidart module with Pest tests"
+        ],
+        "install": [
+          "Install the CLI",
+          "Start a project"
+        ]
+      }
     },
     {
       "id": "ess-bmad-method",
@@ -32,14 +74,47 @@
       "summary": "منهجية وskills بتغطي التطوير كله بالـ AI: الـ brief، والـ PRD، والـ architecture، والـ stories، والتنفيذ. وفيها agents بأدوار زي analyst وPM وarchitect وdeveloper، والقرارات بتفضل مكتوبة وواضحة.",
       "why": "لو هتبدأ module كبير جديد في الـ ERP، الطريقة دي بتخليك تفكر في المطلوب والمعمارية قبل الكود، وبتطلّع وثائق تنفعك بعدين.",
       "about": "BMad بيتعامل مع التطوير بالـ AI كعملية كاملة، مش كود وبس: إيه اللي هيتبني، وإزاي الأجزاء هتركب مع بعض، وإزاي هيتغير مع الوقت. فيه agents بأدوار بتمشي معاك من الـ brief للـ PRD للـ architecture للـ stories، وبعدين التنفيذ والمراجعة.\n\nالإصدار المستقر v6 بيتسطب بـ npx، وv7 لسه alpha وبيتغير كتير.",
-      "features": ["agents بأدوار: analyst وPM وarchitect وdev", "brief وPRD وarchitecture وstories", "القرارات موثقة", "تقدر تستخدم أجزاء منه بس"],
-      "install": [{ "label": "الإصدار المستقر", "cmd": "npx bmad-method install" }],
-      "pricing": { "model": "oss" },
+      "features": [
+        "agents بأدوار: analyst وPM وarchitect وdev",
+        "brief وPRD وarchitecture وstories",
+        "القرارات موثقة",
+        "تقدر تستخدم أجزاء منه بس"
+      ],
+      "install": [
+        {
+          "label": "الإصدار المستقر",
+          "cmd": "npx bmad-method install"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/bmad-code-org/BMAD-METHOD",
       "source": "github.com",
       "importance": 2,
-      "tags": ["agile", "planning", "architecture"],
-      "alternatives": ["ess-spec-kit"]
+      "tags": [
+        "agile",
+        "planning",
+        "architecture"
+      ],
+      "alternatives": [
+        "ess-spec-kit"
+      ],
+      "en": {
+        "title": "BMad Method: agile AI-driven development from idea to code",
+        "summary": "A methodology and skills covering the whole development process with AI: the brief, PRD, architecture, stories and implementation. Agents play roles like analyst, PM, architect and developer, and decisions stay written down and clear.",
+        "why": "If you're starting a big new module in the ERP, this approach makes you think about requirements and architecture before code, and produces documents you'll use later.",
+        "about": "BMad treats AI development as a complete process, not just code: what will be built, how the parts fit together, and how it will change over time. Role-based agents walk with you from brief to PRD to architecture to stories, then implementation and review.\n\nThe stable v6 installs with npx; v7 is still alpha and changing a lot.",
+        "features": [
+          "Role agents: analyst, PM, architect and dev",
+          "Brief, PRD, architecture and stories",
+          "Documented decisions",
+          "Use only the parts you want"
+        ],
+        "install": [
+          "Stable release"
+        ]
+      }
     },
     {
       "id": "ess-graphify",
@@ -50,13 +125,44 @@
       "summary": "بتكتب /graphify في الـ agent، فيحوّل المشروع كله، الكود والدوكيومنتيشن والـ PDFs والصور، لـ knowledge graph تسأله بدل الـ grep. تحليل الكود محلي بالـ AST، ومن غير embeddings.",
       "why": "في مشروع modules كبير، تقدر تسأله \"إيه العلاقة بين الـ Sales module والـ Inventory\" أو \"إيه اللي هيتأثر لو غيّرت الكلاس ده\".",
       "about": "Graphify بيحلل الكود بـ tree-sitter AST على جهازك من غير LLM، فالنتيجة ثابتة ومفيش حاجة بتطلع برّه. أما الدوكس والـ PDFs والصور فبيستخدم لها الموديل.\n\nكل علاقة في الـ graph عليها علامة: EXTRACTED لو مكتوبة صريحة في الكود، وINFERRED لو استنتجها، فتعرف تثق في إيه. ومش vector index، دي graph حقيقية تقدر تمشي فيها: تسأل، أو تتبع الطريق بين حاجتين، أو تشرح مفهوم.",
-      "features": ["تحليل محلي بالـ AST", "كل علاقة عليها علامة: صريحة أو مستنتجة", "كود ودوكس وPDFs وصور", "أمر /graphify في الـ agent"],
-      "install": [{ "label": "الـ CLI", "cmd": "uv tool install graphifyy" }],
-      "pricing": { "model": "oss" },
+      "features": [
+        "تحليل محلي بالـ AST",
+        "كل علاقة عليها علامة: صريحة أو مستنتجة",
+        "كود ودوكس وPDFs وصور",
+        "أمر /graphify في الـ agent"
+      ],
+      "install": [
+        {
+          "label": "الـ CLI",
+          "cmd": "uv tool install graphifyy"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/Graphify-Labs/graphify",
       "source": "github.com",
       "importance": 2,
-      "tags": ["knowledge graph", "codebase", "context"]
+      "tags": [
+        "knowledge graph",
+        "codebase",
+        "context"
+      ],
+      "en": {
+        "title": "Graphify: your whole project as a knowledge graph you can query",
+        "summary": "Type /graphify in your agent and it turns the whole project, code, docs, PDFs and images, into a knowledge graph you query instead of grepping. Code analysis is local via AST, with no embeddings.",
+        "why": "In a large modular project you can ask \"how does the Sales module relate to Inventory\" or \"what's affected if I change this class\".",
+        "about": "Graphify analyses code with tree-sitter ASTs on your machine without an LLM, so the result is deterministic and nothing leaves your computer. For docs, PDFs and images it uses the model.\n\nEvery relationship in the graph is labelled: EXTRACTED if it's explicit in the code, INFERRED if it was deduced, so you know what to trust. It isn't a vector index but a real graph you can walk: ask questions, trace the path between two things, or explain a concept.",
+        "features": [
+          "Local AST analysis",
+          "Every relationship labelled explicit or inferred",
+          "Code, docs, PDFs and images",
+          "A /graphify command in your agent"
+        ],
+        "install": [
+          "The CLI"
+        ]
+      }
     },
     {
       "id": "ess-system-design-primer",
@@ -67,12 +173,35 @@
       "summary": "دليل مجاني لتصميم الأنظمة الكبيرة: scalability، وcaching، وload balancing، وقواعد البيانات، والـ queues، والـ CAP theorem، ومعاه أمثلة حلول كاملة وAnki flashcards.",
       "why": "بيدّيك المصطلحات والمقايضات اللي محتاجها عشان تقيّم المعمارية اللي الـ agent بيقترحها، بدل ما تقبلها زي ما هي.",
       "about": "من أكتر الريبوز اللي عليها نجوم على GitHub. بيشرح المفاهيم الأساسية بالترتيب: الأداء قصاد الـ scalability، والـ latency قصاد الـ throughput، والـ availability قصاد الـ consistency، والـ DNS والـ CDN والـ load balancers، وقواعد البيانات (replication وsharding وSQL قصاد NoSQL)، والـ caching، والـ async والـ queues.\n\nوفيه تمارين تصميم كاملة، زي Twitter وPastebin وweb crawler، ومعاها الحلول.",
-      "features": ["كل مفاهيم الـ scalability", "تمارين تصميم بحلولها", "flashcards للمراجعة", "مترجم للغات كتير"],
-      "pricing": { "model": "oss" },
+      "features": [
+        "كل مفاهيم الـ scalability",
+        "تمارين تصميم بحلولها",
+        "flashcards للمراجعة",
+        "مترجم للغات كتير"
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/donnemartin/system-design-primer",
       "source": "github.com",
       "importance": 2,
-      "tags": ["system design", "scalability", "learning"]
+      "tags": [
+        "system design",
+        "scalability",
+        "learning"
+      ],
+      "en": {
+        "title": "System Design Primer: the best-known guide to designing large systems",
+        "summary": "A free guide to designing large systems: scalability, caching, load balancing, databases, queues and the CAP theorem, with complete worked solutions and Anki flashcards.",
+        "why": "It gives you the vocabulary and trade-offs you need to evaluate the architecture an agent proposes, instead of accepting it as-is.",
+        "about": "One of the most-starred repos on GitHub. It explains the core concepts in order: performance versus scalability, latency versus throughput, availability versus consistency, DNS, CDNs and load balancers, databases (replication, sharding, SQL versus NoSQL), caching, and async processing and queues.\n\nIt includes complete design exercises, like Twitter, Pastebin and a web crawler, with solutions.",
+        "features": [
+          "Every scalability concept",
+          "Design exercises with solutions",
+          "Flashcards for review",
+          "Translated into many languages"
+        ]
+      }
     },
     {
       "id": "ess-awesome-software-architecture",
@@ -83,12 +212,35 @@
       "summary": "كتالوج كبير لمصادر المعمارية: DDD، وmicroservices، وmodular monolith، وCQRS، وevent sourcing، وclean architecture، والـ patterns، ومعاه موقع للتصفح والبحث.",
       "why": "Company-ERP عبارة عن modular monolith، والقسم ده بالذات فيه مقالات وأمثلة تفيدك في حدود الـ modules والتواصل بينهم.",
       "about": "الكتالوج متقسم لـ collections وsubcollections ومواضيع، وكل موضوع فيه مقالات وفيديوهات وكتب وأمثلة كود. ومعاه web app اسمه Awesome Architecture بتبحث فيه وتفلتر حسب نوع المصدر.\n\nمن أهم الأقسام ليك: Modular Monolith، وDomain-Driven Design، وEvent-Driven Architecture، وDesign Patterns.",
-      "features": ["DDD وmodular monolith وmicroservices", "CQRS وevent sourcing", "موقع للبحث والتصفح", "مقالات وفيديوهات وأمثلة"],
-      "pricing": { "model": "oss" },
+      "features": [
+        "DDD وmodular monolith وmicroservices",
+        "CQRS وevent sourcing",
+        "موقع للبحث والتصفح",
+        "مقالات وفيديوهات وأمثلة"
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://awesome-architecture.com/",
       "source": "awesome-architecture.com",
       "importance": 1,
-      "tags": ["architecture", "DDD", "modular monolith"]
+      "tags": [
+        "architecture",
+        "DDD",
+        "modular monolith"
+      ],
+      "en": {
+        "title": "Awesome Software Architecture: a catalog of architecture resources",
+        "summary": "A large catalog of architecture resources: DDD, microservices, modular monoliths, CQRS, event sourcing, clean architecture and patterns, with a website for browsing and searching.",
+        "why": "Company-ERP is a modular monolith, and this catalog has articles and examples on module boundaries and how modules communicate.",
+        "about": "The catalog is organised into collections, subcollections and topics, each with articles, videos, books and code samples. There's a web app called Awesome Architecture for searching and filtering by resource type.\n\nThe most relevant sections for you: Modular Monolith, Domain-Driven Design, Event-Driven Architecture and Design Patterns.",
+        "features": [
+          "DDD, modular monoliths and microservices",
+          "CQRS and event sourcing",
+          "A site for searching and browsing",
+          "Articles, videos and examples"
+        ]
+      }
     },
     {
       "id": "ess-adr",
@@ -99,12 +251,35 @@
       "summary": "دليل وقوالب وأمثلة لكتابة ADR: ملف قصير لكل قرار معماري مهم، فيه السياق والقرار والبدايل والنتايج. وفيه ترجمة عربي.",
       "why": "ملفات ADR بتبقى سياق ممتاز للـ agent: لما يقرا ليه اخترت حاجة معينة، مش هيقترح عكسها كل شوية.",
       "about": "الـ ADR ملف Markdown لكل قرار، زي \"استخدام nwidart modules\" أو \"Redis للـ queues\"، فيه: العنوان، والحالة، والسياق، والقرار، والنتايج، والبدايل اللي اترفضت.\n\nالريبو فيه قوالب كتير، زي Michael Nygard وMADR، وأمثلة حقيقية، ونصايح للعملية: إمتى تكتب ADR، وإزاي تراجعه، وإزاي تقفله لما يتغير. وفيه موقع وترجمات منها العربي.",
-      "features": ["قوالب ADR مختلفة", "أمثلة حقيقية", "دورة حياة القرار", "ترجمة عربي"],
-      "pricing": { "model": "oss" },
+      "features": [
+        "قوالب ADR مختلفة",
+        "أمثلة حقيقية",
+        "دورة حياة القرار",
+        "ترجمة عربي"
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://architecture-decision-record.github.io/",
       "source": "architecture-decision-record.github.io",
       "importance": 1,
-      "tags": ["ADR", "documentation", "architecture"]
+      "tags": [
+        "ADR",
+        "documentation",
+        "architecture"
+      ],
+      "en": {
+        "title": "Architecture Decision Records: document your architectural decisions",
+        "summary": "A guide, templates and examples for writing ADRs: a short file for each important architectural decision with its context, decision, alternatives and consequences. Includes an Arabic translation.",
+        "why": "ADR files make excellent context for the agent: once it reads why you chose something, it won't keep suggesting the opposite.",
+        "about": "An ADR is a Markdown file per decision, like \"Use nwidart modules\" or \"Redis for queues\", containing a title, status, context, decision, consequences and rejected alternatives.\n\nThe repo has many templates, such as Michael Nygard's and MADR, real examples, and process advice: when to write an ADR, how to review it, and how to close it when things change. There's a website and translations, including Arabic.",
+        "features": [
+          "Different ADR templates",
+          "Real examples",
+          "The decision lifecycle",
+          "Arabic translation"
+        ]
+      }
     },
     {
       "id": "ess-mermaid",
@@ -115,13 +290,43 @@
       "summary": "بتكتب الـ diagram كنص شبه Markdown، فيتحول لرسمة: flowcharts، وsequence، وER diagrams، وclass، وstate، وGantt، وarchitecture. وGitHub وأدوات كتير بتعرضه مباشرة.",
       "why": "أسهل طريقة تخلي Claude يرسم لك معمارية الـ module أو الـ ER diagram، ويتحفظ في الريبو ويتعدل زي الكود.",
       "about": "Mermaid بيتعرض جوه GitHub وGitLab وNotion وObsidian، وفي ملفات Markdown عادية. الموديلات بتكتبه كويس جداً، فبتطلب \"ارسم sequence diagram لعملية إنشاء الفاتورة\" فيطلع نص تحطه في الدوكيومنتيشن.\n\nفيه Live Editor على mermaid.live، وCLI بيحوّل لـ SVG أو PNG.",
-      "features": ["flowchart وsequence وER وclass", "بيتعرض في GitHub مباشرة", "الموديلات بتكتبه كويس", "Live Editor وCLI"],
-      "install": [{ "label": "الـ CLI", "cmd": "npm install -g @mermaid-js/mermaid-cli" }],
-      "pricing": { "model": "oss" },
+      "features": [
+        "flowchart وsequence وER وclass",
+        "بيتعرض في GitHub مباشرة",
+        "الموديلات بتكتبه كويس",
+        "Live Editor وCLI"
+      ],
+      "install": [
+        {
+          "label": "الـ CLI",
+          "cmd": "npm install -g @mermaid-js/mermaid-cli"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://mermaid.js.org",
       "source": "mermaid.js.org",
       "importance": 1,
-      "tags": ["diagrams", "documentation"]
+      "tags": [
+        "diagrams",
+        "documentation"
+      ],
+      "en": {
+        "title": "Mermaid: diagrams from text",
+        "summary": "Write a diagram as Markdown-like text and it turns into a picture: flowcharts, sequence, ER, class, state, Gantt and architecture diagrams. GitHub and many tools render it directly.",
+        "why": "The easiest way to have Claude draw your module architecture or ER diagram, saved in the repo and edited like code.",
+        "about": "Mermaid renders inside GitHub, GitLab, Notion and Obsidian, and in plain Markdown files. Models write it very well, so you ask \"draw a sequence diagram of invoice creation\" and get text to put in your docs.\n\nThere's a Live Editor at mermaid.live and a CLI that converts to SVG or PNG.",
+        "features": [
+          "Flowchart, sequence, ER and class",
+          "Renders directly on GitHub",
+          "Models write it well",
+          "Live Editor and CLI"
+        ],
+        "install": [
+          "The CLI"
+        ]
+      }
     },
     {
       "id": "ess-excalidraw",
@@ -132,12 +337,37 @@
       "summary": "whiteboard مفتوح المصدر بستايل الرسم باليد، للـ diagrams والـ wireframes. فيه تعاون لايف مشفّر، وtext-to-diagram بالـ AI، ومكتبات أشكال جاهزة.",
       "why": "للنقاش السريع مع الفريق على معمارية feature قبل ما تكتب spec، والرسمة تقدر تصدّرها أو تحطها في الدوكيومنتيشن.",
       "about": "Excalidraw بيتفتح في البراوزر من غير حساب. فيه أشكال وأسهم ونصوص بشكل مرسوم باليد، وتعاون لايف بتشفير end-to-end، وexport لـ PNG وSVG، وملفات .excalidraw بتتحفظ في الريبو.\n\nوفيه text-to-diagram، وتحويل Mermaid لرسمة. وكمان component لـ React تقدر تدمجه في تطبيقك.",
-      "features": ["رسم باليد بسرعة", "تعاون لايف مشفّر", "تحويل من Mermaid ونص", "component لـ React"],
-      "pricing": { "model": "oss", "note": "مجاني، وExcalidraw+ مدفوعة للفرق" },
+      "features": [
+        "رسم باليد بسرعة",
+        "تعاون لايف مشفّر",
+        "تحويل من Mermaid ونص",
+        "component لـ React"
+      ],
+      "pricing": {
+        "model": "oss",
+        "note": "مجاني، وExcalidraw+ مدفوعة للفرق"
+      },
       "url": "https://excalidraw.com",
       "source": "excalidraw.com",
       "importance": 1,
-      "tags": ["diagrams", "whiteboard", "collaboration"]
+      "tags": [
+        "diagrams",
+        "whiteboard",
+        "collaboration"
+      ],
+      "en": {
+        "title": "Excalidraw: a hand-drawn whiteboard for architecture and ideas",
+        "summary": "An open-source whiteboard with a hand-drawn style for diagrams and wireframes. It has encrypted live collaboration, AI text-to-diagram and ready-made shape libraries.",
+        "why": "For quick discussions with the team about a feature's architecture before writing a spec, and you can export the drawing or put it in your docs.",
+        "about": "Excalidraw opens in the browser without an account. It has hand-drawn shapes, arrows and text, live collaboration with end-to-end encryption, export to PNG and SVG, and .excalidraw files you can keep in the repo.\n\nThere's also text-to-diagram and Mermaid-to-drawing conversion, plus a React component you can embed in your app.",
+        "features": [
+          "Quick hand-drawn sketches",
+          "Encrypted live collaboration",
+          "Convert from Mermaid and text",
+          "A React component"
+        ],
+        "pricingNote": "Free; Excalidraw+ is paid for teams"
+      }
     },
     {
       "id": "ess-martin-fowler",
@@ -147,11 +377,32 @@
       "summary": "موقع Martin Fowler فيه مقالات أساسية في المعمارية والـ refactoring والـ patterns والـ microservices، ومؤخراً سلسلة عن هندسة البرمجيات مع الـ AI وتجارب Thoughtworks.",
       "why": "لما تحتاج تفهم pattern معين صح، زي Strangler Fig لتحديث أجزاء قديمة في الـ ERP، أو تقرا رأي متزن عن البرمجة بالـ AI.",
       "about": "الموقع فيه مقالات مرجعية اتكتبت على مدار سنين، زي Microservices، وStrangler Fig Application، وCQRS، وEvent Sourcing، وFeature Toggles، وBounded Context، وموسوعة patterns للـ enterprise applications.\n\nومؤخراً بينشر مقالات من مهندسين في Thoughtworks عن تجاربهم مع الـ coding agents، والـ spec-driven development، والـ context engineering، بشكل نقدي ومش ترويجي.",
-      "features": ["مقالات مرجعية للـ patterns", "refactoring وmicroservices", "مقالات عن البرمجة بالـ AI", "منظور نقدي ومتزن"],
+      "features": [
+        "مقالات مرجعية للـ patterns",
+        "refactoring وmicroservices",
+        "مقالات عن البرمجة بالـ AI",
+        "منظور نقدي ومتزن"
+      ],
       "url": "https://martinfowler.com/",
       "source": "martinfowler.com",
       "importance": 1,
-      "tags": ["patterns", "architecture", "refactoring"]
+      "tags": [
+        "patterns",
+        "architecture",
+        "refactoring"
+      ],
+      "en": {
+        "title": "martinfowler.com: the reference for patterns and architecture",
+        "summary": "Martin Fowler's site has foundational articles on architecture, refactoring, patterns and microservices, and lately a series on software engineering with AI from Thoughtworks engineers.",
+        "why": "When you need to understand a pattern properly, like Strangler Fig for modernising old parts of the ERP, or want a balanced view on coding with AI.",
+        "about": "The site has reference articles written over many years, such as Microservices, Strangler Fig Application, CQRS, Event Sourcing, Feature Toggles, Bounded Context, and a catalog of enterprise application patterns.\n\nRecently it publishes articles from Thoughtworks engineers about their experience with coding agents, spec-driven development and context engineering, written critically rather than as promotion.",
+        "features": [
+          "Reference articles on patterns",
+          "Refactoring and microservices",
+          "Articles on coding with AI",
+          "A critical, balanced perspective"
+        ]
+      }
     }
   ]
 }
