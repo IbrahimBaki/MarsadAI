@@ -3,7 +3,9 @@
 كل جديد في عالم الـ AI، متفلتر يوم بيوم: Claude وskills وMCP وأدوات المطورين والموديلات وLaravel والمونتاج والتصميم.
 
 - **المحتوى**: كل يوم مهمة مجدولة بتدوّر وتكتب `content/YYYY-MM-DD.json` حسب [DIGEST_GUIDE.md](DIGEST_GUIDE.md)، وتعمل push، فيعمل Vercel deploy لوحده.
-- **الأساسيات**: `content/essentials.json` فيه أهم الأدوات والمصادر الموجودة فعلاً في كل قسم.
+- **الأساسيات**: `content/essentials/` فيه أهم الأدوات والمصادر الموجودة فعلاً في كل قسم، وكل عنصر ليه صفحة تفاصيل كاملة.
+- **الرادار**: `scripts/collect.mjs` بيشتغل كل يوم الصبح في GitHub Action (`.github/workflows/collect.yml`)، وبيجمع اللي اتضاف جديد في الـ awesome lists، والإصدارات الجديدة، والريبوز الصاعدة، ونجوم GitHub. الإعدادات في `config/watch.json`.
+- **الأقسام**: `config/sections.json` فيه كل قسم، ونطاقه، والكلمات المفتاحية، والمصادر اللي المهمة اليومية بتدوّر فيها.
 - **الحالة لكل مستخدم** (شوفته / المفضلة): Upstash Redis من Vercel Marketplace.
 - **الدخول**: يوزرات بسيطة من متغير البيئة `AUTH_USERS`.
 - **PWA**: تقدر تثبّته على الموبايل، وبيفتح آخر محتوى حمّلته حتى من غير نت.
@@ -41,13 +43,14 @@ npm install
 npm run dev        # http://localhost:3000 ، اليوزر demo والباسورد demo
 npm run validate   # يتأكد إن ملفات content سليمة
 npm run known      # كل اللينكات اللي اتنشرت قبل كده
+npm run collect    # يجمع signals الرادار (الإضافات والإصدارات) — النجوم محتاجة GITHUB_TOKEN
 ```
 
 من غير Redis، الـ Seen والمفضلة بيتخزنوا في الذاكرة وبيضيعوا لما السيرفر يقف.
 
 ## الأقسام
 
-معرّفة في `src/lib/sections.ts`. لو ضفت قسم، ضيفه كمان في جدول الأقسام في `DIGEST_GUIDE.md`.
+معرّفة في `config/sections.json`. لو ضفت قسم، ضيف الـ id بتاعه كمان في `SectionId` جوه `src/lib/sections.ts`.
 
 ## اسم التطبيق
 

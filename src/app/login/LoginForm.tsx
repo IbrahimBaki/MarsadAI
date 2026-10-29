@@ -32,10 +32,10 @@ export function LoginForm() {
   }
 
   const field =
-    "h-12 w-full rounded-xl border border-line bg-surface px-4 text-[16px] outline-none focus:border-[var(--focus)]";
+    "h-12 w-full rounded-2xl bg-ground px-4 text-[16px] outline-none shadow-[inset_0_0_0_1px_var(--line)] focus:shadow-[inset_0_0_0_2px_var(--accent)]";
 
   return (
-    <form onSubmit={submit} className="flex flex-col gap-4 rounded-2xl border border-line bg-surface p-6">
+    <form onSubmit={submit} className="card flex flex-col gap-4 !rounded-[24px] p-6">
       <label className="flex flex-col gap-1.5 text-[14.5px] font-medium">
         اسم المستخدم
         <input name="username" autoComplete="username" required dir="ltr" className={field} />
@@ -52,14 +52,14 @@ export function LoginForm() {
         />
       </label>
       {error && (
-        <p role="alert" className="rounded-lg bg-star-soft px-3 py-2 text-[14px]">
+        <p role="alert" className="rounded-xl bg-paid px-3 py-2 text-[14px] text-paid-ink">
           {error}
         </p>
       )}
       <button
         type="submit"
         disabled={busy}
-        className="mt-1 h-12 rounded-xl bg-ink text-[16px] font-medium text-sky disabled:opacity-60"
+        className="mt-1 h-12 rounded-2xl bg-ink text-[16px] font-semibold text-ground disabled:opacity-60"
       >
         {busy ? "بيدخل…" : "ادخل"}
       </button>

@@ -1,69 +1,121 @@
 @import "tailwindcss";
-@import "@fontsource-variable/readex-pro/wght.css";
-
-@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+@import "@fontsource/ibm-plex-sans-arabic/400.css";
+@import "@fontsource/ibm-plex-sans-arabic/500.css";
+@import "@fontsource/ibm-plex-sans-arabic/600.css";
+@import "@fontsource/ibm-plex-sans-arabic/700.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
 
 :root {
-  --sky: #edf0f5;
+  --ground: #eef1f7;
   --surface: #ffffff;
-  --sunken: #e3e8f0;
-  --ink: #18233a;
-  --muted: #5b6680;
-  --faint: #8a94a8;
-  --line: #d6dce6;
-  --star: #e09a12;
-  --star-soft: #fbefd3;
-  --focus: #2f6fe0;
-  --sec-l: 46%;
-  --sec-s: 62%;
+  --sunken: #e6eaf2;
+  --ink: #10162a;
+  --ink-2: #3d465c;
+  --muted: #586178;
+  --faint: #7c869c;
+  --line: #e2e6ef;
+  --accent: #2f5bff;
+  --accent-soft: #e8edff;
+  --accent-ink: #1e3bb8;
+  --star: #f0a500;
+  --star-soft: #fff3d6;
+  --star-ink: #7a5200;
+  --code-bg: #10162a;
+  --code-ink: #e6eaf4;
+  --code-muted: #7c8aa8;
+  --code-btn: #222b45;
+  --ok-bg: #e3f6ea;
+  --ok-ink: #14713a;
+  --paid-bg: #fdecec;
+  --paid-ink: #a1262b;
+  --scrim: rgb(16 22 42 / 0.48);
+  --shadow: 0 1px 2px rgb(16 22 42 / 0.06);
+  --sec-mix: var(--ink) 12%;
   color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --sky: #0e1626;
-    --surface: #152036;
-    --sunken: #1b2840;
-    --ink: #e4e9f2;
-    --muted: #9aa5bd;
-    --faint: #6c7893;
-    --line: #26344f;
+    --ground: #0b1020;
+    --surface: #141b2e;
+    --sunken: #1c2440;
+    --ink: #e6eaf4;
+    --ink-2: #c3cbdd;
+    --muted: #9aa6c2;
+    --faint: #75819e;
+    --line: #232d47;
+    --accent: #7c9bff;
+    --accent-soft: #1d2a55;
+    --accent-ink: #b9c8ff;
     --star: #f5b841;
-    --star-soft: #3a3020;
-    --focus: #7aa7ff;
-    --sec-l: 70%;
-    --sec-s: 70%;
+    --star-soft: #3a2f14;
+    --star-ink: #f5d48a;
+    --code-bg: #070b16;
+    --code-btn: #1c2440;
+    --ok-bg: #12301f;
+    --ok-ink: #7ddc9e;
+    --paid-bg: #3a1618;
+    --paid-ink: #ff9a9e;
+    --scrim: rgb(0 0 0 / 0.6);
+    --shadow: none;
+    --sec-mix: white 38%;
     color-scheme: dark;
   }
 }
 
 :root[data-theme="dark"] {
-  --sky: #0e1626;
-  --surface: #152036;
-  --sunken: #1b2840;
-  --ink: #e4e9f2;
-  --muted: #9aa5bd;
-  --faint: #6c7893;
-  --line: #26344f;
+  --ground: #0b1020;
+  --surface: #141b2e;
+  --sunken: #1c2440;
+  --ink: #e6eaf4;
+  --ink-2: #c3cbdd;
+  --muted: #9aa6c2;
+  --faint: #75819e;
+  --line: #232d47;
+  --accent: #7c9bff;
+  --accent-soft: #1d2a55;
+  --accent-ink: #b9c8ff;
   --star: #f5b841;
-  --star-soft: #3a3020;
-  --focus: #7aa7ff;
-  --sec-l: 70%;
-  --sec-s: 70%;
+  --star-soft: #3a2f14;
+  --star-ink: #f5d48a;
+  --code-bg: #070b16;
+  --code-btn: #1c2440;
+  --ok-bg: #12301f;
+  --ok-ink: #7ddc9e;
+  --paid-bg: #3a1618;
+  --paid-ink: #ff9a9e;
+  --scrim: rgb(0 0 0 / 0.6);
+  --shadow: none;
+  --sec-mix: white 38%;
   color-scheme: dark;
 }
 
 @theme inline {
-  --color-sky: var(--sky);
+  --color-ground: var(--ground);
   --color-surface: var(--surface);
   --color-sunken: var(--sunken);
   --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
   --color-muted: var(--muted);
   --color-faint: var(--faint);
   --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-ink: var(--accent-ink);
   --color-star: var(--star);
   --color-star-soft: var(--star-soft);
-  --font-sans: "Readex Pro Variable", system-ui, sans-serif;
+  --color-star-ink: var(--star-ink);
+  --color-code: var(--code-bg);
+  --color-code-ink: var(--code-ink);
+  --color-code-muted: var(--code-muted);
+  --color-code-btn: var(--code-btn);
+  --color-ok: var(--ok-bg);
+  --color-ok-ink: var(--ok-ink);
+  --color-paid: var(--paid-bg);
+  --color-paid-ink: var(--paid-ink);
+  --font-sans: "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 }
 
 html {
@@ -71,39 +123,44 @@ html {
 }
 
 body {
-  background: var(--sky);
+  background: var(--ground);
   color: var(--ink);
   font-family: var(--font-sans);
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.65;
   text-rendering: optimizeLegibility;
 }
 
 :focus-visible {
-  outline: 2px solid var(--focus);
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
-/* Section colour: set --h on an element, then use these. */
+/* Section colour: set --c on an element. */
 .sec-fg {
-  color: hsl(var(--h) var(--sec-s) var(--sec-l));
+  color: color-mix(in oklab, var(--c), var(--sec-mix));
 }
 .sec-bg {
-  background: hsl(var(--h) var(--sec-s) var(--sec-l));
+  background: var(--c);
 }
-.sec-tint {
-  background: hsl(var(--h) var(--sec-s) var(--sec-l) / 0.12);
+.sec-soft {
+  background: color-mix(in oklab, var(--c) 13%, var(--surface));
+}
+.sec-solid {
+  background: color-mix(in oklab, var(--c) 92%, black);
+  color: #fff;
 }
 
-/* The "lit star" for unseen items: the one place with a glow. */
-.star-lit {
-  background: var(--star);
-  box-shadow: 0 0 0 3px var(--star-soft), 0 0 12px var(--star);
+.card {
+  background: var(--surface);
+  border-radius: 20px;
+  box-shadow: 0 0 0 1px var(--line), var(--shadow);
 }
-.star-dim {
-  background: transparent;
-  box-shadow: inset 0 0 0 1.5px var(--faint);
+
+.unseen-dot {
+  background: var(--star);
+  box-shadow: 0 0 0 3px var(--star-soft);
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -113,14 +170,36 @@ body {
   scrollbar-width: none;
 }
 
+.ltr {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* Drawer */
+.drawer-panel {
+  transform: translateX(100%);
+}
+.drawer-open .drawer-panel {
+  transform: translateX(0);
+}
+.drawer-scrim {
+  opacity: 0;
+  pointer-events: none;
+}
+.drawer-open .drawer-scrim {
+  opacity: 1;
+  pointer-events: auto;
+}
 @media (prefers-reduced-motion: no-preference) {
-  .star-lit,
-  .star-dim {
-    transition: background 0.35s ease, box-shadow 0.35s ease;
+  .drawer-panel {
+    transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .drawer-scrim {
+    transition: opacity 0.2s ease;
   }
 }
 
-/* Latin fragments (repo names, product names) inside Arabic text */
-.ltr-chunk {
-  unicode-bidi: isolate;
+/* Long text in the details page */
+.prose-ar p + p {
+  margin-top: 0.85em;
 }

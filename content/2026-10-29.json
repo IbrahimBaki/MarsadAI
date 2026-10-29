@@ -1,30 +1,89 @@
 {
   "date": "2026-10-29",
-  "headline": "أول ملخص في المرصد، فهو بيلم أهم اللي حصل في آخر ٣ أسابيع: Claude Duet نزل كـ preview، وGemini 4 Argon بقى متاح للكل بسعر مخفض لحد آخر نوفمبر، وKling 4.0 بيعمل فيديو ٣٠ ثانية 4K في مرة واحدة.",
+  "headline": "Claude Duet نزل كـ preview، وLaravel AI SDK وصل للإصدار المستقر 1.0، وGemini 4 Argon بقى متاح للكل بنص السعر لحد آخر نوفمبر، وKling 4.0 بقى بيعمل فيديو ٣٠ ثانية 4K في مرة واحدة.",
   "items": [
     {
       "id": "claude-duet-research-preview",
       "section": "claude",
-      "kind": "release",
+      "kind": "tool",
       "title": "Claude Duet: agent شغال على طول حتى وإنت قافل اللابتوب",
-      "summary": "Anthropic فتحت research preview لتطبيق Claude Duet يوم ٢١ أكتوبر. Claude بيشتغل على VM خاصة بيه في الكلاود، يراجع الإيميل والكالندر كل صبح ويطلع لك الأولويات، ويقدر يكتب ويبعت إيميلات ويوصل لأكتر من ٦٠٠٠ connector. مبني على Opus 5.5، وبيستأذنك قبل أي دفع أو توقيع أو مسح.",
-      "why": "متاح دلوقتي لحسابات Pro وMax في أمريكا بس وبالـ waitlist، فالمهم تعرف الاتجاه: الـ agents بقت بتشتغل لوحدها في الخلفية، وده نفس فكرة المرصد نفسه.",
+      "summary": "Anthropic فتحت research preview لتطبيق Claude Duet يوم ٢١ أكتوبر. ده agent مبني على Opus 5.5، وشغال على VM خاصة بيه في الكلاود، فبيكمّل شغله حتى وجهازك مقفول.",
+      "why": "متاح دلوقتي لحسابات Pro وMax في أمريكا بس وبالـ waitlist، فالمهم تعرف الاتجاه: الـ agents بقت بتشتغل لوحدها في الخلفية.",
+      "about": "Claude Duet تطبيق مستقل، فيه Claude بيشتغل كـ agent استباقي. يعني مش بيستنى منك سؤال: كل صبح بيراجع الإيميل والكالندر ويطلّع لك الأولويات، وبيقدر يكتب ويبعت إيميلات، ويشتري حاجات عن طريق Link وShop Pay، ويوصل لأكتر من ٦٠٠٠ connector.\n\nبيشتغل على VM خاصة بيه في الكلاود، فبيكمّل حتى لو اللابتوب أو الموبايل مقفولين. وقبل أي حاجة مهمة، زي الدفع أو توقيع ورق أو المسح، بيوقف ويستأذنك. وفيه حاجات ممنوعة عليه حتى لو وافقت، زي تحويل الفلوس أو دخول حساب حد تاني.\n\nمتاح لحسابات Pro وMax في أمريكا بس، على iOS وAndroid وclaude.ai، والدخول بالدعوة على دفعات من الـ waitlist. وبيستخدم نفس حدود الاستخدام بتاعة المحادثات العادية.",
+      "features": [
+        "بيراجع الإيميل والكالندر كل صبح ويطلّع الأولويات",
+        "بيكتب ويبعت إيميلات ويشتري بموافقتك",
+        "بيوصل لأكتر من ٦٠٠٠ connector",
+        "بيستأذن قبل أي دفع أو توقيع أو مسح"
+      ],
+      "requirements": [
+        "اشتراك Pro أو Max",
+        "حساب في أمريكا (حالياً)",
+        "دعوة من الـ waitlist"
+      ],
+      "pricing": {
+        "model": "paid",
+        "note": "ضمن اشتراك Pro أو Max"
+      },
       "url": "https://claude.com/product/claude-duet",
       "source": "claude.com",
       "importance": 3,
-      "tags": ["Claude", "agents", "Opus 5.5"]
+      "tags": [
+        "Claude",
+        "agents",
+        "Opus 5.5"
+      ],
+      "links": [
+        {
+          "label": "صفحة Claude Duet والـ waitlist",
+          "url": "https://claude.com/product/claude-duet"
+        },
+        {
+          "label": "تغطية VKTR للإطلاق",
+          "url": "https://www.vktr.com/ai-platforms/claude-duet-anthropic-previews-an-ai-agent-that-messages-you-first/"
+        }
+      ]
     },
     {
       "id": "claude-code-october-2026-releases",
       "section": "claude",
       "kind": "release",
+      "repo": "anthropics/claude-code",
       "title": "Claude Code لحد v2.1.312: sandbox أشد وتعديل أأمن للملفات الكبيرة",
-      "summary": "نزل أكتر من ٢٠ إصدار في أكتوبر. أهمهم: shell startup files بقت بتشتغل جوه الـ sandbox، وأداة Monitor اتضافت لـ Bedrock وVertex وFoundry، والـ MCP بيعمل reconnect صح بعد ما الجهاز ينام، وتعديل الملفات الكبيرة بقى أأمن، وفيه إصلاحات لتهنيج البداية والـ compaction.",
-      "why": "إنت شغال على Claude Code CLI كل يوم، فاعمل update. ولو عندك hooks أو حاجات في .bashrc بتفترض إنها برا الـ sandbox، راجعها.",
+      "summary": "نزل أكتر من ٢٠ إصدار في أكتوبر. الأهم فيهم: shell startup files بقت بتشتغل جوه الـ sandbox، وأداة Monitor اتضافت لـ Bedrock وVertex وFoundry، والـ MCP بقى بيعمل reconnect صح بعد ما الجهاز ينام.",
+      "why": "إنت شغال على Claude Code CLI كل يوم، فاعمل update. ولو عندك hooks أو حاجات في .bashrc بتفترض إنها برّه الـ sandbox، راجعها.",
+      "about": "أكتوبر كان شهر مليان إصدارات لـ Claude Code، وأغلبها بيركز على الأمان والثبات.\n\nمن ٢٠ لـ ٢٧ أكتوبر: v2.1.305 حسّن التوافق بين الأدوات على أكتر من مزود زي Vertex وBedrock. v2.1.306 صلّح رسالة \"Not logged in\" الغلط مع claude -p في جلسات الكلاود. v2.1.307 صلّح الـ reconnect بتاع الـ MCP بعد ما الجهاز ينام أو الـ keychain يتقفل. v2.1.309 شدّد الـ sandbox والصلاحيات، وبقت shell startup files بتشتغل جوه الـ sandbox. v2.1.310 ضاف أداة Monitor لـ Bedrock وVertex وFoundry. v2.1.311 صلّح تهنيج البداية والجلسات اللي كانت بتقف فجأة. وv2.1.312 ضاف custom OIDC claims، وخلّى تعديل الملفات الكبيرة أأمن.",
+      "features": [
+        "shell startup files بتشتغل جوه الـ sandbox",
+        "أداة Monitor على Bedrock وVertex وFoundry",
+        "reconnect أحسن للـ MCP بعد نوم الجهاز",
+        "تعديل أأمن للملفات الكبيرة"
+      ],
+      "install": [
+        {
+          "label": "حدّث Claude Code",
+          "cmd": "claude update"
+        }
+      ],
       "url": "https://github.com/anthropics/claude-code/releases",
       "source": "github.com",
       "importance": 2,
-      "tags": ["Claude Code", "CLI", "sandbox", "MCP"]
+      "tags": [
+        "Claude Code",
+        "CLI",
+        "sandbox",
+        "MCP"
+      ],
+      "links": [
+        {
+          "label": "الإصدارات على GitHub",
+          "url": "https://github.com/anthropics/claude-code/releases"
+        },
+        {
+          "label": "ملخص إصدارات أكتوبر",
+          "url": "https://www.havoptic.com/releases/claude-code/2026/10"
+        }
+      ]
     },
     {
       "id": "claude-sonnet-haiku-5-5",
@@ -33,130 +92,323 @@
       "title": "Claude Sonnet 5.5 وHaiku 5.5 نزلوا في أكتوبر",
       "summary": "Sonnet 5.5 نزل في ١ أكتوبر، وحسب Anthropic أسرع من Sonnet 5 بأكتر من ٣٠٪، وسعره ٢ دولار للمدخلات و١٠ للمخرجات لكل مليون token. وبعده بأسبوع نزل Haiku 5.5 بسعر ١٠ سنت لكل مليون token مدخلات.",
       "why": "لو بتستخدم الـ API في مشاريعك، Haiku 5.5 بالسعر ده مناسب جداً للمهام الكتير الصغيرة زي التصنيف والتلخيص.",
+      "about": "Anthropic نزّلت موديلين في نفس الشهر.\n\nSonnet 5.5، يوم ١ أكتوبر: أسرع من Sonnet 5 بأكتر من ٣٠٪ حسب الشركة، وسعره ٢ دولار لكل مليون token مدخلات و١٠ دولار للمخرجات، وجاب 70.6 في Terminal-Bench 4.0، والأرقام دي من Anthropic نفسها.\n\nHaiku 5.5، يوم ٨ أكتوبر: الموديل الصغير والسريع، وسعره ١٠ سنت بس لكل مليون token مدخلات. مناسب للمهام الكتير المتكررة زي التصنيف وتلخيص السجلات وتوجيه الطلبات.",
+      "features": [
+        "Sonnet 5.5 أسرع بأكتر من ٣٠٪ من Sonnet 5",
+        "Sonnet 5.5 بـ ٢ / ١٠ دولار لكل مليون token",
+        "Haiku 5.5 بـ ١٠ سنت لكل مليون token مدخلات"
+      ],
+      "pricing": {
+        "model": "paid",
+        "note": "بالاستخدام عن طريق الـ API"
+      },
       "url": "https://thursdai.news/releases/2026-10",
       "source": "thursdai.news",
       "importance": 3,
-      "tags": ["Sonnet 5.5", "Haiku 5.5", "API", "أسعار"]
+      "tags": [
+        "Sonnet 5.5",
+        "Haiku 5.5",
+        "API",
+        "أسعار"
+      ]
     },
     {
       "id": "claude-platform-opentelemetry-beta",
       "section": "claude",
       "kind": "release",
       "title": "تتبّع الـ agents بـ OpenTelemetry على Claude Platform",
-      "summary": "public beta من ١٤ أكتوبر: تقدر تبعت traces لطلبات الـ Messages API وجلسات Managed Agents والـ SDKs لأي أداة observability بتستقبل OTLP. الوضع الافتراضي metadata بس، وفيه وضع كامل يبعت الـ prompts والردود.",
-      "why": "لو هتبني features بالـ AI جوه Company-ERP، ده بيخليك تشوف كل خطوة عملها الـ agent وكام أخدت، من غير ما تكتب logging بإيدك.",
+      "summary": "من ١٤ أكتوبر، وكـ public beta: تقدر تبعت traces لطلبات الـ Messages API وجلسات Managed Agents والـ SDKs لأي أداة observability بتستقبل OTLP.",
+      "why": "لو هتبني features بالـ AI جوه Company-ERP، ده بيخليك تشوف كل خطوة عملها الـ agent وأخدت قد إيه، من غير ما تكتب logging بإيدك.",
+      "about": "Claude Platform بقت بتدعم OpenTelemetry tracing كـ public beta. تقدر تبعت traces لطلبات Messages API وجلسات Claude Managed Agents والـ SDKs لأي منصة observability بتقبل OTLP endpoint، زي Grafana أو Honeycomb أو Langfuse.\n\nالوضع الافتراضي إنه يبعت metadata بس. وفيه وضع كامل بيبعت الـ prompts والردود كمان، وساعتها لازم تاخد بالك من صلاحيات الوصول ومدة الاحتفاظ في المكان اللي هتبعت له.\n\nالإعداد: للـ API، الأدمن بيضيف destination من Claude Console. وللـ SDK، بتسجّل tracer provider في الـ client بتاعك. والـ spans مش مضمون توصل كلها، فلحساب الاستخدام Anthropic بتنصح بالـ Usage API.",
+      "features": [
+        "traces لـ Messages API وManaged Agents والـ SDKs",
+        "بتشتغل مع أي منصة OTLP",
+        "metadata بس افتراضياً، وفيه وضع كامل اختياري"
+      ],
       "url": "https://platform.claude.com/docs/en/manage-claude/opentelemetry",
       "source": "platform.claude.com",
       "importance": 2,
-      "tags": ["API", "observability", "OpenTelemetry"]
+      "tags": [
+        "API",
+        "observability",
+        "OpenTelemetry"
+      ],
+      "links": [
+        {
+          "label": "الدوكيومنتيشن",
+          "url": "https://platform.claude.com/docs/en/manage-claude/opentelemetry"
+        }
+      ]
     },
     {
       "id": "obra-superpowers-skills",
       "section": "skills",
       "kind": "skill",
-      "title": "obra/superpowers: framework كامل من الـ skills للـ coding agents",
-      "summary": "مجموعة skills جاهزة بتعلّم الـ agent يشتغل بطريقة منظمة: تخطيط قبل الكود، وTDD، وdebugging منهجي، ومراجعة الشغل قبل ما يقول خلصت. موجود ضمن الريبوز الـ trending في مجال الـ agents النهارده.",
-      "why": "بيتركب على Claude Code مباشرة، ويستاهل تقارنه بالـ workflow اللي بتعمله في Squad-Kit، ممكن تاخد منه أفكار.",
+      "repo": "obra/superpowers",
+      "title": "Superpowers وصل v7: framework كامل من الـ skills للـ coding agents",
+      "summary": "مجموعة skills جاهزة بتعلّم الـ agent يشتغل بطريقة منظمة: يخطط قبل ما يكتب كود، ويشتغل بالـ TDD، ويعمل debugging منهجي، ويراجع شغله قبل ما يقول خلصت.",
+      "why": "بيتركب على Claude Code مباشرة. ويستاهل تقارنه بالـ workflow اللي بتعمله في Squad-Kit، ممكن تاخد منه أفكار.",
+      "about": "Superpowers مكتبة skills مفتوحة المصدر عملها Jesse Vincent، وبتحوّل الـ coding agent من حاجة بتكتب كود على طول لمهندس بيمشي على خطوات واضحة.\n\nالـ skills بتشتغل لوحدها حسب الموقف. لو بتبدأ feature جديدة، بيعمل brainstorm وبعدين يكتب خطة. ولو بتصلّح bug، بيمشي على debugging منهجي. وقبل ما يقول خلصت، بيراجع ويتأكد إن التيستات شغالة.\n\nبيتركب كـ plugin لـ Claude Code من الـ marketplace بتاعه، وبيشتغل كمان مع agents تانية بتدعم skills.",
+      "features": [
+        "brainstorm وخطة قبل الكود",
+        "TDD: التيست الأول وبعدين الكود",
+        "debugging منهجي خطوة بخطوة",
+        "مراجعة الشغل قبل ما يقول خلصت"
+      ],
+      "install": [
+        {
+          "label": "من الـ marketplace الرسمي في Claude Code",
+          "cmd": "/plugin install superpowers@claude-plugins-official"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/obra/superpowers",
       "source": "github.com",
       "importance": 2,
-      "tags": ["skills", "Claude Code", "workflow"]
+      "tags": [
+        "skills",
+        "Claude Code",
+        "workflow",
+        "TDD"
+      ],
+      "alternatives": [
+        "ess-superclaude"
+      ]
     },
     {
       "id": "thedotmack-claude-mem",
       "section": "skills",
-      "kind": "repo",
+      "kind": "plugin",
+      "repo": "thedotmack/claude-mem",
       "title": "claude-mem: ذاكرة بين جلسات Claude Code",
-      "summary": "plugin بيسجل اللي اتعمل في كل جلسة، ويضغطه، ويرجّع الملخص المناسب في الجلسة الجاية، فالـ agent يفتكر قرارات وسياق المشروع من غير ما تشرحه من الأول. عليه أكتر من ١٠٠ ألف نجمة.",
+      "summary": "plugin بيسجل اللي اتعمل في كل جلسة، ويضغطه، ويرجّع الملخص المناسب في الجلسة الجاية. كده الـ agent بيفتكر قرارات المشروع وسياقه من غير ما تشرحهم من الأول.",
       "why": "لو بتلاقي نفسك بتعيد شرح بنية الـ modules في كل جلسة جديدة، ده بيحل المشكلة دي بالظبط.",
+      "about": "مشكلة Claude Code إن كل جلسة جديدة بتبدأ من غير ذاكرة، والحاجة الوحيدة اللي بتتنقل من جلسة للتانية هي CLAUDE.md.\n\nclaude-mem بيحل ده بـ hooks بتسجّل اللي حصل في الجلسة، يعني الملفات اللي اتعدّلت والقرارات والمشاكل اللي اتحلت. بعدين بيضغط ده لملخصات ويخزنه، ولما تبدأ جلسة جديدة بيحقن السياق المناسب بس، من غير ما يملا الـ context.\n\nمن أشهر الـ plugins حوالين Claude Code، وعليه أكتر من ١٠٠ ألف نجمة.",
+      "features": [
+        "تسجيل أوتوماتيك لكل جلسة بالـ hooks",
+        "ضغط الجلسات لملخصات",
+        "حقن السياق المناسب في الجلسة الجاية",
+        "بحث في الجلسات اللي فاتت"
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/thedotmack/claude-mem",
       "source": "github.com",
       "importance": 2,
-      "tags": ["Claude Code", "memory", "plugin"]
+      "tags": [
+        "Claude Code",
+        "memory",
+        "plugin"
+      ]
     },
     {
       "id": "graphify-codebase-knowledge-graph",
-      "section": "repos",
+      "section": "architecture",
       "kind": "repo",
+      "repo": "Graphify-Labs/graphify",
       "title": "Graphify: حوّل الكود والدوكيومنتيشن لـ knowledge graph تسأله",
-      "summary": "أداة بتحلل الكود محلياً بالـ AST وبتبني graph للعلاقات بين الملفات والكلاسات والدوال والدوكس، وبعدين تقدر تسأله أسئلة، أو تديه للـ agent كسياق بدل ما يقرا الملفات واحد واحد.",
+      "summary": "أداة بتحلل الكود محلياً بالـ AST، وبتبني graph للعلاقات بين الملفات والكلاسات والدوال والدوكس. بعدين تقدر تسأله أسئلة، أو تديه للـ agent كسياق بدل ما يقرا الملفات واحد واحد.",
       "why": "مفيدة لمشروع كبير ومقسّم modules زي Company-ERP، خصوصاً لما تحتاج تعرف أثر أي تغيير قبل ما تعمله.",
+      "about": "في المشاريع الكبيرة، الـ agent بيضيّع tokens كتير وهو بيقرا الملفات عشان يفهم العلاقات بينها. Graphify بيعمل تحليل ثابت للكود بالـ AST على جهازك، وبيبني knowledge graph فيه الملفات والكلاسات والدوال ومين بيستدعي مين، ومعاهم الدوكيومنتيشن.\n\nبعدها تقدر تسأل الـ graph، زي \"إيه اللي بيعتمد على الكلاس ده؟\" أو \"التغيير ده هيأثر على إيه؟\"، أو توصّله للـ agent فيجيب السياق اللي محتاجه بالظبط.",
+      "features": [
+        "تحليل محلي بالـ AST من غير ما الكود يطلع برّه",
+        "graph للعلاقات بين الملفات والكلاسات والدوال",
+        "بيربط الكود بالدوكيومنتيشن",
+        "تقدر تسأله أو تديه للـ agent كسياق"
+      ],
+      "pricing": {
+        "model": "oss"
+      },
       "url": "https://github.com/Graphify-Labs/graphify",
       "source": "github.com",
       "importance": 2,
-      "tags": ["code graph", "context", "open source"]
+      "tags": [
+        "code graph",
+        "context",
+        "architecture"
+      ]
     },
     {
       "id": "1password-for-agents",
-      "section": "repos",
+      "section": "security",
       "kind": "tool",
       "title": "1Password for Agents: الـ agent يسجّل دخول من غير ما يشوف الباسورد",
-      "summary": "اتعلن يوم ٢٢ أكتوبر. الـ agents تقدر تدخل المواقع والخدمات باستخدام الخزنة بتاعتك، والباسورد نفسه عمره ما يوصل للموديل، وفيه موافقة منك على الصلاحيات. لسه بالـ waitlist.",
-      "why": "أول ما تفكر تخلي agent يتعامل مع لوحات تحكم أو سيرفرات بتاعتك، دي الطريقة الآمنة بدل ما تحط الـ credentials في الـ prompt أو في ملف .env.",
+      "summary": "اتعلن يوم ٢٢ أكتوبر. الـ agents تقدر تدخل المواقع والخدمات باستخدام الخزنة بتاعتك، والباسورد نفسه عمره ما بيوصل للموديل، وإنت بتوافق على الصلاحيات.",
+      "why": "أول ما تفكر تخلي agent يتعامل مع لوحات تحكم أو سيرفرات بتاعتك، دي الطريقة الآمنة، بدل ما تحط الـ credentials في الـ prompt أو في ملف .env.",
+      "about": "واحدة من أكبر مشاكل الأمان مع الـ agents إنهم بيحتاجوا يسجّلوا دخول، وأسهل حل، وهو الأخطر، إنك تديهم الباسورد مباشرة.\n\n1Password for Agents بيخلي الـ agent يطلب الدخول، و1Password يملا البيانات من الخزنة بنفسه، فالموديل عمره ما بيشوف الباسورد ولا بيتسجّل في الـ logs. وإنت بتوافق على الصلاحيات وبتشوف الـ agent دخل فين.\n\nلسه متاح بالـ waitlist.",
+      "features": [
+        "الباسورد ميوصلش للموديل خالص",
+        "موافقة على الصلاحيات من 1Password",
+        "سجل بكل مرة الـ agent دخل فيها"
+      ],
+      "pricing": {
+        "model": "paid",
+        "note": "محتاج اشتراك 1Password، ولسه بالـ waitlist"
+      },
       "url": "https://macrumors.com/2026/10/22/1password-for-agents/",
       "source": "macrumors.com",
       "importance": 2,
-      "tags": ["أمان", "agents", "credentials"]
+      "tags": [
+        "أمان",
+        "agents",
+        "credentials"
+      ]
     },
     {
       "id": "gemini-4-argon-ga-pricing",
-      "section": "models",
+      "section": "llm",
       "kind": "model",
       "title": "Gemini 4 Argon متاح للكل، والسعر بيتضاعف في ١ ديسمبر",
-      "summary": "Google خلّت Gemini 4 Argon متاح للكل في ١٥ أكتوبر بسعر تعريفي ٢ دولار للمدخلات و١٠ للمخرجات لكل مليون token لحد ٣٠ نوفمبر، وبعدها يبقى ٤ و٢٠. كمان بقى موجود لمشتركي Pro جوه Antigravity.",
+      "summary": "Google خلّت Gemini 4 Argon متاح للكل في ١٥ أكتوبر، بسعر تعريفي ٢ دولار للمدخلات و١٠ للمخرجات لكل مليون token لحد ٣٠ نوفمبر، وبعدها يبقى ٤ و٢٠.",
       "why": "لو حابب تقارن بينه وبين Claude في مهمة عندك، جرّبه قبل آخر نوفمبر وإنت بتدفع نص السعر.",
+      "about": "Gemini 4 Argon هو الموديل الكبير من الجيل الجديد عند Google. بقى متاح للكل يوم ١٥ أكتوبر على الـ API، وكمان لمشتركي Pro جوه Antigravity، وهي بيئة البرمجة من Google.\n\nالسعر التعريفي ٢ دولار لكل مليون token مدخلات و١٠ للمخرجات لحد ٣٠ نوفمبر، ومن ١ ديسمبر بيبقى ٤ و٢٠، يعني الضعف.",
+      "features": [
+        "متاح على الـ API وجوه Antigravity",
+        "سعر تعريفي ٢ / ١٠ دولار لحد ٣٠ نوفمبر",
+        "من ١ ديسمبر: ٤ / ٢٠ دولار"
+      ],
+      "pricing": {
+        "model": "paid",
+        "note": "بالاستخدام عن طريق الـ API"
+      },
       "url": "https://www.eesel.ai/blog/gemini-4-argon-pricing",
       "source": "eesel.ai",
       "importance": 3,
-      "tags": ["Google", "Gemini 4", "أسعار"]
+      "tags": [
+        "Google",
+        "Gemini 4",
+        "أسعار"
+      ]
     },
     {
       "id": "openai-12-hour-prompt-caching",
-      "section": "models",
+      "section": "llm",
       "kind": "release",
       "title": "OpenAI بقت بتعمل cache للـ prompt لمدة ١٢ ساعة",
-      "summary": "الـ API بقى يقدر يحتفظ بالـ prompt cache لحد ١٢ ساعة، فالـ agents اللي بترجع بعد ساعات تفضل تدفع سعر المدخلات المخزنة الأرخص. الكتابة في الكاش المطوّل أغلى من العادي، فالمكسب بيبان في الـ agents اللي شغالة طول اليوم بس.",
+      "summary": "الـ API بقى يقدر يحتفظ بالـ prompt cache لحد ١٢ ساعة، فالـ agents اللي بترجع بعد ساعات بتفضل تدفع سعر المدخلات المخزنة الأرخص. بس الكتابة في الكاش الطويل ده أغلى من العادي.",
       "why": "معلومة مهمة لو هتحسب تكلفة أي feature فيها agent شغال طول اليوم، أو هتقارن بين المزودين.",
+      "about": "الـ prompt caching بيخلي الجزء الثابت من الـ prompt، زي التعليمات وتعريف الأدوات والسياق، يتحاسب بسعر أرخص بكتير لما يتكرر. المشكلة إن الكاش العادي بيتمسح بعد دقايق.\n\nOpenAI ضافت خيار إن الكاش يفضل لحد ١٢ ساعة، ومعمول للـ agents اللي شغالة طول اليوم وبترجع بعد ساعات. الكتابة في الكاش الطويل ده أغلى، فالمكسب بيبان بس لو الـ prompt هيتعاد استخدامه كذا مرة على مدار اليوم.",
+      "features": [
+        "كاش لحد ١٢ ساعة",
+        "معمول للـ agents اللي شغالة طول اليوم",
+        "الكتابة في الكاش أغلى من العادي"
+      ],
       "url": "https://runtimewire.com/article/openai-12-hour-prompt-caching-api",
       "source": "runtimewire.com",
       "importance": 1,
-      "tags": ["OpenAI", "API", "تكلفة"]
+      "tags": [
+        "OpenAI",
+        "API",
+        "تكلفة"
+      ]
     },
     {
       "id": "laravel-ai-sdk-1-0",
       "section": "laravel",
       "kind": "release",
+      "repo": "laravel/ai",
       "title": "Laravel AI SDK 1.0: موافقة على الـ tools، وclassification، وstreaming للواجهة",
-      "summary": "الإصدار الأول المستقر. فيه tools بتوقف الـ agent لحد ما حد يوافق أو يرفض أو يعدّل، وclassification سريع للقرارات البسيطة زي توجيه التذاكر، وstreaming متوافق مع Vercel AI وAG-UI، وmiddleware لكل خطوة، وtool search. فيه breaking changes، فاقرا الـ upgrade guide الأول.",
+      "summary": "أول إصدار مستقر. فيه tools بتوقف الـ agent لحد ما حد يوافق أو يرفض أو يعدّل، وclassification سريع للقرارات البسيطة، وstreaming متوافق مع Vercel AI وAG-UI. وفيه breaking changes.",
       "why": "ده الطريق الرسمي لإضافة AI جوه Company-ERP. وموضوع موافقة الـ tools بالذات مهم لأي عملية في الـ ERP بتعدّل في بيانات حقيقية.",
+      "about": "Laravel AI SDK وصل لأول إصدار مستقر، وده أهم اللي فيه:\n\nApprovable tools: أي tool بيطبّق الـ Approvable contract بيوقف الـ agent لحد ما حد يوافق عليه، أو يرفضه بسبب الموديل بيشوفه، أو يعدّل الـ arguments. ده مهم جداً لأي عملية بتكتب في الداتابيز.\n\nClassification: قدرة جديدة للقرارات السريعة، زي توجيه التذاكر أو فلترة التعليقات، بأسئلة من نوع Boolean أو Choice أو Score، ومعاها Str::decide للأسئلة اللي إجابتها أيوه أو لأ.\n\nFrontend streaming: بيقرا الطلبات ويبعت الردود بـ Vercel Chat protocol وAG-UI، فبيشتغل مع مكتبات زي CopilotKit.\n\nوكمان: middleware بيشتغل على كل خطوة من خطوات الـ agent، وtool search بيحمّل الأدوات القليلة الاستخدام لما تتطلب بس، وتشغيل كود في sandbox المزود.\n\nفيه breaking changes في تخزين المحادثات والـ middleware والـ token usage، فاقرا الـ upgrade guide الأول.",
+      "features": [
+        "tools بتستنى موافقة قبل ما تتنفذ",
+        "classification سريع ورخيص",
+        "streaming بـ Vercel AI وAG-UI",
+        "middleware لكل خطوة",
+        "tool search وcode execution"
+      ],
+      "install": [
+        {
+          "label": "ركّب أو حدّث الـ SDK",
+          "cmd": "composer require laravel/ai"
+        }
+      ],
+      "pricing": {
+        "model": "oss",
+        "note": "الباكدج مجاني، وبتدفع لمزود الموديل"
+      },
       "url": "https://laravel-news.com/laravel-ai-sdk-1-0",
       "source": "laravel-news.com",
       "importance": 3,
-      "tags": ["Laravel", "AI SDK", "agents", "PHP"]
+      "tags": [
+        "Laravel",
+        "AI SDK",
+        "agents",
+        "PHP"
+      ],
+      "links": [
+        {
+          "label": "خبر الإصدار على Laravel News",
+          "url": "https://laravel-news.com/laravel-ai-sdk-1-0"
+        },
+        {
+          "label": "الدوكيومنتيشن",
+          "url": "https://laravel.com/docs/ai-sdk"
+        }
+      ],
+      "alternatives": [
+        "ess-prism-php",
+        "ess-neuron-ai"
+      ]
     },
     {
       "id": "kling-4-0-launch",
       "section": "video",
       "kind": "model",
       "title": "Kling 4.0: فيديو لحد ٣٠ ثانية بدقة 4K في مرة واحدة",
-      "summary": "Kuaishou أطلقت Kling 4.0 يوم ١٥ أكتوبر. بيولّد لقطة من ٣ لـ ٣٠ ثانية في مرة واحدة، والمدة بتتحدد بالثانية، وبيقبل لحد ١٥ مرجع ما بين صور وفيديوهات وأصوات وعناصر، والصوت ستيريو.",
+      "summary": "Kuaishou أطلقت Kling 4.0 يوم ١٥ أكتوبر. بيولّد لقطة من ٣ لـ ٣٠ ثانية في مرة واحدة، وبيقبل لحد ١٥ مرجع ما بين صور وفيديوهات وأصوات وعناصر.",
       "why": "الـ ٣٠ ثانية في مرة واحدة بتقلل التقطيع والتركيب في المونتاج، والمراجع المتعددة بتسهّل إنك تحافظ على نفس الشخصية والستايل في كل اللقطات.",
+      "about": "Kling 4.0 بيولّد فيديو لحد ٣٠ ثانية بدقة 4K في مرة واحدة، والمدة بتختارها بالثانية من ٣ لـ ٣٠، ومعاه صوت ستيريو.\n\nأهم حاجة فيه المراجع: تقدر تدّيله لحد ١٥ مرجع ما بين صور وفيديوهات وأصوات وعناصر، فتحافظ على نفس الشخصية أو المنتج أو الستايل في كل اللقطات. ودي كانت أكبر مشكلة في الفيديو بالـ AI.",
+      "features": [
+        "لحد ٣٠ ثانية في مرة واحدة",
+        "دقة 4K وصوت ستيريو",
+        "لحد ١٥ مرجع لثبات الشخصيات"
+      ],
+      "pricing": {
+        "model": "freemium",
+        "note": "credits مجانية محدودة، والباقي باشتراك"
+      },
       "url": "https://ir.kuaishou.com/news-releases/news-release-details/kling-ai-officially-launches-next-generation-kling-40-raising",
       "source": "ir.kuaishou.com",
       "importance": 3,
-      "tags": ["توليد فيديو", "Kling", "4K"]
+      "tags": [
+        "توليد فيديو",
+        "Kling",
+        "4K"
+      ],
+      "alternatives": [
+        "ess-runway",
+        "ess-google-flow"
+      ]
     },
     {
       "id": "elevenlabs-instant-soundtracks",
       "section": "video",
       "kind": "tool",
       "title": "ElevenLabs Instant Soundtracks: موسيقى ومؤثرات لأي فيديو أوتوماتيك",
-      "summary": "ترفع الفيديو، فيعمل له موسيقى أصلية ويحط المؤثرات الصوتية على الحركة في مكانها. والـ API بيرجّع الموسيقى والمؤثرات كملفات منفصلة، فتقدر تعدّل في كل واحد لوحده.",
-      "why": "بيوفر أكبر جزء ممل في المونتاج، وهو التصميم الصوتي، وكونهم ملفات منفصلة بيخليك متحكم في الميكس النهائي.",
+      "summary": "بترفع الفيديو، فيعمل له موسيقى أصلية ويحط المؤثرات الصوتية على الحركة في مكانها. والـ API بيرجّع الموسيقى والمؤثرات كملفات منفصلة.",
+      "why": "بيوفر أكبر جزء ممل في المونتاج، وهو التصميم الصوتي. وكونهم ملفات منفصلة بيخليك متحكم في الميكس النهائي.",
+      "about": "Instant Soundtracks من ElevenLabs بيحلل الفيديو اللي بترفعه، ويألف له موسيقى أصلية مناسبة لإيقاعه، ويحط المؤثرات الصوتية على الحركة في مكانها، زي الخطوات أو الأبواب أو الانتقالات.\n\nلو بتستخدمه من الـ API، تقدر تاخد الموسيقى والمؤثرات كملفات منفصلة، فتعدّل في الميكس بنفسك في برنامج المونتاج.",
+      "features": [
+        "موسيقى أصلية على إيقاع الفيديو",
+        "مؤثرات صوتية في مكانها على الحركة",
+        "الموسيقى والمؤثرات كملفات منفصلة من الـ API"
+      ],
+      "pricing": {
+        "model": "freemium"
+      },
       "url": "https://elevenlabs.io/blog/introducing-instant-soundtracks",
       "source": "elevenlabs.io",
       "importance": 2,
-      "tags": ["صوت", "مونتاج", "ElevenLabs"]
+      "tags": [
+        "صوت",
+        "مونتاج",
+        "ElevenLabs"
+      ]
     },
     {
       "id": "mirelo-sfx-2-0",
@@ -165,10 +417,23 @@
       "title": "Mirelo SFX 2.0: يشيل الموسيقى ويسيب الكلام ويضيف foley",
       "summary": "بيشيل الموسيقى اللي مش عايزها من الفيديو ويسيب الحوار زي ما هو، وبعدين يضيف مؤثرات وfoley وجو عام للمكان. بيشتغل على فيديوهات لحد ١٠ دقايق.",
       "why": "حل سريع لمشكلة الموسيقى اللي عليها حقوق في فيديو محتاج تعيد نشره، من غير ما تخسر الصوت الأصلي.",
+      "about": "Mirelo SFX 2.0 بيفصل الصوت في الفيديو لطبقات. بيشيل الموسيقى ويسيب الحوار نضيف، وبعدين يبني صوت جديد للمشهد: مؤثرات، وfoley زي الخطوات واحتكاك الهدوم، وجو عام للمكان.\n\nبيشتغل على فيديوهات لحد ١٠ دقايق.",
+      "features": [
+        "بيشيل الموسيقى ويسيب الحوار",
+        "بيضيف foley ومؤثرات وجو عام للمكان",
+        "فيديوهات لحد ١٠ دقايق"
+      ],
+      "pricing": {
+        "model": "freemium"
+      },
       "url": "https://mirelo.ai/blog/mirelo-sfx-2-0",
       "source": "mirelo.ai",
       "importance": 2,
-      "tags": ["صوت", "مونتاج", "foley"]
+      "tags": [
+        "صوت",
+        "مونتاج",
+        "foley"
+      ]
     },
     {
       "id": "flux-3-max-video-fal",
@@ -177,22 +442,52 @@
       "title": "FLUX 3 Max على fal: فيديو من نص أو صورة بسعر تعريفي",
       "summary": "موديل فيديو من Black Forest Labs بيولّد من نص أو صورة. السعر التعريفي على fal ٤٫٢٥ سنت للثانية بدقة 720p لحد ٧ نوفمبر، وبعدها ١٧ سنت.",
       "why": "لو هتجرب توليد الفيديو بالـ API، الفرق في السعر كبير لحد ٧ نوفمبر.",
+      "about": "FLUX 3 Max أول موديل فيديو من Black Forest Labs، اللي عاملين موديلات FLUX للصور. بيولّد فيديو من نص أو من صورة، ومتاح على fal بالـ API.\n\nالسعر التعريفي ٤٫٢٥ سنت لكل ثانية بدقة 720p لحد ٧ نوفمبر، وبعدها السعر الأساسي ١٧ سنت للثانية، يعني ٤ أضعاف.",
+      "features": [
+        "فيديو من نص أو صورة",
+        "متاح بالـ API على fal",
+        "سعر تعريفي لحد ٧ نوفمبر"
+      ],
+      "pricing": {
+        "model": "paid",
+        "note": "بالثانية عن طريق fal"
+      },
       "url": "https://fal.ai/flux-3-max",
       "source": "fal.ai",
       "importance": 1,
-      "tags": ["توليد فيديو", "FLUX", "API"]
+      "tags": [
+        "توليد فيديو",
+        "FLUX",
+        "API"
+      ]
     },
     {
       "id": "canva-craft-image-model",
       "section": "design",
       "kind": "model",
       "title": "Canva Craft: أول موديل صور من Canva ومعمول للتصميم",
-      "summary": "نزل يوم ٢٢ أكتوبر. بيخطط الأول لمكان العناصر وحجمها والنص، وبعدين يولّد صورة لحد 2K، وكاتب النصوص بشكل مقروء. اتدرّب على تمبلتات Canva، وتقدر تحوّل الناتج لطبقات قابلة للتعديل. متاح لكل المستخدمين ومن الـ API، وجاي قريب عن طريق Canva MCP.",
+      "summary": "نزل يوم ٢٢ أكتوبر. بيخطط الأول لمكان العناصر وحجمها والنص، وبعدين يولّد صورة لحد 2K والكتابة فيها مقروءة. وتقدر تحوّل الناتج لطبقات قابلة للتعديل.",
       "why": "كونه بيكتب النص بشكل مقروء ويطلّع طبقات بتتعدل بيخليه مناسب للبوسترات والسوشيال أكتر من موديلات الصور العامة.",
+      "about": "Canva Craft بيشتغل على مرحلتين. الأول بيفهم الطلب ويعمل خطة: العناصر هتبقى فين، وحجمها إيه، والترتيب البصري، والنص. وبعدين يولّد الصورة بدقة لحد 2K، وبأكتر من ٣٠ نسبة أبعاد.\n\nاتدرّب على تمبلتات Canva اللي عملها مصممين بدل الصور الفوتوغرافية، فالناتج شكله تصميم مش صورة، والنص فيه مقروء. وتقدر تحوّل الصورة لتصميم بطبقات بـ Magic Layers وتعدّل أي عنصر لوحده.\n\nمتاح لكل مستخدمي Canva من تاب Dream Lab، وعن طريق الـ Canva API. وجاي قريب جوه ChatGPT وGemini عن طريق Canva MCP، ومعاه نسختين أرخص.",
+      "features": [
+        "بيخطط للتكوين قبل ما يولّد",
+        "نص مقروء جوه الصورة",
+        "لحد 2K وأكتر من ٣٠ نسبة أبعاد",
+        "بيتحوّل لطبقات بتتعدل"
+      ],
+      "pricing": {
+        "model": "freemium",
+        "note": "متاح لكل مستخدمي Canva"
+      },
       "url": "https://techcrunch.com/2026/10/22/canva-releases-its-first-image-generation-model/",
       "source": "techcrunch.com",
       "importance": 2,
-      "tags": ["تصميم", "توليد صور", "Canva", "MCP"]
+      "tags": [
+        "تصميم",
+        "توليد صور",
+        "Canva",
+        "MCP"
+      ]
     }
   ]
 }

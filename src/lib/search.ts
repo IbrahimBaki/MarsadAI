@@ -1,5 +1,3 @@
-import type { FeedItem } from "./types";
-
 /** Normalises Arabic and Latin text so "إضافة" matches "اضافه" and "MCP" matches "mcp". */
 export function normalize(s: string) {
   return s
@@ -14,23 +12,26 @@ export function normalize(s: string) {
     .replace(/[̀-ͯ]/g, "");
 }
 
-const cache = new WeakMap<FeedItem, string>();
+type Searchable = Record<string, unknown>;
+const cache = new WeakMap<object, string>();
+const FIELDS = ["title", "summary", "why", "about", "source", "url", "repo", "desc", "list", "heading", "tag"];
 
-function haystack(item: FeedItem) {
+function haystack(item: Searchable) {
   let h = cache.get(item);
   if (!h) {
-    h = normalize(
-      [item.title, item.summary, item.why, item.source, item.url, item.tags.join(" ")].join(" \n "),
-    );
+    const parts: string[] = [];
+    for (const f of FIELDS) if (typeof item[f] === "string") parts.push(item[f] as string);
+    for (const f of ["tags", "features"]) if (Array.isArray(item[f])) parts.push((item[f] as string[]).join(" "));
+    h = normalize(parts.join(" \n "));
     cache.set(item, h);
   }
   return h;
 }
 
 /** Every word in the query must appear somewhere in the item. */
-export function matches(item: FeedItem, query: string) {
+export function matches(item: object, query: string) {
   const terms = normalize(query).split(/\s+/).filter(Boolean);
   if (terms.length === 0) return true;
-  const h = haystack(item);
+  const h = haystack(item as Searchable);
   return terms.every((t) => h.includes(t));
 }

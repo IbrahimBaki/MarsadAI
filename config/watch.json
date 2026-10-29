@@ -1,0 +1,213 @@
+{
+  "$comment": "What scripts/collect.mjs tracks every day. awesome: lists whose newly added links become candidate items. releases: repos whose new tags are reported. topics: GitHub topics searched for new fast-growing repos (needs GITHUB_TOKEN, i.e. runs in the GitHub Action). releases[].tags: optional regex a tag must match (default: ^v?<digit>.<digit>).",
+  "awesome": [
+    {
+      "repo": "hesreallyhim/awesome-claude-code",
+      "section": "skills"
+    },
+    {
+      "repo": "jqueryscript/awesome-claude-code",
+      "section": "skills"
+    },
+    {
+      "repo": "ComposioHQ/awesome-claude-skills",
+      "section": "skills"
+    },
+    {
+      "repo": "travisvn/awesome-claude-skills",
+      "section": "skills"
+    },
+    {
+      "repo": "VoltAgent/awesome-agent-skills",
+      "section": "skills"
+    },
+    {
+      "repo": "VoltAgent/awesome-claude-code-subagents",
+      "section": "skills"
+    },
+    {
+      "repo": "punkpeye/awesome-mcp-servers",
+      "section": "mcp"
+    },
+    {
+      "repo": "wong2/awesome-mcp-servers",
+      "section": "mcp"
+    },
+    {
+      "repo": "appcypher/awesome-mcp-servers",
+      "section": "mcp"
+    },
+    {
+      "repo": "VoltAgent/official-mcp-servers",
+      "section": "mcp"
+    },
+    {
+      "repo": "e2b-dev/awesome-ai-agents",
+      "section": "automation"
+    },
+    {
+      "repo": "Shubhamsaboo/awesome-llm-apps",
+      "section": "llm"
+    },
+    {
+      "repo": "github/awesome-copilot",
+      "section": "agents"
+    }
+  ],
+  "releases": [
+    {
+      "repo": "anthropics/claude-code",
+      "section": "claude"
+    },
+    {
+      "repo": "anthropics/claude-agent-sdk-python",
+      "section": "claude"
+    },
+    {
+      "repo": "anthropics/claude-agent-sdk-typescript",
+      "section": "claude"
+    },
+    {
+      "repo": "anthropics/skills",
+      "section": "skills"
+    },
+    {
+      "repo": "obra/superpowers",
+      "section": "skills"
+    },
+    {
+      "repo": "openai/codex",
+      "section": "agents",
+      "tags": "^rust-v\\d"
+    },
+    {
+      "repo": "google-gemini/gemini-cli",
+      "section": "agents"
+    },
+    {
+      "repo": "anomalyco/opencode",
+      "section": "agents"
+    },
+    {
+      "repo": "cline/cline",
+      "section": "agents"
+    },
+    {
+      "repo": "modelcontextprotocol/modelcontextprotocol",
+      "section": "mcp"
+    },
+    {
+      "repo": "microsoft/playwright-mcp",
+      "section": "mcp"
+    },
+    {
+      "repo": "ChromeDevTools/chrome-devtools-mcp",
+      "section": "mcp"
+    },
+    {
+      "repo": "github/github-mcp-server",
+      "section": "mcp"
+    },
+    {
+      "repo": "upstash/context7",
+      "section": "mcp",
+      "tags": "^@upstash/context7-mcp@"
+    },
+    {
+      "repo": "laravel/framework",
+      "section": "laravel"
+    },
+    {
+      "repo": "laravel/boost",
+      "section": "laravel"
+    },
+    {
+      "repo": "laravel/ai",
+      "section": "laravel"
+    },
+    {
+      "repo": "laravel/mcp",
+      "section": "laravel"
+    },
+    {
+      "repo": "filamentphp/filament",
+      "section": "laravel"
+    },
+    {
+      "repo": "livewire/livewire",
+      "section": "laravel"
+    },
+    {
+      "repo": "prism-php/prism",
+      "section": "laravel"
+    },
+    {
+      "repo": "vercel/next.js",
+      "section": "frontend"
+    },
+    {
+      "repo": "tailwindlabs/tailwindcss",
+      "section": "frontend"
+    },
+    {
+      "repo": "microsoft/playwright",
+      "section": "testing"
+    },
+    {
+      "repo": "github/spec-kit",
+      "section": "architecture"
+    },
+    {
+      "repo": "n8n-io/n8n",
+      "section": "automation",
+      "tags": "^n8n@"
+    },
+    {
+      "repo": "ollama/ollama",
+      "section": "llm"
+    },
+    {
+      "repo": "vercel/ai",
+      "section": "llm",
+      "tags": "^ai@"
+    },
+    {
+      "repo": "docker/compose",
+      "section": "devops"
+    },
+    {
+      "repo": "coollabsio/coolify",
+      "section": "devops"
+    }
+  ],
+  "topics": [
+    {
+      "topic": "claude-code",
+      "section": "skills"
+    },
+    {
+      "topic": "claude-skills",
+      "section": "skills"
+    },
+    {
+      "topic": "agent-skills",
+      "section": "skills"
+    },
+    {
+      "topic": "mcp-server",
+      "section": "mcp"
+    },
+    {
+      "topic": "coding-agent",
+      "section": "agents"
+    },
+    {
+      "topic": "ai-agents",
+      "section": "automation"
+    },
+    {
+      "topic": "laravel",
+      "section": "laravel"
+    }
+  ]
+}

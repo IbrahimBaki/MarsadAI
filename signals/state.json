@@ -1,0 +1,82 @@
+{
+  "awesome": {
+    "hesreallyhim/awesome-claude-code": {
+      "sha": "7a9bbe5ac296990764b161178132b2a2028ab604",
+      "date": "2026-10-29T14:55:04.983Z"
+    },
+    "jqueryscript/awesome-claude-code": {
+      "sha": "df5311c7d271a33c179fdfc2a6ceb3b0f43f77d1",
+      "date": "2026-10-29T14:55:05.634Z"
+    },
+    "ComposioHQ/awesome-claude-skills": {
+      "sha": "be2a406907dbc61b73e6827ded415c96139d13a2",
+      "date": "2026-10-29T14:55:06.296Z"
+    },
+    "travisvn/awesome-claude-skills": {
+      "sha": "1da55aa810f206d3fe2005e7e3989b15a275d942",
+      "date": "2026-10-29T14:55:06.948Z"
+    },
+    "VoltAgent/awesome-agent-skills": {
+      "sha": "a6f9992ceaef05841a9b92e6849d90004a61710c",
+      "date": "2026-10-29T14:55:07.636Z"
+    },
+    "VoltAgent/awesome-claude-code-subagents": {
+      "sha": "408d3c9eee2d0c75c12a3abb5de29e53c2ca6b9e",
+      "date": "2026-10-29T14:55:08.519Z"
+    },
+    "punkpeye/awesome-mcp-servers": {
+      "sha": "f225f117f92626e6b7d5d2912746d9269e3d037b",
+      "date": "2026-10-29T14:55:10.459Z"
+    },
+    "wong2/awesome-mcp-servers": {
+      "sha": "39eb1d76d76e562657f3c657266a504cea159e23",
+      "date": "2026-10-29T14:55:11.139Z"
+    },
+    "appcypher/awesome-mcp-servers": {
+      "sha": "280218b4bba97a49facf929f8012dec5e30384b6",
+      "date": "2026-10-29T14:55:11.801Z"
+    },
+    "e2b-dev/awesome-ai-agents": {
+      "sha": "9596ab1e69fbbb6c95291141c8dab5c181083216",
+      "date": "2026-10-29T14:55:12.498Z"
+    },
+    "Shubhamsaboo/awesome-llm-apps": {
+      "sha": "6c16b23f1bacd0fdf240bb5141ef45e59e82c306",
+      "date": "2026-10-29T14:55:13.372Z"
+    },
+    "github/awesome-copilot": {
+      "sha": "b6483db44fb602654bca6a097185fcaddb305f97",
+      "date": "2026-10-29T14:55:14.014Z"
+    }
+  },
+  "releases": {
+    "anthropics/claude-code": "v2.1.312",
+    "anthropics/claude-agent-sdk-python": "v0.2.174",
+    "anthropics/claude-agent-sdk-typescript": "v0.3.312",
+    "obra/superpowers": "v7.0.1",
+    "openai/codex": "rust-v0.165.0",
+    "google-gemini/gemini-cli": "v0.66.0",
+    "anomalyco/opencode": "v2.2.1",
+    "cline/cline": "v4.1.26",
+    "microsoft/playwright-mcp": "v0.0.83",
+    "github/github-mcp-server": "v2.0.3",
+    "upstash/context7": "@upstash/context7-mcp@4.4.4",
+    "laravel/framework": "v13.39.0",
+    "laravel/boost": "v2.10.3",
+    "laravel/ai": "v1.3.0",
+    "laravel/mcp": "v1.1.2",
+    "filamentphp/filament": "v5.11.0",
+    "livewire/livewire": "v4.4.8",
+    "prism-php/prism": "v0.102.0",
+    "vercel/next.js": "v16.4.3",
+    "tailwindlabs/tailwindcss": "v4.3.3",
+    "microsoft/playwright": "v1.64.1",
+    "github/spec-kit": "v1.2.5",
+    "n8n-io/n8n": "n8n@3.0.1",
+    "ollama/ollama": "v0.40.13",
+    "vercel/ai": "ai@7.0.156",
+    "docker/compose": "v5.6.1",
+    "coollabsio/coolify": "v4.5.3"
+  },
+  "trending": {}
+}

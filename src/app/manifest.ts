@@ -12,8 +12,8 @@ export default function manifest(): MetadataRoute.Manifest {
     scope: "/",
     display: "standalone",
     orientation: "portrait",
-    background_color: "#edf0f5",
-    theme_color: "#edf0f5",
+    background_color: "#eef1f7",
+    theme_color: "#eef1f7",
     icons: [
       { src: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
       { src: "/icons/icon-512.png", sizes: "512x512", type: "image/png" },
@@ -21,6 +21,8 @@ export default function manifest(): MetadataRoute.Manifest {
     ],
     shortcuts: [
       { name: "الجديد", url: "/" },
+      { name: "الرادار", url: "/radar" },
+      { name: "الأساسيات", url: "/library" },
       { name: "المفضلة", url: "/?v=fav" },
     ],
   };

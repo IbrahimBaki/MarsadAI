@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   // Content files are read at build time by the /api/items route.
   outputFileTracingIncludes: {
-    "/api/items": ["./content/**/*.json"],
+    "/api/items": ["./content/**/*.json", "./signals/*.json", "./config/*.json"],
   },
   turbopack: {
     rules: {

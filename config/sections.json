@@ -1,0 +1,414 @@
+{
+  "$comment": "Single source of truth for Marsad's taxonomy. The app reads names/colors; the daily digest reads scope, keywords and sources to know exactly what to look for in each section.",
+  "groups": [
+    {
+      "id": "ai",
+      "name": "AI للمبرمجين"
+    },
+    {
+      "id": "eng",
+      "name": "هندسة البرمجيات"
+    },
+    {
+      "id": "auto",
+      "name": "أتمتة وإنتاجية"
+    },
+    {
+      "id": "creative",
+      "name": "إبداع"
+    }
+  ],
+  "sections": [
+    {
+      "id": "claude",
+      "group": "ai",
+      "name": "Claude Code",
+      "hint": "تحديثات Claude Code والـ API والموديلات وكل منتجات Anthropic",
+      "color": "#E2702A",
+      "scope": "Claude Code releases and features, Claude apps, Anthropic API/SDK/Agent SDK changes, new Claude models, docs and engineering posts from Anthropic.",
+      "keywords": [
+        "Claude Code",
+        "Anthropic",
+        "Claude API",
+        "Agent SDK",
+        "Claude model"
+      ],
+      "sources": [
+        "https://github.com/anthropics/claude-code/releases",
+        "https://www.anthropic.com/news",
+        "https://www.anthropic.com/engineering",
+        "https://claude.com/blog",
+        "https://platform.claude.com/docs/en/release-notes/overview"
+      ]
+    },
+    {
+      "id": "agents",
+      "group": "ai",
+      "name": "Coding agents",
+      "hint": "Cursor وCodex وGemini CLI وOpenCode وCline وغيرهم",
+      "color": "#3B5BDB",
+      "scope": "AI coding agents, AI IDEs and editor extensions other than Claude Code: new tools, major releases, new capabilities, comparisons worth reading.",
+      "keywords": [
+        "coding agent",
+        "AI IDE",
+        "Cursor",
+        "Codex CLI",
+        "Gemini CLI",
+        "OpenCode",
+        "Cline",
+        "Copilot agent",
+        "Zed AI"
+      ],
+      "sources": [
+        "https://cursor.com/changelog",
+        "https://github.com/openai/codex/releases",
+        "https://github.com/google-gemini/gemini-cli/releases",
+        "https://github.com/anomalyco/opencode/releases",
+        "https://github.blog/changelog/",
+        "https://zed.dev/blog"
+      ]
+    },
+    {
+      "id": "skills",
+      "group": "ai",
+      "name": "Skills و Plugins",
+      "hint": "skills وplugins وsubagents وworkflows جاهزة للـ agents",
+      "color": "#7048E8",
+      "scope": "Agent Skills (SKILL.md), Claude Code plugins and marketplaces, subagent collections, slash-command packs, CLAUDE.md templates and agent workflow frameworks.",
+      "keywords": [
+        "Claude skills",
+        "agent skills",
+        "SKILL.md",
+        "Claude Code plugin",
+        "subagents",
+        "slash commands"
+      ],
+      "sources": [
+        "https://github.com/topics/claude-skills",
+        "https://github.com/topics/agent-skills",
+        "https://github.com/topics/claude-code-plugin",
+        "https://github.com/anthropics/skills",
+        "https://github.com/hesreallyhim/awesome-claude-code"
+      ]
+    },
+    {
+      "id": "mcp",
+      "group": "ai",
+      "name": "MCP Servers",
+      "hint": "MCP servers جديدة، وconnectors، وتغييرات البروتوكول",
+      "color": "#0C8599",
+      "scope": "New or notable MCP servers (especially official ones from vendors), MCP spec and SDK changes, MCP registries and gateways.",
+      "keywords": [
+        "MCP server",
+        "Model Context Protocol",
+        "official MCP",
+        "MCP registry"
+      ],
+      "sources": [
+        "https://registry.modelcontextprotocol.io/",
+        "https://blog.modelcontextprotocol.io/",
+        "https://github.com/topics/mcp-server",
+        "https://github.com/punkpeye/awesome-mcp-servers"
+      ]
+    },
+    {
+      "id": "llm",
+      "group": "ai",
+      "name": "LLMs و APIs",
+      "hint": "موديلات جديدة، وتغييرات الأسعار والـ APIs، وRAG، والموديلات المحلية",
+      "color": "#1971C2",
+      "scope": "New models from any lab, API and pricing changes, SDKs and agent frameworks, RAG/embeddings/evals tooling, local models and inference.",
+      "keywords": [
+        "new LLM",
+        "model release",
+        "API pricing",
+        "agent framework",
+        "RAG",
+        "embeddings",
+        "local LLM"
+      ],
+      "sources": [
+        "https://simonwillison.net/",
+        "https://thursdai.news/",
+        "https://artificialanalysis.ai/",
+        "https://huggingface.co/models?sort=trending",
+        "https://openai.com/news/",
+        "https://blog.google/technology/ai/"
+      ]
+    },
+    {
+      "id": "backend",
+      "group": "eng",
+      "name": "Backend و APIs",
+      "hint": "frameworks وأدوات الـ backend بأي لغة، والـ APIs والـ auth والـ queues",
+      "color": "#2B8A3E",
+      "scope": "Backend frameworks and libraries (Node, Python, Go, etc.), API design, auth, queues, caching, background jobs — especially AI-assisted backend tooling.",
+      "keywords": [
+        "backend framework",
+        "API",
+        "Node.js",
+        "Python",
+        "Go",
+        "auth",
+        "queue"
+      ],
+      "sources": [
+        "https://github.com/trending",
+        "https://news.ycombinator.com/",
+        "https://nodejs.org/en/blog"
+      ]
+    },
+    {
+      "id": "laravel",
+      "group": "eng",
+      "name": "Laravel و PHP",
+      "hint": "إصدارات Laravel وباكدجاتها، وأدوات الـ AI لـ PHP",
+      "color": "#E03131",
+      "scope": "Laravel and PHP releases, notable packages, Laravel AI SDK/Boost/MCP, Filament/Livewire, PHP AI libraries and tutorials worth reading.",
+      "keywords": [
+        "Laravel",
+        "PHP",
+        "Laravel package",
+        "Filament",
+        "Livewire",
+        "Laravel AI"
+      ],
+      "sources": [
+        "https://laravel-news.com/",
+        "https://laravel.com/blog",
+        "https://github.com/laravel/framework/releases",
+        "https://packagist.org/explore/popular",
+        "https://www.php.net/"
+      ]
+    },
+    {
+      "id": "frontend",
+      "group": "eng",
+      "name": "Frontend و UI",
+      "hint": "React وNext وVue وCSS، ومكتبات الـ UI، والتحويل من تصميم لكود",
+      "color": "#C2255C",
+      "scope": "Frontend frameworks and releases, CSS, component libraries, UI kits, design-to-code and AI UI generation tools, frontend skills for agents.",
+      "keywords": [
+        "React",
+        "Next.js",
+        "Vue",
+        "Tailwind",
+        "shadcn",
+        "UI library",
+        "design to code"
+      ],
+      "sources": [
+        "https://react.dev/blog",
+        "https://nextjs.org/blog",
+        "https://tailwindcss.com/blog",
+        "https://vercel.com/changelog",
+        "https://github.com/trending/typescript"
+      ]
+    },
+    {
+      "id": "data",
+      "group": "eng",
+      "name": "قواعد البيانات",
+      "hint": "Postgres وMySQL وRedis، والـ ORMs، والـ vector databases",
+      "color": "#5C7CFA",
+      "scope": "Databases, ORMs, migrations, query tooling, vector databases, data pipelines and AI-for-SQL tools.",
+      "keywords": [
+        "PostgreSQL",
+        "MySQL",
+        "Redis",
+        "ORM",
+        "vector database",
+        "text-to-SQL"
+      ],
+      "sources": [
+        "https://supabase.com/blog",
+        "https://www.postgresql.org/about/newsarchive/",
+        "https://github.com/topics/vector-database"
+      ]
+    },
+    {
+      "id": "architecture",
+      "group": "eng",
+      "name": "Architecture",
+      "hint": "تصميم الأنظمة والـ patterns وspec-driven development والتوثيق",
+      "color": "#495057",
+      "scope": "Software architecture and system design, design patterns, spec-driven development, ADRs and documentation tooling, AI-assisted architecture and code-understanding tools.",
+      "keywords": [
+        "software architecture",
+        "system design",
+        "spec-driven development",
+        "ADR",
+        "design patterns",
+        "codebase knowledge graph"
+      ],
+      "sources": [
+        "https://martinfowler.com/",
+        "https://www.infoq.com/architecture-design/",
+        "https://github.com/github/spec-kit"
+      ]
+    },
+    {
+      "id": "testing",
+      "group": "eng",
+      "name": "Testing و QA",
+      "hint": "Playwright، وتوليد التيستات، والـ code review بالـ AI",
+      "color": "#0B7285",
+      "scope": "Test frameworks, E2E/browser testing, AI test generation, AI code review bots, QA automation.",
+      "keywords": [
+        "Playwright",
+        "E2E testing",
+        "test generation",
+        "AI code review",
+        "Pest",
+        "PHPUnit"
+      ],
+      "sources": [
+        "https://playwright.dev/docs/release-notes",
+        "https://github.com/topics/test-automation",
+        "https://pestphp.com/"
+      ]
+    },
+    {
+      "id": "devops",
+      "group": "eng",
+      "name": "DevOps و Infra",
+      "hint": "Docker وCI/CD والسيرفرات والـ self-hosting والمراقبة",
+      "color": "#1864AB",
+      "scope": "Containers, CI/CD, self-hosting platforms, servers and Linux tooling, observability, cloud and deployment platforms, AI for ops.",
+      "keywords": [
+        "Docker",
+        "CI/CD",
+        "GitHub Actions",
+        "self-hosted",
+        "observability",
+        "Kubernetes",
+        "Coolify"
+      ],
+      "sources": [
+        "https://www.docker.com/blog/",
+        "https://github.blog/changelog/",
+        "https://blog.cloudflare.com/",
+        "https://github.com/topics/self-hosted"
+      ]
+    },
+    {
+      "id": "security",
+      "group": "eng",
+      "name": "Security",
+      "hint": "أمان الكود والـ agents، والأسرار، وثغرات مهمة",
+      "color": "#862E9C",
+      "scope": "Application and supply-chain security, secret scanning, SAST, security of AI agents and MCP (prompt injection, permissions), critical vulnerabilities in common stacks.",
+      "keywords": [
+        "security",
+        "prompt injection",
+        "secret scanning",
+        "SAST",
+        "supply chain",
+        "CVE"
+      ],
+      "sources": [
+        "https://github.blog/security/",
+        "https://genai.owasp.org/",
+        "https://socket.dev/blog"
+      ]
+    },
+    {
+      "id": "automation",
+      "group": "auto",
+      "name": "Automation و Workflows",
+      "hint": "n8n، والـ agents اللي بتشتغل لوحدها، وأتمتة البراوزر والمهام",
+      "color": "#E67700",
+      "scope": "Workflow automation platforms, multi-agent orchestration, background/scheduled agents, browser automation and scraping for agents.",
+      "keywords": [
+        "workflow automation",
+        "n8n",
+        "multi-agent",
+        "agent orchestration",
+        "browser automation",
+        "web scraping"
+      ],
+      "sources": [
+        "https://github.com/n8n-io/n8n/releases",
+        "https://github.com/topics/ai-agents",
+        "https://github.com/Shubhamsaboo/awesome-llm-apps"
+      ]
+    },
+    {
+      "id": "devtools",
+      "group": "auto",
+      "name": "أدوات المطوّر",
+      "hint": "الترمينال وgit والـ CLI وأدوات تزوّد إنتاجيتك",
+      "color": "#5F3DC4",
+      "scope": "Terminal apps, shells, git tools, CLI utilities, editors and productivity tools for developers.",
+      "keywords": [
+        "terminal",
+        "CLI tool",
+        "git tool",
+        "developer productivity",
+        "shell"
+      ],
+      "sources": [
+        "https://github.com/trending/rust",
+        "https://news.ycombinator.com/show"
+      ]
+    },
+    {
+      "id": "video",
+      "group": "creative",
+      "name": "فيديو وصوت",
+      "hint": "توليد وتعديل الفيديو، والمونتاج، والأصوات والدبلجة",
+      "color": "#D6336C",
+      "scope": "AI video generation and editing, editing software features, voice/TTS/dubbing, music and sound effects generation.",
+      "keywords": [
+        "AI video",
+        "video editing",
+        "text to speech",
+        "dubbing",
+        "AI music"
+      ],
+      "sources": [
+        "https://scenemakers.club/guides/ai-video-this-month",
+        "https://elevenlabs.io/blog",
+        "https://runwayml.com/news"
+      ]
+    },
+    {
+      "id": "design",
+      "group": "creative",
+      "name": "صور وتصميم",
+      "hint": "توليد الصور، وأدوات الـ UI/UX، والبراندنج",
+      "color": "#B7791F",
+      "scope": "Image generation models and tools, UI/UX design tools with AI, branding and vector tools.",
+      "keywords": [
+        "image generation",
+        "AI design tool",
+        "Figma AI",
+        "logo generator",
+        "UI design AI"
+      ],
+      "sources": [
+        "https://www.figma.com/blog/",
+        "https://lmarena.ai/leaderboard",
+        "https://www.canva.com/newsroom/news/"
+      ]
+    }
+  ],
+  "kinds": {
+    "release": "إصدار",
+    "repo": "ريبو",
+    "skill": "Skill",
+    "plugin": "Plugin",
+    "mcp": "MCP",
+    "library": "مكتبة",
+    "tool": "أداة",
+    "model": "موديل",
+    "article": "مقال",
+    "video": "فيديو"
+  },
+  "pricing": {
+    "oss": "مفتوح المصدر",
+    "free": "مجاني",
+    "freemium": "فيه خطة مجانية",
+    "paid": "مدفوع"
+  }
+}

@@ -1,0 +1,314 @@
+{
+  "section": "data",
+  "items": [
+    {
+      "id": "ess-supabase",
+      "section": "data",
+      "kind": "tool",
+      "repo": "supabase/supabase",
+      "title": "Supabase: منصة Postgres كاملة",
+      "summary": "Postgres مستضاف ومعاه auth، وREST وGraphQL APIs أوتوماتيك، وrealtime، وstorage للملفات، وedge functions، وvector search بـ pgvector. مفتوح المصدر وتقدر تشغّله بنفسك.",
+      "why": "أسرع طريقة تطلّع backend لمشروع جانبي زي Dokkanx أو أداة داخلية، ومعاها MCP server رسمي للـ agents.",
+      "about": "Supabase بيقدّم نفسه كبديل مفتوح المصدر لـ Firebase، بس مبني على Postgres حقيقي. فبتاخد SQL كامل، وrow level security للصلاحيات، وextensions زي pgvector.\n\nمعاه Auth بأنواعه، وAPI أوتوماتيك من الجداول، وRealtime للتغييرات، وStorage للملفات، وEdge Functions بـ Deno، وdashboard مريح، وCLI للتطوير المحلي والـ migrations. وفيه خطة مجانية للمشاريع الصغيرة.",
+      "features": [
+        "Postgres حقيقي مع RLS",
+        "auth وstorage وrealtime",
+        "API أوتوماتيك من الجداول",
+        "pgvector وMCP server"
+      ],
+      "install": [
+        {
+          "label": "CLI للتطوير المحلي",
+          "cmd": "npx supabase init"
+        }
+      ],
+      "pricing": {
+        "model": "freemium",
+        "note": "خطة مجانية، أو تشغّله بنفسك مجاناً"
+      },
+      "url": "https://supabase.com",
+      "source": "supabase.com",
+      "importance": 2,
+      "tags": [
+        "Postgres",
+        "backend",
+        "auth"
+      ],
+      "alternatives": [
+        "ess-supabase-mcp"
+      ]
+    },
+    {
+      "id": "ess-pgvector",
+      "section": "data",
+      "kind": "library",
+      "repo": "pgvector/pgvector",
+      "title": "pgvector: vector search جوه Postgres",
+      "summary": "extension لـ Postgres بيخليك تخزن الـ embeddings جنب بياناتك وتعمل بحث بالتشابه، exact أو approximate بـ HNSW وIVFFlat. وده الأساس لأي RAG من غير قاعدة بيانات منفصلة.",
+      "why": "لو هتعمل بحث ذكي أو RAG على بيانات الـ ERP، زي المنتجات أو المستندات أو التذاكر، pgvector بيوفّر عليك قاعدة بيانات تانية.",
+      "about": "بتضيف عمود من نوع vector، وتخزن فيه الـ embedding، وتبحث بـ ORDER BY embedding <-> query LIMIT 10. بيدعم أكتر من مقياس للمسافة، وفهارس HNSW وIVFFlat للسرعة، وvectors بدقة نص أو binary أو sparse لتوفير المساحة.\n\nمدعوم في Supabase وNeon وRDS ومعظم مزودي Postgres، وفيه Docker image جاهزة. وLaravel AI SDK بيدعم الـ embeddings وPostgres.",
+      "features": [
+        "vectors جنب بياناتك",
+        "فهارس HNSW وIVFFlat",
+        "half وbinary وsparse vectors",
+        "مدعوم في معظم المزودين"
+      ],
+      "install": [
+        {
+          "label": "Docker",
+          "cmd": "docker pull pgvector/pgvector:pg18-trixie"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
+      "url": "https://github.com/pgvector/pgvector",
+      "source": "github.com",
+      "importance": 2,
+      "tags": [
+        "Postgres",
+        "vectors",
+        "RAG"
+      ]
+    },
+    {
+      "id": "ess-qdrant",
+      "section": "data",
+      "kind": "tool",
+      "repo": "qdrant/qdrant",
+      "title": "Qdrant: vector database مكتوبة بـ Rust",
+      "summary": "قاعدة بيانات vectors سريعة، مكتوبة بـ Rust، وفيها فلترة قوية على الـ payload، وhybrid search، وquantization لتقليل الذاكرة. بتشتغل بـ Docker أو في Qdrant Cloud.",
+      "why": "لو حجم الـ embeddings كبر جداً، أو محتاج فلترة معقدة مع البحث، Qdrant أقوى من pgvector.",
+      "about": "Qdrant بيخزن points، وكل point عبارة عن vector ومعاه payload بـ JSON، وبيدعم فلترة على الـ payload أثناء البحث بكفاءة. وفيه named vectors متعددة، وsparse vectors للـ hybrid search، وquantization، وsharding وreplication.\n\nعنده clients لـ Python وJS وGo وRust، وPHP عن طريق المجتمع، وبيتكامل مع Neuron AI.",
+      "features": [
+        "بحث سريع مع فلترة",
+        "hybrid search",
+        "quantization لتوفير الذاكرة",
+        "Docker أو Cloud"
+      ],
+      "install": [
+        {
+          "label": "Docker",
+          "cmd": "docker run -p 6333:6333 qdrant/qdrant"
+        }
+      ],
+      "pricing": {
+        "model": "oss",
+        "note": "مفتوح المصدر، وQdrant Cloud فيه طبقة مجانية"
+      },
+      "url": "https://qdrant.tech",
+      "source": "qdrant.tech",
+      "importance": 1,
+      "tags": [
+        "vector database",
+        "Rust",
+        "RAG"
+      ]
+    },
+    {
+      "id": "ess-drizzle",
+      "section": "data",
+      "kind": "library",
+      "repo": "drizzle-team/drizzle-orm",
+      "title": "Drizzle ORM: ORM خفيف لـ TypeScript قريب من SQL",
+      "summary": "ORM لـ TypeScript حجمه ~7.4kb ومن غير dependencies، وبيكتب queries قريبة جداً من SQL مع types كاملة. بيدعم Postgres وMySQL وSQLite، وبيشتغل على أي runtime حتى الـ edge.",
+      "why": "لو هتكتب خدمة TypeScript تكلم داتابيز الـ ERP، Drizzle بيدّيك types من غير ما يخبّي SQL.",
+      "about": "في Drizzle بتعرّف الـ schema بـ TypeScript، والـ queries بتبقى شبه SQL، زي db.select().from(users).where(eq(users.id, 1))، أو بـ relational API أعلى مستوى.\n\nمعاه drizzle-kit للـ migrations، وDrizzle Studio لتصفح البيانات. وبيدعم Neon وTurso وPlanetScale وSupabase وD1.",
+      "features": [
+        "قريب من SQL مع types",
+        "صفر dependencies",
+        "أي runtime حتى الـ edge",
+        "drizzle-kit وStudio"
+      ],
+      "install": [
+        {
+          "label": "npm",
+          "cmd": "npm i drizzle-orm && npm i -D drizzle-kit"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
+      "url": "https://orm.drizzle.team",
+      "source": "orm.drizzle.team",
+      "importance": 1,
+      "tags": [
+        "ORM",
+        "TypeScript",
+        "SQL"
+      ],
+      "alternatives": [
+        "ess-prisma"
+      ]
+    },
+    {
+      "id": "ess-prisma",
+      "section": "data",
+      "kind": "library",
+      "repo": "prisma/prisma",
+      "title": "Prisma 8: ORM لـ TypeScript معمول للـ agents",
+      "summary": "Prisma 8، وهو لسه release candidate، إعادة كتابة كاملة بـ TypeScript، ومعمول يبقى extensible وAI-agent friendly، ومعاه أمر لمزامنة skills للـ agents. وPrisma 7 مدعوم ١٨ شهر بعد 8.",
+      "why": "لو بتستخدم Prisma، خد بالك من التغيير الكبير في 8. وفكرة إن الـ ORM نفسه بيوزّع skills للـ agents اتجاه جديد يستاهل تتابعه.",
+      "about": "Prisma ORM بيعرّف الـ schema في ملف schema.prisma، ويولّد client فيه types كاملة، ومعاه migrations وPrisma Studio.\n\nفي Prisma 8 الفريق أعاد كتابته بـ TypeScript عشان يبقى قابل للتوسع والتركيب، وضاف أمر prisma skills sync بيحط skills للـ coding agents في مشروعك. الإصدار النهائي متوقع خلال أسابيع، ولحد ساعتها ممكن يحصل breaking changes.",
+      "features": [
+        "schema وclient بـ types",
+        "migrations وStudio",
+        "Prisma 8 مكتوب بـ TypeScript",
+        "skills للـ agents"
+      ],
+      "install": [
+        {
+          "label": "مشروع جديد",
+          "cmd": "npm create prisma"
+        },
+        {
+          "label": "skills للـ agents",
+          "cmd": "npx prisma skills sync"
+        }
+      ],
+      "pricing": {
+        "model": "oss",
+        "note": "الـ ORM مجاني، وفيه خدمات Prisma مدفوعة"
+      },
+      "url": "https://github.com/prisma/prisma",
+      "source": "github.com",
+      "importance": 1,
+      "tags": [
+        "ORM",
+        "TypeScript",
+        "agents"
+      ],
+      "alternatives": [
+        "ess-drizzle"
+      ]
+    },
+    {
+      "id": "ess-redis",
+      "section": "data",
+      "kind": "tool",
+      "repo": "redis/redis",
+      "title": "Redis Open Source 8",
+      "summary": "قاعدة البيانات اللي في الذاكرة المستخدمة للـ cache والـ queues والـ sessions. من v8 بقى اسمها Redis Open Source ورجعت برخصة مفتوحة (AGPL)، وفيها vector sets وJSON وsearch مدمجين.",
+      "why": "Laravel بيستخدمها للـ cache والـ queues وHorizon. وv8 ضافت حاجات زي vector sets ممكن تفيدك في البحث الذكي.",
+      "about": "في v8 اسم Redis Community Edition اتغيّر لـ Redis Open Source، وبقى فيه خيار رخصة AGPLv3. والإصدار ده دمج حاجات كانت modules منفصلة، زي JSON، وsearch والـ query engine، وtime series، وprobabilistic structures، وضاف نوع جديد اسمه vector sets للبحث بالتشابه.\n\nأسهل تشغيل بـ Docker.",
+      "features": [
+        "cache وqueues وsessions",
+        "JSON وsearch مدمجين",
+        "vector sets",
+        "رخصة AGPL من v8"
+      ],
+      "install": [
+        {
+          "label": "Docker",
+          "cmd": "docker run -d -p 6379:6379 redis:latest"
+        }
+      ],
+      "pricing": {
+        "model": "oss",
+        "note": "مفتوح المصدر، وRedis Cloud مدفوعة"
+      },
+      "url": "https://redis.io",
+      "source": "redis.io",
+      "importance": 1,
+      "tags": [
+        "Redis",
+        "cache",
+        "queues"
+      ]
+    },
+    {
+      "id": "ess-dbeaver",
+      "section": "data",
+      "kind": "tool",
+      "repo": "dbeaver/dbeaver",
+      "title": "DBeaver: أداة قواعد بيانات مجانية لكل الأنواع",
+      "summary": "أداة ديسكتوب مجانية لأكتر من ١٠٠ نوع قاعدة بيانات: SQL editor، ومحرر بيانات، وER diagrams، وexport وimport وmigration، وexecution plans، وAI chat لكتابة الـ SQL.",
+      "why": "بتشتغل على Linux، وبتفتح MySQL وPostgres وSQLite في نفس المكان، والـ ER diagrams بتفيد في فهم جداول الـ modules.",
+      "about": "DBeaver Community مجانية ومفتوحة المصدر، ومكتوبة بـ Java، فبتشتغل على Linux وmacOS وWindows. فيها محرر SQL بـ autocomplete، وتعديل البيانات في جدول، وER diagrams من الـ schema، ومقارنة schemas، ونقل بيانات بين قواعد مختلفة، وexecution plans، وAI chat بيحوّل السؤال لـ SQL.\n\nوفيه نسخ مدفوعة (PRO) بميزات إضافية.",
+      "features": [
+        "أكتر من ١٠٠ نوع قاعدة بيانات",
+        "ER diagrams",
+        "نقل بيانات ومقارنة schemas",
+        "AI chat للـ SQL"
+      ],
+      "pricing": {
+        "model": "oss",
+        "note": "Community مجانية، وPRO مدفوعة"
+      },
+      "url": "https://dbeaver.io",
+      "source": "dbeaver.io",
+      "importance": 1,
+      "tags": [
+        "database",
+        "SQL",
+        "GUI"
+      ]
+    },
+    {
+      "id": "ess-meilisearch",
+      "section": "data",
+      "kind": "tool",
+      "repo": "meilisearch/meilisearch",
+      "title": "Meilisearch: بحث سريع وذكي جاهز",
+      "summary": "search engine للبحث النصي والدلالي والـ hybrid، بنتايج فورية وتحمّل للأخطاء الإملائية وفلاتر وfacets. تشغّله بنفسك أو على Meilisearch Cloud، ومتكامل مع Laravel Scout.",
+      "why": "لو البحث في المنتجات أو العملاء في الـ ERP بطيء أو مش ذكي، Meilisearch مع Scout بيحل ده بسرعة.",
+      "about": "بتبعت المستندات كـ JSON، وتبحث بطلب واحد. بيتحمّل الأخطاء الإملائية، وبيدعم الفلاتر والـ facets والترتيب، والمرادفات، ولغات كتير. وفيه semantic وhybrid search بالـ embeddings.\n\nمدعوم رسمياً في Laravel Scout، وفيه Docker image وsكريبت تسطيب.",
+      "features": [
+        "نتايج فورية مع تحمّل الأخطاء",
+        "فلاتر وfacets",
+        "hybrid search",
+        "Laravel Scout"
+      ],
+      "install": [
+        {
+          "label": "تسطيب محلي",
+          "cmd": "curl -L https://install.meilisearch.com | sh"
+        }
+      ],
+      "pricing": {
+        "model": "oss",
+        "note": "مفتوح المصدر، وMeilisearch Cloud مدفوعة"
+      },
+      "url": "https://www.meilisearch.com",
+      "source": "meilisearch.com",
+      "importance": 1,
+      "tags": [
+        "search",
+        "Laravel Scout"
+      ]
+    },
+    {
+      "id": "ess-duckdb",
+      "section": "data",
+      "kind": "tool",
+      "repo": "duckdb/duckdb",
+      "title": "DuckDB: تحليل بيانات سريع جوه أي برنامج",
+      "summary": "قاعدة بيانات تحليلية بتشتغل جوه البرنامج نفسه من غير سيرفر، وبتقرا CSV وParquet وJSON مباشرة. ومعاها CLI وclients لـ Python وR وJava وNode وغيرهم.",
+      "why": "لو عايز تحلل export كبير من الـ ERP بـ SQL في ثواني، من غير ما تحمّله في MySQL.",
+      "about": "DuckDB زي SQLite بس للتحليل. بتكتب SELECT * FROM 'sales.csv' مباشرة، وبيعمل aggregations وjoins على ملايين الصفوف بسرعة كبيرة لأنه بيشتغل بالأعمدة.\n\nبيقرا ويكتب CSV وParquet وJSON وExcel، ويقدر يوصل لـ Postgres وMySQL وS3. وفيه نسخة تشتغل في البراوزر.",
+      "features": [
+        "من غير سيرفر",
+        "SQL مباشرة على CSV وParquet وJSON",
+        "سريع جداً في التحليل",
+        "CLI وclients لكل اللغات"
+      ],
+      "install": [
+        {
+          "label": "Python",
+          "cmd": "pip install duckdb"
+        }
+      ],
+      "pricing": {
+        "model": "oss"
+      },
+      "url": "https://duckdb.org",
+      "source": "duckdb.org",
+      "importance": 1,
+      "tags": [
+        "analytics",
+        "SQL",
+        "CSV"
+      ]
+    }
+  ]
+}

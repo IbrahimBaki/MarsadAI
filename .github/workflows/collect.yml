@@ -1,0 +1,51 @@
+name: Collect signals
+
+# Runs every morning before the daily digest (07:42 Cairo):
+# new links in awesome lists, new releases, trending repos and repo stats.
+on:
+  schedule:
+    - cron: "17 4 * * *" # 07:17 Cairo
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: collect
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Restore git cache of watched lists
+        uses: actions/cache@v4
+        with:
+          path: .cache/watch
+          key: watch-${{ github.run_id }}
+          restore-keys: watch-
+
+      - name: Collect
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/collect.mjs
+
+      - name: Commit results
+        run: |
+          git config user.name "marsad-bot"
+          git config user.email "marsad-bot@users.noreply.github.com"
+          git add signals content/stats.json
+          if git diff --cached --quiet; then
+            echo "Nothing new."
+          else
+            git commit -m "chore: collect signals $(date -u +%F)"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi

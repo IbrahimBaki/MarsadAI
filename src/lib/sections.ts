@@ -1,36 +1,48 @@
-// The sections of the feed. The daily digest must use one of these ids for every item.
-// `hue` is used for the section's colour in light and dark themes.
+import config from "../../config/sections.json";
+
 export type SectionId =
   | "claude"
+  | "agents"
   | "skills"
   | "mcp"
-  | "repos"
-  | "models"
+  | "llm"
+  | "backend"
   | "laravel"
+  | "frontend"
+  | "data"
+  | "architecture"
+  | "testing"
+  | "devops"
+  | "security"
+  | "automation"
+  | "devtools"
   | "video"
   | "design";
 
 export type Section = {
   id: SectionId;
+  group: string;
   name: string;
   hint: string;
-  hue: number;
+  color: string;
 };
 
-export const SECTIONS: Section[] = [
-  { id: "claude", name: "Claude و Anthropic", hint: "تحديثات Claude Code والـ API والموديلات", hue: 28 },
-  { id: "skills", name: "Skills و Plugins", hint: "skills وplugins وagents جاهزة", hue: 262 },
-  { id: "mcp", name: "MCP Servers", hint: "سيرفرات وconnectors جديدة", hue: 190 },
-  { id: "repos", name: "ريبوز وأدوات", hint: "أدوات المطورين اللي عليها كلام", hue: 145 },
-  { id: "models", name: "موديلات وأخبار", hint: "موديلات جديدة وأخبار الشركات الكبيرة", hue: 220 },
-  { id: "laravel", name: "Laravel × AI", hint: "أدوات وباكدجات AI لعالم Laravel وPHP", hue: 0 },
-  { id: "video", name: "مونتاج وفيديو", hint: "توليد وتعديل الفيديو والصوت بالـ AI", hue: 320 },
-  { id: "design", name: "صور وتصميم", hint: "توليد الصور والتصميم والـ UI بالـ AI", hue: 48 },
-];
+export type Group = { id: string; name: string; sections: Section[] };
 
-export const SECTION_BY_ID = Object.fromEntries(SECTIONS.map((s) => [s.id, s])) as Record<
-  SectionId,
-  Section
->;
+export const SECTIONS: Section[] = config.sections.map((s) => ({
+  id: s.id as SectionId,
+  group: s.group,
+  name: s.name,
+  hint: s.hint,
+  color: s.color,
+}));
 
-export const SECTION_IDS = SECTIONS.map((s) => s.id);
+export const SECTION_BY_ID = Object.fromEntries(SECTIONS.map((s) => [s.id, s])) as Record<SectionId, Section>;
+
+export const GROUPS: Group[] = config.groups.map((g) => ({
+  ...g,
+  sections: SECTIONS.filter((s) => s.group === g.id),
+}));
+
+export const KIND_LABEL = config.kinds as Record<string, string>;
+export const PRICING_LABEL = config.pricing as Record<string, string>;

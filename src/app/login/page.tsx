@@ -11,7 +11,7 @@ export default function LoginPage() {
       <div className="w-full max-w-sm">
         <div className="mb-8 flex flex-col items-center text-center">
           <Mark size={56} />
-          <h1 className="mt-4 text-[30px] font-semibold leading-10">{APP.name}</h1>
+          <h1 className="mt-4 text-[32px] font-bold leading-10">{APP.name}</h1>
           <p className="mt-1 text-[15px] text-muted">{APP.tagline}</p>
         </div>
         <LoginForm />
