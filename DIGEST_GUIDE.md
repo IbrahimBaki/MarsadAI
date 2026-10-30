@@ -4,7 +4,8 @@ This file is the brief for the scheduled task that writes Marsad's daily digest.
 Follow it exactly. The output is one new file, `content/YYYY-MM-DD.json`, committed and pushed to `main`.
 Vercel deploys automatically on push.
 
-**The app is bilingual — English (default) and Arabic.** Every item is written in Arabic at the top
+**The app is bilingual — English (default) and Arabic.** All Arabic is **Modern Standard Arabic (الفصحى)**,
+never Egyptian or any other dialect. Every item is written in Arabic at the top
 level *and* in English inside its `en` block. The validator rejects items without a complete `en` block.
 
 ## Reader
@@ -134,8 +135,13 @@ section file (id starting with `ess-`, same schema, `features` with at least 2 e
 
 ## Writing style
 
-- Arabic, light Egyptian register, clear and direct (like explaining to a developer friend).
-  Keep product, library and technical names in English.
+- Arabic: **Modern Standard Arabic (فصحى)** only — clear, simple and direct, like a good technical
+  article. No Egyptian or other dialect words (no "بتاع، عشان، دلوقتي، كده، مش، إيه، اللي، هيعمل…";
+  write "الخاص بـ، لأن/لكي، الآن، هكذا، ليس/لا، ماذا، الذي/التي، سيعمل…").
+  Keep product, library and technical names in English; prefer common Arabic terms where they exist
+  (مستودع، نموذج، مهارة، إضافة، الواجهة البرمجية، سطر الأوامر).
+  Example — dialect: «لو بتستخدم Laravel، الباكدج ده بيوفّر عليك وقت كتير» →
+  فصحى: «إذا كنت تستخدم Laravel، فهذه الحزمة توفّر عليك وقتًا كبيرًا».
 - English (`en`, `headline_en`): plain, natural English with the same facts — a faithful
   translation, not a rewrite. Western digits, no Arabic letters. Same tone rules as below.
 - No hype words, no exclamation marks, no emojis.

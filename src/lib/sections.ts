@@ -26,7 +26,7 @@ export type Section = {
   id: SectionId;
   group: string;
   name: string;
-  /** Name without the "& …" / "و …" tail, for tight spots like card headers. */
+  /** Name without the "& …" / "و…" tail, for tight spots like card headers. */
   short: string;
   hint: string;
   color: string;
@@ -54,7 +54,7 @@ function build(locale: Locale): Taxonomy {
       id: s.id as SectionId,
       group: s.group,
       name,
-      short: name.split(locale === "ar" ? " و " : " & ")[0],
+      short: (locale === "ar" ? name.split(/ و(?=\S)/) : name.split(" & "))[0],
       hint: (s.hint as L10n)[locale],
       color: s.color,
     };

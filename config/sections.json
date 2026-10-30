@@ -5,7 +5,7 @@
       "id": "ai",
       "name": {
         "en": "AI for developers",
-        "ar": "AI للمبرمجين"
+        "ar": "الذكاء الاصطناعي للمطورين"
       }
     },
     {
@@ -19,14 +19,14 @@
       "id": "auto",
       "name": {
         "en": "Automation & productivity",
-        "ar": "أتمتة وإنتاجية"
+        "ar": "الأتمتة والإنتاجية"
       }
     },
     {
       "id": "creative",
       "name": {
         "en": "Creative",
-        "ar": "إبداع"
+        "ar": "الإبداع"
       }
     }
   ],
@@ -40,7 +40,7 @@
       },
       "hint": {
         "en": "Claude Code, the API, new models and everything from Anthropic",
-        "ar": "تحديثات Claude Code والـ API والموديلات وكل منتجات Anthropic"
+        "ar": "تحديثات Claude Code وواجهة Claude البرمجية والنماذج وكل منتجات Anthropic"
       },
       "color": "#E2702A",
       "scope": "Claude Code releases and features, Claude apps, Anthropic API/SDK/Agent SDK changes, new Claude models, docs and engineering posts from Anthropic.",
@@ -64,11 +64,11 @@
       "group": "ai",
       "name": {
         "en": "Coding agents",
-        "ar": "Coding agents"
+        "ar": "وكلاء البرمجة"
       },
       "hint": {
         "en": "Cursor, Codex, Gemini CLI, OpenCode, Cline and more",
-        "ar": "Cursor وCodex وGemini CLI وOpenCode وCline وغيرهم"
+        "ar": "Cursor وCodex وAntigravity وOpenCode وCline وغيرها"
       },
       "color": "#3B5BDB",
       "scope": "AI coding agents, AI IDEs and editor extensions other than Claude Code: new tools, major releases, new capabilities, comparisons worth reading.",
@@ -97,11 +97,11 @@
       "group": "ai",
       "name": {
         "en": "Skills & Plugins",
-        "ar": "Skills و Plugins"
+        "ar": "المهارات والإضافات"
       },
       "hint": {
         "en": "Ready-made skills, plugins, subagents and workflows for agents",
-        "ar": "skills وplugins وsubagents وworkflows جاهزة للـ agents"
+        "ar": "مهارات وإضافات ووكلاء فرعيون وسير عمل جاهزة للوكلاء"
       },
       "color": "#7048E8",
       "scope": "Agent Skills (SKILL.md), Claude Code plugins and marketplaces, subagent collections, slash-command packs, CLAUDE.md templates and agent workflow frameworks.",
@@ -126,11 +126,11 @@
       "group": "ai",
       "name": {
         "en": "MCP Servers",
-        "ar": "MCP Servers"
+        "ar": "خوادم MCP"
       },
       "hint": {
         "en": "New MCP servers, connectors and protocol changes",
-        "ar": "MCP servers جديدة، وconnectors، وتغييرات البروتوكول"
+        "ar": "خوادم MCP الجديدة والموصِّلات وتغييرات البروتوكول"
       },
       "color": "#0C8599",
       "scope": "New or notable MCP servers (especially official ones from vendors), MCP spec and SDK changes, MCP registries and gateways.",
@@ -152,11 +152,11 @@
       "group": "ai",
       "name": {
         "en": "LLMs & APIs",
-        "ar": "LLMs و APIs"
+        "ar": "النماذج اللغوية وواجهاتها"
       },
       "hint": {
         "en": "New models, pricing and API changes, RAG and local models",
-        "ar": "موديلات جديدة، وتغييرات الأسعار والـ APIs، وRAG، والموديلات المحلية"
+        "ar": "النماذج الجديدة، وتغييرات الأسعار والواجهات البرمجية، وRAG، والنماذج المحلية"
       },
       "color": "#1971C2",
       "scope": "New models from any lab, API and pricing changes, SDKs and agent frameworks, RAG/embeddings/evals tooling, local models and inference.",
@@ -183,11 +183,11 @@
       "group": "eng",
       "name": {
         "en": "Backend & APIs",
-        "ar": "Backend و APIs"
+        "ar": "الواجهة الخلفية وAPIs"
       },
       "hint": {
         "en": "Backend frameworks and tools in any language, APIs, auth and queues",
-        "ar": "frameworks وأدوات الـ backend بأي لغة، والـ APIs والـ auth والـ queues"
+        "ar": "أطر وأدوات الواجهة الخلفية بأي لغة، والواجهات البرمجية والمصادقة وطوابير المهام"
       },
       "color": "#2B8A3E",
       "scope": "Backend frameworks and libraries (Node, Python, Go, etc.), API design, auth, queues, caching, background jobs — especially AI-assisted backend tooling.",
@@ -211,11 +211,11 @@
       "group": "eng",
       "name": {
         "en": "Laravel & PHP",
-        "ar": "Laravel و PHP"
+        "ar": "Laravel وPHP"
       },
       "hint": {
         "en": "Laravel releases and packages, plus AI tooling for PHP",
-        "ar": "إصدارات Laravel وباكدجاتها، وأدوات الـ AI لـ PHP"
+        "ar": "إصدارات Laravel وحزمها، وأدوات الذكاء الاصطناعي للغة PHP"
       },
       "color": "#E03131",
       "scope": "Laravel and PHP releases, notable packages, Laravel AI SDK/Boost/MCP, Filament/Livewire, PHP AI libraries and tutorials worth reading.",
@@ -240,11 +240,11 @@
       "group": "eng",
       "name": {
         "en": "Frontend & UI",
-        "ar": "Frontend و UI"
+        "ar": "الواجهة الأمامية"
       },
       "hint": {
         "en": "React, Next, Vue, CSS, UI libraries and design-to-code",
-        "ar": "React وNext وVue وCSS، ومكتبات الـ UI، والتحويل من تصميم لكود"
+        "ar": "React وNext وVue وCSS، ومكتبات الواجهات، وتحويل التصاميم إلى شيفرة"
       },
       "color": "#C2255C",
       "scope": "Frontend frameworks and releases, CSS, component libraries, UI kits, design-to-code and AI UI generation tools, frontend skills for agents.",
@@ -274,7 +274,7 @@
       },
       "hint": {
         "en": "Postgres, MySQL, Redis, ORMs and vector databases",
-        "ar": "Postgres وMySQL وRedis، والـ ORMs، والـ vector databases"
+        "ar": "Postgres وMySQL وRedis، وأدوات ORM، وقواعد البيانات المتجهية"
       },
       "color": "#5C7CFA",
       "scope": "Databases, ORMs, migrations, query tooling, vector databases, data pipelines and AI-for-SQL tools.",
@@ -297,11 +297,11 @@
       "group": "eng",
       "name": {
         "en": "Architecture",
-        "ar": "Architecture"
+        "ar": "معمارية البرمجيات"
       },
       "hint": {
         "en": "System design, patterns, spec-driven development and docs",
-        "ar": "تصميم الأنظمة والـ patterns وspec-driven development والتوثيق"
+        "ar": "تصميم الأنظمة والأنماط والتطوير المبني على المواصفات والتوثيق"
       },
       "color": "#495057",
       "scope": "Software architecture and system design, design patterns, spec-driven development, ADRs and documentation tooling, AI-assisted architecture and code-understanding tools.",
@@ -324,11 +324,11 @@
       "group": "eng",
       "name": {
         "en": "Testing & QA",
-        "ar": "Testing و QA"
+        "ar": "الاختبار والجودة"
       },
       "hint": {
         "en": "Playwright, test generation and AI code review",
-        "ar": "Playwright، وتوليد التيستات، والـ code review بالـ AI"
+        "ar": "Playwright، وتوليد الاختبارات، ومراجعة الشيفرة بالذكاء الاصطناعي"
       },
       "color": "#0B7285",
       "scope": "Test frameworks, E2E/browser testing, AI test generation, AI code review bots, QA automation.",
@@ -351,11 +351,11 @@
       "group": "eng",
       "name": {
         "en": "DevOps & Infra",
-        "ar": "DevOps و Infra"
+        "ar": "DevOps والبنية التحتية"
       },
       "hint": {
         "en": "Docker, CI/CD, servers, self-hosting and monitoring",
-        "ar": "Docker وCI/CD والسيرفرات والـ self-hosting والمراقبة"
+        "ar": "Docker وCI/CD والخوادم والاستضافة الذاتية والمراقبة"
       },
       "color": "#1864AB",
       "scope": "Containers, CI/CD, self-hosting platforms, servers and Linux tooling, observability, cloud and deployment platforms, AI for ops.",
@@ -380,11 +380,11 @@
       "group": "eng",
       "name": {
         "en": "Security",
-        "ar": "Security"
+        "ar": "الأمان"
       },
       "hint": {
         "en": "Securing code and agents, secrets, and major vulnerabilities",
-        "ar": "أمان الكود والـ agents، والأسرار، وثغرات مهمة"
+        "ar": "أمان الشيفرة والوكلاء، وحماية الأسرار، والثغرات المهمة"
       },
       "color": "#862E9C",
       "scope": "Application and supply-chain security, secret scanning, SAST, security of AI agents and MCP (prompt injection, permissions), critical vulnerabilities in common stacks.",
@@ -407,11 +407,11 @@
       "group": "auto",
       "name": {
         "en": "Automation & Workflows",
-        "ar": "Automation و Workflows"
+        "ar": "الأتمتة وسير العمل"
       },
       "hint": {
         "en": "n8n, autonomous agents, browser and task automation",
-        "ar": "n8n، والـ agents اللي بتشتغل لوحدها، وأتمتة البراوزر والمهام"
+        "ar": "n8n، والوكلاء المستقلون، وأتمتة المتصفح والمهام"
       },
       "color": "#E67700",
       "scope": "Workflow automation platforms, multi-agent orchestration, background/scheduled agents, browser automation and scraping for agents.",
@@ -438,7 +438,7 @@
       },
       "hint": {
         "en": "The terminal, git, CLIs and tools that boost your productivity",
-        "ar": "الترمينال وgit والـ CLI وأدوات تزوّد إنتاجيتك"
+        "ar": "الطرفية وgit وأدوات سطر الأوامر وكل ما يرفع إنتاجيتك"
       },
       "color": "#5F3DC4",
       "scope": "Terminal apps, shells, git tools, CLI utilities, editors and productivity tools for developers.",
@@ -459,11 +459,11 @@
       "group": "creative",
       "name": {
         "en": "Video & Audio",
-        "ar": "فيديو وصوت"
+        "ar": "الفيديو والصوت"
       },
       "hint": {
         "en": "Video generation and editing, audio, voices and dubbing",
-        "ar": "توليد وتعديل الفيديو، والمونتاج، والأصوات والدبلجة"
+        "ar": "توليد الفيديو وتحريره، والمونتاج، والأصوات والدبلجة"
       },
       "color": "#D6336C",
       "scope": "AI video generation and editing, editing software features, voice/TTS/dubbing, music and sound effects generation.",
@@ -485,11 +485,11 @@
       "group": "creative",
       "name": {
         "en": "Images & Design",
-        "ar": "صور وتصميم"
+        "ar": "الصور والتصميم"
       },
       "hint": {
         "en": "Image generation, UI/UX tools and branding",
-        "ar": "توليد الصور، وأدوات الـ UI/UX، والبراندنج"
+        "ar": "توليد الصور، وأدوات تصميم الواجهات وتجربة المستخدم، والهوية البصرية"
       },
       "color": "#B7791F",
       "scope": "Image generation models and tools, UI/UX design tools with AI, branding and vector tools.",
@@ -514,15 +514,15 @@
     },
     "repo": {
       "en": "Repo",
-      "ar": "ريبو"
+      "ar": "مستودع"
     },
     "skill": {
       "en": "Skill",
-      "ar": "Skill"
+      "ar": "مهارة"
     },
     "plugin": {
       "en": "Plugin",
-      "ar": "Plugin"
+      "ar": "إضافة"
     },
     "mcp": {
       "en": "MCP",
@@ -538,7 +538,7 @@
     },
     "model": {
       "en": "Model",
-      "ar": "موديل"
+      "ar": "نموذج"
     },
     "article": {
       "en": "Article",
@@ -560,7 +560,7 @@
     },
     "freemium": {
       "en": "Freemium",
-      "ar": "فيه خطة مجانية"
+      "ar": "بخطة مجانية"
     },
     "paid": {
       "en": "Paid",
