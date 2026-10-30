@@ -8,7 +8,7 @@
       "repo": "anthropics/skills",
       "title": "ريبو الـ Skills الرسمي من Anthropic",
       "summary": "الـ skills الرسمية من Anthropic: التعامل مع ملفات Word وExcel وPowerPoint وPDF، والتصميم، وبناء MCP servers، وskill بتساعدك تعمل skills جديدة. ومعاها أمثلة تتعلم منها.",
-      "why": "أحسن مكان تتعلم منه شكل الـ skill الصح، وفيه skills تستخدمها على طول، زي إنك تطلّع تقارير Excel أو PDF من بيانات الـ ERP.",
+      "why": "أحسن مكان تتعلم منه شكل الـ skill الصح، وفيه skills تستخدمها على طول، زي إنك تطلّع تقرير Excel أو PDF مظبوط من أي بيانات.",
       "about": "الـ skill فولدر فيه ملف SKILL.md بالتعليمات، ومعاه scripts وملفات مساعدة، وClaude بيحمّله بس لما المهمة تحتاجه، فمش بياكل من الـ context طول الوقت.\n\nالريبو ده فيه نوعين. Document skills، ودي اللي Claude بيستخدمها في التطبيق نفسه للتعامل مع docx وxlsx وpptx وpdf، وفيها شغل جدي زي الـ formulas والتنسيق. وExample skills، زي art وdesign وmcp-builder وskill-creator وwebapp-testing.\n\nالريبو بيتبع معيار Agent Skills المفتوح، فالـ skills دي بتشتغل كمان مع أدوات تانية بتدعمه.",
       "features": [
         "skills لملفات Word وExcel وPowerPoint وPDF",
@@ -47,7 +47,7 @@
       "en": {
         "title": "Anthropic's official Skills repo",
         "summary": "Anthropic's official skills: working with Word, Excel, PowerPoint and PDF files, design, building MCP servers, and a skill that helps you create new skills, plus examples to learn from.",
-        "why": "The best place to learn what a proper skill looks like, with skills you can use right away, like producing Excel or PDF reports from your ERP data.",
+        "why": "The best place to learn what a proper skill looks like, with skills you can use right away, like producing a polished Excel or PDF report from any data.",
         "about": "A skill is a folder with a SKILL.md file of instructions plus scripts and helper files. Claude loads it only when a task needs it, so it doesn't eat into the context all the time.\n\nThe repo has two kinds. Document skills, which Claude uses in the app itself to handle docx, xlsx, pptx and pdf, and which do serious work like formulas and formatting. And example skills, like art, design, mcp-builder, skill-creator and webapp-testing.\n\nThe repo follows the open Agent Skills standard, so these skills also work with other tools that support it.",
         "features": [
           "Skills for Word, Excel, PowerPoint and PDF files",
@@ -156,7 +156,7 @@
       "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
       "title": "UI UX Pro Max: عقل تصميم للـ agent",
       "summary": "skill فيها قاعدة بيانات كبيرة للتصميم: ٧٩ ستايل، و١٩٢ palette ألوان، و٧٤ تركيبة خطوط، و١١٩ قاعدة UX، وDesign System Generator بيقترح نظام تصميم كامل حسب نوع المنتج.",
-      "why": "بتخلي الواجهات اللي Claude بيعملها لك، زي شاشات الـ ERP أو Dokkanx، شكلها مدروس مش عشوائي، وبتدعم Laravel وReact وVue وغيرهم.",
+      "why": "بتخلي الواجهات اللي الـ agent بيعملها، زي لوحة تحكم أو صفحة هبوط، شكلها مدروس مش عشوائي، وبتدعم Laravel وReact وVue وغيرهم.",
       "about": "UI UX Pro Max بتدّي الـ agent مرجع منظم يرجع له وهو بيصمم بدل ما يخمّن.\n\nفي v2 ضافوا Design System Generator: بتوصف المنتج، فيحلل نوعه من ١٩٢ نوع، زي SaaS وFintech وعيادات ومطاعم ولوحات تحكم، ويقترح structure الصفحة، والستايل، والألوان، والخطوط، والـ effects، والحاجات اللي لازم تتجنبها. وبيختم بـ checklist قبل التسليم: التباين، والـ focus، والـ reduced motion، والمقاسات المختلفة.\n\nبيدعم ٢٢ stack، منهم Laravel وReact وNext.js وVue وshadcn/ui وFlutter.",
       "features": [
         "Design System Generator حسب نوع المنتج",
@@ -196,7 +196,7 @@
       "en": {
         "title": "UI UX Pro Max: a design brain for your agent",
         "summary": "A skill with a large design database: 79 styles, 192 color palettes, 74 font pairings, 119 UX rules, and a Design System Generator that proposes a full design system for your type of product.",
-        "why": "It makes the interfaces Claude builds for you, like ERP screens or Dokkanx, look deliberate rather than random, and it supports Laravel, React, Vue and more.",
+        "why": "It makes the interfaces your agent builds, like a dashboard or a landing page, look deliberate rather than random, and it supports Laravel, React, Vue and more.",
         "about": "UI UX Pro Max gives the agent an organised reference to consult while designing instead of guessing.\n\nv2 added the Design System Generator: you describe the product, it classifies it among 192 product types such as SaaS, fintech, clinics, restaurants and dashboards, and proposes the page structure, style, colors, fonts, effects and things to avoid. It ends with a pre-delivery checklist: contrast, focus states, reduced motion and different screen sizes.\n\nIt supports 22 stacks, including Laravel, React, Next.js, Vue, shadcn/ui and Flutter.",
         "features": [
           "Design System Generator by product type",
@@ -517,7 +517,7 @@
       "repo": "vercel-labs/agent-skills",
       "title": "Vercel Agent Skills: skills رسمية لـ React وNext.js وVercel",
       "summary": "مجموعة skills من Vercel على معيار Agent Skills: أفضل ممارسات React وNext.js للأداء، وأنماط الـ composition، وReact Native، وتحسين تكلفة وأداء مشاريع Vercel.",
-      "why": "لو بتبني واجهات React أو Next.js، زي المرصد ده، الـ skills دي بتخلي الكود اللي الـ agent بيكتبه ماشي على توصيات Vercel نفسها.",
+      "why": "لو بتبني واجهات React أو Next.js، الـ skills دي بتخلي الكود اللي الـ agent بيكتبه ماشي على توصيات Vercel نفسها في الأداء والتنظيم.",
       "about": "الـ skills دي من فريق Vercel، وفيها: react-best-practices لأداء React وNext.js، وcomposition-patterns لتصميم components قابلة لإعادة الاستخدام، وreact-native-skills، وreact-view-transitions، وdeploy-to-vercel، وvercel-optimize اللي بيراجع تكلفة وأداء المشروع من الـ metrics.\n\nبتتركب لأي agent بيدعم المعيار عن طريق npx skills.",
       "features": [
         "أداء React وNext.js",
@@ -546,7 +546,7 @@
       "en": {
         "title": "Vercel Agent Skills: official skills for React, Next.js and Vercel",
         "summary": "A set of skills from Vercel on the Agent Skills standard: React and Next.js performance best practices, composition patterns, React Native, and cost and performance tuning for Vercel projects.",
-        "why": "If you build React or Next.js interfaces, like Marsad itself, these skills keep the code the agent writes in line with Vercel's own recommendations.",
+        "why": "If you build React or Next.js interfaces, these skills keep the code your agent writes in line with Vercel's own performance and structure recommendations.",
         "about": "These skills come from the Vercel team: react-best-practices for React and Next.js performance, composition-patterns for designing reusable components, react-native-skills, react-view-transitions, deploy-to-vercel, and vercel-optimize, which reviews a project's cost and performance from its metrics.\n\nThey install into any agent that supports the standard via npx skills.",
         "features": [
           "React and Next.js performance",

@@ -301,7 +301,7 @@
       "repo": "pydantic/pydantic-ai",
       "title": "Pydantic AI: framework للـ agents بـ Python مع types كاملة",
       "summary": "framework لـ Python من فريق Pydantic. agent loop فيه types من أوله لآخره، وأي موديل تبدّله بتغيير string، ومعاه Harness للمهام الطويلة، وEvals لتقييم الـ agents.",
-      "why": "لو هتعمل خدمة AI جنب الـ ERP بـ Python، ده من أنضف الـ frameworks، والـ types بتقلل الأخطاء.",
+      "why": "لو هتعمل خدمة AI بـ Python جنب تطبيقك، ده من أنضف الـ frameworks، والـ types بتقلل الأخطاء.",
       "about": "Pydantic AI بيعتمد على Pydantic للتحقق من المدخلات والمخرجات، فالـ structured output والـ tools بتبقى مضمونة الشكل. بيدعم كل المزودين الكبار، والـ MCP، والـ streaming، والـ dependency injection للأدوات.\n\nPydantic AI Harness بيضيف قدرات للمهام الطويلة زي الذاكرة، وPydantic Evals بيقيّم الردود ومسار استدعاء الأدوات على datasets أو على الـ traffic الحقيقي. ومعاه Logfire للمراقبة.",
       "features": [
         "types من أول الـ agent لآخره",
@@ -329,7 +329,7 @@
       "en": {
         "title": "Pydantic AI: a fully typed Python agent framework",
         "summary": "A Python framework from the Pydantic team. An agent loop that's typed end to end, any model swappable by changing a string, a Harness for long tasks, and Evals for testing agents.",
-        "why": "If you'll build an AI service in Python alongside the ERP, it's one of the cleanest frameworks, and the types cut down on bugs.",
+        "why": "If you'll build an AI service in Python alongside your app, it's one of the cleanest frameworks, and the types cut down on bugs.",
         "about": "Pydantic AI relies on Pydantic to validate inputs and outputs, so structured output and tools always have the right shape. It supports all the major providers, MCP, streaming, and dependency injection for tools.\n\nPydantic AI Harness adds capabilities for long tasks like memory, and Pydantic Evals scores responses and tool-call paths on datasets or real traffic. Logfire handles observability.",
         "features": [
           "Types from one end of the agent to the other",

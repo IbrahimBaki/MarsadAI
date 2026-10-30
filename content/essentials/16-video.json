@@ -91,7 +91,7 @@
       "kind": "tool",
       "title": "DaVinci Resolve: مونتاج احترافي ومجاني ويشتغل على Linux",
       "summary": "برنامج احترافي للمونتاج وتصحيح الألوان والصوت والمؤثرات، والنسخة المجانية فيها حاجات كتير. وفيه أدوات AI من DaVinci Neural Engine، زي العزل الصوتي، وتتبع العناصر، والكابشن.",
-      "why": "لو عايز تتعلم مونتاج بجد من غير اشتراك، ده أقوى اختيار مجاني، وبيشتغل على Linux Mint كمان.",
+      "why": "لو عايز تتعلم مونتاج بجد من غير اشتراك، ده أقوى اختيار مجاني، وبيشتغل على Windows وmacOS وLinux.",
       "about": "DaVinci Resolve من Blackmagic Design، ومستخدم في أفلام ومسلسلات. فيه صفحات لكل مرحلة: Cut وEdit للمونتاج، وColor لتصحيح الألوان (وده أقوى حاجة فيه)، وFairlight للصوت، وFusion للمؤثرات.\n\nأدوات الـ Neural Engine، زي Voice Isolation وMagic Mask والـ transcription، بعضها في النسخة المجانية وبعضها في Studio المدفوعة (مرة واحدة من غير اشتراك).",
       "features": [
         "مونتاج وألوان وصوت ومؤثرات",
@@ -114,7 +114,7 @@
       "en": {
         "title": "DaVinci Resolve: professional, free editing that runs on Linux",
         "summary": "Professional software for editing, color grading, audio and effects, with a very capable free version. It has AI tools from the DaVinci Neural Engine, like voice isolation, object tracking and captions.",
-        "why": "If you want to learn editing properly without a subscription, it's the strongest free option, and it runs on Linux Mint too.",
+        "why": "If you want to learn editing properly without a subscription, it's the strongest free option, and it runs on Windows, macOS and Linux.",
         "about": "DaVinci Resolve is from Blackmagic Design and is used on films and series. It has a page for each stage: Cut and Edit for editing, Color for grading (its biggest strength), Fairlight for audio, and Fusion for effects.\n\nNeural Engine tools like Voice Isolation, Magic Mask and transcription are partly in the free version and partly in the paid Studio (a one-time purchase, no subscription).",
         "features": [
           "Editing, color, audio and effects",

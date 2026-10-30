@@ -7,7 +7,7 @@
       "kind": "article",
       "title": "Model Context Protocol: الموقع والمواصفة الرسمية",
       "summary": "المواصفة الرسمية للبروتوكول، وشرح للمفاهيم الأساسية زي tools وresources وprompts والـ transports والـ auth، ومعاها SDKs رسمية لأكتر من لغة وأدلة لبناء server أو client.",
-      "why": "لازم تفهم الأساس ده لو هتعمل MCP server يربط Claude بالـ ERP بتاعك، أو لو هتقيّم أمان server قبل ما تركّبه.",
+      "why": "لازم تفهم الأساس ده لو هتعمل MCP server يربط الـ agent بنظامك أو بياناتك، أو لو عايز تقيّم أمان أي server قبل ما تركّبه.",
       "about": "MCP معيار مفتوح بيحدد إزاي تطبيقات الـ AI بتتكلم مع الأدوات والبيانات. الـ server بيعرض tools، يعني أفعال زي إنشاء فاتورة أو تشغيل query، وresources، يعني بيانات تتقري، وprompts جاهزة. والـ client، زي Claude Code أو Cursor، بيوصل له محلياً عن طريق stdio، أو عن بعد عن طريق Streamable HTTP ومعاه OAuth.\n\nالموقع فيه SDKs رسمية لـ TypeScript وPython وJava وKotlin وC# وGo وPHP وRuby وRust وSwift، ومعاها MCP Inspector لاختبار أي server.",
       "features": [
         "المواصفة الكاملة وتاريخ الإصدارات",
@@ -36,7 +36,7 @@
       "en": {
         "title": "Model Context Protocol: the official site and specification",
         "summary": "The protocol's official specification, with explanations of the core concepts like tools, resources, prompts, transports and auth, plus official SDKs for many languages and guides for building a server or client.",
-        "why": "You need these fundamentals if you'll build an MCP server that connects Claude to your ERP, or if you want to judge a server's security before installing it.",
+        "why": "You need these fundamentals if you'll build an MCP server that connects an agent to your system or data, or want to judge any server's security before installing it.",
         "about": "MCP is an open standard for how AI applications talk to tools and data. A server exposes tools, meaning actions like creating an invoice or running a query; resources, meaning data to read; and ready-made prompts. A client, like Claude Code or Cursor, connects to it locally over stdio, or remotely over Streamable HTTP with OAuth.\n\nThe site has official SDKs for TypeScript, Python, Java, Kotlin, C#, Go, PHP, Ruby, Rust and Swift, plus MCP Inspector for testing any server.",
         "features": [
           "The full spec and version history",
@@ -201,7 +201,7 @@
       "repo": "microsoft/playwright-mcp",
       "title": "Playwright MCP: الـ agent يتحكم في براوزر حقيقي",
       "summary": "MCP server من Microsoft مبني على Playwright. الـ agent بيفتح صفحات ويدوس ويملا فورمز ويقرا الصفحة، وبيعتمد على شجرة الـ accessibility بدل صور الشاشة، فبيبقى أسرع وأدق.",
-      "why": "بعد ما Claude يعدّل شاشة في الـ ERP، يقدر يفتحها بنفسه ويجرّب الفورم والـ DataTable ويتأكد إن مفيش errors قبل ما يقولك خلص.",
+      "why": "بعد ما الـ agent يعدّل صفحة، يقدر يفتحها بنفسه ويجرّب الفورم والجداول ويتأكد إن مفيش errors قبل ما يقولك خلص.",
       "about": "بدل ما الموديل يشوف صورة للصفحة ويخمّن مكان الزراير، Playwright MCP بيدّيله الصفحة كنص منظم فيه كل عنصر واسمه ودوره. ده بيخليه أسرع، وأرخص في الـ tokens، وأدق في الضغط والكتابة. ولو احتاج، بياخد screenshot.\n\nبيشتغل مع Chromium وFirefox وWebKit، بواجهة أو headless، وفيه إعدادات للـ profile والـ viewport والـ proxy. ويقدر يقرا رسايل الـ console والـ network requests.",
       "features": [
         "تحكم كامل: تنقّل وضغط وكتابة ورفع ملفات",
@@ -255,7 +255,7 @@
       "en": {
         "title": "Playwright MCP: let the agent drive a real browser",
         "summary": "An MCP server from Microsoft built on Playwright. The agent opens pages, clicks, fills forms and reads the page, using the accessibility tree instead of screenshots, so it's faster and more precise.",
-        "why": "After Claude changes a screen in the ERP, it can open it itself, try the form and the DataTable, and confirm there are no errors before telling you it's done.",
+        "why": "After the agent changes a page, it can open it itself, try the forms and tables, and confirm there are no errors before telling you it's done.",
         "about": "Instead of the model looking at a screenshot and guessing where the buttons are, Playwright MCP gives it the page as structured text with every element, its name and its role. That makes it faster, cheaper in tokens and more accurate when clicking and typing. It can still take a screenshot when needed.\n\nIt works with Chromium, Firefox and WebKit, headed or headless, with settings for the profile, viewport and proxy. It can also read console messages and network requests.",
         "features": [
           "Full control: navigate, click, type and upload files",
@@ -287,7 +287,7 @@
       "repo": "ChromeDevTools/chrome-devtools-mcp",
       "title": "Chrome DevTools MCP: الـ agent يشوف الـ console والـ network والأداء",
       "summary": "MCP server رسمي من فريق Chrome بيدّي الـ agent أدوات DevTools: يقرا الـ console errors والـ network requests، ويسجّل performance traces ويحللها، ويتحكم في الصفحة.",
-      "why": "مفيد جداً في debugging مشاكل الـ AJAX والـ DataTables، لأن الـ agent بيشوف الـ request والـ response الحقيقيين، وبيحلل بطء الصفحات.",
+      "why": "مفيد جداً في debugging مشاكل الـ AJAX والطلبات اللي بتفشل، لأن الـ agent بيشوف الـ request والـ response الحقيقيين، وبيحلل بطء الصفحات.",
       "about": "الفرق بينه وبين Playwright MCP إن ده متخصص في الـ debugging والأداء. بيسجّل performance trace ويطلّع منها insights زي LCP والحاجات اللي بتعطّل الصفحة، وبيقرا الـ network بالتفصيل، والـ console، ويقدر يعمل emulation لشبكة بطيئة أو CPU ضعيف.\n\nمحتاج Node LTS وChrome stable.",
       "features": [
         "performance traces وتحليلها",
@@ -331,7 +331,7 @@
       "en": {
         "title": "Chrome DevTools MCP: let the agent see the console, network and performance",
         "summary": "An official MCP server from the Chrome team that gives the agent DevTools: it reads console errors and network requests, records and analyses performance traces, and controls the page.",
-        "why": "Very useful for debugging AJAX and DataTables issues, since the agent sees the real request and response, and for analysing slow pages.",
+        "why": "Very useful for debugging AJAX and failing requests, since the agent sees the real request and response, and for analysing slow pages.",
         "about": "Unlike Playwright MCP, this one specialises in debugging and performance. It records a performance trace and extracts insights like LCP and what's blocking the page, reads network traffic in detail and the console, and can emulate a slow network or a weak CPU.\n\nIt needs Node LTS and Chrome stable.",
         "features": [
           "Performance traces and analysis",
@@ -413,7 +413,7 @@
       "repo": "oraios/serena",
       "title": "Serena: الـ agent يفهم الكود بالـ symbols زي الـ IDE",
       "summary": "MCP server بيدّي الـ agent أدوات زي بتاعة الـ IDE: يلاقي تعريف أي class أو function، ومين بيستخدمها، ويعدّل أو يعمل refactor على مستوى الـ symbol، بدل البحث في النص وأرقام السطور.",
-      "why": "في مشروع كبير زي Company-ERP، الـ agent بيوصل للكود اللي محتاجه أسرع وبـ tokens أقل، وبيدعم PHP، وفيه backend بيشتغل مع PhpStorm.",
+      "why": "في أي مشروع كبير، الـ agent بيوصل للكود اللي محتاجه أسرع وبـ tokens أقل. وبيدعم لغات كتير منها PHP، وفيه backend بيشتغل مع JetBrains IDEs.",
       "about": "Serena بيستخدم language servers، أو plugin لـ JetBrains، عشان يفهم الكود فهم حقيقي: الـ symbols والعلاقات بينها. فالـ agent بيقدر يسأل \"فين تعريف الكلاس ده\" أو \"مين بيستدعي الـ method دي\"، ويعدّل جسم function معينة من غير ما يقرا الملف كله.\n\nبيدعم أكتر من ٤٠ لغة، منها PHP. وصاحبه بينصح تسطّبه بـ uv مباشرة، مش من الـ marketplaces لأن الأوامر اللي فيها قديمة.",
       "features": [
         "بحث وتعديل على مستوى الـ symbol",
@@ -459,7 +459,7 @@
       "en": {
         "title": "Serena: the agent understands code by symbols, like an IDE",
         "summary": "An MCP server that gives the agent IDE-like tools: find the definition of any class or function and who uses it, and edit or refactor at the symbol level, instead of text search and line numbers.",
-        "why": "In a large project like Company-ERP, the agent reaches the code it needs faster and with fewer tokens. It supports PHP and has a backend that works with PhpStorm.",
+        "why": "In any large project, the agent reaches the code it needs faster and with fewer tokens. It supports many languages including PHP, and has a backend that works with JetBrains IDEs.",
         "about": "Serena uses language servers, or a JetBrains plugin, to truly understand code: the symbols and how they relate. So the agent can ask \"where is this class defined\" or \"who calls this method\", and edit the body of a specific function without reading the whole file.\n\nIt supports more than 40 languages, including PHP. Its author recommends installing it directly with uv rather than from marketplaces, whose commands are out of date.",
         "features": [
           "Symbol-level search and editing",

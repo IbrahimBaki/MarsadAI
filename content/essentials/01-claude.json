@@ -55,7 +55,7 @@
       "kind": "article",
       "title": "أفضل الممارسات للشغل بـ Claude Code من Anthropic",
       "summary": "مقال من فريق Anthropic بيشرح إزاي تشتغل بـ Claude Code صح: تكتب CLAUDE.md كويس، وتخليه يخطط قبل ما يكتب كود، وتشتغل بالـ TDD، وتشغّل أكتر من جلسة في نفس الوقت.",
-      "why": "مقال واحد ممكن يغيّر طريقة شغلك اليومية، والنصايح اللي فيه مطبّقة على مشروع كبير زي Company-ERP بالظبط.",
+      "why": "مقال واحد ممكن يغيّر طريقة شغلك اليومية مع أي coding agent، ونصايحه بتفرق أكتر كل ما المشروع يكبر.",
       "about": "المقال ده كتبه فريق Anthropic من تجربتهم الداخلية مع Claude Code. أهم الأفكار اللي فيه:\n\nظبّط البيئة: CLAUDE.md فيه أوامر المشروع وأسلوب الكود والتحذيرات، وظبّط الصلاحيات المسموحة عشان ميسألكش كل شوية.\n\nخليه يقرا ويخطط الأول: \"اقرا الملفات دي، واعمل خطة، ومتكتبش كود لسه\"، وبعدين نفّذ. والكلمات زي think hard بتديله وقت تفكير أكتر.\n\nTDD: اكتب التيستات الأول، واتأكد إنها بتفشل، وبعدين خليه يكتب الكود لحد ما تعدّي.\n\nإدّيله هدف يقيس عليه: screenshot للتصميم المطلوب، أو تيستات، أو output متوقع.\n\nأكتر من جلسة: worktrees أو نسخ منفصلة، وواحد يكتب والتاني يراجع.",
       "features": [
         "إزاي تكتب CLAUDE.md مفيد",
@@ -74,7 +74,7 @@
       "en": {
         "title": "Claude Code best practices from Anthropic",
         "summary": "An article from the Anthropic team on working well with Claude Code: write a good CLAUDE.md, have it plan before it writes code, work test-first, and run several sessions in parallel.",
-        "why": "A single article that can change how you work every day, and its advice applies directly to a large project like Company-ERP.",
+        "why": "A single article that can change how you work with any coding agent day to day, and its advice matters more the bigger the project gets.",
         "about": "Written by the Anthropic team from their internal experience with Claude Code. The key ideas:\n\nSet up the environment: a CLAUDE.md with the project's commands, code style and warnings, plus pre-approved permissions so it doesn't keep asking.\n\nLet it read and plan first: \"read these files, make a plan, don't write code yet\", then implement. Words like \"think hard\" give it more thinking time.\n\nTDD: write the tests first, confirm they fail, then have it write code until they pass.\n\nGive it a target to check against: a screenshot of the expected design, tests, or an expected output.\n\nMultiple sessions: worktrees or separate checkouts, with one writing and another reviewing.",
         "features": [
           "How to write a useful CLAUDE.md",
@@ -90,7 +90,7 @@
       "kind": "article",
       "title": "Subagents في Claude Code",
       "summary": "تعمل agents متخصصة، لكل واحد system prompt وأدوات وصلاحيات خاصة بيه، زي reviewer أو agent للتيستات. كل واحد بيشتغل في context منفصل، فالجلسة الأساسية بتفضل نضيفة.",
-      "why": "ممكن تعمل subagent فاهم نظام الـ modules والـ permissions في المشروع، وتستدعيه في أي مهمة من غير ما تعيد شرح المشروع.",
+      "why": "ممكن تعمل subagent فاهم بنية مشروعك وقواعده، زي reviewer للكود أو خبير في الداتابيز، وتستدعيه في أي مهمة من غير ما تعيد الشرح.",
       "about": "الـ subagent ملف Markdown فيه frontmatter بالاسم والوصف والأدوات المسموحة والموديل، وتحته الـ system prompt. بتحطه في .claude/agents/ جوه المشروع، أو في ~/.claude/agents/ عشان يبقى متاح في كل مشاريعك.\n\nClaude بيستدعيه لوحده لما المهمة تناسب الوصف، أو تطلبه إنت بالاسم. وكل subagent بيشتغل في context منفصل، فالبحث الطويل أو قراية ملفات كتير مش بيملا الجلسة الأساسية، وبيرجّع النتيجة بس.\n\nأمثلة مفيدة: code-reviewer بيراجع الـ diff بعد أي تعديل، وtest-runner بيشغّل التيستات ويصلّح اللي بيفشل، وexplorer بيدوّر في الكود ويلخص.",
       "features": [
         "system prompt وأدوات وموديل لكل subagent",
@@ -111,7 +111,7 @@
       "en": {
         "title": "Subagents in Claude Code",
         "summary": "Create specialised agents, each with its own system prompt, tools and permissions, such as a reviewer or a testing agent. Each runs in a separate context, so your main session stays clean.",
-        "why": "You can build a subagent that understands your project's modules and permissions system and call it for any task without re-explaining the project.",
+        "why": "You can build a subagent that knows your project's structure and rules, like a code reviewer or a database expert, and call it for any task without re-explaining.",
         "about": "A subagent is a Markdown file with frontmatter for its name, description, allowed tools and model, followed by its system prompt. Put it in .claude/agents/ inside the project, or in ~/.claude/agents/ to make it available in all your projects.\n\nClaude calls it on its own when a task matches the description, or you ask for it by name. Each subagent runs in its own context, so long searches or reading lots of files don't fill up the main session; only the result comes back.\n\nUseful examples: a code-reviewer that reviews the diff after every change, a test-runner that runs the tests and fixes failures, and an explorer that searches the codebase and summarises.",
         "features": [
           "System prompt, tools and model per subagent",

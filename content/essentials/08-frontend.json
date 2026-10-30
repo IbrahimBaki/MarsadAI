@@ -110,7 +110,7 @@
       "repo": "vercel/next.js",
       "title": "Next.js: framework الـ React الأشهر",
       "summary": "framework لـ React من Vercel: App Router، وServer Components، وstreaming، وroute handlers، وmiddleware (بقى اسمه proxy). والإصدار 16 غيّر حاجات كتير، فاقرا الدوكيومنتيشن قبل ما تكتب.",
-      "why": "المرصد ده نفسه مبني بيه. وخد بالك إن الموديلات بتكتب أحياناً بطريقة الإصدارات القديمة، فالدوكيومنتيشن المحلية في node_modules مهمة.",
+      "why": "أشهر طريقة لبناء مواقع وتطبيقات React كاملة. وخد بالك إن الموديلات بتكتب أحياناً بطريقة الإصدارات القديمة، فالدوكيومنتيشن المحلية في node_modules مهمة.",
       "about": "Next.js بيجمع الـ routing بالملفات، والـ rendering على السيرفر والـ client، والـ API routes في مشروع واحد. أهم مفاهيمه: App Router، وServer Components بتشتغل على السيرفر من غير JavaScript للـ client، وServer Actions، والـ caching.\n\nفي الإصدارات الأخيرة: Turbopack بقى الافتراضي، والـ middleware اتغيّر اسمه لـ proxy، وفيه cache components. والإصدار بيحط دوكيومنتيشن جوه node_modules/next/dist/docs عشان الـ agents تقراها.",
       "features": [
         "App Router وServer Components",
@@ -138,7 +138,7 @@
       "en": {
         "title": "Next.js: the most popular React framework",
         "summary": "Vercel's React framework: App Router, Server Components, streaming, route handlers and middleware (now called proxy). Version 16 changed a lot, so read the docs before you write code.",
-        "why": "Marsad itself is built with it. Note that models sometimes write in the style of older versions, so the local docs in node_modules matter.",
+        "why": "The most popular way to build full React sites and apps. Note that models sometimes write in the style of older versions, so the local docs in node_modules matter.",
         "about": "Next.js combines file-based routing, server and client rendering, and API routes in one project. Its key concepts: the App Router, Server Components that run on the server without client JavaScript, Server Actions, and caching.\n\nIn recent releases Turbopack became the default, middleware was renamed to proxy, and there are cache components. Releases ship documentation inside node_modules/next/dist/docs so agents can read it.",
         "features": [
           "App Router and Server Components",
@@ -206,7 +206,7 @@
       "repo": "TanStack/query",
       "title": "TanStack Query: إدارة بيانات السيرفر في الواجهة",
       "summary": "مكتبة بتتعامل مع جلب البيانات من السيرفر: caching، وإعادة الجلب، والـ pagination، والـ mutations، والـ optimistic updates. بتشتغل مع React وVue وSolid وSvelte وAngular.",
-      "why": "لو هتعمل واجهة React أو Vue لـ API الـ ERP، دي بتوفّر عليك كل منطق التحميل والأخطاء والـ cache اللي بتكتبه بإيدك.",
+      "why": "لو هتعمل واجهة React أو Vue بتكلم API، دي بتوفّر عليك كل منطق التحميل والأخطاء والـ cache اللي كنت هتكتبه بإيدك.",
       "about": "بدل ما تكتب useEffect وstate للـ loading والـ error والبيانات في كل شاشة، بتستخدم useQuery بمفتاح ودالة جلب. والمكتبة بتعمل cache، وتعيد الجلب لما الشاشة ترجع، وتلغي الطلبات القديمة، وتدعم infinite scroll.\n\nوuseMutation للتعديلات، ومعاها invalidation للبيانات اللي اتأثرت، وoptimistic updates. ومعاها Devtools.",
       "features": [
         "caching وإعادة جلب ذكية",
@@ -234,7 +234,7 @@
       "en": {
         "title": "TanStack Query: managing server data in the UI",
         "summary": "A library for fetching server data: caching, refetching, pagination, mutations and optimistic updates. Works with React, Vue, Solid, Svelte and Angular.",
-        "why": "If you'll build a React or Vue UI for the ERP's API, it saves you all the loading, error and cache logic you'd otherwise write by hand.",
+        "why": "If you'll build a React or Vue UI that talks to an API, it saves you all the loading, error and cache logic you'd otherwise write by hand.",
         "about": "Instead of writing useEffect and state for loading, error and data on every screen, you use useQuery with a key and a fetch function. The library caches, refetches when the screen comes back into focus, cancels stale requests and supports infinite scroll.\n\nuseMutation handles changes, with invalidation of affected data and optimistic updates. Devtools are included.",
         "features": [
           "Caching and smart refetching",
@@ -302,7 +302,7 @@
       "repo": "bigskysoftware/htmx",
       "title": "htmx: AJAX من الـ HTML مباشرة",
       "summary": "مكتبة بتخليك تعمل AJAX وتحديثات جزئية للصفحة وWebSockets وSSE بـ attributes في الـ HTML، والسيرفر بيرجّع HTML جاهز بدل JSON.",
-      "why": "قريب جداً من أسلوب easyAjax اللي بتستخدمه، بس بشكل قياسي: hx-post وhx-target وhx-swap من غير JavaScript.",
+      "why": "لو بتحب الـ server-rendered HTML وعايز تفاعل من غير SPA، htmx بيدّيك ده بـ attributes زي hx-post وhx-target وhx-swap من غير JavaScript.",
       "about": "مع htmx أي عنصر يقدر يبعت طلب: hx-get وhx-post وhx-put وhx-delete، وhx-target بيحدد مكان الرد، وhx-swap بيحدد طريقة التبديل، وhx-trigger بيحدد إمتى. والسيرفر، يعني Laravel، بيرجّع partial view.\n\nده بيخلي الواجهة تفاعلية من غير SPA، وكل المنطق يفضل على السيرفر.",
       "features": [
         "AJAX بـ attributes",
@@ -330,7 +330,7 @@
       "en": {
         "title": "htmx: AJAX straight from your HTML",
         "summary": "A library for AJAX, partial page updates, WebSockets and SSE using HTML attributes, with the server returning ready HTML instead of JSON.",
-        "why": "Very close to the easyAjax style you use, but standard: hx-post, hx-target and hx-swap with no JavaScript.",
+        "why": "If you like server-rendered HTML and want interactivity without a SPA, htmx gives you that with attributes like hx-post, hx-target and hx-swap and no JavaScript.",
         "about": "With htmx any element can send a request: hx-get, hx-post, hx-put and hx-delete; hx-target sets where the response goes, hx-swap how it's swapped in, and hx-trigger when. The server, Laravel in your case, returns a partial view.\n\nThat makes the UI interactive without a SPA, with all the logic staying on the server.",
         "features": [
           "AJAX through attributes",

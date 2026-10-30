@@ -74,7 +74,7 @@
       "repo": "anthropics/claude-code",
       "title": "Claude Code لحد v2.1.312: sandbox أشد وتعديل أأمن للملفات الكبيرة",
       "summary": "نزل أكتر من ٢٠ إصدار في أكتوبر. الأهم فيهم: shell startup files بقت بتشتغل جوه الـ sandbox، وأداة Monitor اتضافت لـ Bedrock وVertex وFoundry، والـ MCP بقى بيعمل reconnect صح بعد ما الجهاز ينام.",
-      "why": "إنت شغال على Claude Code CLI كل يوم، فاعمل update. ولو عندك hooks أو حاجات في .bashrc بتفترض إنها برّه الـ sandbox، راجعها.",
+      "why": "لو بتستخدم Claude Code كل يوم، حدّثه. ولو عندك hooks أو إعدادات في .bashrc بتفترض إنها شغالة برّه الـ sandbox، راجعها لأنها ممكن تتأثر.",
       "about": "أكتوبر كان شهر مليان إصدارات لـ Claude Code، وأغلبها بيركز على الأمان والثبات.\n\nمن ٢٠ لـ ٢٧ أكتوبر: v2.1.305 حسّن التوافق بين الأدوات على أكتر من مزود زي Vertex وBedrock. v2.1.306 صلّح رسالة \"Not logged in\" الغلط مع claude -p في جلسات الكلاود. v2.1.307 صلّح الـ reconnect بتاع الـ MCP بعد ما الجهاز ينام أو الـ keychain يتقفل. v2.1.309 شدّد الـ sandbox والصلاحيات، وبقت shell startup files بتشتغل جوه الـ sandbox. v2.1.310 ضاف أداة Monitor لـ Bedrock وVertex وFoundry. v2.1.311 صلّح تهنيج البداية والجلسات اللي كانت بتقف فجأة. وv2.1.312 ضاف custom OIDC claims، وخلّى تعديل الملفات الكبيرة أأمن.",
       "features": [
         "shell startup files بتشتغل جوه الـ sandbox",
@@ -110,7 +110,7 @@
       "en": {
         "title": "Claude Code up to v2.1.312: a tighter sandbox and safer large-file edits",
         "summary": "More than 20 releases shipped in October. The most important: shell startup files now run inside the sandbox, the Monitor tool came to Bedrock, Vertex and Foundry, and MCP now reconnects properly after your machine sleeps.",
-        "why": "You use the Claude Code CLI every day, so update. And if you have hooks or .bashrc setup that assumes it runs outside the sandbox, review it.",
+        "why": "If you use Claude Code daily, update. And if you have hooks or .bashrc setup that assume they run outside the sandbox, review them, since they may be affected.",
         "about": "October was packed with Claude Code releases, mostly focused on security and stability.\n\nFrom October 20 to 27: v2.1.305 improved tool compatibility across providers like Vertex and Bedrock. v2.1.306 fixed a false \"Not logged in\" message with claude -p in cloud sessions. v2.1.307 fixed MCP reconnects after the machine sleeps or the keychain locks. v2.1.309 tightened the sandbox and permissions, and shell startup files now run inside the sandbox. v2.1.310 added the Monitor tool for Bedrock, Vertex and Foundry. v2.1.311 fixed startup hangs and sessions that stopped suddenly. And v2.1.312 added custom OIDC claims and made editing large files safer.",
         "features": [
           "Shell startup files run inside the sandbox",
@@ -172,7 +172,7 @@
       "kind": "release",
       "title": "تتبّع الـ agents بـ OpenTelemetry على Claude Platform",
       "summary": "من ١٤ أكتوبر، وكـ public beta: تقدر تبعت traces لطلبات الـ Messages API وجلسات Managed Agents والـ SDKs لأي أداة observability بتستقبل OTLP.",
-      "why": "لو هتبني features بالـ AI جوه Company-ERP، ده بيخليك تشوف كل خطوة عملها الـ agent وأخدت قد إيه، من غير ما تكتب logging بإيدك.",
+      "why": "لو بتبني features بالـ AI في أي تطبيق، ده بيوريك كل خطوة عملها الـ agent وأخدت قد إيه في أداة المراقبة اللي عندك، من غير ما تكتب logging بإيدك.",
       "about": "Claude Platform بقت بتدعم OpenTelemetry tracing كـ public beta. تقدر تبعت traces لطلبات Messages API وجلسات Claude Managed Agents والـ SDKs لأي منصة observability بتقبل OTLP endpoint، زي Grafana أو Honeycomb أو Langfuse.\n\nالوضع الافتراضي إنه يبعت metadata بس. وفيه وضع كامل بيبعت الـ prompts والردود كمان، وساعتها لازم تاخد بالك من صلاحيات الوصول ومدة الاحتفاظ في المكان اللي هتبعت له.\n\nالإعداد: للـ API، الأدمن بيضيف destination من Claude Console. وللـ SDK، بتسجّل tracer provider في الـ client بتاعك. والـ spans مش مضمون توصل كلها، فلحساب الاستخدام Anthropic بتنصح بالـ Usage API.",
       "features": [
         "traces لـ Messages API وManaged Agents والـ SDKs",
@@ -196,7 +196,7 @@
       "en": {
         "title": "Tracing agents with OpenTelemetry on Claude Platform",
         "summary": "Since October 14, as a public beta: you can send traces for Messages API requests, Managed Agents sessions and the SDKs to any observability tool that accepts OTLP.",
-        "why": "If you'll build AI features inside Company-ERP, this lets you see every step the agent took and how long it took, without hand-writing logging.",
+        "why": "If you're building AI features into any app, this shows every step the agent took and how long it took in the observability tool you already run, without hand-written logging.",
         "about": "Claude Platform now supports OpenTelemetry tracing as a public beta. You can send traces for Messages API requests, Claude Managed Agents sessions and the SDKs to any observability platform that accepts an OTLP endpoint, such as Grafana, Honeycomb or Langfuse.\n\nBy default it sends metadata only. There's a full mode that also sends prompts and responses, in which case you need to watch access permissions and retention where you send them.\n\nSetup: for the API, an admin adds a destination in the Claude Console. For the SDK, you register a tracer provider in your client. Spans aren't guaranteed to all arrive, so for usage accounting Anthropic recommends the Usage API.",
         "features": [
           "Traces for the Messages API, Managed Agents and SDKs",
@@ -215,7 +215,7 @@
       "repo": "obra/superpowers",
       "title": "Superpowers وصل v7: framework كامل من الـ skills للـ coding agents",
       "summary": "مجموعة skills جاهزة بتعلّم الـ agent يشتغل بطريقة منظمة: يخطط قبل ما يكتب كود، ويشتغل بالـ TDD، ويعمل debugging منهجي، ويراجع شغله قبل ما يقول خلصت.",
-      "why": "بيتركب على Claude Code مباشرة. ويستاهل تقارنه بالـ workflow اللي بتعمله في Squad-Kit، ممكن تاخد منه أفكار.",
+      "why": "بيتركب على Claude Code مباشرة، وبيخلي الـ agent يمشي على خطوات مهندس منظم بدل ما يكتب كود على طول. حتى لو عندك workflow خاص بيك، هتاخد منه أفكار كتير.",
       "about": "Superpowers مكتبة skills مفتوحة المصدر عملها Jesse Vincent، وبتحوّل الـ coding agent من حاجة بتكتب كود على طول لمهندس بيمشي على خطوات واضحة.\n\nالـ skills بتشتغل لوحدها حسب الموقف. لو بتبدأ feature جديدة، بيعمل brainstorm وبعدين يكتب خطة. ولو بتصلّح bug، بيمشي على debugging منهجي. وقبل ما يقول خلصت، بيراجع ويتأكد إن التيستات شغالة.\n\nبيتركب كـ plugin لـ Claude Code من الـ marketplace بتاعه، وبيشتغل كمان مع agents تانية بتدعم skills.",
       "features": [
         "brainstorm وخطة قبل الكود",
@@ -247,7 +247,7 @@
       "en": {
         "title": "Superpowers reaches v7: a complete skills framework for coding agents",
         "summary": "A ready-made set of skills that teaches the agent to work methodically: plan before writing code, work with TDD, debug systematically, and review its work before saying it's done.",
-        "why": "It installs straight into Claude Code, and it's worth comparing with the workflow you use in Squad-Kit; you might borrow some ideas.",
+        "why": "It installs straight into Claude Code and makes the agent follow a disciplined engineer's steps instead of jumping into code. Even if you have your own workflow, you'll pick up plenty of ideas.",
         "about": "Superpowers is an open-source skills library by Jesse Vincent that turns a coding agent from something that writes code immediately into an engineer following clear steps.\n\nThe skills kick in on their own depending on the situation. Starting a new feature, it brainstorms and then writes a plan. Fixing a bug, it follows systematic debugging. And before saying it's done, it reviews and confirms the tests pass.\n\nIt installs as a Claude Code plugin from its marketplace, and also works with other agents that support skills.",
         "features": [
           "Brainstorm and plan before code",
@@ -267,7 +267,7 @@
       "repo": "thedotmack/claude-mem",
       "title": "claude-mem: ذاكرة بين جلسات Claude Code",
       "summary": "plugin بيسجل اللي اتعمل في كل جلسة، ويضغطه، ويرجّع الملخص المناسب في الجلسة الجاية. كده الـ agent بيفتكر قرارات المشروع وسياقه من غير ما تشرحهم من الأول.",
-      "why": "لو بتلاقي نفسك بتعيد شرح بنية الـ modules في كل جلسة جديدة، ده بيحل المشكلة دي بالظبط.",
+      "why": "لو بتلاقي نفسك بتعيد شرح بنية مشروعك وقراراته في كل جلسة جديدة، ده بيحل المشكلة دي بالظبط.",
       "about": "مشكلة Claude Code إن كل جلسة جديدة بتبدأ من غير ذاكرة، والحاجة الوحيدة اللي بتتنقل من جلسة للتانية هي CLAUDE.md.\n\nclaude-mem بيحل ده بـ hooks بتسجّل اللي حصل في الجلسة، يعني الملفات اللي اتعدّلت والقرارات والمشاكل اللي اتحلت. بعدين بيضغط ده لملخصات ويخزنه، ولما تبدأ جلسة جديدة بيحقن السياق المناسب بس، من غير ما يملا الـ context.\n\nمن أشهر الـ plugins حوالين Claude Code، وعليه أكتر من ١٠٠ ألف نجمة.",
       "features": [
         "تسجيل أوتوماتيك لكل جلسة بالـ hooks",
@@ -289,7 +289,7 @@
       "en": {
         "title": "claude-mem: memory across Claude Code sessions",
         "summary": "A plugin that records what happened in each session, compresses it, and brings back the right summary in the next session, so the agent remembers your project's decisions and context without you explaining them again.",
-        "why": "If you find yourself re-explaining your module structure in every new session, this solves exactly that.",
+        "why": "If you find yourself re-explaining your project's structure and decisions in every new session, this solves exactly that.",
         "about": "Claude Code's problem is that every new session starts with no memory, and the only thing carried from session to session is CLAUDE.md.\n\nclaude-mem fixes this with hooks that record what happened in the session: the files changed, the decisions made and the problems solved. It then compresses that into summaries and stores them, and when you start a new session it injects only the relevant context, without filling up the context window.\n\nIt's one of the most popular plugins around Claude Code, with more than 100,000 stars.",
         "features": [
           "Automatic capture of every session via hooks",
@@ -306,7 +306,7 @@
       "repo": "Graphify-Labs/graphify",
       "title": "Graphify: حوّل الكود والدوكيومنتيشن لـ knowledge graph تسأله",
       "summary": "أداة بتحلل الكود محلياً بالـ AST، وبتبني graph للعلاقات بين الملفات والكلاسات والدوال والدوكس. بعدين تقدر تسأله أسئلة، أو تديه للـ agent كسياق بدل ما يقرا الملفات واحد واحد.",
-      "why": "مفيدة لمشروع كبير ومقسّم modules زي Company-ERP، خصوصاً لما تحتاج تعرف أثر أي تغيير قبل ما تعمله.",
+      "why": "مفيدة في أي مشروع كبير ومقسّم لأجزاء كتير، خصوصاً لما تحتاج تعرف أثر أي تغيير قبل ما تعمله، زي إيه اللي بيعتمد على كلاس معين.",
       "about": "في المشاريع الكبيرة، الـ agent بيضيّع tokens كتير وهو بيقرا الملفات عشان يفهم العلاقات بينها. Graphify بيعمل تحليل ثابت للكود بالـ AST على جهازك، وبيبني knowledge graph فيه الملفات والكلاسات والدوال ومين بيستدعي مين، ومعاهم الدوكيومنتيشن.\n\nبعدها تقدر تسأل الـ graph، زي \"إيه اللي بيعتمد على الكلاس ده؟\" أو \"التغيير ده هيأثر على إيه؟\"، أو توصّله للـ agent فيجيب السياق اللي محتاجه بالظبط.",
       "features": [
         "تحليل محلي بالـ AST من غير ما الكود يطلع برّه",
@@ -328,7 +328,7 @@
       "en": {
         "title": "Graphify: turn code and docs into a knowledge graph you can query",
         "summary": "A tool that analyses code locally via AST and builds a graph of the relationships between files, classes, functions and docs. You can then ask it questions, or give it to the agent as context instead of having it read files one by one.",
-        "why": "Useful for a large modular project like Company-ERP, especially when you need to know the impact of a change before making it.",
+        "why": "Useful in any large project split into many parts, especially when you need to know a change's impact before making it, such as what depends on a given class.",
         "about": "In large projects the agent wastes lots of tokens reading files to understand how they relate. Graphify does static AST analysis of the code on your machine and builds a knowledge graph of files, classes, functions and who calls whom, together with the documentation.\n\nThen you can query the graph, like \"what depends on this class?\" or \"what will this change affect?\", or connect it to the agent so it fetches exactly the context it needs.",
         "features": [
           "Local AST analysis; your code never leaves your machine",
@@ -454,7 +454,7 @@
       "repo": "laravel/ai",
       "title": "Laravel AI SDK 1.0: موافقة على الـ tools، وclassification، وstreaming للواجهة",
       "summary": "أول إصدار مستقر. فيه tools بتوقف الـ agent لحد ما حد يوافق أو يرفض أو يعدّل، وclassification سريع للقرارات البسيطة، وstreaming متوافق مع Vercel AI وAG-UI. وفيه breaking changes.",
-      "why": "ده الطريق الرسمي لإضافة AI جوه Company-ERP. وموضوع موافقة الـ tools بالذات مهم لأي عملية في الـ ERP بتعدّل في بيانات حقيقية.",
+      "why": "ده الطريق الرسمي لإضافة AI لأي تطبيق Laravel. وموافقة الـ tools بالذات مهمة لأي عملية بتعدّل بيانات حقيقية، زي إن agent يعمل استرجاع فلوس أو يمسح سجل.",
       "about": "Laravel AI SDK وصل لأول إصدار مستقر، وده أهم اللي فيه:\n\nApprovable tools: أي tool بيطبّق الـ Approvable contract بيوقف الـ agent لحد ما حد يوافق عليه، أو يرفضه بسبب الموديل بيشوفه، أو يعدّل الـ arguments. ده مهم جداً لأي عملية بتكتب في الداتابيز.\n\nClassification: قدرة جديدة للقرارات السريعة، زي توجيه التذاكر أو فلترة التعليقات، بأسئلة من نوع Boolean أو Choice أو Score، ومعاها Str::decide للأسئلة اللي إجابتها أيوه أو لأ.\n\nFrontend streaming: بيقرا الطلبات ويبعت الردود بـ Vercel Chat protocol وAG-UI، فبيشتغل مع مكتبات زي CopilotKit.\n\nوكمان: middleware بيشتغل على كل خطوة من خطوات الـ agent، وtool search بيحمّل الأدوات القليلة الاستخدام لما تتطلب بس، وتشغيل كود في sandbox المزود.\n\nفيه breaking changes في تخزين المحادثات والـ middleware والـ token usage، فاقرا الـ upgrade guide الأول.",
       "features": [
         "tools بتستنى موافقة قبل ما تتنفذ",
@@ -499,7 +499,7 @@
       "en": {
         "title": "Laravel AI SDK 1.0: tool approvals, classification and frontend streaming",
         "summary": "The first stable release. Tools can pause the agent until someone approves, rejects or edits the call, there's fast classification for simple decisions, and streaming compatible with Vercel AI and AG-UI. There are breaking changes.",
-        "why": "This is the official route for adding AI inside Company-ERP, and tool approvals in particular matter for any ERP operation that changes real data.",
+        "why": "This is the official way to add AI to any Laravel app. Tool approvals matter in particular for any operation that changes real data, like an agent issuing a refund or deleting a record.",
         "about": "Laravel AI SDK reached its first stable release. The highlights:\n\nApprovable tools: any tool that implements the Approvable contract pauses the agent until someone approves it, rejects it with a reason the model sees, or edits its arguments. That's crucial for any operation that writes to the database.\n\nClassification: a new capability for quick decisions, like routing tickets or filtering comments, with Boolean, Choice or Score questions, plus Str::decide for yes-or-no questions.\n\nFrontend streaming: it reads requests and streams responses with the Vercel Chat protocol and AG-UI, so it works with libraries like CopilotKit.\n\nAlso: middleware that runs on every step of the agent, tool search that loads rarely used tools only when requested, and code execution in the provider's sandbox.\n\nThere are breaking changes in conversation storage, middleware and token usage, so read the upgrade guide first.",
         "features": [
           "Tools that wait for approval before running",

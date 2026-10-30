@@ -8,7 +8,7 @@
       "repo": "anthropics/claude-code-security-review",
       "title": "/security-review: مراجعة أمان بـ Claude في الترمينال وعلى الـ PRs",
       "summary": "Claude Code فيه أمر /security-review جاهز بيراجع التغييرات اللي لسه متعملهاش commit ويدوّر على ثغرات. ونفس التحليل متاح كـ GitHub Action بتعلّق على كل PR.",
-      "why": "قبل أي push لكود بيتعامل مع صلاحيات أو مدفوعات في الـ ERP، أمر واحد بيدّيك مراجعة أمان سريعة.",
+      "why": "قبل أي push لكود بيتعامل مع صلاحيات أو مدفوعات، أمر واحد بيدّيك مراجعة أمان سريعة.",
       "about": "الأمر /security-review موجود في Claude Code من غير ما تسطب حاجة. بيحلل التغييرات المعلقة، ويدوّر على ثغرات زي injection والـ auth والـ authorization وتسريب البيانات والـ XSS، ويشرح كل مشكلة وإزاي تتصلح، وبيحاول يقلل الإنذارات الكاذبة.\n\nالـ GitHub Action بيعمل نفس الشغل على الـ PRs، بيحلل الملفات اللي اتغيرت بس ويكتب تعليقات. وتقدر تعدّل الأمر بنفسك وتضيف قواعد خاصة بمشروعك.",
       "features": [
         "أمر جاهز في Claude Code",
@@ -37,7 +37,7 @@
       "en": {
         "title": "/security-review: security review with Claude in the terminal and on PRs",
         "summary": "Claude Code has a built-in /security-review command that reviews your uncommitted changes for vulnerabilities. The same analysis is available as a GitHub Action that comments on every PR.",
-        "why": "Before pushing any code that touches permissions or payments in the ERP, one command gives you a quick security review.",
+        "why": "Before pushing any code that touches permissions or payments, one command gives you a quick security review.",
         "about": "/security-review ships with Claude Code; there's nothing to install. It analyses pending changes for vulnerabilities like injection, authentication and authorization flaws, data exposure and XSS, explains each issue and how to fix it, and tries to keep false positives low.\n\nThe GitHub Action does the same on PRs, analysing only the changed files and writing comments. You can customise the command and add rules specific to your project.",
         "features": [
           "A built-in Claude Code command",
@@ -110,7 +110,7 @@
       "kind": "article",
       "title": "OWASP GenAI Security: أهم مخاطر تطبيقات الـ LLM والـ agents",
       "summary": "مشروع OWASP لأمان الـ AI: قايمة Top 10 لمخاطر تطبيقات الـ LLM، زي prompt injection وتسريب البيانات والصلاحيات الزيادة، ومعاها إرشادات للـ agentic AI.",
-      "why": "قبل ما تضيف agent ليه أدوات على بيانات حقيقية في الـ ERP، القايمة دي بتوريك أهم حاجات لازم تحمي منها.",
+      "why": "قبل ما تدّي agent أدوات على بيانات حقيقية في أي نظام، القايمة دي بتوريك أهم حاجات لازم تحمي منها.",
       "about": "القايمة بتغطي: Prompt Injection المباشر وغير المباشر، وكشف المعلومات الحساسة، ومخاطر الـ supply chain في الموديلات والـ plugins، وتسميم البيانات، والتعامل غير الآمن مع المخرجات، والصلاحيات الزيادة (Excessive Agency)، وتسريب الـ system prompt، وضعف الـ vectors والـ embeddings، والمعلومات الغلط، والاستهلاك غير المحدود.\n\nوالمشروع فيه كمان إرشادات خاصة بالـ agents والـ MCP.",
       "features": [
         "Top 10 لمخاطر الـ LLM",
@@ -129,7 +129,7 @@
       "en": {
         "title": "OWASP GenAI Security: the top risks for LLM apps and agents",
         "summary": "OWASP's AI security project: a Top 10 of risks for LLM applications, like prompt injection, data leakage and excessive permissions, plus guidance for agentic AI.",
-        "why": "Before you add an agent with tools over real ERP data, this list shows the most important things to protect against.",
+        "why": "Before you give an agent tools over real data in any system, this list shows the most important things to protect against.",
         "about": "The list covers direct and indirect prompt injection, sensitive information disclosure, supply chain risks in models and plugins, data poisoning, improper output handling, excessive agency, system prompt leakage, vector and embedding weaknesses, misinformation, and unbounded consumption.\n\nThe project also has guidance specific to agents and MCP.",
         "features": [
           "Top 10 LLM risks",
@@ -201,7 +201,7 @@
       "repo": "aquasecurity/trivy",
       "title": "Trivy: فحص أمان شامل للـ containers والكود",
       "summary": "scanner واحد بيفحص Docker images وملفات المشروع وKubernetes وIaC: ثغرات في الباكدجات (CVEs)، وأسرار متسربة، وإعدادات غلط، ورخص، وبيطلّع SBOM.",
-      "why": "بأمر واحد تعرف لو الـ Docker images بتاعة الـ ERP، أو composer.lock، فيها باكدجات عليها ثغرات معروفة.",
+      "why": "بأمر واحد تعرف لو الـ Docker images أو ملفات الـ lock في مشروعك فيها باكدجات عليها ثغرات معروفة.",
       "about": "Trivy عنده targets، زي container images وfilesystem وgit repos وKubernetes، وscanners بتدوّر على ثغرات الباكدجات (منها composer وnpm)، والأسرار، والـ misconfigurations في Dockerfile وTerraform وKubernetes، والرخص.\n\nبيشتغل في الـ CI بسهولة، وفيه GitHub Action.",
       "features": [
         "CVEs في الباكدجات والـ images",
@@ -233,7 +233,7 @@
       "en": {
         "title": "Trivy: all-round security scanning for containers and code",
         "summary": "One scanner for Docker images, project files, Kubernetes and IaC: package vulnerabilities (CVEs), leaked secrets, misconfigurations and licenses, and it generates SBOMs.",
-        "why": "One command tells you whether the ERP's Docker images or composer.lock contain packages with known vulnerabilities.",
+        "why": "One command tells you whether your project's Docker images or lock files contain packages with known vulnerabilities.",
         "about": "Trivy has targets, like container images, the filesystem, git repos and Kubernetes, and scanners that look for package vulnerabilities (including composer and npm), secrets, misconfigurations in Dockerfiles, Terraform and Kubernetes, and licenses.\n\nIt runs easily in CI and has a GitHub Action.",
         "features": [
           "CVEs in packages and images",

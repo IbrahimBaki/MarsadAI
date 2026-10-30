@@ -72,7 +72,7 @@
       "repo": "microsoft/playwright",
       "title": "Playwright Test: تيستات E2E لكل البراوزرات",
       "summary": "framework لأتمتة البراوزر واختباره، بيشغّل Chromium وFirefox وWebKit بـ API واحد. فيه test runner كامل بـ auto-waiting وassertions ذكية وتشغيل متوازي، وأدوات زي codegen وtrace viewer وUI mode.",
-      "why": "تيستات E2E لأهم flows في الـ ERP، زي الفاتورة والمرتجع والتقارير، بتمسك الأخطاء اللي الـ unit tests مش بتشوفها، والـ agents بتكتب تيستات Playwright كويس جداً.",
+      "why": "تيستات E2E لأهم flows في أي تطبيق، زي التسجيل والدفع والتقارير، بتمسك الأخطاء اللي الـ unit tests مش بتشوفها، والـ agents بتكتب تيستات Playwright كويس جداً.",
       "about": "Playwright Test بيعزل كل تيست في browser context منفصل، وبيستنى العناصر أوتوماتيك، فالتيستات مش بتبقى flaky. وفيه codegen بيسجّل اللي بتعمله ويحوّله لكود، وtrace viewer بيوريك كل خطوة بالـ screenshots والـ network، وUI mode للتطوير.\n\nبيشتغل في الـ CI بسهولة، وفيه reporters كتير. ولو التطبيق Laravel، تشغّل السيرفر وتوجّه التيستات له.",
       "features": [
         "Chromium وFirefox وWebKit",
@@ -107,7 +107,7 @@
       "en": {
         "title": "Playwright Test: E2E tests for every browser",
         "summary": "A framework for automating and testing browsers that drives Chromium, Firefox and WebKit through one API. It has a full test runner with auto-waiting, smart assertions and parallel runs, plus tools like codegen, the trace viewer and UI mode.",
-        "why": "E2E tests for the ERP's most important flows, like invoices, returns and reports, catch bugs unit tests miss, and agents write Playwright tests very well.",
+        "why": "E2E tests for any app's key flows, like sign-up, checkout and reports, catch bugs unit tests miss, and agents write Playwright tests very well.",
         "about": "Playwright Test isolates each test in its own browser context and waits for elements automatically, so tests aren't flaky. codegen records what you do and turns it into code, the trace viewer shows every step with screenshots and network, and UI mode helps during development.\n\nIt runs easily in CI and has many reporters. For a Laravel app, start the server and point the tests at it.",
         "features": [
           "Chromium, Firefox and WebKit",
@@ -128,7 +128,7 @@
       "repo": "vitest-dev/vitest",
       "title": "Vitest: تيستات JavaScript وTypeScript سريعة",
       "summary": "test framework مبني على Vite، فبيستخدم نفس إعدادات مشروعك. متوافق مع Jest، وفيه watch mode سريع، وbrowser mode، وcoverage، وsnapshots.",
-      "why": "لو عندك كود JavaScript في الـ ERP، زي حسابات في الواجهة أو components، Vitest أسهل وأسرع من Jest، ومتكامل مع Vite اللي Laravel بيستخدمه.",
+      "why": "لو عندك كود JavaScript أو TypeScript في مشروعك، Vitest أسهل وأسرع من Jest، ومتكامل مع Vite اللي frameworks كتير بتستخدمه.",
       "about": "Vitest بيقرا vite.config ويستخدم نفس الـ plugins، فمفيش إعداد مكرر. الـ API متوافق مع Jest، زي describe وit وexpect، فالتحويل سهل. وفيه watch mode بيشغّل التيستات المتأثرة بس، وBrowser Mode بيشغّل التيستات في براوزر حقيقي، وcoverage، وUI.",
       "features": [
         "نفس إعدادات Vite",
@@ -156,7 +156,7 @@
       "en": {
         "title": "Vitest: fast JavaScript and TypeScript tests",
         "summary": "A test framework built on Vite, so it uses your project's existing config. It's Jest-compatible, with a fast watch mode, browser mode, coverage and snapshots.",
-        "why": "If you have JavaScript in the ERP, like front-end calculations or components, Vitest is easier and faster than Jest and fits with the Vite that Laravel uses.",
+        "why": "If your project has JavaScript or TypeScript code, Vitest is easier and faster than Jest and fits with the Vite that many frameworks use.",
         "about": "Vitest reads vite.config and uses the same plugins, so there's no duplicated setup. Its API is Jest-compatible, with describe, it and expect, so migrating is easy. Watch mode reruns only affected tests, Browser Mode runs tests in a real browser, and there's coverage and a UI.",
         "features": [
           "Same config as Vite",
@@ -176,7 +176,7 @@
       "repo": "grafana/k6",
       "title": "k6: load testing بالكود",
       "summary": "أداة load testing من Grafana. بتكتب السيناريو بـ JavaScript، وتحدد عدد المستخدمين والمدة، وتطلع تقرير بالـ response times والأخطاء. وأي جهاز عادي يقدر يولّد ضغط كبير.",
-      "why": "قبل موسم ضغط أو إطلاق كبير، تقدر تعرف الـ API أو الـ endpoint التقيل في الـ ERP هيستحمل كام مستخدم.",
+      "why": "قبل إطلاق كبير أو موسم ضغط، تقدر تعرف الـ API أو الـ endpoint التقيل عندك هيستحمل كام مستخدم.",
       "about": "في k6 التيست ملف JavaScript فيه الطلبات، وthresholds بتحدد النجاح والفشل، زي إن ٩٥٪ من الطلبات تبقى أقل من ٥٠٠ms. بيدعم سيناريوهات مختلفة: ضغط ثابت، وزيادة تدريجية، وspikes.\n\nالـ binary مكتوب بـ Go، فخفيف. وفيه extensions، وتكامل مع Grafana للنتايج، وGrafana Cloud k6 المدفوعة.",
       "features": [
         "سيناريوهات بـ JavaScript",
@@ -204,7 +204,7 @@
       "en": {
         "title": "k6: load testing as code",
         "summary": "A load testing tool from Grafana. Write the scenario in JavaScript, set the number of users and the duration, and get a report of response times and errors. An ordinary machine can generate heavy load.",
-        "why": "Before a busy season or a big launch, find out how many users the ERP's heavy API or endpoint can handle.",
+        "why": "Before a big launch or a busy season, find out how many users your heavy API or endpoint can handle.",
         "about": "In k6 a test is a JavaScript file with the requests, plus thresholds that define pass and fail, such as 95% of requests under 500 ms. It supports different scenarios: constant load, gradual ramp-up and spikes.\n\nThe binary is written in Go, so it's lightweight. There are extensions, Grafana integration for results, and the paid Grafana Cloud k6.",
         "features": [
           "Scenarios in JavaScript",

@@ -8,7 +8,7 @@
       "repo": "n8n-io/n8n",
       "title": "n8n: منصة workflows وAI agents تستضيفها بنفسك",
       "summary": "منصة أتمتة بـ canvas مرئي وكود مع بعض، وأكتر من ١٥٠٠ integration، وAI agents بأي موديل. تشغّلها على سيرفرك بـ Docker أو في الكلاود.",
-      "why": "بخبرتك في Docker، تقدر تبني أتمتة للفريق، زي تقرير يومي من الـ ERP على Telegram أو agent بيرد على إيميلات الموردين، من غير كود كتير.",
+      "why": "تقدر تبني أتمتة لفريقك من غير كود كتير، زي تقرير يومي على Telegram أو agent بيرد على الإيميلات، وتستضيفها بنفسك بـ Docker.",
       "about": "في n8n بتبني الـ workflow بـ nodes على canvas: trigger (webhook أو cron أو إيميل أو تغيير في داتابيز) وبعدين خطوات. وتقدر تكتب JavaScript أو Python في أي node.\n\nفيه nodes للـ AI: agents بأدوات وذاكرة، وRAG، وchains، وMCP client وserver، وأي مزود موديلات. ورخصته fair-code: مجاني تستضيفه لنفسك، وفيه n8n Cloud مدفوعة.",
       "features": [
         "canvas مرئي مع كود",
@@ -42,7 +42,7 @@
       "en": {
         "title": "n8n: a self-hostable workflow and AI agent platform",
         "summary": "An automation platform that combines a visual canvas with code, 1,500+ integrations and AI agents with any model. Run it on your server with Docker or in the cloud.",
-        "why": "With your Docker experience you can build automations for the team, like a daily ERP report on Telegram or an agent that answers supplier emails, without much code.",
+        "why": "You can build automations for your team without much code, like a daily report on Telegram or an agent that answers emails, and self-host it with Docker.",
         "about": "In n8n you build a workflow from nodes on a canvas: a trigger (webhook, cron, email or a database change) followed by steps. You can write JavaScript or Python in any node.\n\nThere are AI nodes: agents with tools and memory, RAG, chains, an MCP client and server, and any model provider. Its license is fair-code: free to self-host, with a paid n8n Cloud.",
         "features": [
           "A visual canvas plus code",

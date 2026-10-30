@@ -8,7 +8,7 @@
       "repo": "coollabsio/coolify",
       "title": "Coolify: Vercel وHeroku بتوعك على سيرفرك",
       "summary": "منصة مفتوحة المصدر تنشر بيها التطبيقات وقواعد البيانات والخدمات على سيرفراتك. git push فيعمل deploy، وSSL أوتوماتيك، وbackups، وأكتر من ٢٠٠ خدمة جاهزة بضغطة.",
-      "why": "بخبرتك في Docker Compose والسيرفرات، Coolify بيوفّر عليك الإعداد اليدوي لكل مشروع، وبيدّيك deploys زي Vercel على VPS رخيص.",
+      "why": "لو عندك VPS، Coolify بيوفّر عليك الإعداد اليدوي لكل مشروع، وبيدّيك deploys زي Vercel على سيرفر رخيص.",
       "about": "Coolify بديل مفتوح المصدر لـ Heroku وNetlify وVercel. كل اللي محتاجه سيرفر بـ SSH. بتربط الريبو، فيبني بـ Nixpacks أو Dockerfile أو Docker Compose، وينشر، ويظبط الـ domain والـ SSL بـ Let's Encrypt.\n\nفيه قواعد بيانات بضغطة (Postgres وMySQL وRedis وMongo) ومعاها backups لـ S3، وpreview deployments للـ PRs، وأكتر من ٢٠٠ خدمة جاهزة، ومراقبة، وإدارة أكتر من سيرفر.",
       "features": [
         "deploy من git على سيرفرك",
@@ -40,7 +40,7 @@
       "en": {
         "title": "Coolify: your own Vercel and Heroku on your server",
         "summary": "An open-source platform for deploying apps, databases and services on your own servers. git push deploys, SSL is automatic, backups are built in, and 200+ services install in one click.",
-        "why": "With your Docker Compose and server experience, Coolify spares you the manual setup for each project and gives you Vercel-style deploys on a cheap VPS.",
+        "why": "If you have a VPS, Coolify spares you the manual setup for each project and gives you Vercel-style deploys on a cheap server.",
         "about": "Coolify is an open-source alternative to Heroku, Netlify and Vercel. All you need is a server with SSH. Connect the repo and it builds with Nixpacks, a Dockerfile or Docker Compose, deploys, and sets up the domain and SSL with Let's Encrypt.\n\nIt has one-click databases (Postgres, MySQL, Redis and Mongo) with backups to S3, preview deployments for PRs, 200+ ready services, monitoring, and multi-server management.",
         "features": [
           "Deploy from git to your server",
@@ -112,7 +112,7 @@
       "repo": "docker/compose",
       "title": "Docker Compose v5",
       "summary": "الأداة اللي بتشغّل تطبيقات بأكتر من container من ملف compose.yaml. الإصدارات الجديدة فيها watch للتطوير، وmodels لتشغيل موديلات AI محلياً كخدمة، وتحسينات كتير.",
-      "why": "إنت شغال بيها أصلاً، والجديد زي compose watch وتعريف الموديلات في نفس الملف بيفيد لو هتضيف خدمة AI جنب الـ ERP.",
+      "why": "لو بتشغّل أكتر من خدمة مع بعض، الجديد زي compose watch وتعريف موديلات AI في نفس الملف بيسهّل التطوير ويخليك تضيف خدمة AI جنب تطبيقك بسهولة.",
       "about": "Compose بيعرّف الـ services والـ networks والـ volumes في ملف واحد. ومن أهم الإضافات في السنين الأخيرة: docker compose watch بيزامن الملفات أو يعيد البناء وإنت بتعدّل، وprofiles لتشغيل أجزاء معينة، وinclude لتقسيم الملفات الكبيرة، وmodels بتعرّف بيها موديل AI كخدمة بيشغّلها Docker Model Runner.",
       "features": [
         "compose watch للتطوير",
@@ -133,7 +133,7 @@
       "en": {
         "title": "Docker Compose v5",
         "summary": "The tool that runs multi-container apps from a compose.yaml file. Recent versions add watch for development, models for running AI models locally as a service, and many improvements.",
-        "why": "You already use it, and new things like compose watch and defining models in the same file help if you add an AI service next to the ERP.",
+        "why": "If you run several services together, new things like compose watch and defining AI models in the same file make development easier and let you add an AI service next to your app easily.",
         "about": "Compose defines services, networks and volumes in one file. Key additions in recent years: docker compose watch syncs files or rebuilds as you edit, profiles run specific parts, include splits large files, and models let you define an AI model as a service run by Docker Model Runner.",
         "features": [
           "compose watch for development",
@@ -151,7 +151,7 @@
       "title": "Traefik: reverse proxy بيظبط نفسه",
       "summary": "reverse proxy وload balancer بيقرا الـ containers من Docker ويظبط الـ routing أوتوماتيك بالـ labels، ومعاه SSL من Let's Encrypt، وmiddlewares، وdashboard.",
       "why": "بدل ما تعدّل في Apache vhosts لكل خدمة جديدة، تحط labels في docker-compose فيتوجّه الـ domain للـ container لوحده.",
-      "about": "Traefik بيتوصل بالـ orchestrator، سواء Docker أو Swarm أو Kubernetes، وبيكتشف الخدمات لوحده. labels زي traefik.http.routers.app.rule=Host(`erp.example.com`) بتكفي.\n\nفيه SSL أوتوماتيك، وmiddlewares للـ auth والـ rate limiting والـ redirects، وdashboard، وmetrics. وهو اللي Coolify وDokploy بيستخدموه.",
+      "about": "Traefik بيتوصل بالـ orchestrator، سواء Docker أو Swarm أو Kubernetes، وبيكتشف الخدمات لوحده. labels زي traefik.http.routers.app.rule=Host(`app.example.com`) بتكفي.\n\nفيه SSL أوتوماتيك، وmiddlewares للـ auth والـ rate limiting والـ redirects، وdashboard، وmetrics. وهو اللي Coolify وDokploy بيستخدموه.",
       "features": [
         "اكتشاف الخدمات من Docker",
         "SSL أوتوماتيك",
@@ -176,7 +176,7 @@
         "title": "Traefik: a reverse proxy that configures itself",
         "summary": "A reverse proxy and load balancer that reads containers from Docker and sets up routing automatically from labels, with Let's Encrypt SSL, middlewares and a dashboard.",
         "why": "Instead of editing Apache vhosts for every new service, add labels in docker-compose and the domain routes to the container on its own.",
-        "about": "Traefik connects to the orchestrator, whether Docker, Swarm or Kubernetes, and discovers services on its own. Labels like traefik.http.routers.app.rule=Host(`erp.example.com`) are enough.\n\nIt has automatic SSL, middlewares for auth, rate limiting and redirects, a dashboard and metrics. It's what Coolify and Dokploy use.",
+        "about": "Traefik connects to the orchestrator, whether Docker, Swarm or Kubernetes, and discovers services on its own. Labels like traefik.http.routers.app.rule=Host(`app.example.com`) are enough.\n\nIt has automatic SSL, middlewares for auth, rate limiting and redirects, a dashboard and metrics. It's what Coolify and Dokploy use.",
         "features": [
           "Service discovery from Docker",
           "Automatic SSL",
@@ -193,7 +193,7 @@
       "title": "Caddy: web server بـ HTTPS أوتوماتيك",
       "summary": "web server وreverse proxy مكتوب بـ Go، وأشهر ميزة فيه إن الـ HTTPS بيشتغل لوحده من غير إعداد. ملف الإعداد (Caddyfile) بسيط جداً، وفيه API للإعداد وهو شغال.",
       "why": "بديل أبسط بكتير من Apache لو هتشغّل خدمات جديدة: سطرين في Caddyfile بيعملوا reverse proxy بـ SSL.",
-      "about": "Caddy بيجيب شهادات SSL ويجددها لوحده لأي domain في الإعداد. الـ Caddyfile بيبقى زي: erp.example.com { reverse_proxy localhost:8000 }. وبيدعم PHP عن طريق php_fastcgi، وHTTP/3، والـ load balancing، والـ compression.\n\nفيه FrankenPHP المبني على Caddy، وده بيشغّل Laravel Octane.",
+      "about": "Caddy بيجيب شهادات SSL ويجددها لوحده لأي domain في الإعداد. الـ Caddyfile بيبقى زي: app.example.com { reverse_proxy localhost:8000 }. وبيدعم PHP عن طريق php_fastcgi، وHTTP/3، والـ load balancing، والـ compression.\n\nفيه FrankenPHP المبني على Caddy، وده بيشغّل Laravel Octane.",
       "features": [
         "HTTPS أوتوماتيك",
         "Caddyfile بسيط",
@@ -215,7 +215,7 @@
         "title": "Caddy: a web server with automatic HTTPS",
         "summary": "A web server and reverse proxy written in Go, best known for HTTPS that just works with no setup. Its config file (Caddyfile) is very simple, and there's an API for changing config while it runs.",
         "why": "A much simpler alternative to Apache for new services: two lines in a Caddyfile give you a reverse proxy with SSL.",
-        "about": "Caddy obtains and renews SSL certificates by itself for every domain in its config. A Caddyfile looks like: erp.example.com { reverse_proxy localhost:8000 }. It supports PHP via php_fastcgi, HTTP/3, load balancing and compression.\n\nFrankenPHP is built on Caddy and runs Laravel Octane.",
+        "about": "Caddy obtains and renews SSL certificates by itself for every domain in its config. A Caddyfile looks like: app.example.com { reverse_proxy localhost:8000 }. It supports PHP via php_fastcgi, HTTP/3, load balancing and compression.\n\nFrankenPHP is built on Caddy and runs Laravel Octane.",
         "features": [
           "Automatic HTTPS",
           "A simple Caddyfile",
@@ -278,7 +278,7 @@
       "repo": "getsentry/sentry",
       "title": "Sentry: تتبع الأخطاء والأداء",
       "summary": "منصة debugging بتمسك الأخطاء في الـ production مع الـ stack trace والسياق، وبتتبع الأداء والطلبات البطيئة، وفيها session replay. وعندها SDK رسمي لـ Laravel وأداة AI بتقترح التصليح.",
-      "why": "بدل ما تستنى العميل يبلغ عن مشكلة في الـ ERP، بتعرف بالـ error لحظة ما يحصل ومعاه السياق كله.",
+      "why": "بدل ما تستنى المستخدم يبلغ عن مشكلة، بتعرف بالـ error لحظة ما يحصل ومعاه السياق كله.",
       "about": "Sentry بيجمع الـ exceptions، وبيرتبها في issues، وبيوريك الـ stack trace والطلب والمستخدم والـ breadcrumbs قبل الخطأ. وفيه tracing للأداء، وprofiling، وsession replay، وcron monitoring.\n\nSDK بتاع Laravel بيتركب بـ composer، وفيه Seer، وده أداة AI بتحلل السبب وتقترح تصليح. وتقدر تستضيفه بنفسك أو تستخدم Sentry السحابية.",
       "features": [
         "تتبع الأخطاء بالسياق",
@@ -307,7 +307,7 @@
       "en": {
         "title": "Sentry: error and performance tracking",
         "summary": "A debugging platform that catches production errors with the stack trace and context, tracks performance and slow requests, and has session replay. There's an official Laravel SDK and an AI tool that suggests fixes.",
-        "why": "Instead of waiting for a customer to report a problem in the ERP, you know about the error the moment it happens, with full context.",
+        "why": "Instead of waiting for a user to report a problem, you know about the error the moment it happens, with full context.",
         "about": "Sentry collects exceptions, groups them into issues, and shows the stack trace, request, user and breadcrumbs leading up to the error. There's performance tracing, profiling, session replay and cron monitoring.\n\nThe Laravel SDK installs with composer, and there's Seer, an AI tool that analyses the cause and suggests a fix. You can self-host it or use Sentry's cloud.",
         "features": [
           "Error tracking with context",
@@ -328,7 +328,7 @@
       "repo": "grafana/grafana",
       "title": "Grafana: dashboards للـ metrics والـ logs",
       "summary": "منصة مفتوحة المصدر للمراقبة: dashboards من أي مصدر بيانات، منها Prometheus وLoki وMySQL وPostgres، وalerts، وexplore للـ logs والـ traces.",
-      "why": "تقدر تعمل dashboard لمؤشرات الـ ERP نفسها، زي المبيعات اللحظية أو الـ queues، من MySQL مباشرة، جنب مراقبة السيرفرات.",
+      "why": "تقدر تعمل dashboard لمؤشرات تطبيقك نفسه، زي المبيعات اللحظية أو طول الـ queues، من قاعدة البيانات مباشرة، جنب مراقبة السيرفرات.",
       "about": "Grafana بيتوصل بمصادر بيانات كتير، وبيعرضها في panels بأنواع كتير، ومعاها variables بتعمل dropdowns للفلترة. وفيه alerting بإشعارات، وExplore للبحث في الـ logs (Loki) والـ traces (Tempo).\n\nبيتشغّل بـ Docker، وفيه Grafana Cloud بطبقة مجانية.",
       "features": [
         "أي مصدر بيانات منها MySQL",
@@ -356,7 +356,7 @@
       "en": {
         "title": "Grafana: dashboards for metrics and logs",
         "summary": "An open-source monitoring platform: dashboards from any data source, including Prometheus, Loki, MySQL and Postgres, plus alerts and Explore for logs and traces.",
-        "why": "You can build a dashboard of the ERP's own indicators, like live sales or queues, straight from MySQL, alongside server monitoring.",
+        "why": "You can build a dashboard of your app's own indicators, like live sales or queue length, straight from the database, alongside server monitoring.",
         "about": "Grafana connects to many data sources and shows them in many panel types, with variables that create dropdown filters. There's alerting with notifications, and Explore for searching logs (Loki) and traces (Tempo).\n\nIt runs in Docker, and Grafana Cloud has a free tier.",
         "features": [
           "Any data source including MySQL",
@@ -418,7 +418,7 @@
       "repo": "nektos/act",
       "title": "act: شغّل GitHub Actions على جهازك",
       "summary": "بيشغّل الـ workflows اللي في .github/workflows محلياً بـ Docker، فتجرب تعديلاتك في الـ CI من غير ما تعمل commit وpush كل مرة.",
-      "why": "لو بتعدّل workflow، زي الـ collector بتاع المرصد أو CI للـ ERP، تجربه محلياً في ثواني بدل دورة push وتستنى.",
+      "why": "لو بتعدّل GitHub Actions workflow، تجربه محلياً في ثواني بدل دورة push وتستنى.",
       "about": "act بيقرا ملفات الـ workflows، ويحدد الـ jobs، ويشغّل كل job في container بنفس الـ environment variables والـ filesystem اللي GitHub بيوفرهم. تقدر تشغّل event معين، زي push أو pull_request، أو job بالاسم، وتمرر secrets.\n\nوفيه extension لـ VS Code.",
       "features": [
         "تشغيل الـ workflows محلياً",
@@ -446,7 +446,7 @@
       "en": {
         "title": "act: run GitHub Actions on your machine",
         "summary": "Runs the workflows in .github/workflows locally with Docker, so you can test your CI changes without committing and pushing every time.",
-        "why": "If you're editing a workflow, like Marsad's collector or the ERP's CI, test it locally in seconds instead of a push-and-wait cycle.",
+        "why": "If you're editing a GitHub Actions workflow, test it locally in seconds instead of a push-and-wait cycle.",
         "about": "act reads your workflow files, works out the jobs, and runs each job in a container with the same environment variables and filesystem GitHub provides. You can run a specific event, like push or pull_request, or a job by name, and pass secrets.\n\nThere's also a VS Code extension.",
         "features": [
           "Run workflows locally",

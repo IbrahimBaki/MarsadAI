@@ -9,12 +9,18 @@ level *and* in English inside its `en` block. The validator rejects items withou
 
 ## Reader
 
-Ibrahim, a Laravel developer (modular ERP with nwidart modules, Spatie permissions, DataTables,
-Docker Compose, Linux servers) who works daily in Claude Code CLI inside Warp, plus a few friends
-with similar interests. He also cares about AI video editing, audio and image/design tools.
-He wants to **follow everything relevant from inside the app** — what's new, whether it's worth
-his time, and why — and to read enough on each item's details page that he doesn't need to go
+Marsad is shared with many people: developers of all kinds (backend, frontend, full-stack, DevOps),
+people building with AI agents and coding tools, and creators who care about AI video, audio and
+design tools. Write for **that audience**, never for one specific person.
+
+Readers want to **follow everything relevant from inside the app**: what's new, whether it's worth
+their time, and why. Each item's details page should tell them enough that they don't need to go
 looking elsewhere.
+
+**Never mention a specific person, company, internal project or private setup** (no project names,
+no "you use X every day", no "your ERP"). Examples must be general and recognisable to any
+developer: "a Laravel app", "an admin dashboard", "a SaaS", "a large modular codebase",
+"an online store", "a team's CI pipeline".
 
 ## How the app is organised
 
@@ -74,7 +80,7 @@ If today's file already exists, stop — the digest already ran.
       "kind": "release | repo | skill | plugin | mcp | library | tool | model | article | video",
       "title": "Short Arabic title; product names stay in English",
       "summary": "2–3 sentences in Arabic: what it is and what's new. ≤ 420 chars.",
-      "why": "1–2 sentences in Arabic: why it matters to this reader / what to do. ≤ 320 chars.",
+      "why": "1–2 sentences in Arabic: the value it adds and who it's for, with a general example if useful. ≤ 320 chars.",
       "about": "REQUIRED. The full explanation for the details page: 2–4 short paragraphs separated by a blank line (\\n\\n). What it is, how it works, what changed, limits/caveats.",
       "features": ["3–5 short Arabic bullets of the main capabilities or changes"],
       "install": [{ "label": "Arabic label", "cmd": "exact command from the README/docs" }],
@@ -113,7 +119,7 @@ If today's file already exists, stop — the digest already ran.
 
 ### Importance
 
-- `3` — must see: affects his daily tools, a big launch, or a time-limited deal.
+- `3` — must see: affects tools many readers use daily, a big launch, a security issue, or a time-limited deal.
 - `2` — useful: worth a look this week.
 - `1` — for awareness.
 
@@ -134,6 +140,8 @@ section file (id starting with `ess-`, same schema, `features` with at least 2 e
   translation, not a rewrite. Western digits, no Arabic letters. Same tone rules as below.
 - No hype words, no exclamation marks, no emojis.
 - Put numbers and dates in the text when they matter (prices, limits, deadlines, versions).
-- `why` must be specific to the reader (his Laravel/ERP work, Claude Code workflow,
-  video editing, or design) — never generic ("this is useful for developers").
+- `why` is the concrete value the item adds: what you can now do, save, avoid or improve, plus
+  who it's for. Use a short general example when it helps ("e.g. run Pest after every edit",
+  "e.g. a dashboard for live sales"). Never write it for one person or project, and never be vague
+  ("this is useful for developers").
 - Never invent facts, numbers or commands. If a detail is unclear, leave it out.

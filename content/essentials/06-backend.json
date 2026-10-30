@@ -56,7 +56,7 @@
       "repo": "honojs/hono",
       "title": "Hono: web framework خفيف بيشتغل في أي مكان",
       "summary": "framework صغير وسريع جداً مبني على Web Standards. نفس الكود بيشتغل على Cloudflare Workers وBun وDeno وNode وVercel وAWS Lambda، ومن غير أي dependencies.",
-      "why": "مثالي للـ APIs الصغيرة والـ webhooks والخدمات اللي جنب الـ ERP، وخصوصاً لو هتنشرها على edge.",
+      "why": "مثالي للـ APIs الصغيرة والـ webhooks والخدمات الجانبية، وخصوصاً لو هتنشرها على edge زي Cloudflare Workers.",
       "about": "Hono بيستخدم Request وResponse القياسيين، فبيشتغل على أي runtime. الـ router سريع جداً، والنسخة الصغيرة أقل من ١٢ كيلوبايت.\n\nفيه middleware جاهزة زي CORS وJWT والـ cache والـ logging، وvalidation مع Zod، وRPC client فيه types بين السيرفر والـ frontend، ودعم JSX للـ HTML.",
       "features": [
         "أي runtime بنفس الكود",
@@ -84,7 +84,7 @@
       "en": {
         "title": "Hono: a lightweight web framework that runs anywhere",
         "summary": "A tiny, very fast framework built on Web Standards. The same code runs on Cloudflare Workers, Bun, Deno, Node, Vercel and AWS Lambda, with zero dependencies.",
-        "why": "Ideal for small APIs, webhooks and services alongside the ERP, especially if you'll deploy them to the edge.",
+        "why": "Ideal for small APIs, webhooks and side services, especially if you'll deploy them to the edge like Cloudflare Workers.",
         "about": "Hono uses the standard Request and Response, so it runs on any runtime. Its router is very fast, and the tiny build is under 12 KB.\n\nIt has ready-made middleware like CORS, JWT, caching and logging, validation with Zod, an RPC client with shared types between server and frontend, and JSX support for HTML.",
         "features": [
           "Any runtime, same code",
@@ -152,7 +152,7 @@
       "repo": "nestjs/nest",
       "title": "NestJS: backend منظم بـ TypeScript",
       "summary": "framework لـ Node.js بـ TypeScript، مبني على modules وcontrollers وproviders وdependency injection. ستركشره قريب جداً من Laravel وAngular، فمناسب للمشاريع الكبيرة.",
-      "why": "لو هتكتب backend بـ Node، NestJS هيحسسك إنك في بيئة مألوفة: modules وDI وguards وpipes، شبه اللي متعود عليه في Laravel مع nwidart.",
+      "why": "لو جاي من Laravel أو Spring وهتكتب backend بـ Node، NestJS هيحسسك إنك في بيئة مألوفة: modules وDI وguards وpipes.",
       "about": "NestJS بيفرض تنظيم واضح: كل feature في module فيه controllers للـ routes، وproviders للـ business logic، والـ dependency injection بيربطهم. وفيه guards للصلاحيات، وpipes للـ validation، وinterceptors، وexception filters.\n\nبيدعم REST وGraphQL وWebSockets والـ microservices، وبيتكامل مع TypeORM وPrisma وBull.",
       "features": [
         "modules وDI زي Laravel",
@@ -180,7 +180,7 @@
       "en": {
         "title": "NestJS: a structured TypeScript backend",
         "summary": "A Node.js framework in TypeScript built on modules, controllers, providers and dependency injection. Its structure is very close to Laravel and Angular, so it suits large projects.",
-        "why": "If you'll write a Node backend, NestJS will feel familiar: modules, DI, guards and pipes, much like what you're used to in Laravel with nwidart modules.",
+        "why": "If you're coming from Laravel or Spring and writing a Node backend, NestJS will feel familiar: modules, DI, guards and pipes.",
         "about": "NestJS enforces a clear structure: each feature is a module with controllers for routes and providers for business logic, wired together by dependency injection. There are guards for authorization, pipes for validation, interceptors and exception filters.\n\nIt supports REST, GraphQL, WebSockets and microservices, and integrates with TypeORM, Prisma and Bull.",
         "features": [
           "Modules and DI like Laravel",
@@ -200,7 +200,7 @@
       "repo": "better-auth/better-auth",
       "title": "Better Auth: authentication كامل لـ TypeScript",
       "summary": "framework للـ authentication والصلاحيات لـ TypeScript، ومش مربوط بـ framework معين. فيه email/password، وOAuth، و2FA، وpasskeys، وorganizations، وroles، وplugins كتير، ومجاني بالكامل.",
-      "why": "لو هتبني تطبيق TypeScript، زي Dokkanx أو أداة داخلية، بيدّيك auth قوي في الداتابيز بتاعتك من غير خدمة مدفوعة.",
+      "why": "لو هتبني تطبيق TypeScript، زي SaaS صغير أو أداة داخلية، بيدّيك auth قوي في الداتابيز بتاعتك من غير خدمة مدفوعة.",
       "about": "Better Auth بيتخزن في قاعدة بياناتك، وبيشتغل مع Next.js وNuxt وSvelteKit وHono وExpress وغيرهم.\n\nالأساسيات جاهزة: email/password، وsocial login، والـ sessions. والـ plugins بتضيف 2FA، وpasskeys، وmagic links، وorganizations بأدوار وصلاحيات (multi-tenant)، وrate limiting. ورخصته MIT.",
       "features": [
         "email وOAuth وpasskeys و2FA",
@@ -228,7 +228,7 @@
       "en": {
         "title": "Better Auth: complete authentication for TypeScript",
         "summary": "An authentication and authorization framework for TypeScript that isn't tied to any one framework. It has email/password, OAuth, 2FA, passkeys, organizations, roles and many plugins, and it's completely free.",
-        "why": "If you build a TypeScript app, like Dokkanx or an internal tool, it gives you strong auth in your own database without a paid service.",
+        "why": "If you build a TypeScript app, like a small SaaS or an internal tool, it gives you strong auth in your own database without a paid service.",
         "about": "Better Auth stores everything in your database and works with Next.js, Nuxt, SvelteKit, Hono, Express and more.\n\nThe basics come ready: email/password, social login and sessions. Plugins add 2FA, passkeys, magic links, organizations with roles and permissions (multi-tenant), and rate limiting. It's MIT licensed.",
         "features": [
           "Email, OAuth, passkeys and 2FA",
@@ -298,7 +298,7 @@
       "repo": "temporalio/temporal",
       "title": "Temporal: workflows مضمونة التنفيذ (durable execution)",
       "summary": "منصة بتخليك تكتب workflows طويلة بكود عادي، وهي تضمن إنها تكمّل حتى لو السيرفر وقع أو استنت أيام. فيها retries، وtimers، وstate محفوظ، وSDKs لأكتر من لغة منها PHP.",
-      "why": "مناسب لعمليات الـ ERP الطويلة، زي دورة الطلب من الشراء للشحن للتحصيل، أو agents بتشتغل ساعات، من غير ما تبني state machine بإيدك.",
+      "why": "مناسب للعمليات الطويلة، زي دورة طلب من الشراء للشحن للتحصيل، أو agents بتشتغل ساعات، من غير ما تبني state machine بإيدك.",
       "about": "الفكرة في Temporal إنك بتكتب الـ workflow كأنه function عادية، وTemporal بيسجّل كل خطوة. لو حصل crash، بيكمّل من نفس النقطة. وتقدر تستنى إشارة خارجية أو timer لأيام.\n\nفيه SDKs لـ Go وJava وTypeScript وPython و.NET وPHP وRuby. وتقدر تشغّل السيرفر بنفسك، أو تستخدم Temporal Cloud.",
       "features": [
         "workflows بتكمّل بعد الأعطال",
@@ -321,7 +321,7 @@
       "en": {
         "title": "Temporal: workflows with guaranteed completion (durable execution)",
         "summary": "A platform that lets you write long-running workflows as ordinary code, and guarantees they finish even if the server crashes or they wait for days. Retries, timers, saved state, and SDKs for many languages including PHP.",
-        "why": "A good fit for long ERP processes, like an order's journey from purchase to shipping to collection, or agents that run for hours, without hand-building a state machine.",
+        "why": "A good fit for long-running processes, like an order's journey from purchase to shipping to payment, or agents that run for hours, without hand-building a state machine.",
         "about": "The idea in Temporal is that you write the workflow like a regular function, and Temporal records every step. If something crashes, it resumes from the same point. You can wait for an external signal or a timer for days.\n\nThere are SDKs for Go, Java, TypeScript, Python, .NET, PHP and Ruby. You can run the server yourself or use Temporal Cloud.",
         "features": [
           "Workflows that resume after failures",

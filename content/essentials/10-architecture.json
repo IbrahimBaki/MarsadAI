@@ -28,7 +28,7 @@
       ],
       "usage": [
         "/speckit-specify نظام مرتجعات للمبيعات بموافقة المدير ورصيد للعميل",
-        "/speckit-plan Laravel 13 module جديد بـ nwidart مع Pest tests"
+        "/speckit-plan Laravel 13 مع feature جديدة في module منفصل وPest tests"
       ],
       "pricing": {
         "model": "oss"
@@ -57,7 +57,7 @@
         ],
         "usage": [
           "/speckit-specify A sales returns system with manager approval and customer credit",
-          "/speckit-plan Laravel 13, a new nwidart module with Pest tests"
+          "/speckit-plan Laravel 13, the new feature in its own module, with Pest tests"
         ],
         "install": [
           "Install the CLI",
@@ -72,7 +72,7 @@
       "repo": "bmad-code-org/BMAD-METHOD",
       "title": "BMad Method: تطوير agile بالـ AI من الفكرة للكود",
       "summary": "منهجية وskills بتغطي التطوير كله بالـ AI: الـ brief، والـ PRD، والـ architecture، والـ stories، والتنفيذ. وفيها agents بأدوار زي analyst وPM وarchitect وdeveloper، والقرارات بتفضل مكتوبة وواضحة.",
-      "why": "لو هتبدأ module كبير جديد في الـ ERP، الطريقة دي بتخليك تفكر في المطلوب والمعمارية قبل الكود، وبتطلّع وثائق تنفعك بعدين.",
+      "why": "لو هتبدأ feature أو منتج كبير جديد، الطريقة دي بتخليك تفكر في المطلوب والمعمارية قبل الكود، وبتطلّع وثائق تنفعك بعدين.",
       "about": "BMad بيتعامل مع التطوير بالـ AI كعملية كاملة، مش كود وبس: إيه اللي هيتبني، وإزاي الأجزاء هتركب مع بعض، وإزاي هيتغير مع الوقت. فيه agents بأدوار بتمشي معاك من الـ brief للـ PRD للـ architecture للـ stories، وبعدين التنفيذ والمراجعة.\n\nالإصدار المستقر v6 بيتسطب بـ npx، وv7 لسه alpha وبيتغير كتير.",
       "features": [
         "agents بأدوار: analyst وPM وarchitect وdev",
@@ -103,7 +103,7 @@
       "en": {
         "title": "BMad Method: agile AI-driven development from idea to code",
         "summary": "A methodology and skills covering the whole development process with AI: the brief, PRD, architecture, stories and implementation. Agents play roles like analyst, PM, architect and developer, and decisions stay written down and clear.",
-        "why": "If you're starting a big new module in the ERP, this approach makes you think about requirements and architecture before code, and produces documents you'll use later.",
+        "why": "If you're starting a big new feature or product, this approach makes you think about requirements and architecture before code, and produces documents you'll use later.",
         "about": "BMad treats AI development as a complete process, not just code: what will be built, how the parts fit together, and how it will change over time. Role-based agents walk with you from brief to PRD to architecture to stories, then implementation and review.\n\nThe stable v6 installs with npx; v7 is still alpha and changing a lot.",
         "features": [
           "Role agents: analyst, PM, architect and dev",
@@ -210,7 +210,7 @@
       "repo": "mehdihadeli/awesome-software-architecture",
       "title": "Awesome Software Architecture: كتالوج مصادر المعمارية",
       "summary": "كتالوج كبير لمصادر المعمارية: DDD، وmicroservices، وmodular monolith، وCQRS، وevent sourcing، وclean architecture، والـ patterns، ومعاه موقع للتصفح والبحث.",
-      "why": "Company-ERP عبارة عن modular monolith، والقسم ده بالذات فيه مقالات وأمثلة تفيدك في حدود الـ modules والتواصل بينهم.",
+      "why": "لو مشروعك modular monolith أو بيكبر ناحية microservices، الكتالوج ده فيه مقالات وأمثلة عن حدود الأجزاء والتواصل بينها.",
       "about": "الكتالوج متقسم لـ collections وsubcollections ومواضيع، وكل موضوع فيه مقالات وفيديوهات وكتب وأمثلة كود. ومعاه web app اسمه Awesome Architecture بتبحث فيه وتفلتر حسب نوع المصدر.\n\nمن أهم الأقسام ليك: Modular Monolith، وDomain-Driven Design، وEvent-Driven Architecture، وDesign Patterns.",
       "features": [
         "DDD وmodular monolith وmicroservices",
@@ -232,7 +232,7 @@
       "en": {
         "title": "Awesome Software Architecture: a catalog of architecture resources",
         "summary": "A large catalog of architecture resources: DDD, microservices, modular monoliths, CQRS, event sourcing, clean architecture and patterns, with a website for browsing and searching.",
-        "why": "Company-ERP is a modular monolith, and this catalog has articles and examples on module boundaries and how modules communicate.",
+        "why": "If your project is a modular monolith or growing toward microservices, this catalog has articles and examples on boundaries and how parts communicate.",
         "about": "The catalog is organised into collections, subcollections and topics, each with articles, videos, books and code samples. There's a web app called Awesome Architecture for searching and filtering by resource type.\n\nThe most relevant sections for you: Modular Monolith, Domain-Driven Design, Event-Driven Architecture and Design Patterns.",
         "features": [
           "DDD, modular monoliths and microservices",
@@ -250,7 +250,7 @@
       "title": "Architecture Decision Records: وثّق قراراتك المعمارية",
       "summary": "دليل وقوالب وأمثلة لكتابة ADR: ملف قصير لكل قرار معماري مهم، فيه السياق والقرار والبدايل والنتايج. وفيه ترجمة عربي.",
       "why": "ملفات ADR بتبقى سياق ممتاز للـ agent: لما يقرا ليه اخترت حاجة معينة، مش هيقترح عكسها كل شوية.",
-      "about": "الـ ADR ملف Markdown لكل قرار، زي \"استخدام nwidart modules\" أو \"Redis للـ queues\"، فيه: العنوان، والحالة، والسياق، والقرار، والنتايج، والبدايل اللي اترفضت.\n\nالريبو فيه قوالب كتير، زي Michael Nygard وMADR، وأمثلة حقيقية، ونصايح للعملية: إمتى تكتب ADR، وإزاي تراجعه، وإزاي تقفله لما يتغير. وفيه موقع وترجمات منها العربي.",
+      "about": "الـ ADR ملف Markdown لكل قرار، زي \"تقسيم المشروع لـ modules\" أو \"Redis للـ queues\"، فيه: العنوان، والحالة، والسياق، والقرار، والنتايج، والبدايل اللي اترفضت.\n\nالريبو فيه قوالب كتير، زي Michael Nygard وMADR، وأمثلة حقيقية، ونصايح للعملية: إمتى تكتب ADR، وإزاي تراجعه، وإزاي تقفله لما يتغير. وفيه موقع وترجمات منها العربي.",
       "features": [
         "قوالب ADR مختلفة",
         "أمثلة حقيقية",
@@ -272,7 +272,7 @@
         "title": "Architecture Decision Records: document your architectural decisions",
         "summary": "A guide, templates and examples for writing ADRs: a short file for each important architectural decision with its context, decision, alternatives and consequences. Includes an Arabic translation.",
         "why": "ADR files make excellent context for the agent: once it reads why you chose something, it won't keep suggesting the opposite.",
-        "about": "An ADR is a Markdown file per decision, like \"Use nwidart modules\" or \"Redis for queues\", containing a title, status, context, decision, consequences and rejected alternatives.\n\nThe repo has many templates, such as Michael Nygard's and MADR, real examples, and process advice: when to write an ADR, how to review it, and how to close it when things change. There's a website and translations, including Arabic.",
+        "about": "An ADR is a Markdown file per decision, like \"Split the project into modules\" or \"Redis for queues\", containing a title, status, context, decision, consequences and rejected alternatives.\n\nThe repo has many templates, such as Michael Nygard's and MADR, real examples, and process advice: when to write an ADR, how to review it, and how to close it when things change. There's a website and translations, including Arabic.",
         "features": [
           "Different ADR templates",
           "Real examples",
@@ -375,7 +375,7 @@
       "kind": "article",
       "title": "martinfowler.com: مرجع الـ patterns والمعمارية",
       "summary": "موقع Martin Fowler فيه مقالات أساسية في المعمارية والـ refactoring والـ patterns والـ microservices، ومؤخراً سلسلة عن هندسة البرمجيات مع الـ AI وتجارب Thoughtworks.",
-      "why": "لما تحتاج تفهم pattern معين صح، زي Strangler Fig لتحديث أجزاء قديمة في الـ ERP، أو تقرا رأي متزن عن البرمجة بالـ AI.",
+      "why": "لما تحتاج تفهم pattern معين صح، زي Strangler Fig لتحديث أجزاء قديمة في نظام شغال، أو تقرا رأي متزن عن البرمجة بالـ AI.",
       "about": "الموقع فيه مقالات مرجعية اتكتبت على مدار سنين، زي Microservices، وStrangler Fig Application، وCQRS، وEvent Sourcing، وFeature Toggles، وBounded Context، وموسوعة patterns للـ enterprise applications.\n\nومؤخراً بينشر مقالات من مهندسين في Thoughtworks عن تجاربهم مع الـ coding agents، والـ spec-driven development، والـ context engineering، بشكل نقدي ومش ترويجي.",
       "features": [
         "مقالات مرجعية للـ patterns",
@@ -394,7 +394,7 @@
       "en": {
         "title": "martinfowler.com: the reference for patterns and architecture",
         "summary": "Martin Fowler's site has foundational articles on architecture, refactoring, patterns and microservices, and lately a series on software engineering with AI from Thoughtworks engineers.",
-        "why": "When you need to understand a pattern properly, like Strangler Fig for modernising old parts of the ERP, or want a balanced view on coding with AI.",
+        "why": "When you need to understand a pattern properly, like Strangler Fig for modernising old parts of a live system, or want a balanced view on coding with AI.",
         "about": "The site has reference articles written over many years, such as Microservices, Strangler Fig Application, CQRS, Event Sourcing, Feature Toggles, Bounded Context, and a catalog of enterprise application patterns.\n\nRecently it publishes articles from Thoughtworks engineers about their experience with coding agents, spec-driven development and context engineering, written critically rather than as promotion.",
         "features": [
           "Reference articles on patterns",

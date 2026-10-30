@@ -7,7 +7,7 @@
       "kind": "tool",
       "title": "Figma Make: من الوصف لـ prototype شغال",
       "summary": "أداة AI جوه Figma بتحوّل الوصف أو التصميم لـ prototype تفاعلي ليه كود حقيقي، وبتعدّل عليه بالكلام وإنت لسه جوه Figma. ومعاها Figma MCP server بيدّي الـ agents سياق التصميم.",
-      "why": "تجرّب UX شاشة جديدة في الـ ERP وتورّيها للمستخدمين قبل ما تكتب كود. وMCP بيخلي Claude يبني من تصميم Figma بدقة.",
+      "why": "تجرّب UX شاشة جديدة وتورّيها للمستخدمين قبل ما تكتب كود. وMCP بيخلي الـ agent يبني من تصميم Figma بدقة.",
       "about": "في Figma Make بتكتب الفكرة، أو تدّيله frame من تصميمك، فيبني تطبيق صغير شغال: أزرار بتشتغل، وفورمز، وتنقل بين الشاشات. وتعدّل بالكلام أو في الكود مباشرة، وتنشره بلينك.\n\nوFigma عندها Dev Mode MCP server بيدّي Claude Code أو Cursor تفاصيل التصميم: المقاسات والألوان والـ components والـ variables، فالكود يطلع مطابق.",
       "features": [
         "prototype تفاعلي من وصف",
@@ -35,7 +35,7 @@
       "en": {
         "title": "Figma Make: from a description to a working prototype",
         "summary": "An AI tool inside Figma that turns a description or a design into an interactive prototype with real code, which you refine in words without leaving Figma. The Figma MCP server gives agents the design context.",
-        "why": "Try out the UX of a new ERP screen and show it to users before writing code. The MCP lets Claude build from a Figma design accurately.",
+        "why": "Try out the UX of a new screen and show it to users before writing code. The MCP lets your agent build from a Figma design accurately.",
         "about": "In Figma Make you write the idea, or give it a frame from your design, and it builds a small working app: buttons that work, forms, and navigation between screens. You refine it in words or directly in the code, and publish it with a link.\n\nFigma also has a Dev Mode MCP server that gives Claude Code or Cursor the design details: sizes, colors, components and variables, so the code comes out matching.",
         "features": [
           "Interactive prototypes from a description",
@@ -92,7 +92,7 @@
       "kind": "tool",
       "title": "v0 من Vercel: تطبيقات React جاهزة من وصف",
       "summary": "بيولّد واجهات وتطبيقات كاملة بـ React وNext.js وTailwind وshadcn/ui من وصف أو صورة، وتعدّل بالكلام، وتنشر على Vercel أو تاخد الكود لمشروعك.",
-      "why": "مناسب للـ dashboards والأدوات الداخلية السريعة، زي المرصد ده، والكود اللي بيطلع نضيف وقابل للتعديل.",
+      "why": "مناسب للـ dashboards والأدوات الداخلية والـ prototypes السريعة، والكود اللي بيطلع نضيف وقابل للتعديل.",
       "about": "v0 بيكتب كود حقيقي بـ shadcn/ui، فتقدر تنسخ component واحد لمشروعك، أو تاخد المشروع كله. وفيه preview لايف، وتعديل بالكلام أو باختيار عنصر في الـ preview، وربط بـ GitHub، ونشر بضغطة.\n\nوفيه credits مجانية شهرية، وخطط مدفوعة.",
       "features": [
         "React وTailwind وshadcn",
@@ -115,7 +115,7 @@
       "en": {
         "title": "v0 by Vercel: ready React apps from a description",
         "summary": "It generates complete UIs and apps with React, Next.js, Tailwind and shadcn/ui from a description or an image. Refine in words, then deploy to Vercel or take the code into your project.",
-        "why": "Good for dashboards and quick internal tools, like Marsad itself, and the code it produces is clean and editable.",
+        "why": "Good for dashboards, internal tools and quick prototypes, and the code it produces is clean and editable.",
         "about": "v0 writes real code with shadcn/ui, so you can copy a single component into your project or take the whole project. There's a live preview, editing in words or by selecting an element in the preview, GitHub integration and one-click deploys.\n\nThere are free monthly credits and paid plans.",
         "features": [
           "React, Tailwind and shadcn",
@@ -209,7 +209,7 @@
       "kind": "tool",
       "title": "Recraft: لوجوهات وأيقونات vector",
       "summary": "أداة توليد صور معمولة للمصممين. بتطلّع SVG حقيقي قابل للتعديل، وبتقدر تثبّت ستايل البراند والألوان، فهي مناسبة للوجوهات والأيقونات والـ illustrations.",
-      "why": "ملفات الـ vector اللي بتطلعها تقدر تستخدمها مباشرة في الويب والطباعة، زي أيقونات Dokkanx أو الـ ERP، من غير ما تعيد رسمها.",
+      "why": "ملفات الـ vector اللي بتطلعها تقدر تستخدمها مباشرة في الويب والطباعة، زي أيقونات تطبيقك، من غير ما تعيد رسمها.",
       "about": "Recraft بيولّد صور raster وvector، والـ SVG بيطلع بطبقات تقدر تعدّلها. فيه custom styles بتثبّت بيها شكل البراند، وتحكم في palette الألوان، وmockups، وأدوات تعديل زي شيل الخلفية والتكبير. وفيه API.",
       "features": [
         "SVG حقيقي قابل للتعديل",
@@ -231,7 +231,7 @@
       "en": {
         "title": "Recraft: vector logos and icons",
         "summary": "An image generator made for designers. It outputs real, editable SVG and can lock in your brand style and colors, so it suits logos, icons and illustrations.",
-        "why": "The vector files it produces can be used directly on the web and in print, like icons for Dokkanx or the ERP, without redrawing them.",
+        "why": "The vector files it produces can be used directly on the web and in print, like your app's icons, without redrawing them.",
         "about": "Recraft generates both raster and vector images, and the SVG comes out in editable layers. There are custom styles to lock in your brand's look, palette control, mockups, and editing tools like background removal and upscaling. There's also an API.",
         "features": [
           "Real, editable SVG",
@@ -333,7 +333,7 @@
       "repo": "penpot/penpot",
       "title": "Penpot: بديل Figma مفتوح المصدر",
       "summary": "منصة تصميم مفتوحة المصدر للفرق، تستضيفها بنفسك أو تستخدمها أونلاين. بتعتمد على معايير الويب (SVG وCSS)، فالـ handoff للمبرمجين أدق، وفيها components وdesign tokens وflex وgrid layout.",
-      "why": "لو عايز أداة تصميم للفريق من غير اشتراكات وبياناتك على سيرفرك، وده متماشي مع خبرتك في الـ self-hosting.",
+      "why": "لو عايز أداة تصميم للفريق من غير اشتراكات، وبياناتك على سيرفرك.",
       "about": "Penpot بيرسم بـ SVG، والـ layouts بتتعمل بـ CSS Flexbox وGrid، فاللي بتصممه قريب جداً من اللي هيتكتب كود، ووضع Inspect بيدّي CSS جاهز. فيه components وvariants، وdesign tokens، وprototyping، وتعاون لايف، وplugins، وAPI.\n\nبرخصة MPL 2.0، ومجاني أونلاين أو على سيرفرك بـ Docker.",
       "features": [
         "مفتوح المصدر وself-hosted",
@@ -355,7 +355,7 @@
       "en": {
         "title": "Penpot: an open-source Figma alternative",
         "summary": "An open-source design platform for teams that you can self-host or use online. It's based on web standards (SVG and CSS), so handoff to developers is more precise, with components, design tokens, and flex and grid layout.",
-        "why": "If you want a team design tool with no subscriptions and your data on your own server, which fits your self-hosting experience.",
+        "why": "If you want a team design tool with no subscriptions and your data on your own server.",
         "about": "Penpot draws in SVG, and layouts use CSS Flexbox and Grid, so what you design is very close to what will be coded, and Inspect mode gives you ready CSS. It has components and variants, design tokens, prototyping, live collaboration, plugins and an API.\n\nIt's MPL 2.0 licensed and free online or on your own server with Docker.",
         "features": [
           "Open source and self-hosted",

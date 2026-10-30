@@ -8,7 +8,7 @@
       "repo": "supabase/supabase",
       "title": "Supabase: منصة Postgres كاملة",
       "summary": "Postgres مستضاف ومعاه auth، وREST وGraphQL APIs أوتوماتيك، وrealtime، وstorage للملفات، وedge functions، وvector search بـ pgvector. مفتوح المصدر وتقدر تشغّله بنفسك.",
-      "why": "أسرع طريقة تطلّع backend لمشروع جانبي زي Dokkanx أو أداة داخلية، ومعاها MCP server رسمي للـ agents.",
+      "why": "أسرع طريقة تطلّع backend لمشروع جانبي أو MVP أو أداة داخلية، ومعاها MCP server رسمي للـ agents.",
       "about": "Supabase بيقدّم نفسه كبديل مفتوح المصدر لـ Firebase، بس مبني على Postgres حقيقي. فبتاخد SQL كامل، وrow level security للصلاحيات، وextensions زي pgvector.\n\nمعاه Auth بأنواعه، وAPI أوتوماتيك من الجداول، وRealtime للتغييرات، وStorage للملفات، وEdge Functions بـ Deno، وdashboard مريح، وCLI للتطوير المحلي والـ migrations. وفيه خطة مجانية للمشاريع الصغيرة.",
       "features": [
         "Postgres حقيقي مع RLS",
@@ -40,7 +40,7 @@
       "en": {
         "title": "Supabase: a complete Postgres platform",
         "summary": "Hosted Postgres with auth, automatic REST and GraphQL APIs, realtime, file storage, edge functions and vector search with pgvector. Open source, and you can run it yourself.",
-        "why": "The fastest way to stand up a backend for a side project like Dokkanx or an internal tool, and it has an official MCP server for agents.",
+        "why": "The fastest way to stand up a backend for a side project, an MVP or an internal tool, and it has an official MCP server for agents.",
         "about": "Supabase positions itself as an open-source alternative to Firebase, but built on real Postgres. So you get full SQL, row level security for permissions, and extensions like pgvector.\n\nIt comes with Auth of every kind, an automatic API from your tables, Realtime for changes, Storage for files, Edge Functions on Deno, a comfortable dashboard, and a CLI for local development and migrations. There's a free plan for small projects.",
         "features": [
           "Real Postgres with RLS",
@@ -61,7 +61,7 @@
       "repo": "pgvector/pgvector",
       "title": "pgvector: vector search جوه Postgres",
       "summary": "extension لـ Postgres بيخليك تخزن الـ embeddings جنب بياناتك وتعمل بحث بالتشابه، exact أو approximate بـ HNSW وIVFFlat. وده الأساس لأي RAG من غير قاعدة بيانات منفصلة.",
-      "why": "لو هتعمل بحث ذكي أو RAG على بيانات الـ ERP، زي المنتجات أو المستندات أو التذاكر، pgvector بيوفّر عليك قاعدة بيانات تانية.",
+      "why": "لو هتعمل بحث ذكي أو RAG على بياناتك، زي المنتجات أو المستندات أو التذاكر، pgvector بيوفّر عليك قاعدة بيانات تانية.",
       "about": "بتضيف عمود من نوع vector، وتخزن فيه الـ embedding، وتبحث بـ ORDER BY embedding <-> query LIMIT 10. بيدعم أكتر من مقياس للمسافة، وفهارس HNSW وIVFFlat للسرعة، وvectors بدقة نص أو binary أو sparse لتوفير المساحة.\n\nمدعوم في Supabase وNeon وRDS ومعظم مزودي Postgres، وفيه Docker image جاهزة. وLaravel AI SDK بيدعم الـ embeddings وPostgres.",
       "features": [
         "vectors جنب بياناتك",
@@ -89,7 +89,7 @@
       "en": {
         "title": "pgvector: vector search inside Postgres",
         "summary": "A Postgres extension for storing embeddings next to your data and running similarity search, exact or approximate with HNSW and IVFFlat. It's the foundation for RAG without a separate database.",
-        "why": "If you'll build smart search or RAG over ERP data, like products, documents or tickets, pgvector saves you a second database.",
+        "why": "If you'll build smart search or RAG over your data, like products, documents or tickets, pgvector saves you a second database.",
         "about": "You add a vector column, store the embedding in it, and search with ORDER BY embedding <-> query LIMIT 10. It supports several distance metrics, HNSW and IVFFlat indexes for speed, and half-precision, binary or sparse vectors to save space.\n\nIt's supported on Supabase, Neon, RDS and most Postgres providers, and there's a ready Docker image. The Laravel AI SDK supports embeddings and Postgres.",
         "features": [
           "Vectors next to your data",
@@ -159,7 +159,7 @@
       "repo": "drizzle-team/drizzle-orm",
       "title": "Drizzle ORM: ORM خفيف لـ TypeScript قريب من SQL",
       "summary": "ORM لـ TypeScript حجمه ~7.4kb ومن غير dependencies، وبيكتب queries قريبة جداً من SQL مع types كاملة. بيدعم Postgres وMySQL وSQLite، وبيشتغل على أي runtime حتى الـ edge.",
-      "why": "لو هتكتب خدمة TypeScript تكلم داتابيز الـ ERP، Drizzle بيدّيك types من غير ما يخبّي SQL.",
+      "why": "لو هتكتب خدمة TypeScript بتكلم قاعدة بيانات، Drizzle بيدّيك types كاملة من غير ما يخبّي SQL.",
       "about": "في Drizzle بتعرّف الـ schema بـ TypeScript، والـ queries بتبقى شبه SQL، زي db.select().from(users).where(eq(users.id, 1))، أو بـ relational API أعلى مستوى.\n\nمعاه drizzle-kit للـ migrations، وDrizzle Studio لتصفح البيانات. وبيدعم Neon وTurso وPlanetScale وSupabase وD1.",
       "features": [
         "قريب من SQL مع types",
@@ -190,7 +190,7 @@
       "en": {
         "title": "Drizzle ORM: a lightweight TypeScript ORM close to SQL",
         "summary": "A ~7.4 kB TypeScript ORM with no dependencies that writes queries very close to SQL with full types. It supports Postgres, MySQL and SQLite and runs on any runtime, even the edge.",
-        "why": "If you'll write a TypeScript service that talks to the ERP database, Drizzle gives you types without hiding SQL.",
+        "why": "If you'll write a TypeScript service that talks to a database, Drizzle gives you full types without hiding SQL.",
         "about": "In Drizzle you define the schema in TypeScript and queries look like SQL, such as db.select().from(users).where(eq(users.id, 1)), or use the higher-level relational API.\n\nIt comes with drizzle-kit for migrations and Drizzle Studio for browsing data, and supports Neon, Turso, PlanetScale, Supabase and D1.",
         "features": [
           "Close to SQL, with types",
@@ -359,7 +359,7 @@
       "repo": "meilisearch/meilisearch",
       "title": "Meilisearch: بحث سريع وذكي جاهز",
       "summary": "search engine للبحث النصي والدلالي والـ hybrid، بنتايج فورية وتحمّل للأخطاء الإملائية وفلاتر وfacets. تشغّله بنفسك أو على Meilisearch Cloud، ومتكامل مع Laravel Scout.",
-      "why": "لو البحث في المنتجات أو العملاء في الـ ERP بطيء أو مش ذكي، Meilisearch مع Scout بيحل ده بسرعة.",
+      "why": "لو البحث في تطبيقك بطيء أو مش بيتحمّل الأخطاء الإملائية، Meilisearch بيحل ده بسرعة، ومعاه تكامل رسمي مع Laravel Scout.",
       "about": "بتبعت المستندات كـ JSON، وتبحث بطلب واحد. بيتحمّل الأخطاء الإملائية، وبيدعم الفلاتر والـ facets والترتيب، والمرادفات، ولغات كتير. وفيه semantic وhybrid search بالـ embeddings.\n\nمدعوم رسمياً في Laravel Scout، وفيه Docker image وsكريبت تسطيب.",
       "features": [
         "نتايج فورية مع تحمّل الأخطاء",
@@ -387,7 +387,7 @@
       "en": {
         "title": "Meilisearch: fast, smart search out of the box",
         "summary": "A search engine for full-text, semantic and hybrid search, with instant results, typo tolerance, filters and facets. Run it yourself or on Meilisearch Cloud; it integrates with Laravel Scout.",
-        "why": "If product or customer search in the ERP is slow or not smart, Meilisearch with Scout fixes that quickly.",
+        "why": "If search in your app is slow or doesn't tolerate typos, Meilisearch fixes that quickly, with an official Laravel Scout integration.",
         "about": "You send documents as JSON and search with a single request. It tolerates typos and supports filters, facets, sorting, synonyms and many languages. There's also semantic and hybrid search with embeddings.\n\nIt's officially supported by Laravel Scout, with a Docker image and an install script.",
         "features": [
           "Instant results with typo tolerance",
@@ -408,7 +408,7 @@
       "repo": "duckdb/duckdb",
       "title": "DuckDB: تحليل بيانات سريع جوه أي برنامج",
       "summary": "قاعدة بيانات تحليلية بتشتغل جوه البرنامج نفسه من غير سيرفر، وبتقرا CSV وParquet وJSON مباشرة. ومعاها CLI وclients لـ Python وR وJava وNode وغيرهم.",
-      "why": "لو عايز تحلل export كبير من الـ ERP بـ SQL في ثواني، من غير ما تحمّله في MySQL.",
+      "why": "لو عايز تحلل ملف export كبير أو CSV بـ SQL في ثواني، من غير ما تحمّله في قاعدة بيانات الأول.",
       "about": "DuckDB زي SQLite بس للتحليل. بتكتب SELECT * FROM 'sales.csv' مباشرة، وبيعمل aggregations وjoins على ملايين الصفوف بسرعة كبيرة لأنه بيشتغل بالأعمدة.\n\nبيقرا ويكتب CSV وParquet وJSON وExcel، ويقدر يوصل لـ Postgres وMySQL وS3. وفيه نسخة تشتغل في البراوزر.",
       "features": [
         "من غير سيرفر",
@@ -436,7 +436,7 @@
       "en": {
         "title": "DuckDB: fast data analysis inside any program",
         "summary": "An analytical database that runs inside the program itself with no server, and reads CSV, Parquet and JSON directly. It has a CLI and clients for Python, R, Java, Node and more.",
-        "why": "If you want to analyse a big ERP export with SQL in seconds, without loading it into MySQL.",
+        "why": "If you want to analyse a big export or CSV file with SQL in seconds, without loading it into a database first.",
         "about": "DuckDB is like SQLite but for analytics. You write SELECT * FROM 'sales.csv' directly, and it runs aggregations and joins over millions of rows very fast because it's columnar.\n\nIt reads and writes CSV, Parquet, JSON and Excel, and can connect to Postgres, MySQL and S3. There's also a version that runs in the browser.",
         "features": [
           "No server",

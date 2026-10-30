@@ -8,7 +8,7 @@
       "repo": "warpdotdev/Warp",
       "title": "Warp: بيئة تطوير agentic مولودة من الترمينال، وبقت مفتوحة المصدر",
       "summary": "Warp بقى agentic development environment: ترمينال حديث فيه coding agent مدمج، أو تشغّل فيه Claude Code أو Codex وتديرهم من مكان واحد. والكود بقى مفتوح المصدر (AGPL، والـ UI framework برخصة MIT).",
-      "why": "إنت شغال على Warp أصلاً، فالجديد يهمك: إدارة أكتر من CLI agent في نفس المكان، والكود بقى مفتوح.",
+      "why": "لو بتستخدم أكتر من CLI agent زي Claude Code وCodex، Warp بيجمعهم في مكان واحد تتابعهم منه، والكود بقى مفتوح.",
       "about": "Warp بدأ كترمينال سريع مكتوب بـ Rust، بـ blocks للأوامر ومحرر حديث. وبعدين بقى بيئة للـ agents: فيه agent مدمج، وتقدر تشغّل فيه Claude Code أو Codex أو أي CLI agent وتتابعهم، ومعاه Warp Drive لمشاركة الأوامر والـ workflows مع الفريق.\n\nمؤخراً الريبو بقى مفتوح المصدر: الـ UI framework برخصة MIT، والباقي AGPLv3. وOpenAI الراعي المؤسس للريبو الجديد، وworkflows إدارة الـ agents الجديدة شغالة بموديلات GPT.",
       "features": [
         "agent مدمج أو أي CLI agent",
@@ -31,7 +31,7 @@
       "en": {
         "title": "Warp: an agentic development environment born from the terminal, now open source",
         "summary": "Warp is now an agentic development environment: a modern terminal with a built-in coding agent, where you can also run Claude Code or Codex and manage them in one place. The code is now open source (AGPL, with the UI framework under MIT).",
-        "why": "You already use Warp, so the news matters: manage several CLI agents in one place, and the code is now open.",
+        "why": "If you use several CLI agents like Claude Code and Codex, Warp brings them into one place to follow them, and the code is now open.",
         "about": "Warp started as a fast terminal written in Rust, with command blocks and a modern editor. It then became an environment for agents: it has a built-in agent, you can run Claude Code, Codex or any CLI agent in it and follow them, and Warp Drive lets you share commands and workflows with your team.\n\nRecently the repo went open source: the UI framework under MIT and the rest under AGPLv3. OpenAI is the founding sponsor of the new repo, and the new agent-management workflows run on GPT models.",
         "features": [
           "A built-in agent or any CLI agent",
@@ -49,7 +49,7 @@
       "repo": "yamadashy/repomix",
       "title": "Repomix: الريبو كله في ملف واحد للـ AI",
       "summary": "بيجمع كود المشروع كله، أو جزء منه، في ملف واحد منظم مناسب لأي AI، ومعاه عدد الـ tokens، وبيستبعد الملفات الحساسة والمتجاهلة. وفيه MCP server وموقع.",
-      "why": "لما تحب تسأل موديل في محادثة عادية عن module كامل من الـ ERP، أو تحتاج review من موديل تاني.",
+      "why": "لما تحب تسأل موديل في محادثة عادية عن جزء كامل من مشروعك، أو تحتاج review من موديل تاني.",
       "about": "Repomix بيحترم .gitignore، وبيفحص الأسرار بـ Secretlint عشان ميدخلش مفتاح بالغلط، وبيعدّ الـ tokens لكل ملف. والمخرج بصيغة XML أو Markdown أو نص.\n\nفيه compress بيشيل جسم الـ functions ويسيب التعريفات بس بـ tree-sitter، وده بيوفّر tokens كتير. وتقدر تشغّله على ريبو remote مباشرة، وفيه MCP server وextension للبراوزر.",
       "features": [
         "ملف واحد منظم",
@@ -81,7 +81,7 @@
       "en": {
         "title": "Repomix: your whole repo in one file for AI",
         "summary": "It packs all of a project's code, or part of it, into one organised file suited to any AI, with token counts, and excludes sensitive and ignored files. There's also an MCP server and a website.",
-        "why": "When you want to ask a model in a regular chat about an entire ERP module, or need a review from a different model.",
+        "why": "When you want to ask a model in a regular chat about a whole part of your project, or need a review from a different model.",
         "about": "Repomix respects .gitignore, scans for secrets with Secretlint so no key slips in by mistake, and counts tokens per file. Output is XML, Markdown or plain text.\n\nThere's a compress mode that uses tree-sitter to strip function bodies and keep only the definitions, which saves a lot of tokens. You can run it on a remote repo directly, and there's an MCP server and a browser extension.",
         "features": [
           "One organised file",
@@ -387,7 +387,7 @@
       "kind": "tool",
       "repo": "ajeetdsouza/zoxide",
       "title": "zoxide: cd أذكى",
-      "summary": "بيفتكر الفولدرات اللي بتروحها كتير، فتكتب z erp يوديك على مشروع Company-ERP من أي مكان. ومعاه zi للاختيار التفاعلي بـ fzf.",
+      "summary": "بيفتكر الفولدرات اللي بتروحها كتير، فتكتب z api مثلاً يوديك على فولدر المشروع من أي مكان. ومعاه zi للاختيار التفاعلي بـ fzf.",
       "why": "بتتنقل بين مشاريع ومسارات طويلة طول اليوم، وده بيوفّر كتابة كتير.",
       "about": "zoxide بيرتب الفولدرات حسب عدد المرات وآخر مرة زرتها، وبيقفز للأنسب بأي جزء من الاسم. مكتوب بـ Rust، وبيشتغل مع bash وzsh وfish وغيرهم.",
       "features": [
@@ -414,7 +414,7 @@
       ],
       "en": {
         "title": "zoxide: a smarter cd",
-        "summary": "It remembers the folders you visit most, so typing z erp takes you to the Company-ERP project from anywhere. zi gives you interactive selection with fzf.",
+        "summary": "It remembers the folders you visit most, so typing z api, for example, takes you to that project folder from anywhere. zi gives you interactive selection with fzf.",
         "why": "You move between projects and long paths all day, and this saves a lot of typing.",
         "about": "zoxide ranks folders by how often and how recently you visited them, and jumps to the best match from any part of the name. It's written in Rust and works with bash, zsh, fish and more.",
         "features": [
@@ -529,7 +529,7 @@
       "repo": "ghostty-org/ghostty",
       "title": "Ghostty: terminal سريع وnative",
       "summary": "terminal emulator سريع، بيستخدم الـ GPU، وبواجهة native على Linux وmacOS، ومعاه ميزات حديثة كتير. وفيه libghostty تقدر تدمجها في تطبيقات تانية.",
-      "why": "لو حابب ترمينال خفيف جداً جنب Warp، مثلاً للجلسات الطويلة مع Claude Code.",
+      "why": "لو عايز ترمينال سريع وخفيف جداً، مثلاً للجلسات الطويلة مع Claude Code، وبواجهة native لنظامك.",
       "about": "Ghostty عمله Mitchell Hashimoto، مؤسس HashiCorp. بيركز على السرعة والواجهة الأصلية لكل نظام، يعني GTK على Linux وAppKit على macOS، وبيدعم ميزات حديثة زي الـ splits والـ tabs والـ themes وkitty graphics protocol.\n\nوبقى فيه libghostty كمكتبة للتطبيقات التانية.",
       "features": [
         "GPU وسريع",
@@ -550,7 +550,7 @@
       "en": {
         "title": "Ghostty: a fast, native terminal",
         "summary": "A fast, GPU-accelerated terminal emulator with a native UI on Linux and macOS and plenty of modern features. libghostty lets you embed it in other apps.",
-        "why": "If you want a very light terminal alongside Warp, for example for long sessions with Claude Code.",
+        "why": "If you want a very fast, light terminal, for example for long sessions with Claude Code, with a native UI for your OS.",
         "about": "Ghostty is by Mitchell Hashimoto, the founder of HashiCorp. It focuses on speed and a native UI on each platform, meaning GTK on Linux and AppKit on macOS, and supports modern features like splits, tabs, themes and the kitty graphics protocol.\n\nThere's now libghostty as a library for other applications.",
         "features": [
           "GPU-accelerated and fast",
