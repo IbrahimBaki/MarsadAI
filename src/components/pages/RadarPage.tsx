@@ -23,7 +23,8 @@ export function RadarPage() {
   const type = filters.v;
   const radar = useMemo(() => feed?.radar ?? [], [feed]);
   const section = filters.s ? tx.SECTION_BY_ID[filters.s] : null;
-  const unseenOnly = filters.hot;
+  const guest = user.guest;
+  const unseenOnly = filters.hot && !guest;
 
   const visible = useMemo(
     () =>
@@ -45,7 +46,10 @@ export function RadarPage() {
   }, [shown]);
 
   const counts = useMemo(() => {
-    const c = { all: 0, awesome: 0, release: 0, trending: 0 } as Record<string, number>;
+    const c = { all: 0, awesome: 0, release: 0, trending: 0 } as Record<
+      string,
+      number
+    >;
     for (const r of radar) {
       if (filters.s && r.section !== filters.s) continue;
       if (user.seen.has(r.id)) continue;
@@ -56,7 +60,11 @@ export function RadarPage() {
   }, [radar, filters.s, user.seen]);
 
   const tabs = (
-    <div role="tablist" aria-label={t.radar.type} className="card no-scrollbar flex max-w-full overflow-x-auto !rounded-2xl p-1 text-[14px]">
+    <div
+      role="tablist"
+      aria-label={t.radar.type}
+      className="card no-scrollbar flex max-w-full overflow-x-auto !rounded-2xl p-1 text-[14px]"
+    >
       {TYPES.map((id) => (
         <button
           key={id}
@@ -70,7 +78,11 @@ export function RadarPage() {
           className={`whitespace-nowrap rounded-xl px-3.5 py-2 ${type === id ? "bg-ink font-semibold text-ground" : "text-ink-2"}`}
         >
           {t.radar[id]}
-          {counts[id] > 0 && <span className="ms-1.5 text-[12px] opacity-70">{f.num(counts[id])}</span>}
+          {counts[id] > 0 && (
+            <span className="ms-1.5 text-[12px] opacity-70">
+              {f.num(counts[id])}
+            </span>
+          )}
         </button>
       ))}
     </div>
@@ -78,19 +90,37 @@ export function RadarPage() {
 
   return (
     <div className="flex flex-col gap-5">
-      <header style={section ? secStyle(section.id) : undefined} className="px-1 pt-2">
+      <header
+        style={section ? secStyle(section.id) : undefined}
+        className="px-1 pt-2"
+      >
         <div className="flex items-center gap-2.5">
           {section && <span className="sec-bg size-3 rounded-[4px]" />}
-          <h1 className="text-[28px] font-bold leading-10">{t.radar.title}{section ? ` · ${section.name}` : ""}</h1>
+          <h1 className="text-[28px] font-bold leading-10">
+            {t.radar.title}
+            {section ? ` · ${section.name}` : ""}
+          </h1>
         </div>
-        <p className="mt-1 max-w-[72ch] text-[15px] leading-7 text-ink-2">{t.radar.intro}</p>
+        <p className="mt-1 max-w-[72ch] text-[15px] leading-7 text-ink-2">
+          {t.radar.intro}
+        </p>
       </header>
 
-      <FilterBar filters={filters} update={update} placeholder={t.radar.placeholder} showPrice={false} hotLabel={t.radar.unseen} tabs={tabs} />
+      <FilterBar
+        filters={filters}
+        update={update}
+        placeholder={t.radar.placeholder}
+        showPrice={false}
+        hotLabel={guest ? undefined : t.radar.unseen}
+        tabs={tabs}
+      />
 
       {!feed && <Skeleton />}
       {feed && visible.length === 0 && (
-        <Empty title={t.radar.emptyTitle} body={radar.length ? t.radar.emptyFiltered : t.radar.emptyNone} />
+        <Empty
+          title={t.radar.emptyTitle}
+          body={radar.length ? t.radar.emptyFiltered : t.radar.emptyNone}
+        />
       )}
 
       {days.map(([date, list]) => {
@@ -105,9 +135,15 @@ export function RadarPage() {
           <section key={date} className="flex flex-col gap-3">
             <header className="flex flex-wrap items-baseline gap-x-3 px-1">
               <h2 className="text-[24px] font-bold">{label.main}</h2>
-              {label.sub && <span className="text-[14px] text-muted">{label.sub}</span>}
-              {unseen.length > 0 && (
-                <button type="button" onClick={() => markAll(unseen.map((r) => r.id))} className="ms-auto text-[13px] font-semibold text-accent">
+              {label.sub && (
+                <span className="text-[14px] text-muted">{label.sub}</span>
+              )}
+              {unseen.length > 0 && !guest && (
+                <button
+                  type="button"
+                  onClick={() => markAll(unseen.map((r) => r.id))}
+                  className="ms-auto text-[13px] font-semibold text-accent"
+                >
                   {t.radar.markAll}
                 </button>
               )}
@@ -116,18 +152,35 @@ export function RadarPage() {
               <div key={key} className="card overflow-hidden">
                 <div className="flex items-center gap-2 border-b border-line bg-sunken/50 px-4 py-2.5 text-[13.5px]">
                   <span className="font-semibold">
-                    {key === "release" ? t.radar.newReleases : key === "trending" ? t.radar.rising : t.radar.addedTo}
+                    {key === "release"
+                      ? t.radar.newReleases
+                      : key === "trending"
+                        ? t.radar.rising
+                        : t.radar.addedTo}
                   </span>
                   {key.startsWith("awesome:") && (
-                    <a href={`https://github.com/${key.slice(8)}`} target="_blank" rel="noopener noreferrer" className="ltr font-mono text-[12.5px] text-accent">
+                    <a
+                      href={`https://github.com/${key.slice(8)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="ltr font-mono text-[12.5px] text-accent"
+                    >
                       {key.slice(8)}
                     </a>
                   )}
-                  <span className="ms-auto text-faint">{f.num(rows.length)}</span>
+                  <span className="ms-auto text-faint">
+                    {f.num(rows.length)}
+                  </span>
                 </div>
                 <ul className="divide-y divide-line">
                   {rows.map((r) => (
-                    <Row key={r.id} r={r} seen={user.seen.has(r.id)} onSeen={onSeen} />
+                    <Row
+                      key={r.id}
+                      r={r}
+                      seen={user.seen.has(r.id)}
+                      onSeen={onSeen}
+                      guest={guest}
+                    />
                   ))}
                 </ul>
               </div>
@@ -137,7 +190,11 @@ export function RadarPage() {
       })}
 
       {visible.length > limit && (
-        <button type="button" onClick={() => setLimit((l) => l + PAGE)} className="card mx-auto px-5 py-2.5 text-[14.5px] font-semibold">
+        <button
+          type="button"
+          onClick={() => setLimit((l) => l + PAGE)}
+          className="card mx-auto px-5 py-2.5 text-[14.5px] font-semibold"
+        >
           {t.radar.more(f.num(visible.length - limit))}
         </button>
       )}
@@ -145,21 +202,36 @@ export function RadarPage() {
   );
 }
 
-function Row({ r, seen, onSeen }: { r: RadarEntry; seen: boolean; onSeen: (id: string, on: boolean) => void }) {
+function Row({
+  r,
+  seen,
+  onSeen,
+  guest,
+}: {
+  r: RadarEntry;
+  seen: boolean;
+  onSeen: (id: string, on: boolean) => void;
+  guest: boolean;
+}) {
   const { t, f, tx } = useLocale();
   const section = tx.SECTION_BY_ID[r.section];
   const desc = r.desc || (r.previous ? t.radar.previous(r.previous) : "");
   return (
-    <li style={secStyle(r.section)} className={`flex gap-3 px-4 py-3 ${seen ? "opacity-60" : ""}`}>
-      <button
-        type="button"
-        onClick={() => onSeen(r.id, !seen)}
-        aria-pressed={seen}
-        aria-label={seen ? t.card.markNew : t.card.markSeen}
-        className={`mt-1 grid size-6 shrink-0 place-items-center rounded-full ${seen ? "bg-ink text-ground" : "shadow-[inset_0_0_0_1.5px_var(--line)] text-transparent hover:text-faint"}`}
-      >
-        <CheckIcon width={13} height={13} strokeWidth={2.6} />
-      </button>
+    <li
+      style={secStyle(r.section)}
+      className={`flex gap-3 px-4 py-3 ${seen ? "opacity-60" : ""}`}
+    >
+      {!guest && (
+        <button
+          type="button"
+          onClick={() => onSeen(r.id, !seen)}
+          aria-pressed={seen}
+          aria-label={seen ? t.card.markNew : t.card.markSeen}
+          className={`mt-1 grid size-6 shrink-0 place-items-center rounded-full ${seen ? "bg-ink text-ground" : "shadow-[inset_0_0_0_1.5px_var(--line)] text-transparent hover:text-faint"}`}
+        >
+          <CheckIcon width={13} height={13} strokeWidth={2.6} />
+        </button>
+      )}
       <div className="min-w-0 flex-1">
         <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1">
           <a
@@ -176,16 +248,29 @@ function Row({ r, seen, onSeen }: { r: RadarEntry; seen: boolean; onSeen: (id: s
               <StarIcon width={12} height={12} /> {f.count(r.stars)}
             </span>
           )}
-          <span className="sec-fg text-[12px] font-semibold">{section?.short}</span>
-          {r.heading && <span className="ltr text-[12px] text-faint">{r.heading}</span>}
+          <span className="sec-fg text-[12px] font-semibold">
+            {section?.short}
+          </span>
+          {r.heading && (
+            <span className="ltr text-[12px] text-faint">{r.heading}</span>
+          )}
         </div>
         {desc && (
-          <p dir="auto" className="mt-0.5 line-clamp-2 text-[13.5px] leading-[22px] text-muted">
+          <p
+            dir="auto"
+            className="mt-0.5 line-clamp-2 text-[13.5px] leading-[22px] text-muted"
+          >
             {desc}
           </p>
         )}
       </div>
-      <a href={r.url} target="_blank" rel="noopener noreferrer" aria-label={t.radar.open} className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-lg text-muted hover:bg-sunken">
+      <a
+        href={r.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={t.radar.open}
+        className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-lg text-muted hover:bg-sunken"
+      >
         <ExternalIcon width={16} height={16} className="rtl:-scale-x-100" />
       </a>
     </li>

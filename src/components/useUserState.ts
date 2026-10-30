@@ -62,12 +62,14 @@ export function useUserState() {
   const [user, setUser] = useState<string | null>(null);
   const [persistent, setPersistent] = useState(true);
   const [ready, setReady] = useState(false);
+  /** Not signed in: content is browsable, but seen/favorites are off. */
+  const [guest, setGuest] = useState(false);
   /** "offline" (using the cached copy) or "queued" (changes waiting to sync). */
   const [error, setError] = useState<"offline" | "queued" | null>(null);
-  const latest = useRef({ seen, fav });
+  const latest = useRef({ seen, fav, guest: false });
   useEffect(() => {
-    latest.current = { seen, fav };
-  }, [seen, fav]);
+    latest.current = { seen, fav, guest };
+  }, [seen, fav, guest]);
 
   useEffect(() => {
     const cached = readCache();
@@ -80,7 +82,13 @@ export function useUserState() {
       .then(() => fetch("/api/state", { cache: "no-store" }))
       .then(async (r) => {
         if (r.status === 401) {
-          window.location.href = "/login";
+          setGuest(true);
+          setSeen(new Set());
+          setFav(new Set());
+          try {
+            localStorage.removeItem(CACHE_KEY);
+            localStorage.removeItem(PENDING_KEY);
+          } catch {}
           return;
         }
         if (!r.ok) throw new Error();
@@ -110,13 +118,14 @@ export function useUserState() {
   }, []);
 
   useEffect(() => {
-    if (!ready) return;
+    if (!ready || guest) return;
     try {
       localStorage.setItem(CACHE_KEY, JSON.stringify({ seen: [...seen], fav: [...fav] }));
     } catch {}
-  }, [seen, fav, ready]);
+  }, [seen, fav, ready, guest]);
 
   const set = useCallback((list: List, ids: string[], on: boolean) => {
+    if (latest.current.guest) return;
     const current = list === "seen" ? latest.current.seen : latest.current.fav;
     const changed = ids.filter((id) => current.has(id) !== on);
     if (changed.length === 0) return;
@@ -142,5 +151,5 @@ export function useUserState() {
       });
   }, []);
 
-  return { seen, fav, user, persistent, ready, error, set };
+  return { seen, fav, user, guest, persistent, ready, error, set };
 }

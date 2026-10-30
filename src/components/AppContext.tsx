@@ -33,10 +33,6 @@ export function AppProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     fetch("/api/items")
       .then((r) => {
-        if (r.status === 401) {
-          window.location.href = "/login";
-          return null;
-        }
         if (!r.ok) throw new Error();
         return r.json();
       })

@@ -6,7 +6,17 @@ import { Suspense, useEffect, useMemo, useState, type ReactNode } from "react";
 import type { SectionId } from "@/lib/sections";
 import { useApp } from "./AppContext";
 import { LanguageSwitch, useLocale } from "./LocaleProvider";
-import { BookmarkIcon, CheckIcon, ClockIcon, CloseIcon, LibraryIcon, LogoutIcon, Mark, MenuIcon, RadarIcon } from "./icons";
+import {
+  BookmarkIcon,
+  CheckIcon,
+  ClockIcon,
+  CloseIcon,
+  LibraryIcon,
+  LogoutIcon,
+  Mark,
+  MenuIcon,
+  RadarIcon,
+} from "./icons";
 
 type Theme = "light" | "dark" | "auto";
 
@@ -37,7 +47,11 @@ function NavContent({ onNavigate }: { onNavigate?: () => void }) {
   const [theme, setTheme] = useTheme();
   const seen = user.seen;
 
-  const base = pathname.startsWith("/library") ? "/library" : pathname.startsWith("/radar") ? "/radar" : "/";
+  const base = pathname.startsWith("/library")
+    ? "/library"
+    : pathname.startsWith("/radar")
+      ? "/radar"
+      : "/";
   const view = params.get("v");
   const activeSection = params.get("s");
 
@@ -45,22 +59,66 @@ function NavContent({ onNavigate }: { onNavigate?: () => void }) {
   const counts = useMemo(() => {
     const m = new Map<string, number>();
     const list: { id: string; section: string }[] =
-      base === "/library" ? feed?.essentials ?? [] : base === "/radar" ? feed?.radar ?? [] : feed?.items ?? [];
-    for (const it of list) if (!seen.has(it.id)) m.set(it.section, (m.get(it.section) ?? 0) + 1);
+      base === "/library"
+        ? (feed?.essentials ?? [])
+        : base === "/radar"
+          ? (feed?.radar ?? [])
+          : (feed?.items ?? []);
+    for (const it of list)
+      if (!seen.has(it.id)) m.set(it.section, (m.get(it.section) ?? 0) + 1);
     return m;
   }, [feed, seen, base]);
 
-  const unseenNews = useMemo(() => (feed?.items ?? []).filter((i) => !seen.has(i.id)).length, [feed, seen]);
-  const unseenRadar = useMemo(() => (feed?.radar ?? []).filter((i) => !seen.has(i.id)).length, [feed, seen]);
+  const unseenNews = useMemo(
+    () => (feed?.items ?? []).filter((i) => !seen.has(i.id)).length,
+    [feed, seen],
+  );
+  const unseenRadar = useMemo(
+    () => (feed?.radar ?? []).filter((i) => !seen.has(i.id)).length,
+    [feed, seen],
+  );
   const favCount = user.fav.size;
+  const guest = user.guest;
 
   const main = [
-    { href: "/", label: t.nav.latest, icon: ClockIcon, count: unseenNews, active: pathname === "/" && !view, badge: true },
-    { href: "/radar", label: t.nav.radar, hint: t.nav.radarHint, icon: RadarIcon, count: unseenRadar, active: base === "/radar" },
-    { href: "/library", label: t.nav.library, icon: LibraryIcon, count: feed?.essentials.length ?? 0, active: base === "/library" },
-    { href: "/?v=fav", label: t.nav.favorites, icon: BookmarkIcon, count: favCount, active: pathname === "/" && view === "fav" },
-    { href: "/?v=seen", label: t.nav.seen, icon: CheckIcon, count: 0, active: pathname === "/" && view === "seen" },
-  ];
+    {
+      href: "/",
+      label: t.nav.latest,
+      icon: ClockIcon,
+      count: guest ? 0 : unseenNews,
+      active: pathname === "/" && !view,
+      badge: true,
+    },
+    {
+      href: "/radar",
+      label: t.nav.radar,
+      hint: t.nav.radarHint,
+      icon: RadarIcon,
+      count: unseenRadar,
+      active: base === "/radar",
+    },
+    {
+      href: "/library",
+      label: t.nav.library,
+      icon: LibraryIcon,
+      count: feed?.essentials.length ?? 0,
+      active: base === "/library",
+    },
+    {
+      href: "/?v=fav",
+      label: t.nav.favorites,
+      icon: BookmarkIcon,
+      count: favCount,
+      active: pathname === "/" && view === "fav",
+    },
+    {
+      href: "/?v=seen",
+      label: t.nav.seen,
+      icon: CheckIcon,
+      count: 0,
+      active: pathname === "/" && view === "seen",
+    },
+  ].filter((m) => !guest || (m.href !== "/?v=fav" && m.href !== "/?v=seen"));
 
   const sectionHref = (id: SectionId | null) => {
     const qs = new URLSearchParams(base === "/" && view ? { v: view } : {});
@@ -74,7 +132,7 @@ function NavContent({ onNavigate }: { onNavigate?: () => void }) {
     try {
       localStorage.removeItem("marsad-state-cache");
     } catch {}
-    window.location.href = "/login";
+    window.location.href = "/";
   };
 
   return (
@@ -94,9 +152,13 @@ function NavContent({ onNavigate }: { onNavigate?: () => void }) {
             <span className="flex-1">{m.label}</span>
             {m.count > 0 &&
               (m.badge ? (
-                <span className="rounded-full bg-star px-2 text-[12.5px] font-bold text-[#10162a]">{nf.format(m.count)}</span>
+                <span className="rounded-full bg-star px-2 text-[12.5px] font-bold text-[#10162a]">
+                  {nf.format(m.count)}
+                </span>
               ) : (
-                <span className={`text-[13px] tabular-nums ${m.active ? "text-ground/70" : "text-faint"}`}>
+                <span
+                  className={`text-[13px] tabular-nums ${m.active ? "text-ground/70" : "text-faint"}`}
+                >
                   {nf.format(m.count)}
                 </span>
               ))}
@@ -135,7 +197,13 @@ function NavContent({ onNavigate }: { onNavigate?: () => void }) {
                 >
                   <span className="sec-bg size-2.5 shrink-0 rounded-[3px]" />
                   <span className="flex-1 truncate">{s.name}</span>
-                  {count > 0 && <span className={`text-[12.5px] tabular-nums ${active ? "sec-fg" : "text-faint"}`}>{nf.format(count)}</span>}
+                  {count > 0 && (
+                    <span
+                      className={`text-[12.5px] tabular-nums ${active ? "sec-fg" : "text-faint"}`}
+                    >
+                      {nf.format(count)}
+                    </span>
+                  )}
                 </Link>
               );
             })}
@@ -150,7 +218,11 @@ function NavContent({ onNavigate }: { onNavigate?: () => void }) {
         </div>
         <div className="flex items-center gap-3 text-[14px]">
           <span className="flex-1">{t.nav.theme}</span>
-          <div role="radiogroup" aria-label={t.nav.theme} className="flex rounded-[10px] bg-sunken p-[3px] text-[13px]">
+          <div
+            role="radiogroup"
+            aria-label={t.nav.theme}
+            className="flex rounded-[10px] bg-sunken p-[3px] text-[13px]"
+          >
             {(
               [
                 ["light", t.nav.light],
@@ -171,11 +243,35 @@ function NavContent({ onNavigate }: { onNavigate?: () => void }) {
             ))}
           </div>
         </div>
-        <button type="button" onClick={logout} className="flex h-9 items-center gap-2.5 text-[14px] text-paid-ink">
-          <LogoutIcon width={18} height={18} />
-          {t.nav.logout}
-          {user.user ? ` (${user.user})` : ""}
-        </button>
+        {guest ? (
+          <div className="flex flex-col gap-2.5 rounded-2xl bg-sunken p-3.5">
+            <p className="text-[13px] leading-5 text-ink-2">{t.guest.note}</p>
+            <div className="flex gap-2">
+              <Link
+                href="/login"
+                className="flex h-9 flex-1 items-center justify-center rounded-[10px] bg-ink text-[13.5px] font-semibold text-ground"
+              >
+                {t.guest.signIn}
+              </Link>
+              <Link
+                href="/register"
+                className="card flex h-9 flex-1 items-center justify-center !rounded-[10px] text-[13.5px] font-semibold"
+              >
+                {t.guest.signUp}
+              </Link>
+            </div>
+          </div>
+        ) : (
+          <button
+            type="button"
+            onClick={logout}
+            className="flex h-9 items-center gap-2.5 text-[14px] text-paid-ink"
+          >
+            <LogoutIcon width={18} height={18} />
+            {t.nav.logout}
+            {user.user ? ` (${user.user})` : ""}
+          </button>
+        )}
         <p className="text-[12px] text-faint">
           {t.app.name} · <span lang="en">{t.app.by}</span>
         </p>
@@ -194,7 +290,8 @@ function ShellInner({ children }: { children: ReactNode }) {
   useEffect(() => setDrawerOpen(false), [pathname, params, setDrawerOpen]);
   useEffect(() => {
     if (!drawerOpen) return;
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setDrawerOpen(false);
+    const onKey = (e: KeyboardEvent) =>
+      e.key === "Escape" && setDrawerOpen(false);
     window.addEventListener("keydown", onKey);
     document.body.style.overflow = "hidden";
     return () => {
@@ -220,17 +317,29 @@ function ShellInner({ children }: { children: ReactNode }) {
           <Mark size={26} />
           <span className="text-[21px] font-bold">{t.app.name}</span>
         </Link>
-        <span
-          aria-label={user.user ?? ""}
-          className="grid size-9 place-items-center rounded-full bg-accent text-[15px] font-semibold text-white"
-        >
-          {(user.user ?? "?").slice(0, 1).toUpperCase()}
-        </span>
+        {user.guest ? (
+          <Link
+            href="/login"
+            className="rounded-[12px] bg-ink px-3.5 py-2 text-[13.5px] font-semibold text-ground"
+          >
+            {t.guest.signIn}
+          </Link>
+        ) : (
+          <span
+            aria-label={user.user ?? ""}
+            className="grid size-9 place-items-center rounded-full bg-accent text-[15px] font-semibold text-white"
+          >
+            {(user.user ?? "?").slice(0, 1).toUpperCase()}
+          </span>
+        )}
       </header>
 
       {/* Mobile drawer */}
       <div className="lg:hidden" aria-hidden={!drawerOpen}>
-        <div className="drawer-scrim fixed inset-0 z-40 bg-[var(--scrim)]" onClick={() => setDrawerOpen(false)} />
+        <div
+          className="drawer-scrim fixed inset-0 z-40 bg-[var(--scrim)]"
+          onClick={() => setDrawerOpen(false)}
+        />
         <aside
           aria-label={t.nav.menu}
           className="drawer-panel fixed inset-y-0 start-0 z-50 flex w-[86vw] max-w-[330px] flex-col overflow-y-auto rounded-e-[24px] bg-surface shadow-2xl"
@@ -275,7 +384,11 @@ function ShellInner({ children }: { children: ReactNode }) {
         >
           <span className="flex-1">{toast.text}</span>
           {toast.undo && (
-            <button type="button" onClick={toast.undo} className="rounded-lg px-2 py-1 font-semibold text-star">
+            <button
+              type="button"
+              onClick={toast.undo}
+              className="rounded-lg px-2 py-1 font-semibold text-star"
+            >
               {t.nav.undo}
             </button>
           )}

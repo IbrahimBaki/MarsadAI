@@ -10,7 +10,7 @@ export async function POST(request: Request) {
   if (!username || !password) {
     return NextResponse.json({ error: "missing" }, { status: 400 });
   }
-  const name = checkPassword(username, password);
+  const name = await checkPassword(username, password);
   if (!name) {
     // Small delay to slow down guessing.
     await new Promise((r) => setTimeout(r, 600));

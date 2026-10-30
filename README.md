@@ -9,7 +9,7 @@ Everything new in AI for developers, filtered day by day: Claude, skills, MCP, d
 - **Radar**: `scripts/collect.mjs` runs every morning in a GitHub Action (`.github/workflows/collect.yml`) and collects new awesome-list additions, new releases, rising repos and GitHub stars. Settings live in `config/watch.json`.
 - **Sections**: `config/sections.json` defines each section (names in both languages), its scope, keywords and the sources the daily task searches.
 - **Per-user state** (seen / favorites): Upstash Redis from the Vercel Marketplace.
-- **Sign-in**: simple users from the `AUTH_USERS` environment variable.
+- **Guests and accounts**: anyone can browse without signing in. Seen and favorites need an account: people sign up with just a username and password (stored hashed in Redis, max 5 sign-ups per network per hour), and you can also define fixed users in `AUTH_USERS`. Set `ALLOW_SIGNUP=false` to close registration.
 - **PWA**: install it on your phone; it opens the last content it loaded even offline.
 
 ## Deploy on Vercel (once)

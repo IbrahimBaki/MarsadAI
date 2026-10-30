@@ -1,16 +1,6 @@
 import "server-only";
-import { Redis } from "@upstash/redis";
+import { redis } from "./redis";
 import type { UserState } from "./types";
-
-// Upstash Redis added from the Vercel Marketplace sets KV_REST_API_*;
-// Upstash's own integration sets UPSTASH_REDIS_REST_*. Either works.
-const url = process.env.KV_REST_API_URL ?? process.env.UPSTASH_REDIS_REST_URL;
-const token = process.env.KV_REST_API_TOKEN ?? process.env.UPSTASH_REDIS_REST_TOKEN;
-const redis = url && token ? new Redis({ url, token }) : null;
-
-if (!redis && process.env.NODE_ENV === "production") {
-  console.warn("[marsad] Redis is not configured — seen/favorites will not persist.");
-}
 
 // In-memory fallback for local development.
 const memory = new Map<string, Set<string>>();
