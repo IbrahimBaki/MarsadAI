@@ -1,0 +1,586 @@
+{
+  "date": "2026-10-30",
+  "generated": "2026-10-30T05:43:18.338Z",
+  "awesome": [
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "myclaude",
+      "url": "https://github.com/stellarlinkco/myclaude",
+      "desc": "myclaude - (2,747 ) - Multi-agent development workflows with task routing across Claude Code, Codex, Gemini, and OpenCode, plus planning, review, and testing commands.",
+      "heading": "Agents & Orchestration"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "Memoh",
+      "url": "https://github.com/felinics/Memoh",
+      "desc": "Memoh - (2,723 ) - Multi-agent platform that gives each agent a dedicated computer with a desktop, browser, network, and long-term memory; supports hosted Claude Code and Codex agents.",
+      "heading": "Agents & Orchestration"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "zeroshot",
+      "url": "https://github.com/the-open-engine/zeroshot",
+      "desc": "zeroshot - (2,063 ) - Coding-agent workflow engine with configurable independent reviews, repair loops, review gates, and retry limits across Claude Code, Codex, Pi, and Copilot.",
+      "heading": "Agents & Orchestration"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "roast-room",
+      "url": "https://github.com/nateherkai/roast-room",
+      "desc": "roast-room - (946 ) - Claude Code workspace where AI advisors debate business decisions, with a local visual discussion room, scored verdicts, and PDF reports.",
+      "heading": "Agents & Orchestration"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "remotion-dev/skills",
+      "url": "https://github.com/remotion-dev/skills",
+      "desc": "remotion-dev/skills - (5,865 ) - Official Remotion skills for creating video compositions, writing React animations, previewing projects, and rendering videos or stills.",
+      "heading": "Agent Skills"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "obsidian-second-brain",
+      "url": "https://github.com/eugeniughelbur/obsidian-second-brain",
+      "desc": "obsidian-second-brain - (4,854 ) - Persistent memory for Claude Code and other agents in an Obsidian vault, with linked Markdown notes, semantic search, and a shared agent logbook.",
+      "heading": "Agent Skills"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "obsidian-wiki",
+      "url": "https://github.com/Ar9av/obsidian-wiki",
+      "desc": "obsidian-wiki - (3,606 ) - Skills for building and maintaining an Obsidian knowledge wiki, with source ingestion, linked notes, conversation capture, and queries.",
+      "heading": "Agent Skills"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "leanrea",
+      "url": "https://github.com/aicodeking/leanrea",
+      "desc": "leanrea - (3,555 ) - Reverse-engineering skill that guides agents through native binaries, Electron apps, Android packages, and firmware with standard command-line tools.",
+      "heading": "Agent Skills"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "day-trader-skill",
+      "url": "https://github.com/Jakeschincariol/day-trader-skill",
+      "desc": "day-trader-skill - (2,987 ) - Day-trading skills for chart scanning, news monitoring, trade simulations, position sizing, and risk checks, with paper trading as the default.",
+      "heading": "Agent Skills"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "tstack",
+      "url": "https://github.com/t3dotgg/tstack",
+      "desc": "tstack - (2,352 ) - Agent skills for pull request preparation, model-based code review, CI follow-up, branch maintenance, and completing existing development work.",
+      "heading": "Agent Skills"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "apple-design-skill",
+      "url": "https://github.com/dickwu/apple-design-skill",
+      "desc": "apple-design-skill - (1,806 ) - UI design review skill based on Apple's Human Interface Guidelines, with guidance for SwiftUI, Flutter, React Native, Tauri, and Electron.",
+      "heading": "Agent Skills"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "sell-sessions-skill",
+      "url": "https://github.com/cookiy-ai/sell-sessions-skill",
+      "desc": "sell-sessions-skill - (1,575 ) - Skill and local uploader for selecting Claude Code and Codex sessions to license through Cookiy, with local secret and personal-data scrubbing before upload.",
+      "heading": "Agent Skills"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "kotlin-footguns",
+      "url": "https://github.com/maxrave-dev/kotlin-footguns",
+      "desc": "kotlin-footguns - (1,550 ) - Agent skills and a change scanner for common Kotlin, Compose Multiplatform, and desktop JVM pitfalls drawn from a production music app.",
+      "heading": "Agent Skills"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "dimensional-drawing",
+      "url": "https://github.com/enesozturk/dimensional-drawing",
+      "desc": "dimensional-drawing - (1,525 ) - Skills for creating labeled technical drawings of UI components, with spacing, radii, layers, exploded views, and an optional animation workflow.",
+      "heading": "Agent Skills"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "blender-skills",
+      "url": "https://github.com/arjun988/blender-skills",
+      "desc": "blender-skills - (1,478 ) - Blender skills for modeling, technical art, scene production, and game-engine export through Blender MCP.",
+      "heading": "Agent Skills"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "Beautiful Rust",
+      "url": "https://github.com/morganlinton/BeautifulRust",
+      "desc": "Beautiful Rust - (1,393 ) - Skills for writing, reviewing, and porting idiomatic Rust, with reference guidance and a Clippy configuration.",
+      "heading": "Agent Skills"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "skills",
+      "url": "https://github.com/juliobsz/skills",
+      "desc": "skills - (871 ) - Website design and review skills for coding agents, with browser-based visual checks, accessibility checks, and a jury-style site assessment.",
+      "heading": "Agent Skills"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "rossark-motion-skill",
+      "url": "https://github.com/rossark0/rossark-motion-skill",
+      "desc": "rossark-motion-skill - (563 ) - Animation skill with React Native and SwiftUI templates for SVG artwork, character expressions, body motion, interface animation, and complete scenes.",
+      "heading": "Agent Skills"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "xss-audit",
+      "url": "https://github.com/songjianyang/xss-audit",
+      "desc": "xss-audit - (530 ) - Static XSS audit skill for React, TypeScript, and JavaScript projects, with source-to-sink analysis and reports that separate findings from manual-review cases.",
+      "heading": "Agent Skills"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "machine-skill",
+      "url": "https://github.com/AirsupHQ/machine-skill",
+      "desc": "machine-skill - (444 ) - Claude Code skill for building interactive 3D machine simulations in standalone HTML, with physics calculations, cutaway views, and video recording tools.",
+      "heading": "Agent Skills"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "content-principles",
+      "url": "https://github.com/aiwithremy/content-principles",
+      "desc": "content-principles - (253 ) - Short-form content skill for drafting and reviewing video scripts and hooks through curiosity, specificity, and audience attention principles.",
+      "heading": "Agent Skills"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "pixel-path",
+      "url": "https://github.com/jonwheatley/pixel-path",
+      "desc": "pixel-path - (250 ) - Claude Code skill for building interactive pixel-art road journeys from real routes, OpenStreetMap data, elevation data, and generated scenery.",
+      "heading": "Agent Skills"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "anima",
+      "url": "https://github.com/Garinmckayl/anima",
+      "desc": "anima - (227 ) - Claude Code skill for creating interactive isometric biology figures with cited mechanisms and standalone HTML output.",
+      "heading": "Agent Skills"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "console-skill",
+      "url": "https://github.com/Jakeschincariol/console-skill",
+      "desc": "console-skill - (182 ) - Skills for reverse-engineering and porting personally owned PlayStation 2 games through PS2Recomp, with graphics, audio, controller, and modding workflows.",
+      "heading": "Agent Skills"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "dashboard-design-skill",
+      "url": "https://github.com/abdiraimov-otabek/dashboard-design-skill",
+      "desc": "dashboard-design-skill - (177 ) - Dashboard design skill for web and SwiftUI interfaces, with guidance for KPI cards, charts, filters, responsive layouts, and screenshot QA.",
+      "heading": "Agent Skills"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "skill-diet",
+      "url": "https://github.com/nicobailon/skill-diet",
+      "desc": "skill-diet - (134 ) - Skill for reducing instruction bloat, checking tool accuracy, and comparing task results before and after a skill rewrite.",
+      "heading": "Agent Skills"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "elephant-goldfish-model",
+      "url": "https://github.com/google/elephant-goldfish-model",
+      "desc": "elephant-goldfish-model - (5,538 ) - Google plugin for drafting software specifications with project context and reviewing them with fresh subagents before implementation.",
+      "heading": "Claude Plugins"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "memsearch",
+      "url": "https://github.com/zilliztech/memsearch",
+      "desc": "memsearch - (2,772 ) - Persistent semantic memory for Claude Code and other agents, with Markdown storage, Milvus indexing, and cross-session retrieval.",
+      "heading": "Claude Plugins"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "unreal-engine-skills-for-claude-code-plugin",
+      "url": "https://github.com/EpicGames/unreal-engine-skills-for-claude-code-plugin",
+      "desc": "unreal-engine-skills-for-claude-code-plugin - (1,577 ) - Epic Games plugin with skills and session hooks for controlling Unreal Editor through MCP tools for actors, Blueprints, materials, animation, and testing.",
+      "heading": "Claude Plugins"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "cc-stretch",
+      "url": "https://github.com/pro-vi/cc-stretch",
+      "desc": "cc-stretch - (413 ) - Claude Code plugin that presents short replies with clickable phrases that expand and collapse in place.",
+      "heading": "Claude Plugins"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "claude-show-your-work",
+      "url": "https://github.com/iamumeransari/claude-show-your-work",
+      "desc": "claude-show-your-work - (255 ) - Claude Code plugin for displaying images, videos, and visual QA results in compatible terminals, with Playwright recordings and before-and-after comparisons.",
+      "heading": "Claude Plugins"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "claude-super-sidebar",
+      "url": "https://github.com/Zafer-Liu/claude-super-sidebar",
+      "desc": "claude-super-sidebar - (155 ) - Sidebar plugin for viewing Claude agent relationships, execution status, and conversation task flows, with a separate local session dashboard for Codex.",
+      "heading": "Claude Plugins"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "Agentic Resource Registry",
+      "url": "https://github.com/AgenticResourceRegistry/AgenticResourceRegistry",
+      "desc": "Agentic Resource Registry - (4,534 ) - Self-hosted registry for sharing and discovering skills, agent files, and MCP resources across teams, with usage insights. Formerly Observal.",
+      "heading": "Tools & Utilities"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "agent-memory",
+      "url": "https://github.com/tigerless-labs/agent-memory",
+      "desc": "agent-memory - (4,456 ) - Local memory runtime for Claude Code and Codex with a shared Markdown store, ranked retrieval, and scheduled memory consolidation.",
+      "heading": "Tools & Utilities"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "TypeUI",
+      "url": "https://github.com/bergside/typeui",
+      "desc": "TypeUI - (2,172 ) - Design skills, UI prompts, and an MCP server that supply coding agents with design systems and layout guidance for websites and applications.",
+      "heading": "Tools & Utilities"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "earshot",
+      "url": "https://github.com/Leonxlnx/earshot",
+      "desc": "earshot - (2,093 ) - Local audio analysis and synthesis toolkit for coding agents, available as a CLI, Python API, and MCP server for sound descriptions, matching, and video audio review.",
+      "heading": "Tools & Utilities"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "ai-newtab",
+      "url": "https://github.com/ThariqS/ai-newtab",
+      "desc": "ai-newtab - (853 ) - Chrome new-tab extension that uses Claude to build a personalized daily homepage from browsing history and selected page content through the Anthropic API.",
+      "heading": "Tools & Utilities"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "Graphicle",
+      "url": "https://github.com/Graphicle-AI/graphicle",
+      "desc": "Graphicle - (432 ) - Local code graph and project memory that give coding agents file-and-line excerpts from source code, documentation, decisions, and past sessions through MCP.",
+      "heading": "Tools & Utilities"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "EchoBird",
+      "url": "https://github.com/edison7009/EchoBird",
+      "desc": "EchoBird - (3,416 ) - Desktop app for switching ChatGPT, Codex CLI, and Claude Code accounts, tracking quotas, and routing model requests with automatic failover.",
+      "heading": "Clients & GUIs"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "zeron",
+      "url": "https://github.com/zeronsh/zeron",
+      "desc": "zeron - (3,327 ) - Native desktop control plane for coding agents, with local sessions, a headless Linux mode, and optional multi-device synchronization.",
+      "heading": "Clients & GUIs"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "Harp",
+      "url": "https://github.com/dominikmartn/harp",
+      "desc": "Harp - (687 ) - Unofficial Warp terminal fork with a sidebar for Claude Code and Codex sessions, agent status indicators, tab groups, and usage-limit displays.",
+      "heading": "Clients & GUIs"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "claude-tap",
+      "url": "https://github.com/liaohch3/claude-tap",
+      "desc": "claude-tap - (3,303 ) - Local proxy and trace viewer for inspecting coding-agent API requests, prompts, tool calls, streaming responses, and token usage.",
+      "heading": "Usage & Observability"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "token-monitor",
+      "url": "https://github.com/Javis603/token-monitor",
+      "desc": "token-monitor - (3,267 ) - Desktop widget for tracking token usage, costs, limits, and session activity across Claude Code and other coding tools, with multi-device synchronization.",
+      "heading": "Usage & Observability"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "codenotch",
+      "url": "https://github.com/vinzdg/codenotch",
+      "desc": "codenotch - (2,960 ) - Desktop app that displays coding-assistant usage limits, reset times, and session status in a screen-edge notch, with macOS and Windows versions.",
+      "heading": "Usage & Observability"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "Tracely-ai",
+      "url": "https://github.com/jwuthri-cloud/Tracely-ai",
+      "desc": "Tracely-ai - (1,144 ) - Self-hostable agent observability and regression-testing platform that grades traces, groups failures, and replays recorded cases in CI to detect regressions.",
+      "heading": "Usage & Observability"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "framefields",
+      "url": "https://github.com/gatewai-dev/framefields",
+      "desc": "framefields - (476 ) - TypeScript toolkit for agent-authored video, motion graphics, compositing, and 3D scenes, with native WebGPU rendering and video export.",
+      "heading": "SDKs & Development Kits"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "Browser Use",
+      "url": "https://docs.browser-use.com/cloud/guides/mcp-server",
+      "desc": "Browser Use - Run browser agents in stealth cloud browsers with Browser Use",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "Aident Loadout",
+      "url": "https://docs.aident.ai/loadout/mcp",
+      "desc": "Aident Loadout - Hosted MCP giving agents connected apps, Skills, Vault and audit",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "Weave",
+      "url": "https://docs.weaveos.com/integrations/mcp",
+      "desc": "Weave - Engineering metrics, pull requests and AI coding tool usage",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "Dot (getdot.ai)",
+      "url": "https://docs.getdot.ai/developers/mcp",
+      "desc": "Dot (getdot.ai) - AI data analyst: answers, charts and SQL from your warehouse",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "Serply",
+      "url": "https://serply.io/mcp",
+      "desc": "Serply - Google web, news, Scholar and jobs search, plus page scraping",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "Ausca",
+      "url": "https://ausca.com/docs/mcp/",
+      "desc": "Ausca - Discover metered agent services, prepare calls, verify receipts",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "HutchDB",
+      "url": "https://github.com/ExpeditedProjects/hutchdb",
+      "desc": "HutchDB - Shared database for teams and AI agents, over MCP",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "Mysocial",
+      "url": "https://github.com/mysocialio/mysocial-intelligence",
+      "desc": "Mysocial - Social media intelligence from connected content history and performance.",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "NeverApply",
+      "url": "https://neverapply.co/features/mcp",
+      "desc": "NeverApply - Search jobs, tailor resumes and apply with your approval",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "ppl",
+      "url": "https://withppl.com/agents",
+      "desc": "ppl - Personal CRM for AI agents: contacts, notes, reminders, follow-ups (Repo)",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "Sourcey",
+      "url": "https://github.com/sourcey/mcp-server",
+      "desc": "Sourcey - Find startup offers and inspect Agent Readiness evidence",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "PlaceCall",
+      "url": "https://github.com/voygr-tech/placecall",
+      "desc": "PlaceCall - AI agent places real phone calls to US businesses",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "MemorySync",
+      "url": "https://memorysync.io/mcp",
+      "desc": "MemorySync - Search and store durable facts, preferences and decisions across sessions",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "3D-Agent",
+      "url": "https://3d-agent.com/blender-mcp",
+      "desc": "3D-Agent - Blender modeling, animation and rendering agent as one MCP tool",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "CallMeMCP",
+      "url": "https://github.com/radres/call-me",
+      "desc": "CallMeMCP - Agents call or text the user's iPhone and get replies",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "agent-qa",
+      "url": "https://github.com/vostride/agent-qa",
+      "desc": "agent-qa - Natural-language web/mobile QA with advanced memidex memory and self-improvement",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "Docsy",
+      "url": "https://docsy.remcp.site/docs",
+      "desc": "Docsy - Read-only versioned developer documentation with original source links",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "UI Verify",
+      "url": "https://uiverify.ai/docs/visual-testing-mcp-server",
+      "desc": "UI Verify - Visual regression diffs and baseline review for coding agents",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "Flowmingo",
+      "url": "https://flowmingo.ai/integration/mcp",
+      "desc": "Flowmingo - Free AI Interviewer for recruiters: jobs, candidates, scored interviews",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "Oh My Android",
+      "url": "https://github.com/ateymoori/oh-my-android",
+      "desc": "Oh My Android - Drive Android emulators and phones from AI agents",
+      "heading": "Table of Contents"
+    }
+  ],
+  "releases": [
+    {
+      "repo": "anthropics/claude-code",
+      "section": "claude",
+      "tag": "v2.1.314",
+      "previous": "v2.1.312",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.314"
+    },
+    {
+      "repo": "anthropics/claude-agent-sdk-python",
+      "section": "claude",
+      "tag": "v0.2.175",
+      "previous": "v0.2.174",
+      "url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.175"
+    },
+    {
+      "repo": "anthropics/claude-agent-sdk-typescript",
+      "section": "claude",
+      "tag": "v0.3.314",
+      "previous": "v0.3.312",
+      "url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.314"
+    },
+    {
+      "repo": "openai/codex",
+      "section": "agents",
+      "tag": "rust-v0.166.0",
+      "previous": "rust-v0.165.0",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.166.0"
+    },
+    {
+      "repo": "anomalyco/opencode",
+      "section": "agents",
+      "tag": "v2.2.2",
+      "previous": "v2.2.1",
+      "url": "https://github.com/anomalyco/opencode/releases/tag/v2.2.2"
+    },
+    {
+      "repo": "laravel/boost",
+      "section": "laravel",
+      "tag": "v2.10.4",
+      "previous": "v2.10.3",
+      "url": "https://github.com/laravel/boost/releases/tag/v2.10.4"
+    },
+    {
+      "repo": "vercel/ai",
+      "section": "llm",
+      "tag": "ai@7.0.157",
+      "previous": "ai@7.0.156",
+      "url": "https://github.com/vercel/ai/releases/tag/ai%407.0.157"
+    }
+  ],
+  "trending": []
+}
