@@ -1,0 +1,811 @@
+{
+  "date": "2026-10-31",
+  "headline": "تنبيه أمني: نسختان خبيثتان من إضافة Claude Code وُزِّعتا عبر متجر إضافات Cursor يوم 29 أكتوبر، وثغرة في نواة Linux بدرجة 9.8 تتطلب تحديث النواة. وفي Claude Code 2.1.316 إعلان إيقاف الوضع السريع لـ Opus 4.8 في 30 نوفمبر، وخطة Max 20x أصبحت Ultra.",
+  "headline_en": "Security alert: two malicious builds of the Claude Code extension were served through Cursor's extension marketplace on October 29, and a Linux kernel flaw rated 9.8 needs a kernel update. Claude Code 2.1.316 announces that Opus 4.8 fast mode ends on November 30, and the Max 20x plan is now Ultra.",
+  "items": [
+    {
+      "id": "cursor-marketplace-malicious-claude-code-extension",
+      "section": "security",
+      "kind": "article",
+      "title": "نسختان خبيثتان من إضافة Claude Code في متجر إضافات Cursor: باب خلفي عبر SSH",
+      "summary": "أعلنت Cursor أن النسختين 2.1.312 و2.1.313 من إضافة Anthropic.claude-code وُزِّعتا عبر متجر إضافات Cursor يوم 29 أكتوبر بين 2:27 صباحًا و1:35 ظهرًا بتوقيت المحيط الهادئ، ولم تطوّرهما Anthropic. استهدفتا macOS وWindows، وكانتا تجمعان معلومات الجهاز وتحاولان زرع مفتاح SSH وفتح نفق عكسي.",
+      "why": "إذا كنت تستخدم Cursor وحدّثت إضافة Claude Code في ذلك اليوم، فافحص جهازك الآن قبل أن تكتفي بإزالة الإضافة، لأن آليات البقاء قد تبقى بعد الحذف. ينطبق هذا على المطورين وفرق الأمان التي تدير أجهزة مطورين.",
+      "about": "نشرت Cursor إشعارًا أمنيًا في 29 أكتوبر وحدّثته في 30 أكتوبر. النسختان المصابتان هما 2.1.312 و2.1.313 من إضافة Anthropic.claude-code في متجر إضافات Cursor فقط، لنظامي macOS (darwin-arm64) وWindows (win32-x64). تقول Cursor إنه لا يوجد دليل على تأثر التوزيع الرسمي من Anthropic أو نسخ أخرى، وأدوات Claude Code الرسمية (سطر الأوامر والإضافة في متجر VS Code الرسمي) ليست مصابة.\n\nكانت الحمولة الخبيثة ترسل إلى المهاجم اسم الجهاز واسم المستخدم ونظام التشغيل وأسماء متغيرات البيئة وبريد git وعنوان IP العام، وتحاول إضافة مفتاح SSH باسم svc-telemetry إلى authorized_keys، وتشغيل خدمة SSH، وفتح نفق SSH عكسي إلى 134.209.82.225. وللبقاء تستخدم LaunchAgent باسم com.apple.sysmond.plist على macOS، ومهمة مجدولة باسم SysMon وملف sysmon.cmd في مجلد Startup على Windows. تقول Cursor إن خطوة SSH تفشل غالبًا دون صلاحيات المدير، وإن خادم المهاجم متوقف الآن.\n\nأزالت Cursor النسختين وأوقفت المتجر مؤقتًا ودقّقته وغيّرت مفاتيحها ثم أعادت بناءه. لم تذكر Cursor عدد المتأثرين. الخطوات الموصى بها: ابحث عن المفتاح svc-telemetry في authorized_keys، وابحث عن مؤشرات الاختراق المنشورة، واعزل الجهاز المصاب، واحذف المفتاح وآليات البقاء، وغيّر كلمات المرور والرموز من جهاز موثوق. توفّر Cursor سكربتي remediate-macos.sh وremediate-windows.ps1، وقد يكون إعادة تثبيت النظام هو الخيار الأسلم.",
+      "features": [
+        "النسختان المصابتان: 2.1.312 و2.1.313 في متجر Cursor فقط",
+        "جمع معلومات الجهاز وأسماء متغيرات البيئة وإرسالها إلى المهاجم",
+        "محاولة زرع مفتاح SSH باسم svc-telemetry وفتح نفق عكسي",
+        "آليات بقاء على macOS وWindows لا تزول بحذف الإضافة",
+        "سكربتات معالجة رسمية من Cursor لكل نظام"
+      ],
+      "usage": [
+        "grep svc-telemetry ~/.ssh/authorized_keys"
+      ],
+      "alternatives": ["ess-claude-security-review", "ess-cursor"],
+      "links": [
+        { "label": "إشعار Cursor الأمني", "url": "https://cursor.com/blog/claude-code-extension-security-notice" },
+        { "label": "تغطية The Hacker News", "url": "https://thehackernews.com/2026/10/official-claude-code-vs-code-extension.html" }
+      ],
+      "url": "https://cursor.com/blog/claude-code-extension-security-notice",
+      "source": "cursor.com",
+      "importance": 3,
+      "tags": ["Cursor", "Claude Code", "supply chain", "SSH", "malware"],
+      "en": {
+        "title": "Two malicious builds of the Claude Code extension on Cursor's marketplace: an SSH backdoor",
+        "summary": "Cursor says versions 2.1.312 and 2.1.313 of the Anthropic.claude-code extension were served through Cursor's extension marketplace on October 29 between 2:27am and 1:35pm PT, and were not developed by Anthropic. They targeted macOS and Windows, collected host details, and tried to plant an SSH key and open a reverse tunnel.",
+        "why": "If you use Cursor and the Claude Code extension updated that day, check the machine now rather than just removing the extension, because the persistence can survive uninstalling. This applies to developers and to security teams managing developer machines.",
+        "about": "Cursor published a security notice on October 29 and updated it on October 30. The affected builds are versions 2.1.312 and 2.1.313 of Anthropic.claude-code on Cursor's extension marketplace only, for macOS (darwin-arm64) and Windows (win32-x64). Cursor says there is no evidence that Anthropic's official distribution or other versions were affected; the official Claude Code tools (the CLI and the extension on the official VS Code Marketplace) are not compromised.\n\nThe payload sent the attacker the hostname, username, OS, environment variable names, git email and public IP, tried to add an SSH key labelled svc-telemetry to authorized_keys, enable the SSH service, and open a reverse SSH tunnel to 134.209.82.225. For persistence it used a LaunchAgent named com.apple.sysmond.plist on macOS, and a scheduled task named SysMon plus a sysmon.cmd file in the Startup folder on Windows. Cursor says the SSH step usually fails without admin rights and that the attacker's server is now offline.\n\nCursor removed the builds, took the marketplace offline temporarily, audited it, rotated its keys and rebuilt it. Cursor did not say how many users were affected. Recommended steps: look for the svc-telemetry key in authorized_keys, search for the published indicators of compromise, isolate an affected machine, remove the key and persistence, and rotate passwords and tokens from a trusted machine. Cursor provides remediate-macos.sh and remediate-windows.ps1 scripts, and rebuilding the machine may be the safest option.",
+        "features": [
+          "Affected builds: 2.1.312 and 2.1.313 on Cursor's marketplace only",
+          "Collected host details and environment variable names and sent them to the attacker",
+          "Tried to plant an SSH key labelled svc-telemetry and open a reverse tunnel",
+          "Persistence on macOS and Windows that uninstalling does not remove",
+          "Official remediation scripts from Cursor for each OS"
+        ],
+        "usage": ["grep svc-telemetry ~/.ssh/authorized_keys"],
+        "links": ["Cursor security notice", "The Hacker News coverage"]
+      }
+    },
+    {
+      "id": "linux-kernel-tcp-cve-2026-98432",
+      "section": "security",
+      "kind": "article",
+      "title": "ثغرة CVE-2026-98432 في TCP بنواة Linux بدرجة 9.8: حدّث النواة على خوادمك",
+      "summary": "ثغرة use-after-free في إعداد اتصالات TCP عبر IPv4 موجودة منذ Linux 4.4، اكتشفها باحث من Anthropic وكتب نموذج Claude لها استغلالًا يمنح صلاحيات root. صُحّحت في النواة الأم بتاريخ 5 أكتوبر، وتقيّمها الجهات بين 5.9 و9.8، ولم يُبلَّغ عن استغلال فعلي حتى 29 أكتوبر.",
+      "why": "أي خادم Linux يستقبل اتصالات TCP قد يكون معرّضًا، فهي تخص كل من يدير خوادم أو حاويات على أجهزة مشتركة. الحل الوحيد الموثوق هو تثبيت نواة مصحّحة من توزيعتك، مثل خادم تطبيق ويب على Ubuntu أو RHEL.",
+      "about": "الثغرة سباق (race) في إعداد اتصال TCP عبر IPv4: عند اكتمال الاتصال تنتقل خيارات IP الخاصة بالطلب المعلّق إلى المقبس الجديد دون نسخها، فإذا أُزيل المقبس بينما معالج آخر ما زال يستخدمها، تقرأ النواة ذاكرة محرَّرة. السيناريو الموثّق يستخدم خيارَي Record Route أو Timestamp، وIPv6 غير متأثر. أُدخل الخلل في Linux 4.4.\n\nالتقييمات متباينة: فريق CVE الخاص بالنواة يعطيها 9.8، وصفحة Red Hat تقول 5.9 بينما تقول نشرتها الآلية 8.1، وOracle وSUSE يقولان 8.1، وAmazon تقول 7.0. نُسب اكتشافها إلى باحث في Anthropic، وتقول Anthropic إن نموذج Claude كتب استغلالًا كاملًا يصل إلى root ويستهدف خادمًا يستمع عبر MPTCP، واستغرقت السلسلة نحو 53 دقيقة في اختبارها، ولم يُنشر كود الاستغلال.\n\nالإصدارات المصحّحة في النواة الأم: 5.10.272 و5.15.223 و6.1.190 و6.6.159 و6.12.113 و6.18.56 و7.2.10 و7.3. حتى 29 أكتوبر كانت Debian وOracle Linux قد أصدرتا التصحيح، بينما كانت إصدارات Ubuntu الحديثة قيد العمل، وUbuntu 16.04 و18.04 و20.04 بلا تصحيح، وRHEL 8 و9 و10 متأثرة دون تصحيح. لا يوجد حل مؤقت معتمد؛ ولبرامج Go يقترح فريق Go استخدام GODEBUG=multipathtcp=0 مع التنبيه إلى أنه حل هش.",
+      "features": [
+        "use-after-free في إعداد اتصالات TCP عبر IPv4 منذ Linux 4.4",
+        "تقييمات بين 5.9 و9.8 حسب الجهة",
+        "تصحيح في النواة الأم منذ 5 أكتوبر وإصدارات مستقرة مصحّحة",
+        "لا استغلال فعلي مُبلَّغ عنه حتى 29 أكتوبر",
+        "لا حل مؤقت معتمد غير تحديث النواة"
+      ],
+      "alternatives": ["ess-trivy"],
+      "links": [
+        { "label": "تغطية The Hacker News", "url": "https://thehackernews.com/2026/10/linux-kernel-tcp-flaw-with-98-cvss.html" },
+        { "label": "بحث Anthropic عن الثغرات", "url": "https://anthropic.com/research/discovering-vulnerabilities-with-claude" }
+      ],
+      "url": "https://thehackernews.com/2026/10/linux-kernel-tcp-flaw-with-98-cvss.html",
+      "source": "thehackernews.com",
+      "importance": 3,
+      "tags": ["Linux", "kernel", "CVE", "TCP", "servers"],
+      "en": {
+        "title": "CVE-2026-98432, a Linux kernel TCP flaw rated 9.8: update the kernel on your servers",
+        "summary": "A use-after-free in IPv4 TCP connection setup, present since Linux 4.4, was found by an Anthropic researcher, and a Claude model wrote a root exploit for it. It was fixed upstream on October 5, vendors rate it between 5.9 and 9.8, and no exploitation in the wild had been reported as of October 29.",
+        "why": "Any Linux server that accepts TCP connections may be exposed, so this concerns anyone running servers or containers on shared hosts. The only reliable fix is a patched kernel from your distribution, for example on a web app server running Ubuntu or RHEL.",
+        "about": "The flaw is a race in IPv4 TCP connection setup: when a connection completes, the pending request's IP options are handed to the new socket without being copied, so if that socket is destroyed while another CPU still uses them, the kernel reads freed memory. The documented scenario uses the Record Route or Timestamp options, and IPv6 is not affected. The bug was introduced in Linux 4.4.\n\nRatings differ: the kernel CVE team gives 9.8, Red Hat's page says 5.9 while its machine-readable advisory says 8.1, Oracle and SUSE say 8.1, and Amazon says 7.0. The discovery is credited to an Anthropic researcher, and Anthropic says a Claude model wrote a full root exploit targeting a server with an MPTCP listener; the chain took about 53 minutes in its test, and the exploit code was not published.\n\nFixed upstream versions: 5.10.272, 5.15.223, 6.1.190, 6.6.159, 6.12.113, 6.18.56, 7.2.10 and 7.3. As of October 29, Debian and Oracle Linux had shipped fixes, recent Ubuntu releases were in progress, Ubuntu 16.04, 18.04 and 20.04 had no fix, and RHEL 8, 9 and 10 were affected without a fix. There is no approved workaround; for Go programs the Go team suggests GODEBUG=multipathtcp=0 and calls it fragile.",
+        "features": [
+          "Use-after-free in IPv4 TCP connection setup since Linux 4.4",
+          "Ratings from 5.9 to 9.8 depending on the vendor",
+          "Fixed upstream since October 5, with patched stable releases",
+          "No exploitation in the wild reported as of October 29",
+          "No approved workaround other than updating the kernel"
+        ],
+        "links": ["The Hacker News coverage", "Anthropic's vulnerability research"]
+      }
+    },
+    {
+      "id": "claude-code-2-1-316",
+      "section": "claude",
+      "kind": "release",
+      "repo": "anthropics/claude-code",
+      "title": "Claude Code v2.1.316: إيقاف الوضع السريع لـ Opus 4.8 في 30 نوفمبر، ومستوى effort مستقل للوكلاء الفرعيين",
+      "summary": "صدر الإصدار 2.1.316 يوم 31 أكتوبر بعد 2.1.315. يعلن إيقاف الوضع السريع (fast mode) لنموذج Opus 4.8 وحذفه في 30 نوفمبر 2026، ويضيف المتغير CLAUDE_CODE_SUBAGENT_EFFORT لتحديد مستوى effort للوكلاء الفرعيين، والمتغير CLAUDE_CODE_DISABLE_ULTRATHINK، مع عشرات الإصلاحات في Bash والأذونات.",
+      "why": "إذا كنت تستخدم الوضع السريع مع Opus 4.8، فانتقل إلى Opus 5.5 قبل 30 نوفمبر لأن الطلبات ستفشل بعدها. ويمكنك الآن تشغيل الوكلاء الفرعيين بمستوى effort أقل لتوفير الاستهلاك في المهام الطويلة.",
+      "about": "نشر الإصدار 2.1.316 على npm يوم 31 أكتوبر، والقسم الخاص به في CHANGELOG يأتي مباشرة بعد 2.1.314.\n\nأهم تغيير: الوضع السريع لـ Opus 4.8 أصبح مُهمَلًا منذ 30 أكتوبر وسيُحذف في 30 نوفمبر 2026. بعد الحذف ستعيد طلبات الوضع السريع على Opus 4.8 خطأً ولن تتحول تلقائيًا إلى Opus 4.8 العادي، والحل المقترح هو الانتقال إلى Opus 5.5. وينطبق الأمر نفسه على Claude API، إذ ستفشل الطلبات التي تحمل speed: \"fast\" على claude-opus-4-8 بعد ذلك التاريخ.\n\nالإضافات الجديدة: CLAUDE_CODE_SUBAGENT_EFFORT لتحديد مستوى effort الذي يعمل به الوكلاء الفرعيون عندما لا يحدده شيء آخر بدل وراثته من الجلسة، وCLAUDE_CODE_DISABLE_ULTRATHINK لتعطيل الكلمة المفتاحية ultrathink. وفي VS Code أصبح ultrathink يعمل بمستوى xhigh كما في الطرفية، وأُضيف تسجيل الدخول إلى بوابة تطبيقات Claude من لوحة المحادثة.\n\nومن الإصلاحات: أوامر shell كانت تبقى تعمل بعد خروج Claude Code على macOS وLinux، والأسماء المستعارة في bash التي تحتوي أسطرًا جديدة كانت تتلف، والسكربتات تتوقف بعد أول أمر عند تصدير SHELLOPTS، وجلسات --restricted كانت ترفع ملفات من خارج مجلدات العمل. كما تحسّن /diff في المستودعات الكبيرة.",
+      "features": [
+        "إيقاف الوضع السريع لـ Opus 4.8 وحذفه في 30 نوفمبر 2026",
+        "CLAUDE_CODE_SUBAGENT_EFFORT لمستوى effort الوكلاء الفرعيين",
+        "CLAUDE_CODE_DISABLE_ULTRATHINK لتعطيل ultrathink",
+        "إصلاح أوامر shell التي تبقى بعد الخروج وأخطاء الأسماء المستعارة في bash",
+        "تحسين /diff في المستودعات الكبيرة"
+      ],
+      "install": [
+        { "label": "حدّث Claude Code", "cmd": "claude update" }
+      ],
+      "usage": [
+        "export CLAUDE_CODE_SUBAGENT_EFFORT=low"
+      ],
+      "alternatives": ["ess-claude-code-docs", "ess-claude-code-subagents"],
+      "links": [
+        { "label": "سجل التغييرات CHANGELOG", "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" },
+        { "label": "ملاحظات إصدار Claude API", "url": "https://platform.claude.com/docs/en/release-notes/overview" }
+      ],
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.316",
+      "source": "github.com",
+      "importance": 3,
+      "tags": ["Claude Code", "Opus", "subagents", "CLI", "deprecation"],
+      "en": {
+        "title": "Claude Code v2.1.316: Opus 4.8 fast mode ends on November 30, and a separate effort level for subagents",
+        "summary": "Version 2.1.316 shipped on October 31, after 2.1.315. It deprecates fast mode for Opus 4.8, which will be removed on November 30, 2026, adds CLAUDE_CODE_SUBAGENT_EFFORT to set the effort level for subagents and CLAUDE_CODE_DISABLE_ULTRATHINK, and brings dozens of fixes to Bash and permissions.",
+        "why": "If you use fast mode with Opus 4.8, move to Opus 5.5 before November 30, because requests will fail after that. You can also now run subagents at a lower effort level to save usage on long tasks.",
+        "about": "Version 2.1.316 was published to npm on October 31, and its CHANGELOG section follows 2.1.314 directly.\n\nThe main change: fast mode for Opus 4.8 has been deprecated since October 30 and will be removed on November 30, 2026. After removal, fast mode requests on Opus 4.8 will return an error and will not fall back to standard Opus 4.8; the suggested fix is to move to Opus 5.5. The same applies to the Claude API, where requests with speed: \"fast\" on claude-opus-4-8 will fail after that date.\n\nNew: CLAUDE_CODE_SUBAGENT_EFFORT sets the effort level subagents run at when nothing else names one, instead of inheriting the session's, and CLAUDE_CODE_DISABLE_ULTRATHINK turns off the ultrathink keyword. In VS Code, ultrathink now runs at xhigh effort as in the terminal, and you can sign in to a Claude apps gateway from the chat panel.\n\nFixes include shell commands left running after Claude Code exits on macOS and Linux, bash aliases with line breaks being garbled, scripts stopping after their first command when SHELLOPTS is exported, and --restricted sessions uploading files from outside the working directories. /diff is also faster on large repositories.",
+        "features": [
+          "Opus 4.8 fast mode deprecated, removed on November 30, 2026",
+          "CLAUDE_CODE_SUBAGENT_EFFORT for subagent effort level",
+          "CLAUDE_CODE_DISABLE_ULTRATHINK to turn off ultrathink",
+          "Fixes for shell commands left running after exit and garbled bash aliases",
+          "Faster /diff on large repositories"
+        ],
+        "usage": ["export CLAUDE_CODE_SUBAGENT_EFFORT=low"],
+        "install": ["Update Claude Code"],
+        "links": ["CHANGELOG", "Claude API release notes"]
+      }
+    },
+    {
+      "id": "claude-ultra-plan",
+      "section": "claude",
+      "kind": "tool",
+      "title": "خطة Max 20x أصبحت Ultra: بلا حد الساعات الخمس للحسابات الموثّقة",
+      "summary": "غيّرت Anthropic اسم خطة Max 20x إلى Ultra بسعر 200 دولار شهريًا على الويب، وتمنح 10 أضعاف استخدام Pro أسبوعيًا. الجديد أن الحسابات الموثّقة لم يعد عليها حد الجلسة لكل خمس ساعات، مع بقاء الحدود الأسبوعية، ويشمل الاشتراك رصيدًا شهريًا لـ Claude API.",
+      "why": "لمن يعمل مع Claude Code لساعات متواصلة، يعني هذا عدم التوقف عند حد الساعات الخمس في منتصف مهمة طويلة، مثل إعادة هيكلة كبيرة أو جلسة اختبارات ممتدة، مع التخطيط وفق الحد الأسبوعي فقط.",
+      "about": "خطة Ultra هي الاسم الجديد لخطة Max 20x، والمشتركون الحاليون في Max 20x انتقلوا إليها تلقائيًا دون تغيير في السعر. السعر 200 دولار شهريًا للاشتراك عبر الويب (قد يختلف على الهاتف)، وهي متاحة باشتراك شهري فقط، وتمنح 10 أضعاف استخدام خطة Pro كل أسبوع.\n\nالحسابات الموثّقة في Ultra لا يطبَّق عليها حد الساعات الخمس. يتم التوثيق تلقائيًا بناءً على سجل الحساب والدفع، وإضافة رقم هاتف لا تزيل الحد. للتحقق: افتح Settings ثم Usage، فإذا لم يظهر شريط Current session فحسابك موثّق. الحسابات غير الموثّقة يطبَّق عليها حد مؤقت يزول بعد التوثيق.\n\nتبقى الحدود الأسبوعية قائمة: حد لكل النماذج وحد منفصل لنموذج Fable، وقد تطبّق Anthropic حدودًا أخرى على نماذج أو ميزات معينة. وتشمل الخطة رصيدًا شهريًا لـ Claude API، ولم تذكر الصفحة قيمته.",
+      "features": [
+        "200 دولار شهريًا على الويب و10 أضعاف استخدام Pro أسبوعيًا",
+        "لا حد للساعات الخمس في الحسابات الموثّقة",
+        "توثيق تلقائي حسب سجل الحساب والدفع",
+        "حد أسبوعي لكل النماذج وحد منفصل لـ Fable",
+        "رصيد شهري لـ Claude API ضمن الخطة"
+      ],
+      "pricing": { "model": "paid", "note": "200 دولار شهريًا عبر الويب، اشتراك شهري فقط" },
+      "links": [
+        { "label": "صفحة خطة Ultra في مركز المساعدة", "url": "https://support.claude.com/en/articles/17728952-what-is-the-ultra-plan" }
+      ],
+      "url": "https://support.claude.com/en/articles/17728952-what-is-the-ultra-plan",
+      "source": "support.claude.com",
+      "importance": 3,
+      "tags": ["Claude", "pricing", "Ultra", "usage limits"],
+      "en": {
+        "title": "The Max 20x plan is now Ultra: no five-hour limit for verified accounts",
+        "summary": "Anthropic renamed the Max 20x plan to Ultra, at $200 per month on the web, with 10 times the Pro plan's usage every week. What's new is that verified accounts no longer have the five-hour session limit; weekly limits still apply, and the plan includes monthly Claude API credits.",
+        "why": "If you work with Claude Code for hours on end, you no longer stop at the five-hour limit in the middle of a long task, such as a large refactor or an extended test session, and only need to plan around the weekly limit.",
+        "about": "Ultra is the new name for the Max 20x plan, and existing Max 20x subscribers moved to it automatically with no price change. It costs $200 per month for web subscriptions (mobile pricing may differ), is monthly only, and gives 10 times the Pro plan's usage every week.\n\nVerified Ultra accounts have no five-hour limit. Verification is automatic, based on account and payment history, and adding a phone number does not remove the limit. To check, open Settings then Usage: if there is no Current session bar, your account is verified. Unverified accounts get a temporary limit that is removed after verification.\n\nWeekly limits remain: one across all models and a separate one for Fable, and Anthropic may apply other limits on specific models or features. The plan includes monthly Claude API credits; the page does not state the amount.",
+        "features": [
+          "$200 per month on the web and 10x Pro usage every week",
+          "No five-hour limit for verified accounts",
+          "Automatic verification based on account and payment history",
+          "A weekly limit across all models and a separate one for Fable",
+          "Monthly Claude API credits included"
+        ],
+        "links": ["Ultra plan help article"],
+        "pricingNote": "$200 per month on the web, monthly subscription only"
+      }
+    },
+    {
+      "id": "gitlab-rce-cve-2026-97229-kev",
+      "section": "security",
+      "kind": "article",
+      "title": "ثغرة GitLab بدرجة 10.0 (CVE-2026-97229) تُستغل فعليًا وأُضيفت إلى قائمة CISA",
+      "summary": "أضافت CISA في 29 أكتوبر ثغرة تنفيذ أوامر عن بُعد في GitLab CE وEE إلى قائمة الثغرات المستغلة فعليًا، بعد هجوم على خادم GitLab غير المحدَّث لمشروع Alpine Linux. الثغرة تسمح لمهاجم دون تسجيل دخول بتنفيذ كود عبر تعبير نمطي مصمَّم في إعداد CI/CD.",
+      "why": "إذا كنت تستضيف GitLab بنفسك لفريقك، فهذه الثغرة تُستغل الآن وتصل إلى خوادم CI مباشرة. حدّث إلى أحدث إصدار تصحيحي فورًا، خصوصًا إذا كان الخادم متاحًا على الإنترنت.",
+      "about": "الثغرة CVE-2026-97229 تقييمها 10.0، وهي فيض عددي (integer overflow) يسمح لمهاجم غير مصادَق بتنفيذ كود عبر تعبير نمطي مصمَّم داخل إعداد CI/CD. تؤثر على GitLab CE وEE، والتصحيح متاح منذ نحو ثلاثة أسابيع، والجديد هو تأكيد الاستغلال وإدراجها في قائمة KEV.\n\nبين 20 و21 أكتوبر أرسل مهاجم إعدادات CI مصمَّمة إلى خادم GitLab غير المحدَّث الخاص بـ Alpine Linux، فتعطلت عمليات العمال 8 مرات، ونزّل المهاجم صورة الحاوية الخاصة بـ GitLab لدى Alpine. صُدّت محاولات لاحقة في 25 و26 أكتوبر. لم تجد Alpine دليلًا على نجاح الهجوم لكنها أعادت بناء الخادم، وتؤكد أن مستودع aports والحزم والإصدارات لم تُعدَّل.\n\nالمهلة الممنوحة للجهات الفدرالية الأمريكية هي 1 نوفمبر 2026. احتفظ بنسخة احتياطية قبل الترقية واتبع دليل الترقية الرسمي من GitLab، وتوقّع توقفًا أثناء ترحيل قاعدة البيانات.",
+      "features": [
+        "تقييم 10.0 وتنفيذ كود دون مصادقة",
+        "تؤثر على GitLab CE وEE",
+        "استغلال مؤكَّد ضد خادم Alpine Linux",
+        "مهلة CISA للجهات الفدرالية: 1 نوفمبر 2026"
+      ],
+      "links": [
+        { "label": "تغطية The Hacker News", "url": "https://thehackernews.com/2026/10/cisa-adds-actively-exploited-gitlab-rce.html" },
+        { "label": "دليل ترقية GitLab", "url": "https://docs.gitlab.com/update/" }
+      ],
+      "url": "https://thehackernews.com/2026/10/cisa-adds-actively-exploited-gitlab-rce.html",
+      "source": "thehackernews.com",
+      "importance": 2,
+      "tags": ["GitLab", "CVE", "CI/CD", "RCE", "self-hosted"],
+      "en": {
+        "title": "GitLab flaw rated 10.0 (CVE-2026-97229) is being exploited and was added to CISA's list",
+        "summary": "On October 29 CISA added a remote code execution flaw in GitLab CE and EE to its list of actively exploited vulnerabilities, after an attack on Alpine Linux's unpatched GitLab server. The flaw lets an unauthenticated attacker run code through a crafted regex in a CI/CD config.",
+        "why": "If you self-host GitLab for your team, this flaw is being exploited now and reaches CI servers directly. Update to the latest patch release right away, especially if the server is exposed to the internet.",
+        "about": "CVE-2026-97229 is rated 10.0. It is an integer overflow that lets an unauthenticated attacker run code through a crafted regex inside a CI/CD config. It affects GitLab CE and EE; the patch has been available for about three weeks, and what's new is the confirmed exploitation and the KEV listing.\n\nOn October 20–21 an attacker sent crafted CI configs to Alpine Linux's unpatched GitLab server, crashing worker processes 8 times, and downloaded Alpine's GitLab container image. Later attempts on October 25–26 were blocked. Alpine found no sign the attack succeeded but rebuilt the server anyway, and says its aports repository, packages and releases were not tampered with.\n\nThe deadline for US federal agencies is November 1, 2026. Take a backup before upgrading, follow GitLab's official upgrade guide, and expect downtime during database migrations.",
+        "features": [
+          "Rated 10.0, unauthenticated code execution",
+          "Affects GitLab CE and EE",
+          "Confirmed exploitation against Alpine Linux's server",
+          "CISA deadline for federal agencies: November 1, 2026"
+        ],
+        "links": ["The Hacker News coverage", "GitLab upgrade guide"]
+      }
+    },
+    {
+      "id": "nodejs-27-alpha-26-lts",
+      "section": "backend",
+      "kind": "release",
+      "repo": "nodejs/node",
+      "title": "Node.js 27 في أول إصدار Alpha، وNode.js 26 أصبح LTS باسم Lithium",
+      "summary": "صدر Node.js 27.0.0-alpha.0.0.0 في 29 أكتوبر كأول إصدار على قناة Alpha الجديدة، مع V8 15.6 وحد افتراضي للذاكرة يساوي نصف الذاكرة الفعلية، واشتراط OpenSSL 3. وقبله بيوم انتقل Node.js 26.13.0 إلى LTS باسم Lithium مع دعم حتى نهاية أبريل 2029.",
+      "why": "إذا كان تطبيقك على Node 24 أو 22، فقد أصبح Node 26 خيار الترقية المستقر للإنتاج. أما Node 27 Alpha فمفيد لاختبار مكتباتك مبكرًا ضد التغييرات الكاسرة، مثل صيغة structuredClone الجديدة وسلوك HTTP.",
+      "about": "وفق الجدول الجديد لـ Node.js يصدر إصدار رئيسي واحد سنويًا: مرحلة Alpha من أكتوبر إلى مارس، ثم Current من أبريل إلى أكتوبر، ثم 30 شهرًا من LTS. وانتهى نظام الأرقام الفردية والزوجية، لذا سيصبح 27.x إصدار LTS في أكتوبر 2027 وينتهي دعمه في أبريل 2030.\n\nأبرز ما في 27 Alpha: محرك V8 15.6 مع Math.sumPrecise وIterator.zip افتراضيًا، وحد ذاكرة heap افتراضي يساوي نصف الذاكرة الفعلية بين 256 MB و4 GB مع احتساب ذاكرة Buffer ضمنه، وصيغة تسلسل جديدة لـ v8.serialize وstructuredClone وpostMessage لا تقرؤها الإصدارات الأقدم. ويتطلب OpenSSL 3 أو أحدث مع إزالة دعم FIPS provider وengines، وأصبح دعم macOS على Intel تجريبيًا.\n\nوفي HTTP أصبح keepAliveTimeout الافتراضي 65 ثانية، وأصبح req.headers بلا prototype، واستدعاء listen() أكثر من مرة يرمي خطأً. كما أُهمل وحدة domain، وأُضيف fs.glob أصيل وfs.mkstemp وnpm 12.1.0. هذا إصدار Alpha وليس للإنتاج.\n\nأما Node.js 26.13.0 فهو انتقال إلى LTS دون تغييرات وظيفية. تنبيه للقادمين من 24 أو 22: منذ Node 25 تعتمد ملفات Linux الرسمية على libatomic، وقد تحتاج إلى تثبيتها بشكل منفصل.",
+      "features": [
+        "Node 26 أصبح LTS باسم Lithium حتى أبريل 2029",
+        "Node 27 Alpha مع V8 15.6 وميزات JavaScript جديدة",
+        "حد ذاكرة heap افتراضي يساوي نصف الذاكرة الفعلية",
+        "صيغة تسلسل جديدة لـ structuredClone وpostMessage",
+        "اشتراط OpenSSL 3 وتغييرات في سلوك HTTP"
+      ],
+      "requirements": ["OpenSSL 3 أو أحدث لـ Node 27", "libatomic على Linux عند الترقية من 24 أو 22"],
+      "pricing": { "model": "oss" },
+      "alternatives": ["ess-bun"],
+      "links": [
+        { "label": "إعلان Node.js 27 Alpha", "url": "https://nodejs.org/en/blog/release/v27.0.0-alpha.0.0.0" },
+        { "label": "Node.js 26.13.0 LTS", "url": "https://nodejs.org/en/blog/release/v26.13.0" },
+        { "label": "جدول الإصدارات الجديد", "url": "https://nodejs.org/en/blog/announcements/evolving-the-nodejs-release-schedule" }
+      ],
+      "url": "https://nodejs.org/en/blog/release/v27.0.0-alpha.0.0.0",
+      "source": "nodejs.org",
+      "importance": 2,
+      "tags": ["Node.js", "LTS", "V8", "JavaScript", "backend"],
+      "en": {
+        "title": "Node.js 27 ships its first Alpha, and Node.js 26 becomes LTS as Lithium",
+        "summary": "Node.js 27.0.0-alpha.0.0.0 shipped on October 29 as the first release on the new Alpha channel, with V8 15.6, a default memory limit of half the physical RAM, and an OpenSSL 3 requirement. A day earlier, Node.js 26.13.0 moved to LTS as Lithium, supported until the end of April 2029.",
+        "why": "If your app runs on Node 24 or 22, Node 26 is now the stable upgrade for production. Node 27 Alpha is useful for testing your libraries early against breaking changes, such as the new structuredClone format and HTTP behaviour.",
+        "about": "Under Node.js's new schedule there is one major release per year: Alpha from October to March, Current from April to October, then 30 months of LTS. Odd/even numbering is gone, so 27.x will become LTS in October 2027 and reach end of life in April 2030.\n\nHighlights of 27 Alpha: V8 15.6 with Math.sumPrecise and Iterator.zip by default, a default heap limit of half the physical RAM clamped between 256 MB and 4 GB with Buffer memory counted toward it, and a new serialization format for v8.serialize, structuredClone and postMessage that older versions cannot read. It requires OpenSSL 3 or later, drops the FIPS provider build and engine support, and Intel macOS is now experimental.\n\nIn HTTP, keepAliveTimeout defaults to 65 seconds, req.headers has a null prototype, and calling listen() more than once throws. The domain module is deprecated, and native fs.glob, fs.mkstemp and npm 12.1.0 were added. This is an Alpha, not for production.\n\nNode.js 26.13.0 is a move to LTS with no functional changes. A note for anyone coming from 24 or 22: since Node 25 the official Linux binaries link against libatomic, which you may need to install separately.",
+        "features": [
+          "Node 26 is LTS as Lithium until April 2029",
+          "Node 27 Alpha with V8 15.6 and new JavaScript features",
+          "Default heap limit of half the physical RAM",
+          "New serialization format for structuredClone and postMessage",
+          "OpenSSL 3 required and HTTP behaviour changes"
+        ],
+        "requirements": ["OpenSSL 3 or later for Node 27", "libatomic on Linux when upgrading from 24 or 22"],
+        "links": ["Node.js 27 Alpha announcement", "Node.js 26.13.0 LTS", "New release schedule"]
+      }
+    },
+    {
+      "id": "opencode-2-2-5-claude-agent-provider",
+      "section": "agents",
+      "kind": "release",
+      "repo": "anomalyco/opencode",
+      "title": "OpenCode من 2.2.3 إلى 2.2.5: مزوّد Claude Agent يستخدم تسجيل دخول Claude Code",
+      "summary": "صدرت ثلاثة إصدارات من OpenCode يوم 30 أكتوبر. أضاف 2.2.3 مزوّدًا مدمجًا باسم Claude Agent يستخدم تسجيل دخولك في Claude Code، وأضاف 2.2.4 إعدادًا موجَّهًا له وميزة artifacts تجريبية، وأصلح 2.2.5 انقطاع خوادم MCP عند الرسائل التي تتجاوز 10 MiB وأضاف هامش ضغط بنسبة مئوية.",
+      "why": "إذا كنت تفضّل واجهة OpenCode لكن لديك اشتراك Claude Code، يمكنك الآن استخدام نماذج Claude داخله دون إعداد مفتاح API منفصل. ومفيد لمن يجرّب أكثر من وكيل برمجة على المشروع نفسه.",
+      "about": "في 2.2.3 أُضيف مزوّد Claude Agent المدمج. التعليمات الرسمية: ثبّت Claude Code، وشغّل claude auth login، ثم اختر Claude Agent من /connect. ويمكن تحديد مسار ملف Claude التنفيذي عبر OPENCODE_CLAUDE_PATH. وفيه تغيير كاسر: حذف الجلسة يحذف معها الطرفيات الدائمة الخاصة بها.\n\nفي 2.2.4 أصبح إعداد Claude Agent موجَّهًا: يثبّت Claude Code ويسجّل الدخول ويتحقق من الاتصال. وأُضيفت ميزة artifacts تجريبية تُفعَّل بـ \"experimental\": { \"artifacts\": true } في opencode.json، وأصبحت الطرفيات في تطبيق سطح المكتب مرتبطة بالجلسة وتبقى بعد إعادة تشغيل الخادم، وأصبحت الجداول الزمنية تعمل تحت opencode serve (ما زالت تحتاج experimental.schedules).\n\nفي 2.2.5: خوادم MCP التي ترسل رسائل stdio أكبر من 10 MiB لم تعد تنقطع، وأصبح compaction.buffer يقبل نسبة مئوية مثل \"20%\" من نافذة سياق النموذج، وأخطاء نافذة السياق من LiteLLM تؤدي إلى الضغط بدل إيقاف الجلسة، ورسائل خطأ أوضح لأداتَي read وedit، واختصارات لاختيار worktree والفرع الأساسي.",
+      "features": [
+        "مزوّد Claude Agent يستخدم تسجيل دخول Claude Code",
+        "إعداد موجَّه لـ Claude Agent وميزة artifacts تجريبية",
+        "إصلاح انقطاع MCP عند رسائل stdio أكبر من 10 MiB",
+        "هامش ضغط السياق كنسبة مئوية",
+        "الضغط بدل التوقف عند أخطاء نافذة السياق من LiteLLM"
+      ],
+      "usage": [
+        "claude auth login",
+        "\"compaction\": { \"buffer\": \"20%\" }"
+      ],
+      "alternatives": ["ess-opencode", "ess-claude-code-router"],
+      "links": [
+        { "label": "إصدار v2.2.5", "url": "https://github.com/anomalyco/opencode/releases/tag/v2.2.5" },
+        { "label": "إصدار v2.2.3", "url": "https://github.com/anomalyco/opencode/releases/tag/v2.2.3" }
+      ],
+      "url": "https://github.com/anomalyco/opencode/releases/tag/v2.2.5",
+      "source": "github.com",
+      "importance": 2,
+      "tags": ["OpenCode", "coding agent", "Claude", "MCP"],
+      "en": {
+        "title": "OpenCode 2.2.3 to 2.2.5: a Claude Agent provider that uses your Claude Code login",
+        "summary": "OpenCode shipped three releases on October 30. 2.2.3 added a built-in Claude Agent provider that uses your Claude Code login, 2.2.4 added guided setup for it and experimental artifacts, and 2.2.5 stopped MCP servers from disconnecting on messages over 10 MiB and added a percentage compaction buffer.",
+        "why": "If you prefer OpenCode's interface but have a Claude Code subscription, you can now use Claude models inside it without setting up a separate API key. Useful for anyone trying more than one coding agent on the same project.",
+        "about": "2.2.3 added the built-in Claude Agent provider. The official instructions: install Claude Code, run claude auth login, then select Claude Agent in /connect. OPENCODE_CLAUDE_PATH can override the Claude executable. It also has a breaking change: deleting a session now deletes its persistent terminals.\n\nIn 2.2.4 Claude Agent setup became guided: it installs Claude Code, signs in and checks the connection. Experimental artifacts were added, enabled with \"experimental\": { \"artifacts\": true } in opencode.json; desktop terminals are now tied to the session and survive server restarts; and schedules run under opencode serve (still behind experimental.schedules).\n\nIn 2.2.5: MCP servers sending stdio messages over 10 MiB no longer disconnect, compaction.buffer accepts a percentage such as \"20%\" of the model's context window, LiteLLM context-window errors trigger compaction instead of stopping the session, the read and edit tools give clearer errors, and there are shortcuts to pick a worktree and base branch.",
+        "features": [
+          "Claude Agent provider using your Claude Code login",
+          "Guided Claude Agent setup and experimental artifacts",
+          "MCP no longer disconnects on stdio messages over 10 MiB",
+          "Percentage-based context compaction buffer",
+          "Compaction instead of stopping on LiteLLM context-window errors"
+        ],
+        "usage": ["claude auth login", "\"compaction\": { \"buffer\": \"20%\" }"],
+        "links": ["v2.2.5 release", "v2.2.3 release"]
+      }
+    },
+    {
+      "id": "codex-cli-0-166",
+      "section": "agents",
+      "kind": "release",
+      "repo": "openai/codex",
+      "title": "Codex CLI 0.166: تحديد النص في السجل بلوحة المفاتيح، وGPT-6.1 Terra، وأمر codex doctor",
+      "summary": "صدر Codex CLI بالإصدار rust-v0.166.0 في 29 أكتوبر. يضيف تحديد النص في سجل المحادثة بلوحة المفاتيح مع بحث مدمج، ويضيف نموذج GPT-6.1 Terra إلى قوائم النماذج بما فيها Vertex AI وAmazon Bedrock، مع أمرَي codex queue --resume وcodex doctor --network-only.",
+      "why": "لمن يستخدم Codex في الطرفية يوميًا: نسخ أجزاء من السجل أصبح أسهل دون الفأرة، وإعدادات الموافقة لم تعد تضيع عند استئناف محادثة، وأمر التشخيص يختصر حل مشكلات الشبكة خلف بروكسي الشركة.",
+      "about": "الإصدار rust-v0.166.0 صدر في 29 أكتوبر. الجديد: تحديد النص في السجل بحركات الكلمة والسطر والصفحة مع بحث مدمج واختصارات قابلة للتخصيص، وعرض Markdown موحَّد في الأسئلة والإجابات، وإضافة GPT-6.1 Terra إلى قوائم النماذج المدمجة وVertex AI وAmazon Bedrock.\n\nأوامر جديدة: codex queue --resume يستأنف المحادثات غير المحمَّلة بعد وضع رسالة في الطابور، وcodex doctor --network-only لتشخيص الإعدادات والاتصال وWebSocket. وأصبحت الواجهة تشرح سبب منع الطلبات لأسباب أمان وتقترح صياغات أكثر أمانًا.\n\nأهم الإصلاحات: الاحتفاظ بإعدادات الموافقة والأذونات وعدّاد رموز الاستدلال عند الاستئناف أو التفرّع، مما يمنع الضغط المبكر للسياق. الإصدار 0.167.0-alpha.1 الذي صدر بعده تجريبي.",
+      "features": [
+        "تحديد النص في السجل بلوحة المفاتيح مع بحث",
+        "GPT-6.1 Terra في قوائم النماذج وVertex AI وBedrock",
+        "codex queue --resume لاستئناف المحادثات",
+        "codex doctor --network-only لتشخيص الشبكة",
+        "الاحتفاظ بالأذونات وعدّاد الرموز عند الاستئناف"
+      ],
+      "usage": ["codex doctor --network-only"],
+      "alternatives": ["ess-openai-codex-cli"],
+      "links": [
+        { "label": "الإصدار على GitHub", "url": "https://github.com/openai/codex/releases/tag/rust-v0.166.0" }
+      ],
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.166.0",
+      "source": "github.com",
+      "importance": 1,
+      "tags": ["Codex", "OpenAI", "CLI", "coding agent"],
+      "en": {
+        "title": "Codex CLI 0.166: keyboard transcript selection, GPT-6.1 Terra, and codex doctor",
+        "summary": "Codex CLI rust-v0.166.0 shipped on October 29. It adds keyboard-driven text selection in the transcript with built-in search, adds GPT-6.1 Terra to the model catalogs including Vertex AI and Amazon Bedrock, and adds codex queue --resume and codex doctor --network-only.",
+        "why": "For daily Codex users in the terminal: copying parts of the transcript is easier without a mouse, approval settings no longer get lost when resuming a thread, and the diagnostics command shortens fixing network problems behind a corporate proxy.",
+        "about": "rust-v0.166.0 shipped on October 29. New: transcript selection with word, line and page motions, built-in search and configurable shortcuts; consistent Markdown rendering in questions and answers; and GPT-6.1 Terra in the bundled, Vertex AI and Amazon Bedrock model catalogs.\n\nNew commands: codex queue --resume resumes unloaded threads after queueing a message, and codex doctor --network-only diagnoses configuration, connectivity and WebSocket issues. The TUI now explains safety blocks and suggests safer follow-up prompts.\n\nKey fixes: approval and permission settings and reasoning-token accounting are kept on resume or fork, which avoids premature compaction. The 0.167.0-alpha.1 release that followed is an alpha.",
+        "features": [
+          "Keyboard text selection in the transcript with search",
+          "GPT-6.1 Terra in the model catalogs, Vertex AI and Bedrock",
+          "codex queue --resume to resume threads",
+          "codex doctor --network-only for network diagnostics",
+          "Permissions and token accounting kept on resume"
+        ],
+        "usage": ["codex doctor --network-only"],
+        "links": ["Release on GitHub"]
+      }
+    },
+    {
+      "id": "npmscan-mcp-plugin",
+      "section": "mcp",
+      "kind": "mcp",
+      "repo": "salemalem/npmscan-mcp-plugin",
+      "title": "npmscan: افحص حزم npm قبل أن يثبّتها الوكيل، عبر MCP وإضافة لـ Claude Code",
+      "summary": "إضافة مفتوحة المصدر لـ Claude Code تغلّف خادم MCP مجانيًا مستضافًا لدى npmscan.com، وتوفّر 23 أداة لفحص حزم npm: الثغرات عبر OSV.dev، وسكربتات التثبيت، وتغييرات المشرفين، ومصدر النشر عبر Sigstore، ومقارنة ملفات lock في طلبات الدمج، مع 5 مهارات جاهزة.",
+      "why": "يتيح للوكيل التحقق من حزمة قبل إضافتها إلى مشروعك، مثل كشف حزمة مقلّدة الاسم أو سكربت postinstall مريب، أو فحص طلب دمج يغيّر package-lock.json في خط CI.",
+      "about": "npmscan إضافة لـ Claude Code برخصة MIT، وهي غلاف لخادم MCP مستضاف ومجاني ودون مصادقة على https://npmscan.com/api/mcp، بحد 30 طلبًا في الدقيقة لكل عنوان IP. يعني ذلك أن أسماء الحزم التي تفحصها تُرسل إلى خدمة خارجية.\n\nمن أدواتها: get_package لمعلومات الحزمة وسكربتات التثبيت والتحذير من تقليد الأسماء، وbatch_query_vulnerabilities للبحث في OSV.dev عن قائمة اعتمادات كاملة أو ملف lock، وanalyze_install_script لفحص ثابت لسكربتات preinstall وpostinstall، وcheck_maintainer_changes لكشف أنماط الاستيلاء على الحسابات، وcheck_package_provenance لمقارنة مصدر النشر بالمستودع، وdiff_dependencies لمقارنة ملفات lock قبل طلب الدمج وبعده، وgenerate_sbom لتوليد SBOM.\n\nتأتي معها 5 مهارات: dependency-audit وpackage-trust-check وnew-dependency-evaluation وincident-response وci-pr-gate. تنبيهات: الأداة للبحث فقط ولا تمنع التثبيت بنفسها، والفحص الثابت مؤشر وليس دليلًا، وعدد النجوم في المستودع مرتفع مقارنةً بعدد التفرعات، لذا قيّمها بنفسك قبل الاعتماد عليها.",
+      "features": [
+        "23 أداة لفحص حزم npm وملفات lock",
+        "بحث الثغرات عبر OSV.dev وفحص سكربتات التثبيت",
+        "كشف تغييرات المشرفين وفحص مصدر النشر",
+        "مقارنة الاعتمادات في طلبات الدمج وتوليد SBOM",
+        "5 مهارات جاهزة منها ci-pr-gate"
+      ],
+      "install": [
+        { "label": "أضف المتجر داخل Claude Code", "cmd": "/plugin marketplace add salemalem/npmscan-mcp-plugin" },
+        { "label": "ثبّت الإضافة", "cmd": "/plugin install npmscan@npmscan" },
+        { "label": "أو أضف خادم MCP وحده", "cmd": "claude mcp add --transport http npmscan https://npmscan.com/api/mcp" }
+      ],
+      "usage": ["قبل إضافة حزمة date-fns إلى المشروع، افحص سكربتات التثبيت والمشرفين والثغرات المعروفة."],
+      "pricing": { "model": "free", "note": "الإضافة مفتوحة المصدر والخادم المستضاف مجاني بحد 30 طلبًا في الدقيقة" },
+      "alternatives": ["ess-socket-dev", "ess-snyk-agent-scan"],
+      "links": [
+        { "label": "المستودع على GitHub", "url": "https://github.com/salemalem/npmscan-mcp-plugin" }
+      ],
+      "url": "https://github.com/salemalem/npmscan-mcp-plugin",
+      "source": "github.com",
+      "importance": 2,
+      "tags": ["MCP", "npm", "supply chain", "security", "Claude Code plugin"],
+      "en": {
+        "title": "npmscan: check npm packages before your agent installs them, via MCP and a Claude Code plugin",
+        "summary": "An open-source Claude Code plugin wrapping a free hosted MCP server at npmscan.com, with 23 tools for checking npm packages: vulnerabilities via OSV.dev, install scripts, maintainer changes, Sigstore publish provenance, and lockfile diffs for pull requests, plus 5 ready-made skills.",
+        "why": "It lets the agent vet a package before adding it to your project, such as spotting a typosquat or a suspicious postinstall script, or checking a pull request that changes package-lock.json in a CI pipeline.",
+        "about": "npmscan is an MIT-licensed Claude Code plugin that wraps a hosted, free, unauthenticated MCP server at https://npmscan.com/api/mcp, limited to 30 requests per minute per IP. This means the package names you check are sent to an external service.\n\nIts tools include get_package for package info, install scripts and typosquat flags; batch_query_vulnerabilities for OSV.dev lookups across a whole dependency list or lockfile; analyze_install_script for a static scan of preinstall and postinstall scripts; check_maintainer_changes for account-takeover patterns; check_package_provenance to compare the publish source with the repository; diff_dependencies to compare lockfiles before and after a pull request; and generate_sbom.\n\nIt ships 5 skills: dependency-audit, package-trust-check, new-dependency-evaluation, incident-response and ci-pr-gate. Caveats: it is lookup only and does not block installs by itself, the static scan is a signal rather than proof, and the repo's star count is high relative to its forks, so evaluate it yourself before relying on it.",
+        "features": [
+          "23 tools for checking npm packages and lockfiles",
+          "OSV.dev vulnerability lookups and install-script scanning",
+          "Maintainer-change detection and provenance checks",
+          "Dependency diffs for pull requests and SBOM generation",
+          "5 ready-made skills including ci-pr-gate"
+        ],
+        "install": ["Add the marketplace inside Claude Code", "Install the plugin", "Or add only the MCP server"],
+        "usage": ["Before adding the date-fns package to the project, check its install scripts, maintainers and known vulnerabilities."],
+        "links": ["Repository on GitHub"],
+        "pricingNote": "The plugin is open source and the hosted server is free, limited to 30 requests per minute"
+      }
+    },
+    {
+      "id": "minimax-mcode-stack",
+      "section": "skills",
+      "kind": "plugin",
+      "repo": "MiniMax-AI/mcode-stack",
+      "title": "mcode-stack: مهارات وسير عمل فريق MiniMax Code كإضافات لـ Claude Code وCodex",
+      "summary": "نشر فريق MiniMax Code في 28 أكتوبر المهارات وقوائم التحقق التي يستخدمها يوميًا، مجمّعة في حزم إضافات. تركّز الحزمة الرئيسية ronny على هندسة الوكلاء: تقسيم العمل إلى وكلاء فرعيين، وتدقيق ما يدخل السياق في كل دورة، ومراجعة مستقلة للتغييرات بسياق نظيف، ووثائق التسليم بين الجلسات.",
+      "why": "لمن يبني سير عمل طويلة مع الوكلاء: تساعدك هذه المهارات على كشف ما يستهلك السياق دون فائدة، ومراجعة diff بوكيل لا يحمل افتراضات الجلسة، مثل جلسة تطوير ميزة تمتد عدة ساعات.",
+      "about": "mcode-stack مستودع برخصة MIT (باستثناء مهارات engineering-* المقتبسة من Google Engineering Practices والتي تبقى تحت CC-BY 3.0)، وهو أيضًا متجر إضافات. كل حزمة (stack) تظهر كإضافة واحدة يمكن تثبيتها أو تحديثها أو إزالتها.\n\nالحزمة الرئيسية ronny تضم مهارات مثل subagent-split-check وtool-budget-audit وcontext-tax-audit (ما يدخل السياق في كل دورة وأثره على prompt cache) وlong-session-check وhandoff-doc وindependent-review (مراجعة diff بسياق نظيف) وtrajectory-review، إضافة إلى مهارات مراجعة مقتبسة من Google. وتضيف حزمة jiachen مهارتَي lifting-loops وmaking-content. وكل مهارة مرتبطة بمقال في سلسلة MCode Engineering Notes.\n\nتعمل مع Claude Code وCodex وMiniMax Code.",
+      "features": [
+        "حزمة ronny لهندسة الوكلاء والجلسات الطويلة",
+        "تدقيق استهلاك السياق وأثره على prompt cache",
+        "مراجعة مستقلة للتغييرات بسياق نظيف",
+        "وثائق تسليم بين الجلسات",
+        "تعمل مع Claude Code وCodex وMiniMax Code"
+      ],
+      "install": [
+        { "label": "ثبّت حزمة ronny في Claude Code", "cmd": "claude plugin install ronny --marketplace MiniMax-AI/mcode-stack" },
+        { "label": "أضف المتجر في Codex", "cmd": "codex plugin marketplace add MiniMax-AI/mcode-stack" },
+        { "label": "ثبّت الحزمة في Codex", "cmd": "codex plugin add ronny@mcode-stack" }
+      ],
+      "pricing": { "model": "oss" },
+      "alternatives": ["ess-superpowers", "ess-wshobson-agents"],
+      "links": [
+        { "label": "المستودع على GitHub", "url": "https://github.com/MiniMax-AI/mcode-stack" }
+      ],
+      "url": "https://github.com/MiniMax-AI/mcode-stack",
+      "source": "github.com",
+      "importance": 2,
+      "tags": ["skills", "plugins", "Claude Code", "Codex", "subagents"],
+      "en": {
+        "title": "mcode-stack: the MiniMax Code team's skills and workflows as plugins for Claude Code and Codex",
+        "summary": "On October 28 the MiniMax Code team published the skills and checklists it uses daily, packaged as plugin stacks. The main ronny stack focuses on agent engineering: splitting work into subagents, auditing what enters the context each turn, independent clean-context review of changes, and handoff docs between sessions.",
+        "why": "For anyone building long workflows with agents: these skills help you spot what fills the context without benefit and review a diff with an agent that doesn't carry the session's assumptions, for example in a feature session that runs for several hours.",
+        "about": "mcode-stack is MIT-licensed (except the engineering-* skills adapted from Google Engineering Practices, which stay under CC-BY 3.0), and it is also a plugin marketplace. Each stack appears as a single plugin you can install, update or remove.\n\nThe main ronny stack includes skills such as subagent-split-check, tool-budget-audit, context-tax-audit (what enters the context each turn and its prompt-cache impact), long-session-check, handoff-doc, independent-review (clean-context diff review) and trajectory-review, plus review skills adapted from Google. The jiachen stack adds lifting-loops and making-content. Each skill is paired with an article in the MCode Engineering Notes series.\n\nIt works with Claude Code, Codex and MiniMax Code.",
+        "features": [
+          "ronny stack for agent engineering and long sessions",
+          "Audits of context usage and its prompt-cache impact",
+          "Independent clean-context review of changes",
+          "Handoff docs between sessions",
+          "Works with Claude Code, Codex and MiniMax Code"
+        ],
+        "install": ["Install the ronny stack in Claude Code", "Add the marketplace in Codex", "Install the stack in Codex"],
+        "links": ["Repository on GitHub"]
+      }
+    },
+    {
+      "id": "beautiful-rust-skills",
+      "section": "skills",
+      "kind": "skill",
+      "repo": "morganlinton/BeautifulRust",
+      "title": "BeautifulRust: ثلاث مهارات لكتابة Rust ومراجعتها والنقل إليها",
+      "summary": "مجموعة مهارات جديدة تنمو بسرعة على GitHub: rust-best-practices لأسلوب الكتابة، وrust-review لتقرير مراجعة مرتّب يذكر القاعدة المخالَفة والإصلاح، وrust-port لنقل كود C أو C++ أو Python أو Go أو JavaScript إلى Rust بدءًا بنقل الاختبارات، مع ملف إعداد clippy جاهز لـ CI.",
+      "why": "يجعل وكيل البرمجة يكتب Rust أقرب إلى الأسلوب المعتمد بدل كود يعمل لكنه غير اصطلاحي، ويفيد عند نقل أداة سطر أوامر من Python إلى Rust مع الحفاظ على سلوكها عبر الاختبارات.",
+      "about": "BeautifulRust مستودع برخصة MIT يضم ثلاث مهارات وفق معيار Agent Skills، مستخلصة من Google Rust Style Guide وRust API Guidelines وEffective Rust وRust Design Patterns وإرشادات Microsoft العملية لـ Rust. يقول المستودع إن كل أمثلة الكود تُترجم على Rust المستقر، وإن كل قاعدة lint تم التحقق منها مقابل clippy الحالي.\n\nمهارة rust-review تُخرج تقريرًا مرتّبًا حسب الأولوية، وكل ملاحظة فيه تذكر القاعدة التي تخالفها وتعرض الإصلاح. ومهارة rust-port تنقل الاختبارات الأصلية أولًا ثم الكود. ومهارتا المراجعة والنقل تعتمدان على مهارة أفضل الممارسات، لذا يُنصح بتثبيت الثلاث.\n\nتعمل مع Claude Code وCodex وGitHub Copilot وCursor وGemini CLI.",
+      "features": [
+        "rust-best-practices لأسلوب Rust الاصطلاحي",
+        "rust-review لتقرير مراجعة يذكر القاعدة والإصلاح",
+        "rust-port للنقل إلى Rust بدءًا بالاختبارات",
+        "إعداد clippy جاهز للاستخدام في CI"
+      ],
+      "install": [
+        { "label": "ثبّت المهارات بأداة skills", "cmd": "npx skills add morganlinton/BeautifulRust" },
+        { "label": "أو كإضافة لـ Claude Code", "cmd": "claude plugin install beautiful-rust --marketplace morganlinton/BeautifulRust" }
+      ],
+      "requirements": ["Node.js 22.20 أو أحدث لأداة skills"],
+      "pricing": { "model": "oss" },
+      "alternatives": ["ess-skills-sh", "ess-agent-skills-standard"],
+      "links": [
+        { "label": "المستودع على GitHub", "url": "https://github.com/morganlinton/BeautifulRust" }
+      ],
+      "url": "https://github.com/morganlinton/BeautifulRust",
+      "source": "github.com",
+      "importance": 2,
+      "tags": ["Rust", "skills", "code review", "clippy"],
+      "en": {
+        "title": "BeautifulRust: three skills for writing, reviewing and porting to Rust",
+        "summary": "A fast-growing new skills collection on GitHub: rust-best-practices for style, rust-review for a prioritized review report that cites the rule broken and the fix, and rust-port for porting C, C++, Python, Go or JavaScript to Rust starting with the tests, plus a ready clippy config for CI.",
+        "why": "It makes your coding agent write Rust closer to the accepted style instead of code that works but isn't idiomatic, and helps when porting a CLI tool from Python to Rust while keeping its behaviour through the tests.",
+        "about": "BeautifulRust is an MIT-licensed repo with three skills following the Agent Skills standard, distilled from the Google Rust Style Guide, the Rust API Guidelines, Effective Rust, Rust Design Patterns and Microsoft's Pragmatic Rust Guidelines. The repo says every code example compiles on stable Rust and every lint was checked against current clippy.\n\nrust-review produces a prioritized report where each finding cites the rule it breaks and shows the fix. rust-port ports the original tests first, then the code. The review and port skills rely on the best-practices skill, so installing all three is recommended.\n\nIt works with Claude Code, Codex, GitHub Copilot, Cursor and Gemini CLI.",
+        "features": [
+          "rust-best-practices for idiomatic Rust style",
+          "rust-review for a report citing the rule and the fix",
+          "rust-port for porting to Rust starting with the tests",
+          "A ready clippy config for CI"
+        ],
+        "install": ["Install the skills with the skills tool", "Or as a Claude Code plugin"],
+        "requirements": ["Node.js 22.20 or later for the skills tool"],
+        "links": ["Repository on GitHub"]
+      }
+    },
+    {
+      "id": "heygen-hyperframes",
+      "section": "video",
+      "kind": "repo",
+      "repo": "heygen-com/hyperframes",
+      "title": "HyperFrames من HeyGen: اكتب الفيديو بـ HTML وحوّله إلى MP4، مع مهارات للوكلاء",
+      "summary": "إطار مفتوح المصدر برخصة Apache-2.0 يحوّل HTML وCSS والوسائط والحركات إلى فيديو MP4 بنتيجة ثابتة، من سطر الأوامر أو عبر وكلاء البرمجة. يضم 7 مهارات للوكلاء ومكتبة بنحو 450 مكوّنًا جاهزًا للانتقالات والترجمات والرسوم البيانية، وأُضيف حديثًا إلى قائمة awesome-agent-skills.",
+      "why": "يتيح لوكيل البرمجة إنتاج فيديو تعريفي أو شرح منتج أو مقطع بترجمة نصية بكتابة HTML عادي، دون React ودون رسوم لكل تصيير. بديل مناسب لمن يفضّل HTML على Remotion.",
+      "about": "HyperFrames يحوّل تراكيب HTML إلى فيديو: متصفح Chrome بلا واجهة يقفز إلى كل إطار، ثم يرمّزه FFmpeg. التركيبة صفحة HTML عادية بخصائص مثل data-start وdata-duration وdata-track-index، دون خطوة بناء ودون الحاجة إلى React. ويدعم الحركات من GSAP وCSS وLottie وThree.js وAnime.js وWAAPI.\n\nيضم 7 مهارات للوكلاء: المجموعة الأساسية /hyperframes و/hyperframes-cli و/hyperframes-registry و/media-use، ومهارات عند الطلب مثل /figma و/slideshow و/remotion-to-hyperframes. وتعلّم المهارات الوكيل دورة الإنتاج: التخطيط، وكتابة HTML صحيح، والحركات، والوسائط، ثم المعاينة والتصيير. وهناك محرر Studio في المتصفح، وتصيير موزّع على AWS Lambda، وتطبيقات سطح مكتب.\n\nالمستودع نشط جدًا ويحظى بشعبية كبيرة على GitHub، والرخصة Apache-2.0 دون رسوم لكل تصيير. ويتطلب Node.js 22 أو أحدث وFFmpeg.",
+      "features": [
+        "فيديو من HTML عادي دون خطوة بناء أو React",
+        "7 مهارات لوكلاء البرمجة مثل Claude Code وCodex وCursor",
+        "نحو 450 مكوّنًا جاهزًا للانتقالات والترجمات والرسوم",
+        "دعم GSAP وLottie وThree.js وحركات CSS",
+        "محرر Studio وتصيير موزّع على AWS Lambda"
+      ],
+      "install": [
+        { "label": "ثبّت المهارات الأساسية لأي وكيل", "cmd": "npx hyperframes skills update" },
+        { "label": "أضف المتجر في Claude Code", "cmd": "claude plugin marketplace add heygen-com/hyperframes" },
+        { "label": "ثبّت الإضافة في Claude Code", "cmd": "claude plugin install hyperframes@hyperframes" },
+        { "label": "أنشئ مشروع فيديو", "cmd": "npx hyperframes init my-video" },
+        { "label": "صيّر إلى MP4", "cmd": "npx hyperframes render" }
+      ],
+      "usage": ["اصنع فيديو تعريفيًا مدته 30 ثانية لمنتج SaaS مع ترجمة نصية ورسم بياني متحرك."],
+      "requirements": ["Node.js 22 أو أحدث", "FFmpeg"],
+      "pricing": { "model": "oss" },
+      "alternatives": ["remotion-agent-skills"],
+      "links": [
+        { "label": "المستودع على GitHub", "url": "https://github.com/heygen-com/hyperframes" },
+        { "label": "التوثيق", "url": "https://hyperframes.heygen.com" }
+      ],
+      "url": "https://github.com/heygen-com/hyperframes",
+      "source": "github.com",
+      "importance": 2,
+      "tags": ["video", "HTML", "skills", "Claude Code plugin", "FFmpeg"],
+      "en": {
+        "title": "HyperFrames by HeyGen: write video in HTML and render it to MP4, with skills for agents",
+        "summary": "An Apache-2.0 open-source framework that turns HTML, CSS, media and animations into deterministic MP4 video, from the CLI or through coding agents. It includes 7 agent skills and a catalog of about 450 ready-made blocks for transitions, captions and charts, and was just added to the awesome-agent-skills list.",
+        "why": "It lets your coding agent produce a launch video, a product explainer or a captioned clip by writing plain HTML, with no React and no per-render fees. A good alternative for anyone who prefers HTML over Remotion.",
+        "about": "HyperFrames turns HTML compositions into video: headless Chrome seeks to each frame, then FFmpeg encodes it. A composition is a plain HTML page with attributes such as data-start, data-duration and data-track-index, with no build step and no React needed. It supports animations from GSAP, CSS, Lottie, Three.js, Anime.js and WAAPI.\n\nIt includes 7 agent skills: the core set /hyperframes, /hyperframes-cli, /hyperframes-registry and /media-use, plus on-demand skills such as /figma, /slideshow and /remotion-to-hyperframes. The skills teach the agent the production loop: plan, write valid HTML, animate, add media, then preview and render. There is a Studio browser editor, distributed rendering on AWS Lambda, and desktop apps.\n\nThe repo is very active and widely starred on GitHub, and the Apache-2.0 license has no per-render fees. It needs Node.js 22 or later and FFmpeg.",
+        "features": [
+          "Video from plain HTML with no build step or React",
+          "7 skills for coding agents such as Claude Code, Codex and Cursor",
+          "About 450 ready-made blocks for transitions, captions and charts",
+          "Supports GSAP, Lottie, Three.js and CSS animations",
+          "Studio editor and distributed rendering on AWS Lambda"
+        ],
+        "install": ["Install the core skills for any agent", "Add the marketplace in Claude Code", "Install the plugin in Claude Code", "Create a video project", "Render to MP4"],
+        "usage": ["Make a 30-second launch video for a SaaS product with captions and an animated chart."],
+        "requirements": ["Node.js 22 or later", "FFmpeg"],
+        "links": ["Repository on GitHub", "Documentation"]
+      }
+    },
+    {
+      "id": "pika-h3-flex",
+      "section": "video",
+      "kind": "model",
+      "title": "Pika H3 Flex: نموذج فيديو بصوت متزامن، وأوزان المولّد مفتوحة",
+      "summary": "أعلنت Pika في 29 أكتوبر نموذج H3 Flex، وهو نسخة مدرّبة لاحقًا من MiniMax H3. يولّد مقاطع حتى 15 ثانية بدقة 480p أو 768p مع صوت ستيريو متزامن، ويقبل حتى 12 ملفًا مرجعيًا من صور وفيديو وصوت، ونشرت Pika محوّلات المولّد وكود التشغيل على Hugging Face وGitHub.",
+      "why": "لصنّاع المحتوى والمطورين الذين يبنون أدوات فيديو: توليد سريع بصوت جاهز يسهّل تجربة أفكار كثيرة قبل اختيار واحدة، وإمكانية التشغيل المحلي للأوزان المفتوحة تفيد من يحتاج تحكّمًا أكبر.",
+      "about": "H3 Flex يولّد الفيديو بدقة 480p أو 768p، ومحسّن الدقة المستضاف لدى Pika يرفع المقطع المختار إلى 1080p أو 2K أو 4K. يدعم التوليد من النص، ومن الإطار الأول والأخير، ومن المراجع، مع صوت ستيريو متزامن. وعبر واجهة Pika البرمجية يمكن طلب خمس طبقات صوت منفصلة: الحوار والموسيقى والمؤثرات وFoley والأجواء.\n\nيستخدم النموذج 6 خطوات بدل 50، وتذكر Pika نحو 7 ثوانٍ من الحوسبة لمقطع 15 ثانية بدقة 768p في اختبار مضبوط، مع التنبيه إلى أن هذا ليس زمن الاستجابة الكامل للواجهة البرمجية.\n\nالأوزان المفتوحة تشمل محوّلات المولّد وكود التشغيل لدقتَي 480p و768p، بينما يبقى محسّن الدقة وفصل طبقات الصوت وتحسين الأوصاف مستضافًا لدى Pika، ولم يوضّح الإعلان شروط الرخصة. النموذج متاح الآن عبر Pika API Club، ويصل إلى منتج Pika للإنشاء في 2 نوفمبر 2026.",
+      "features": [
+        "مقاطع حتى 15 ثانية بدقة 480p أو 768p مع صوت ستيريو",
+        "حتى 12 ملفًا مرجعيًا في توليد واحد",
+        "خمس طبقات صوت منفصلة عبر الواجهة البرمجية",
+        "أوزان المولّد وكود التشغيل منشوران",
+        "رفع الدقة إلى 4K عبر خدمة Pika"
+      ],
+      "pricing": { "model": "paid", "note": "واجهة برمجية مدفوعة، مع أوزان مولّد منشورة" },
+      "alternatives": ["ess-kling", "ess-runway", "ess-google-flow"],
+      "links": [
+        { "label": "إعلان Pika", "url": "https://pika.art/blog/pika-h3-flex" },
+        { "label": "التفاصيل التقنية", "url": "https://pika.art/blog/pika-h3-flex-research" }
+      ],
+      "url": "https://pika.art/blog/pika-h3-flex",
+      "source": "pika.art",
+      "importance": 2,
+      "tags": ["AI video", "Pika", "open weights", "audio"],
+      "en": {
+        "title": "Pika H3 Flex: a video model with synced audio, with open generator weights",
+        "summary": "On October 29 Pika announced H3 Flex, a post-trained version of MiniMax H3. It generates clips up to 15 seconds at 480p or 768p with synchronized stereo audio, accepts up to 12 reference files (images, video and audio), and Pika published the generator adapters and inference code on Hugging Face and GitHub.",
+        "why": "For creators and developers building video tools: fast generation with ready audio makes it easier to try many ideas before picking one, and running the open weights locally helps anyone who needs more control.",
+        "about": "H3 Flex generates video at 480p or 768p, and Pika's hosted upsampler takes a chosen clip to 1080p, 2K or 4K. It supports text-to-video, first/last-frame and reference-to-video, with synchronized stereo audio. Through Pika's API you can request five separate audio stems: dialogue, score, SFX, Foley and ambience.\n\nThe model uses 6 steps instead of 50, and Pika cites about 7 seconds of compute for a 15-second 768p clip in a controlled benchmark, noting this is not full API latency.\n\nThe open weights cover the generator adapters and inference code at 480p and 768p, while the upsampler, stem separation and prompt enhancement stay hosted by Pika, and the announcement does not spell out the license terms. It is available now through Pika API Club and comes to Pika's creation product on November 2, 2026.",
+        "features": [
+          "Clips up to 15 seconds at 480p or 768p with stereo audio",
+          "Up to 12 reference files in one generation",
+          "Five separate audio stems through the API",
+          "Generator weights and inference code published",
+          "Upscaling to 4K through Pika's service"
+        ],
+        "links": ["Pika announcement", "Technical details"],
+        "pricingNote": "Paid API, with published generator weights"
+      }
+    },
+    {
+      "id": "supabase-explorer-notebooks",
+      "section": "data",
+      "kind": "tool",
+      "title": "Supabase Explorer وNotebooks: استعلامات ورسوم قابلة لإعادة التشغيل ومراجعتها في طلبات الدمج",
+      "summary": "أعلنت Supabase في 30 أكتوبر محرر استعلامات جديدًا باسم Explorer يجمع قاعدة البيانات والسجلات مع عرض النتائج جدولًا أو رسمًا، وNotebooks وهي ملفات في مجلد supabase/ تجمع استعلامات ورسومًا ونصوص Markdown، تُحفظ فيها الاستعلامات لا النتائج، فتعطي بيانات حية عند إعادة تشغيلها.",
+      "why": "يتيح للفريق حفظ تحقيق في مشكلة إنتاج، مثل بطء طلبات أو ارتفاع أخطاء، كملف يمكن مراجعته في طلب دمج وإعادة تشغيله لاحقًا على بيانات حية بدل لقطات شاشة متقادمة.",
+      "about": "Explorer محرر استعلامات جديد في لوحة تحكم Supabase يعمل على قاعدة البيانات والسجلات معًا، ويعرض النتائج جدولًا أو رسمًا بيانيًا. هو ميزة تجريبية متاحة لكل المشاريع، وعند تفعيله يحل محل SQL Editor.\n\nNotebooks ملفات داخل مجلد supabase/ تجمع استعلامات محفوظة ورسومًا وMarkdown. لأنها تحفظ الاستعلامات لا النتائج، فإن إعادة التشغيل تعطي بيانات حية وتعمل عبر الفروع، ويمكن إدارة نسخها ومراجعتها في طلبات الدمج. وتُزامَن عبر الأوامر supabase notebooks pull وsupabase notebooks push في قناة CLI التجريبية.\n\nيمكن لمساعد Supabase كتابة الخلايا وتشغيلها، لكن كل إنشاء أو تعديل يحتاج إلى موافقتك. الميزتان في مرحلة تجريبية، ولم تُذكر متطلبات الخطط.",
+      "features": [
+        "محرر واحد لقاعدة البيانات والسجلات مع رسوم",
+        "Notebooks تحفظ الاستعلامات وتعطي بيانات حية",
+        "ملفات في المستودع قابلة للمراجعة في طلبات الدمج",
+        "مزامنة عبر supabase notebooks pull/push",
+        "مساعد يكتب الخلايا بموافقتك"
+      ],
+      "usage": ["supabase notebooks pull", "supabase notebooks push"],
+      "pricing": { "model": "freemium" },
+      "alternatives": ["ess-supabase", "ess-supabase-mcp"],
+      "links": [
+        { "label": "إعلان Supabase", "url": "https://supabase.com/blog/explorer-and-notebooks-investigations-your-team-can-rerun" }
+      ],
+      "url": "https://supabase.com/blog/explorer-and-notebooks-investigations-your-team-can-rerun",
+      "source": "supabase.com",
+      "importance": 2,
+      "tags": ["Supabase", "Postgres", "SQL", "observability"],
+      "en": {
+        "title": "Supabase Explorer and Notebooks: rerunnable queries and charts you can review in pull requests",
+        "summary": "On October 30 Supabase announced Explorer, a new query editor covering both the database and logs with results as tables or charts, and Notebooks: files in the supabase/ folder that combine queries, charts and Markdown. They store queries rather than results, so reruns return live data.",
+        "why": "It lets a team save an investigation into a production issue, such as slow requests or rising errors, as a file that can be reviewed in a pull request and rerun later on live data instead of stale screenshots.",
+        "about": "Explorer is a new query editor in the Supabase dashboard that works on both the database and logs, showing results as a table or chart. It is a feature preview available to every project, and once enabled it replaces the SQL Editor.\n\nNotebooks are files in the supabase/ folder that combine saved queries, charts and Markdown. Because they store queries rather than results, a rerun returns live data and works across branches, and they can be versioned and reviewed in pull requests. They sync with supabase notebooks pull and supabase notebooks push in the beta CLI channel.\n\nThe Supabase Assistant can write and run cells, but every create or edit needs your approval. Both features are in preview, and plan requirements were not stated.",
+        "features": [
+          "One editor for the database and logs, with charts",
+          "Notebooks store queries and return live data",
+          "Files in the repo, reviewable in pull requests",
+          "Sync with supabase notebooks pull/push",
+          "An assistant that writes cells with your approval"
+        ],
+        "usage": ["supabase notebooks pull", "supabase notebooks push"],
+        "links": ["Supabase announcement"]
+      }
+    },
+    {
+      "id": "supabase-dbarena-benchmarks",
+      "section": "data",
+      "kind": "article",
+      "title": "DBArena: مقارنات أداء مفتوحة وقابلة لإعادة الإنتاج لخدمات Postgres المستضافة",
+      "summary": "أطلقت Supabase في 30 أكتوبر موقع DBArena لمقارنة Supabase Postgres وSupabase مع OrioleDB وAmazon RDS وGoogle Cloud SQL، بـ 62 نتيجة من أكثر من 750 تشغيلًا بحمل مشتق من TPC-C، مع أدوات مفتوحة لإعادة تشغيل الاختبارات بنفسك.",
+      "why": "يفيد من يختار خدمة Postgres مستضافة لتطبيق إنتاجي: يمكنك مقارنة الإنتاجية والسعر وزمن الاستجابة على أحجام متطابقة، وإعادة الاختبار على حسابك بدل الاعتماد على أرقام تسويقية.",
+      "about": "DBArena يقارن أربعة خيارات: Supabase Postgres، وSupabase مع OrioleDB التجريبي، وAmazon RDS، وGoogle Cloud SQL Enterprise. الاختبارات على Postgres 17 بإعدادات افتراضية، عبر TLS مباشر دون pooler، على ما يصل إلى 7 أحجام من 2 vCPU و2 GiB حتى 32 vCPU و128 GiB.\n\nالحمل مشتق من TPC-C دون وقت تفكير، بنسختين: بيانات تتسع للذاكرة، وبيانات بحجم 4 أضعاف الذاكرة. كل تشغيل يتضمن 30 دقيقة إحماء و60 دقيقة قياس، والنتيجة وسيط 3 تشغيلات. المقاييس: المعاملات في الدقيقة، والمعاملات لكل دولار بأسعار القائمة، وزمن الاستجابة p95.\n\nتنبيهات: Supabase هي الجهة الراعية وتختبر منتجاتها، ولا يُذكر تدقيق مستقل. الاختبار يغطي حملًا واحدًا وذروة الإنتاجية فقط ومنطقة واحدة لكل سحابة، ولم يمكن تثبيت مولّد الحمل لـ Supabase في نفس منطقة التوفر بخلاف RDS وCloud SQL.",
+      "features": [
+        "مقارنة 4 خيارات Postgres مستضافة على 7 أحجام",
+        "62 نتيجة من أكثر من 750 تشغيلًا",
+        "قياس الإنتاجية والسعر وزمن p95",
+        "أدوات مفتوحة لإعادة تشغيل الاختبارات"
+      ],
+      "usage": ["dbarenactl run --candidate candidates/aws/rds/tpcc/manifest.yaml --test-point xlarge/cache-exceeding --iterations 3"],
+      "alternatives": ["ess-supabase"],
+      "links": [
+        { "label": "إعلان Supabase", "url": "https://supabase.com/blog/introducing-dbarena" }
+      ],
+      "url": "https://supabase.com/blog/introducing-dbarena",
+      "source": "supabase.com",
+      "importance": 1,
+      "tags": ["Postgres", "benchmarks", "Supabase", "RDS", "Cloud SQL"],
+      "en": {
+        "title": "DBArena: open, reproducible benchmarks for hosted Postgres",
+        "summary": "On October 30 Supabase launched DBArena, comparing Supabase Postgres, Supabase with OrioleDB, Amazon RDS and Google Cloud SQL, with 62 results from more than 750 runs of a TPC-C-derived workload, plus open tools to rerun the tests yourself.",
+        "why": "Useful when choosing a hosted Postgres service for a production app: you can compare throughput, price and latency at matched sizes and rerun the tests in your own account instead of relying on marketing numbers.",
+        "about": "DBArena compares four options: Supabase Postgres, Supabase with the OrioleDB beta, Amazon RDS and Google Cloud SQL Enterprise. Tests run on Postgres 17 with default settings, over direct TLS without a pooler, on up to 7 sizes from 2 vCPU and 2 GiB to 32 vCPU and 128 GiB.\n\nThe workload is TPC-C-derived with no think time, in two variants: data that fits in memory, and data at 4x RAM. Each run has a 30-minute warmup and 60 minutes of measurement, and results are the median of 3 runs. Metrics: transactions per minute, transactions per dollar at list prices, and p95 latency.\n\nCaveats: Supabase sponsors it and tests its own products, and no independent audit is mentioned. It covers a single workload, peak throughput only and one region per cloud, and Supabase's load generator could not be pinned to the same availability zone, unlike RDS and Cloud SQL.",
+        "features": [
+          "Compares 4 hosted Postgres options across 7 sizes",
+          "62 results from more than 750 runs",
+          "Measures throughput, price and p95 latency",
+          "Open tools to rerun the tests"
+        ],
+        "usage": ["dbarenactl run --candidate candidates/aws/rds/tpcc/manifest.yaml --test-point xlarge/cache-exceeding --iterations 3"],
+        "links": ["Supabase announcement"]
+      }
+    },
+    {
+      "id": "pollora-wordpress-laravel",
+      "section": "laravel",
+      "kind": "library",
+      "repo": "Pollora/pollora",
+      "title": "Pollora: شغّل WordPress داخل تطبيق Laravel مع Blade وEloquent",
+      "summary": "إطار مفتوح المصدر يجعل Laravel يقلع أولًا ويخدم الواجهة الأمامية عبر الموجّه والمتحكمات وBlade، بينما تبقى لوحة تحكم WordPress وقاعدة بياناته وإضافاته تعمل. يدعم مسارات تطابق شروط WordPress، وأنواع المحتوى عبر خصائص PHP، ونماذج Eloquent لبيانات WordPress.",
+      "why": "يناسب من يبني موقعًا يريد فيه فريق المحتوى لوحة WordPress المألوفة، بينما يكتب المطورون الواجهة والمنطق بأدوات Laravel، مثل موقع شركة أو مدونة لها أجزاء مخصّصة.",
+      "about": "في Pollora يقلع Laravel أولًا ويخدم طلبات الواجهة الأمامية عبر الموجّه والمتحكمات وقوالب Blade، بينما تبقى لوحة تحكم WordPress وقاعدة البيانات والإضافات تعمل كما هي. الدوال Route::wp() وRoute::wpMatch() تطابق شروط WordPress، والطلبات غير المطابقة تعود إلى تسلسل قوالب WordPress.\n\nأنواع المحتوى والخطافات تُعرَّف بخصائص PHP (attributes) بدل functions.php، والقوالب تُكتب بـ Blade مع أصول Vite، وكتل Gutenberg تُعرض عبر Blade. وتتوفر نماذج Eloquent لبيانات WordPress عبر حزمة Colt (تفرّع من Corcel)، ويمكن لمكتبة الوسائط استخدام أي قرص تخزين في Laravel مثل S3 أو R2. كما توفّر حزمة Nectar إرشادات وأدوات MCP للوكلاء عبر Laravel Boost.\n\nالترخيص MIT، والمتطلبات مذكورة في موقع pollora.dev.",
+      "features": [
+        "Laravel يخدم الواجهة وWordPress يبقى للوحة التحكم",
+        "مسارات Route::wp() تطابق شروط WordPress",
+        "أنواع المحتوى والخطافات عبر خصائص PHP",
+        "نماذج Eloquent لبيانات WordPress",
+        "أدوات للوكلاء عبر Laravel Boost"
+      ],
+      "install": [
+        { "label": "أنشئ مشروعًا جديدًا", "cmd": "composer create-project pollora/pollora my-project" }
+      ],
+      "pricing": { "model": "oss" },
+      "alternatives": ["ess-laravel-boost"],
+      "links": [
+        { "label": "مقال Laravel News", "url": "https://laravel-news.com/pollora-wordpress-laravel" },
+        { "label": "الموقع الرسمي", "url": "https://pollora.dev" }
+      ],
+      "url": "https://laravel-news.com/pollora-wordpress-laravel",
+      "source": "laravel-news.com",
+      "importance": 2,
+      "tags": ["Laravel", "WordPress", "PHP", "Blade", "Eloquent"],
+      "en": {
+        "title": "Pollora: run WordPress inside a Laravel app with Blade and Eloquent",
+        "summary": "An open-source framework where Laravel boots first and serves the front end through its router, controllers and Blade, while the WordPress admin, database and plugins keep working. It supports routes matching WordPress conditions, post types via PHP attributes, and Eloquent models for WordPress data.",
+        "why": "A fit for sites where the content team wants the familiar WordPress admin while developers build the front end and logic with Laravel tools, such as a company site or a blog with custom sections.",
+        "about": "In Pollora, Laravel boots first and serves front-end requests through its router, controllers and Blade templates, while the WordPress admin, database and plugins keep working as usual. Route::wp() and Route::wpMatch() match WordPress conditional tags, and unmatched requests fall back to the WordPress template hierarchy.\n\nPost types and hooks are declared with PHP attributes instead of functions.php, themes are written in Blade with Vite assets, and Gutenberg blocks render through Blade. Eloquent models for WordPress data come via the Colt package (a fork of Corcel), and the media library can use any Laravel filesystem disk such as S3 or R2. The Nectar package provides agent guidelines and MCP tools through Laravel Boost.\n\nIt is MIT-licensed, and requirements are listed on pollora.dev.",
+        "features": [
+          "Laravel serves the front end, WordPress stays for the admin",
+          "Route::wp() routes that match WordPress conditions",
+          "Post types and hooks via PHP attributes",
+          "Eloquent models for WordPress data",
+          "Agent tools through Laravel Boost"
+        ],
+        "install": ["Create a new project"],
+        "links": ["Laravel News article", "Official site"]
+      }
+    },
+    {
+      "id": "cloudflare-private-origins-ga",
+      "section": "devops",
+      "kind": "tool",
+      "title": "Cloudflare: خدمات الحماية والتخزين المؤقت أصبحت متاحة للخوادم ذات العناوين الخاصة",
+      "summary": "أعلنت Cloudflare في 30 أكتوبر الإتاحة العامة لخدماتها للخوادم الخاصة (Private Origins)، بعد مرحلة تجريبية منذ يونيو. أصبح بإمكان WAF وإدارة البوتات وتحديد المعدل والتخزين المؤقت وWorkers حماية خادم على عنوان IP خاص دون عنوان عام ودون فتح منافذ واردة.",
+      "why": "للفرق التي تريد إبقاء خوادم التطبيقات خارج الإنترنت العام تمامًا، مثل تطبيق داخلي أو واجهة برمجية خلف شبكة الشركة، مع الاستفادة من حماية Cloudflare الكاملة دون كشف عنوان الخادم.",
+      "about": "الفكرة: تنشئ سجل DNS من نوع A أو AAAA يمر عبر Cloudflare ويشير إلى عنوان IP خاص، فيُفعَّل التوجيه الخاص تلقائيًا للعناوين ضمن RFC 1918 و100.64.0.0/10 وfc00::/7. ويمكن عبر الواجهة البرمجية إضافة \"private_routing\": true إلى سجل DNS عادي.\n\nالمتطلبات: صلاحية Private Origins يفعّلها فريق الحساب لدى Cloudflare، واتصال عبر Cloudflare One (IPsec أو GRE أو CNI أو Tunnel أو Mesh)، ومسار عودة للنطاقين 100.64.0.0/12 و2606:4700:cf1:5000::/64؛ وغياب مسار العودة كان أكثر أخطاء الإعداد شيوعًا في المرحلة التجريبية.\n\nالقيود: لا يدعم Argo Smart Routing ولا عناوين CDN Egress المخصصة، وفحوص صحة الخادم تحتاج Load Balancing. وتخطط Cloudflare لمرحلة تجريبية مغلقة لحركة المرور من خاص إلى خاص في أوائل 2027.",
+      "features": [
+        "WAF وتحديد المعدل والتخزين المؤقت وWorkers لخوادم خاصة",
+        "لا حاجة إلى عنوان IP عام أو منافذ واردة",
+        "تفعيل تلقائي لنطاقات العناوين الخاصة",
+        "دعم عبر الواجهة البرمجية بخاصية private_routing"
+      ],
+      "requirements": ["صلاحية Private Origins من فريق حساب Cloudflare", "اتصال Cloudflare One مثل Tunnel أو IPsec"],
+      "pricing": { "model": "paid", "note": "صلاحية يفعّلها فريق الحساب، ولم يُذكر السعر" },
+      "links": [
+        { "label": "إعلان Cloudflare", "url": "https://blog.cloudflare.com/private-origins-public-to-private/" }
+      ],
+      "url": "https://blog.cloudflare.com/private-origins-public-to-private/",
+      "source": "blog.cloudflare.com",
+      "importance": 1,
+      "tags": ["Cloudflare", "networking", "WAF", "private network"],
+      "en": {
+        "title": "Cloudflare: security and caching services now available for origins on private IPs",
+        "summary": "On October 30 Cloudflare announced general availability of its services for private origins, after a closed beta since June. WAF, bot management, rate limiting, caching and Workers can now protect an origin on a private IP with no public address and no inbound firewall holes.",
+        "why": "For teams that want to keep app servers entirely off the public internet, such as an internal app or an API behind a corporate network, while still getting full Cloudflare protection without exposing the server's address.",
+        "about": "How it works: you create a proxied A or AAAA DNS record pointing at a private IP, and private routing turns on automatically for addresses in RFC 1918, 100.64.0.0/10 and fc00::/7. Through the API you can add \"private_routing\": true to a standard DNS record.\n\nRequirements: the Private Origins entitlement, enabled by your Cloudflare account team; Cloudflare One connectivity (IPsec, GRE, CNI, Tunnel or Mesh); and a return route for 100.64.0.0/12 and 2606:4700:cf1:5000::/64. A missing return route was the most common setup failure during the beta.\n\nLimits: no Argo Smart Routing and no Dedicated CDN Egress IPs, and origin health checks need Load Balancing. Cloudflare plans a closed beta for private-to-private traffic in early 2027.",
+        "features": [
+          "WAF, rate limiting, caching and Workers for private origins",
+          "No public IP or inbound ports needed",
+          "Automatic activation for private address ranges",
+          "API support via the private_routing field"
+        ],
+        "requirements": ["Private Origins entitlement from the Cloudflare account team", "Cloudflare One connectivity such as Tunnel or IPsec"],
+        "links": ["Cloudflare announcement"],
+        "pricingNote": "An entitlement enabled by the account team; pricing not stated"
+      }
+    },
+    {
+      "id": "docker-ai-code-review-fake-cve",
+      "section": "testing",
+      "kind": "article",
+      "title": "Docker: بوت مراجعة شيفرة بالذكاء الاصطناعي اخترع ثغرة CVE غير موجودة، ودروس ذلك",
+      "summary": "مقال من Docker في 29 أكتوبر يروي كيف حوّل بوت مراجعة شيفرة ذاتي الاستضافة في CI ترقية بسيطة لـ PostgreSQL من 16.11 إلى 16.13 إلى مراجعة من 1500 كلمة تحذّر من سيطرة معمارية، اعتمادًا على CVE لم يصدر قط، واقترح عزل الخوادم وسحب كل صلاحيات IAM.",
+      "why": "لكل فريق يضيف بوت مراجعة بالذكاء الاصطناعي إلى طلبات الدمج: اجعل مخرجاته غير موثوقة افتراضيًا، وأضف خطوة في CI تتحقق من أي معرّف CVE يذكره مقابل قاعدة NVD قبل أن يتصرف أحد بناءً عليه.",
+      "about": "المقال جزء من سلسلة \"Coding Agent Horror Stories\" على مدونة Docker، وهو مشاركة في مسابقة مجتمعية. البوت كان يعمل بصلاحيات قراءة فقط في CI باستخدام نماذج عبر Ollama، وراجع ترقية روتينية لـ PostgreSQL من 16.11 إلى 16.13، فكتب مراجعة طويلة تصف التغيير بأنه \"سيطرة معمارية\" استنادًا إلى CVE غير موجود، وكتب سكربتات لعزل خوادم \"مصابة\".\n\nالدروس الأساسية: صلاحية القراءة فقط تحدّ مما يفعله البوت لا مما يقوله؛ وعامل مخرجات الوكيل كمدخلات غير موثوقة؛ وتحقّق من كل معرّف CVE مقابل NVD في خطوة CI؛ والعزل في sandbox يحتوي الوكيل لكنه لا يتحقق من صحة كلامه.\n\nيتضمن المقال شرحًا عمليًا لتشغيل البوت داخل Docker Sandboxes عبر أداة sbx، مع تركيب مجلد المشروع للقراءة فقط وسياسة شبكة تسمح بالوصول إلى Ollama فقط.",
+      "features": [
+        "قصة حقيقية لهلوسة CVE في مراجعة آلية",
+        "صلاحية القراءة فقط لا تمنع المخرجات المضللة",
+        "التحقق من معرّفات CVE مقابل NVD في CI",
+        "مثال عملي على Docker Sandboxes وأداة sbx"
+      ],
+      "alternatives": ["ess-coderabbit"],
+      "links": [
+        { "label": "المقال على مدونة Docker", "url": "https://www.docker.com/blog/coding-agent-horror-stories-the-cve-that-did-not-exist/" }
+      ],
+      "url": "https://www.docker.com/blog/coding-agent-horror-stories-the-cve-that-did-not-exist/",
+      "source": "docker.com",
+      "importance": 1,
+      "tags": ["AI code review", "CI", "hallucination", "Docker", "sandbox"],
+      "en": {
+        "title": "Docker: an AI code review bot invented a CVE that doesn't exist, and the lessons",
+        "summary": "A Docker blog post from October 29 tells how a self-hosted AI code review bot in CI turned a simple PostgreSQL bump from 16.11 to 16.13 into a 1,500-word review warning of an architectural takeover, based on a CVE that was never issued, and suggested isolating servers and revoking all IAM access.",
+        "why": "For any team adding an AI review bot to pull requests: treat its output as untrusted by default, and add a CI step that checks any CVE ID it cites against NVD before anyone acts on it.",
+        "about": "The post is part of the \"Coding Agent Horror Stories\" series on Docker's blog and is a community contest submission. The bot ran read-only in CI with models served by Ollama, reviewed a routine PostgreSQL bump from 16.11 to 16.13, and wrote a long review calling the change an \"architectural takeover\" based on a non-existent CVE, along with scripts to isolate \"infected\" nodes.\n\nKey lessons: read-only limits what a bot can do, not what it can say; treat agent output as untrusted input; check every CVE ID against NVD in a CI step; and a sandbox contains the agent but does not fact-check it.\n\nThe post includes a hands-on walkthrough of running the bot inside Docker Sandboxes with the sbx tool, mounting the project folder read-only and using a network policy that allows only Ollama.",
+        "features": [
+          "A real story of a hallucinated CVE in automated review",
+          "Read-only access doesn't stop misleading output",
+          "Check CVE IDs against NVD in CI",
+          "A worked example with Docker Sandboxes and sbx"
+        ],
+        "links": ["Post on the Docker blog"]
+      }
+    },
+    {
+      "id": "pico-css-end-of-maintenance",
+      "section": "frontend",
+      "kind": "article",
+      "title": "Pico CSS لم يعد قيد الصيانة: الإصدار 2.1.1 هو الأخير",
+      "summary": "أعلن مشروع Pico CSS أن الإصدار 2.1.1 هو الإصدار النهائي، وأن مستودعاته أُرشفت فلا مشكلات أو طلبات دمج أو إصدارات جديدة. تبقى حزمة npm وCDN jsDelivr والموقع متاحة لفترة طويلة، والكود برخصة MIT ويمكن تفريعه باسم مختلف.",
+      "why": "إذا كان موقعك أو لوحة تحكم بسيطة تعتمد على Pico، فلن يتعطل شيء الآن، لكن لن تصل تحديثات أو إصلاحات. خطّط للبقاء على 2.1.1 أو الانتقال إلى بديل أو تفريع عند بدء مشروع جديد.",
+      "about": "Pico CSS إطار CSS خفيف يعتمد على تنسيق عناصر HTML الدلالية مباشرة. تقول صفحة الصيانة الرسمية إن الإصدار 2.1.1 هو الأخير، وإن المستودعات أُرشفت فلا تقبل مشكلات أو طلبات دمج أو إصدارات جديدة.\n\nلا شيء يتعطل: حزمة npm وCDN jsDelivr والموقع ستبقى متاحة على المدى الطويل. الكود برخصة MIT ويمكن تفريعه، والتوثيق برخصة CC BY-SA 4.0، لكن اسم Pico وشعاره غير مشمولين بالرخصة، لذا يجب أن يحمل أي تفريع اسمًا آخر. وتذكر الصفحة أن الذكاء الاصطناعي أصبح قادرًا على توليد HTML خفيف مع الـ CSS اللازم له.",
+      "features": [
+        "2.1.1 هو الإصدار النهائي",
+        "المستودعات مؤرشفة دون إصدارات جديدة",
+        "npm وCDN والموقع تبقى متاحة",
+        "الكود برخصة MIT ويمكن تفريعه باسم آخر"
+      ],
+      "alternatives": ["ess-tailwindcss"],
+      "links": [
+        { "label": "صفحة الصيانة الرسمية", "url": "https://picocss.com/docs/maintenance" }
+      ],
+      "url": "https://picocss.com/docs/maintenance",
+      "source": "picocss.com",
+      "importance": 1,
+      "tags": ["CSS", "Pico CSS", "frontend", "deprecation"],
+      "en": {
+        "title": "Pico CSS is no longer maintained: 2.1.1 is the final release",
+        "summary": "The Pico CSS project announced that version 2.1.1 is the final release and that its repositories are archived, so there will be no new issues, pull requests or releases. The npm package, the jsDelivr CDN and the website stay online long term, and the MIT-licensed code can be forked under a different name.",
+        "why": "If your site or a simple admin dashboard relies on Pico, nothing breaks now, but no updates or fixes will come. Plan to stay on 2.1.1, or move to an alternative or a fork when starting a new project.",
+        "about": "Pico CSS is a lightweight CSS framework that styles semantic HTML elements directly. The official maintenance page says 2.1.1 is the final release and that the repositories are archived and accept no new issues, pull requests or releases.\n\nNothing breaks: the npm package, the jsDelivr CDN and the website will stay online long term. The code is MIT-licensed and can be forked, and the docs are CC BY-SA 4.0, but the Pico name and logo are not covered by the license, so any fork must use another name. The page notes that AI can now generate lightweight HTML with the CSS it needs.",
+        "features": [
+          "2.1.1 is the final release",
+          "Repositories archived with no new releases",
+          "npm, the CDN and the website stay online",
+          "MIT code that can be forked under another name"
+        ],
+        "links": ["Official maintenance page"]
+      }
+    }
+  ]
+}

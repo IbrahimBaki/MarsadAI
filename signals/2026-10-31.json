@@ -1,0 +1,84 @@
+{
+  "date": "2026-10-31",
+  "generated": "2026-10-31T05:44:10.526Z",
+  "awesome": [
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "zilliztech/milvus-skill",
+      "url": "https://github.com/zilliztech/milvus-skill",
+      "desc": "zilliztech/milvus-skill - Manage Milvus collections, indexes, vector searches, and RAG workflows",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "heygen-com/hyperframes",
+      "url": "https://github.com/heygen-com/hyperframes",
+      "desc": "heygen-com/hyperframes - Write videos as HTML and render them to MP4: launch films, explainers, captions, charts and 450+ ready-made blocks, by HeyGen",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "BestPrice",
+      "url": "https://github.com/TheBestCo/bestprice-mcp",
+      "desc": "BestPrice - Greek price comparison: products, live shop offers and price history",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "npmscan",
+      "url": "https://github.com/salemalem/npmscan-mcp-plugin",
+      "desc": "npmscan - Audit npm packages for malware before agents install them",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "Keenable",
+      "url": "https://github.com/keenableai/keenable-mcp",
+      "desc": "Keenable - Keyless web search and page fetching with Keenable",
+      "heading": "Table of Contents"
+    }
+  ],
+  "releases": [
+    {
+      "repo": "anthropics/claude-code",
+      "section": "claude",
+      "tag": "v2.1.316",
+      "previous": "v2.1.314",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.316"
+    },
+    {
+      "repo": "anthropics/claude-agent-sdk-python",
+      "section": "claude",
+      "tag": "v0.2.176",
+      "previous": "v0.2.175",
+      "url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.176"
+    },
+    {
+      "repo": "anthropics/claude-agent-sdk-typescript",
+      "section": "claude",
+      "tag": "v0.3.316",
+      "previous": "v0.3.314",
+      "url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.316"
+    },
+    {
+      "repo": "anomalyco/opencode",
+      "section": "agents",
+      "tag": "v2.2.5",
+      "previous": "v2.2.3",
+      "url": "https://github.com/anomalyco/opencode/releases/tag/v2.2.5"
+    },
+    {
+      "repo": "vercel/ai",
+      "section": "llm",
+      "tag": "ai@7.0.159",
+      "previous": "ai@7.0.157",
+      "url": "https://github.com/vercel/ai/releases/tag/ai%407.0.159"
+    }
+  ],
+  "trending": []
+}
