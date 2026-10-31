@@ -1,56 +1,56 @@
 {
   "awesome": {
     "hesreallyhim/awesome-claude-code": {
-      "sha": "6a389ce8142cfcd1375957290327ad9b88e04def",
-      "date": "2026-10-31T05:44:11.772Z"
+      "sha": "1c88da78767b4ae664e76861b7afc17a2754d4d4",
+      "date": "2026-10-31T10:25:38.091Z"
     },
     "jqueryscript/awesome-claude-code": {
       "sha": "4d0db41e85da437e354a8efcac6e8201d3b187d0",
-      "date": "2026-10-31T05:44:12.307Z"
+      "date": "2026-10-31T10:25:38.465Z"
     },
     "ComposioHQ/awesome-claude-skills": {
       "sha": "be2a406907dbc61b73e6827ded415c96139d13a2",
-      "date": "2026-10-31T05:44:13.288Z"
+      "date": "2026-10-31T10:25:38.808Z"
     },
     "travisvn/awesome-claude-skills": {
       "sha": "1da55aa810f206d3fe2005e7e3989b15a275d942",
-      "date": "2026-10-31T05:44:14.329Z"
+      "date": "2026-10-31T10:25:39.153Z"
     },
     "VoltAgent/awesome-agent-skills": {
-      "sha": "464dd87e30278a6f4ad0da21f0bd2ee1c2122f5d",
-      "date": "2026-10-31T05:44:15.524Z"
+      "sha": "a6f9992ceaef05841a9b92e6849d90004a61710c",
+      "date": "2026-10-31T10:25:40.305Z"
     },
     "VoltAgent/awesome-claude-code-subagents": {
-      "sha": "f2e2ea7e0202cc05fa2d469fcb2c57fe08603450",
-      "date": "2026-10-31T05:44:17.053Z"
+      "sha": "408d3c9eee2d0c75c12a3abb5de29e53c2ca6b9e",
+      "date": "2026-10-31T10:25:41.393Z"
     },
     "punkpeye/awesome-mcp-servers": {
       "sha": "f225f117f92626e6b7d5d2912746d9269e3d037b",
-      "date": "2026-10-31T05:44:18.015Z"
+      "date": "2026-10-31T10:25:41.742Z"
     },
     "wong2/awesome-mcp-servers": {
       "sha": "39eb1d76d76e562657f3c657266a504cea159e23",
-      "date": "2026-10-31T05:44:18.977Z"
+      "date": "2026-10-31T10:25:42.095Z"
     },
     "appcypher/awesome-mcp-servers": {
       "sha": "280218b4bba97a49facf929f8012dec5e30384b6",
-      "date": "2026-10-31T05:44:19.910Z"
+      "date": "2026-10-31T10:25:42.461Z"
     },
     "e2b-dev/awesome-ai-agents": {
       "sha": "9596ab1e69fbbb6c95291141c8dab5c181083216",
-      "date": "2026-10-31T05:44:22.083Z"
+      "date": "2026-10-31T10:25:43.878Z"
     },
     "Shubhamsaboo/awesome-llm-apps": {
       "sha": "6c16b23f1bacd0fdf240bb5141ef45e59e82c306",
-      "date": "2026-10-31T05:44:23.038Z"
+      "date": "2026-10-31T10:25:44.232Z"
     },
     "github/awesome-copilot": {
       "sha": "5269f7ea2d6c3a9bfda5ed878b6726cf509121fd",
-      "date": "2026-10-31T05:44:23.534Z"
+      "date": "2026-10-31T10:25:44.584Z"
     },
     "VoltAgent/official-mcp-servers": {
-      "sha": "63f43f5c0e29e511b24598cdfcfa8ee5102bdd21",
-      "date": "2026-10-31T05:44:21.098Z"
+      "sha": "3964a7030860613df3550c6c58974ea10615498f",
+      "date": "2026-10-31T10:25:43.515Z"
     }
   },
   "releases": {
@@ -83,46 +83,57 @@
     "coollabsio/coolify": "v4.5.3"
   },
   "trending": {
-    "Gathin23/cleanyourtv": "2026-10-30",
-    "simbasjungles/free-my-tv": "2026-10-30",
-    "alchaincyf/huashu-motion": "2026-10-30",
-    "morganlinton/BeautifulRust": "2026-10-30",
+    "Gathin23/cleanyourtv": "2026-10-31",
+    "simbasjungles/free-my-tv": "2026-10-31",
+    "alchaincyf/huashu-motion": "2026-10-31",
+    "morganlinton/BeautifulRust": "2026-10-31",
     "reason-machines/reason-network": "2026-10-30",
-    "DenisSergeevitch/ex-ussr-kinship-research": "2026-10-30",
-    "qybaihe/bla": "2026-10-30",
-    "ZiChuanLan/agent-purge": "2026-10-30",
-    "daveebbelaar/bama": "2026-10-30",
-    "mihirgupta0900/tv-home": "2026-10-30",
-    "Jakeschincariol/day-trader-skill": "2026-10-30",
-    "MiniMax-AI/mcode-stack": "2026-10-30",
-    "HeyChengC/wallstreet-explainer": "2026-10-30",
-    "EricJujianZou/rederive": "2026-10-30",
-    "appariciojunior/video-editor-skills": "2026-10-30",
-    "liuhaisi2026212-maker/taishang-laojun": "2026-10-30",
-    "Jakeschincariol/console-skill": "2026-10-30",
-    "andyhuo520/vibe-knowledge": "2026-10-30",
+    "DenisSergeevitch/ex-ussr-kinship-research": "2026-10-31",
+    "qybaihe/bla": "2026-10-31",
+    "ZiChuanLan/agent-purge": "2026-10-31",
+    "daveebbelaar/bama": "2026-10-31",
+    "mihirgupta0900/tv-home": "2026-10-31",
+    "Jakeschincariol/day-trader-skill": "2026-10-31",
+    "MiniMax-AI/mcode-stack": "2026-10-31",
+    "HeyChengC/wallstreet-explainer": "2026-10-31",
+    "EricJujianZou/rederive": "2026-10-31",
+    "appariciojunior/video-editor-skills": "2026-10-31",
+    "liuhaisi2026212-maker/taishang-laojun": "2026-10-31",
+    "Jakeschincariol/console-skill": "2026-10-31",
+    "andyhuo520/vibe-knowledge": "2026-10-31",
     "Speedrunlab/reverse-engineer-anything-self-learning-loop": "2026-10-30",
     "reacher-z/Awesome-REA": "2026-10-30",
-    "huaxialucaicaizi/ai-startup-skills": "2026-10-30",
-    "actionow-ai/vvv": "2026-10-30",
-    "patch-gg/anymove": "2026-10-30",
-    "kanaworksai-hue/audio-studio-mcp": "2026-10-30",
-    "Ebony-Vinyl/EAC-design-world": "2026-10-30",
+    "huaxialucaicaizi/ai-startup-skills": "2026-10-31",
+    "actionow-ai/vvv": "2026-10-31",
+    "patch-gg/anymove": "2026-10-31",
+    "kanaworksai-hue/audio-studio-mcp": "2026-10-31",
+    "Ebony-Vinyl/EAC-design-world": "2026-10-31",
     "adexbn/walk-kcal": "2026-10-30",
-    "emanuele-em/kanzo": "2026-10-30",
-    "mutonby/agentring": "2026-10-30",
-    "XRayLau1/maitaiyi": "2026-10-30",
-    "boyuchengz/canvas-mcp": "2026-10-30",
+    "emanuele-em/kanzo": "2026-10-31",
+    "mutonby/agentring": "2026-10-31",
+    "XRayLau1/maitaiyi": "2026-10-31",
+    "boyuchengz/canvas-mcp": "2026-10-31",
     "wahaha-potato/mcd-coupon-xray": "2026-10-30",
-    "ccch1mneyyy/dsh-Go": "2026-10-30",
-    "didi/helixharness": "2026-10-30",
-    "rextail-ai/lessloc": "2026-10-30",
-    "konic-labs/kubic": "2026-10-30",
-    "MemTensor/MemT-1.0": "2026-10-30",
-    "sit-in/awesome-grokbot-playbooks": "2026-10-30",
-    "0xS4N4TG/kinetograph": "2026-10-30",
+    "ccch1mneyyy/dsh-Go": "2026-10-31",
+    "didi/helixharness": "2026-10-31",
+    "rextail-ai/lessloc": "2026-10-31",
+    "konic-labs/kubic": "2026-10-31",
+    "MemTensor/MemT-1.0": "2026-10-31",
+    "sit-in/awesome-grokbot-playbooks": "2026-10-31",
+    "0xS4N4TG/kinetograph": "2026-10-31",
     "reacher-z/Awesome-CUA": "2026-10-30",
-    "Charonyuu/whatsmyagentdoing": "2026-10-30",
-    "yjid/kensaku": "2026-10-30"
+    "Charonyuu/whatsmyagentdoing": "2026-10-31",
+    "yjid/kensaku": "2026-10-31",
+    "NiazMorshed2007/reanimate": "2026-10-31",
+    "patch-gg/pixelfx": "2026-10-31",
+    "yzlin286-wq/Deepscient": "2026-10-31",
+    "YOLOW92/pagesift": "2026-10-31",
+    "JialaoLiu/dsh-baton": "2026-10-31",
+    "Loping151/dsh-nekowhale-stickers": "2026-10-31",
+    "Xpropel/Pi-Remote": "2026-10-31",
+    "drawthingsai/local-code-community": "2026-10-31",
+    "boardshogunfluctuate/Capri-AI": "2026-10-31",
+    "jmanico/grim-prompter": "2026-10-31",
+    "N1nEmAn/sapper-v2": "2026-10-31"
   }
 }
