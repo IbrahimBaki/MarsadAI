@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-01",
+  "generated": "2026-11-01T05:43:55.531Z",
+  "awesome": [
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "zilliztech/milvus-skill",
+      "url": "https://github.com/zilliztech/milvus-skill",
+      "desc": "zilliztech/milvus-skill - Manage Milvus collections, indexes, vector searches, and RAG workflows",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "heygen-com/hyperframes",
+      "url": "https://github.com/heygen-com/hyperframes",
+      "desc": "heygen-com/hyperframes - Write videos as HTML and render them to MP4: launch films, explainers, captions, charts and 450+ ready-made blocks, by HeyGen",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "BestPrice",
+      "url": "https://github.com/TheBestCo/bestprice-mcp",
+      "desc": "BestPrice - Greek price comparison: products, live shop offers and price history",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "npmscan",
+      "url": "https://github.com/salemalem/npmscan-mcp-plugin",
+      "desc": "npmscan - Audit npm packages for malware before agents install them",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "Keenable",
+      "url": "https://github.com/keenableai/keenable-mcp",
+      "desc": "Keenable - Keyless web search and page fetching with Keenable",
+      "heading": "Table of Contents"
+    }
+  ],
+  "releases": [
+    {
+      "repo": "microsoft/playwright-mcp",
+      "section": "mcp",
+      "tag": "v0.0.84",
+      "previous": "v0.0.83",
+      "url": "https://github.com/microsoft/playwright-mcp/releases/tag/v0.0.84"
+    }
+  ],
+  "trending": []
+}

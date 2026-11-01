@@ -1,0 +1,924 @@
+{
+  "date": "2026-11-01",
+  "headline": "تنبيه أمني: Northflank تطلب من مستخدميها افتراض فك تشفير كل متغيرات البيئة بعد اختراق استُخدمت فيه مفاتيح AI دون إذن، فدوّر أسرارك الآن. ومن GitHub: Agent Merge يصلح فشل CI وتعارضات الدمج، وأدوات أمان جديدة للأسرار والاعتمادات. وتغلق Moonshot نماذج Kimi K2 أمام المستخدمين الجدد.",
+  "headline_en": "Security alert: Northflank tells users to assume every environment variable was decrypted after a breach in which AI keys were used without permission, so rotate your secrets now. From GitHub: Agent Merge fixes CI failures and merge conflicts, plus new security tools for secrets and dependencies. Moonshot closes Kimi K2 models to new users.",
+  "items": [
+    {
+      "id": "northflank-breach-ai-keys",
+      "section": "security",
+      "kind": "article",
+      "title": "اختراق في منصة Northflank: المنصة تطلب افتراض فك تشفير كل متغيرات البيئة، ومفاتيح AI استُخدمت دون إذن",
+      "summary": "أعلنت Northflank يوم 30 أكتوبر حادثًا أمنيًا بعد تنبيه من Wiz، وطلبت من جميع المستخدمين افتراض أن كل متغيرات البيئة على المنصة فُكّ تشفيرها وتدوير كل المفاتيح. وفي مساء اليوم نفسه أبلغ مستخدمون عن استخدام غير مصرّح به لمفاتيح واجهات AI المخزنة عليها.",
+      "why": "إذا كنت تستضيف تطبيقًا أو قاعدة بيانات على Northflank، فدوّر الأسرار الآن، وابدأ بمفاتيح مزوّدي AI والدفع. والدرس عام لأي منصة استضافة: ضع حدود إنفاق على مفاتيح النماذج وتجنّب المفاتيح طويلة العمر.",
+      "about": "بحسب صفحة الحالة الخاصة بـ Northflank، وصل تنبيه تهديد من Wiz الساعة 11:43 بتوقيت UTC يوم 30 أكتوبر، فنشرت المنصة عدة تعديلات على سياسات الشبكة ثم طلبت مساعدة فريق الاستجابة لدى Wiz. وفي 13:58 طلبت من المستخدمين افتراض أن كل متغيرات البيئة فُكّ تشفيرها وتدوير كل المفاتيح، ثم أتاحت تدوير الأسرار لإضافات Postgres وMongoDB، ولاحقًا MySQL وRedis. وفي 23:38 أكّدت أن مستخدمين رأوا مفاتيح AI مخزنة لديها تُستخدم من طرف آخر. وفي 31 أكتوبر فعّلت سجلات التدقيق لكل العملاء بمن فيهم أصحاب الخطة المجانية.\n\nالخطوات الموصى بها: دوّر كل الأسرار في workloads وsecret groups والأسرار العامة، وألغِ مفاتيح مزوّدي AI لدى كل مزوّد وأنشئ مفاتيح جديدة، وعطّل الوصول العام إلى الإضافات إن كان مفعّلًا، وراجع سجلات الاستخدام والفواتير لدى المزوّدين بحثًا عن نشاط غير متوقع.\n\nما لم يُؤكَّد بعد: السبب الجذري، ونطاق العملاء المتأثرين، وما إذا كانت الأسرار قد سُرقت فعلًا، فعبارة «افترض فك التشفير» إجراء احترازي وليست نتيجة تحقيق. وتضع Wiz هذا الحادث ضمن سلسلة اختراقات طالت عدة منصات لمطوري AI خلال أكتوبر، دون ثغرة واحدة تربط بينها.",
+      "features": [
+        "افتراض فك تشفير كل متغيرات البيئة على المنصة",
+        "بلاغات عن استخدام غير مصرّح به لمفاتيح واجهات AI",
+        "تدوير الأسرار متاح لإضافات Postgres وMongoDB وMySQL وRedis",
+        "سجلات التدقيق مفعّلة لكل العملاء منذ 31 أكتوبر"
+      ],
+      "usage": [
+        "دوّر مفاتيح مزوّدي AI والدفع أولًا، ثم بيانات اعتماد السحابة وقواعد البيانات",
+        "راجع لوحة استخدام مزوّد النموذج بحثًا عن طلبات من 30 أكتوبر فما بعد"
+      ],
+      "alternatives": [
+        "ess-trufflehog",
+        "ess-gitleaks"
+      ],
+      "links": [
+        {
+          "label": "تقرير BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/northflank-security-breach-leads-to-abuse-of-customers-ai-api-keys/"
+        },
+        {
+          "label": "الجدول الزمني من عميل متأثر",
+          "url": "https://stategraph.com/blog/northflank-security-incident-2026-10-30"
+        }
+      ],
+      "url": "https://www.bleepingcomputer.com/news/security/northflank-security-breach-leads-to-abuse-of-customers-ai-api-keys/",
+      "source": "bleepingcomputer.com",
+      "importance": 3,
+      "tags": [
+        "security",
+        "breach",
+        "secrets",
+        "API keys",
+        "hosting"
+      ],
+      "en": {
+        "title": "Northflank breach: the platform says to assume every environment variable was decrypted, and AI keys were used without permission",
+        "summary": "Northflank declared a security incident on October 30 after an alert from Wiz and told all users to assume every environment variable on the platform had been decrypted and to rotate all keys. Later that day, users reported unauthorized use of AI API keys stored on the platform.",
+        "why": "If you host an app or database on Northflank, rotate your secrets now, starting with AI provider and payment keys. The lesson applies to any hosting platform: put spend limits on model keys and avoid long-lived keys.",
+        "about": "According to Northflank's status page, a threat alert from Wiz arrived at 11:43 UTC on October 30. The platform pushed several network policy patches and then asked Wiz's incident response team for help. At 13:58 it told users to assume all environment variables had been decrypted and to rotate every key, then enabled secret rotation for Postgres and MongoDB addons, and later MySQL and Redis. At 23:38 it confirmed that users had seen AI keys stored on the platform used by someone else. On October 31 it turned on audit logs for all customers, including free users.\n\nRecommended steps: rotate all secrets in workloads, secret groups and global secrets; revoke AI provider keys with each provider and issue new ones; disable public access to addons where it is enabled; and review provider usage and billing logs for unexpected activity.\n\nNot yet confirmed: the root cause, the scope of affected customers, and whether secrets were actually exfiltrated, since \"assume decrypted\" is a precaution, not a finding. Wiz places this incident in a series of breaches at several AI developer platforms during October, with no single vulnerability linking them.",
+        "features": [
+          "Assume every environment variable on the platform was decrypted",
+          "Reports of unauthorized use of AI API keys",
+          "Secret rotation available for Postgres, MongoDB, MySQL and Redis addons",
+          "Audit logs enabled for all customers since October 31"
+        ],
+        "usage": [
+          "Rotate AI provider and payment keys first, then cloud and database credentials",
+          "Check your model provider's usage dashboard for requests from October 30 onward"
+        ],
+        "links": [
+          "BleepingComputer report",
+          "Timeline from an affected customer"
+        ]
+      }
+    },
+    {
+      "id": "github-agent-merge-pull-requests",
+      "section": "agents",
+      "kind": "tool",
+      "title": "Agent Merge في GitHub: يراقب Copilot طلب الدمج ويصلح فشل CI وتعارضات الدمج في السحابة",
+      "summary": "أصبح Agent Merge مدمجًا في صفحة طلب الدمج على GitHub بعد أن كان متاحًا في تطبيق Copilot وVS Code. تختار «Watch and fix» من صندوق الدمج، فيعمل Copilot في بيئة تطوير سحابية على إصلاح workflows الفاشلة في Actions أو حل تعارضات الدمج، ويمكن ربطه بالدمج التلقائي.",
+      "why": "يوفّر عليك متابعة طلب الدمج يدويًا حتى يصبح جاهزًا: مثلًا يفشل اختبار بعد rebase أو يظهر تعارض مع الفرع الرئيسي فيتولاه Copilot، ثم يدمج GitHub الطلب عند استيفاء الشروط. مفيد للفرق التي لديها طلبات دمج كثيرة صغيرة.",
+      "about": "من صندوق الدمج في طلب الدمج تختار «Watch and fix»، ثم تحدد ما يتولاه Copilot: إصلاح workflows الفاشلة في GitHub Actions، أو حل تعارضات الدمج، أو كليهما. وعند ظهور أحد هذه العوائق يبدأ Copilot العمل في بيئة تطوير سحابية.\n\nيمكن تفعيل Agent Merge افتراضيًا لكل طلبات الدمج من إعدادات Copilot، ويمكن جمعه مع auto-merge بحيث يبقي Copilot الطلب جاهزًا ويدمجه GitHub عند استيفاء كل المتطلبات.\n\nالإتاحة: لمستخدمي خطط Copilot المدفوعة، مع خضوعه لسياسات المؤسسة. ولم يذكر الإعلان هل يستهلك premium requests أو حدودًا للاستخدام. وتنبيه عملي: راجع ما يدفعه الوكيل إلى الفرع قبل الدمج، خاصةً عند حل التعارضات.",
+      "features": [
+        "زر «Watch and fix» في صندوق الدمج",
+        "إصلاح workflows الفاشلة في GitHub Actions",
+        "حل تعارضات الدمج مع الفرع الأساسي",
+        "يعمل مع auto-merge، ويمكن تفعيله افتراضيًا لكل الطلبات"
+      ],
+      "pricing": {
+        "model": "paid",
+        "note": "ضمن خطط Copilot المدفوعة"
+      },
+      "alternatives": [
+        "ess-github-copilot",
+        "ess-claude-code-action"
+      ],
+      "links": [
+        {
+          "label": "إعلان GitHub",
+          "url": "https://github.blog/changelog/2026-10-28-agent-merge-watches-and-fixes-pull-requests-in-the-cloud"
+        },
+        {
+          "label": "نقاش المجتمع",
+          "url": "https://github.com/orgs/community/discussions/211009"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-10-28-agent-merge-watches-and-fixes-pull-requests-in-the-cloud",
+      "source": "github.blog",
+      "importance": 3,
+      "tags": [
+        "GitHub Copilot",
+        "pull requests",
+        "CI",
+        "merge conflicts",
+        "agents"
+      ],
+      "en": {
+        "title": "GitHub Agent Merge: Copilot watches a pull request and fixes CI failures and merge conflicts in the cloud",
+        "summary": "Agent Merge is now built into pull requests on GitHub, after being available in the Copilot app and VS Code. Choose \"Watch and fix\" in the merge box and Copilot works in a cloud development environment to fix failing Actions workflows or resolve merge conflicts. It can be paired with auto-merge.",
+        "why": "It saves you from babysitting a pull request until it is ready: for example, a test fails after a rebase or a conflict with the main branch appears, Copilot handles it, and GitHub merges once requirements are met. Useful for teams with many small pull requests.",
+        "about": "In the pull request's merge box, choose \"Watch and fix\", then pick what Copilot should handle: fixing failing GitHub Actions workflows, resolving merge conflicts, or both. When one of those blockers appears, Copilot starts working in a cloud development environment.\n\nYou can turn Agent Merge on by default for all pull requests in your Copilot settings, and combine it with auto-merge so Copilot keeps the pull request ready and GitHub merges it once all requirements are met.\n\nAvailability: users on paid Copilot plans, subject to organization policies. The announcement does not say whether it uses premium requests or has usage limits. A practical note: review what the agent pushes to the branch before merging, especially for conflict resolutions.",
+        "features": [
+          "A \"Watch and fix\" option in the merge box",
+          "Fixes failing GitHub Actions workflows",
+          "Resolves merge conflicts with the base branch",
+          "Works with auto-merge and can be on by default for all pull requests"
+        ],
+        "links": [
+          "GitHub announcement",
+          "Community discussion"
+        ],
+        "pricingNote": "Included with paid Copilot plans"
+      }
+    },
+    {
+      "id": "github-push-protection-ai-secrets",
+      "section": "security",
+      "kind": "tool",
+      "title": "Push protection في GitHub يمنع الآن أسرارًا لا تطابق أي نمط معروف باستخدام مصنّف AI",
+      "summary": "أضافت GitHub إلى push protection مصنّفًا يفهم السياق، طُوّر مع Microsoft Applied Sciences، ويحلل طريقة استخدام القيمة في الشيفرة ليمنع أسرارًا بلا تنسيق معروف، مثل كلمات المرور والمفاتيح الداخلية. الميزة في معاينة عامة ومعطّلة افتراضيًا، وتقول GitHub إنها ضاعفت أكثر من مرتين عدد عمليات الدفع التي التُقط فيها سر.",
+      "why": "الأنماط الثابتة تلتقط مفاتيح AWS وStripe، لكنها تفوّت كلمة مرور قاعدة بيانات مكتوبة في ملف إعدادات. هذه الميزة توقف هذا النوع قبل وصوله إلى المستودع، وتشمل ما يدفعه وكلاء البرمجة أيضًا.",
+      "about": "يعمل المصنّف بجانب الكواشف المعتمدة على الأنماط، ويغطي عمليات الدفع الجديدة والتعديلات من واجهة GitHub ورفع الملفات. عند اكتشاف سر يرفض التغيير ويحدد موضعه. ولإزالة المنع عليك حذف السر من كل commits الدفع ثم إعادة المحاولة، وتبقى مسارات التجاوز المعتادة كما هي، ويجب على الوكلاء الحصول على إذن قبل أي تجاوز.\n\nالإتاحة: معاينة عامة على github.com للمؤسسات التي لديها GitHub Secret Protection أو GitHub Advanced Security. يجب أن يكون AI-detected secrets وpush protection مفعّلين في المستودع أولًا، ثم تفعّل «Block AI-detected secrets» من Settings > Advanced Security > Secret Protection، أو عبر security configuration على مستوى المؤسسة.\n\nالتكلفة: الكشف بالـ AI داخل push protection يستهلك AI credits ويبدأ احتسابها عند التفعيل، بينما تظل تنبيهات الأسرار المكتشفة بالـ AI بعد الدفع مشمولة دون تكلفة إضافية.",
+      "features": [
+        "مصنّف يحلل سياق استخدام القيمة بدل الاعتماد على النمط وحده",
+        "يغطي الدفع والتعديل من الواجهة ورفع الملفات",
+        "يعمل بجانب الأنماط المعرّفة مسبقًا",
+        "يُفعَّل على مستوى المستودع أو المؤسسة أو enterprise"
+      ],
+      "requirements": [
+        "GitHub Secret Protection أو GitHub Advanced Security",
+        "تفعيل AI-detected secrets وpush protection"
+      ],
+      "pricing": {
+        "model": "paid",
+        "note": "يتطلب GHSP أو GHAS، ويستهلك AI credits عند تفعيله"
+      },
+      "alternatives": [
+        "ess-gitleaks",
+        "ess-trufflehog"
+      ],
+      "links": [
+        {
+          "label": "إعلان GitHub",
+          "url": "https://github.blog/changelog/2026-10-28-push-protection-beyond-predefined-secret-patterns"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-10-28-push-protection-beyond-predefined-secret-patterns",
+      "source": "github.blog",
+      "importance": 2,
+      "tags": [
+        "secret scanning",
+        "push protection",
+        "GitHub",
+        "secrets"
+      ],
+      "en": {
+        "title": "GitHub push protection now blocks secrets that match no known pattern, using an AI classifier",
+        "summary": "GitHub added a context-aware classifier to push protection, built with Microsoft Applied Sciences, that looks at how a value is used in code to block secrets with no known format, such as passwords and internal keys. It is in public preview and off by default, and GitHub says it more than doubled the number of pushes where a secret was caught.",
+        "why": "Fixed patterns catch AWS and Stripe keys but miss a database password written into a config file. This stops that kind of secret before it reaches the repository, including pushes made by coding agents.",
+        "about": "The classifier runs alongside the pattern-based detectors and covers new pushes, edits made in the GitHub UI, and file uploads. When it finds a secret it rejects the change and shows where it is. To clear the block, remove the secret from every commit in the push and try again. Existing bypass flows still apply, and agents must get authorization before any bypass.\n\nAvailability: public preview on github.com for organizations with GitHub Secret Protection or GitHub Advanced Security. AI-detected secrets and push protection must already be on in the repository; then enable \"Block AI-detected secrets\" under Settings > Advanced Security > Secret Protection, or through a security configuration at the organization level.\n\nCost: AI detection in push protection consumes AI credits, billed once you enable it, while AI-detected secret alerts from post-push scanning remain included at no extra charge.",
+        "features": [
+          "A classifier that looks at how a value is used, not only its pattern",
+          "Covers pushes, UI edits and file uploads",
+          "Runs alongside the predefined patterns",
+          "Can be enabled per repository, organization or enterprise"
+        ],
+        "requirements": [
+          "GitHub Secret Protection or GitHub Advanced Security",
+          "AI-detected secrets and push protection enabled"
+        ],
+        "links": [
+          "GitHub announcement"
+        ],
+        "pricingNote": "Requires GHSP or GHAS, and consumes AI credits once enabled"
+      }
+    },
+    {
+      "id": "github-ai-scan-repositories",
+      "section": "security",
+      "kind": "tool",
+      "title": "AI Scan للمستودعات في GitHub: فحص أمني بوكيل AI لكامل المستودع، ومعه فحص خاص بتطبيقات AI",
+      "summary": "أطلقت GitHub في معاينة عامة AI Scan للمستودعات: ماسح يعمل كوكيل يستكشف المستودع كله ويركّز على الشيفرة الأكثر عرضة للثغرات، ويغطي لغات لا يدعمها CodeQL. وفي معاينة عامة أيضًا فحص لتطبيقات AI يكشف حقن التعليمات غير المباشر والصلاحيات الزائدة للوكلاء في طلبات الدمج.",
+      "why": "يفيد إذا كانت قاعدة الشيفرة بلغة لا يغطيها CodeQL، أو إذا كنت تبني وكيلًا يقرأ محتوى غير موثوق مثل تعليقات issues أو صفحات ويب ثم يستدعي أدوات، فيُنبهك إلى المسار الذي قد يصل منه حقن التعليمات إلى النموذج.",
+      "about": "AI Scan للمستودعات يحلل آخر commit على الفرع الافتراضي ضمن ميزانية زمنية ثابتة تحدّ من التكلفة، ويتجاوز ما يبلّغ عنه CodeQL مسبقًا. تظهر النتائج في قائمة تنبيهات code scanning مع autofix وحملات الأمان، لكنها لا تُغلق تلقائيًا عند دمج الإصلاح، بل تحتاج إلى فحص جديد. التفعيل يمر بسياسة على مستوى enterprise ثم تفعيل من مالكي المؤسسة، ولا يتطلب ترخيص Copilot. يشمل المستودعات العامة، والخاصة لدى من لديهم Code Security أو Advanced Security، ويستهلك Code Security AI credits مع إمكانية وضع ميزانية.\n\nأما فحص تطبيقات AI فيعمل على طلبات الدمج بجانب CodeQL، ويكشف حقن التعليمات غير المباشر (XPIA)، وكشف البيانات الحساسة دون ضوابط صلاحيات، و«الصلاحيات المفرطة» حين يملك الوكيل قدرات أكبر من مهمته، ويعرض إرشادات المعالجة داخل طلب الدمج. يتطلب ترخيص GitHub Advanced Security، وهو متاح على github.com فقط وليس على GitHub Enterprise Server.\n\nتنبيه: لم تنشر GitHub قائمة اللغات المدعومة لأي من الميزتين.",
+      "features": [
+        "فحص وكيلي لكامل المستودع بميزانية زمنية ثابتة",
+        "يغطي لغات خارج دعم CodeQL ولا يكرر نتائجه",
+        "فحص تطبيقات AI لحقن التعليمات غير المباشر والصلاحيات المفرطة",
+        "التنبيهات تعمل مع autofix وحملات الأمان"
+      ],
+      "pricing": {
+        "model": "paid",
+        "note": "يستهلك Code Security AI credits، والمستودعات الخاصة تتطلب Code Security أو Advanced Security"
+      },
+      "alternatives": [
+        "ess-semgrep",
+        "ess-claude-security-review"
+      ],
+      "links": [
+        {
+          "label": "إعلان AI Scan للمستودعات",
+          "url": "https://github.blog/changelog/2026-10-28-ai-scan-for-repositories-in-public-preview"
+        },
+        {
+          "label": "فحص تطبيقات AI (نقاش المجتمع)",
+          "url": "https://github.com/orgs/community/discussions/210230"
+        },
+        {
+          "label": "التوثيق",
+          "url": "https://docs.github.com/en/code-security/concepts/code-scanning/ai-scan-for-repositories"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-10-28-ai-scan-for-repositories-in-public-preview",
+      "source": "github.blog",
+      "importance": 2,
+      "tags": [
+        "code scanning",
+        "SAST",
+        "prompt injection",
+        "GitHub",
+        "AI agents"
+      ],
+      "en": {
+        "title": "GitHub AI Scan for repositories: an agentic security scan of the whole repository, plus scanning for AI apps",
+        "summary": "GitHub launched AI Scan for repositories in public preview: an agentic scanner that explores the whole repository, focuses on the code most likely to hold vulnerabilities, and covers languages CodeQL does not support. Also in public preview is scanning for AI applications, which flags indirect prompt injection and excessive agent permissions in pull requests.",
+        "why": "Useful when a codebase is in a language CodeQL does not cover, or when you build an agent that reads untrusted content such as issue comments or web pages and then calls tools; it points to the path through which injected instructions could reach the model.",
+        "about": "AI Scan for repositories analyzes the latest commit on the default branch within a fixed time budget that bounds cost, and skips what CodeQL already reports. Findings appear in the code scanning alert list with autofix and security campaigns, but they do not close automatically when a fix is merged; you run a new scan. Enabling it goes through an enterprise policy, then organization owners, and no Copilot license is needed. It covers public repositories, and private ones with Code Security or Advanced Security, and consumes Code Security AI credits with optional budgets.\n\nScanning for AI applications runs on pull requests alongside CodeQL and flags indirect prompt injection (XPIA), sensitive data access without authorization controls, and \"excessive agency\" where an agent has more capabilities than its task needs, with mitigation guidance in the pull request. It requires a GitHub Advanced Security license and is on github.com only, not GitHub Enterprise Server.\n\nNote: GitHub has not published the supported languages for either feature.",
+        "features": [
+          "An agentic scan of the whole repository with a fixed time budget",
+          "Covers languages outside CodeQL and does not duplicate its findings",
+          "AI-app scanning for indirect prompt injection and excessive agency",
+          "Alerts work with autofix and security campaigns"
+        ],
+        "links": [
+          "AI Scan for repositories announcement",
+          "AI-app scanning (community discussion)",
+          "Documentation"
+        ],
+        "pricingNote": "Consumes Code Security AI credits; private repositories need Code Security or Advanced Security"
+      }
+    },
+    {
+      "id": "dependabot-reachability-analysis",
+      "section": "security",
+      "kind": "tool",
+      "title": "Dependabot يخبرك الآن هل تستدعي شيفرتك الدالة المصابة فعلًا (معاينة عامة لـ JavaScript وTypeScript)",
+      "summary": "أضافت GitHub تحليل الوصولية إلى تنبيهات Dependabot: يبني CodeQL رسمًا للاستدعاءات بين شيفرتك واعتماداتها، ويبحث عن مسار يصل إلى الدالة المصابة، ثم يصنّف كل تنبيه: Reachable أو Potentially reachable أو Unreachable أو Reachability unavailable. مجاني خلال المعاينة على GitHub Enterprise Cloud.",
+      "why": "يقلل ضجيج التنبيهات: بدل إصلاح 40 تنبيهًا بالترتيب نفسه، تبدأ بالتي تصل إليها شيفرتك فعلًا. مفيد لفرق مشاريع Node وReact الكبيرة التي تغرق في تنبيهات الاعتمادات.",
+      "about": "يعمل التحليل في workflow مُدار من GitHub Actions دون أي تثبيت، ويعتمد على بيانات منسّقة تحدد الدوال المصابة في كل حزمة. يدعم حاليًا JavaScript وTypeScript فقط في المستودعات التي فيها ملف lock لـ npm أو Yarn أو pnpm، ويغطي كل نصائح JavaScript التي راجعتها GitHub.\n\nالتفعيل معطّل افتراضيًا: من security configuration على مستوى المؤسسة، أو من Settings > Advanced Security > Dependabot للمستودع. قد يستغرق الفحص الأول من دقائق إلى ساعات، ثم يُعاد يوميًا ما دامت هناك تنبيهات مفتوحة. يمكنك التصفية بالحكم في صفحة التنبيهات أو جلبه عبر REST API.\n\nالقيود: لا يدعم self-hosted runners، وقد لا يعمل مع بعض monorepos أو المستودعات التي فيها ملفات manifest في عدة مجلدات، والحكم لا يغلق التنبيه ولا يتجاهله. استخدمه مع درجة الخطورة وEPSS ومعرفتك بالتطبيق.",
+      "features": [
+        "أربعة أحكام لكل تنبيه حسب وجود مسار استدعاء",
+        "يعمل تلقائيًا في workflow مُدار دون تثبيت",
+        "تصفية وفرز بالحكم، ومتاح عبر REST API",
+        "مجاني في المعاينة ولا يتطلب ترخيص Advanced Security"
+      ],
+      "requirements": [
+        "GitHub Enterprise Cloud",
+        "مستودع JavaScript أو TypeScript بملف lock لـ npm أو Yarn أو pnpm"
+      ],
+      "pricing": {
+        "model": "free",
+        "note": "مجاني خلال المعاينة على GitHub Enterprise Cloud"
+      },
+      "alternatives": [
+        "ess-socket-dev",
+        "ess-trivy"
+      ],
+      "links": [
+        {
+          "label": "إعلان GitHub",
+          "url": "https://github.blog/changelog/2026-10-28-prioritize-dependabot-alerts-with-reachability-analysis/"
+        },
+        {
+          "label": "التوثيق",
+          "url": "https://docs.github.com/en/code-security/concepts/supply-chain-security/about-reachability-analysis-for-dependabot-alerts"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-10-28-prioritize-dependabot-alerts-with-reachability-analysis/",
+      "source": "github.blog",
+      "importance": 2,
+      "tags": [
+        "Dependabot",
+        "supply chain",
+        "CodeQL",
+        "JavaScript",
+        "GitHub"
+      ],
+      "en": {
+        "title": "Dependabot now tells you whether your code actually calls the vulnerable function (public preview for JavaScript and TypeScript)",
+        "summary": "GitHub added reachability analysis to Dependabot alerts: CodeQL builds a call graph across your code and its dependencies, looks for a path to the vulnerable function, and labels each alert Reachable, Potentially reachable, Unreachable or Reachability unavailable. It is free during the preview on GitHub Enterprise Cloud.",
+        "why": "It cuts alert noise: instead of fixing 40 alerts in the same order, you start with the ones your code actually reaches. Useful for teams with large Node and React projects drowning in dependency alerts.",
+        "about": "The analysis runs in a managed GitHub Actions workflow with nothing to install, using curated data that identifies the vulnerable functions in each package. It currently supports only JavaScript and TypeScript in repositories with an npm, Yarn or pnpm lockfile, and covers all GitHub-reviewed JavaScript advisories.\n\nIt is off by default: enable it through a security configuration at the organization level, or under Settings > Advanced Security > Dependabot for one repository. The first scan can take minutes to hours, then reruns daily while there are open alerts. You can filter by verdict on the alerts page or fetch it through the REST API.\n\nLimits: no self-hosted runners, some monorepos or repositories with manifests in several directories may not be supported, and a verdict never closes or dismisses an alert. Use it alongside severity, EPSS and your knowledge of the application.",
+        "features": [
+          "Four verdicts per alert based on whether a call path exists",
+          "Runs automatically in a managed workflow, nothing to install",
+          "Filter and sort by verdict, also available via the REST API",
+          "Free in preview and no Advanced Security license required"
+        ],
+        "requirements": [
+          "GitHub Enterprise Cloud",
+          "A JavaScript or TypeScript repository with an npm, Yarn or pnpm lockfile"
+        ],
+        "links": [
+          "GitHub announcement",
+          "Documentation"
+        ],
+        "pricingNote": "Free during the preview on GitHub Enterprise Cloud"
+      }
+    },
+    {
+      "id": "github-replica-ai-prototyping",
+      "section": "design",
+      "kind": "repo",
+      "repo": "github/replica",
+      "title": "Replica من GitHub: أداة مفتوحة المصدر لبناء نماذج أولية تفاعلية بنظام التصميم الخاص بفريقك",
+      "summary": "أطلق فريق GitHub Design أداة Replica برخصة MIT: يحدد المصممون الإرشادات والمكونات، ثم يصف أي شخص في الفريق ما يريده بلغة طبيعية داخل تطبيق GitHub Copilot، فيُبنى نموذج أولي تفاعلي يعرض بجانب المحادثة. ويمكن نشر النماذج على Replica Hub مستضاف ذاتيًا لجمع التعليقات.",
+      "why": "يسمح لمدير المنتج أو المهندس بتجربة فكرة شاشة جديدة بمكونات المنتج الحقيقية بدل رسم تقريبي، مثل صفحة إعدادات في لوحة تحكم، ثم مشاركتها مع الفريق للتعليق قبل كتابة الشيفرة النهائية.",
+      "about": "تتكون Replica من أربعة أجزاء: قوالب بداية (Starters) فيها مهارات مشتركة لـ Copilot، وإضافة Replica التي تضيف لوحة canvas تعرض النموذج قيد التشغيل بجانب المحادثة، وReplica Hub اختياري لاستضافة النماذج المنشورة والتعليق عليها، وGitHub Action لبناء النماذج قبل نشرها. هناك قالبان: Minimal لتكييفه مع نظام التصميم الخاص بك، وCoreAI Sandbox بمكونات جاهزة.\n\nللعمل محليًا تحتاج تطبيق GitHub Copilot وGit وNode.js مع npm على macOS أو Linux، دون خادم أو نطاق. أما النشر والتعليقات فيحتاجان خادم Linux ونطاقًا مخصصًا مع wildcard DNS وHTTPS. يمكن استخدام نماذج GitHub ضمن خطة Copilot، أو ربط مزوّد نماذج خاص بك دون خطة (في معاينة عامة)، ومشاهدة النماذج المنشورة لا تتطلب اشتراكًا.\n\nالبيانات: الـ Hub يسجل نشاط النشر والمراجعة في قاعدة بياناته ويحتفظ بها 90 يومًا، ولا يرسلها تلقائيًا إلى GitHub. الأداة قيد التطوير النشط، وخطوات الإعداد موجودة في أدلة المستودع.",
+      "features": [
+        "نماذج أولية تفاعلية من مكونات وإرشادات نظام التصميم الخاص بك",
+        "لوحة canvas تعرض النموذج بجانب محادثة Copilot",
+        "Replica Hub اختياري ومستضاف ذاتيًا للنشر والتعليقات",
+        "قالبا بداية: Minimal وCoreAI Sandbox",
+        "يدعم نماذج GitHub أو مزوّد نماذج خاص بك"
+      ],
+      "usage": [
+        "Read the Replica README at https://github.com/github/replica. Ask which getting-started path fits my needs, then guide me through it step by step."
+      ],
+      "requirements": [
+        "تطبيق GitHub Copilot",
+        "Git وNode.js مع npm على macOS أو Linux",
+        "للـ Hub: خادم Linux ونطاق مع wildcard DNS وHTTPS"
+      ],
+      "pricing": {
+        "model": "oss",
+        "note": "برخصة MIT، ويتطلب خطة Copilot أو مزوّد نماذج خاصًا بك"
+      },
+      "alternatives": [
+        "ess-figma-make",
+        "ess-v0",
+        "ess-google-stitch"
+      ],
+      "links": [
+        {
+          "label": "المستودع على GitHub",
+          "url": "https://github.com/github/replica"
+        },
+        {
+          "label": "إعلان GitHub",
+          "url": "https://github.blog/changelog/2026-10-28-introducing-replica-an-open-source-ai-prototyping-tool"
+        }
+      ],
+      "url": "https://github.com/github/replica",
+      "source": "github.com",
+      "importance": 2,
+      "tags": [
+        "prototyping",
+        "design system",
+        "GitHub Copilot",
+        "UI",
+        "open source"
+      ],
+      "en": {
+        "title": "GitHub Replica: an open-source tool for building interactive prototypes with your team's design system",
+        "summary": "GitHub Design released Replica under the MIT license: designers define the guidance and components, then anyone on the team describes what they want in natural language in the GitHub Copilot app and gets an interactive prototype shown next to the conversation. Prototypes can be published to a self-hosted Replica Hub for feedback.",
+        "why": "It lets a product manager or engineer try a new screen idea with the product's real components instead of a rough sketch, such as a settings page in an admin dashboard, then share it with the team for comments before writing production code.",
+        "about": "Replica has four parts: Starters with shared skills for Copilot, the Replica plugin that adds a canvas showing the running prototype beside the conversation, an optional Replica Hub that hosts published prototypes for comments, and a GitHub Action that builds prototypes for publishing. There are two starters: Minimal, to adapt to your own design system, and CoreAI Sandbox with ready-made components.\n\nLocal prototyping needs the GitHub Copilot app, Git and Node.js with npm on macOS or Linux, with no server or domain. Publishing and comments need a Linux server and a dedicated domain with wildcard DNS and HTTPS. You can use GitHub-hosted models with a Copilot plan, or connect your own model provider without a plan (in public preview), and viewing published prototypes needs no subscription.\n\nData: the Hub records publishing and review activity in its own database, keeps it for 90 days, and does not send it to GitHub automatically. The tool is under active development, and setup steps are in the repository's guides.",
+        "features": [
+          "Interactive prototypes from your design system's components and guidance",
+          "A canvas that shows the prototype next to the Copilot conversation",
+          "An optional, self-hosted Replica Hub for publishing and comments",
+          "Two starters: Minimal and CoreAI Sandbox",
+          "Works with GitHub-hosted models or your own model provider"
+        ],
+        "usage": [
+          "Read the Replica README at https://github.com/github/replica. Ask which getting-started path fits my needs, then guide me through it step by step."
+        ],
+        "requirements": [
+          "The GitHub Copilot app",
+          "Git and Node.js with npm on macOS or Linux",
+          "For the Hub: a Linux server and a domain with wildcard DNS and HTTPS"
+        ],
+        "links": [
+          "GitHub repository",
+          "GitHub announcement"
+        ],
+        "pricingNote": "MIT licensed; needs a Copilot plan or your own model provider"
+      }
+    },
+    {
+      "id": "copilot-sdk-becomes-microsoft-copilot-sdk",
+      "section": "agents",
+      "kind": "article",
+      "title": "GitHub Copilot SDK يتحول إلى Microsoft Copilot SDK، دون تغييرات مطلوبة الآن",
+      "summary": "أعلنت GitHub أن Copilot SDK سيصبح Microsoft Copilot SDK، وهو الواجهة البرمجية لـ «Microsoft Copilot harness»، الأساس المشترك للوكلاء في منتجات Microsoft وGitHub. سينتقل المستودع إلى منظمة Microsoft على مراحل، وقد تبقى أسماء الحزم والتوثيق بالاسم القديم خلال الانتقال.",
+      "why": "إذا كنت تبني وكيلًا داخل تطبيقك على Copilot SDK، فلا يلزمك تغيير شيء الآن، لكن تابع المستودع لمعرفة أسماء الحزم الجديدة وموعد الانتقال قبل تحديث الاعتمادات.",
+      "about": "بحسب الإعلان، سيكون Microsoft Copilot SDK الواجهة البرمجية للـ harness المشترك الذي تستخدمه منتجات Microsoft وGitHub لتشغيل الوكلاء. بدأ تحديث العلامة والتوثيق، ويجري تجهيز المستودع للانتقال إلى منظمة Microsoft.\n\nالانتقال مرحلي: قد تظل أسماء الحزم ومساحات الأسماء وبعض التوثيق تحمل اسم GitHub Copilot SDK لفترة، وتنص GitHub على أنه «لا تغييرات فورية مطلوبة من المستخدمين الحاليين»، وأن الدعم لم يتغير.\n\nلم يذكر الإعلان أسماء الحزم الجديدة أو جدولًا زمنيًا أو خطوات ترحيل؛ هذه التفاصيل ستُنشر في مستودع github/copilot-sdk.",
+      "alternatives": [
+        "ess-github-copilot",
+        "ess-claude-agent-sdk",
+        "ess-openai-agents-sdk"
+      ],
+      "links": [
+        {
+          "label": "إعلان GitHub",
+          "url": "https://github.blog/changelog/2026-10-28-github-copilot-sdk-is-becoming-microsoft-copilot-sdk"
+        },
+        {
+          "label": "مستودع SDK",
+          "url": "https://github.com/github/copilot-sdk"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-10-28-github-copilot-sdk-is-becoming-microsoft-copilot-sdk",
+      "source": "github.blog",
+      "importance": 1,
+      "tags": [
+        "Copilot SDK",
+        "agents",
+        "SDK",
+        "Microsoft"
+      ],
+      "en": {
+        "title": "GitHub Copilot SDK is becoming Microsoft Copilot SDK, with no changes required for now",
+        "summary": "GitHub announced that the Copilot SDK will become Microsoft Copilot SDK, the programmable interface to the \"Microsoft Copilot harness\", a shared agent foundation across Microsoft and GitHub products. The repository will move to the Microsoft organization in phases, and package names and docs may keep the old name during the transition.",
+        "why": "If you build an in-app agent on the Copilot SDK, you need to change nothing now, but watch the repository for the new package names and move date before updating dependencies.",
+        "about": "According to the announcement, Microsoft Copilot SDK will be the programmable interface to the shared harness that Microsoft and GitHub products use to run agents. Branding and documentation updates have started, and the repository is being prepared to move to the Microsoft organization.\n\nThe migration is phased: package names, namespaces and some docs may still say GitHub Copilot SDK for a while. GitHub states that \"no immediate changes are required for existing users\" and that support is unchanged.\n\nThe announcement gives no new package names, timeline or migration steps; those will be published in the github/copilot-sdk repository.",
+        "links": [
+          "GitHub announcement",
+          "SDK repository"
+        ]
+      }
+    },
+    {
+      "id": "openai-python-3-42-agent-compaction",
+      "section": "llm",
+      "kind": "release",
+      "repo": "openai/openai-python",
+      "title": "مكتبة OpenAI لـ Python 3.42: إعدادات ضغط سياق الوكيل، ومراجعة الجلسات، ووعي تجريبي بالوقت",
+      "summary": "صدرت openai-python 3.42.0 يوم 31 أكتوبر بدعم ميزات Agents API الجديدة: إعدادات ضغط السياق (compaction) للوكلاء، وإعدادات مراجعة الجلسات والأدوات، ووعي تجريبي بالوقت، إلى جانب طبقات ترميز لتعديل الصور وتحسينات في استعادة اتصالات WebSocket.",
+      "why": "إذا كان لديك وكيل يعمل لجلسات طويلة على Agents API، فيمكنك الآن التحكم في متى وكيف يُلخَّص سياقه بدل الوصول إلى حد نافذة السياق، مثل وكيل دعم فني يتابع محادثة طويلة مع عميل.",
+      "about": "أبرز ما في الإصدار 3.42.0: إعدادات compaction لسياق الوكيل، وإعدادات لمراجعة جلسات الوكيل والأدوات، وميزة تجريبية لوعي الوكيل بالوقت. وتشير تقارير إلى أن الضغط يمكن أن يعمل في الخلفية أو بشكل حاجب، وأن الأدوات يمكن تحديثها أثناء الجلسة.\n\nإضافات أخرى: طبقات markup لتعديل الصور، وإدارة مفاتيح خارجية على مستوى المؤسسة، وأوامر DTMF لمكالمات SIP، ودعم تحديث تنسيق الاستجابة، وتحسينات في استعادة WebSocket وتسخينه، مع إبقاء مفاتيح API القابلة للاستدعاء محصورة في كل طلب.\n\nسبقه الإصدار 3.41.0 في 28 أكتوبر بتصفية جلسات الوكلاء حسب metadata. التفاصيل الكاملة لكل خيار موجودة في توثيق OpenAI الخاص بالـ compaction.",
+      "features": [
+        "إعدادات ضغط سياق الوكيل (compaction)",
+        "إعدادات مراجعة الجلسات والأدوات",
+        "وعي تجريبي بالوقت للوكلاء",
+        "طبقات markup لتعديل الصور",
+        "تحسين استعادة WebSocket وتسخينه"
+      ],
+      "install": [
+        {
+          "label": "التثبيت أو التحديث",
+          "cmd": "pip install openai"
+        }
+      ],
+      "alternatives": [
+        "ess-openai-agents-sdk",
+        "ess-vercel-ai-sdk"
+      ],
+      "links": [
+        {
+          "label": "سجل التغييرات",
+          "url": "https://github.com/openai/openai-python/blob/main/CHANGELOG.md"
+        },
+        {
+          "label": "دليل compaction",
+          "url": "https://developers.openai.com/api/docs/guides/compaction"
+        }
+      ],
+      "url": "https://github.com/openai/openai-python/releases",
+      "source": "github.com",
+      "importance": 2,
+      "tags": [
+        "OpenAI",
+        "Python SDK",
+        "agents",
+        "context compaction"
+      ],
+      "en": {
+        "title": "OpenAI Python library 3.42: agent context compaction settings, session review and experimental time awareness",
+        "summary": "openai-python 3.42.0 shipped on October 31 with support for new Agents API features: context compaction settings for agents, session review and tool settings, and experimental time awareness, plus image edit markup overlays and better WebSocket recovery.",
+        "why": "If you run a long-lived agent on the Agents API, you can now control when and how its context is summarized instead of hitting the context window limit, such as a support agent following a long conversation with a customer.",
+        "about": "Highlights of 3.42.0: agent context compaction settings, settings for reviewing agent sessions and tools, and an experimental time-awareness feature for agents. Reports say compaction can run in the background or in blocking mode, and that tools can be updated mid-session.\n\nOther additions: markup overlays for image edits, organization external key management, DTMF commands for SIP calls, response format updates, and improved WebSocket recovery and warmup, with callable API keys kept scoped to each request.\n\nIt follows 3.41.0 on October 28, which added filtering agent sessions by metadata. Full details for each option are in OpenAI's compaction docs.",
+        "features": [
+          "Agent context compaction settings",
+          "Session review and tool settings",
+          "Experimental time awareness for agents",
+          "Markup overlays for image edits",
+          "Better WebSocket recovery and warmup"
+        ],
+        "install": [
+          "Install or upgrade"
+        ],
+        "links": [
+          "Changelog",
+          "Compaction guide"
+        ]
+      }
+    },
+    {
+      "id": "kimi-k2-closed-to-new-users",
+      "section": "llm",
+      "kind": "model",
+      "title": "Moonshot تغلق نماذج Kimi K2 أمام المستخدمين الجدد منذ 31 أكتوبر، والإيقاف الكامل نهاية ديسمبر",
+      "summary": "لم تعد نماذج سلسلة Kimi K2 متاحة للحسابات الجديدة على منصة Kimi منذ 31 أكتوبر 2026، ولا يتأثر المستخدمون الحاليون حاليًا. وتخطط Moonshot لإيقاف كل نماذج K2 بنهاية ديسمبر 2026، وتوصي بالانتقال إلى kimi-k3.1-pro بنافذة سياق مليون token.",
+      "why": "إذا كان تطبيقك أو أداة برمجة لديك تستدعي kimi-k2 أو kimi-k2-thinking مباشرةً، فخطط للترحيل الآن واختبر kimi-k3.1-pro على مهامك قبل نهاية ديسمبر، لأن الطلبات ستفشل بعدها.",
+      "about": "تقول صفحة النماذج في منصة Kimi إن نماذج K2 لن تكون متاحة للمستخدمين المسجلين حديثًا بدءًا من 31 أكتوبر 2026، وإن الشركة تخطط لإيقاف كل نماذج السلسلة بنهاية ديسمبر 2026 دون تحديد يوم بعينه.\n\nمن النماذج المذكورة: kimi-k2-0905-preview وkimi-k2-0711-preview وkimi-k2-turbo-preview وkimi-k2-thinking وkimi-k2-thinking-turbo، كما أن kimi-k2.5 مُدرج كمتوقف منذ 31 أغسطس. البديل الموصى به kimi-k3.1-pro بنافذة سياق مليون token، مع دليل ترحيل في التوثيق.\n\nتنبيه: تحتوي الصفحة نفسها على إشعار سابق بإيقاف سلسلة kimi-k2 في 25 مايو، وهو ما يتعارض مع الجدول الجديد، لذا تحقق من حالة النموذج الذي تستخدمه في حسابك.",
+      "features": [
+        "منذ 31 أكتوبر: لا وصول لنماذج K2 للحسابات الجديدة",
+        "الإيقاف الكامل مخطط له بنهاية ديسمبر 2026",
+        "البديل kimi-k3.1-pro بسياق مليون token",
+        "المستخدمون الحاليون غير متأثرين حتى الإيقاف"
+      ],
+      "pricing": {
+        "model": "paid",
+        "note": "واجهة برمجية مدفوعة حسب الاستخدام"
+      },
+      "alternatives": [
+        "ess-openrouter",
+        "ess-artificial-analysis"
+      ],
+      "links": [
+        {
+          "label": "صفحة نماذج Kimi",
+          "url": "https://platform.kimi.ai/docs/models"
+        }
+      ],
+      "url": "https://platform.kimi.ai/docs/models",
+      "source": "platform.kimi.ai",
+      "importance": 2,
+      "tags": [
+        "Kimi",
+        "Moonshot",
+        "deprecation",
+        "LLM API"
+      ],
+      "en": {
+        "title": "Moonshot closes Kimi K2 models to new users as of October 31, with full retirement at the end of December",
+        "summary": "Kimi K2 series models are no longer available to newly registered accounts on the Kimi platform as of October 31, 2026; existing users are not affected for now. Moonshot plans to retire all K2 models by the end of December 2026 and recommends kimi-k3.1-pro, which has a 1M-token context window.",
+        "why": "If your app or coding tool calls kimi-k2 or kimi-k2-thinking directly, plan the migration now and test kimi-k3.1-pro on your tasks before the end of December, when requests will start failing.",
+        "about": "The Kimi platform's models page says K2 models will not be available to newly registered users starting October 31, 2026, and that the company plans to retire all K2 series models by the end of December 2026, without naming a specific day.\n\nModels listed include kimi-k2-0905-preview, kimi-k2-0711-preview, kimi-k2-turbo-preview, kimi-k2-thinking and kimi-k2-thinking-turbo; kimi-k2.5 is listed as discontinued since August 31. The recommended replacement is kimi-k3.1-pro with a 1M-token context window, with a migration guide in the docs.\n\nNote: the same page carries an earlier notice that the kimi-k2 series was discontinued on May 25, which conflicts with the new timeline, so check the status of the model you use in your account.",
+        "features": [
+          "Since October 31: no K2 access for new accounts",
+          "Full retirement planned for the end of December 2026",
+          "Replacement: kimi-k3.1-pro with a 1M-token context",
+          "Existing users unaffected until retirement"
+        ],
+        "links": [
+          "Kimi models page"
+        ],
+        "pricingNote": "Paid, usage-based API"
+      }
+    },
+    {
+      "id": "keenable-mcp-web-search",
+      "section": "mcp",
+      "kind": "mcp",
+      "repo": "keenableai/keenable-mcp",
+      "title": "Keenable MCP: بحث ويب حي وجلب الصفحات بصيغة Markdown دون مفتاح API",
+      "summary": "خادم MCP مستضاف من Keenable يقدّم أداتين: search_web_pages للبحث الحي في الويب، وfetch_page_content لجلب صفحة وتحويلها إلى Markdown نظيف. يعمل دون مفتاح بحد 1000 طلب في الساعة، ومفتاح API اختياري يرفع الحد. مُدرج في سجل MCP الرسمي برخصة MIT.",
+      "why": "يمنح وكيل البرمجة قدرة البحث في الويب وقراءة التوثيق دون إنشاء حساب أو إدارة مفتاح، مثل البحث عن آخر تغييرات واجهة مكتبة قبل ترقيتها، مع تصفية النتائج حسب الموقع أو تاريخ النشر.",
+      "about": "الخادم مستضاف على https://api.keenable.ai/mcp عبر Streamable HTTP، لذا تكفي معظم العملاء التي تدعم MCP البعيد (Cursor وCline وVS Code وموصّلات Claude المخصصة) إضافة هذا الرابط. وللعملاء التي تقبل أمر stdio فقط توجد حزمة npm صغيرة باسم @keenable/mcp تعمل كجسر إلى الخادم نفسه دون أي منطق بحث محلي.\n\nأداة search_web_pages تقبل query إلى جانب خيارات اختيارية: mode وsite وpublished_after/published_before وacquired_after/acquired_before. وأداة fetch_page_content تقبل url وmax_chars (الافتراضي 50000).\n\nالاستخدام دون مفتاح محدود بـ 1000 طلب في الساعة، ويمكن تمرير مفتاح عبر ترويسة X-API-Key أو متغير KEENABLE_API_KEY. تنبيه: الاستعلامات والصفحات تمر عبر خدمة خارجية، فلا ترسل عبرها روابط داخلية أو بيانات حساسة.",
+      "features": [
+        "أداتان: بحث ويب حي وجلب صفحة كـ Markdown",
+        "دون مفتاح بحد 1000 طلب في الساعة",
+        "تصفية بالموقع وتاريخ النشر",
+        "خادم بعيد عبر Streamable HTTP أو جسر stdio عبر npx"
+      ],
+      "install": [
+        {
+          "label": "تشغيل جسر stdio للعملاء التي لا تدعم MCP البعيد",
+          "cmd": "npx -y @keenable/mcp"
+        }
+      ],
+      "usage": [
+        "ابحث عن ملاحظات إصدار Tailwind CSS المنشورة بعد 1 أكتوبر 2026 ولخّص التغييرات الكاسرة."
+      ],
+      "pricing": {
+        "model": "freemium",
+        "note": "مجاني دون مفتاح بحد 1000 طلب في الساعة، ومفتاح API يرفع الحد"
+      },
+      "alternatives": [
+        "ess-firecrawl-mcp",
+        "ess-context7"
+      ],
+      "links": [
+        {
+          "label": "المستودع على GitHub",
+          "url": "https://github.com/keenableai/keenable-mcp"
+        },
+        {
+          "label": "التوثيق",
+          "url": "https://docs.keenable.ai/mcp-server"
+        }
+      ],
+      "url": "https://github.com/keenableai/keenable-mcp",
+      "source": "github.com",
+      "importance": 2,
+      "tags": [
+        "MCP",
+        "web search",
+        "fetch",
+        "agents"
+      ],
+      "en": {
+        "title": "Keenable MCP: live web search and page fetching as Markdown, with no API key",
+        "summary": "A hosted MCP server from Keenable with two tools: search_web_pages for live web search and fetch_page_content to fetch a page as clean Markdown. It works keyless at 1,000 requests per hour, and an optional API key lifts the cap. It is listed in the official MCP Registry and MIT licensed.",
+        "why": "It gives a coding agent web search and docs reading without creating an account or managing a key, such as looking up a library's latest API changes before an upgrade, with results filtered by site or publish date.",
+        "about": "The server is hosted at https://api.keenable.ai/mcp over Streamable HTTP, so most clients with remote MCP support (Cursor, Cline, VS Code and Claude custom connectors) just add that URL. For clients that only accept a stdio command there is a small npm package, @keenable/mcp, that bridges to the same server with no local search logic.\n\nsearch_web_pages takes a query plus optional mode, site, published_after/published_before and acquired_after/acquired_before. fetch_page_content takes a url and max_chars (default 50000).\n\nKeyless use is capped at 1,000 requests per hour; a key can be passed via the X-API-Key header or the KEENABLE_API_KEY variable. Note: queries and pages go through an external service, so do not send internal URLs or sensitive data through it.",
+        "features": [
+          "Two tools: live web search and fetching a page as Markdown",
+          "Keyless at 1,000 requests per hour",
+          "Filter by site and publish date",
+          "Remote server over Streamable HTTP, or a stdio bridge via npx"
+        ],
+        "install": [
+          "Run the stdio bridge for clients without remote MCP support"
+        ],
+        "usage": [
+          "Search for Tailwind CSS release notes published after October 1, 2026 and summarize the breaking changes."
+        ],
+        "links": [
+          "GitHub repository",
+          "Documentation"
+        ],
+        "pricingNote": "Free and keyless at 1,000 requests per hour; an API key lifts the cap"
+      }
+    },
+    {
+      "id": "milvus-skill",
+      "section": "skills",
+      "kind": "skill",
+      "repo": "zilliztech/milvus-skill",
+      "title": "milvus-skill: مهارة رسمية من Zilliz تعلّم الوكيل إدارة Milvus والبحث المتجهي وRAG عبر pymilvus",
+      "summary": "مهارة وكيل من Zilliz، الشركة المطورة لـ Milvus، تشرح للنموذج كيف يستخدم pymilvus: الاتصال بـ Milvus Lite أو Standalone أو Cluster أو Zilliz Cloud، وإنشاء المجموعات والفهارس، والإدراج والبحث، والبحث الهجين وBM25، وإدارة الأقسام والصلاحيات. تأتي مع ملفات مرجعية لكل مجال.",
+      "why": "يقلل أخطاء الوكيل حين يكتب شيفرة لقاعدة بيانات متجهية، مثل بناء بحث دلالي أو خط RAG لتوثيق منتج، لأن المهارة تزوده بأنماط pymilvus الصحيحة بدل التخمين من ذاكرة النموذج.",
+      "about": "تتكون المهارة من SKILL.md رئيسي يغطي الاتصال وإدارة المجموعات وعمليات المتجهات والفهارس، ومجلد references فيه ملفات مفصّلة: collection.md لأنواع البيانات والمخطط، وvector.md للإدراج والبحث والبحث الهجين والبحث النصي والمكررات والمرشحات، وindex.md لأنواع الفهارس والمقاييس، إضافةً إلى partition.md وdatabase.md وuser-role.md، وpatterns.md لأنماط RAG والبحث الدلالي والهجين.\n\nتدعم القدرات: البحث الهجين مع إعادة الترتيب RRF أو Weighted، والبحث النصي الكامل بـ BM25، والتكرار المقسّم على النتائج الكبيرة، وفهارس AUTOINDEX وHNSW وIVF_FLAT وغيرها.\n\nالمتطلبات: Python 3.8 أو أحدث وحزمة pymilvus. المستودع صغير وحديث، فراجع المهارة قبل الاعتماد عليها في بيئة الإنتاج.",
+      "features": [
+        "يغطي Milvus Lite وStandalone وCluster وZilliz Cloud",
+        "إنشاء المجموعات والفهارس والإدراج والبحث",
+        "بحث هجين مع RRF أو Weighted وبحث نصي بـ BM25",
+        "إدارة الأقسام وقواعد البيانات وRBAC",
+        "ملفات مرجعية لأنماط RAG والبحث الدلالي"
+      ],
+      "install": [
+        {
+          "label": "أضف المهارة إلى Claude Code",
+          "cmd": "claude skill add --url https://github.com/zilliztech/milvus-skill"
+        },
+        {
+          "label": "ثبّت pymilvus",
+          "cmd": "pip install pymilvus"
+        }
+      ],
+      "requirements": [
+        "Python 3.8+",
+        "pymilvus"
+      ],
+      "pricing": {
+        "model": "oss"
+      },
+      "alternatives": [
+        "ess-qdrant",
+        "ess-pgvector",
+        "ess-anthropics-skills"
+      ],
+      "links": [
+        {
+          "label": "المستودع على GitHub",
+          "url": "https://github.com/zilliztech/milvus-skill"
+        }
+      ],
+      "url": "https://github.com/zilliztech/milvus-skill",
+      "source": "github.com",
+      "importance": 1,
+      "tags": [
+        "Milvus",
+        "vector database",
+        "RAG",
+        "agent skill"
+      ],
+      "en": {
+        "title": "milvus-skill: an official Zilliz skill that teaches agents to manage Milvus, vector search and RAG with pymilvus",
+        "summary": "An agent skill from Zilliz, the company behind Milvus, that shows the model how to use pymilvus: connecting to Milvus Lite, Standalone, Cluster or Zilliz Cloud, creating collections and indexes, inserting and searching, hybrid search and BM25, and managing partitions and permissions. It ships with reference files for each area.",
+        "why": "It cuts agent mistakes when writing code for a vector database, such as building semantic search or a RAG pipeline over product docs, because the skill gives it correct pymilvus patterns instead of guessing from the model's memory.",
+        "about": "The skill has a main SKILL.md covering connection, collection management, vector operations and indexes, plus a references folder with detailed files: collection.md for data types and schemas, vector.md for insert, search, hybrid search, full-text search, iterators and filters, index.md for index and metric types, along with partition.md, database.md and user-role.md, and patterns.md for RAG, semantic and hybrid search patterns.\n\nCapabilities include hybrid search with RRF or Weighted reranking, BM25 full-text search, paginated iteration over large result sets, and AUTOINDEX, HNSW, IVF_FLAT and other indexes.\n\nRequirements: Python 3.8 or newer and pymilvus. The repository is small and new, so review the skill before relying on it in production.",
+        "features": [
+          "Covers Milvus Lite, Standalone, Cluster and Zilliz Cloud",
+          "Collections, indexes, inserts and search",
+          "Hybrid search with RRF or Weighted, and BM25 full-text search",
+          "Partition, database and RBAC management",
+          "Reference files for RAG and semantic search patterns"
+        ],
+        "install": [
+          "Add the skill to Claude Code",
+          "Install pymilvus"
+        ],
+        "requirements": [
+          "Python 3.8+",
+          "pymilvus"
+        ],
+        "links": [
+          "GitHub repository"
+        ]
+      }
+    },
+    {
+      "id": "elevenlabs-sfx-v3",
+      "section": "video",
+      "kind": "model",
+      "title": "ElevenLabs SFX v3: نموذج مؤثرات صوتية يتبع الأوصاف المركّبة بدقة أكبر",
+      "summary": "أطلقت ElevenLabs نموذج المؤثرات الصوتية SFX v3 بالمعرّف eleven_text_to_sound_v3، وهو أدق في تنفيذ الأوصاف متعددة الأجزاء، وأفضل في الأصوات البشرية والموسيقية، وأقل تشويشًا في الأصوات الحادة مثل الأجراس والصفير. متاح عبر الواجهة البرمجية وElevenCreative بوصول محدود.",
+      "why": "يفيد صنّاع الفيديو ومطوري الألعاب والتطبيقات الذين يحتاجون مؤثرات مخصصة بسرعة، مثل مشهد فيه مطر ورعد وباب يُغلق في تسجيل واحد، بدل تركيب عدة مقاطع يدويًا.",
+      "about": "بحسب توثيق ElevenLabs، يتبع SFX v3 الأوصاف المركّبة بدقة أكبر، ويتعامل بشكل أفضل مع الأصوات البشرية والموسيقية، ويبدو أكثر طبيعية، وأقل عرضة للتشويه في الترددات العالية. لاستخدامه في الواجهة البرمجية اضبط model_id على eleven_text_to_sound_v3، وهو متاح أيضًا في ElevenCreative داخل Sound Effects وFlows وStudio.\n\nمدة التوليد من 0.1 إلى 30 ثانية لكل طلب، وتحديد المدة يكلّف 40 credit لكل ثانية بحسب التوثيق.\n\nالقيود: الوصول محدود وقد لا يتوفر في كل المناطق، والحسابات غير المؤهلة تتلقى خطأ Unknown model. كما يشير التوثيق إلى أن النموذج لا يلتزم دائمًا بعدد التكرارات المحدد في الوصف.",
+      "features": [
+        "دقة أعلى في الأوصاف متعددة الأجزاء",
+        "أصوات بشرية وموسيقية أفضل",
+        "تشويه أقل في الترددات العالية",
+        "حتى 30 ثانية لكل توليد عبر الواجهة البرمجية وElevenCreative"
+      ],
+      "usage": [
+        "Heavy rain on a tin roof, distant rolling thunder, then a wooden door slams shut"
+      ],
+      "pricing": {
+        "model": "freemium",
+        "note": "بنظام الرصيد: 40 credit لكل ثانية عند تحديد المدة، والوصول محدود حاليًا"
+      },
+      "alternatives": [
+        "ess-elevenlabs"
+      ],
+      "links": [
+        {
+          "label": "توثيق المؤثرات الصوتية",
+          "url": "https://elevenlabs.io/docs/overview/capabilities/sound-effects"
+        }
+      ],
+      "url": "https://elevenlabs.io/docs/overview/capabilities/sound-effects",
+      "source": "elevenlabs.io",
+      "importance": 2,
+      "tags": [
+        "ElevenLabs",
+        "sound effects",
+        "audio",
+        "API"
+      ],
+      "en": {
+        "title": "ElevenLabs SFX v3: a sound-effects model that follows multi-part prompts more closely",
+        "summary": "ElevenLabs released the SFX v3 sound-effects model, ID eleven_text_to_sound_v3. It follows multi-part prompts more closely, handles vocal and musical sounds better, and clips less on sharp sounds like chimes and whistles. It is available in the API and ElevenCreative with limited access.",
+        "why": "Useful for video creators and game or app developers who need custom effects fast, such as a scene with rain, thunder and a door slamming in one recording, instead of layering several clips by hand.",
+        "about": "According to ElevenLabs' docs, SFX v3 follows combined prompts more closely, handles vocal and musical sounds better, sounds more natural, and is less likely to clip at high frequencies. In the API, set model_id to eleven_text_to_sound_v3; it is also available in ElevenCreative under Sound Effects, Flows and Studio.\n\nEach generation can be 0.1 to 30 seconds long, and specifying a duration costs 40 credits per second according to the docs.\n\nLimits: access is limited and may not be available in every region, and accounts without access get an Unknown model error. The docs also note that exact repetition counts in prompts are not always followed.",
+        "features": [
+          "More accurate on multi-part prompts",
+          "Better vocal and musical sounds",
+          "Less clipping at high frequencies",
+          "Up to 30 seconds per generation via the API and ElevenCreative"
+        ],
+        "usage": [
+          "Heavy rain on a tin roof, distant rolling thunder, then a wooden door slams shut"
+        ],
+        "links": [
+          "Sound effects docs"
+        ],
+        "pricingNote": "Credit-based: 40 credits per second when a duration is set; access is limited for now"
+      }
+    },
+    {
+      "id": "vercel-firewall-ai-crawlers-assistants",
+      "section": "devops",
+      "kind": "tool",
+      "title": "Vercel Firewall: تحكّم منفصل في زواحف تدريب AI ومساعدات AI التي تجلب صفحاتك",
+      "summary": "قسّمت Vercel قواعد AI Bots المُدارة في Firewall إلى فئتين: زواحف AI التي تجمع المحتوى للفهرسة والتدريب، ومساعدات AI التي تجلب الصفحات استجابةً لطلب مستخدم. يمكنك تسجيل كل فئة أو حظرها بشكل مستقل، والميزة متاحة على كل الخطط.",
+      "why": "يتيح لك منع استخدام محتوى موقعك في تدريب النماذج مع إبقائه متاحًا للمساعدات التي ترسل لك زوارًا، مثل مدونة تقنية أو متجر إلكتروني يريد الظهور في إجابات AI دون أن يصبح مادة تدريب.",
+      "about": "تحدّث Vercel قواعد الفئتين تلقائيًا كلما ظهرت روبوتات جديدة. من لوحة التحكم: افتح Security > Firewall > Rules في المشروع، وفعّل AI Bots تحت Bot Management، ثم حدد إجراء كل فئة وانشر التغييرات.\n\nومن سطر الأوامر يكون الحظر بالإجراء deny والتسجيل بالإجراء log، ثم تراجع الفرق قبل النشر. وفي اليوم نفسه (29 أكتوبر) أصبح Node.js 26 LTS متاحًا للبناء وVercel Functions وهو الافتراضي للمشاريع الجديدة.\n\nتنبيه: الحظر يعتمد على تعريف الروبوتات لنفسها وعلى قوائم Vercel، فلن يوقف كل زاحف يتنكر كمتصفح عادي.",
+      "features": [
+        "فئتان منفصلتان: AI crawlers وAI assistants",
+        "إجراء log أو deny لكل فئة",
+        "قواعد تُحدَّث تلقائيًا مع ظهور روبوتات جديدة",
+        "متاح على كل الخطط ومن لوحة التحكم أو CLI"
+      ],
+      "install": [
+        {
+          "label": "حظر زواحف AI",
+          "cmd": "vercel firewall rules edit ai-bots --category ai-crawlers --action deny --yes"
+        },
+        {
+          "label": "تسجيل مساعدات AI فقط",
+          "cmd": "vercel firewall rules edit ai-bots --category ai-assistants --action log --yes"
+        },
+        {
+          "label": "مراجعة التغييرات",
+          "cmd": "vercel firewall diff"
+        },
+        {
+          "label": "نشر القواعد",
+          "cmd": "vercel firewall publish"
+        }
+      ],
+      "pricing": {
+        "model": "freemium",
+        "note": "قواعد AI Bots متاحة على كل خطط Vercel"
+      },
+      "alternatives": [
+        "ess-nextjs"
+      ],
+      "links": [
+        {
+          "label": "إعلان Vercel",
+          "url": "https://vercel.com/changelog/block-ai-crawlers-and-assistants-independently-with-managed-rules"
+        },
+        {
+          "label": "توثيق إدارة الروبوتات",
+          "url": "https://www.vercel.com/docs/bot-management"
+        }
+      ],
+      "url": "https://vercel.com/changelog/block-ai-crawlers-and-assistants-independently-with-managed-rules",
+      "source": "vercel.com",
+      "importance": 2,
+      "tags": [
+        "Vercel",
+        "firewall",
+        "AI crawlers",
+        "bots"
+      ],
+      "en": {
+        "title": "Vercel Firewall: separate control over AI training crawlers and AI assistants that fetch your pages",
+        "summary": "Vercel split the AI Bots managed ruleset in its Firewall into two categories: AI crawlers that collect content for indexing and training, and AI assistants that fetch pages in response to a user request. You can log or block each category independently, on all plans.",
+        "why": "It lets you keep your site's content out of model training while still letting assistants that send you visitors read it, such as a tech blog or online store that wants to appear in AI answers without becoming training data.",
+        "about": "Vercel updates the rules for both categories as new bots appear. In the dashboard: open Security > Firewall > Rules in your project, enable AI Bots under Bot Management, set an action for each category, and publish.\n\nFrom the CLI, blocking uses the deny action and logging uses log, then you review the diff before publishing. On the same day (October 29), Node.js 26 LTS became generally available for builds and Vercel Functions and is the default for new projects.\n\nNote: blocking relies on bots identifying themselves and on Vercel's lists, so it will not stop every crawler that disguises itself as a normal browser.",
+        "features": [
+          "Two separate categories: AI crawlers and AI assistants",
+          "A log or deny action per category",
+          "Rules updated automatically as new bots appear",
+          "Available on all plans, from the dashboard or CLI"
+        ],
+        "install": [
+          "Block AI crawlers",
+          "Only log AI assistants",
+          "Review the changes",
+          "Publish the rules"
+        ],
+        "links": [
+          "Vercel announcement",
+          "Bot management docs"
+        ],
+        "pricingNote": "The AI Bots ruleset is available on all Vercel plans"
+      }
+    },
+    {
+      "id": "cloudflare-agents-skills-from-files",
+      "section": "automation",
+      "kind": "library",
+      "title": "Cloudflare Agents SDK: المهارات أصبحت ملفات تُحمَّل من Workspace أو R2 أو من الشيفرة",
+      "summary": "غيّرت Cloudflare طريقة تحميل Agent Skills في Agents SDK v0.32.0 وThink v0.23.0: المهارة مجلد فيه SKILL.md، ويُحمَّل من Workspace أو حاوية R2 أو من manifest داخل الشيفرة، ويُعاد تحميل المصادر قبل كل دورة. التغيير كاسر للشيفرة التي تستخدم agents/skills مباشرةً.",
+      "why": "يمكنك تحديث سلوك وكيل منشور على Workers بتعديل ملف SKILL.md في R2 دون إعادة نشر، مثل إضافة إجراء جديد لوكيل دعم فني، مع استخدام صيغة المهارات المعيارية نفسها التي يفهمها Claude Code ووكلاء آخرون.",
+      "about": "المهارة مجلد يحتوي SKILL.md بترويسة YAML (name وdescription وحقول اختيارية) يليها نص Markdown، مع مجلدات اختيارية scripts وreferences وassets. يرى الوكيل فقط قائمة بأسماء المهارات وأوصافها، ويحمّل المهارة كاملة عندما تطابق المهمة.\n\nفي وكيل Think تُرجع المصادر من getSkills(): skills.workspace() لملفات Workspace من @cloudflare/computer، وskills.r2(bucket, { prefix }) لكائنات R2، وskills.manifest() للمهارات المعرّفة في الشيفرة. تُطبَّق المصادر بالترتيب والأول يفوز عند تكرار الاسم، ويحصل الوكيل على أدوات activate_skill وread_skill_resource وrun_skill_script (الأخيرة تتطلب مشغّل سكربتات).\n\nتنبيه: الميزة تجريبية وقد تتغير واجهتها، والتحديث كاسر لمن يستورد agents/skills مباشرةً، فراجع الشيفرة قبل الترقية.",
+      "features": [
+        "مهارات بصيغة SKILL.md القياسية",
+        "مصادر تحميل: Workspace وR2 وmanifest في الشيفرة",
+        "إعادة تحميل المصادر قبل كل دورة",
+        "أدوات activate_skill وread_skill_resource وrun_skill_script"
+      ],
+      "requirements": [
+        "Agents SDK v0.32.0+",
+        "Think v0.23.0+"
+      ],
+      "pricing": {
+        "model": "oss",
+        "note": "الـ SDK مفتوح المصدر، والتشغيل على Cloudflare Workers يخضع لأسعار المنصة"
+      },
+      "alternatives": [
+        "ess-agent-skills-standard",
+        "ess-mastra"
+      ],
+      "links": [
+        {
+          "label": "توثيق Agent Skills",
+          "url": "https://developers.cloudflare.com/agents/skills/"
+        }
+      ],
+      "url": "https://developers.cloudflare.com/agents/skills/",
+      "source": "developers.cloudflare.com",
+      "importance": 2,
+      "tags": [
+        "Cloudflare",
+        "Agents SDK",
+        "agent skills",
+        "Workers"
+      ],
+      "en": {
+        "title": "Cloudflare Agents SDK: skills are now files loaded from a Workspace, R2 or code",
+        "summary": "Cloudflare changed how Agent Skills load in Agents SDK v0.32.0 and Think v0.23.0: a skill is a folder with a SKILL.md, loaded from a Workspace, an R2 bucket or a manifest in code, and sources are reloaded before every turn. The change is breaking for code that uses agents/skills directly.",
+        "why": "You can change the behavior of an agent deployed on Workers by editing a SKILL.md in R2 without redeploying, such as adding a new procedure to a support agent, using the same standard skill format that Claude Code and other agents understand.",
+        "about": "A skill is a folder with a SKILL.md that has YAML frontmatter (name, description and optional fields) followed by Markdown, plus optional scripts, references and assets folders. The agent sees only a catalog of skill names and descriptions and loads the full skill when a task matches.\n\nIn a Think agent you return sources from getSkills(): skills.workspace() for files in a @cloudflare/computer Workspace, skills.r2(bucket, { prefix }) for R2 objects, and skills.manifest() for skills defined in code. Sources apply in order and the first one wins on a name clash, and the agent gets activate_skill, read_skill_resource and run_skill_script tools (the last needs a script runner).\n\nNote: the feature is experimental and its API may change, and the update is breaking for anyone importing agents/skills directly, so check your code before upgrading.",
+        "features": [
+          "Skills in the standard SKILL.md format",
+          "Load sources: Workspace, R2 and an in-code manifest",
+          "Sources reloaded before every turn",
+          "activate_skill, read_skill_resource and run_skill_script tools"
+        ],
+        "requirements": [
+          "Agents SDK v0.32.0+",
+          "Think v0.23.0+"
+        ],
+        "links": [
+          "Agent Skills docs"
+        ],
+        "pricingNote": "The SDK is open source; running on Cloudflare Workers follows platform pricing"
+      }
+    }
+  ]
+}

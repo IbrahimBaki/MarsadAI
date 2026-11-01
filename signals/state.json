@@ -1,56 +1,56 @@
 {
   "awesome": {
     "hesreallyhim/awesome-claude-code": {
-      "sha": "1c88da78767b4ae664e76861b7afc17a2754d4d4",
-      "date": "2026-10-31T10:25:38.091Z"
+      "sha": "62aae650742c29627539fc2220cfa39b3586eee9",
+      "date": "2026-11-01T05:43:56.518Z"
     },
     "jqueryscript/awesome-claude-code": {
       "sha": "4d0db41e85da437e354a8efcac6e8201d3b187d0",
-      "date": "2026-10-31T10:25:38.465Z"
+      "date": "2026-11-01T05:43:56.957Z"
     },
     "ComposioHQ/awesome-claude-skills": {
       "sha": "be2a406907dbc61b73e6827ded415c96139d13a2",
-      "date": "2026-10-31T10:25:38.808Z"
+      "date": "2026-11-01T05:43:57.826Z"
     },
     "travisvn/awesome-claude-skills": {
       "sha": "1da55aa810f206d3fe2005e7e3989b15a275d942",
-      "date": "2026-10-31T10:25:39.153Z"
+      "date": "2026-11-01T05:43:58.660Z"
     },
     "VoltAgent/awesome-agent-skills": {
-      "sha": "a6f9992ceaef05841a9b92e6849d90004a61710c",
-      "date": "2026-10-31T10:25:40.305Z"
+      "sha": "464dd87e30278a6f4ad0da21f0bd2ee1c2122f5d",
+      "date": "2026-11-01T05:43:59.717Z"
     },
     "VoltAgent/awesome-claude-code-subagents": {
-      "sha": "408d3c9eee2d0c75c12a3abb5de29e53c2ca6b9e",
-      "date": "2026-10-31T10:25:41.393Z"
+      "sha": "f2e2ea7e0202cc05fa2d469fcb2c57fe08603450",
+      "date": "2026-11-01T05:44:01.143Z"
     },
     "punkpeye/awesome-mcp-servers": {
       "sha": "f225f117f92626e6b7d5d2912746d9269e3d037b",
-      "date": "2026-10-31T10:25:41.742Z"
+      "date": "2026-11-01T05:44:01.978Z"
     },
     "wong2/awesome-mcp-servers": {
       "sha": "39eb1d76d76e562657f3c657266a504cea159e23",
-      "date": "2026-10-31T10:25:42.095Z"
+      "date": "2026-11-01T05:44:02.925Z"
     },
     "appcypher/awesome-mcp-servers": {
       "sha": "280218b4bba97a49facf929f8012dec5e30384b6",
-      "date": "2026-10-31T10:25:42.461Z"
+      "date": "2026-11-01T05:44:03.763Z"
     },
     "e2b-dev/awesome-ai-agents": {
       "sha": "9596ab1e69fbbb6c95291141c8dab5c181083216",
-      "date": "2026-10-31T10:25:43.878Z"
+      "date": "2026-11-01T05:44:05.768Z"
     },
     "Shubhamsaboo/awesome-llm-apps": {
       "sha": "6c16b23f1bacd0fdf240bb5141ef45e59e82c306",
-      "date": "2026-10-31T10:25:44.232Z"
+      "date": "2026-11-01T05:44:06.630Z"
     },
     "github/awesome-copilot": {
       "sha": "5269f7ea2d6c3a9bfda5ed878b6726cf509121fd",
-      "date": "2026-10-31T10:25:44.584Z"
+      "date": "2026-11-01T05:44:07.112Z"
     },
     "VoltAgent/official-mcp-servers": {
-      "sha": "3964a7030860613df3550c6c58974ea10615498f",
-      "date": "2026-10-31T10:25:43.515Z"
+      "sha": "63f43f5c0e29e511b24598cdfcfa8ee5102bdd21",
+      "date": "2026-11-01T05:44:04.914Z"
     }
   },
   "releases": {
@@ -62,7 +62,7 @@
     "google-gemini/gemini-cli": "v0.66.0",
     "anomalyco/opencode": "v2.2.5",
     "cline/cline": "v4.1.26",
-    "microsoft/playwright-mcp": "v0.0.83",
+    "microsoft/playwright-mcp": "v0.0.84",
     "github/github-mcp-server": "v2.0.3",
     "upstash/context7": "@upstash/context7-mcp@4.4.4",
     "laravel/framework": "v13.39.0",
