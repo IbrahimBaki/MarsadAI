@@ -1,0 +1,1235 @@
+{
+  "date": "2026-11-02",
+  "headline": "OpenAI وGoogle وMicrosoft وAnthropic تدعم رمزًا موحّدًا في robots.txt لرفض تدريب AI على المواقع، وOpenAI تمنح مشتركي ChatGPT رصيد API بقيمة اشتراكهم. وتنبيهان أمنيان: Docker Desktop 4.97 يصلح تسريب المفاتيح في السجلات، وNativePHP Mobile يصلح سبع ثغرات. ومن DeepSeek نموذج أولي مفتوح لوكيل برمجة استباقي.",
+  "headline_en": "OpenAI, Google, Microsoft and Anthropic back a single robots.txt token to opt sites out of AI training, and OpenAI gives ChatGPT subscribers API credits matching their plan. Two security alerts: Docker Desktop 4.97 fixes keys leaking into logs, and NativePHP Mobile fixes seven vulnerabilities. DeepSeek also publishes an open prototype of a proactive coding agent.",
+  "items": [
+    {
+      "id": "ai-training-opt-out-token-robots-txt",
+      "section": "devops",
+      "kind": "article",
+      "title": "رمز موحّد في robots.txt لمنع تدريب AI على موقعك: تدعمه OpenAI وGoogle وMicrosoft وAnthropic",
+      "summary": "أعلنت OpenAI وGoogle وMicrosoft وAnthropic في 30 أكتوبر أنها ستحترم رمزًا واحدًا في robots.txt باسم __usage_ai-training يمنع استخدام محتوى الموقع في تدريب النماذج. الرمز مقترح في مسودة IETF فردية، ومواعيد التطبيق تختلف بين الشركات.",
+      "why": "بدل كتابة قاعدة منفصلة لكل زاحف تدريب، يكفي سطران في robots.txt لإعلان رفض التدريب لدى أكبر أربع شركات. مفيد لأصحاب المدونات والمتاجر ومواقع التوثيق الذين يريدون البقاء في البحث مع رفض التدريب.",
+      "about": "الرمز هو اسم وكيل مستخدم خاص هو __usage_ai-training. تكتب في robots.txt سطر User-Agent بهذا الاسم ثم Disallow: / لرفض التدريب على الموقع كله، ويمكن إضافة أسطر Allow لاستثناءات محددة. وهو إشارة تخص التدريب فقط وليس أمرًا للزحف، فقد تستمر الروبوتات في جلب الصفحات.\n\nالمواعيد: بدأت Anthropic التطبيق بالفعل، وتستهدف OpenAI الأشهر القادمة، وMicrosoft يوم 1 فبراير 2027، وGoogle خلال 2027. وتقول Google إن الموقع الذي يستخدم الرمز دون ذكر Google-Extended سيُعامل كأنه منع Google-Extended. وتخطط Microsoft لإعداد منفصل يخص جلب المحتوى الحي لإجابات المساعدات.\n\nالحدود: المقترح مسودة IETF فردية بعنوان «Machine-Readable Training Preference Signal» مؤرخة في 30 أكتوبر 2026 وتنتهي في 3 مايو 2027، وليست معيارًا رسميًا. وتصفه OpenAI بأنه آلية تنسيق وليس ضابطًا أمنيًا، فالزواحف غير الملتزمة قد تتجاهله، وتعديل robots.txt لا يحذف محتوى موجودًا بالفعل في مجموعات بيانات أو نماذج مدرّبة.",
+      "features": [
+        "رمز واحد __usage_ai-training بدل قاعدة لكل زاحف",
+        "يخص التدريب فقط ولا يمنع الزحف أو الفهرسة",
+        "Anthropic بدأت التطبيق وMicrosoft تستهدف 1 فبراير 2027",
+        "Google تعامله كمنع لـ Google-Extended"
+      ],
+      "usage": [
+        "User-Agent: __usage_ai-training\nDisallow: /"
+      ],
+      "links": [
+        {
+          "label": "تقرير The Verge",
+          "url": "https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out"
+        },
+        {
+          "label": "ملخص AI Weekly",
+          "url": "https://aiweekly.co/alerts/openai-google-microsoft-anthropic-back-one-ai-opt-out-token"
+        }
+      ],
+      "url": "https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out",
+      "source": "theverge.com",
+      "importance": 3,
+      "tags": [
+        "robots.txt",
+        "AI training",
+        "crawlers",
+        "web",
+        "standards"
+      ],
+      "en": {
+        "title": "One robots.txt token to opt out of AI training, backed by OpenAI, Google, Microsoft and Anthropic",
+        "summary": "On October 30, OpenAI, Google, Microsoft and Anthropic said they will honor a single robots.txt token, __usage_ai-training, that keeps a site's content out of model training. The token comes from an individual IETF draft, and rollout dates differ between the companies.",
+        "why": "Instead of writing a separate rule for each training crawler, two lines in robots.txt declare a training opt-out to the four biggest companies. Useful for blogs, online stores and documentation sites that want to stay in search but out of training data.",
+        "about": "The token is a special user-agent name, __usage_ai-training. You add a User-Agent line with that name followed by Disallow: / to opt the whole site out of training, and can add Allow lines for exceptions. It is a training signal only, not a crawl directive, so bots may still fetch pages.\n\nTimelines: Anthropic has already started implementing it, OpenAI aims for the coming months, Microsoft for February 1, 2027 and Google for 2027. Google says a site that uses the token without naming Google-Extended will be treated as if it had disallowed Google-Extended. Microsoft plans a separate setting for pulling live content into assistant answers.\n\nLimits: the proposal is an individual IETF draft, \"Machine-Readable Training Preference Signal\", dated October 30, 2026 and expiring May 3, 2027, with no formal standing. OpenAI calls it a coordination mechanism, not a security control, so non-compliant scrapers can ignore it, and updating robots.txt does not remove content already in existing datasets or trained models.",
+        "features": [
+          "One token, __usage_ai-training, instead of a rule per crawler",
+          "Covers training only, not crawling or indexing",
+          "Anthropic has started; Microsoft targets February 1, 2027",
+          "Google treats it as a Google-Extended opt-out"
+        ],
+        "usage": [
+          "User-Agent: __usage_ai-training\nDisallow: /"
+        ],
+        "links": [
+          "The Verge report",
+          "AI Weekly summary"
+        ]
+      }
+    },
+    {
+      "id": "docker-desktop-4-97-credential-logs",
+      "section": "security",
+      "kind": "article",
+      "title": "Docker Desktop 4.97 يصلح تسريب مفاتيح API ورموز OAuth نصًا واضحًا في السجلات (CVE-2026-114409)",
+      "summary": "صدر Docker Desktop 4.97.0 في 26 أكتوبر ويصلح ثغرة CVE-2026-114409: الإصدارات من 4.39 حتى ما قبل 4.97 قد تكتب مفاتيح API لخدمات خارجية ورموز OAuth نصًا واضحًا في السجلات المحلية وحزم التشخيص. ويضيف الإصدار خيار Docker VMM التجريبي على Windows.",
+      "why": "حزم التشخيص تُرفق عادة في تذاكر الدعم وتُشارك مع الفريق، فقد تحمل مفاتيح حقيقية. حدّث Docker Desktop، ثم احذف أو نظّف السجلات وحزم التشخيص القديمة، ودوّر أي مفتاح ربما ظهر فيها.",
+      "about": "بحسب وصف الثغرة، كانت حمولات IPC داخل Docker Desktop لا تُنقّى بالكامل، فتُكتب مفاتيح API لخدمات خارجية ورموز OAuth كما هي في سجلات التطبيق المحلية وفي حزم التشخيص. ومن يملك صلاحية قراءة هذه الملفات يستطيع الحصول على المفاتيح. والرموز المعنية ليست رموز حساب Docker نفسه. درجة الخطورة 5.7 (متوسطة) وفق CVSS 4.0، والتأثير على السرية فقط.\n\nالإصدار 4.97.0 يصلح أيضًا ثغرة في شبكة الآلة الافتراضية يمكن عبرها لحاوية أن تفسد مكدس الشبكة، ويضيف الخيار -e/--env إلى الأمر docker pass run، وخيار الواجهة الخلفية Docker VMM (تجريبي) في مثبّت Windows، وإعدادًا على Mac لإتاحة المنافذ المميزة (1-1024) لأجهزة الشبكة المحلية.\n\nالخطوة العملية بعد التحديث: احذف السجلات وحزم التشخيص التي أُنشئت بإصدارات سابقة أو نظّفها، خصوصًا إن رُفعت إلى تذكرة دعم أو شاركتها مع أحد.",
+      "features": [
+        "CVE-2026-114409: مفاتيح ورموز OAuth نصًا واضحًا في السجلات",
+        "يشمل الإصدارات من 4.39.0 حتى ما قبل 4.97.0",
+        "إصلاح ثغرة في شبكة الآلة الافتراضية",
+        "Docker VMM تجريبي على Windows ومنافذ مميزة على Mac"
+      ],
+      "usage": [
+        "حدّث إلى Docker Desktop 4.97.0 أو أحدث",
+        "احذف حزم التشخيص القديمة ودوّر المفاتيح التي ربما ظهرت فيها"
+      ],
+      "alternatives": [
+        "ess-trufflehog",
+        "ess-gitleaks"
+      ],
+      "links": [
+        {
+          "label": "ملاحظات إصدار Docker Desktop",
+          "url": "https://docs.docker.com/desktop/release-notes/"
+        },
+        {
+          "label": "تفاصيل CVE-2026-114409",
+          "url": "https://app.opencve.io/cve/CVE-2026-114409"
+        }
+      ],
+      "url": "https://docs.docker.com/desktop/release-notes/",
+      "source": "docs.docker.com",
+      "importance": 3,
+      "tags": [
+        "Docker",
+        "CVE",
+        "secrets",
+        "logs",
+        "security"
+      ],
+      "en": {
+        "title": "Docker Desktop 4.97 fixes API keys and OAuth tokens written in cleartext to logs (CVE-2026-114409)",
+        "summary": "Docker Desktop 4.97.0, released October 26, fixes CVE-2026-114409: versions from 4.39 up to 4.97 could write third-party API keys and OAuth tokens in cleartext to local logs and diagnostics bundles. The release also adds a Docker VMM beta option on Windows.",
+        "why": "Diagnostics bundles are often attached to support tickets and shared with teammates, so they may carry real keys. Update Docker Desktop, then delete or sanitize old logs and diagnostics bundles, and rotate any key that might have appeared in them.",
+        "about": "According to the advisory, IPC payloads inside Docker Desktop were not fully redacted, so third-party API keys and OAuth access tokens were written as-is to local application logs and diagnostics bundles. Anyone with read access to those files could obtain the credentials. The tokens are not Docker account tokens. Severity is 5.7 (medium) under CVSS 4.0, with impact on confidentiality only.\n\nVersion 4.97.0 also fixes a VM networking flaw that let a container corrupt the network stack, adds -e/--env to docker pass run, a Docker VMM (beta) backend option in the Windows installer, and a Mac setting to expose privileged ports (1-1024) to the local network.\n\nThe practical step after updating: delete or sanitize logs and diagnostics bundles created by earlier versions, especially any you uploaded to a support ticket or shared with someone.",
+        "features": [
+          "CVE-2026-114409: keys and OAuth tokens in cleartext in logs",
+          "Affects 4.39.0 up to, but not including, 4.97.0",
+          "Fix for a VM networking vulnerability",
+          "Docker VMM beta on Windows and privileged ports on Mac"
+        ],
+        "usage": [
+          "Update to Docker Desktop 4.97.0 or later",
+          "Delete old diagnostics bundles and rotate keys that may have appeared in them"
+        ],
+        "links": [
+          "Docker Desktop release notes",
+          "CVE-2026-114409 details"
+        ]
+      }
+    },
+    {
+      "id": "openai-api-credits-chatgpt-subscriptions",
+      "section": "llm",
+      "kind": "article",
+      "title": "OpenAI تمنح مشتركي ChatGPT في خطط 100 و200 و500 دولار رصيد API مساويًا لاشتراكهم",
+      "summary": "أطلقت OpenAI في 29 أكتوبر ميزة رصيد API لمشتركي ChatGPT المؤهلين في الخطط الشهرية بقيمة 100 و200 و500 دولار، بحيث يحصل المشترك على رصيد API يساوي قيمة اشتراكه ويُضاف إلى إحدى مؤسساته في منصة API. وهي ميزة تشبه ما أعلنته Anthropic في أكتوبر لاشتراكات Max وTeam.",
+      "why": "إذا كنت تدفع اشتراكًا مرتفعًا في ChatGPT، فيمكنك الآن تجربة الواجهة البرمجية دون تكلفة إضافية، مثل بناء أداة داخلية أو تشغيل سكربت تلخيص أو اختبار وكيل في CI. راجع شروط الأهلية في صفحة المساعدة قبل الاعتماد على الرصيد.",
+      "about": "الفكرة بسيطة: المشترك في إحدى خطط ChatGPT الشهرية بقيمة 100 أو 200 أو 500 دولار يحصل على رصيد API بالمبلغ نفسه، ويُطبَّق الرصيد على مؤسسة واحدة من مؤسساته في منصة OpenAI للمطورين. وتفاصيل الأهلية وطريقة التفعيل موجودة في مقال المساعدة الرسمي.\n\nالسياق: أعلنت Anthropic في وقت سابق من أكتوبر ميزة مشابهة لاشتراكات Max وTeam بالمستويات نفسها، ووصف Simon Willison عرض OpenAI بأنه «الصفقة نفسها تقريبًا». والنتيجة أن الاشتراك الشخصي في أداة المحادثة أصبح يغطي أيضًا جزءًا من تكلفة الاستخدام البرمجي لدى المزوّدَين.\n\nلم تُذكر في المصادر التي اطّلعنا عليها مدة صلاحية الرصيد لدى OpenAI أو القيود الجغرافية، فراجعها في صفحة المساعدة.",
+      "features": [
+        "رصيد API يساوي قيمة الاشتراك الشهري",
+        "للخطط بقيمة 100 و200 و500 دولار",
+        "يُضاف إلى مؤسسة واحدة في منصة API",
+        "مماثل لعرض Anthropic لاشتراكات Max وTeam"
+      ],
+      "links": [
+        {
+          "label": "صفحة المساعدة من OpenAI",
+          "url": "https://help.openai.com/en/articles/20001626-api-credits-benefit-for-eligible-chatgpt-subscriptions"
+        },
+        {
+          "label": "تعليق Simon Willison",
+          "url": "https://simonwillison.net/2026/Oct/29/api-credits/"
+        }
+      ],
+      "url": "https://help.openai.com/en/articles/20001626-api-credits-benefit-for-eligible-chatgpt-subscriptions",
+      "source": "help.openai.com",
+      "importance": 3,
+      "tags": [
+        "OpenAI",
+        "API",
+        "pricing",
+        "ChatGPT",
+        "credits"
+      ],
+      "en": {
+        "title": "OpenAI gives ChatGPT subscribers on $100, $200 and $500 plans API credits matching their subscription",
+        "summary": "On October 29, OpenAI launched an API credits benefit for eligible ChatGPT subscribers on the $100, $200 and $500 monthly plans: subscribers get API credits equal to their subscription, applied to one of their API organizations. It mirrors what Anthropic announced in October for Max and Team subscriptions.",
+        "why": "If you already pay for a high ChatGPT tier, you can now try the API at no extra cost, for example to build an internal tool, run a summarization script or test an agent in CI. Check the eligibility terms on the help page before relying on the credits.",
+        "about": "The idea is simple: a subscriber on a $100, $200 or $500 monthly ChatGPT plan receives API credits for the same amount, applied to one of their organizations on the OpenAI developer platform. Eligibility details and how to activate it are in the official help article.\n\nContext: Anthropic announced a similar benefit earlier in October for Max and Team subscriptions at the same tiers, and Simon Willison described OpenAI's offer as \"pretty much exactly the same deal\". The result is that a personal subscription to the chat app now also covers part of the cost of programmatic use at both providers.\n\nThe sources we checked do not state how long OpenAI's credits stay valid or any regional limits, so check the help page.",
+        "features": [
+          "API credits equal to the monthly subscription",
+          "For the $100, $200 and $500 plans",
+          "Applied to one API organization",
+          "Mirrors Anthropic's offer for Max and Team"
+        ],
+        "links": [
+          "OpenAI help article",
+          "Simon Willison's note"
+        ]
+      }
+    },
+    {
+      "id": "chatgpt-html-preview-account-takeover",
+      "section": "security",
+      "kind": "article",
+      "title": "كيف سُرقت حسابات ChatGPT عبر معاينات HTML: دروس لكل من يشغّل شيفرة غير موثوقة داخل iframe",
+      "summary": "نشرت Parameter Labs تفاصيل سلسلة استغلال في ميزة معاينات HTML في ChatGPT: رسالة postMessage من iframe معزول وصلت إلى معالج يستخدم innerHTML في الصفحة الأم، ثم نقطة oEmbed مسموحة في CSP نفّذت JavaScript. النتيجة رابط مشاركة يسرق بيانات من يفتحه. أصلحت OpenAI الثغرة ودفعت مكافأة 5000 دولار.",
+      "why": "إذا كان تطبيقك يعرض HTML أو مكونات من مستخدمين أو من نموذج AI داخل iframe، مثل محرر قوالب أو معاينة ردود وكيل، فهذه السلسلة قائمة فحص عملية: تحقّق من مصدر كل postMessage، وتجنّب innerHTML، وراجع النطاقات المسموحة في CSP.",
+      "about": "ميزة معاينات HTML (التي كانت تسمى artifacts) تشغّل تطبيقات HTML تفاعلية داخل iframe معزول. وتستخدم ChatGPT مكتبة MathLive لعرض الرسوم، ولها لوحة مفاتيح افتراضية يمكن فتحها من الصفحة الأم عبر postMessage. كان معالج الرسائل يستخدم innerHTML، ولم يمنع أي إطار آخر من مراسلته، فأمكن لمعاينة HTML حقن عناصر في الصفحة الأم.\n\nلم تكن وسوم script المحقونة تعمل، لكن iframe جديد دون قيود sandbox كان يعمل. وكانت سياسة CSP تسمح بسكربتات من نطاقات قليلة منها YouTube، ونقطة oEmbed الخاصة به أعادت JavaScript بطريقة تنفّذه. بهذا حصل المهاجم على تنفيذ شيفرة داخل ChatGPT، فاستطاع جلب بيانات خاصة من واجهات داخلية وتسريبها عبر رابط صورة.\n\nالدروس العامة: اعتبر كل إطار معزول عدائيًا، وتحقّق من origin وsource لكل رسالة، ولا تمرّر بيانات يتحكم فيها إطار إلى innerHTML، وافحص المكتبات الخارجية بحثًا عن ميزات تُفعَّل برسائل، واحذر من نطاقات موثوقة في CSP تعكس محتوى يتحكم فيه المستخدم.",
+      "features": [
+        "سلسلة: postMessage ثم innerHTML ثم iframe غير معزول ثم oEmbed",
+        "سرقة بيانات المستخدم عبر رابط مشاركة",
+        "أُصلحت الثغرة ومكافأة 5000 دولار",
+        "دروس مباشرة لأي ميزة معاينة أو sandbox"
+      ],
+      "usage": [
+        "راجع كل window.addEventListener('message') في تطبيقك وتحقّق من event.origin",
+        "ابحث عن innerHTML في المسارات التي تستقبل بيانات من iframes"
+      ],
+      "alternatives": [
+        "ess-owasp-llm-top10",
+        "ess-semgrep"
+      ],
+      "links": [
+        {
+          "label": "التقرير الأصلي من Parameter Labs",
+          "url": "https://www.parameter.ai/labs/we-found-a-gap-at-openai"
+        },
+        {
+          "label": "ملخص Simon Willison",
+          "url": "https://simonwillison.net/2026/Oct/31/how-we-took-over-chatgpt-accounts/"
+        }
+      ],
+      "url": "https://www.parameter.ai/labs/we-found-a-gap-at-openai",
+      "source": "parameter.ai",
+      "importance": 2,
+      "tags": [
+        "XSS",
+        "sandbox",
+        "iframe",
+        "CSP",
+        "ChatGPT"
+      ],
+      "en": {
+        "title": "How ChatGPT accounts were taken over through HTML previews: lessons for anyone running untrusted code in an iframe",
+        "summary": "Parameter Labs published an exploit chain in ChatGPT's HTML previews: a postMessage from a sandboxed iframe reached a parent-page handler that used innerHTML, then a YouTube oEmbed endpoint allowed by the CSP executed JavaScript. The result was a share link that stole data from whoever opened it. OpenAI fixed it and paid a $5,000 bounty.",
+        "why": "If your app renders HTML or components from users or from an AI model inside an iframe, such as a template editor or an agent output preview, this chain is a practical checklist: verify the origin of every postMessage, avoid innerHTML, and review the domains your CSP allows.",
+        "about": "HTML previews (formerly artifacts) run interactive HTML apps in a sandboxed iframe. ChatGPT uses the MathLive library for graphs, and its virtual keyboard can be opened from the parent page via postMessage. The message handler used innerHTML and did not stop other frames from calling it, so an HTML preview could inject elements into the parent page.\n\nInjected script tags did not run, but a new iframe without sandbox restrictions did. The CSP allowed scripts from a few domains including YouTube, and its oEmbed endpoint reflected JavaScript in a way that executed it. That gave the attacker script execution on ChatGPT, enough to fetch private data from internal APIs and exfiltrate it through an image URL.\n\nGeneral lessons: treat every sandboxed frame as hostile, check origin and source for every message, never pass frame-controlled data to innerHTML, audit third-party libraries for message-driven features, and watch for trusted CSP domains that reflect user-controlled content.",
+        "features": [
+          "Chain: postMessage, innerHTML, unsandboxed iframe, oEmbed",
+          "User data stolen through a share link",
+          "Fixed, with a $5,000 bounty",
+          "Direct lessons for any preview or sandbox feature"
+        ],
+        "usage": [
+          "Review every window.addEventListener('message') in your app and check event.origin",
+          "Search for innerHTML on paths that receive data from iframes"
+        ],
+        "links": [
+          "Original Parameter Labs write-up",
+          "Simon Willison's summary"
+        ]
+      }
+    },
+    {
+      "id": "nativephp-mobile-security-advisories",
+      "section": "laravel",
+      "kind": "article",
+      "title": "NativePHP Mobile: سبع ثغرات منها حقن شيفرة PHP، حدّث إلى 4.6.1 وأعد نشر تطبيقك",
+      "summary": "نشرت NativePHP سبعة تحذيرات أمنية لحزمة nativephp/mobile، خمسة منها عالية الخطورة تصل إلى 8.1، منها حقن شيفرة PHP وإنشاء أي class من طلب واحد وقراءة ملفات خارج public. الإصلاح في 4.6.1 و3.3.11، والإصداران 1.x و2.x لن يُصلحا. كما أُعيد بناء ملفات PHP التنفيذية على 8.5.12 و8.4.27 و8.3.36.",
+      "why": "إذا بنيت تطبيق جوال بـ Laravel عبر NativePHP، فالتحديث وحده لا يكفي: يجب إعادة البناء ورفع نسخة جديدة إلى App Store وGoogle Play، لأن المستخدمين يبقون معرّضين حتى يثبّتوها.",
+      "about": "أبرز الثغرات: معرّف مهمة غير UUID في جسر المهام غير المتزامنة يسمح بحقن شيفرة PHP (8.1)، ونقطة /_native/api/events تنشئ أي class قابل للتحميل يُذكر في الطلب (7.7)، والأمران File.Move وFile.Copy يقبلان أي مسار مطلق (7.7)، وملفات المهام تمر إلى unserialize() دون مصادقة (7.4). وهناك ثغرة path traversal في /_assets قد تكشف قاعدة SQLite، وتسجيل رمز الجلسة وXSRF في logcat على Android. ومعظم الهجمات تتطلب JavaScript يعمل مسبقًا داخل web view، مثل XSS أو سكربت خارجي مخترق.\n\nخطوات التحديث: حدّث nativephp/mobile إلى 4.6.1 (أو 3.3.11)، وعلى 4.x أزل إضافة nativephp/mobile-file، وعلى 3.x حدّثها إلى 1.0.3، ثم شغّل php artisan native:install --force، وأعد البناء وارفع النسخة. ولتطبيقات سطح المكتب حدّث nativephp/desktop إلى 2.4.0.\n\nتغييرات قد تكسر الشيفرة: الأحداث المرسلة عبر /_native/api/events يجب أن تطبّق الواجهة DispatchableFromNative، وحمولات المهام غير المتزامنة أصبحت مشفّرة بمفتاح التطبيق، فالتطبيق دون app key لا يستطيع إرسالها.",
+      "features": [
+        "7 تحذيرات أمنية، خمسة منها عالية الخطورة",
+        "الإصلاح في 4.6.1 و3.3.11، وmobile-file في 1.0.3",
+        "ملفات PHP أُعيد بناؤها على إصدارات تصلح ثغرتين بدرجة 9.2",
+        "حمولات المهام أصبحت مشفّرة ومصادقًا عليها بمفتاح التطبيق"
+      ],
+      "usage": [
+        "php artisan native:install --force",
+        "composer remove nativephp/php-bin"
+      ],
+      "links": [
+        {
+          "label": "تفاصيل Laravel News",
+          "url": "https://laravel-news.com/nativephp-mobile-security-advisories"
+        }
+      ],
+      "url": "https://laravel-news.com/nativephp-mobile-security-advisories",
+      "source": "laravel-news.com",
+      "importance": 2,
+      "tags": [
+        "NativePHP",
+        "Laravel",
+        "mobile",
+        "security",
+        "PHP"
+      ],
+      "en": {
+        "title": "NativePHP Mobile: seven vulnerabilities including PHP code injection; update to 4.6.1 and republish your app",
+        "summary": "NativePHP published seven security advisories for nativephp/mobile, five rated high up to 8.1, including PHP code injection, instantiating any class from a request, and reading files outside public. Fixes are in 4.6.1 and 3.3.11; 1.x and 2.x will not be patched. PHP binaries were also rebuilt on 8.5.12, 8.4.27 and 8.3.36.",
+        "why": "If you built a mobile app with Laravel through NativePHP, updating is not enough: you must rebuild and submit a new version to the App Store and Google Play, because users stay exposed until they install it.",
+        "about": "The main issues: a non-UUID task ID in the async task bridge allows PHP code injection (8.1), /_native/api/events instantiates any autoloadable class named in a request (7.7), File.Move and File.Copy accept any absolute path (7.7), and async task files are passed to unserialize() without authentication (7.4). There is also a path traversal in /_assets that can expose the SQLite database, and Android release builds log the session cookie and XSRF token to logcat. Most attacks need JavaScript already running in the web view, such as through XSS or a compromised third-party script.\n\nUpdate steps: update nativephp/mobile to 4.6.1 (or 3.3.11); on 4.x uninstall nativephp/mobile-file, on 3.x update it to 1.0.3; run php artisan native:install --force; then rebuild and submit. For desktop apps, update nativephp/desktop to 2.4.0.\n\nBreaking changes: events sent through /_native/api/events must implement DispatchableFromNative, and async task payloads are now encrypted with the app key, so apps without an app key can no longer dispatch them.",
+        "features": [
+          "7 advisories, five rated high",
+          "Fixed in 4.6.1 and 3.3.11, mobile-file in 1.0.3",
+          "PHP binaries rebuilt on releases fixing two 9.2 CVEs",
+          "Async task payloads now encrypted and authenticated with the app key"
+        ],
+        "usage": [
+          "php artisan native:install --force",
+          "composer remove nativephp/php-bin"
+        ],
+        "links": [
+          "Laravel News details"
+        ]
+      }
+    },
+    {
+      "id": "sloppy-php-static-analysis-ai-code",
+      "section": "laravel",
+      "kind": "tool",
+      "title": "Sloppy: تحليل ثابت لـ PHP وLaravel يلتقط مشكلات الشيفرة التي يتركها وكلاء AI",
+      "summary": "Sloppy أداة تحليل ثابت مفتوحة المصدر لـ PHP تبحث عن مشكلات الصيانة التي يتركها وكلاء البرمجة عادة: استثناءات مكتومة، ومنطق مكرر، ودوال غير مكتملة، واستعلامات داخل الحلقات، وN+1 في Eloquent. تعمل محليًا دون نموذج أو مفتاح API، وتتكامل مع Claude Code وCodex وGemini CLI.",
+      "why": "عندما يكتب وكيل جزءًا كبيرًا من تطبيق Laravel، تمرّ الاختبارات أحيانًا مع شيفرة هشة. Sloppy يجعل الوكيل يفحص عمله بنفسه، ويراجع ما تغيّر في الفرع فقط مقارنة بـ main، مثل اكتشاف count() على مجموعة كاملة بدل استعلام.",
+      "about": "تعطي الأداة لكل ملاحظة موقعها وقياساتها ودرجة ثقة ونصيحة للإصلاح. ومن قواعدها الخاصة بـ Laravel اكتشاف تحميل مجموعة Eloquent كاملة لعدّ السجلات في PHP واحتمالات N+1، كما تفحص الاختبارات التي أُضعفت أو تُخطّيت، وتوفر توقعات Pest وتقارير CI.\n\nللتكامل مع الوكلاء يثبّت الأمر sloppy agents install خطافات تجعل Claude Code يفحص عمله بعد التعديل، مع خيارات لـ Gemini CLI وCodex، وهناك خادم MCP للتحليل عند الطلب. ويمكن مراجعة الملاحظات الجديدة فقط في الفرع مقارنة بـ main، واستخدام baseline للديون القديمة. وهناك أمر sloppy:fix للإصلاحات الآلية عبر Rector وLaravel Pint، مع وضع معاينة --dry-run.\n\nالأداة مكمّلة لـ PHPStan وPsalm وPint والاختبارات وليست بديلًا عنها، وقرارات إعادة الهيكلة الكبيرة ما زالت تحتاج مراجعة بشرية. الرخصة MIT.",
+      "features": [
+        "يكتشف الاستثناءات المكتومة والتكرار والدوال غير المكتملة",
+        "قواعد Eloquent: N+1 وعدّ مجموعات كاملة في PHP",
+        "خطافات لـ Claude Code وCodex وGemini CLI وخادم MCP",
+        "مراجعة ما تغيّر في الفرع فقط وbaseline للديون القديمة",
+        "sloppy:fix للإصلاحات الآلية عبر Rector وPint"
+      ],
+      "install": [
+        {
+          "label": "تثبيت كاعتمادية تطوير",
+          "cmd": "composer require --dev heyosseus/sloppy"
+        },
+        {
+          "label": "ربطه بـ Claude Code",
+          "cmd": "vendor/bin/sloppy agents install"
+        }
+      ],
+      "usage": [
+        "php artisan sloppy",
+        "php artisan sloppy:fix --dry-run"
+      ],
+      "requirements": [
+        "PHP 8.3 أو أحدث",
+        "قواعد Laravel تدعم Laravel 12 و13"
+      ],
+      "repo": "Heyosseus/sloppy",
+      "pricing": {
+        "model": "oss"
+      },
+      "alternatives": [
+        "ess-larastan",
+        "ess-pest",
+        "ess-laravel-boost"
+      ],
+      "links": [
+        {
+          "label": "المستودع",
+          "url": "https://github.com/Heyosseus/sloppy"
+        },
+        {
+          "label": "مقال Laravel News",
+          "url": "https://laravel-news.com/sloppy"
+        }
+      ],
+      "url": "https://github.com/Heyosseus/sloppy",
+      "source": "github.com",
+      "importance": 2,
+      "tags": [
+        "PHP",
+        "Laravel",
+        "static analysis",
+        "code quality",
+        "agents"
+      ],
+      "en": {
+        "title": "Sloppy: static analysis for PHP and Laravel that catches the problems AI agents leave behind",
+        "summary": "Sloppy is an open-source PHP static analysis tool that looks for maintenance problems coding agents tend to leave: swallowed exceptions, duplicated logic, unfinished methods, queries inside loops and Eloquent N+1. It runs locally with no model or API key, and integrates with Claude Code, Codex and Gemini CLI.",
+        "why": "When an agent writes a large part of a Laravel app, tests can pass while the code stays fragile. Sloppy lets the agent check its own work and reviews only what changed on the branch against main, for example catching count() on a full collection instead of a query.",
+        "about": "Each finding comes with its location, measurements, a confidence level and fix advice. Laravel-specific rules catch loading a whole Eloquent collection just to count records in PHP and likely N+1 queries. It also checks for weakened or skipped tests, and provides Pest expectations and CI reporting.\n\nFor agents, sloppy agents install adds hooks so Claude Code checks its work after editing, with options for Gemini CLI and Codex, and there is an MCP server for on-demand analysis. You can review only new findings on a branch against main and use a baseline for existing debt. sloppy:fix applies mechanical fixes through Rector and Laravel Pint, with a --dry-run preview.\n\nIt complements PHPStan, Psalm, Pint and your tests rather than replacing them, and larger refactoring decisions still need human review. License: MIT.",
+        "features": [
+          "Detects swallowed exceptions, duplication and unfinished methods",
+          "Eloquent rules: N+1 and counting full collections in PHP",
+          "Hooks for Claude Code, Codex and Gemini CLI, plus an MCP server",
+          "Branch-only review and baselines for existing debt",
+          "sloppy:fix for mechanical fixes via Rector and Pint"
+        ],
+        "install": [
+          "Install as a dev dependency",
+          "Hook it into Claude Code"
+        ],
+        "usage": [
+          "php artisan sloppy",
+          "php artisan sloppy:fix --dry-run"
+        ],
+        "requirements": [
+          "PHP 8.3 or later",
+          "Laravel rules support Laravel 12 and 13"
+        ],
+        "links": [
+          "Repository",
+          "Laravel News article"
+        ]
+      }
+    },
+    {
+      "id": "cloudflare-d1-50mb-result-limit",
+      "section": "data",
+      "kind": "article",
+      "title": "Cloudflare D1 يفرض حدًا أقصى 50 MB لنتيجة الاستعلام بدءًا من 4 نوفمبر",
+      "summary": "أعلنت Cloudflare أن استعلامات D1 التي تعيد أكثر من 50 MB ستفشل بدءًا من الأربعاء 4 نوفمبر 2026 برسالة خطأ واضحة. وتقول إن الحد يغطي 99.999% من الطلبات، وإن عمليات الاستيراد والتصدير عبر REST API لن تتأثر.",
+      "why": "إذا كان لديك Worker يقرأ جدولًا كاملًا بـ SELECT * لتقرير أو تصدير، فقد يتوقف فجأة بعد يومين. راجع الاستعلامات الكبيرة الآن واختر الأعمدة المطلوبة فقط وقسّم النتائج إلى صفحات.",
+      "about": "بعد 4 نوفمبر سيفشل أي استعلام تتجاوز نتيجته 50 MB برسالة «D1 query result exceeded the maximum response size limit of 50 MB». وتقول Cloudflare إن معظم المستخدمين لن يتأثروا لأن الحد أعلى من 99.999% من الطلبات الفعلية.\n\nالحل المقترح: اختر الأعمدة التي تحتاجها بدل SELECT *، وقسّم النتائج الكبيرة باستخدام LIMIT وOFFSET. أما الاستيراد والتصدير عبر D1 REST API فيعملان كما هما.\n\nوفي اليوم نفسه، 30 أكتوبر، أعلنت Cloudflare أن Browser Run أصبح يعمل على Chrome 152 مع تغيير User-Agent الافتراضي، وهو أمر يهم من يعتمد على User-Agent في الاختبارات أو الكشط.",
+      "features": [
+        "حد 50 MB لنتيجة كل استعلام",
+        "يبدأ التطبيق في 4 نوفمبر 2026",
+        "الاستيراد والتصدير عبر REST API غير متأثرين",
+        "الحل: اختيار الأعمدة والتقسيم بـ LIMIT وOFFSET"
+      ],
+      "usage": [
+        "SELECT id, title FROM posts LIMIT 1000 OFFSET 0"
+      ],
+      "alternatives": [
+        "ess-supabase"
+      ],
+      "links": [
+        {
+          "label": "إعلان Cloudflare",
+          "url": "https://developers.cloudflare.com/changelog/post/2026-10-30-query-result-size-limit/"
+        },
+        {
+          "label": "Browser Run على Chrome 152",
+          "url": "https://developers.cloudflare.com/changelog/post/2026-10-30-chrome-152/"
+        }
+      ],
+      "url": "https://developers.cloudflare.com/changelog/post/2026-10-30-query-result-size-limit/",
+      "source": "developers.cloudflare.com",
+      "importance": 2,
+      "tags": [
+        "Cloudflare",
+        "D1",
+        "SQLite",
+        "limits",
+        "Workers"
+      ],
+      "en": {
+        "title": "Cloudflare D1 enforces a 50 MB maximum query result starting November 4",
+        "summary": "Cloudflare announced that D1 queries returning more than 50 MB will fail starting Wednesday, November 4, 2026, with a clear error message. It says the limit covers 99.999% of requests, and import and export through the REST API are not affected.",
+        "why": "If you have a Worker that reads a whole table with SELECT * for a report or export, it may stop working in two days. Review large queries now, select only the columns you need and paginate the results.",
+        "about": "After November 4, any query whose result exceeds 50 MB fails with \"D1 query result exceeded the maximum response size limit of 50 MB\". Cloudflare says most users will not be affected because the limit is above 99.999% of real requests.\n\nThe suggested fix: select only the columns you need instead of SELECT *, and paginate large results with LIMIT and OFFSET. Import and export through the D1 REST API keep working as they do now.\n\nOn the same day, October 30, Cloudflare also moved Browser Run to Chrome 152 with a changed default User-Agent, which matters if your tests or scraping rely on the User-Agent string.",
+        "features": [
+          "50 MB limit per query result",
+          "Enforced from November 4, 2026",
+          "Import and export via REST API unaffected",
+          "Fix: select columns and paginate with LIMIT and OFFSET"
+        ],
+        "usage": [
+          "SELECT id, title FROM posts LIMIT 1000 OFFSET 0"
+        ],
+        "links": [
+          "Cloudflare announcement",
+          "Browser Run on Chrome 152"
+        ]
+      }
+    },
+    {
+      "id": "cloudflare-durable-objects-deferred-code-updates",
+      "section": "devops",
+      "kind": "article",
+      "title": "Cloudflare Durable Objects: الشيفرة الجديدة لا تُطبَّق فورًا بعد النشر، بل بعد مهلة حتى 5 دقائق",
+      "summary": "منذ 30 أكتوبر أصبح Durable Objects يؤجّل تطبيق الشيفرة الجديدة على الكائنات النشطة حتى 300 ثانية افتراضيًا، لكي ينتهي العمل الجاري قبل الانتقال. ويمكن ضبط المهلة عبر code_update_strategy في إعدادات Wrangler، أو تجاوزها في نشر واحد عند الطوارئ.",
+      "why": "النشر لم يعد يقطع الطلبات الجارية أو اتصالات WebSocket في تطبيقات مثل الدردشة أو التحرير المشترك. لكن انتبه: إذا كانت أداة النشر تستدعي الكائن مباشرة بعد النشر وتتوقع الشيفرة الجديدة، فاستخدم الوضع immediate.",
+      "about": "السلوك الجديد: الكائن النشط يستمر في تشغيل شيفرته الحالية حتى 5 دقائق بانتظار أن يدخل في السبات. إذا دخل السبات قبل انتهاء المهلة، يبدأ بالشيفرة الجديدة في الطلب التالي، وإلا فإنه يُعاد تشغيله على الشيفرة الجديدة عند انتهاء المهلة. واتصالات WebSocket التي تستخدم Hibernation API تبقى متصلة عند الانتقال بعد السبات. والتأجيل بأفضل جهد، فقد يُعاد تشغيل الكائن مبكرًا مثلًا عند تحديث بيئة تشغيل Cloudflare.\n\nالإعداد: المفتاح code_update_strategy تحت durable_objects في إعدادات Wrangler، مع mode وmax_delay بالثواني من 0 حتى 86400 (24 ساعة)، والقيمة الافتراضية 300.\n\nلتجاوز التأجيل في نشر واحد، مثلًا أثناء حادثة، مرّر --durable-objects-code-update-mode immediate إلى npx wrangler versions deploy.",
+      "features": [
+        "تأجيل افتراضي حتى 300 ثانية لإنهاء العمل الجاري",
+        "اتصالات WebSocket مع Hibernation API تبقى متصلة",
+        "max_delay قابل للضبط حتى 24 ساعة",
+        "وضع immediate لنشر واحد عند الطوارئ"
+      ],
+      "usage": [
+        "[durable_objects.code_update_strategy]\nmode = \"deferred\"\nmax_delay = 60",
+        "npx wrangler versions deploy --durable-objects-code-update-mode immediate"
+      ],
+      "links": [
+        {
+          "label": "إعلان Cloudflare",
+          "url": "https://developers.cloudflare.com/changelog/post/2026-10-30-durable-objects-deferred-code-updates/"
+        }
+      ],
+      "url": "https://developers.cloudflare.com/changelog/post/2026-10-30-durable-objects-deferred-code-updates/",
+      "source": "developers.cloudflare.com",
+      "importance": 2,
+      "tags": [
+        "Cloudflare",
+        "Durable Objects",
+        "deploy",
+        "WebSocket",
+        "Workers"
+      ],
+      "en": {
+        "title": "Cloudflare Durable Objects: new code no longer applies instantly after deploy, but after a delay of up to 5 minutes",
+        "summary": "Since October 30, Durable Objects defers applying new code to active objects by up to 300 seconds by default, so in-flight work can finish first. The delay is configurable through code_update_strategy in Wrangler config, or can be skipped for a single deploy in an emergency.",
+        "why": "Deploys no longer cut off in-flight requests or WebSocket connections in apps like chat or collaborative editing. But watch out: if your deploy tooling calls an object right after deploying and expects the new code, use immediate mode.",
+        "about": "New behavior: an active object keeps running its current code for up to 5 minutes while waiting to hibernate. If it hibernates before the delay ends, it starts on the new code on the next request; otherwise it resets onto the new code when the delay ends. WebSocket connections using the Hibernation API stay connected when the object moves over after hibernating. Deferral is best effort, and an object can still reset early, for example during a Cloudflare runtime update.\n\nConfiguration: the code_update_strategy key under durable_objects in Wrangler config, with mode and max_delay in seconds from 0 to 86400 (24 hours), defaulting to 300.\n\nTo skip deferral for one deploy, for example during an incident, pass --durable-objects-code-update-mode immediate to npx wrangler versions deploy.",
+        "features": [
+          "Default deferral of up to 300 seconds so work can finish",
+          "WebSocket connections using Hibernation stay connected",
+          "max_delay configurable up to 24 hours",
+          "immediate mode for a single emergency deploy"
+        ],
+        "usage": [
+          "[durable_objects.code_update_strategy]\nmode = \"deferred\"\nmax_delay = 60",
+          "npx wrangler versions deploy --durable-objects-code-update-mode immediate"
+        ],
+        "links": [
+          "Cloudflare announcement"
+        ]
+      }
+    },
+    {
+      "id": "deepseek-dsh-superagent-prototype",
+      "section": "agents",
+      "kind": "repo",
+      "title": "dsh-superagent من DeepSeek: نموذج أولي مفتوح المصدر لوكيل برمجة استباقي يعمل على مستودع GitHub",
+      "summary": "نشر فريق Harness في DeepSeek يوم 31 أكتوبر نموذجًا أوليًا بحثيًا باسم dsh-superagent برخصة MIT. يستمع الوكيل إلى GitHub واختياريًا Feishu، وعندما يطلب منه شخص مصرّح له عملًا، يفتح بندًا ويعمل عليه في جلسة ومجلد خاصين به، ثم يرد في المحادثة الأصلية، مثلًا بطلب دمج. ويعمل كحزمة فوق DeepSeek Harness.",
+      "why": "يقدّم تصميمًا جاهزًا لفريق يريد وكيلًا مشتركًا يستلم المهام من الـ issues ويعيد pull requests، مع لوحة ويب تعرض ما يحتاج تدخلًا بشريًا. وهو مرجع جيد لدراسة الصلاحيات وحدود تدخل الوكيل، لا منتج جاهز للإنتاج.",
+      "about": "يقول المستودع صراحة إنه نموذج أولي بحثي للاطلاع وليس منتجًا رسميًا من DeepSeek، وإن جزءًا كبيرًا من هندسته كتبه وكلاء برمجة، وقد يحتوي أخطاء. كما أنه ليس مطابقًا للنسخة الداخلية ولا لكل ما ورد في مقال الفريق عن تصميم الوكيل الفائق.\n\nالفلسفة المعلنة: «أقل قدر من انتباه البشر، وأكبر قدر من القيمة». لذلك لا يتصرف الوكيل إلا عند الطلب أو عندما تسمح قاعدة كتبها الفريق، ولا يتكلم إلا عندما يجب على أحد أن يتصرف أو يستفيد من نتيجة. والتوثيق مقسّم إلى وثائق مرقّمة تشرح نموذج المجال والتفويض والتنفيذ والأوامر واللوحة والنشر والمعمارية.\n\nالإعداد طويل، لذلك يقترح المستودع أن يتولاه وكيل البرمجة الخاص بك عبر ملف SETUP.md. والمتطلبات تشمل Node.js 22.19+ أو 24+ وpnpm وgit وtmux وPython 3.8+ وGitHub CLI 2.48+ وDeepSeek Harness مع مزوّد نموذج.",
+      "features": [
+        "وكيل يستمع إلى GitHub وFeishu ويعمل عند الطلب فقط",
+        "جلسة ومجلد مستقلان لكل بند عمل",
+        "يرد في المحادثة الأصلية، مثلًا بطلب دمج",
+        "لوحة ويب لما يحتاج تدخلًا بشريًا",
+        "قواعد تفويض يكتبها الفريق"
+      ],
+      "usage": [
+        "Read SETUP.md in this repository and set up dsh-superagent with me."
+      ],
+      "requirements": [
+        "Node.js 22.19+ أو 24+ وpnpm وtmux",
+        "GitHub CLI 2.48+ وPython 3.8+",
+        "DeepSeek Harness مع مزوّد نموذج"
+      ],
+      "repo": "deepseek-ai/dsh-superagent-prototype",
+      "pricing": {
+        "model": "oss"
+      },
+      "alternatives": [
+        "ess-github-copilot",
+        "ess-claude-code-action",
+        "ess-openai-codex-cli"
+      ],
+      "links": [
+        {
+          "label": "المستودع",
+          "url": "https://github.com/deepseek-ai/dsh-superagent-prototype"
+        },
+        {
+          "label": "تقرير Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-11-01/deepseek-drops-enhanced-coding-agent-with-aim-to-rival-anthropic"
+        }
+      ],
+      "url": "https://github.com/deepseek-ai/dsh-superagent-prototype",
+      "source": "github.com",
+      "importance": 2,
+      "tags": [
+        "DeepSeek",
+        "coding agent",
+        "GitHub",
+        "autonomous",
+        "open source"
+      ],
+      "en": {
+        "title": "DeepSeek's dsh-superagent: an open-source prototype of a proactive coding agent for a GitHub repository",
+        "summary": "DeepSeek's Harness team published a research prototype, dsh-superagent, under MIT on October 31. The agent listens to GitHub and optionally Feishu; when an allowed person asks for work, it opens a work item, works on it in its own session and directory, and answers in the original conversation, for example with a pull request. It runs as a bundle on DeepSeek Harness.",
+        "why": "It offers a ready design for a team that wants a shared agent that takes tasks from issues and returns pull requests, with a web panel showing what needs a person. It is a good reference for studying permissions and how much an agent should step in, not a production-ready product.",
+        "about": "The repository states plainly that it is a research prototype for reference, not an official DeepSeek product, that much of its engineering was done by coding agents, and that it may contain bugs. It is also not identical to the internal version or to everything described in the team's article on super-agent design.\n\nThe stated philosophy is \"take as little human attention as possible, and give as much value as possible\". So the agent acts only when asked or when a rule the team wrote allows it, and speaks only when someone must act or can use a result. The documentation is split into numbered documents covering the domain model, authorization, execution, prompts, the panel, deployment and architecture.\n\nSetup is long, so the repository suggests letting your own coding agent drive it through SETUP.md. Requirements include Node.js 22.19+ or 24+, pnpm, git, tmux, Python 3.8+, GitHub CLI 2.48+ and DeepSeek Harness with a model provider.",
+        "features": [
+          "Listens to GitHub and Feishu and acts only when asked",
+          "Its own session and directory per work item",
+          "Answers in the original conversation, for example with a pull request",
+          "Web panel for what needs a person",
+          "Authorization rules written by the team"
+        ],
+        "usage": [
+          "Read SETUP.md in this repository and set up dsh-superagent with me."
+        ],
+        "requirements": [
+          "Node.js 22.19+ or 24+, pnpm and tmux",
+          "GitHub CLI 2.48+ and Python 3.8+",
+          "DeepSeek Harness with a model provider"
+        ],
+        "links": [
+          "Repository",
+          "Bloomberg report"
+        ]
+      }
+    },
+    {
+      "id": "lessloc-agent-less-code",
+      "section": "agents",
+      "kind": "plugin",
+      "title": "lessloc: خطافات تجعل وكيل البرمجة يكتب أقل قدر من الشيفرة ويعيد استخدام الموجود",
+      "summary": "lessloc أداة مفتوحة المصدر (Apache-2.0) تعمل داخل حلقة الوكيل عبر الخطافات المتاحة في Claude Code وCodex وOpenCode وCopilot وGemini CLI وCursor. تضيف معيار عمل قصيرًا في بداية الجلسة، وتشير إلى الشيفرة الموجودة، وترفض العناصر المؤقتة والشيفرة المعلّقة قبل الكتابة. وتذكر أنها خفّضت الشيفرة 27% والتكلفة 23% في 117 تغييرًا.",
+      "why": "تقلّل حجم ما تراجعه بعد كل مهمة وتخفض استهلاك الرموز، لأن الوكيل يعيد استخدام الدوال الموجودة بدل كتابة نسخ جديدة. مفيد في مشروع كبير متعدد الوحدات حيث يكرر الوكيل منطقًا موجودًا في مكان آخر.",
+      "about": "تعمل الأداة عبر الخطافات التي يوفرها كل وكيل: عند بداية الجلسة تضيف معيار عمل قصيرًا، وعند كل طلب تشير إلى شيفرة موجودة في المشروع، وقبل الكتابة ترفض العناصر المؤقتة والشيفرة المعلّقة وملفات النسخ الاحتياطية، وبعد الكتابة تنبّه إلى الأسرار والاستثناءات المكتومة، وفي نهاية الدور تعيد العمل غير المكتمل مرة واحدة إذا كانت اختبارات الوكيل ما زالت تفشل.\n\nالأرقام المنشورة: في 117 تغييرًا حقيقيًا في 3 مشاريع مفتوحة المصدر، حُكم عليها باختبارات مخفية، كانت الشيفرة أقل بنسبة 27% والتكلفة أقل بنسبة 23% بالنتائج نفسها، والعنوان يذكر حتى 36% و26%. هذه أرقام المطوّرين أنفسهم.\n\nمبنية على Node.js دون اعتماديات ودون مفتاح API ودون استدعاء نماذج، وتستخدم git للقطات، وفهرسًا للشيفرة في 16 لغة. اتصالها الوحيد بالشبكة فحص يومي لوجود إصدار جديد.",
+      "features": [
+        "خطافات لأكثر من 20 أداة وكيل",
+        "ترفض العناصر المؤقتة والشيفرة المعلّقة",
+        "تنبّه إلى الأسرار والاستثناءات المكتومة بعد الكتابة",
+        "تعيد العمل إذا فشلت الاختبارات عند الانتهاء",
+        "دون مفتاح API أو استدعاء نماذج"
+      ],
+      "install": [
+        {
+          "label": "إضافة السوق في Claude Code",
+          "cmd": "/plugin marketplace add https://get.lessloc.org/claude/lessloc.git"
+        },
+        {
+          "label": "تثبيت الإضافة",
+          "cmd": "/plugin install lessloc@lessloc"
+        }
+      ],
+      "usage": [
+        "Install lessloc for this project by following https://lessloc.org/install.md"
+      ],
+      "repo": "rextail-ai/lessloc",
+      "pricing": {
+        "model": "oss"
+      },
+      "alternatives": [
+        "ess-superpowers",
+        "ess-claude-code-hooks"
+      ],
+      "links": [
+        {
+          "label": "المستودع",
+          "url": "https://github.com/rextail-ai/lessloc"
+        },
+        {
+          "label": "نتائج القياس",
+          "url": "https://lessloc.org/benchmarks"
+        }
+      ],
+      "url": "https://github.com/rextail-ai/lessloc",
+      "source": "github.com",
+      "importance": 2,
+      "tags": [
+        "coding agents",
+        "hooks",
+        "Claude Code",
+        "code quality",
+        "tokens"
+      ],
+      "en": {
+        "title": "lessloc: hooks that make your coding agent write the least code and reuse what exists",
+        "summary": "lessloc is an open-source tool (Apache-2.0) that works inside the agent loop through the hooks available in Claude Code, Codex, OpenCode, Copilot, Gemini CLI and Cursor. It adds a short working standard at session start, points to existing code, and refuses placeholders and commented-out code before writes. It reports 27% less code and 23% lower cost across 117 changes.",
+        "why": "It shrinks what you review after each task and lowers token use, because the agent reuses existing functions instead of writing new copies. Useful in a large modular codebase where the agent tends to duplicate logic that already exists elsewhere.",
+        "about": "It works through each agent's own hooks: at session start it adds a short working standard, at each prompt it points to code already in the project, before a write it refuses placeholders, commented-out code and stray backup files, after a write it flags secrets and swallowed errors, and at the end of the turn it sends unfinished work back once if the agent's own tests still fail.\n\nPublished numbers: on 117 real changes in 3 open-source projects, judged by hidden tests, code was 27% smaller and cost 23% lower with the same results, and the headline claims up to 36% and 26%. These are the developers' own figures.\n\nIt is built on Node.js with no dependencies, no API key and no model calls, uses git for snapshots and a code index for 16 languages. Its only network contact is a daily check for a new release.",
+        "features": [
+          "Hooks for 20+ agent tools",
+          "Refuses placeholders and commented-out code",
+          "Flags secrets and swallowed errors after writes",
+          "Sends work back if tests fail at the end",
+          "No API key or model calls"
+        ],
+        "install": [
+          "Add the marketplace in Claude Code",
+          "Install the plugin"
+        ],
+        "usage": [
+          "Install lessloc for this project by following https://lessloc.org/install.md"
+        ],
+        "links": [
+          "Repository",
+          "Benchmark results"
+        ]
+      }
+    },
+    {
+      "id": "floorplan-codebase-map-plugin",
+      "section": "architecture",
+      "kind": "plugin",
+      "title": "Floorplan: إضافة لـ Claude Code وCodex ترسم خريطة تفاعلية لتطبيقك بأسماء مفهومة",
+      "summary": "Floorplan إضافة مفتوحة المصدر (MIT) يقرأ فيها Claude أو Codex الشيفرة ويرسم خريطة تفاعلية: الأجزاء والملفات ونقاط الواجهة البرمجية والطلبات بين الواجهة والخادم، حتى عبر مستودعات منفصلة. وتضيف فحصًا صحيًا يكشف المفاتيح في الشيفرة والجداول المكشوفة وwebhooks قابلة للتزوير، وقسمًا يعرض ما غيّره الوكيل مؤخرًا.",
+      "why": "تساعد على فهم تطبيق بُني بمساعدة AI والإجابة عن أسئلة مثل «ماذا يحدث عند الدفع؟» أو «ماذا ينكسر إذا غيّرت جدول المستخدمين؟». مفيدة أيضًا لتعريف عضو جديد بالمشروع خلال دقائق.",
+      "about": "تبدأ الخريطة بالتطبيق كاملًا ثم تنزل إلى جزء ثم مجموعة ملفات ثم ملف ونقاط الواجهة الخاصة به، وكل عرض يبيّن من يستخدمه وما الذي يستخدمه. والأسماء بلغة مفهومة مثل «يستقبل مدفوعات البطاقات عند الدفع»، مع مفتاح لعرض المطوّر. وتتبّع الأداة الاستيرادات وتطابق كل طلب ويب في الواجهة مع نقطة الخادم التي تجيبه.\n\nبعد العمل تطلب «Update the floorplan» فيُعاد قراءة ما تغيّر فقط، ويظهر ما عُدّل مؤخرًا في قسم Recent work. ويمكن أيضًا إنشاء مخطط لتطبيق لم يُبنَ بعد من وثيقة PRD.\n\nتعمل على اشتراكك الحالي في Claude Code أو Codex دون مفاتيح API، وتحتاج Node.js 18+، ولا تعتمد على حزم خارجية.",
+      "features": [
+        "خريطة قابلة للتكبير من التطبيق حتى نقاط الواجهة",
+        "ربط الطلبات بين الواجهة والخادم عبر المستودعات",
+        "فحص صحي للمفاتيح والجداول المكشوفة وwebhooks",
+        "قسم Recent work لما غيّره الوكيل",
+        "مخططات من وثيقة PRD قبل كتابة الشيفرة"
+      ],
+      "install": [
+        {
+          "label": "إضافة السوق في Claude Code",
+          "cmd": "claude plugin marketplace add haydenschmitty/floorplan"
+        },
+        {
+          "label": "تثبيت الإضافة",
+          "cmd": "claude plugin install floorplan@floorplan"
+        },
+        {
+          "label": "التثبيت في Codex",
+          "cmd": "codex plugin marketplace add haydenschmitty/floorplan"
+        }
+      ],
+      "usage": [
+        "Make me a floorplan of this app.",
+        "Update the floorplan.",
+        "Fix the important issues from the floorplan's Health check"
+      ],
+      "requirements": [
+        "Node.js 18+",
+        "Claude Code أو Codex"
+      ],
+      "repo": "haydenschmitty/floorplan",
+      "pricing": {
+        "model": "oss"
+      },
+      "alternatives": [
+        "ess-graphify",
+        "ess-mermaid"
+      ],
+      "links": [
+        {
+          "label": "المستودع",
+          "url": "https://github.com/haydenschmitty/floorplan"
+        },
+        {
+          "label": "عرض حي",
+          "url": "https://haydenschmitty.github.io/floorplan-demo/"
+        }
+      ],
+      "url": "https://github.com/haydenschmitty/floorplan",
+      "source": "github.com",
+      "importance": 2,
+      "tags": [
+        "codebase map",
+        "Claude Code",
+        "Codex",
+        "architecture",
+        "onboarding"
+      ],
+      "en": {
+        "title": "Floorplan: a Claude Code and Codex plugin that draws an interactive map of your app in plain names",
+        "summary": "Floorplan is an open-source (MIT) plugin where Claude or Codex reads your code and draws an interactive map: parts, files, API endpoints and the requests between frontend and backend, even across separate repos. It adds a health check for keys in code, exposed tables and fakeable webhooks, and a section showing what the agent changed recently.",
+        "why": "It helps you understand an app built with AI help and answer questions like \"what happens at checkout?\" or \"what breaks if I change the users table?\". It is also useful for onboarding a new teammate in minutes.",
+        "about": "The map starts with the whole app, then zooms into a part, a group of files, a file and its endpoints, and each view shows what it is used by and what it uses. Names are in plain language, such as \"takes card payments at checkout\", with a switch for the developer view. It follows imports and matches each web request in the frontend to the server endpoint that answers it.\n\nAfter more work, ask \"Update the floorplan\" and only what changed is re-read, with recent edits highlighted under Recent work. It can also produce a blueprint for an app not yet built from a PRD.\n\nIt runs on your existing Claude Code or Codex plan with no API keys, needs Node.js 18+, and has no dependencies.",
+        "features": [
+          "Zoomable map from the whole app down to endpoints",
+          "Matches frontend requests to backend endpoints across repos",
+          "Health check for keys, exposed tables and webhooks",
+          "Recent work section for what the agent changed",
+          "Blueprints from a PRD before any code"
+        ],
+        "install": [
+          "Add the marketplace in Claude Code",
+          "Install the plugin",
+          "Install in Codex"
+        ],
+        "usage": [
+          "Make me a floorplan of this app.",
+          "Update the floorplan.",
+          "Fix the important issues from the floorplan's Health check"
+        ],
+        "requirements": [
+          "Node.js 18+",
+          "Claude Code or Codex"
+        ],
+        "links": [
+          "Repository",
+          "Live demo"
+        ]
+      }
+    },
+    {
+      "id": "grim-prompter-threat-model-skill",
+      "section": "security",
+      "kind": "skill",
+      "title": "Grim Prompter: مهارة نمذجة التهديدات لـ Claude Code وCodex مع أدلة مرتبطة بأسطر الشيفرة",
+      "summary": "Grim Prompter مكتبة مفتوحة المصدر (MIT) تضيف مهارة threat-model لوكلاء البرمجة، مع 36 سير عمل حسب نوع المعمارية و29 أمرًا للطرق والتحليل. يراجع الوكيل الشيفرة وحدود الثقة والتهديدات والضوابط الموجودة ويقترح حلولًا، مع استشهادات بالملف والسطر.",
+      "why": "تتيح لفريق صغير دون مختص أمني الحصول على نموذج تهديدات أولي لتطبيق ويب أو واجهة برمجية أو خادم MCP، ثم مراجعة أثر كل فرع على النموذج قبل الدمج. النتائج مسودات تحتاج مراجعة، وليست شهادة أمان.",
+      "about": "بعد التثبيت تكتب /threat-model في Claude Code أو $threat-model في Codex. هناك وضع سريع يختار المعمارية تلقائيًا، ووضع عميق من ست مراحل: النطاق، ونمذجة النظام، وتحليل التهديدات، والتحدي، وخطة المعالجة، والتقرير، وكل مرحلة تقرأ ملف المرحلة السابقة. ويمكن تطبيق طريقة واحدة مثل STRIDE، أو مراجعة كيف يغيّر فرع ما نموذجًا سابقًا محفوظًا بصيغة JSON.\n\nيشترط دليل التشغيل فحصًا للقراءة فقط مع استشهادات بالملف والسطر، وأي بناء أو اختبار أو تثبيت أو وصول للشبكة يحتاج إذنك الصريح. والنتائج تُكتب في مجلد threat-model/ وتشمل ملف النطاق والأدلة وتقريرًا بالملاحظات وخطط التحقق.\n\nولخوادم MCP وأدوات الوكلاء تربط المراجعة كل أداة ببيانات الاعتماد والصلاحيات الفعلية حيثما توفرت الأدلة، وتفحص أثر الرموز المشتركة وفصل القراءة عن الكتابة. وينصح المؤلف بإبقاء التقارير خارج git حتى تراجعها.",
+      "features": [
+        "36 سير عمل حسب المعمارية و29 أمرًا للتحليل",
+        "وضع سريع ووضع عميق من ست مراحل",
+        "استشهادات بالملف والسطر وفحص للقراءة فقط",
+        "مراجعة أثر فرع على نموذج سابق",
+        "تحليل صلاحيات خوادم MCP وأدوات الوكلاء"
+      ],
+      "install": [
+        {
+          "label": "استنساخ المكتبة",
+          "cmd": "git clone https://github.com/jmanico/grim-prompter.git ~/grim-prompter"
+        },
+        {
+          "label": "ربط المهارة بـ Claude Code",
+          "cmd": "mkdir -p ~/.claude/skills && ln -s ~/grim-prompter/skills/threat-model ~/.claude/skills/threat-model"
+        },
+        {
+          "label": "ربط المهارة بـ Codex",
+          "cmd": "mkdir -p ~/.agents/skills && ln -s ~/grim-prompter/skills/threat-model ~/.agents/skills/threat-model"
+        }
+      ],
+      "usage": [
+        "/threat-model",
+        "/threat-model quick api",
+        "/threat-model change main...feature"
+      ],
+      "repo": "jmanico/grim-prompter",
+      "pricing": {
+        "model": "oss"
+      },
+      "alternatives": [
+        "ess-claude-security-review",
+        "ess-owasp-llm-top10",
+        "ess-snyk-agent-scan"
+      ],
+      "links": [
+        {
+          "label": "المستودع",
+          "url": "https://github.com/jmanico/grim-prompter"
+        }
+      ],
+      "url": "https://github.com/jmanico/grim-prompter",
+      "source": "github.com",
+      "importance": 2,
+      "tags": [
+        "threat modeling",
+        "security",
+        "skills",
+        "Claude Code",
+        "Codex"
+      ],
+      "en": {
+        "title": "Grim Prompter: a threat modeling skill for Claude Code and Codex with evidence tied to lines of code",
+        "summary": "Grim Prompter is an open-source (MIT) library that adds a threat-model skill to coding agents, with 36 architecture workflows and 29 method and analysis prompts. The agent reviews the code, trust boundaries, threats and existing controls and proposes mitigations, citing file and line.",
+        "why": "It lets a small team without a security specialist get a first threat model for a web app, an API or an MCP server, then review how each branch changes that model before merging. Results are drafts that need review, not a security certification.",
+        "about": "After installing, type /threat-model in Claude Code or $threat-model in Codex. A quick mode picks the architecture for you, and a deep mode runs six stages: scope, system modeling, threat analysis, challenge, treatment planning and reporting, each reading the previous stage's file. You can also apply one method such as STRIDE, or review how a branch changes an earlier model saved as JSON.\n\nThe runbook requires read-only inspection with file-and-line citations, and builds, tests, installs and network access need your explicit permission. Results go into a threat-model/ folder, including a scope and evidence file and a report with findings and verification plans.\n\nFor MCP servers and agent tools, the review maps each tool to backend credentials and effective permissions where evidence supports it, and examines shared-token blast radius and read/write separation. The author advises keeping reports out of git until you have reviewed them.",
+        "features": [
+          "36 architecture workflows and 29 analysis prompts",
+          "Quick mode and a six-stage deep mode",
+          "File-and-line citations and read-only inspection",
+          "Review of how a branch changes an earlier model",
+          "Permission analysis for MCP servers and agent tools"
+        ],
+        "install": [
+          "Clone the library",
+          "Link the skill into Claude Code",
+          "Link the skill into Codex"
+        ],
+        "usage": [
+          "/threat-model",
+          "/threat-model quick api",
+          "/threat-model change main...feature"
+        ],
+        "links": [
+          "Repository"
+        ]
+      }
+    },
+    {
+      "id": "kanzo-kanban-mcp-agents",
+      "section": "mcp",
+      "kind": "mcp",
+      "title": "Kanzo: لوحة Kanban وخادم MCP في ملف واحد بحجم 4.5 MB، تشاركها مع وكلاء البرمجة",
+      "summary": "Kanzo برنامج مفتوح المصدر (AGPL-3.0) مكتوب بـ Rust يجمع لوحة Kanban في المتصفح وخادم MCP وأمر سطر أوامر. يأخذ الوكلاء المهام وينقلون البطاقات ويضيفون تعليقات أثناء العمل، دون حساب أو خادم أو إعداد، ويمكن مشاركة اللوحة بين عدة أجهزة.",
+      "why": "يمنحك مكانًا واحدًا ترى فيه ما يعمل عليه Claude Code وCodex، وتضع فيه المهام لهم، وتحجز مهام لنفسك. مثال: اكتب «take the next task from kanzo and do it» فينقل الوكيل البطاقة إلى doing ويعلّق على تقدّمه.",
+      "about": "بعد التشغيل تفتح اللوحة على localhost:4242، وأول تشغيل ينشئ مجلد ~/kanzo الذي تُحفظ فيه اللوحة كاملة. تضيف مهمة بالمفتاح n وتبحث في كل المشاريع بـ ⌘K. والمهمة المعلّمة Human يتركها الوكلاء لك. ويحدد الوكيل المشروع الصحيح من git remote للمستودع الذي يعمل فيه.\n\nهناك عمود Backlog اختياري لا يقترب منه الوكلاء حتى تنقل مهامه إلى todo. ويمكن مشاركة اللوحة مباشرة بين أجهزة على الشبكة نفسها أو مزامنتها بين الأجهزة.\n\nالإصدارات موقّعة من GitHub ويمكن التحقق منها بـ gh attestation verify، ويتوفر التثبيت أيضًا عبر Cargo.",
+      "features": [
+        "لوحة في المتصفح وخادم MCP وCLI في ملف واحد",
+        "الوكلاء يأخذون المهام وينقلون البطاقات ويعلّقون",
+        "مهام Human يتركها الوكلاء لك",
+        "عمود Backlog لا يلمسه الوكلاء",
+        "مشاركة اللوحة بين عدة أجهزة"
+      ],
+      "install": [
+        {
+          "label": "التثبيت على macOS وLinux",
+          "cmd": "curl -LsSf https://github.com/emanuele-em/kanzo/releases/latest/download/kanzo-installer.sh | sh"
+        },
+        {
+          "label": "التثبيت عبر Cargo",
+          "cmd": "cargo install kanzo"
+        },
+        {
+          "label": "إضافته إلى Claude Code",
+          "cmd": "claude mcp add kanzo --scope user -- kanzo mcp"
+        },
+        {
+          "label": "إضافته إلى Codex",
+          "cmd": "codex mcp add kanzo -- kanzo mcp"
+        }
+      ],
+      "usage": [
+        "kanzo",
+        "take the next task from kanzo and do it"
+      ],
+      "repo": "emanuele-em/kanzo",
+      "pricing": {
+        "model": "oss"
+      },
+      "alternatives": [
+        "ess-mcp-registry"
+      ],
+      "links": [
+        {
+          "label": "المستودع",
+          "url": "https://github.com/emanuele-em/kanzo"
+        }
+      ],
+      "url": "https://github.com/emanuele-em/kanzo",
+      "source": "github.com",
+      "importance": 2,
+      "tags": [
+        "MCP",
+        "kanban",
+        "agents",
+        "Rust",
+        "self-hosted"
+      ],
+      "en": {
+        "title": "Kanzo: a kanban board and MCP server in one 4.5 MB binary, shared with your coding agents",
+        "summary": "Kanzo is an open-source (AGPL-3.0) Rust program that combines a kanban board in the browser, an MCP server and a CLI. Agents take tasks, move cards and comment as they work, with no account, server or setup, and the board can be shared across several machines.",
+        "why": "It gives you one place to see what Claude Code and Codex are working on, queue tasks for them, and keep some tasks for yourself. Example: say \"take the next task from kanzo and do it\" and the agent moves the card to doing and comments on its progress.",
+        "about": "Once running, the board opens at localhost:4242, and the first run creates ~/kanzo, where the whole board lives. Press n to add a task and ⌘K to search every project. Tasks marked Human are left to you by agents. The agent finds the right project from the git remote of the repo it works in.\n\nAn optional Backlog column is left alone by agents until you move its tasks to todo. The board can be shared live between machines on the same network or synced between them.\n\nReleases are signed by GitHub and can be checked with gh attestation verify, and Cargo install is also available.",
+        "features": [
+          "Browser board, MCP server and CLI in one binary",
+          "Agents take tasks, move cards and comment",
+          "Human tasks are left to you",
+          "Backlog column agents do not touch",
+          "Board sharing across machines"
+        ],
+        "install": [
+          "Install on macOS and Linux",
+          "Install with Cargo",
+          "Add to Claude Code",
+          "Add to Codex"
+        ],
+        "usage": [
+          "kanzo",
+          "take the next task from kanzo and do it"
+        ],
+        "links": [
+          "Repository"
+        ]
+      }
+    },
+    {
+      "id": "pagesift-web-to-markdown-rust",
+      "section": "automation",
+      "kind": "tool",
+      "title": "pagesift: ملف Rust واحد يحوّل صفحات الويب وPDF وملفات Office إلى Markdown للوكلاء، مع واجهة متوافقة مع Firecrawl",
+      "summary": "pagesift أداة تستضيفها بنفسك تجلب صفحة أو تقرأ ملفًا محليًا وتحتفظ بالمحتوى الرئيسي وتعيده Markdown مع بيانات وصفية. تعمل كأمر سطر أوامر وواجهة HTTP متوافقة مع Firecrawl v1/v2 ونقطة بنمط Jina Reader وخادم MCP، ولها حزم Python وNode.js. الرخصة AGPL-3.0 مع رخصة تجارية.",
+      "why": "بديل مستضاف ذاتيًا لخدمات الكشط المدفوعة في مسارات RAG أو وكلاء البحث، مثل زحف موقع توثيق كامل إلى ملفات Markdown. وبما أنه يطابق واجهة Firecrawl، يمكن تجربته في شيفرة موجودة بتغيير العنوان فقط.",
+      "about": "المدخلات: روابط HTTP (مع متصفح دون واجهة عند الحاجة فقط)، وHTML وPDF وWord وExcel وPowerPoint وEPUB وCSV. والمخرجات: Markdown وHTML وروابط وصور وبيانات وصفية مثل العنوان وتاريخ النشر، مع تحذيرات عندما تكون النتيجة ناقصة.\n\nيدعم كشط صفحة واحدة أو دفعات أو موقع كامل، ويحترم robots.txt وحدود المعدل لكل مضيف افتراضيًا، ويستخدم خرائط الموقع، ويدعم الزحف الموجّه باستعلام. ويتوفر على Linux وmacOS وWindows، وكصورة Docker.\n\nالحدود: لا يقوم بالتعرف الضوئي على الحروف في ملفات PDF الممسوحة أو الصور، بل يقرأ طبقة النص فقط. والرخصة AGPL-3.0، فانتبه إن كنت ستدمجه في خدمة مغلقة.",
+      "features": [
+        "CLI وواجهة متوافقة مع Firecrawl v1/v2 ونقطة /r/ بنمط Jina",
+        "خادم MCP عبر stdio أو HTTP",
+        "يدعم PDF وWord وExcel وPowerPoint وEPUB",
+        "يحترم robots.txt وحدود المعدل افتراضيًا",
+        "حزم Python وNode.js وصورة Docker"
+      ],
+      "install": [
+        {
+          "label": "سطر الأوامر عبر Cargo",
+          "cmd": "cargo install pagesift --locked"
+        },
+        {
+          "label": "حزمة Python",
+          "cmd": "pip install pagesift"
+        },
+        {
+          "label": "حزمة Node.js",
+          "cmd": "npm install @pagesift/node"
+        },
+        {
+          "label": "إضافته إلى Claude Code",
+          "cmd": "claude mcp add pagesift -- pagesift mcp"
+        }
+      ],
+      "usage": [
+        "pagesift scrape https://example.com",
+        "pagesift crawl \"https://docs.rs\" --limit 500 --out ./data/"
+      ],
+      "repo": "YOLOW92/pagesift",
+      "pricing": {
+        "model": "oss",
+        "note": "AGPL-3.0 مع رخصة تجارية اختيارية"
+      },
+      "alternatives": [
+        "ess-firecrawl",
+        "ess-crawl4ai",
+        "ess-markitdown"
+      ],
+      "links": [
+        {
+          "label": "المستودع",
+          "url": "https://github.com/YOLOW92/pagesift"
+        }
+      ],
+      "url": "https://github.com/YOLOW92/pagesift",
+      "source": "github.com",
+      "importance": 2,
+      "tags": [
+        "scraping",
+        "Markdown",
+        "RAG",
+        "MCP",
+        "Rust"
+      ],
+      "en": {
+        "title": "pagesift: one Rust binary that turns web pages, PDFs and Office files into Markdown for agents, with a Firecrawl-compatible API",
+        "summary": "pagesift is a self-hosted tool that fetches a page or reads a local file, keeps the main content and returns Markdown with metadata. It runs as a CLI, a Firecrawl v1/v2-compatible HTTP API, a Jina Reader-style endpoint and an MCP server, with Python and Node.js packages. License: AGPL-3.0, with a commercial option.",
+        "why": "A self-hosted alternative to paid scraping services in RAG pipelines or research agents, for example crawling a whole documentation site into Markdown files. Because it matches the Firecrawl API, you can try it in existing code by changing only the base URL.",
+        "about": "Inputs: HTTP URLs (with a headless browser only when needed), HTML, PDF, Word, Excel, PowerPoint, EPUB and CSV. Outputs: Markdown, HTML, links, images and metadata such as title and publication date, with warnings when a result is incomplete.\n\nIt scrapes single pages, batches or whole sites, respects robots.txt and per-host rate limits by default, uses sitemaps, and supports query-focused crawls. It runs on Linux, macOS and Windows, and as a Docker image.\n\nLimits: no OCR for scanned PDFs or images; it reads the text layer only. The license is AGPL-3.0, so take care if you embed it in a closed service.",
+        "features": [
+          "CLI, Firecrawl v1/v2-compatible API and Jina-style /r/ endpoint",
+          "MCP server over stdio or HTTP",
+          "Handles PDF, Word, Excel, PowerPoint and EPUB",
+          "Respects robots.txt and rate limits by default",
+          "Python and Node.js packages and a Docker image"
+        ],
+        "install": [
+          "CLI via Cargo",
+          "Python package",
+          "Node.js package",
+          "Add to Claude Code"
+        ],
+        "usage": [
+          "pagesift scrape https://example.com",
+          "pagesift crawl \"https://docs.rs\" --limit 500 --out ./data/"
+        ],
+        "pricingNote": "AGPL-3.0 with an optional commercial license",
+        "links": [
+          "Repository"
+        ]
+      }
+    },
+    {
+      "id": "audio-studio-mcp-stable-audio-3",
+      "section": "video",
+      "kind": "mcp",
+      "title": "Audio Studio MCP: موسيقى خلفية ومؤثرات صوتية محليًا بـ Stable Audio 3 من داخل Claude Code",
+      "summary": "Audio Studio MCP خادم مفتوح المصدر (MIT) يمنح Claude Code وCursor وأي عميل MCP استوديو صوت يعمل على جهازك. تطلب موسيقى خلفية أو مؤثرًا بجملة عادية فيولّده نموذج Stable Audio 3 محليًا، ثم يجعله حلقة متصلة ويضبط الصوت ويصدّره. لا خدمة سحابية ولا مفتاح API ولا تكلفة توليد.",
+      "why": "مفيد لصانعي الألعاب والفيديو الذين يحتاجون موسيقى ومؤثرات قصيرة دون رفع ملفات أو دفع اشتراك، مثل حلقة موسيقى lo-fi لمحرك ألعاب أو صوت باب يصرّ لمقطع فيديو.",
+      "about": "الأدوات تغطي التوليد (من 1 إلى 4 نتائج لكل طلب)، والتعديل بإعادة أسلوب مقطع أو إعادة توليد جزء زمني أو تمديد مقطوعة، والإنهاء بحلقات متصلة وتلاشي وضبط الشدة (LUFS)، والتصدير إلى WAV أو OGG أو FLAC بتردد 48 kHz. وكل ملف يرافقه ملف JSON فيه الوصف والبذرة والإعدادات لإعادة الإنتاج.\n\nيعلّم الخادم العميل صيغة الأوصاف الرسمية لـ Stable Audio 3، فيتحول طلب مثل «صوت باب يصرّ» إلى وصف يفهمه النموذج. وعلى Mac تطابق النتائج لنفس البذرة أداة sa3 الرسمية بتًا ببت.\n\nالمتطلبات: Mac بمعالج Apple Silicon مع 16 GB ذاكرة يُفضَّل، أو Windows مع بطاقة NVIDIA، ونحو 6 GB للنموذج المتوسط (1.4B). Linux مع NVIDIA غير مختبر، وأجهزة Mac بمعالج Intel وبطاقات AMD غير مدعومة.",
+      "features": [
+        "توليد موسيقى وحلقات ومؤثرات من جملة واحدة",
+        "تعديل وتمديد وإعادة توليد جزء زمني",
+        "حلقات متصلة وضبط LUFS وتصدير WAV وOGG وFLAC",
+        "يعمل محليًا على Apple Silicon أو NVIDIA",
+        "ملف JSON لكل نتيجة لإعادة الإنتاج"
+      ],
+      "install": [
+        {
+          "label": "الاستنساخ والتثبيت على macOS",
+          "cmd": "git clone https://github.com/kanaworksai-hue/audio-studio-mcp.git && cd audio-studio-mcp && ./install.sh"
+        },
+        {
+          "label": "تسجيل الخادم في Claude Code",
+          "cmd": "claude mcp add --scope user audio-studio -- /path/to/audio-studio-mcp/.venv/bin/audio-studio-mcp"
+        }
+      ],
+      "requirements": [
+        "Mac بمعالج Apple Silicon (يُفضَّل 16 GB) أو Windows مع NVIDIA",
+        "نحو 6 GB مساحة للنموذج",
+        "git وffmpeg"
+      ],
+      "repo": "kanaworksai-hue/audio-studio-mcp",
+      "pricing": {
+        "model": "oss"
+      },
+      "alternatives": [
+        "ess-elevenlabs"
+      ],
+      "links": [
+        {
+          "label": "المستودع",
+          "url": "https://github.com/kanaworksai-hue/audio-studio-mcp"
+        },
+        {
+          "label": "عينات صوتية",
+          "url": "https://kanaworksai-hue.github.io/audio-studio-mcp/"
+        }
+      ],
+      "url": "https://github.com/kanaworksai-hue/audio-studio-mcp",
+      "source": "github.com",
+      "importance": 2,
+      "tags": [
+        "audio",
+        "music",
+        "sound effects",
+        "MCP",
+        "local AI"
+      ],
+      "en": {
+        "title": "Audio Studio MCP: background music and sound effects generated locally with Stable Audio 3 from Claude Code",
+        "summary": "Audio Studio MCP is an open-source (MIT) server that gives Claude Code, Cursor and any MCP client a sound studio running on your own machine. Ask for background music or a sound effect in plain language and Stable Audio 3 generates it locally, then it loops it, normalizes loudness and exports it. No cloud service, no API key and no generation cost.",
+        "why": "Useful for game and video makers who need short music and effects without uploading files or paying for a subscription, such as a lo-fi loop for a game engine or a creaky door sound for a video.",
+        "about": "Its tools cover generation (1 to 4 candidates per call), editing by re-styling a clip, regenerating a time range or extending a track, finishing with seamless loops, fades and loudness (LUFS), and export to 48 kHz WAV, OGG or FLAC. Every file gets a JSON sidecar with its prompt, seed and settings for reproducibility.\n\nThe server teaches the client the official Stable Audio 3 prompt format, so a request like \"a creaky door\" becomes a prompt the model understands. On a Mac, results for the same seed are bit-for-bit identical to the official sa3 CLI.\n\nRequirements: an Apple Silicon Mac with 16 GB RAM recommended, or Windows with an NVIDIA GPU, and about 6 GB for the medium (1.4B) model. Linux with NVIDIA is untested, and Intel Macs and AMD GPUs are not supported.",
+        "features": [
+          "Music, loops and effects from one sentence",
+          "Edit, extend and regenerate a time range",
+          "Seamless loops, LUFS and WAV, OGG and FLAC export",
+          "Runs locally on Apple Silicon or NVIDIA",
+          "JSON sidecar per result for reproducibility"
+        ],
+        "install": [
+          "Clone and install on macOS",
+          "Register the server in Claude Code"
+        ],
+        "requirements": [
+          "Apple Silicon Mac (16 GB recommended) or Windows with NVIDIA",
+          "About 6 GB of disk for the model",
+          "git and ffmpeg"
+        ],
+        "links": [
+          "Repository",
+          "Audio samples"
+        ]
+      }
+    },
+    {
+      "id": "filament-5-8-deferred-schema-loading",
+      "section": "laravel",
+      "kind": "release",
+      "title": "Filament 5.8: تحميل مؤجل للأقسام والتبويبات، وتجميع جداول يُحفظ في الجلسة",
+      "summary": "صدر Filament 5.8 في 27 أكتوبر بميزة deferLoading() التي تجلب حقول الأقسام والتبويبات وخطوات المعالج في طلب منفصل عند ظهورها، وحفظ تجميع الجداول في الجلسة، وحدود ارتفاع لمحرري النصوص. كما أصبحت إرشادات Filament لـ Laravel Boost مهارة تُحمَّل فقط عند العمل على شيفرة Filament.",
+      "why": "لوحات الإدارة الكبيرة ذات النماذج الطويلة تصبح أسرع في الفتح لأن الأقسام المطوية لا تُحمَّل حتى تظهر، مثل صفحة طلب في متجر إلكتروني فيها تبويبات للشحن والفواتير والسجل.",
+      "about": "أبرز الإضافات: deferLoading() على الأقسام والتبويبات وخطوات wizard وعناصر repeater وbuilder لجلب الحقول عند ظهورها. وpersistGroupInSession() لاسترجاع تجميع الجدول في الزيارة التالية، وdefaultGroup() يقبل الآن وسيط direction مثل defaultSort().\n\nوأيضًا: خطافات دورة حياة مرتبطة باسم trait مثل afterSaveHandlesDrafts() تعمل بجانب خطاف الصفحة بدل أن تستبدله، وplaceholder() لبطاقات الإحصاء الفارغة، والصنف MultiFactorChallenge لطلب عامل تحقق ثانٍ داخل مكونات Livewire الخاصة بك، وminHeight() وmaxHeight() لـ RichEditor وMarkdownEditor، وإمكانية تخصيص طريقة تنزيل ملفات التصدير لكل صيغة على الاستضافات التي تمنع الاستجابات المتدفقة.\n\nوبالنسبة للوكلاء، أصبحت إرشادات Filament في Laravel Boost مهارة Agent Skill لا تُحمَّل إلا عند العمل على شيفرة Filament، مما يوفّر السياق في بقية المهام.",
+      "features": [
+        "deferLoading() للأقسام والتبويبات وخطوات المعالج",
+        "persistGroupInSession() لحفظ تجميع الجدول",
+        "MultiFactorChallenge قابل لإعادة الاستخدام في Livewire",
+        "إرشادات Boost أصبحت مهارة تُحمَّل عند الحاجة"
+      ],
+      "repo": "filamentphp/filament",
+      "alternatives": [
+        "ess-filament",
+        "ess-laravel-boost"
+      ],
+      "links": [
+        {
+          "label": "مقال Laravel News",
+          "url": "https://laravel-news.com/filament-5-8-0"
+        }
+      ],
+      "url": "https://laravel-news.com/filament-5-8-0",
+      "source": "laravel-news.com",
+      "importance": 1,
+      "tags": [
+        "Filament",
+        "Laravel",
+        "Livewire",
+        "admin panel"
+      ],
+      "en": {
+        "title": "Filament 5.8: deferred loading for sections and tabs, and table grouping saved in the session",
+        "summary": "Filament 5.8, released October 27, adds deferLoading(), which fetches fields for sections, tabs and wizard steps in a separate request once they are visible, session-persisted table grouping, and height limits for text editors. Filament's Laravel Boost guidelines are now a skill that loads only when working on Filament code.",
+        "why": "Large admin panels with long forms open faster because collapsed sections are not loaded until they appear, for example an order page in an online store with tabs for shipping, invoices and history.",
+        "about": "Highlights: deferLoading() on sections, tabs, wizard steps and repeater or builder items to fetch fields when they come into view. persistGroupInSession() restores a table's grouping on the next visit, and defaultGroup() now accepts a direction argument like defaultSort().\n\nAlso: lifecycle hooks suffixed with a trait name, such as afterSaveHandlesDrafts(), run alongside the page's own hook instead of overriding it; placeholder() for blank stats widgets; a reusable MultiFactorChallenge class to request a second factor in your own Livewire components; minHeight() and maxHeight() for RichEditor and MarkdownEditor; and per-format custom export downloaders for hosts that block streamed responses.\n\nFor agents, the Filament guidelines in Laravel Boost are now an Agent Skill that loads only when working on Filament code, saving context on other tasks.",
+        "features": [
+          "deferLoading() for sections, tabs and wizard steps",
+          "persistGroupInSession() to keep table grouping",
+          "Reusable MultiFactorChallenge in Livewire",
+          "Boost guidelines are now an on-demand skill"
+        ],
+        "links": [
+          "Laravel News article"
+        ]
+      }
+    },
+    {
+      "id": "reanimate-animation-skill",
+      "section": "frontend",
+      "kind": "skill",
+      "title": "reanimate: مهارة لـ Claude Code تعيد بناء أي حركة واجهة من موقع أو فيديو وتقارن النسخة بالأصل حتى تتطابق",
+      "summary": "reanimate مهارة مفتوحة المصدر (MIT) تسجّل الحركة الأصلية من موقع حي أو تسجيل شاشة أو mp4 أو gif أو ملف Lottie، ثم تكتبها في مشروعك وتسجّل النسخة بالطريقة نفسها وتقارن التوقيت والتسارع والبكسلات. وتكرر الإصلاح حتى تتطابق الأرقام.",
+      "why": "الوكيل عادة يعيد بناء حركة من رابط أو صورة في محاولة واحدة ويخطئ لأنه لا يرى الحركة. هنا يقيس الفرق فعليًا، مثل إعادة بناء دخول بطاقات في صفحة رئيسية أو مؤشر تحميل بـ CSS أو Framer Motion أو GSAP.",
+      "about": "الخطوات: التسجيل في متصفح دون واجهة بحجم شاشة ومعدل إطارات ثابتين، مع التقاط كل حركات CSS وWeb Animations API ومواضع العناصر في كل إطار، وتتبّع استدعاءات GPU لعناصر canvas وWebGL. ثم مواصفة لكل عنصر وخاصية: البداية والمدة والقيم والتسارع والتتابع. ثم البناء بما يستخدمه مشروعك: CSS أو Framer Motion أو GSAP أو three.js. ثم التحقق بتسجيل النسخة ومقارنتها، والتكرار بإصلاح أكبر فرق في كل جولة.\n\nتحتاج Bun 1.1+ على macOS أو Linux، وWindows غير مختبر. وأول تشغيل ينزّل ffmpeg ثابتًا ومتصفح Chromium الخاص بـ Playwright، بنحو 250 MB معًا، ولا تحتاج مفاتيح API. يمكن لوكلاء آخرين يقرؤون SKILL.md تثبيتها، لكنها مختبرة مع Claude Code فقط.\n\nالهدف المعلن نقطة بداية قريبة لتبني عليها حركتك الخاصة، فاحترم حقوق التصميم عند الاقتباس من مواقع الآخرين.",
+      "features": [
+        "يعمل من موقع حي أو فيديو أو gif أو Lottie",
+        "يلتقط حركات CSS وWeb Animations وcanvas وWebGL",
+        "يبني بـ CSS أو Framer Motion أو GSAP أو three.js",
+        "يقارن التوقيت والتسارع والبكسلات ويكرر حتى التطابق"
+      ],
+      "install": [
+        {
+          "label": "التثبيت عبر skills CLI",
+          "cmd": "npx skills add NiazMorshed2007/reanimate -g"
+        }
+      ],
+      "usage": [
+        "/reanimate the hero entrance on https://example.com, into components/Hero.tsx",
+        "/reanimate the card hover in this gif, match it exactly"
+      ],
+      "requirements": [
+        "Bun 1.1+",
+        "macOS أو Linux"
+      ],
+      "repo": "NiazMorshed2007/reanimate",
+      "pricing": {
+        "model": "oss"
+      },
+      "alternatives": [
+        "ess-motion",
+        "ess-skills-sh"
+      ],
+      "links": [
+        {
+          "label": "المستودع",
+          "url": "https://github.com/NiazMorshed2007/reanimate"
+        }
+      ],
+      "url": "https://github.com/NiazMorshed2007/reanimate",
+      "source": "github.com",
+      "importance": 1,
+      "tags": [
+        "animation",
+        "frontend",
+        "skills",
+        "Claude Code",
+        "Playwright"
+      ],
+      "en": {
+        "title": "reanimate: a Claude Code skill that rebuilds any UI animation from a site or video and compares the copy until it matches",
+        "summary": "reanimate is an open-source (MIT) skill that records the original animation from a live site, a screen recording, an mp4, a gif or a Lottie file, writes it into your project, records the copy the same way and compares timing, easing and pixels. It keeps fixing until the numbers match.",
+        "why": "An agent usually rebuilds an animation from a link or screenshot in one pass and misses because it cannot see motion. Here the difference is actually measured, for example rebuilding a hero card entrance or a loader with CSS, Framer Motion or GSAP.",
+        "about": "Steps: record in a headless browser at a fixed viewport and frame rate, capturing every CSS and Web Animations API animation and element positions on every frame, and tracing GPU calls for canvas and WebGL. Then a spec per element and property: start, duration, values, easing and stagger. Then build with what your project already uses: CSS, Framer Motion, GSAP or three.js. Then verify by recording the copy and comparing, fixing the biggest difference each round.\n\nIt needs Bun 1.1+ on macOS or Linux; Windows is untested. The first run downloads a static ffmpeg and Playwright's Chromium, about 250 MB together, and no API keys are needed. Other agents that read SKILL.md can install it, but it has only been tested with Claude Code.\n\nThe stated goal is a close starting point to build your own animation on, so respect design rights when borrowing from other sites.",
+        "features": [
+          "Works from a live site, video, gif or Lottie",
+          "Captures CSS, Web Animations, canvas and WebGL",
+          "Builds with CSS, Framer Motion, GSAP or three.js",
+          "Compares timing, easing and pixels until they match"
+        ],
+        "install": [
+          "Install with the skills CLI"
+        ],
+        "usage": [
+          "/reanimate the hero entrance on https://example.com, into components/Hero.tsx",
+          "/reanimate the card hover in this gif, match it exactly"
+        ],
+        "requirements": [
+          "Bun 1.1+",
+          "macOS or Linux"
+        ],
+        "links": [
+          "Repository"
+        ]
+      }
+    }
+  ]
+}

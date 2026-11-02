@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-02",
+  "generated": "2026-11-02T05:43:34.185Z",
+  "awesome": [
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "zilliztech/milvus-skill",
+      "url": "https://github.com/zilliztech/milvus-skill",
+      "desc": "zilliztech/milvus-skill - Manage Milvus collections, indexes, vector searches, and RAG workflows",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "heygen-com/hyperframes",
+      "url": "https://github.com/heygen-com/hyperframes",
+      "desc": "heygen-com/hyperframes - Write videos as HTML and render them to MP4: launch films, explainers, captions, charts and 450+ ready-made blocks, by HeyGen",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "punkpeye/awesome-mcp-servers",
+      "section": "mcp",
+      "name": "jackjin1997/markindex",
+      "url": "https://github.com/jackjin1997/markindex",
+      "desc": "jackjin1997/markindex - Vectorless, structure-first retrieval over large Markdown libraries: walk library, folder, document and section trees, read original text with line numbers for citations, and fall back to mixed Chinese/English BM25 search. Five read-only tools, no embeddings, no API key.",
+      "heading": "Knowledge & Memory"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "BestPrice",
+      "url": "https://github.com/TheBestCo/bestprice-mcp",
+      "desc": "BestPrice - Greek price comparison: products, live shop offers and price history",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "npmscan",
+      "url": "https://github.com/salemalem/npmscan-mcp-plugin",
+      "desc": "npmscan - Audit npm packages for malware before agents install them",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "Keenable",
+      "url": "https://github.com/keenableai/keenable-mcp",
+      "desc": "Keenable - Keyless web search and page fetching with Keenable",
+      "heading": "Table of Contents"
+    }
+  ],
+  "releases": [],
+  "trending": []
+}

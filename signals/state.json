@@ -1,56 +1,56 @@
 {
   "awesome": {
     "hesreallyhim/awesome-claude-code": {
-      "sha": "1c88da78767b4ae664e76861b7afc17a2754d4d4",
-      "date": "2026-11-01T11:19:27.449Z"
+      "sha": "c03f95dbb6f0c90a4d455d6da608e86657fd7b73",
+      "date": "2026-11-02T05:43:35.232Z"
     },
     "jqueryscript/awesome-claude-code": {
       "sha": "4d0db41e85da437e354a8efcac6e8201d3b187d0",
-      "date": "2026-11-01T11:19:27.690Z"
+      "date": "2026-11-02T05:43:35.727Z"
     },
     "ComposioHQ/awesome-claude-skills": {
       "sha": "be2a406907dbc61b73e6827ded415c96139d13a2",
-      "date": "2026-11-01T11:19:27.923Z"
+      "date": "2026-11-02T05:43:36.648Z"
     },
     "travisvn/awesome-claude-skills": {
       "sha": "1da55aa810f206d3fe2005e7e3989b15a275d942",
-      "date": "2026-11-01T11:19:28.153Z"
+      "date": "2026-11-02T05:43:37.523Z"
     },
     "VoltAgent/awesome-agent-skills": {
-      "sha": "a6f9992ceaef05841a9b92e6849d90004a61710c",
-      "date": "2026-11-01T11:19:28.420Z"
+      "sha": "464dd87e30278a6f4ad0da21f0bd2ee1c2122f5d",
+      "date": "2026-11-02T05:43:39.059Z"
     },
     "VoltAgent/awesome-claude-code-subagents": {
-      "sha": "408d3c9eee2d0c75c12a3abb5de29e53c2ca6b9e",
-      "date": "2026-11-01T11:19:28.666Z"
+      "sha": "f2e2ea7e0202cc05fa2d469fcb2c57fe08603450",
+      "date": "2026-11-02T05:43:40.590Z"
     },
     "punkpeye/awesome-mcp-servers": {
-      "sha": "f225f117f92626e6b7d5d2912746d9269e3d037b",
-      "date": "2026-11-01T11:19:28.895Z"
+      "sha": "29f2d490cc02468e7c9d87b0cf68d40d3041e7ef",
+      "date": "2026-11-02T05:43:42.833Z"
     },
     "wong2/awesome-mcp-servers": {
       "sha": "39eb1d76d76e562657f3c657266a504cea159e23",
-      "date": "2026-11-01T11:19:29.110Z"
+      "date": "2026-11-02T05:43:43.788Z"
     },
     "appcypher/awesome-mcp-servers": {
       "sha": "280218b4bba97a49facf929f8012dec5e30384b6",
-      "date": "2026-11-01T11:19:29.343Z"
+      "date": "2026-11-02T05:43:44.728Z"
     },
     "e2b-dev/awesome-ai-agents": {
       "sha": "9596ab1e69fbbb6c95291141c8dab5c181083216",
-      "date": "2026-11-01T11:19:29.888Z"
+      "date": "2026-11-02T05:43:47.082Z"
     },
     "Shubhamsaboo/awesome-llm-apps": {
       "sha": "6c16b23f1bacd0fdf240bb5141ef45e59e82c306",
-      "date": "2026-11-01T11:19:30.109Z"
+      "date": "2026-11-02T05:43:48.019Z"
     },
     "github/awesome-copilot": {
-      "sha": "5269f7ea2d6c3a9bfda5ed878b6726cf509121fd",
-      "date": "2026-11-01T11:19:30.571Z"
+      "sha": "61fa1fa8fcc63d6dbd2f07a75aeb8e214df5acfb",
+      "date": "2026-11-02T05:43:49.210Z"
     },
     "VoltAgent/official-mcp-servers": {
-      "sha": "3964a7030860613df3550c6c58974ea10615498f",
-      "date": "2026-11-01T11:19:29.609Z"
+      "sha": "63f43f5c0e29e511b24598cdfcfa8ee5102bdd21",
+      "date": "2026-11-02T05:43:46.140Z"
     }
   },
   "releases": {
