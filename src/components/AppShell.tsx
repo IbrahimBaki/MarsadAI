@@ -4,6 +4,8 @@ import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useMemo, useState, type ReactNode } from "react";
 import type { SectionId } from "@/lib/sections";
+import { FOCUS } from "@/lib/focus";
+import { TRACKS } from "@/lib/research";
 import { useApp } from "./AppContext";
 import { LanguageSwitch, useLocale } from "./LocaleProvider";
 import {
@@ -12,6 +14,8 @@ import {
   ClockIcon,
   CloseIcon,
   LibraryIcon,
+  FlaskIcon,
+  LayersIcon,
   LogoutIcon,
   Mark,
   MenuIcon,
@@ -40,7 +44,7 @@ function useTheme() {
 
 function NavContent({ onNavigate }: { onNavigate?: () => void }) {
   const { feed, user } = useApp();
-  const { t, f, tx } = useLocale();
+  const { t, f, tx, locale } = useLocale();
   const nf = { format: f.num };
   const pathname = usePathname();
   const params = useSearchParams();
@@ -135,8 +139,46 @@ function NavContent({ onNavigate }: { onNavigate?: () => void }) {
     window.location.href = "/";
   };
 
+  const research = [
+    { href: "/research", label: t.research.hubTitle, icon: FlaskIcon, active: pathname === "/research", status: "" },
+    ...TRACKS.map((tr) => ({
+      href: `/research/${tr.id}`,
+      label: tr.short[locale],
+      sub: tr.name[locale].split(" · ")[0],
+      icon: LayersIcon,
+      active: pathname.startsWith(`/research/${tr.id}`),
+      status: tr.status,
+    })),
+  ];
+
   return (
     <div className="flex min-h-full flex-col">
+      {FOCUS ? (
+        <nav aria-label={t.research.nav} className="flex flex-col gap-0.5 px-3">
+          {research.map((m) => (
+            <Link
+              key={m.href}
+              href={m.href}
+              onClick={onNavigate}
+              aria-current={m.active ? "page" : undefined}
+              className={`flex min-h-11 items-center gap-3 rounded-[14px] px-3 py-1.5 text-[15px] ${
+                m.active ? "bg-ink font-semibold text-ground" : "hover:bg-sunken"
+              }`}
+            >
+              <m.icon width={19} height={19} className="shrink-0" />
+              <span className="flex flex-1 flex-col leading-5">
+                {"sub" in m && <span className={`text-[12px] ${m.active ? "text-ground/70" : "text-faint"}`}>{m.sub}</span>}
+                <span>{m.label}</span>
+              </span>
+              {m.status === "active" && <span className="size-2 rounded-full bg-star" aria-label={t.research.active} />}
+              {m.status === "planned" && (
+                <span className={`text-[11.5px] ${m.active ? "text-ground/70" : "text-faint"}`}>{t.research.planned}</span>
+              )}
+            </Link>
+          ))}
+        </nav>
+      ) : null}
+      {!FOCUS && (<>
       <nav aria-label={t.nav.views} className="flex flex-col gap-0.5 px-3">
         {main.map((m) => (
           <Link
@@ -210,6 +252,7 @@ function NavContent({ onNavigate }: { onNavigate?: () => void }) {
           </div>
         ))}
       </nav>
+      </>)}
 
       <div className="mt-auto flex flex-col gap-3 border-t border-line px-5 pb-6 pt-4">
         <div className="flex items-center gap-3 text-[14px]">
@@ -313,7 +356,7 @@ function ShellInner({ children }: { children: ReactNode }) {
         >
           <MenuIcon width={22} height={22} />
         </button>
-        <Link href="/" className="flex flex-1 items-center gap-2">
+        <Link href={FOCUS ? "/research" : "/"} className="flex flex-1 items-center gap-2">
           <Mark size={26} />
           <span className="text-[21px] font-bold">{t.app.name}</span>
         </Link>
@@ -367,7 +410,7 @@ function ShellInner({ children }: { children: ReactNode }) {
       <div className="mx-auto flex w-full max-w-[1480px] gap-5 lg:px-5 lg:py-5">
         {/* Desktop sidebar */}
         <aside className="card sticky top-5 hidden max-h-[calc(100dvh-40px)] w-[268px] shrink-0 flex-col overflow-y-auto !rounded-[24px] py-4 lg:flex">
-          <Link href="/" className="mb-3 flex items-center gap-2.5 px-6 pt-1">
+          <Link href={FOCUS ? "/research" : "/"} className="mb-3 flex items-center gap-2.5 px-6 pt-1">
             <Mark size={30} />
             <span className="text-[22px] font-bold">{t.app.name}</span>
           </Link>

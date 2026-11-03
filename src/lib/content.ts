@@ -32,9 +32,9 @@ const shortId = (s: string) => createHash("sha1").update(s).digest("hex").slice(
 
 type Signals = {
   date: string;
-  awesome?: { list: string; section: string; name: string; url: string; desc: string; heading: string }[];
-  releases?: { repo: string; section: string; tag: string; url: string; previous: string | null }[];
-  trending?: { repo: string; section: string; url: string; description: string | null; stars: number }[];
+  awesome?: { list: string; section: string; track?: string; name: string; url: string; desc: string; heading: string }[];
+  releases?: { repo: string; section: string; track?: string; tag: string; url: string; previous: string | null }[];
+  trending?: { repo: string; section: string; track?: string; url: string; description: string | null; stars: number }[];
 };
 
 async function loadRadar(): Promise<RadarEntry[]> {
@@ -51,7 +51,7 @@ async function loadRadar(): Promise<RadarEntry[]> {
       seen.add(id);
       out.push({
         id, type: "release", section: section(r.section), date: s.date, title: `${r.repo} ${r.tag}`,
-        url: r.url, desc: "", repo: r.repo, tag: r.tag, previous: r.previous ?? undefined,
+        url: r.url, desc: "", repo: r.repo, tag: r.tag, previous: r.previous ?? undefined, track: r.track,
       });
     }
     for (const t of s.trending ?? []) {
@@ -60,7 +60,7 @@ async function loadRadar(): Promise<RadarEntry[]> {
       seen.add(id);
       out.push({
         id, type: "trending", section: section(t.section), date: s.date, title: t.repo, url: t.url,
-        desc: t.description ?? "", repo: t.repo, stars: t.stars,
+        desc: t.description ?? "", repo: t.repo, stars: t.stars, track: t.track,
       });
     }
     for (const a of s.awesome ?? []) {
@@ -70,7 +70,7 @@ async function loadRadar(): Promise<RadarEntry[]> {
       const gh = a.url.match(/github\.com\/([^/]+\/[^/#?]+)/i);
       out.push({
         id, type: "awesome", section: section(a.section), date: s.date, title: a.name, url: a.url,
-        desc: a.desc, list: a.list, heading: a.heading, repo: gh ? gh[1].replace(/\.git$/, "") : undefined,
+        desc: a.desc, list: a.list, heading: a.heading, repo: gh ? gh[1].replace(/\.git$/, "") : undefined, track: a.track,
       });
     }
     if (out.length >= RADAR_MAX) break;

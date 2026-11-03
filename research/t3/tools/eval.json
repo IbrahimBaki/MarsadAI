@@ -1,0 +1,899 @@
+{
+ "category": "eval",
+ "checked": "2026-11-03",
+ "tools": [
+  {
+   "id": "harbor",
+   "name": "Harbor",
+   "category": "eval",
+   "kind": "open-source",
+   "vendor": "Harbor Framework (Terminal-Bench team, Laude Institute)",
+   "repo": "harbor-framework/harbor",
+   "url": "https://github.com/harbor-framework/harbor",
+   "license": "Apache-2.0",
+   "pricing": "Free; you pay for model tokens and any cloud sandbox",
+   "status": "active",
+   "version": "v0.25.0",
+   "tier": "deep",
+   "summary": "The official harness behind Terminal-Bench 2.0: a framework for running any agent (Claude Code, Codex CLI, OpenHands and more) on containerized tasks, in parallel, locally or in cloud sandboxes, and scoring the results. Also used to build custom benchmarks and to generate RL rollouts.",
+   "how": "A task is a container image plus an instruction and a hidden verification script. Harbor starts one environment per trial, installs or attaches the agent, lets it work, then runs the verifier and records the score, logs and trajectory. Agents plug in by subclassing BaseInstalledAgent (a CLI installed inside the container, like Claude Code) or BaseAgent. Environments run on local Docker or, with --env, on cloud providers (Daytona, Modal, Blaxel, Tensorlake, LangSmith and others), so thousands of trials can run in parallel. Third-party datasets such as SWE-bench and Aider Polyglot are available through adapters.",
+   "features": [
+    "Runs CLI agents as-is: Claude Code, Codex CLI, OpenHands, Terminus and more",
+    "Task format: Docker image + instruction + hidden tests, so tasks from your own repos fit",
+    "Local Docker or cloud sandboxes via --env, with --n-concurrent parallelism",
+    "Dataset registry with Terminal-Bench 2.0 and adapters for SWE-bench, Aider Polyglot and others",
+    "Trajectories and logs per trial; also produces RL rollouts"
+   ],
+   "strengths": [
+    "De-facto standard runner for agent benchmarks in 2026; Vercel Sandbox and Tensorlake integrate it",
+    "Agent-agnostic by design: a harness is just another installed agent",
+    "Same tool for public benchmarks and private, company-built task sets",
+    "Apache-2.0, active (v0.25.0, commits daily)"
+   ],
+   "weaknesses": [
+    "Python-first tooling; task authoring for private repos still needs work (images, hidden tests)",
+    "Scoring is pass/fail from verifiers; partial credit or rubric scoring needs custom verifiers",
+    "No built-in dashboard for cost-vs-quality across many runs; you build reports yourself",
+    "Young project (0.x); APIs can change"
+   ],
+   "gaps": [
+    "Adapter for squad-kit / azm-harness (a BaseInstalledAgent per Azm harness)",
+    "Pipeline to mine tasks from Azm repos and Jira tickets",
+    "Standards-compliance scoring (Track 1 rules) on top of test pass/fail",
+    "Org dashboard: harness x model x project matrix, variance, cost, trends"
+   ],
+   "fit": {
+    "verdict": "adopt",
+    "role": "Execution engine of the Azm harness sandbox: run every harness on the same tasks, in isolated containers, at scale."
+   },
+   "scores": {
+    "fit": 5,
+    "maturity": 4,
+    "openness": 5,
+    "agnostic": 5,
+    "config": 4,
+    "measure": 4,
+    "safety": 4
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/harbor-framework/harbor"
+    ],
+    [
+     "Terminal-Bench 2.0 dataset",
+     "https://huggingface.co/datasets/harborframework/terminal-bench-2.0"
+    ],
+    [
+     "Leaderboard",
+     "https://www.tbench.ai"
+    ]
+   ],
+   "sources": [
+    "https://github.com/harbor-framework/harbor",
+    "https://huggingface.co/datasets/harborframework/terminal-bench-2.0/blob/main/README.md",
+    "https://upstash.com/blog/ai-agent-sandbox-providers-compared-2026"
+   ]
+  },
+  {
+   "id": "inspect-ai",
+   "name": "Inspect AI (+ Inspect SWE, sandboxing toolkit)",
+   "category": "eval",
+   "kind": "open-source",
+   "vendor": "UK AI Security Institute",
+   "repo": "UKGovernmentBEIS/inspect_ai",
+   "url": "https://inspect.aisi.org.uk",
+   "license": "MIT",
+   "pricing": "Free",
+   "status": "active",
+   "tier": "deep",
+   "summary": "A rigorous open-source evaluation framework from the UK AI Security Institute. Tasks, solvers and scorers are Python; agents run inside sandboxes (Docker, Kubernetes, Proxmox VMs), and Inspect SWE wraps coding agents such as Claude Code, Codex CLI and Gemini CLI as solvers.",
+   "how": "An eval is a Task: a dataset of samples, a solver (the model or agent being tested) and scorers (code, model-graded or human). Inspect runs outside the sandbox and sends tool calls into it, so inference and execution stay separate. Sandbox plugins provide Docker Compose, Kubernetes and Proxmox isolation; Inspect Evals ships many ready benchmarks. The Inspect View UI shows transcripts, scores and token use per sample.",
+   "features": [
+    "Task / solver / scorer model with code, model-graded and human scorers",
+    "Sandboxes: Docker Compose, Kubernetes, Proxmox VM (isolation by tooling, host and network)",
+    "Inspect SWE: run Claude Code, Codex CLI, Gemini CLI as solvers",
+    "Inspect Evals: large library of published benchmarks",
+    "Log viewer with transcripts, scores and token usage"
+   ],
+   "strengths": [
+    "Built for rigor: used by AISI, METR, Apollo Research and others",
+    "Clean separation of inference and execution; strong isolation options",
+    "Good fit for grading non-code tasks too (Q&A, review, planning) with model graders",
+    "Google's codelab uses it to evaluate Agent Skills"
+   ],
+   "weaknesses": [
+    "More research-oriented; less focused on SDLC harnesses than Harbor",
+    "Python-centric authoring",
+    "Coding-agent support comes through Inspect SWE rather than the core"
+   ],
+   "gaps": [
+    "No notion of SDLC workflows (ticket, plan, review, PR) out of the box",
+    "No cost-per-task reporting across harnesses by default"
+   ],
+   "fit": {
+    "verdict": "adopt-part",
+    "role": "Alternative or complement to Harbor for non-code tasks (repo Q&A, design review, standards questions) and for strict isolation via its sandbox plugins."
+   },
+   "scores": {
+    "fit": 4,
+    "maturity": 5,
+    "openness": 5,
+    "agnostic": 4,
+    "config": 4,
+    "measure": 4,
+    "safety": 5
+   },
+   "links": [
+    [
+     "Docs",
+     "https://inspect.aisi.org.uk"
+    ],
+    [
+     "GitHub",
+     "https://github.com/UKGovernmentBEIS/inspect_ai"
+    ],
+    [
+     "Sandboxing toolkit",
+     "https://aisi.gov.uk/blog/the-inspect-sandboxing-toolkit-scalable-and-secure-ai-agent-evaluations"
+    ],
+    [
+     "Skills eval codelab",
+     "https://codelabs.developers.google.com/codelabs/evaluate-agent-skills-using-open-source-frameworks"
+    ]
+   ],
+   "sources": [
+    "https://aisi.gov.uk/blog/the-inspect-sandboxing-toolkit-scalable-and-secure-ai-agent-evaluations",
+    "https://codelabs.developers.google.com/codelabs/evaluate-agent-skills-using-open-source-frameworks"
+   ]
+  },
+  {
+   "id": "aws-harness-benchmarks",
+   "name": "AWS Agentic Coding Harness Benchmarks (+ swe-router)",
+   "category": "eval",
+   "kind": "open-source",
+   "vendor": "AWS (aws-samples)",
+   "repo": "aws-samples/sample-agentic-coding-harness-benchmarks",
+   "url": "https://github.com/aws-samples/sample-agentic-coding-harness-benchmarks",
+   "license": "MIT-0",
+   "pricing": "Free sample code; you pay for models/GPUs",
+   "status": "active",
+   "tier": "deep",
+   "summary": "The closest existing thing to an Azm harness sandbox: a benchmark harness that runs real tasks from your own repositories through several coding harnesses and models, scores them with an independent LLM judge, and plots the cost/quality frontier. A companion skill (swe-router) then recommends the cheapest model that clears the bar for each task.",
+   "how": "Tasks come from closed issues: the repo is cloned at a pinned commit before the fix, and the problem statement is written from the real ticket. A run script takes --provider, --model, --dataset and --agent, drives the harness, and an LLM judge scores the result against a rubric. It records tokens (including cache), turns, latency, quality and cost per task; for self-hosted models cost is GPU-seconds x price. Supports five harnesses and three hosting paths (Bedrock, OpenAI-compatible proxy, vLLM on EC2). The blog recommends starting with ~5 tasks and 2 models, changing one lever at a time, and re-running weekly.",
+   "features": [
+    "Tasks from your own closed issues at pinned commits",
+    "Five harnesses x many models x three hosting paths",
+    "LLM-judge rubric scoring; tokens, turns, latency, $/task",
+    "Cost/quality Pareto frontier charts",
+    "swe-router skill reads the frontier and recommends a model per task"
+   ],
+   "strengths": [
+    "Exactly the 'benchmark on your own code' workflow Azm wants",
+    "Shows harness choice changes cost 3x at equal score in their data",
+    "MIT-0: copy anything without attribution",
+    "Published method with reproducible steps"
+   ],
+   "weaknesses": [
+    "Sample code, explicitly not production-ready",
+    "LLM judge only; no hidden-test scoring, so judge bias is a risk",
+    "AWS-centric hosting; no named sandbox (clone, run, delete)",
+    "Single-repo, 21-task published results; numbers don't transfer"
+   ],
+   "gaps": [
+    "Hidden tests / fail-before-pass-after verification",
+    "Real sandbox isolation",
+    "Multi-project, multi-team configuration",
+    "Standards-compliance scoring"
+   ],
+   "fit": {
+    "verdict": "adopt-part",
+    "role": "Reuse its task-mining method, metrics and frontier reporting (and swe-router idea) inside the Azm sandbox; run on Harbor for isolation."
+   },
+   "scores": {
+    "fit": 5,
+    "maturity": 2,
+    "openness": 5,
+    "agnostic": 4,
+    "config": 3,
+    "measure": 5,
+    "safety": 2
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/aws-samples/sample-agentic-coding-harness-benchmarks"
+    ],
+    [
+     "AWS blog (2026-10-21)",
+     "https://aws.amazon.com/blogs/aws-cloud-financial-management/tokenomics-for-coding-agents-benchmark-cost-and-quality-on-your-own-code/"
+    ],
+    [
+     "Earlier version (aarora79)",
+     "https://github.com/aarora79/agentic-coding-harness-benchmarks"
+    ]
+   ],
+   "sources": [
+    "https://aws.amazon.com/blogs/aws-cloud-financial-management/tokenomics-for-coding-agents-benchmark-cost-and-quality-on-your-own-code/",
+    "https://github.com/aws-samples/sample-agentic-coding-harness-benchmarks"
+   ]
+  },
+  {
+   "id": "swe-bench",
+   "name": "SWE-bench family (Verified, Pro, Multimodal)",
+   "category": "eval",
+   "kind": "open-source",
+   "vendor": "Princeton/Stanford (SWE-bench); Scale AI (SWE-bench Pro)",
+   "repo": "SWE-bench/SWE-bench",
+   "url": "https://www.swebench.com",
+   "license": "MIT",
+   "pricing": "Free",
+   "status": "active",
+   "version": "v5.0.1",
+   "tier": "deep",
+   "summary": "The standard benchmark of real GitHub issues: the agent gets a repo and an issue, and passes if hidden tests go from failing to passing. SWE-bench Verified (500 human-validated Python tasks) and Scale AI's harder, multi-language SWE-bench Pro are the most cited variants.",
+   "how": "Each instance pins a repository at the commit before the fix, gives the issue text, and evaluates the agent's patch with the repository's own tests in Docker (FAIL_TO_PASS and PASS_TO_PASS). SWE-bench Pro adds long-horizon tasks with reproducible Docker evaluation. Harbor and Inspect both run SWE-bench through adapters.",
+   "features": [
+    "Real issues, real tests, fail-to-pass verification",
+    "Docker-based reproducible evaluation",
+    "Verified (500), Pro (long-horizon), Multimodal variants",
+    "Supported by Harbor, Inspect, OpenHands benchmarks"
+   ],
+   "strengths": [
+    "The reference method for building tasks from real repositories",
+    "Hidden-test scoring avoids judge bias",
+    "Huge comparison base across models and harnesses"
+   ],
+   "weaknesses": [
+    "Python-heavy (Verified); public data leaks into training sets",
+    "Saturating at the top; small gaps are noise",
+    "Doesn't reflect PHP/Laravel or Azm codebases"
+   ],
+   "gaps": [
+    "Azm-specific tasks in Azm's stacks",
+    "Non-code SDLC steps (planning, review, release)"
+   ],
+   "fit": {
+    "verdict": "adopt-part",
+    "role": "Copy the task recipe (pinned commit + issue + FAIL_TO_PASS tests) for Azm's private task set; keep a small public subset as a sanity check."
+   },
+   "scores": {
+    "fit": 4,
+    "maturity": 5,
+    "openness": 5,
+    "agnostic": 5,
+    "config": 3,
+    "measure": 4,
+    "safety": 4
+   },
+   "links": [
+    [
+     "Website",
+     "https://www.swebench.com"
+    ],
+    [
+     "GitHub",
+     "https://github.com/SWE-bench/SWE-bench"
+    ],
+    [
+     "SWE-bench Pro",
+     "https://github.com/scaleapi/SWE-bench_Pro-os"
+    ]
+   ],
+   "sources": [
+    "https://github.com/SWE-bench/SWE-bench",
+    "https://github.com/scaleapi/SWE-bench_Pro-os",
+    "https://arxiv.org/html/2605.23950v1"
+   ]
+  },
+  {
+   "id": "terminal-bench",
+   "name": "Terminal-Bench 2.0",
+   "category": "eval",
+   "kind": "open-source",
+   "vendor": "Laude Institute / Stanford",
+   "repo": "harbor-framework/terminal-bench",
+   "url": "https://www.tbench.ai",
+   "license": "Apache-2.0",
+   "pricing": "Free",
+   "status": "active",
+   "tier": "deep",
+   "summary": "89 hand-validated, containerized terminal tasks that test whether an agent can finish real command-line work end to end. Its leaderboard lists the harness used for each entry, which makes it the main public place to compare harnesses.",
+   "how": "Each task ships a container, an instruction and a hidden test script; Harbor runs agents against them. The ICLR 2026 paper and the leaderboard disclose model + harness pairs and verified trajectories.",
+   "features": [
+    "89 validated tasks across many terminal domains",
+    "Leaderboard shows the harness for every entry",
+    "Run with Harbor locally or in cloud sandboxes",
+    "ICLR 2026 paper with task validation process",
+    "Verified trajectories for leaderboard entries"
+   ],
+   "strengths": [
+    "Best public signal of harness quality (same model, different harness)",
+    "Used by GitHub, Anthropic and research papers",
+    "Tasks are hand-validated and containerized, so runs are reproducible"
+   ],
+   "weaknesses": [
+    "Generic terminal tasks, not product development",
+    "Scores sensitive to sandbox resources (Anthropic measured ~6 pp spread)"
+   ],
+   "gaps": [
+    "Doesn't test multi-step SDLC with human approvals"
+   ],
+   "fit": {
+    "verdict": "adopt-part",
+    "role": "Public sanity-check suite in the sandbox; results comparable with published numbers when resources are matched."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 4,
+    "openness": 5,
+    "agnostic": 5,
+    "config": 3,
+    "measure": 4,
+    "safety": 4
+   },
+   "links": [
+    [
+     "Leaderboard",
+     "https://www.tbench.ai"
+    ],
+    [
+     "GitHub",
+     "https://github.com/harbor-framework/terminal-bench"
+    ]
+   ],
+   "sources": [
+    "https://huggingface.co/datasets/harborframework/terminal-bench-2.0/blob/main/README.md",
+    "https://www.zenml.io/llmops-database/infrastructure-noise-in-agentic-coding-evaluations"
+   ]
+  },
+  {
+   "id": "skillsbench",
+   "name": "SkillsBench",
+   "category": "eval",
+   "kind": "open-source",
+   "vendor": "Academic (NeurIPS 2026)",
+   "repo": null,
+   "url": "https://arxiv.org/abs/2602.12670",
+   "license": "Open (paper + tasks)",
+   "pricing": "Free",
+   "status": "active",
+   "tier": "brief",
+   "summary": "A benchmark that measures whether Agent Skills actually help: 87 tasks in 8 domains, each with a curated skill and deterministic verifiers, run across 18 model-harness configurations.",
+   "how": "Paired runs: the same task with and without the skill, same model and harness. Curated skills raised the average pass rate from 33.9% to 50.5%; focused skills (3 modules or fewer) beat large bundles; small models with skills can match larger ones.",
+   "features": [
+    "87 tasks, 8 domains, deterministic verifiers",
+    "Paired with/without-skill protocol",
+    "Used in GitHub's Copilot harness evaluation"
+   ],
+   "strengths": [
+    "Directly relevant to measuring Track 1 standards (skills) inside the sandbox"
+   ],
+   "weaknesses": [
+    "Generic domains; Azm skills need their own tasks"
+   ],
+   "gaps": [
+    "Azm skills/standards task set"
+   ],
+   "fit": {
+    "verdict": "adopt-part",
+    "role": "Use its paired with/without protocol to measure every Azm standard or skill before rollout."
+   },
+   "scores": {
+    "fit": 4,
+    "maturity": 3,
+    "openness": 4,
+    "agnostic": 4,
+    "config": 3,
+    "measure": 4,
+    "safety": 3
+   },
+   "links": [
+    [
+     "Paper",
+     "https://arxiv.org/abs/2602.12670"
+    ],
+    [
+     "vals.ai results",
+     "https://vals.ai/benchmarks/skillsbench"
+    ]
+   ],
+   "sources": [
+    "https://arxiv.org/abs/2602.12670v2",
+    "https://github.blog/ai-and-ml/github-copilot/evaluating-performance-and-efficiency-of-the-github-copilot-agentic-harness-across-models-and-tasks/"
+   ]
+  },
+  {
+   "id": "harnessbench",
+   "name": "HarnessBench",
+   "category": "eval",
+   "kind": "open-source",
+   "vendor": "reacher-z (with ClawBench)",
+   "repo": "reacher-z/HarnessBench",
+   "url": "https://github.com/reacher-z/HarnessBench",
+   "license": "Apache-2.0",
+   "pricing": "Free",
+   "status": "active",
+   "version": "v0.1.6",
+   "tier": "brief",
+   "summary": "A benchmark built specifically to compare agent harnesses with the base model held fixed: 6 harnesses, 153 shared tasks in 15 categories, one container per harness, 5-layer recording.",
+   "how": "Harnesses register through plugin entry points; each runs in its own container on the same tasks; a matrix preview shows the runs before they execute. Tasks are everyday online tasks (ordering, booking, applying), not software development.",
+   "features": [
+    "Fixed-model, varied-harness design",
+    "Plugin entry points to add a harness",
+    "One container per harness; 5-layer recordings",
+    "Cloud harnesses opt-in"
+   ],
+   "strengths": [
+    "Its plugin-per-harness and matrix design is a good template for Azm"
+   ],
+   "weaknesses": [
+    "Web/consumer tasks, not coding",
+    "Small project; last release April 2026"
+   ],
+   "gaps": [
+    "Coding/SDLC tasks"
+   ],
+   "fit": {
+    "verdict": "inspire",
+    "role": "Borrow the harness-plugin registry and matrix-run UX for the Azm sandbox."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 2,
+    "openness": 5,
+    "agnostic": 5,
+    "config": 3,
+    "measure": 4,
+    "safety": 3
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/reacher-z/HarnessBench"
+    ]
+   ],
+   "sources": [
+    "https://github.com/reacher-z/HarnessBench"
+   ]
+  },
+  {
+   "id": "wildclawbench",
+   "name": "WildClawBench",
+   "category": "eval",
+   "kind": "open-source",
+   "vendor": "InternLM",
+   "repo": "InternLM/WildClawBench",
+   "url": "https://github.com/InternLM/WildClawBench",
+   "license": "MIT",
+   "pricing": "Free",
+   "status": "active",
+   "tier": "brief",
+   "summary": "60 hand-built, end-to-end tasks run by four harnesses (OpenClaw, Claude Code, Codex CLI, Hermes) under the same grading, to separate model capability from harness scaffolding. Best score 67.2%.",
+   "how": "Each task runs in its own Docker container; ground truth and grading scripts are injected only after the agent finishes, so they can't leak into the run.",
+   "features": [
+    "Same tasks across 4 harnesses",
+    "Grading injected after the run (no leakage)",
+    "Per-task Docker isolation"
+   ],
+   "strengths": [
+    "The post-run injection of graders is a pattern Azm should copy"
+   ],
+   "weaknesses": [
+    "General assistant tasks, not coding"
+   ],
+   "gaps": [
+    "Coding/SDLC focus"
+   ],
+   "fit": {
+    "verdict": "inspire",
+    "role": "Copy 'inject graders only after the run' to keep Azm's hidden tests hidden."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 3,
+    "openness": 5,
+    "agnostic": 4,
+    "config": 2,
+    "measure": 4,
+    "safety": 4
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/InternLM/WildClawBench"
+    ]
+   ],
+   "sources": [
+    "https://github.com/InternLM/WildClawBench"
+   ]
+  },
+  {
+   "id": "meta-harness",
+   "name": "Meta-Harness",
+   "category": "eval",
+   "kind": "open-source",
+   "vendor": "Stanford IRIS Lab (ICML 2026)",
+   "repo": "stanford-iris-lab/meta-harness",
+   "url": "https://github.com/stanford-iris-lab/meta-harness",
+   "license": "MIT",
+   "pricing": "Free",
+   "status": "active",
+   "tier": "deep",
+   "summary": "A framework for automated search over harnesses: with the model fixed, an optimizer edits the code around it (what to store, retrieve and show) and keeps changes that score better. Reference experiments include Terminal-Bench 2.0 scaffold evolution.",
+   "how": "You define the harness search space and a benchmark; an agent proposes harness edits, runs the benchmark, and keeps improvements. Several projects build on it: a Claude Code skill (Harness Forge), a Codex-based CLI (SuperagenticAI/metaharness), and applications to legal and video tasks.",
+   "features": [
+    "Automated harness optimization against a benchmark",
+    "Terminal-Bench 2.0 reference experiment and artifact",
+    "Ecosystem: Claude Code skill, Codex CLI, regularized variants (RRSI)",
+    "Search over prompts, tools and memory logic, not model weights",
+    "Published artifacts to reproduce experiments"
+   ],
+   "strengths": [
+    "Shows the sandbox can do more than rank harnesses: it can improve them",
+    "Academic grounding (ICML 2026)",
+    "Several open-source derivatives make it easy to try"
+   ],
+   "weaknesses": [
+    "Research code; needs a solid benchmark first",
+    "Risk of overfitting harness to the benchmark (addressed by RRSI)"
+   ],
+   "gaps": [
+    "Azm task set to optimize against"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Phase 2: once the sandbox has Azm tasks, use harness search to tune squad-kit / azm-harness prompts, tools and rules."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 2,
+    "openness": 5,
+    "agnostic": 4,
+    "config": 3,
+    "measure": 4,
+    "safety": 2
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/stanford-iris-lab/meta-harness"
+    ],
+    [
+     "ICML 2026",
+     "https://icml.cc/virtual/2026/67972"
+    ]
+   ],
+   "sources": [
+    "https://github.com/stanford-iris-lab/meta-harness",
+    "https://icml.cc/virtual/2026/67972"
+   ]
+  },
+  {
+   "id": "ahe",
+   "name": "Agentic Harness Engineering (AHE)",
+   "category": "eval",
+   "kind": "open-source",
+   "vendor": "Academic (china-qijizhifeng)",
+   "repo": "china-qijizhifeng/agentic-harness-engineering",
+   "url": "https://github.com/china-qijizhifeng/agentic-harness-engineering",
+   "license": "MIT",
+   "pricing": "Free",
+   "status": "active",
+   "tier": "brief",
+   "summary": "An observability-driven system that evolves a coding-agent harness automatically: the harness is split into seven git-tracked components, traces are distilled into reports, and an evolve agent proposes edits that the next run validates. Lifted Terminal-Bench 2 pass@1 from 69.7% to 77.0% on GPT-5.4; ranked #3 on TB2 (84.7%, May 2026).",
+   "how": "Component observability (harness as seven file-level parts), experience observability (an Agent Debugger that digests ~10M-token traces) and decision observability (edits with predicted impact, falsified by flipped tasks).",
+   "features": [
+    "Harness split into 7 versioned components",
+    "Trace digests for root-cause analysis",
+    "Evidence-backed, auto-falsified edits"
+   ],
+   "strengths": [
+    "Concrete recipe for 'harness as versioned code' with measured gains"
+   ],
+   "weaknesses": [
+    "Research system; Python 3.13+, tmux; tied to its own NexAU harness"
+   ],
+   "gaps": [
+    "Integration with existing SDLC harnesses"
+   ],
+   "fit": {
+    "verdict": "inspire",
+    "role": "Model for how Azm should version harness components and review traces after each sandbox run."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 2,
+    "openness": 5,
+    "agnostic": 3,
+    "config": 3,
+    "measure": 4,
+    "safety": 2
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/china-qijizhifeng/agentic-harness-engineering"
+    ]
+   ],
+   "sources": [
+    "https://github.com/china-qijizhifeng/agentic-harness-engineering"
+   ]
+  },
+  {
+   "id": "auto-harness",
+   "name": "auto-harness",
+   "category": "eval",
+   "kind": "open-source",
+   "vendor": "NeoSigma",
+   "repo": "neosigmaai/auto-harness",
+   "url": "https://github.com/neosigmaai/auto-harness",
+   "license": "MIT",
+   "pricing": "Free",
+   "status": "active",
+   "tier": "brief",
+   "summary": "A coding agent improves another agent overnight: it reads benchmark failures, edits the system prompt and tools, gates every change against a self-maintained eval suite, and repeats. Reported Tau3 improvement 0.56 to 0.78.",
+   "how": "PROGRAM.md defines the loop; benchmark.py returns per-task rewards; gating.py runs a three-step gate (eval suite, full validation score, suite promotion). Supports Terminal-Bench 2.0 via Harbor.",
+   "features": [
+    "Failure mining",
+    "Regression gate before accepting a change",
+    "Harbor-backed TB2 support"
+   ],
+   "strengths": [
+    "Small and readable; the gate design is reusable"
+   ],
+   "weaknesses": [
+    "Simplified demo of a commercial setup"
+   ],
+   "gaps": [
+    "Azm tasks"
+   ],
+   "fit": {
+    "verdict": "inspire",
+    "role": "Reuse its regression-gate idea: no harness change ships unless the Azm regression suite passes."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 2,
+    "openness": 5,
+    "agnostic": 3,
+    "config": 3,
+    "measure": 3,
+    "safety": 2
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/neosigmaai/auto-harness"
+    ]
+   ],
+   "sources": [
+    "https://github.com/neosigmaai/auto-harness"
+   ]
+  },
+  {
+   "id": "openhands-benchmarks",
+   "name": "OpenHands Benchmarks",
+   "category": "eval",
+   "kind": "open-source",
+   "vendor": "OpenHands (All Hands AI)",
+   "repo": "OpenHands/benchmarks",
+   "url": "https://github.com/OpenHands/benchmarks",
+   "license": "MIT",
+   "pricing": "Free",
+   "status": "active",
+   "tier": "brief",
+   "summary": "The evaluation harness and benchmark definitions OpenHands uses to test its own agents across SWE-bench and other suites, built on the OpenHands Software Agent SDK.",
+   "how": "Benchmarks are defined against the OpenHands SDK runtime (Docker or remote workspaces) and produce comparable reports for agent versions.",
+   "features": [
+    "SWE-bench and other suites wired to the OpenHands SDK",
+    "Remote/Docker workspaces"
+   ],
+   "strengths": [
+    "Good reference for running many benchmarks against one harness over time"
+   ],
+   "weaknesses": [
+    "Centered on OpenHands agents"
+   ],
+   "gaps": [
+    "Multi-harness comparisons"
+   ],
+   "fit": {
+    "verdict": "inspire",
+    "role": "Reference for regression-testing one harness release after another."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 3,
+    "openness": 5,
+    "agnostic": 2,
+    "config": 3,
+    "measure": 3,
+    "safety": 4
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/OpenHands/benchmarks"
+    ]
+   ],
+   "sources": [
+    "https://github.com/OpenHands/benchmarks"
+   ]
+  },
+  {
+   "id": "runloop-benchmarks",
+   "name": "Runloop (Devboxes + Benchmarks)",
+   "category": "eval",
+   "kind": "commercial",
+   "vendor": "Runloop",
+   "repo": null,
+   "url": "https://runloop.ai",
+   "license": "Proprietary",
+   "pricing": "$0.108/CPU-h, $0.0252/GB-h; Pro $250/mo; $50 trial credit (Sept 2026)",
+   "status": "active",
+   "tier": "brief",
+   "summary": "A commercial platform for building and evaluating software-engineering agents: VM devboxes, snapshots, blueprints, and public plus custom benchmarks. Upstash's comparison names it the pick for coding-agent evals and benchmarks.",
+   "how": "Devboxes (VMs on a custom hypervisor) run the agent; Blueprints are reusable environment templates; Axons record event streams; benchmarks run public suites or custom scenarios you define. A Broker can start and manage Claude Code inside a devbox. Enterprise deployment to your VPC.",
+   "features": [
+    "VM devboxes with snapshots and fan-out",
+    "Public and custom benchmarks",
+    "Event streams (Axons) for every agent run",
+    "Claude Code via Broker; VPC deployment (Enterprise)"
+   ],
+   "strengths": [
+    "Managed, eval-focused infrastructure you don't have to build",
+    "Supported sandbox for OpenAI Agents SDK sandbox agents"
+   ],
+   "weaknesses": [
+    "Proprietary; cost at scale",
+    "Hostname-only egress rules (no CIDR)"
+   ],
+   "gaps": [
+    "Azm harness adapters and standards scoring"
+   ],
+   "fit": {
+    "verdict": "benchmark",
+    "role": "Managed alternative to self-running Harbor; worth a trial if Azm doesn't want to operate eval infrastructure."
+   },
+   "scores": {
+    "fit": 4,
+    "maturity": 3,
+    "openness": 1,
+    "agnostic": 4,
+    "config": 3,
+    "measure": 4,
+    "safety": 4
+   },
+   "links": [
+    [
+     "Website",
+     "https://runloop.ai"
+    ],
+    [
+     "Docs",
+     "https://docs.runloop.ai"
+    ]
+   ],
+   "sources": [
+    "https://upstash.com/blog/ai-agent-sandbox-providers-compared-2026",
+    "https://docs.runloop.ai/docs/benchmarks/custom-benchmarks.md"
+   ]
+  },
+  {
+   "id": "promptfoo",
+   "name": "Promptfoo",
+   "category": "eval",
+   "kind": "open-source",
+   "vendor": "Promptfoo (acquired by OpenAI, March 2026)",
+   "repo": "promptfoo/promptfoo",
+   "url": "https://www.promptfoo.dev",
+   "license": "MIT",
+   "pricing": "Open source free; enterprise plans",
+   "status": "active",
+   "version": "0.119.x",
+   "tier": "brief",
+   "summary": "Config-driven (YAML) testing and red-teaming for prompts, agents and RAG, run locally or in CI. OpenAI announced its acquisition in March 2026; the repository remains MIT and active.",
+   "how": "A promptfooconfig.yaml lists providers, prompts, test cases and assertions (deterministic or model-graded); the CLI runs the matrix and shows a comparison view. Red-team plugins generate adversarial tests.",
+   "features": [
+    "Declarative YAML test matrices",
+    "Deterministic and LLM-graded assertions",
+    "Red-teaming and security scans",
+    "CI integration and comparison UI"
+   ],
+   "strengths": [
+    "Best-in-class for YAML-configured evals a team can own",
+    "Strong security/red-team coverage for agents"
+   ],
+   "weaknesses": [
+    "Designed for prompts and agent endpoints, not for running full CLI harnesses on repos",
+    "Ownership change (OpenAI) adds roadmap uncertainty for multi-vendor use"
+   ],
+   "gaps": [
+    "Repository-task execution and sandboxes"
+   ],
+   "fit": {
+    "verdict": "adopt-part",
+    "role": "Use for YAML-configured guardrail and red-team checks of Azm agents (e.g. the autonomous channel agents), alongside Harbor for repo tasks."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 5,
+    "openness": 4,
+    "agnostic": 5,
+    "config": 5,
+    "measure": 4,
+    "safety": 4
+   },
+   "links": [
+    [
+     "Website",
+     "https://www.promptfoo.dev"
+    ],
+    [
+     "GitHub",
+     "https://github.com/promptfoo/promptfoo"
+    ],
+    [
+     "Acquisition news",
+     "https://securityboulevard.com/2026/03/openai-acquires-security-startup-promptfoo-to-fortify-ai-agents"
+    ]
+   ],
+   "sources": [
+    "https://securityboulevard.com/2026/03/openai-acquires-security-startup-promptfoo-to-fortify-ai-agents",
+    "https://gigazine.net/gsc_news/en/20260310-openai-to-acquire-promptfoo"
+   ]
+  },
+  {
+   "id": "deepeval",
+   "name": "DeepEval",
+   "category": "eval",
+   "kind": "open-core",
+   "vendor": "Confident AI",
+   "repo": "confident-ai/deepeval",
+   "url": "https://github.com/confident-ai/deepeval",
+   "license": "Apache-2.0",
+   "pricing": "Open source; Confident AI cloud paid",
+   "status": "active",
+   "tier": "brief",
+   "summary": "Pytest-style LLM and agent evaluation framework with many metrics (task completion, tool correctness, G-Eval) and a hosted platform for tracking.",
+   "how": "Write test cases in Python, choose metrics, run in CI; traces can be sent to the Confident AI platform.",
+   "features": [
+    "Pytest-like API",
+    "Agent metrics: task completion, tool correctness",
+    "CI-friendly"
+   ],
+   "strengths": [
+    "Fast to adopt for rubric/LLM-judge metrics"
+   ],
+   "weaknesses": [
+    "Not a runner for CLI coding harnesses"
+   ],
+   "gaps": [
+    "Sandboxed repo tasks"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Possible metric library for rubric scoring; not needed if Harbor + custom verifiers are used."
+   },
+   "scores": {
+    "fit": 2,
+    "maturity": 4,
+    "openness": 4,
+    "agnostic": 4,
+    "config": 3,
+    "measure": 4,
+    "safety": 2
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/confident-ai/deepeval"
+    ]
+   ],
+   "sources": [
+    "https://github.com/Picrew/awesome-agent-harness"
+   ]
+  }
+ ]
+}

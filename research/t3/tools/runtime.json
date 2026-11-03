@@ -1,0 +1,690 @@
+{
+ "category": "runtime",
+ "checked": "2026-11-03",
+ "tools": [
+  {
+   "id": "claude-code",
+   "name": "Claude Code (+ Claude Agent SDK)",
+   "kind": "commercial",
+   "vendor": "Anthropic",
+   "repo": "anthropics/claude-agent-sdk-python",
+   "url": "https://code.claude.com",
+   "license": "Proprietary CLI; Agent SDK MIT",
+   "pricing": "Claude subscription or API usage",
+   "tier": "deep",
+   "summary": "Anthropic's agentic coding CLI and the harness most Azm tools (including squad-kit) run on today. The Claude Agent SDK (Python/TypeScript) exposes the same loop programmatically: tools, subagents, hooks, skills, MCP, permissions and sandboxing.",
+   "how": "An agent loop with built-in tools (read, edit, bash, search, web), project memory (CLAUDE.md), skills, plugins, hooks and subagents. Headless mode (`claude -p`) and the Agent SDK make it scriptable, which is how Harbor and other runners drive it.",
+   "features": [
+    "Skills, plugins, hooks, subagents, MCP",
+    "Headless mode and Agent SDK",
+    "OS-level sandboxing (srt)",
+    "OpenTelemetry metrics/events export"
+   ],
+   "strengths": [
+    "Top-tier results on harness leaderboards with Claude models",
+    "Rich extension points for standards (skills, hooks, rules)",
+    "Widely used; most Azm developers already know it",
+    "Plugins and marketplaces distribute standards across teams"
+   ],
+   "weaknesses": [
+    "Single model vendor",
+    "Proprietary CLI"
+   ],
+   "gaps": [
+    "Cross-harness portability of Azm rules"
+   ],
+   "fit": {
+    "verdict": "adopt",
+    "role": "Baseline harness in every comparison, and the runtime under squad-kit."
+   },
+   "scores": {
+    "fit": 5,
+    "maturity": 5,
+    "openness": 2,
+    "agnostic": 1,
+    "config": 4,
+    "measure": 3,
+    "safety": 4
+   },
+   "links": [
+    [
+     "Docs",
+     "https://code.claude.com/docs"
+    ],
+    [
+     "Agent SDK",
+     "https://github.com/anthropics/claude-agent-sdk-python"
+    ]
+   ],
+   "sources": [
+    "https://github.com/anthropics/claude-agent-sdk-python",
+    "https://code.claude.com/docs"
+   ],
+   "status": "active",
+   "category": "runtime"
+  },
+  {
+   "id": "codex-cli",
+   "name": "Codex CLI (+ Codex SDK)",
+   "kind": "open-source",
+   "vendor": "OpenAI",
+   "repo": "openai/codex",
+   "url": "https://developers.openai.com/codex",
+   "license": "Apache-2.0",
+   "pricing": "ChatGPT plan or API usage",
+   "tier": "deep",
+   "summary": "OpenAI's open-source coding agent CLI (Rust), with sandboxed execution, AGENTS.md project instructions, MCP and a non-interactive exec mode; also available as Codex cloud and an SDK.",
+   "how": "Agent loop with OS sandboxing (Seatbelt / Landlock) and approval modes; `codex exec` for automation; AGENTS.md for project rules.",
+   "features": [
+    "Built-in OS sandbox and approval modes",
+    "AGENTS.md",
+    "exec mode for CI",
+    "MCP"
+   ],
+   "strengths": [
+    "Open source; strong sandbox defaults",
+    "AGENTS.md is an open convention read by many harnesses",
+    "exec mode and SDK make automated runs straightforward"
+   ],
+   "weaknesses": [
+    "Best with OpenAI models",
+    "Fewer extension points (hooks, plugins) than Claude Code"
+   ],
+   "gaps": [
+    "—"
+   ],
+   "fit": {
+    "verdict": "benchmark",
+    "role": "Second baseline harness; squad-kit's Codex backend target."
+   },
+   "scores": {
+    "fit": 4,
+    "maturity": 4,
+    "openness": 5,
+    "agnostic": 3,
+    "config": 4,
+    "measure": 2,
+    "safety": 5
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/openai/codex"
+    ]
+   ],
+   "sources": [
+    "https://github.com/openai/codex",
+    "https://developers.openai.com/codex"
+   ],
+   "status": "active",
+   "category": "runtime"
+  },
+  {
+   "id": "opencode",
+   "name": "opencode",
+   "kind": "open-source",
+   "vendor": "Anomaly (SST)",
+   "repo": "anomalyco/opencode",
+   "url": "https://opencode.ai",
+   "license": "MIT",
+   "pricing": "Free; bring any model",
+   "summary": "An open-source, model-agnostic terminal coding agent with LSP, many providers and a client/server design.",
+   "how": "TUI client over a server; agents, modes and MCP configured in JSON.",
+   "features": [
+    "75+ providers",
+    "LSP",
+    "Client/server"
+   ],
+   "strengths": [
+    "Model-agnostic, MIT"
+   ],
+   "weaknesses": [
+    "Rapid change"
+   ],
+   "gaps": [
+    "—"
+   ],
+   "fit": {
+    "verdict": "benchmark",
+    "role": "Open model-agnostic baseline (lets the sandbox test open-weight models)."
+   },
+   "scores": {
+    "fit": 4,
+    "maturity": 4,
+    "openness": 5,
+    "agnostic": 5,
+    "config": 4,
+    "measure": 2,
+    "safety": 3
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/anomalyco/opencode"
+    ]
+   ],
+   "sources": [
+    "https://github.com/anomalyco/opencode"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "runtime"
+  },
+  {
+   "id": "pi",
+   "name": "pi",
+   "kind": "open-source",
+   "vendor": "Mario Zechner (Earendil)",
+   "repo": "earendil-works/pi",
+   "url": "https://github.com/earendil-works/pi",
+   "license": "MIT",
+   "pricing": "Free",
+   "tier": "deep",
+   "summary": "A minimal, extensible coding-agent harness and toolkit (agent core, unified multi-provider LLM API, TUI). In Fullscript's benchmark pi resolved more tasks than Claude Code (22 vs 18) at lower cost; QM builds on it.",
+   "how": "A small agent loop with few tools and a short system prompt; extensions add capabilities; provider-agnostic.",
+   "features": [
+    "Minimal core",
+    "Multi-provider LLM API",
+    "Extensions",
+    "Short system prompt and few tools",
+    "Session tree and branching",
+    "Packages to share extensions and skills"
+   ],
+   "strengths": [
+    "Shows a lighter harness can beat a heavy one on real tasks",
+    "Cheap to run (fewer tokens per task in Fullscript's data)",
+    "MIT and provider-agnostic"
+   ],
+   "weaknesses": [
+    "You assemble more yourself",
+    "Smaller ecosystem than Claude Code"
+   ],
+   "gaps": [
+    "—"
+   ],
+   "fit": {
+    "verdict": "benchmark",
+    "role": "Lightweight baseline; and a possible engine for azm-harness."
+   },
+   "scores": {
+    "fit": 4,
+    "maturity": 3,
+    "openness": 5,
+    "agnostic": 5,
+    "config": 4,
+    "measure": 2,
+    "safety": 2
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/earendil-works/pi"
+    ]
+   ],
+   "sources": [
+    "https://github.com/earendil-works/pi",
+    "https://builders.fullscript.com/posts/benchmarking-the-agents-that-write-our-code"
+   ],
+   "status": "active",
+   "category": "runtime"
+  },
+  {
+   "id": "openhands",
+   "name": "OpenHands (+ Software Agent SDK)",
+   "kind": "open-source",
+   "vendor": "All Hands AI",
+   "repo": "OpenHands/OpenHands",
+   "url": "https://openhands.dev",
+   "license": "MIT",
+   "pricing": "Free; OpenHands Cloud paid",
+   "version": "v1.34.0",
+   "tier": "deep",
+   "summary": "A leading open-source software agent platform with a Docker/remote runtime, web UI, CLI and a composable Software Agent SDK, plus its own benchmarks repo.",
+   "how": "Agents act through a sandboxed runtime (Docker or remote); the SDK composes tools, context condensers and security analysers.",
+   "features": [
+    "Sandboxed runtime",
+    "Web UI, CLI, GitHub resolver",
+    "Agent SDK",
+    "Benchmarks"
+   ],
+   "strengths": [
+    "Model-agnostic, MIT, research-grade",
+    "Strong published SWE-bench results",
+    "GitHub/GitLab resolver for issue-to-PR flows"
+   ],
+   "weaknesses": [
+    "Heavier to run",
+    "UI-centric; SDLC gates are limited"
+   ],
+   "gaps": [
+    "—"
+   ],
+   "fit": {
+    "verdict": "benchmark",
+    "role": "Open-source baseline harness and source of runtime ideas."
+   },
+   "scores": {
+    "fit": 4,
+    "maturity": 4,
+    "openness": 5,
+    "agnostic": 5,
+    "config": 3,
+    "measure": 3,
+    "safety": 4
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/OpenHands/OpenHands"
+    ]
+   ],
+   "sources": [
+    "https://github.com/OpenHands/OpenHands",
+    "https://github.com/OpenHands/software-agent-sdk"
+   ],
+   "status": "active",
+   "category": "runtime"
+  },
+  {
+   "id": "mini-swe-agent",
+   "name": "mini-swe-agent",
+   "kind": "open-source",
+   "vendor": "SWE-agent team (Princeton/Stanford)",
+   "repo": "SWE-agent/mini-swe-agent",
+   "url": "https://mini-swe-agent.com",
+   "license": "MIT",
+   "pricing": "Free",
+   "version": "v2.4.6",
+   "summary": "A ~100-line agent that uses only bash and still scores well on SWE-bench Verified; a control baseline for 'how much does the harness add?'.",
+   "how": "Linear history, bash only, any model via LiteLLM.",
+   "features": [
+    "Bash-only",
+    "Tiny, readable"
+   ],
+   "strengths": [
+    "Perfect control group"
+   ],
+   "weaknesses": [
+    "No SDLC features"
+   ],
+   "gaps": [
+    "—"
+   ],
+   "fit": {
+    "verdict": "adopt-part",
+    "role": "Control baseline in every sandbox run."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 4,
+    "openness": 5,
+    "agnostic": 5,
+    "config": 2,
+    "measure": 2,
+    "safety": 2
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/SWE-agent/mini-swe-agent"
+    ]
+   ],
+   "sources": [
+    "https://github.com/SWE-agent/mini-swe-agent"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "runtime"
+  },
+  {
+   "id": "goose",
+   "name": "goose",
+   "kind": "open-source",
+   "vendor": "Agentic AI Foundation (from Block)",
+   "repo": "aaif-goose/goose",
+   "url": "https://goose-docs.ai",
+   "license": "Apache-2.0",
+   "pricing": "Free",
+   "summary": "An open-source, extensible on-machine agent (desktop and CLI) with MCP extensions and recipes, now under the Agentic AI Foundation.",
+   "how": "Recipes (YAML) define repeatable tasks; extensions via MCP.",
+   "features": [
+    "Recipes in YAML",
+    "MCP extensions"
+   ],
+   "strengths": [
+    "Vendor-neutral foundation governance"
+   ],
+   "weaknesses": [
+    "General-purpose"
+   ],
+   "gaps": [
+    "—"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "YAML recipe idea for team configs."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 4,
+    "openness": 5,
+    "agnostic": 5,
+    "config": 4,
+    "measure": 1,
+    "safety": 3
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/aaif-goose/goose"
+    ]
+   ],
+   "sources": [
+    "https://github.com/aaif-goose/goose"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "runtime"
+  },
+  {
+   "id": "deepagents",
+   "name": "Deep Agents",
+   "kind": "open-source",
+   "vendor": "LangChain",
+   "repo": "langchain-ai/deepagents",
+   "url": "https://github.com/langchain-ai/deepagents",
+   "license": "MIT",
+   "pricing": "Free",
+   "summary": "LangChain's harness for long-running agents: planning tool, virtual file system, subagents and pluggable sandboxes (Daytona, Modal and others); also a CLI.",
+   "how": "LangGraph-based agent with built-in middleware.",
+   "features": [
+    "Planning + files + subagents",
+    "Sandbox backends"
+   ],
+   "strengths": [
+    "Good library to build azm-harness on"
+   ],
+   "weaknesses": [
+    "LangChain stack"
+   ],
+   "gaps": [
+    "—"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Library option for building custom Azm agents."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 3,
+    "openness": 5,
+    "agnostic": 5,
+    "config": 3,
+    "measure": 3,
+    "safety": 3
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/langchain-ai/deepagents"
+    ]
+   ],
+   "sources": [
+    "https://github.com/langchain-ai/deepagents"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "runtime"
+  },
+  {
+   "id": "openai-agents-sdk",
+   "name": "OpenAI Agents SDK (sandbox agents)",
+   "kind": "open-source",
+   "vendor": "OpenAI",
+   "repo": "openai/openai-agents-python",
+   "url": "https://openai.github.io/openai-agents-python/",
+   "license": "MIT",
+   "pricing": "Free SDK; model usage",
+   "summary": "OpenAI's agent framework; since April 2026 it includes sandbox agents with a model-native harness that can run in providers such as E2B, Modal, Daytona, Runloop and others.",
+   "how": "Agents, tools, handoffs, guardrails, tracing; sandbox agents run tools inside a chosen provider.",
+   "features": [
+    "Sandbox agents",
+    "Tracing",
+    "Guardrails"
+   ],
+   "strengths": [
+    "Provider-agnostic sandbox abstraction"
+   ],
+   "weaknesses": [
+    "Alpha versions for sandbox"
+   ],
+   "gaps": [
+    "—"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Option for building autonomous channel agents."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 3,
+    "openness": 5,
+    "agnostic": 4,
+    "config": 3,
+    "measure": 3,
+    "safety": 3
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/openai/openai-agents-python"
+    ]
+   ],
+   "sources": [
+    "https://github.com/openai/openai-agents-python"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "runtime"
+  },
+  {
+   "id": "copilot-sdk",
+   "name": "GitHub Copilot SDK",
+   "kind": "open-source",
+   "vendor": "GitHub",
+   "repo": "github/copilot-sdk",
+   "url": "https://github.com/github/copilot-sdk",
+   "license": "MIT",
+   "pricing": "Copilot plan",
+   "summary": "SDK to embed the Copilot CLI agent loop in your own apps (Node, Python, Go, .NET).",
+   "how": "Talks to the Copilot CLI over JSON-RPC.",
+   "features": [
+    "Multi-language SDK"
+   ],
+   "strengths": [
+    "Access to Copilot's harness"
+   ],
+   "weaknesses": [
+    "Preview"
+   ],
+   "gaps": [
+    "—"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Adapter target if teams use Copilot."
+   },
+   "scores": {
+    "fit": 2,
+    "maturity": 2,
+    "openness": 4,
+    "agnostic": 2,
+    "config": 3,
+    "measure": 2,
+    "safety": 3
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/github/copilot-sdk"
+    ]
+   ],
+   "sources": [
+    "https://github.com/github/copilot-sdk"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "runtime"
+  },
+  {
+   "id": "deepseek-harness",
+   "name": "DeepSeek Harness",
+   "kind": "open-source",
+   "vendor": "DeepSeek",
+   "repo": "deepseek-ai/deepseek-harness",
+   "url": "https://github.com/deepseek-ai/deepseek-harness",
+   "license": "MIT",
+   "pricing": "Free",
+   "summary": "DeepSeek's open coding-agent harness (alpha), tuned for its models.",
+   "how": "Terminal agent loop.",
+   "features": [
+    "Open harness"
+   ],
+   "strengths": [
+    "Cheap open-weight path"
+   ],
+   "weaknesses": [
+    "Alpha"
+   ],
+   "gaps": [
+    "—"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Possible low-cost contender."
+   },
+   "scores": {
+    "fit": 2,
+    "maturity": 1,
+    "openness": 5,
+    "agnostic": 2,
+    "config": 2,
+    "measure": 1,
+    "safety": 2
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/deepseek-ai/deepseek-harness"
+    ]
+   ],
+   "sources": [
+    "https://github.com/deepseek-ai/deepseek-harness"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "runtime"
+  },
+  {
+   "id": "docker-agent",
+   "name": "Docker Agent (cagent)",
+   "kind": "open-source",
+   "vendor": "Docker",
+   "repo": "docker/docker-agent",
+   "url": "https://github.com/docker/docker-agent",
+   "license": "Apache-2.0",
+   "pricing": "Free",
+   "summary": "Define multi-agent teams in YAML and run them with Docker; agents can use MCP tools from Docker's catalogue.",
+   "how": "A YAML file declares agents, models, tools and sub-agents; `docker agent run`.",
+   "features": [
+    "Agents in YAML",
+    "MCP catalogue",
+    "Docker packaging"
+   ],
+   "strengths": [
+    "YAML-first config"
+   ],
+   "weaknesses": [
+    "General agents, not SDLC"
+   ],
+   "gaps": [
+    "—"
+   ],
+   "fit": {
+    "verdict": "inspire",
+    "role": "YAML schema reference for per-team agent definitions."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 3,
+    "openness": 5,
+    "agnostic": 4,
+    "config": 5,
+    "measure": 1,
+    "safety": 3
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/docker/docker-agent"
+    ]
+   ],
+   "sources": [
+    "https://github.com/docker/docker-agent"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "runtime"
+  },
+  {
+   "id": "pydantic-ai-harness",
+   "name": "Pydantic AI Harness",
+   "kind": "open-source",
+   "vendor": "Pydantic",
+   "repo": "pydantic/pydantic-ai-harness",
+   "url": "https://github.com/pydantic/pydantic-ai-harness",
+   "license": "MIT",
+   "pricing": "Free",
+   "summary": "A coding-agent harness built on Pydantic AI, with Logfire observability.",
+   "how": "Typed agent framework plus tools.",
+   "features": [
+    "Typed tools",
+    "Logfire tracing"
+   ],
+   "strengths": [
+    "Typed, observable"
+   ],
+   "weaknesses": [
+    "New"
+   ],
+   "gaps": [
+    "—"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Reference."
+   },
+   "scores": {
+    "fit": 2,
+    "maturity": 2,
+    "openness": 5,
+    "agnostic": 5,
+    "config": 3,
+    "measure": 3,
+    "safety": 2
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/pydantic/pydantic-ai-harness"
+    ]
+   ],
+   "sources": [
+    "https://github.com/pydantic/pydantic-ai-harness"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "runtime"
+  }
+ ]
+}

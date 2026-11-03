@@ -83,6 +83,8 @@ export type RadarEntry = {
   heading?: string;
   repo?: string;
   tag?: string;
+  /** Research track this signal feeds (e.g. "t3"), when it comes from a track watch. */
+  track?: string;
   /** Previous release tag, for release entries. */
   previous?: string;
   stars?: number;

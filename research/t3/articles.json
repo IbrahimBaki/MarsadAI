@@ -1,0 +1,688 @@
+{
+ "track": "t3",
+ "checked": "2026-11-03",
+ "articles": [
+  {
+   "id": "fullscript-bench",
+   "title": "Benchmarking the Agents That Write Our Code",
+   "source": "Fullscript (Builder's Corner)",
+   "date": "2026-08-12",
+   "url": "https://builders.fullscript.com/posts/benchmarking-the-agents-that-write-our-code",
+   "type": "case-study",
+   "tags": [
+    "prior-art",
+    "eval",
+    "task-mining"
+   ],
+   "priority": "must",
+   "summary": "Fullscript built an internal benchmark of 36 tasks mined from six months of their own commits (23 code, 13 non-code). Each task has a brief, a hidden answer key and hidden tests that fail before and pass after. They scored resolved plus a 0-100 developer-value score, zeroed any run with a safety violation, isolated runs in git worktrees and routed models through LiteLLM. pi resolved 22 tasks vs Claude Code's 18 at $22.66 vs $35.28, while Claude Code was ~40% faster. 10 of 12 skill sets matched or beat the baseline; stacking skill sets never won.",
+   "why": "The closest published version of the Azm harness sandbox. Copy the task recipe, the safety-zeroing rule, and their lessons: tasks saturate, single runs are noisy, judges are biased, re-mine tasks regularly."
+  },
+  {
+   "id": "aws-tokenomics",
+   "title": "Tokenomics for coding agents: benchmark cost and quality on your own code",
+   "source": "AWS Cloud Financial Management blog",
+   "date": "2026-10-21",
+   "url": "https://aws.amazon.com/blogs/aws-cloud-financial-management/tokenomics-for-coding-agents-benchmark-cost-and-quality-on-your-own-code/",
+   "type": "case-study",
+   "tags": [
+    "prior-art",
+    "eval",
+    "cost"
+   ],
+   "priority": "must",
+   "summary": "AWS runs real tasks from closed issues through five harnesses and many models, scores them with an LLM judge, and plots the cost/quality frontier. Harness choice alone moved cost from ~$24 to ~$8 per task at similar quality; an open 27B model reached 78.5 at $1.47 vs 82.8 at $11.95 for the top closed model. A swe-router skill cut cost 44.7% for a 4.8% score drop. Code is MIT-0.",
+   "why": "Gives the metrics and the Pareto-frontier report Azm should produce, and proves harness choice is a cost lever, not just a quality one."
+  },
+  {
+   "id": "harness-card",
+   "title": "Stop Comparing LLM Agents Without Disclosing the Harness",
+   "source": "arXiv 2605.23950",
+   "date": "2026-05",
+   "url": "https://arxiv.org/html/2605.23950",
+   "type": "paper",
+   "tags": [
+    "method",
+    "reporting"
+   ],
+   "priority": "must",
+   "summary": "Across a 3x3 model-by-harness grid, harness variance was 7.8 times model variance; the same model scored 45.9% vs 55.4% on SWE-bench Pro depending on the harness. The paper proposes a Harness Card disclosing seven layers (Execution, Tools, Context, Scheduling, Observability, Verification, Governance) and locked-harness or factorial protocols.",
+   "why": "Justifies Track 3: the harness matters more than the model. Azm should publish a Harness Card for every harness it runs."
+  },
+  {
+   "id": "copilot-harness-eval",
+   "title": "Evaluating performance and efficiency of the GitHub Copilot agentic harness across models and tasks",
+   "source": "GitHub Blog",
+   "date": "2026-06-25",
+   "url": "https://github.blog/ai-and-ml/github-copilot/evaluating-performance-and-efficiency-of-the-github-copilot-agentic-harness-across-models-and-tasks/",
+   "type": "method",
+   "tags": [
+    "method",
+    "eval"
+   ],
+   "priority": "must",
+   "summary": "GitHub compares its harness with others on the same model and tasks with normalised context, effort and tools, across SWE-bench Verified and Pro, SkillsBench, Terminal-Bench 2.0 and an internal suite. They report pass@1, tokens and cost per task with ±1σ over at least five runs, a 2-hour timeout, and re-run infrastructure failures while keeping model errors.",
+   "why": "A ready-made protocol for fair comparisons. Copy the normalisation rules and the infra-vs-model failure policy."
+  },
+  {
+   "id": "infra-noise",
+   "title": "Quantifying infrastructure noise in agentic coding evals",
+   "source": "Anthropic Engineering",
+   "date": "2026",
+   "url": "https://www.anthropic.com/engineering/infrastructure-noise",
+   "type": "method",
+   "tags": [
+    "method",
+    "eval",
+    "sandbox"
+   ],
+   "priority": "must",
+   "summary": "Sandbox resources alone (CPU, memory, time limits) shifted Terminal-Bench scores by about six percentage points, more than many reported gaps between models. Results must state resource configuration and treat small differences as noise.",
+   "why": "The Azm sandbox must fix and record resources per run, or comparisons will be meaningless."
+  },
+  {
+   "id": "fowler-harness",
+   "title": "Harness engineering for coding agent users",
+   "source": "Martin Fowler (Birgitta Böckeler)",
+   "date": "2026-04-02",
+   "url": "https://martinfowler.com/articles/exploring-gen-ai/harness-engineering.html",
+   "type": "concept",
+   "tags": [
+    "concept",
+    "standards"
+   ],
+   "priority": "must",
+   "summary": "Frames a harness as guides (feed-forward: rules, skills, templates) and sensors (feedback: tests, linters, reviews), each either computational or inferential, in a steering loop. Recommends keeping quality checks early and continuous, making codebases 'harnessable', and harness templates per service topology. Open question: how to measure harness coverage and quality.",
+   "why": "Shared vocabulary for Tracks 1 and 3: Track 1 writes the guides, Track 3 measures them with sensors. The sandbox answers Fowler's open question."
+  },
+  {
+   "id": "openai-harness-eng",
+   "title": "Harness engineering",
+   "source": "OpenAI",
+   "date": "2026",
+   "url": "https://openai.com/index/harness-engineering/",
+   "type": "concept",
+   "tags": [
+    "concept",
+    "methodology"
+   ],
+   "priority": "must",
+   "summary": "OpenAI's account of building a product with agents writing the code: engineers design the environment, feedback loops and documentation (AGENTS.md as a map, not a manual) so agents can work reliably.",
+   "why": "The original statement of the discipline; Symphony assumes repos built this way."
+  },
+  {
+   "id": "anthropic-evals",
+   "title": "Demystifying evals for AI agents",
+   "source": "Anthropic Engineering",
+   "date": "2026",
+   "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+   "type": "method",
+   "tags": [
+    "method",
+    "eval"
+   ],
+   "priority": "must",
+   "summary": "Practical guide to agent evals: start with 20-50 tasks drawn from real failures, combine code-based, model-based and human graders, report pass@k and pass^k for reliability, and read transcripts.",
+   "why": "Sets the minimum viable size and grading mix for the first Azm task set."
+  },
+  {
+   "id": "long-running",
+   "title": "Effective harnesses for long-running agents",
+   "source": "Anthropic Engineering",
+   "date": "2026",
+   "url": "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents",
+   "type": "concept",
+   "tags": [
+    "concept",
+    "harness"
+   ],
+   "priority": "must",
+   "summary": "How an initializer agent plus incremental coding sessions, progress files and feature lists let agents work across many context windows without losing track.",
+   "why": "Patterns squad-kit already partly uses (.squad/ memory); useful for long tickets."
+  },
+  {
+   "id": "anatomy",
+   "title": "The Anatomy of an Agent Harness",
+   "source": "LangChain Blog",
+   "date": "2026",
+   "url": "https://blog.langchain.com/the-anatomy-of-an-agent-harness/",
+   "type": "concept",
+   "tags": [
+    "concept",
+    "architecture"
+   ],
+   "priority": "must",
+   "summary": "Breaks a harness into its parts (loop, tools, context management, memory, sandbox, permissions, subagents) and explains the trade-offs of each.",
+   "why": "Checklist for describing any harness in the sandbox (complements the Harness Card)."
+  },
+  {
+   "id": "skillsbench-paper",
+   "title": "SkillsBench: do Agent Skills help?",
+   "source": "arXiv 2602.12670",
+   "date": "2026",
+   "url": "https://arxiv.org/abs/2602.12670",
+   "type": "paper",
+   "tags": [
+    "eval",
+    "skills"
+   ],
+   "priority": "must",
+   "summary": "87 tasks, 18 model-harness configurations: curated skills raised pass rates by 16.6 points on average; focused skills beat large bundles; small models with skills approached larger ones.",
+   "why": "Method to measure each Track 1 standard before rollout."
+  },
+  {
+   "id": "skill-issue",
+   "title": "Skill Issue: Harness Engineering for Coding Agents",
+   "source": "HumanLayer",
+   "date": "2026",
+   "url": "https://www.humanlayer.dev/blog/skill-issue-harness-engineering-for-coding-agents",
+   "type": "concept",
+   "tags": [
+    "concept",
+    "coding-agents"
+   ],
+   "priority": "must",
+   "summary": "Argues most 'model' failures are harness failures and shows concrete harness changes (context, tools, verification) that fix them.",
+   "why": "Supports measuring harness changes rather than swapping models."
+  },
+  {
+   "id": "awesome-picrew",
+   "title": "awesome-agent-harness (Picrew)",
+   "source": "github.com",
+   "url": "https://github.com/Picrew/awesome-agent-harness",
+   "type": "list",
+   "tags": [
+    "list",
+    "harness"
+   ],
+   "priority": "reference",
+   "summary": "Large curated map of harness tools, sandboxes, evals and readings; seed of Marsad's Track 3 index."
+  },
+  {
+   "id": "awesome-autojunjie",
+   "title": "awesome-agent-harness (AutoJunjie)",
+   "source": "github.com",
+   "url": "https://github.com/AutoJunjie/awesome-agent-harness",
+   "type": "list",
+   "tags": [
+    "list",
+    "harness"
+   ],
+   "priority": "reference",
+   "summary": "Second curated harness list, grouped by layer; merged into Marsad's index."
+  },
+  {
+   "id": "upstash-sandboxes",
+   "title": "AI agent sandbox providers compared (2026)",
+   "source": "upstash.com",
+   "url": "https://upstash.com/blog/ai-agent-sandbox-providers-compared-2026",
+   "type": "comparison",
+   "tags": [
+    "sandbox",
+    "pricing"
+   ],
+   "priority": "read",
+   "summary": "Side-by-side table of agent sandbox providers: isolation tech, start time, limits, self-host/BYOC and prices (checked Sept 2026)."
+  },
+  {
+   "id": "aisi-sandboxing",
+   "title": "The Inspect sandboxing toolkit",
+   "source": "aisi.gov.uk",
+   "url": "https://aisi.gov.uk/blog/the-inspect-sandboxing-toolkit-scalable-and-secure-ai-agent-evaluations",
+   "type": "method",
+   "tags": [
+    "sandbox",
+    "eval"
+   ],
+   "priority": "read",
+   "summary": "How AISI isolates agent evaluations by tooling, host and network with Docker, Kubernetes and Proxmox plugins."
+  },
+  {
+   "id": "google-skills-codelab",
+   "title": "Evaluate Agent Skills using open-source frameworks",
+   "source": "codelabs.developers.google.com",
+   "url": "https://codelabs.developers.google.com/codelabs/evaluate-agent-skills-using-open-source-frameworks",
+   "type": "tutorial",
+   "tags": [
+    "eval",
+    "skills"
+   ],
+   "priority": "read",
+   "summary": "Hands-on codelab evaluating Agent Skills with Inspect AI and paired with/without runs."
+  },
+  {
+   "id": "aidlc-blog",
+   "title": "AI-Driven Development Life Cycle",
+   "source": "aws.amazon.com",
+   "url": "https://aws.amazon.com/blogs/devops/ai-driven-development-life-cycle/",
+   "type": "concept",
+   "tags": [
+    "sdlc",
+    "standards"
+   ],
+   "priority": "read",
+   "summary": "AWS's methodology where AI proposes and humans approve at each stage of inception, construction and operations."
+  },
+  {
+   "id": "r0",
+   "title": "awesome-claude-code",
+   "source": "github.com",
+   "url": "https://github.com/hesreallyhim/awesome-claude-code",
+   "type": "list",
+   "tags": [
+    "awesome-list",
+    "claude-code",
+    "skills"
+   ],
+   "priority": "reference",
+   "summary": "Community collection of Claude Code skills, hooks, and orchestrator tooling."
+  },
+  {
+   "id": "r1",
+   "title": "Awesome Agent Skills",
+   "source": "github.com",
+   "url": "https://github.com/VoltAgent/awesome-agent-skills",
+   "type": "list",
+   "tags": [
+    "awesome-list",
+    "skills",
+    "cross-harness"
+   ],
+   "priority": "reference",
+   "summary": "Curated cross-harness map of official and community Agent Skills for Claude Code, Codex, Gemini CLI, Cursor, OpenCode, Copilot, and related hosts."
+  },
+  {
+   "id": "r2",
+   "title": "awesome-agentic-patterns",
+   "source": "github.com",
+   "url": "https://github.com/nibzard/awesome-agentic-patterns",
+   "type": "list",
+   "tags": [
+    "awesome-list",
+    "patterns",
+    "design"
+   ],
+   "priority": "reference",
+   "summary": "Catalog of reusable agentic design patterns and implementation motifs."
+  },
+  {
+   "id": "r3",
+   "title": "awesome-mcp-servers",
+   "source": "github.com",
+   "url": "https://github.com/wong2/awesome-mcp-servers",
+   "type": "list",
+   "tags": [
+    "awesome-list",
+    "mcp",
+    "tools"
+   ],
+   "priority": "reference",
+   "summary": "Curated MCP server index for tool interoperability in agent systems."
+  },
+  {
+   "id": "r4",
+   "title": "awesome-harness-engineering",
+   "source": "github.com",
+   "url": "https://github.com/walkinglabs/awesome-harness-engineering",
+   "type": "list",
+   "tags": [
+    "awesome-list",
+    "curation",
+    "harness"
+   ],
+   "priority": "reference",
+   "summary": "Curated list focused on harness engineering articles, benchmarks, and implementations."
+  },
+  {
+   "id": "r5",
+   "title": "12 Factor Agents",
+   "source": "humanlayer.dev",
+   "url": "https://www.humanlayer.dev/blog/12-factor-agents",
+   "type": "reading",
+   "tags": [
+    "operations",
+    "principles"
+   ],
+   "priority": "read",
+   "summary": "Operations-oriented principles for building maintainable production agents."
+  },
+  {
+   "id": "r6",
+   "title": "Agent Frameworks, Runtimes, and Harnesses, oh my!",
+   "source": "blog.langchain.com",
+   "url": "https://blog.langchain.com/agent-frameworks-runtimes-and-harnesses-oh-my/",
+   "type": "reading",
+   "tags": [
+    "langchain",
+    "architecture"
+   ],
+   "priority": "read",
+   "summary": "Clear decomposition of framework vs runtime vs harness responsibilities."
+  },
+  {
+   "id": "r7",
+   "title": "An open-source spec for Codex orchestration: Symphony.",
+   "source": "openai.com",
+   "url": "https://openai.com/index/open-source-codex-orchestration-symphony/",
+   "type": "reading",
+   "tags": [
+    "openai",
+    "orchestration"
+   ],
+   "priority": "read",
+   "summary": "OpenAI's orchestration write-up on turning issue trackers into always-on control planes for coding agents."
+  },
+  {
+   "id": "r8",
+   "title": "Building a safe, effective sandbox to enable Codex on Windows",
+   "source": "openai.com",
+   "url": "https://openai.com/index/building-codex-windows-sandbox/",
+   "type": "reading",
+   "tags": [
+    "openai",
+    "sandboxing"
+   ],
+   "priority": "read",
+   "summary": "OpenAI's implementation report on enforcing filesystem and network boundaries for Codex on Windows with restricted tokens, SIDs, and a dedicated command runner."
+  },
+  {
+   "id": "r9",
+   "title": "Building Effective AI Agents",
+   "source": "anthropic.com",
+   "url": "https://www.anthropic.com/engineering/building-effective-agents",
+   "type": "reading",
+   "tags": [
+    "anthropic",
+    "agents"
+   ],
+   "priority": "read",
+   "summary": "Anthropic's practical guidance on when to use workflows vs. autonomous agents and how to structure them."
+  },
+  {
+   "id": "r10",
+   "title": "Claude Agent SDK overview",
+   "source": "code.claude.com",
+   "url": "https://code.claude.com/docs/en/agent-sdk/overview",
+   "type": "reading",
+   "tags": [
+    "claude",
+    "sdk"
+   ],
+   "priority": "read",
+   "summary": "Official Claude Agent SDK documentation for building agents on the Claude Code harness, including tools, MCP, permissions, hooks, subagents, and session flows."
+  },
+  {
+   "id": "r11",
+   "title": "Claude Code auto mode",
+   "source": "anthropic.com",
+   "url": "https://www.anthropic.com/engineering/claude-code-auto-mode",
+   "type": "reading",
+   "tags": [
+    "anthropic",
+    "permissions"
+   ],
+   "priority": "read",
+   "summary": "Anthropic's write-up on classifier-backed approval delegation for safer high-autonomy coding-agent runs."
+  },
+  {
+   "id": "r12",
+   "title": "Code execution with MCP",
+   "source": "anthropic.com",
+   "url": "https://www.anthropic.com/engineering/code-execution-with-mcp",
+   "type": "reading",
+   "tags": [
+    "anthropic",
+    "mcp"
+   ],
+   "priority": "read",
+   "summary": "Anthropic's design notes on controlled code execution via MCP boundaries."
+  },
+  {
+   "id": "r14",
+   "title": "Effective context engineering for AI agents",
+   "source": "anthropic.com",
+   "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+   "type": "reading",
+   "tags": [
+    "context",
+    "anthropic"
+   ],
+   "priority": "read",
+   "summary": "Guidance on context-window budgeting and working-state management for agents."
+  },
+  {
+   "id": "r16",
+   "title": "Evaluating Deep Agents: Our Learnings",
+   "source": "blog.langchain.com",
+   "url": "https://blog.langchain.com/evaluating-deep-agents-our-learnings/",
+   "type": "reading",
+   "tags": [
+    "langchain",
+    "evaluation"
+   ],
+   "priority": "read",
+   "summary": "LangChain's practical lessons on evaluating stateful and long-horizon agents."
+  },
+  {
+   "id": "r17",
+   "title": "From model to agent: Equipping the Responses API with a computer environment",
+   "source": "openai.com",
+   "url": "https://openai.com/index/equip-responses-api-computer-environment/",
+   "type": "reading",
+   "tags": [
+    "openai",
+    "execution"
+   ],
+   "priority": "read",
+   "summary": "OpenAI's engineering guide to agent execution with the Responses API, hosted shell containers, orchestration loops, compaction, skills, persistent files, and restricted networking."
+  },
+  {
+   "id": "r18",
+   "title": "Harness design for long-running application development",
+   "source": "anthropic.com",
+   "url": "https://www.anthropic.com/engineering/harness-design-long-running-apps",
+   "type": "reading",
+   "tags": [
+    "app-dev",
+    "anthropic"
+   ],
+   "priority": "read",
+   "summary": "Follow-up article on improving long-running app generation through harness structure."
+  },
+  {
+   "id": "r21",
+   "title": "How GPT-5.6 fuses frontier intelligence with frontier efficiency",
+   "source": "openai.com",
+   "url": "https://openai.com/index/gpt-5-6-frontier-intelligence-efficiency/",
+   "type": "reading",
+   "tags": [
+    "openai",
+    "efficiency"
+   ],
+   "priority": "read",
+   "summary": "OpenAI's engineering account of the Rust agentic harness behind Codex and ChatGPT Work, covering deferred tool discovery, bounded outputs, deterministic tool ordering, and prompt-cache preservation."
+  },
+  {
+   "id": "r22",
+   "title": "How we built our multi-agent research system",
+   "source": "anthropic.com",
+   "url": "https://www.anthropic.com/engineering/multi-agent-research-system",
+   "type": "reading",
+   "tags": [
+    "anthropic",
+    "multi-agent"
+   ],
+   "priority": "read",
+   "summary": "Anthropic architecture write-up on role separation and coordination in multi-agent systems."
+  },
+  {
+   "id": "r23",
+   "title": "How we contain Claude across products",
+   "source": "anthropic.com",
+   "url": "https://www.anthropic.com/engineering/how-we-contain-claude",
+   "type": "reading",
+   "tags": [
+    "anthropic",
+    "containment"
+   ],
+   "priority": "read",
+   "summary": "Anthropic's cross-product containment architecture for claude.ai, Claude Code, and Cowork, spanning sandboxes, VMs, filesystem boundaries, egress controls, and approval fatigue."
+  },
+  {
+   "id": "r24",
+   "title": "Improving Deep Agents with harness engineering",
+   "source": "blog.langchain.com",
+   "url": "https://blog.langchain.com/improving-deep-agents-with-harness-engineering/",
+   "type": "reading",
+   "tags": [
+    "langchain",
+    "harness"
+   ],
+   "priority": "read",
+   "summary": "Evidence that harness improvements alone can move benchmark performance."
+  },
+  {
+   "id": "r25",
+   "title": "Introducing Agent Executor, Google’s distributed Agent Runtime",
+   "source": "cloud.google.com",
+   "url": "https://cloud.google.com/blog/products/ai-machine-learning/agent-executor-googles-distributed-agent-runtime/",
+   "type": "reading",
+   "tags": [
+    "google",
+    "runtime"
+   ],
+   "priority": "read",
+   "summary": "Google's distributed agent runtime design for durable execution, event-log snapshots, secure isolation, session consistency, reconnection, and trajectory branching."
+  },
+  {
+   "id": "r26",
+   "title": "Making Claude Code more secure and autonomous with sandboxing",
+   "source": "anthropic.com",
+   "url": "https://www.anthropic.com/engineering/claude-code-sandboxing",
+   "type": "reading",
+   "tags": [
+    "anthropic",
+    "sandboxing"
+   ],
+   "priority": "read",
+   "summary": "How Anthropic uses sandbox boundaries to raise agent autonomy without giving up security controls."
+  },
+  {
+   "id": "r28",
+   "title": "Running Codex safely at OpenAI",
+   "source": "openai.com",
+   "url": "https://openai.com/index/running-codex-safely/",
+   "type": "reading",
+   "tags": [
+    "openai",
+    "governance"
+   ],
+   "priority": "read",
+   "summary": "OpenAI's operational blueprint for governing Codex with sandbox and approval policies, network controls, managed identity, configuration, telemetry, and audit trails."
+  },
+  {
+   "id": "r29",
+   "title": "Scaling Managed Agents: Decoupling the brain from the hands",
+   "source": "anthropic.com",
+   "url": "https://www.anthropic.com/engineering/managed-agents",
+   "type": "reading",
+   "tags": [
+    "anthropic",
+    "architecture"
+   ],
+   "priority": "read",
+   "summary": "Anthropic's meta-harness architecture for decoupling session logs, harness loops, and sandboxes in long-horizon agents."
+  },
+  {
+   "id": "r31",
+   "title": "Testing Agent Skills Systematically with Evals",
+   "source": "developers.openai.com",
+   "url": "https://developers.openai.com/blog/eval-skills",
+   "type": "reading",
+   "tags": [
+    "openai",
+    "evals"
+   ],
+   "priority": "read",
+   "summary": "OpenAI Developers guide for turning agent traces into repeatable skill evaluations."
+  },
+  {
+   "id": "r33",
+   "title": "The next evolution of the Agents SDK",
+   "source": "openai.com",
+   "url": "https://openai.com/index/the-next-evolution-of-the-agents-sdk/",
+   "type": "reading",
+   "tags": [
+    "openai",
+    "sdk"
+   ],
+   "priority": "read",
+   "summary": "OpenAI's product and engineering post on model-native agent harnesses, native sandbox execution, manifests, memory, and filesystem and shell tools."
+  },
+  {
+   "id": "r34",
+   "title": "Unlocking the Codex harness: how we built the App Server",
+   "source": "openai.com",
+   "url": "https://openai.com/index/unlocking-the-codex-harness/",
+   "type": "reading",
+   "tags": [
+    "openai",
+    "architecture"
+   ],
+   "priority": "read",
+   "summary": "OpenAI's architecture deep dive into sharing the Codex harness across clients through App Server, thread persistence, JSON-RPC, sandboxed tools, MCP, skills, and reconnectable sessions."
+  },
+  {
+   "id": "r35",
+   "title": "Unrolling the Codex agent loop",
+   "source": "openai.com",
+   "url": "https://openai.com/index/unrolling-the-codex-agent-loop/",
+   "type": "reading",
+   "tags": [
+    "openai",
+    "architecture"
+   ],
+   "priority": "read",
+   "summary": "OpenAI engineering deep dive into the Codex harness loop, prompt growth, tool-call replay, and stateless execution tradeoffs."
+  },
+  {
+   "id": "r36",
+   "title": "What We Learned Building Cloud Agents",
+   "source": "cognition.ai",
+   "url": "https://cognition.ai/blog/what-we-learned-building-cloud-agents",
+   "type": "reading",
+   "tags": [
+    "cognition",
+    "cloud-agents"
+   ],
+   "priority": "read",
+   "summary": "Cognition's field report on secure cloud-agent infrastructure, VM isolation, full-state snapshots, orchestration, governance, integrations, and enterprise adoption."
+  },
+  {
+   "id": "r37",
+   "title": "Writing effective tools for AI agents",
+   "source": "anthropic.com",
+   "url": "https://www.anthropic.com/engineering/writing-tools-for-agents",
+   "type": "reading",
+   "tags": [
+    "anthropic",
+    "tools"
+   ],
+   "priority": "read",
+   "summary": "Best practices for tool interface design so agents call tools safely and reliably."
+  },
+  {
+   "id": "r38",
+   "title": "Your Agent Needs a Harness, Not a Framework",
+   "source": "inngest.com",
+   "url": "https://www.inngest.com/blog/your-agent-needs-a-harness-not-a-framework",
+   "type": "reading",
+   "tags": [
+    "inngest",
+    "reliability"
+   ],
+   "priority": "read",
+   "summary": "Argument for reliability-first infrastructure around agents instead of framework-only thinking."
+  }
+ ]
+}

@@ -13,7 +13,8 @@
     "known": "node scripts/known-urls.mjs",
     "hash-password": "node scripts/hash-password.mjs",
     "prebuild": "node scripts/validate-content.mjs",
-    "collect": "node scripts/collect.mjs"
+    "collect": "node scripts/collect.mjs",
+    "validate:research": "node scripts/validate-research.mjs"
   },
   "dependencies": {
     "@fontsource/ibm-plex-mono": "^5.3.0",

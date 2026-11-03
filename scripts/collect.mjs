@@ -97,7 +97,7 @@ function readmeAt(dir, rev) {
 
 function collectAwesome() {
   const found = [];
-  for (const { repo, section } of watch.awesome) {
+  for (const { repo, section, track } of watch.awesome) {
     const dir = path.join(cacheDir, repo.replace("/", "__"));
     const prev = state.awesome[repo];
     const since = prev?.date ?? daysAgo(firstRunDays);
@@ -138,7 +138,7 @@ function collectAwesome() {
       let n = 0;
       for (const [key, link] of after) {
         if (before.has(key)) continue;
-        found.push({ list: repo, section, ...link });
+        found.push({ list: repo, section, ...(track ? { track } : {}), ...link });
         n++;
       }
       log(`${repo}: ${n} new link(s)`);
@@ -165,7 +165,7 @@ const cmp = (a, b) => {
 
 function collectReleases() {
   const found = [];
-  for (const { repo, section, tags: tagPattern } of watch.releases) {
+  for (const { repo, section, track, tags: tagPattern } of watch.releases) {
     const accept = new RegExp(tagPattern ?? "^v?\\d+\\.\\d+");
     let out;
     try {
@@ -190,7 +190,7 @@ function collectReleases() {
     const latest = tags[0].tag;
     const prev = state.releases[repo];
     if (prev !== latest) {
-      found.push({ repo, section, tag: latest, previous: prev ?? null, url: `https://github.com/${repo}/releases/tag/${encodeURIComponent(latest)}` });
+      found.push({ repo, section, ...(track ? { track } : {}), tag: latest, previous: prev ?? null, url: `https://github.com/${repo}/releases/tag/${encodeURIComponent(latest)}` });
       state.releases[repo] = latest;
     }
   }
@@ -235,7 +235,7 @@ async function pool(items, size, fn) {
 async function collectTrending() {
   const found = [];
   const since = new Date(Date.now() - 14 * 86400000).toISOString().slice(0, 10);
-  for (const { topic, section } of watch.topics) {
+  for (const { topic, section, track } of watch.topics) {
     const data = await gh(
       `/search/repositories?q=${encodeURIComponent(`topic:${topic} created:>=${since}`)}&sort=stars&order=desc&per_page=10`,
     );
@@ -245,6 +245,7 @@ async function collectTrending() {
       found.push({
         repo: r.full_name,
         section,
+        ...(track ? { track } : {}),
         topic,
         url: r.html_url,
         description: r.description,

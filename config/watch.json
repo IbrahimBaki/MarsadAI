@@ -52,6 +52,16 @@
     {
       "repo": "github/awesome-copilot",
       "section": "agents"
+    },
+    {
+      "repo": "Picrew/awesome-agent-harness",
+      "section": "agents",
+      "track": "t3"
+    },
+    {
+      "repo": "AutoJunjie/awesome-agent-harness",
+      "section": "agents",
+      "track": "t3"
     }
   ],
   "releases": [
@@ -73,7 +83,8 @@
     },
     {
       "repo": "obra/superpowers",
-      "section": "skills"
+      "section": "skills",
+      "track": "t3"
     },
     {
       "repo": "openai/codex",
@@ -155,7 +166,8 @@
     },
     {
       "repo": "github/spec-kit",
-      "section": "architecture"
+      "section": "architecture",
+      "track": "t3"
     },
     {
       "repo": "n8n-io/n8n",
@@ -178,6 +190,96 @@
     {
       "repo": "coollabsio/coolify",
       "section": "devops"
+    },
+    {
+      "repo": "AzmSquad/squad-kit",
+      "section": "agents",
+      "track": "t3"
+    },
+    {
+      "repo": "harbor-framework/harbor",
+      "section": "agents",
+      "track": "t3"
+    },
+    {
+      "repo": "coleam00/Archon",
+      "section": "agents",
+      "track": "t3"
+    },
+    {
+      "repo": "Chorus-AIDLC/Chorus",
+      "section": "agents",
+      "track": "t3"
+    },
+    {
+      "repo": "awslabs/aidlc-workflows",
+      "section": "agents",
+      "track": "t3"
+    },
+    {
+      "repo": "UKGovernmentBEIS/inspect_ai",
+      "section": "agents",
+      "track": "t3"
+    },
+    {
+      "repo": "OpenHands/OpenHands",
+      "section": "agents",
+      "track": "t3"
+    },
+    {
+      "repo": "e2b-dev/E2B",
+      "section": "agents",
+      "track": "t3"
+    },
+    {
+      "repo": "opensandbox-group/OpenSandbox",
+      "section": "agents",
+      "track": "t3"
+    },
+    {
+      "repo": "kubernetes-sigs/agent-sandbox",
+      "section": "agents",
+      "track": "t3"
+    },
+    {
+      "repo": "multica-ai/multica",
+      "section": "agents",
+      "track": "t3"
+    },
+    {
+      "repo": "paperclipai/paperclip",
+      "section": "agents",
+      "track": "t3"
+    },
+    {
+      "repo": "bmad-code-org/BMAD-METHOD",
+      "section": "agents",
+      "track": "t3"
+    },
+    {
+      "repo": "langfuse/langfuse",
+      "section": "agents",
+      "track": "t3"
+    },
+    {
+      "repo": "TencentCloud/CubeSandbox",
+      "section": "agents",
+      "track": "t3"
+    },
+    {
+      "repo": "superradcompany/microsandbox",
+      "section": "agents",
+      "track": "t3"
+    },
+    {
+      "repo": "NVIDIA/OpenShell",
+      "section": "agents",
+      "track": "t3"
+    },
+    {
+      "repo": "earendil-works/pi",
+      "section": "agents",
+      "track": "t3"
     }
   ],
   "topics": [
@@ -208,6 +310,21 @@
     {
       "topic": "laravel",
       "section": "laravel"
+    },
+    {
+      "topic": "agent-harness",
+      "section": "agents",
+      "track": "t3"
+    },
+    {
+      "topic": "harness-engineering",
+      "section": "agents",
+      "track": "t3"
+    },
+    {
+      "topic": "agent-sandbox",
+      "section": "agents",
+      "track": "t3"
     }
   ]
 }

@@ -1,0 +1,287 @@
+{
+  "$comment": "AI Champs research tracks. The research hub reads this file; the daily research task reads scope, categories, criteria and watch keywords to know what to look for.",
+  "updated": "2026-11-03",
+  "tracks": [
+    {
+      "id": "t3",
+      "order": 1,
+      "status": "active",
+      "name": {
+        "en": "Track 3 · Harness Sandbox",
+        "ar": "المسار 3 · بيئة اختبار الـ Harness"
+      },
+      "short": {
+        "en": "Harness Sandbox",
+        "ar": "بيئة اختبار الـ Harness"
+      },
+      "question": "What already exists for running, comparing and benchmarking AI coding-agent harnesses in isolated sandboxes, which parts can Azm adopt, and what is left to build?",
+      "scope": [
+        "Coding-agent harnesses: SDLC/team harnesses (ticket to release) and agent runtimes (the engine inside).",
+        "Harness evaluation and benchmarking: frameworks, public benchmarks, and methods for scoring harnesses on your own code.",
+        "Sandboxes: isolated execution for agents, managed and self-hosted.",
+        "Observability and governance needed to measure and control agent runs.",
+        "Commercial cloud coding agents, as baselines to compare against."
+      ],
+      "assumptions": [
+        "\"Harness sandbox\" = a place where Azm can run any harness (squad-kit, azm-harness, or others) on real Azm tasks in isolation, and measure quality, cost, speed and standards compliance.",
+        "Research phase: open source and paid tools are both in scope; budget is available.",
+        "Every model and agent is allowed for now.",
+        "The result must be general: it should work for every team, configured per project with YAML in the future."
+      ],
+      "categories": [
+        {
+          "id": "sdlc",
+          "name": {
+            "en": "SDLC & team harnesses",
+            "ar": "أدوات دورة التطوير والفرق"
+          },
+          "desc": {
+            "en": "Take work from a ticket or idea to a reviewed PR or release, with roles, gates and human approval.",
+            "ar": "تنقل العمل من التذكرة أو الفكرة إلى طلب دمج مُراجَع أو إصدار، مع أدوار وبوابات وموافقة بشرية."
+          }
+        },
+        {
+          "id": "runtime",
+          "name": {
+            "en": "Agent runtimes & SDKs",
+            "ar": "محركات الوكلاء وحزم التطوير"
+          },
+          "desc": {
+            "en": "The agent engine a harness drives: CLIs, SDKs and hosted harnesses.",
+            "ar": "محرك الوكيل الذي يشغّله الـ harness: أدوات سطر الأوامر وحزم SDK والـ harness المستضافة."
+          }
+        },
+        {
+          "id": "eval",
+          "name": {
+            "en": "Harness evaluation & benchmarks",
+            "ar": "تقييم الـ Harness والمقاييس"
+          },
+          "desc": {
+            "en": "Run harnesses on task sets and score them: frameworks, benchmarks, harness optimizers.",
+            "ar": "تشغيل الـ harness على مجموعات مهام وتقييمها: أُطر ومقاييس معيارية وأدوات تحسين."
+          }
+        },
+        {
+          "id": "sandbox",
+          "name": {
+            "en": "Sandboxes & execution",
+            "ar": "بيئات العزل والتنفيذ"
+          },
+          "desc": {
+            "en": "Isolated environments where agents run code: cloud, BYOC and self-hosted.",
+            "ar": "بيئات معزولة يشغّل فيها الوكلاء الشيفرة: سحابية، وداخل حسابك السحابي، ومستضافة ذاتيًا."
+          }
+        },
+        {
+          "id": "ops",
+          "name": {
+            "en": "Observability & governance",
+            "ar": "المراقبة والحوكمة"
+          },
+          "desc": {
+            "en": "Tracing, cost, policies, secrets and security scanning around agent runs.",
+            "ar": "التتبّع والتكلفة والسياسات والأسرار والفحص الأمني حول تشغيل الوكلاء."
+          }
+        },
+        {
+          "id": "cloud",
+          "name": {
+            "en": "Commercial cloud agents",
+            "ar": "وكلاء سحابيون تجاريون"
+          },
+          "desc": {
+            "en": "Vendor-hosted coding agents used as baselines.",
+            "ar": "وكلاء برمجة يستضيفهم المزوّد، يُستخدمون مرجعًا للمقارنة."
+          }
+        }
+      ],
+      "criteria": [
+        {
+          "id": "fit",
+          "name": {
+            "en": "Fit for Azm",
+            "ar": "الملاءمة لعزم"
+          },
+          "weight": 3,
+          "desc": {
+            "en": "How directly it serves the harness sandbox goal.",
+            "ar": "مدى خدمته المباشرة لهدف بيئة الاختبار."
+          }
+        },
+        {
+          "id": "maturity",
+          "name": {
+            "en": "Maturity",
+            "ar": "النضج"
+          },
+          "weight": 2,
+          "desc": {
+            "en": "Adoption, release cadence, backing, documentation.",
+            "ar": "الانتشار ووتيرة الإصدارات والجهة الداعمة والتوثيق."
+          }
+        },
+        {
+          "id": "openness",
+          "name": {
+            "en": "Openness",
+            "ar": "الانفتاح"
+          },
+          "weight": 2,
+          "desc": {
+            "en": "License, self-hosting, data control, no lock-in.",
+            "ar": "الترخيص والاستضافة الذاتية والتحكم في البيانات وعدم الارتهان لمزوّد."
+          }
+        },
+        {
+          "id": "agnostic",
+          "name": {
+            "en": "Agent-agnostic",
+            "ar": "الحياد تجاه الوكلاء"
+          },
+          "weight": 2,
+          "desc": {
+            "en": "Works with many agents and models, not one vendor.",
+            "ar": "يعمل مع وكلاء ونماذج كثيرة لا مع مزوّد واحد."
+          }
+        },
+        {
+          "id": "config",
+          "name": {
+            "en": "Configurable per team",
+            "ar": "قابلية الضبط لكل فريق"
+          },
+          "weight": 2,
+          "desc": {
+            "en": "Declarative config (YAML/files) a team can own and version.",
+            "ar": "إعدادات تصريحية (YAML/ملفات) يملكها الفريق ويضبط نسخها."
+          }
+        },
+        {
+          "id": "measure",
+          "name": {
+            "en": "Measurability",
+            "ar": "قابلية القياس"
+          },
+          "weight": 2,
+          "desc": {
+            "en": "Exposes results, traces, cost and metrics we can compare.",
+            "ar": "يعرض نتائج وتتبّعًا وتكلفة ومقاييس قابلة للمقارنة."
+          }
+        },
+        {
+          "id": "safety",
+          "name": {
+            "en": "Isolation & safety",
+            "ar": "العزل والأمان"
+          },
+          "weight": 1,
+          "desc": {
+            "en": "Sandboxing, permissions, approvals, secrets handling.",
+            "ar": "العزل والصلاحيات والموافقات وإدارة الأسرار."
+          }
+        }
+      ],
+      "verdicts": {
+        "adopt": {
+          "en": "Use it as a building block",
+          "ar": "نعتمده لبنةً أساسية"
+        },
+        "adopt-part": {
+          "en": "Reuse a part or pattern of it",
+          "ar": "نعيد استخدام جزء منه أو نمطه"
+        },
+        "benchmark": {
+          "en": "Benchmark against it in the sandbox",
+          "ar": "نقارنه في بيئة الاختبار"
+        },
+        "inspire": {
+          "en": "Learn from it; don't adopt",
+          "ar": "نتعلم منه ولا نعتمده"
+        },
+        "watch": {
+          "en": "Watch; too early or unclear",
+          "ar": "نراقبه؛ مبكر أو غير واضح"
+        },
+        "avoid": {
+          "en": "Avoid for now",
+          "ar": "نتجنبه حاليًا"
+        }
+      },
+      "watch": [
+        "agent harness",
+        "harness engineering",
+        "coding agent benchmark",
+        "agent sandbox",
+        "meta-harness",
+        "harness evaluation",
+        "SWE-bench",
+        "Terminal-Bench",
+        "agent eval"
+      ]
+    },
+    {
+      "id": "t1",
+      "order": 2,
+      "status": "planned",
+      "name": {
+        "en": "Track 1 · Standards Package",
+        "ar": "المسار 1 · حزمة المعايير"
+      },
+      "short": {
+        "en": "Standards Package",
+        "ar": "حزمة المعايير"
+      },
+      "question": "How do other organizations package AI development standards (skills, rules, workflows), make them configurable per project, and track adoption?",
+      "scope": [
+        "Standard formats: AGENTS.md, Agent Skills (SKILL.md), plugins and marketplaces, rules files.",
+        "Methodologies that ship as packages: Spec Kit, BMAD, Superpowers, AI-DLC, Kiro specs and others.",
+        "Distribution and versioning of standards across many repositories.",
+        "Measuring adoption and compliance per project."
+      ],
+      "assumptions": [],
+      "categories": [],
+      "criteria": [],
+      "verdicts": {},
+      "watch": [
+        "agent skills",
+        "AGENTS.md",
+        "spec-driven development",
+        "plugin marketplace",
+        "coding standards AI"
+      ]
+    },
+    {
+      "id": "t2",
+      "order": 3,
+      "status": "planned",
+      "name": {
+        "en": "Track 2 · Azm Brain",
+        "ar": "المسار 2 · عقل عزم"
+      },
+      "short": {
+        "en": "Azm Brain",
+        "ar": "عقل عزم"
+      },
+      "question": "What are the options for a shared knowledge base across dev centers that serves both developers and AI agents?",
+      "scope": [
+        "Agent memory and knowledge layers (graph, vector, file-based).",
+        "Code and documentation intelligence: code graphs, wikis, search.",
+        "Enterprise knowledge platforms and MCP servers that expose knowledge to agents.",
+        "Governance: freshness, ownership, access control."
+      ],
+      "assumptions": [],
+      "categories": [],
+      "criteria": [],
+      "verdicts": {},
+      "watch": [
+        "agent memory",
+        "knowledge graph",
+        "code graph",
+        "RAG",
+        "MCP knowledge",
+        "enterprise search"
+      ]
+    }
+  ]
+}

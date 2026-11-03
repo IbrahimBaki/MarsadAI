@@ -114,6 +114,23 @@ export const LogoutIcon = (p: P) => (
 
 /** The Marsad mark: an observatory dome with a lit star. */
 // Marsad's mark: an eye with a lens for an iris and the amber "signal" highlight.
+export const FlaskIcon = (p: P) => (
+  <svg {...base} {...p}>
+    <path d="M9.5 3.5h5M10.5 3.5v5.2L5.2 17.6A2 2 0 0 0 6.9 20.5h10.2a2 2 0 0 0 1.7-2.9L13.5 8.7V3.5" />
+    <path d="M7.6 14h8.8" />
+  </svg>
+);
+export const DownloadIcon = (p: P) => (
+  <svg {...base} {...p}>
+    <path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 19.5h14" />
+  </svg>
+);
+export const LayersIcon = (p: P) => (
+  <svg {...base} {...p}>
+    <path d="m12 4 8.5 4.5L12 13 3.5 8.5 12 4Z" />
+    <path d="m3.5 12.5 8.5 4.5 8.5-4.5M3.5 16.5 12 21l8.5-4.5" />
+  </svg>
+);
 export const Mark = ({ size = 28 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 64 64" aria-hidden>
     <path

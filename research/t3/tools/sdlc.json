@@ -1,0 +1,1367 @@
+{
+ "category": "sdlc",
+ "checked": "2026-11-03",
+ "tools": [
+  {
+   "id": "squad-kit",
+   "name": "squad-kit",
+   "category": "sdlc",
+   "kind": "open-source",
+   "vendor": "AzmSquad",
+   "repo": "AzmSquad/Squad-Kit",
+   "url": "https://squad-kit.com",
+   "license": "MIT",
+   "pricing": "Free; runs on the user's own Claude Code subscription",
+   "version": "v1.1.1 (2026-11-03)",
+   "tier": "deep",
+   "summary": "An agent harness for the whole software cycle. A squad of role agents (Analyst, Architect, Builder, Tester, Reviewer) takes a ticket from plain-language ask to a tagged release, with human approvals at spec, design, proof and release. A local web board shows every ticket; project memory lives in readable files under .squad/.",
+   "how": "`squad` opens a local web app (127.0.0.1:4571) with a board per project. The Analyst asks clarifying questions and writes spec.md with a 'done when' list; the Architect writes design.md; the Builder codes in its own copy of the repo; squad-kit runs tests, lint and build; the Reviewer checks with fresh context; the Tester screenshots each 'done when' as proof. Release writes the changelog, version and git tag. Everything a teammate needs (tickets, specs, decisions, rules per role, learned knowledge) is stored as Markdown/YAML in .squad/ and committed on the ticket branch; personal state (chats, tokens, cost) stays in ~/.squad-kit/. Azure DevOps Boards/Repos integration moves work items and opens PRs. A Quality setting (Best / Balanced / Thrifty) picks model levels per role and step.",
+   "features": [
+    "Five role agents with human gates: spec, design, proof ('Looks right'), release",
+    "Local board UI plus a terminal command for every button",
+    "Project memory as files: .squad/config.yaml, tickets/, decisions/, rules/, knowledge/, releases/",
+    "Azure DevOps integration: pull items, post plans and answers as comments, open PRs",
+    "Status Q&A in English or Arabic at no AI cost; slow-step and failure recovery buttons",
+    "Quality levels per role/step; cost tracked per ticket in Usage",
+    "Hand over a ticket to a teammate via its branch; works across multi-repo folders"
+   ],
+   "strengths": [
+    "Covers the full SDLC end to end, which most peers don't (spec → release)",
+    "Non-developers can drive it (BAs, PMs); Arabic support",
+    "Readable, versioned project memory that survives machines and teammates",
+    "Strong UX on transparency: what's happening, what's next, ways out",
+    "Built in-house: Azm can change it freely (MIT)"
+   ],
+   "weaknesses": [
+    "Runs on Claude Code only today; Codex is detected but cannot run yet",
+    "Local, single-machine app; no shared server or team-wide queue",
+    "Builder works in a copy of the repo, not an isolated sandbox (network, secrets, resources are the host's)",
+    "Tracker integration is Azure DevOps only",
+    "No built-in way to measure quality across tickets or compare against other harnesses"
+   ],
+   "gaps": [
+    "Harness adapter for automated runs (headless mode) so the sandbox can drive it on benchmark tasks",
+    "Multi-model / multi-harness backends (Codex, opencode, pi)",
+    "Sandboxed execution (container or microVM per ticket)",
+    "Evaluation loop: score tickets (tests, standards, reviewer findings) and feed back into rules/",
+    "Jira / GitHub tracker adapters; server mode for teams"
+   ],
+   "fit": {
+    "verdict": "benchmark",
+    "role": "Azm's own SDLC harness and the first subject in the sandbox: benchmark it against Archon, AI-DLC and Superpowers on the same Azm tasks, and use the results to direct its roadmap."
+   },
+   "scores": {
+    "fit": 5,
+    "maturity": 3,
+    "openness": 5,
+    "agnostic": 2,
+    "config": 4,
+    "measure": 2,
+    "safety": 3
+   },
+   "links": [
+    [
+     "Website",
+     "https://squad-kit.com"
+    ],
+    [
+     "GitHub",
+     "https://github.com/AzmSquad/Squad-Kit"
+    ],
+    [
+     "npm",
+     "https://www.npmjs.com/package/squad-kit"
+    ]
+   ],
+   "sources": [
+    "https://github.com/AzmSquad/Squad-Kit",
+    "https://squad-kit.com"
+   ],
+   "status": "active"
+  },
+  {
+   "id": "archon",
+   "name": "Archon",
+   "category": "sdlc",
+   "kind": "open-source",
+   "vendor": "Cole Medin",
+   "repo": "coleam00/Archon",
+   "url": "https://github.com/coleam00/Archon",
+   "license": "MIT",
+   "pricing": "Free, self-hosted",
+   "version": "v0.13.2",
+   "tier": "deep",
+   "summary": "A 'factory builder': you describe how work gets done as YAML workflows (steps, checks, approval gates), and Archon runs them with AI agents, scripts and human decisions. The bundled SDLC pack takes an issue to a merged pull request.",
+   "how": "Workflows are YAML files: each step is an agent prompt, a script or a human gate. Queues move work forward; when a run hits a decision it can't make, it pauses as one attention item with a recommendation and choices. Every run keeps a full event log and transcript. Self-hosted; works with existing coding-agent CLIs.",
+   "features": [
+    "YAML workflow definitions with steps, checks and gates",
+    "Bundled SDLC pack: issue → plan → implement → review → validate → PR",
+    "Queues and attention items (human on the loop, not in it)",
+    "Full event log and transcript per run",
+    "Runs any process, not only software"
+   ],
+   "strengths": [
+    "Process-as-code in YAML: exactly the per-team configuration model Azm wants",
+    "Governance built in (gates, logs)",
+    "MIT, very active"
+   ],
+   "weaknesses": [
+    "Workflow quality depends on the YAML you write; few opinionated defaults beyond the SDLC pack",
+    "No built-in evaluation across runs"
+   ],
+   "gaps": [
+    "Benchmark/eval of workflow variants",
+    "Isolated sandbox per run (relies on host or external)"
+   ],
+   "fit": {
+    "verdict": "benchmark",
+    "role": "Strongest open-source peer to squad-kit; benchmark it, and study its YAML workflow schema for Azm team configs."
+   },
+   "scores": {
+    "fit": 4,
+    "maturity": 3,
+    "openness": 5,
+    "agnostic": 4,
+    "config": 5,
+    "measure": 2,
+    "safety": 3
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/coleam00/Archon"
+    ]
+   ],
+   "sources": [
+    "https://github.com/coleam00/Archon",
+    "https://github.com/coleam00/Archon#readme"
+   ],
+   "status": "active"
+  },
+  {
+   "id": "aidlc",
+   "name": "AI-DLC Workflows",
+   "category": "sdlc",
+   "kind": "open-source",
+   "vendor": "AWS (awslabs)",
+   "repo": "awslabs/aidlc-workflows",
+   "url": "https://github.com/awslabs/aidlc-workflows",
+   "license": "MIT-0",
+   "pricing": "Free",
+   "version": "v2.11.3-preview",
+   "tier": "deep",
+   "summary": "AWS's AI-Driven Development Life Cycle as one harness-neutral core that runs natively in Claude Code, Kiro (CLI and IDE), Codex CLI, Cursor, opencode and GitHub Copilot. It turns coding assistants into structured, verifiable delivery workflows.",
+   "how": "A native `aidlc` command installs the workflow rules, hooks and commands into each supported harness. The methodology splits work into inception (intent, requirements, units), construction (design, code, tests) and operations, with the AI proposing and humans approving each stage ('reversed conversation'). Docs cover install, lifecycle and per-harness behavior.",
+   "features": [
+    "One core, seven harnesses (Claude Code, Kiro CLI/IDE, Codex CLI, Cursor, opencode, Copilot)",
+    "Staged lifecycle with human approval points",
+    "Native installer; no Node/Bun needed",
+    "Methodology backed by AWS publications"
+   ],
+   "strengths": [
+    "Harness-agnostic by design: the same standard runs on every tool",
+    "MIT-0: can be copied into an Azm standard without attribution",
+    "Very active (daily releases)"
+   ],
+   "weaknesses": [
+    "Methodology + rules, not a runtime: no board, no sandbox, no eval",
+    "Preview versioning; frequent change"
+   ],
+   "gaps": [
+    "Measurement of whether the workflow improves outcomes"
+   ],
+   "fit": {
+    "verdict": "adopt-part",
+    "role": "Reference for Track 1 (a harness-neutral standard) and a contender in the Track 3 benchmark; its 'one core, many harnesses' packaging is the model for the Azm standard."
+   },
+   "scores": {
+    "fit": 4,
+    "maturity": 3,
+    "openness": 5,
+    "agnostic": 5,
+    "config": 4,
+    "measure": 1,
+    "safety": 3
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/awslabs/aidlc-workflows"
+    ],
+    [
+     "AWS blog",
+     "https://aws.amazon.com/blogs/devops/ai-driven-development-life-cycle/"
+    ]
+   ],
+   "sources": [
+    "https://github.com/awslabs/aidlc-workflows",
+    "https://aws.amazon.com/blogs/devops/ai-driven-development-life-cycle/"
+   ],
+   "status": "active"
+  },
+  {
+   "id": "chorus",
+   "name": "Chorus",
+   "category": "sdlc",
+   "kind": "open-source",
+   "vendor": "Chorus AI-DLC",
+   "repo": "Chorus-AIDLC/Chorus",
+   "url": "https://doc.chorus-ai.dev",
+   "license": "AGPL-3.0",
+   "pricing": "Free self-hosted; hosted options",
+   "version": "v0.23.0",
+   "tier": "deep",
+   "summary": "'The harness one level up': a pipeline where a team of coding agents plus humans move ideas to delivered software (Idea → Proposal → Document + task DAG → Execute → Verify → Done), inspired by AI-DLC. Handles session lifecycle, task state, sub-agent orchestration, observability and failure recovery.",
+   "how": "Each stage needs a permission (idea:write, proposal:write, task:write, *:admin) that can be granted to a human, an agent or both, a 5 × 3 permission matrix instead of fixed roles. Agents propose, humans verify. Plugins connect coding agents such as Claude Code.",
+   "features": [
+    "AI-DLC pipeline with task DAGs",
+    "Fine-grained per-agent permissions",
+    "Session lifecycle, recovery and observability",
+    "Multi-agent, human-in-the-loop"
+   ],
+   "strengths": [
+    "Permission model is more flexible than fixed roles",
+    "Observability and recovery built in",
+    "Task DAGs make dependencies and parallel work explicit"
+   ],
+   "weaknesses": [
+    "AGPL-3.0: modifying and offering it as a network service requires sharing source",
+    "Smaller community"
+   ],
+   "gaps": [
+    "Eval/benchmark loop"
+   ],
+   "fit": {
+    "verdict": "inspire",
+    "role": "Borrow its permission matrix and task-DAG ideas; AGPL makes direct reuse inside Azm products risky."
+   },
+   "scores": {
+    "fit": 4,
+    "maturity": 3,
+    "openness": 3,
+    "agnostic": 3,
+    "config": 4,
+    "measure": 2,
+    "safety": 4
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/Chorus-AIDLC/Chorus"
+    ],
+    [
+     "Docs",
+     "https://doc.chorus-ai.dev"
+    ]
+   ],
+   "sources": [
+    "https://github.com/Chorus-AIDLC/Chorus",
+    "https://doc.chorus-ai.dev"
+   ],
+   "status": "active"
+  },
+  {
+   "id": "multica",
+   "name": "Multica",
+   "category": "sdlc",
+   "kind": "open-core",
+   "vendor": "Multica",
+   "repo": "multica-ai/multica",
+   "url": "https://multica.ai",
+   "license": "Multica License (Apache-2.0 based, source-available terms)",
+   "pricing": "Self-host free; cloud plans",
+   "version": "v0.8.0",
+   "tier": "deep",
+   "summary": "A workspace where AI coding agents (Claude Code, Codex, Cursor and others) are assigned issues like teammates: they pick work up, comment progress, raise blockers and hand back for review, on runtimes you control.",
+   "how": "An issue board with agents as members; each agent runs on a runtime you register (your machine or a server) and keeps the intent, run, decisions and diff on the issue. Self-hostable; desktop app and cloud.",
+   "features": [
+    "Agents as board members with assignments",
+    "Bring your own agent CLIs",
+    "Self-hosting guide",
+    "Progress comments and blockers on the issue"
+   ],
+   "strengths": [
+    "Team-level coordination of many agents; strong UX",
+    "Self-hostable",
+    "Works with many agent CLIs (Claude Code, Codex, Cursor and others)"
+   ],
+   "weaknesses": [
+    "Source-available license terms on top of Apache: check before embedding",
+    "No evaluation layer"
+   ],
+   "gaps": [
+    "Sandboxing per run; benchmark"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Competitor/peer to squad-kit's board; watch for team features squad-kit lacks (shared server, many agents)."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 3,
+    "openness": 3,
+    "agnostic": 4,
+    "config": 3,
+    "measure": 1,
+    "safety": 3
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/multica-ai/multica"
+    ],
+    [
+     "Website",
+     "https://multica.ai"
+    ]
+   ],
+   "sources": [
+    "https://github.com/multica-ai/multica",
+    "https://multica.ai/docs"
+   ],
+   "status": "active"
+  },
+  {
+   "id": "paperclip",
+   "name": "Paperclip",
+   "category": "sdlc",
+   "kind": "open-source",
+   "vendor": "Paperclip AI",
+   "repo": "paperclipai/paperclip",
+   "url": "https://paperclip.ing",
+   "license": "MIT",
+   "pricing": "Free",
+   "version": "v2026.1023.0",
+   "summary": "Open-source orchestration for teams of AI agents organised as a company: org charts, goals, budgets, governance and cost tracking over any agent and harness.",
+   "how": "Node.js server and React UI; you define a goal, 'hire' agents (any provider/harness) into roles, set budgets and approve strategy; adapters connect custom processes and HTTP endpoints.",
+   "features": [
+    "Org chart, goals, budgets",
+    "Per-agent model/harness choice",
+    "Cost tracking and governance"
+   ],
+   "strengths": [
+    "Budget and governance concepts useful for autonomous agents"
+   ],
+   "weaknesses": [
+    "Business-goal framing, less SDLC depth"
+   ],
+   "gaps": [
+    "Engineering quality gates"
+   ],
+   "fit": {
+    "verdict": "inspire",
+    "role": "Ideas for budgets and governance of Azm's autonomous channel agents."
+   },
+   "scores": {
+    "fit": 2,
+    "maturity": 3,
+    "openness": 5,
+    "agnostic": 4,
+    "config": 3,
+    "measure": 2,
+    "safety": 2
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/paperclipai/paperclip"
+    ]
+   ],
+   "sources": [
+    "https://github.com/paperclipai/paperclip"
+   ],
+   "tier": "brief",
+   "status": "active"
+  },
+  {
+   "id": "symphony",
+   "name": "Symphony",
+   "category": "sdlc",
+   "kind": "open-source",
+   "vendor": "OpenAI",
+   "repo": "openai/symphony",
+   "url": "https://github.com/openai/symphony",
+   "license": "Apache-2.0",
+   "pricing": "Free",
+   "version": "v0.0.3 (engineering preview)",
+   "summary": "OpenAI's spec plus reference implementation for turning a work board (e.g. Linear) into isolated, autonomous implementation runs, with proof of work (CI, review feedback, walkthrough videos) before landing the PR.",
+   "how": "Watches a board, spawns an agent per task in isolation, collects proof of work and lands accepted PRs. Published as SPEC.md so teams can build their own; an Elixir reference implementation exists. Works best in repos that adopted harness engineering.",
+   "features": [
+    "Board-driven autonomous runs",
+    "Proof-of-work bundle per task",
+    "SPEC.md to build your own"
+   ],
+   "strengths": [
+    "A clean spec from OpenAI for 'managing work, not agents'"
+   ],
+   "weaknesses": [
+    "Low-key preview for trusted environments only"
+   ],
+   "gaps": [
+    "Production readiness"
+   ],
+   "fit": {
+    "verdict": "inspire",
+    "role": "Read the SPEC as a design reference for squad-kit's autonomous mode and proof-of-work."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 1,
+    "openness": 5,
+    "agnostic": 2,
+    "config": 3,
+    "measure": 2,
+    "safety": 2
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/openai/symphony"
+    ],
+    [
+     "SPEC",
+     "https://github.com/openai/symphony/blob/main/SPEC.md"
+    ]
+   ],
+   "sources": [
+    "https://github.com/openai/symphony"
+   ],
+   "tier": "brief",
+   "status": "active"
+  },
+  {
+   "id": "omnigent",
+   "name": "Omnigent",
+   "category": "sdlc",
+   "kind": "open-source",
+   "vendor": "Omnigent",
+   "repo": "omnigent-ai/omnigent",
+   "url": "https://omnigent.ai",
+   "license": "Apache-2.0",
+   "pricing": "Free",
+   "summary": "An open-source 'meta-harness': one orchestration layer over Claude Code, Codex, Cursor, OpenCode, Hermes, Pi and custom YAML-defined agents, with policies, sandboxing and sessions that follow you across terminal, browser and phone.",
+   "how": "Wraps each harness behind a common session model; agents can review each other or split work; policies and sandboxing are enforced centrally; any model or subscription can be used.",
+   "features": [
+    "Common layer over many harnesses",
+    "Custom agents in YAML",
+    "Policies and sandboxing",
+    "Cross-device sessions"
+   ],
+   "strengths": [
+    "Directly addresses harness-agnostic operation"
+   ],
+   "weaknesses": [
+    "Young (dev releases); scope is broad"
+   ],
+   "gaps": [
+    "Benchmarking"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Possible common adapter layer if Azm wants one interface to drive many harnesses."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 2,
+    "openness": 5,
+    "agnostic": 5,
+    "config": 4,
+    "measure": 1,
+    "safety": 3
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/omnigent-ai/omnigent"
+    ]
+   ],
+   "sources": [
+    "https://github.com/omnigent-ai/omnigent"
+   ],
+   "tier": "brief",
+   "status": "active"
+  },
+  {
+   "id": "spec-kit",
+   "name": "Spec Kit",
+   "category": "sdlc",
+   "kind": "open-source",
+   "vendor": "GitHub",
+   "repo": "github/spec-kit",
+   "url": "https://github.com/github/spec-kit",
+   "license": "MIT",
+   "pricing": "Free",
+   "version": "v1.3.0",
+   "tier": "deep",
+   "summary": "GitHub's toolkit for spec-driven development: a CLI (`specify`) and slash commands that take you from constitution and spec to plan, tasks and implementation, across many coding agents.",
+   "how": "`specify init` scaffolds templates and commands for the chosen agent; commands /constitution, /specify, /plan, /tasks, /implement produce Markdown artifacts that guide the agent step by step.",
+   "features": [
+    "Constitution → spec → plan → tasks → implement",
+    "Supports many agents (Claude Code, Copilot, Gemini, Cursor and more)",
+    "Templates and extensions",
+    "Extensions and presets",
+    "specify CLI scaffolding"
+   ],
+   "strengths": [
+    "Widely adopted reference for SDD; vendor-neutral",
+    "Simple Markdown artifacts that any team can read",
+    "GitHub backing and large community"
+   ],
+   "weaknesses": [
+    "Process scaffolding only; no runtime, gates or measurement",
+    "Can produce heavy documents for small changes"
+   ],
+   "gaps": [
+    "Eval of spec quality"
+   ],
+   "fit": {
+    "verdict": "adopt-part",
+    "role": "Reference for Track 1 artifacts (spec/plan/tasks templates); squad-kit already documents a comparison (docs/vs-spec-kit.md)."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 4,
+    "openness": 5,
+    "agnostic": 5,
+    "config": 3,
+    "measure": 1,
+    "safety": 2
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/github/spec-kit"
+    ]
+   ],
+   "sources": [
+    "https://github.com/github/spec-kit",
+    "https://github.github.com/spec-kit/"
+   ],
+   "status": "active"
+  },
+  {
+   "id": "bmad",
+   "name": "BMAD Method",
+   "category": "sdlc",
+   "kind": "open-source",
+   "vendor": "BMad Code",
+   "repo": "bmad-code-org/BMAD-METHOD",
+   "url": "https://github.com/bmad-code-org/BMAD-METHOD",
+   "license": "MIT",
+   "pricing": "Free",
+   "summary": "An agile, persona-based framework (analyst, PM, architect, scrum master, dev, QA) delivered as installable agents and workflows for coding assistants.",
+   "how": "An installer adds persona agents and workflow files to the project; the team runs planning (PRD, architecture) and then story-by-story development with QA.",
+   "features": [
+    "Persona agents across the agile cycle",
+    "Planning artifacts (PRD, architecture, stories)",
+    "Multi-IDE install"
+   ],
+   "strengths": [
+    "Large community; close in spirit to squad-kit's roles"
+   ],
+   "weaknesses": [
+    "Heavy documentation process; no runtime gates or eval"
+   ],
+   "gaps": [
+    "Measurement"
+   ],
+   "fit": {
+    "verdict": "benchmark",
+    "role": "Include as a process baseline in the sandbox (same tasks, BMAD workflow vs squad-kit)."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 4,
+    "openness": 5,
+    "agnostic": 4,
+    "config": 3,
+    "measure": 1,
+    "safety": 2
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/bmad-code-org/BMAD-METHOD"
+    ]
+   ],
+   "sources": [
+    "https://github.com/bmad-code-org/BMAD-METHOD"
+   ],
+   "tier": "brief",
+   "status": "active"
+  },
+  {
+   "id": "superpowers",
+   "name": "Superpowers",
+   "category": "sdlc",
+   "kind": "open-source",
+   "vendor": "Jesse Vincent (obra)",
+   "repo": "obra/superpowers",
+   "url": "https://github.com/obra/superpowers",
+   "license": "MIT",
+   "pricing": "Free",
+   "version": "v7.0.1",
+   "tier": "deep",
+   "summary": "A skills library and workflow for coding agents: brainstorm → plan → subagent-driven development with TDD and code review, packaged as Claude Code plugin skills (also used with other harnesses).",
+   "how": "Skills trigger automatically (brainstorming, writing plans, test-driven development, systematic debugging, requesting review); subagents implement tasks one by one with review between them.",
+   "features": [
+    "Automatic skill triggering",
+    "TDD and systematic debugging skills",
+    "Subagent-driven development with reviews",
+    "Git worktree workflow",
+    "Plugin marketplace install"
+   ],
+   "strengths": [
+    "Most adopted Claude Code workflow skill set; measurable in Fullscript's benchmark",
+    "Battle-tested TDD discipline",
+    "Lightweight: no server or board"
+   ],
+   "weaknesses": [
+    "Skill bundles can conflict; Fullscript found stacking skill sets never won",
+    "Mostly Claude Code (other harnesses via ports)"
+   ],
+   "gaps": [
+    "Team process (tickets, approvals)"
+   ],
+   "fit": {
+    "verdict": "benchmark",
+    "role": "Include as a lightweight baseline: plain Claude Code + Superpowers vs squad-kit on the same tasks."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 4,
+    "openness": 5,
+    "agnostic": 3,
+    "config": 3,
+    "measure": 1,
+    "safety": 2
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/obra/superpowers"
+    ]
+   ],
+   "sources": [
+    "https://github.com/obra/superpowers",
+    "https://builders.fullscript.com/posts/benchmarking-the-agents-that-write-our-code"
+   ],
+   "status": "active"
+  },
+  {
+   "id": "gstack",
+   "name": "gstack",
+   "category": "sdlc",
+   "kind": "open-source",
+   "vendor": "Garry Tan",
+   "repo": "garrytan/gstack",
+   "url": "https://github.com/garrytan/gstack",
+   "license": "MIT",
+   "pricing": "Free",
+   "summary": "An opinionated set of Claude Code skills that act as a virtual team (CEO review, eng manager, designer, QA with a real browser, release engineer).",
+   "how": "Slash-command skills for planning reviews, QA with a headless browser, shipping and retros.",
+   "features": [
+    "Role skills",
+    "Browser-based QA",
+    "Ship/retro commands"
+   ],
+   "strengths": [
+    "Practical QA-with-browser pattern"
+   ],
+   "weaknesses": [
+    "Claude Code-centric; personal workflow"
+   ],
+   "gaps": [
+    "Team config, eval"
+   ],
+   "fit": {
+    "verdict": "inspire",
+    "role": "Ideas for squad-kit's Tester/Reviewer prompts."
+   },
+   "scores": {
+    "fit": 2,
+    "maturity": 3,
+    "openness": 5,
+    "agnostic": 2,
+    "config": 2,
+    "measure": 1,
+    "safety": 2
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/garrytan/gstack"
+    ]
+   ],
+   "sources": [
+    "https://github.com/garrytan/gstack"
+   ],
+   "tier": "brief",
+   "status": "active"
+  },
+  {
+   "id": "compound-engineering",
+   "name": "Compound Engineering",
+   "category": "sdlc",
+   "kind": "open-source",
+   "vendor": "Every",
+   "repo": "EveryInc/compound-engineering-plugin",
+   "url": "https://github.com/EveryInc/compound-engineering-plugin",
+   "license": "MIT",
+   "pricing": "Free",
+   "version": "v2.42.0",
+   "summary": "Every's plugin for a plan → work → review → compound loop, where each finished task feeds lessons back into the project so the next one is easier.",
+   "how": "Commands for planning, executing, multi-agent review and a 'compound' step that writes learnings into docs and rules.",
+   "features": [
+    "Plan/work/review/compound loop",
+    "Multi-agent review",
+    "Learnings captured into the repo"
+   ],
+   "strengths": [
+    "The 'compound' step mirrors squad-kit's knowledge/ folder"
+   ],
+   "weaknesses": [
+    "No measurement of the compounding"
+   ],
+   "gaps": [
+    "Eval"
+   ],
+   "fit": {
+    "verdict": "inspire",
+    "role": "Pattern for feeding sandbox findings back into team rules."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 3,
+    "openness": 5,
+    "agnostic": 3,
+    "config": 3,
+    "measure": 1,
+    "safety": 2
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/EveryInc/compound-engineering-plugin"
+    ]
+   ],
+   "sources": [
+    "https://github.com/EveryInc/compound-engineering-plugin"
+   ],
+   "tier": "brief",
+   "status": "active"
+  },
+  {
+   "id": "ecc",
+   "name": "ECC (Everything Claude Code)",
+   "category": "sdlc",
+   "kind": "open-source",
+   "vendor": "Affaan Mustafa",
+   "repo": "affaan-m/ECC",
+   "url": "https://github.com/affaan-m/ECC",
+   "license": "MIT",
+   "pricing": "Free",
+   "summary": "A large harness-performance pack: agents, skills, hooks, rules and memory patterns for Claude Code and other agents, aimed at token efficiency and verification.",
+   "how": "Install selected modules (agents, skills, hooks, rules); includes verification loops and security scanning.",
+   "features": [
+    "Agents, skills, hooks, rules",
+    "Verification and security modules"
+   ],
+   "strengths": [
+    "Rich catalogue to mine"
+   ],
+   "weaknesses": [
+    "Very large; risk of bloat (focused skills beat big bundles in SkillsBench)"
+   ],
+   "gaps": [
+    "Measured impact"
+   ],
+   "fit": {
+    "verdict": "inspire",
+    "role": "Source of candidate rules/hooks to test in the sandbox one at a time."
+   },
+   "scores": {
+    "fit": 2,
+    "maturity": 3,
+    "openness": 5,
+    "agnostic": 3,
+    "config": 3,
+    "measure": 1,
+    "safety": 2
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/affaan-m/ECC"
+    ]
+   ],
+   "sources": [
+    "https://github.com/affaan-m/ECC"
+   ],
+   "tier": "brief",
+   "status": "active"
+  },
+  {
+   "id": "trellis",
+   "name": "Trellis",
+   "category": "sdlc",
+   "kind": "open-source",
+   "vendor": "Mindfold",
+   "repo": "mindfold-ai/Trellis",
+   "url": "https://github.com/mindfold-ai/Trellis",
+   "license": "AGPL-3.0",
+   "pricing": "Free",
+   "version": "v0.7.0-beta",
+   "summary": "A structured framework for AI coding with specs, task workflows and project memory across Claude Code, Cursor and other tools.",
+   "how": "Injects spec and task context into each session through hooks; keeps journals per developer.",
+   "features": [
+    "Spec injection",
+    "Task workflow",
+    "Multi-tool"
+   ],
+   "strengths": [
+    "Context-injection design"
+   ],
+   "weaknesses": [
+    "AGPL; beta"
+   ],
+   "gaps": [
+    "Eval"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Reference only."
+   },
+   "scores": {
+    "fit": 2,
+    "maturity": 2,
+    "openness": 3,
+    "agnostic": 3,
+    "config": 3,
+    "measure": 1,
+    "safety": 2
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/mindfold-ai/Trellis"
+    ]
+   ],
+   "sources": [
+    "https://github.com/mindfold-ai/Trellis"
+   ],
+   "tier": "brief",
+   "status": "active"
+  },
+  {
+   "id": "gastown",
+   "name": "Gas Town",
+   "category": "sdlc",
+   "kind": "open-source",
+   "vendor": "Steve Yegge",
+   "repo": "gastownhall/gastown",
+   "url": "https://github.com/gastownhall/gastown",
+   "license": "MIT",
+   "pricing": "Free",
+   "version": "v1.2.1",
+   "summary": "A multi-agent workspace manager that coordinates many Claude Code (and other) agents on one codebase with persistent work tracking (beads) and roles such as a mayor and workers.",
+   "how": "Agents run in tmux-managed workspaces; a coordinator assigns work items stored in a git-backed issue system; merge queues integrate results.",
+   "features": [
+    "Many parallel agents",
+    "Git-backed work tracking",
+    "Merge queue"
+   ],
+   "strengths": [
+    "Scales to many parallel agents"
+   ],
+   "weaknesses": [
+    "Complex to operate; host-level isolation"
+   ],
+   "gaps": [
+    "Sandbox, eval"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Reference for large-scale parallel runs."
+   },
+   "scores": {
+    "fit": 2,
+    "maturity": 3,
+    "openness": 5,
+    "agnostic": 3,
+    "config": 2,
+    "measure": 1,
+    "safety": 2
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/gastownhall/gastown"
+    ]
+   ],
+   "sources": [
+    "https://github.com/gastownhall/gastown"
+   ],
+   "tier": "brief",
+   "status": "active"
+  },
+  {
+   "id": "agent-orchestrator",
+   "name": "Composio Agent Orchestrator",
+   "category": "sdlc",
+   "kind": "open-source",
+   "vendor": "Composio",
+   "repo": "ComposioHQ/agent-orchestrator",
+   "url": "https://github.com/ComposioHQ/agent-orchestrator",
+   "license": "Apache-2.0",
+   "pricing": "Free",
+   "summary": "Runs parallel coding agents, each in its own git worktree, and handles CI failures, review comments and PR follow-ups automatically.",
+   "how": "Plugins for agents (Claude Code, Codex, Aider), runtimes (tmux, Docker) and trackers (GitHub, Linear); reacts to CI and review events.",
+   "features": [
+    "Parallel agents in worktrees",
+    "Reacts to CI and review comments",
+    "Plugin architecture"
+   ],
+   "strengths": [
+    "Pluggable runtime/tracker/agent slots"
+   ],
+   "weaknesses": [
+    "Nightly releases; fast-moving"
+   ],
+   "gaps": [
+    "Eval"
+   ],
+   "fit": {
+    "verdict": "inspire",
+    "role": "Its plugin slots (agent / runtime / tracker) are a good shape for squad-kit's integrations."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 3,
+    "openness": 5,
+    "agnostic": 4,
+    "config": 3,
+    "measure": 1,
+    "safety": 2
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/ComposioHQ/agent-orchestrator"
+    ]
+   ],
+   "sources": [
+    "https://github.com/ComposioHQ/agent-orchestrator"
+   ],
+   "tier": "brief",
+   "status": "active"
+  },
+  {
+   "id": "orca",
+   "name": "Orca",
+   "category": "sdlc",
+   "kind": "open-source",
+   "vendor": "Stably AI",
+   "repo": "stablyai/orca",
+   "url": "https://github.com/stablyai/orca",
+   "license": "MIT",
+   "pricing": "Free",
+   "summary": "A desktop IDE for running many coding agents in parallel across worktrees, with review and merge tools.",
+   "how": "Each task gets a worktree and an agent terminal; diffs are reviewed in-app.",
+   "features": [
+    "Parallel worktrees",
+    "Built-in diff review"
+   ],
+   "strengths": [
+    "Polished parallel-agent UX"
+   ],
+   "weaknesses": [
+    "Single-user desktop"
+   ],
+   "gaps": [
+    "Team process, eval"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "UX reference."
+   },
+   "scores": {
+    "fit": 2,
+    "maturity": 3,
+    "openness": 5,
+    "agnostic": 4,
+    "config": 2,
+    "measure": 1,
+    "safety": 2
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/stablyai/orca"
+    ]
+   ],
+   "sources": [
+    "https://github.com/stablyai/orca"
+   ],
+   "tier": "brief",
+   "status": "active"
+  },
+  {
+   "id": "qm",
+   "name": "QM",
+   "category": "sdlc",
+   "kind": "open-source",
+   "vendor": "YC Software",
+   "repo": "yc-software/qm",
+   "url": "https://github.com/yc-software/qm",
+   "license": "MIT",
+   "pricing": "Free; self-host in your cloud",
+   "tier": "deep",
+   "summary": "A multiplayer agent harness for work, in Slack and on the web, deployed in your own cloud with your own models and keys. Every person and every channel gets scoped memory, files, keychain, permissions, crons and a durable sandbox.",
+   "how": "Deploy by asking a coding agent to follow the repo's deployment guide; agents run on Pi so models from many providers can be swapped; per-person and per-room isolation with scoped secrets.",
+   "features": [
+    "Slack and web front ends",
+    "Per-person and per-room memory, files, permissions, crons",
+    "Durable sandbox per scope",
+    "Any model via Pi"
+   ],
+   "strengths": [
+    "Very close to the 'autonomous agents through channels' goal in the month's compass",
+    "MIT, self-hosted, vendor-neutral",
+    "Scoped secrets and permissions per person and room"
+   ],
+   "weaknesses": [
+    "Startup-oriented; enterprise controls need review",
+    "Deployment and operations are on you"
+   ],
+   "gaps": [
+    "SDLC-specific workflows"
+   ],
+   "fit": {
+    "verdict": "benchmark",
+    "role": "Candidate base for Azm's autonomous channel agents (Slack/Teams); trial before building one."
+   },
+   "scores": {
+    "fit": 4,
+    "maturity": 2,
+    "openness": 5,
+    "agnostic": 5,
+    "config": 4,
+    "measure": 1,
+    "safety": 4
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/yc-software/qm"
+    ]
+   ],
+   "sources": [
+    "https://github.com/yc-software/qm",
+    "https://github.com/yc-software/qm#readme"
+   ],
+   "status": "active"
+  },
+  {
+   "id": "ruflo",
+   "name": "Ruflo (formerly Claude Flow)",
+   "category": "sdlc",
+   "kind": "open-source",
+   "vendor": "ruvnet",
+   "repo": "ruvnet/ruflo",
+   "url": "https://github.com/ruvnet/ruflo",
+   "license": "MIT",
+   "pricing": "Free",
+   "version": "v3.71.0",
+   "summary": "An agent-swarm orchestration platform for Claude Code with many agent types, memory and MCP tools.",
+   "how": "Swarm and hive-mind modes coordinate many agents through MCP tools and shared memory.",
+   "features": [
+    "Swarm orchestration",
+    "Shared memory",
+    "Large MCP toolset"
+   ],
+   "strengths": [
+    "Feature-rich"
+   ],
+   "weaknesses": [
+    "Complex; claims hard to verify"
+   ],
+   "gaps": [
+    "Independent evaluation"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Only via sandbox evidence."
+   },
+   "scores": {
+    "fit": 2,
+    "maturity": 3,
+    "openness": 5,
+    "agnostic": 2,
+    "config": 3,
+    "measure": 1,
+    "safety": 2
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/ruvnet/ruflo"
+    ]
+   ],
+   "sources": [
+    "https://github.com/ruvnet/ruflo"
+   ],
+   "tier": "brief",
+   "status": "active"
+  },
+  {
+   "id": "oh-my-claudecode",
+   "name": "oh-my-claudecode",
+   "category": "sdlc",
+   "kind": "open-source",
+   "vendor": "Yeachan Heo",
+   "repo": "Yeachan-Heo/oh-my-claudecode",
+   "url": "https://github.com/Yeachan-Heo/oh-my-claudecode",
+   "license": "MIT",
+   "pricing": "Free",
+   "summary": "Multi-agent orchestration add-on for Claude Code with team modes, specialised agents and autopilot workflows.",
+   "how": "Plugin with agents, hooks and modes (autopilot, team, ralph-style loops).",
+   "features": [
+    "Team and autopilot modes",
+    "Specialised agents"
+   ],
+   "strengths": [
+    "Popular, active"
+   ],
+   "weaknesses": [
+    "Claude Code only"
+   ],
+   "gaps": [
+    "Eval"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Reference only."
+   },
+   "scores": {
+    "fit": 2,
+    "maturity": 3,
+    "openness": 5,
+    "agnostic": 1,
+    "config": 2,
+    "measure": 1,
+    "safety": 2
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/Yeachan-Heo/oh-my-claudecode"
+    ]
+   ],
+   "sources": [
+    "https://github.com/Yeachan-Heo/oh-my-claudecode"
+   ],
+   "tier": "brief",
+   "status": "active"
+  },
+  {
+   "id": "claude-squad",
+   "name": "Claude Squad",
+   "category": "sdlc",
+   "kind": "open-source",
+   "vendor": "smtg-ai",
+   "repo": "smtg-ai/claude-squad",
+   "url": "https://github.com/smtg-ai/claude-squad",
+   "license": "AGPL-3.0",
+   "pricing": "Free",
+   "summary": "A terminal app that manages several Claude Code, Codex or Aider sessions, each in its own git worktree.",
+   "how": "tmux sessions plus worktrees; review and push from the TUI.",
+   "features": [
+    "Parallel sessions",
+    "Worktree isolation"
+   ],
+   "strengths": [
+    "Simple"
+   ],
+   "weaknesses": [
+    "AGPL; low activity since Aug 2026"
+   ],
+   "gaps": [
+    "Everything beyond session management"
+   ],
+   "fit": {
+    "verdict": "avoid",
+    "role": "Superseded by richer tools; name overlap with squad-kit only."
+   },
+   "scores": {
+    "fit": 1,
+    "maturity": 3,
+    "openness": 3,
+    "agnostic": 3,
+    "config": 1,
+    "measure": 1,
+    "safety": 1
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/smtg-ai/claude-squad"
+    ]
+   ],
+   "sources": [
+    "https://github.com/smtg-ai/claude-squad"
+   ],
+   "tier": "brief",
+   "status": "active"
+  },
+  {
+   "id": "vibe-kanban",
+   "name": "Vibe Kanban",
+   "category": "sdlc",
+   "kind": "open-source",
+   "vendor": "Bloop",
+   "repo": "BloopAI/vibe-kanban",
+   "url": "https://github.com/BloopAI/vibe-kanban",
+   "license": "Apache-2.0",
+   "pricing": "Free",
+   "status": "sunsetting",
+   "summary": "A kanban board for orchestrating coding agents in worktrees. The project has announced it is sunsetting.",
+   "how": "Tasks on a board launch agents in isolated worktrees with review.",
+   "features": [
+    "Agent kanban"
+   ],
+   "strengths": [
+    "Was an early reference"
+   ],
+   "weaknesses": [
+    "Sunsetting"
+   ],
+   "gaps": [
+    "—"
+   ],
+   "fit": {
+    "verdict": "avoid",
+    "role": "Do not build on it."
+   },
+   "scores": {
+    "fit": 1,
+    "maturity": 2,
+    "openness": 5,
+    "agnostic": 3,
+    "config": 2,
+    "measure": 1,
+    "safety": 1
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/BloopAI/vibe-kanban"
+    ]
+   ],
+   "sources": [
+    "https://github.com/BloopAI/vibe-kanban"
+   ],
+   "tier": "brief"
+  },
+  {
+   "id": "ccpm",
+   "name": "CCPM",
+   "category": "sdlc",
+   "kind": "open-source",
+   "vendor": "Automaze",
+   "repo": "automazeio/ccpm",
+   "url": "https://github.com/automazeio/ccpm",
+   "license": "MIT",
+   "pricing": "Free",
+   "summary": "Project management for Claude Code using GitHub Issues and worktrees: PRD → epic → tasks → parallel agents, with full traceability.",
+   "how": "Slash commands create PRDs and epics, sync to GitHub Issues and run agents per task.",
+   "features": [
+    "PRD/epic/task flow",
+    "GitHub Issues sync"
+   ],
+   "strengths": [
+    "Traceability via issues"
+   ],
+   "weaknesses": [
+    "Claude Code + GitHub only"
+   ],
+   "gaps": [
+    "Eval"
+   ],
+   "fit": {
+    "verdict": "inspire",
+    "role": "Tracker-sync reference for GitHub."
+   },
+   "scores": {
+    "fit": 2,
+    "maturity": 3,
+    "openness": 5,
+    "agnostic": 2,
+    "config": 2,
+    "measure": 1,
+    "safety": 1
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/automazeio/ccpm"
+    ]
+   ],
+   "sources": [
+    "https://github.com/automazeio/ccpm"
+   ],
+   "tier": "brief",
+   "status": "active"
+  },
+  {
+   "id": "gsd",
+   "name": "Get Shit Done (GSD)",
+   "category": "sdlc",
+   "kind": "open-source",
+   "vendor": "Lex Christopherson",
+   "repo": "gsd-build/get-shit-done",
+   "url": "https://github.com/gsd-build/get-shit-done",
+   "license": "MIT",
+   "pricing": "Free",
+   "summary": "A light meta-prompting and context-engineering system for spec-driven work in Claude Code and other agents.",
+   "how": "Commands for discuss → plan → execute → verify with fresh subagent contexts.",
+   "features": [
+    "Spec-driven phases",
+    "Context-rot avoidance"
+   ],
+   "strengths": [
+    "Lightweight"
+   ],
+   "weaknesses": [
+    "Canary releases; slowed since May 2026"
+   ],
+   "gaps": [
+    "Eval"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Reference only."
+   },
+   "scores": {
+    "fit": 2,
+    "maturity": 2,
+    "openness": 5,
+    "agnostic": 3,
+    "config": 2,
+    "measure": 1,
+    "safety": 1
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/gsd-build/get-shit-done"
+    ]
+   ],
+   "sources": [
+    "https://github.com/gsd-build/get-shit-done"
+   ],
+   "tier": "brief",
+   "status": "active"
+  }
+ ]
+}

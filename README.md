@@ -4,6 +4,7 @@
 
 Everything new in AI for developers, filtered day by day: Claude, skills, MCP, developer tools, models, Laravel, video editing and design. The app is bilingual — **English (default) and Arabic** — switchable from the sidebar or the login page.
 
+- **Research hub (focus mode)**: `/research` serves the AI Champs tracks: dossiers on every relevant tool (what it does, strengths, weaknesses, what it lacks, a verdict for Azm and weighted scores), a landscape matrix, an adopt-vs-build recommendation, articles, a per-track radar and an index of every project found. Data lives in `research/` and is kept current by the daily task following [RESEARCH_GUIDE.md](RESEARCH_GUIDE.md); `npm run validate:research` checks it. Each track exports to Markdown for Confluence. While focus mode is on, `/` opens the hub and the news sections are hidden from the menu; set `NEXT_PUBLIC_MARSAD_FOCUS=off` to bring them back.
 - **Daily digest**: a scheduled task researches every section and writes `content/YYYY-MM-DD.json` following [DIGEST_GUIDE.md](DIGEST_GUIDE.md), in Arabic and English, then pushes. Vercel deploys automatically.
 - **Essentials**: `content/essentials/` holds the must-know tools in every section, each with a full details page.
 - **Radar**: `scripts/collect.mjs` runs every morning in a GitHub Action (`.github/workflows/collect.yml`) and collects new awesome-list additions, new releases, rising repos and GitHub stars. Settings live in `config/watch.json`.

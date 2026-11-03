@@ -1,0 +1,6160 @@
+{
+ "updated": "2026-11-03",
+ "sources": [
+  {
+   "name": "Picrew/awesome-agent-harness",
+   "url": "https://github.com/Picrew/awesome-agent-harness",
+   "verified": "2026-10-08"
+  },
+  {
+   "name": "AutoJunjie/awesome-agent-harness",
+   "url": "https://github.com/AutoJunjie/awesome-agent-harness"
+  }
+ ],
+ "note": "Every project found on the harness awesome lists. Stars are the lists' snapshot values. Projects with a full dossier are linked from the landscape.",
+ "items": [
+  {
+   "name": "OpenClaw",
+   "repo": "openclaw/openclaw",
+   "url": "https://github.com/openclaw/openclaw",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 390144,
+   "tags": [
+    "gateway",
+    "channels",
+    "sandboxing"
+   ],
+   "summary": "Local-first personal assistant harness with a gateway control plane for sessions, channels, tools, events, skills, and sandboxed non-main agents.",
+   "lists": [
+    "Picrew/awesome-agent-harness",
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Superpowers",
+   "repo": "obra/superpowers",
+   "url": "https://github.com/obra/superpowers",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 289122,
+   "tags": [
+    "skills",
+    "workflow",
+    "cross-agent"
+   ],
+   "summary": "Cross-agent software development methodology built from composable skills, mandatory workflows, worktrees, planning, TDD, review, and subagent execution.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Matt Pocock Skills",
+   "repo": "mattpocock/skills",
+   "url": "https://github.com/mattpocock/skills",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 266306,
+   "tags": [
+    "skills",
+    "coding-agents",
+    "workflows"
+   ],
+   "summary": "Composable engineering skills for Claude Code, Codex, and other coding agents, covering alignment, shared language, ADRs, specs, tests, and code review loops.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "ECC",
+   "repo": "affaan-m/ECC",
+   "url": "https://github.com/affaan-m/ECC",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 263458,
+   "tags": [
+    "cross-harness",
+    "hooks",
+    "skills"
+   ],
+   "summary": "Cross-harness operator system combining skills, hooks, memory optimization, security scanning, and validation workflows for agentic work.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Hermes Agent",
+   "repo": "NousResearch/hermes-agent",
+   "url": "https://github.com/NousResearch/hermes-agent",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 247397,
+   "tags": [
+    "memory",
+    "skills",
+    "subagents"
+   ],
+   "summary": "Self-improving agent runtime with memory, skill creation, subagents, scheduled automations, and pluggable terminal backends.",
+   "lists": [
+    "Picrew/awesome-agent-harness",
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "DeepSeek Harness",
+   "repo": "deepseek-ai/deepseek-harness",
+   "url": "https://github.com/deepseek-ai/deepseek-harness",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 231036,
+   "tags": [
+    "plugin-architecture",
+    "session-log",
+    "sandboxing"
+   ],
+   "summary": "DeepSeek's official plugin-first agent harness with replaceable agent loops, model adapters, tool registries, durable session logs, sandbox and approval policies, and web or headless profiles.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "OpenCode",
+   "repo": "anomalyco/opencode",
+   "url": "https://github.com/anomalyco/opencode",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 208822,
+   "tags": [
+    "terminal",
+    "coding-agent",
+    "subagents"
+   ],
+   "summary": "Open-source coding agent with built-in plan/build roles, subagents, LSP support, and a client-server runtime.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Claw Code",
+   "repo": "ultraworkers/claw-code",
+   "url": "https://github.com/ultraworkers/claw-code",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 195271,
+   "tags": [
+    "rust",
+    "cli",
+    "sessions"
+   ],
+   "summary": "Public Rust implementation of the claw CLI agent harness with auth, sessions, parity checks, container workflows, and terminal execution guidance.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Anthropic Agent Skills",
+   "repo": "anthropics/skills",
+   "url": "https://github.com/anthropics/skills",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 177280,
+   "tags": [
+    "skills",
+    "spec",
+    "claude"
+   ],
+   "summary": "Official Agent Skills repository containing the skills specification, templates, and reference skill implementations for Claude.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Langflow",
+   "repo": "langflow-ai/langflow",
+   "url": "https://github.com/langflow-ai/langflow",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 155045,
+   "tags": [
+    "orchestration",
+    "mcp",
+    "observability"
+   ],
+   "summary": "Visual agent workflow platform with multi-agent orchestration, conversation management, stepwise testing, API and MCP deployment, and tracing integrations.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Claude Code",
+   "repo": "anthropics/claude-code",
+   "url": "https://github.com/anthropics/claude-code",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 146985,
+   "tags": [
+    "terminal",
+    "coding-agent",
+    "git-workflows"
+   ],
+   "summary": "Official terminal coding agent that understands codebases and executes editing, debugging, and Git workflows through natural language.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "GitHub Spec Kit",
+   "repo": "github/spec-kit",
+   "url": "https://github.com/github/spec-kit",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 138051,
+   "tags": [
+    "spec-driven",
+    "workflows",
+    "tooling"
+   ],
+   "summary": "Toolkit for spec-driven development to guide deterministic agent execution.",
+   "lists": [
+    "Picrew/awesome-agent-harness",
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "gstack",
+   "repo": "garrytan/gstack",
+   "url": "https://github.com/garrytan/gstack",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 133765,
+   "tags": [
+    "skills",
+    "qa",
+    "release"
+   ],
+   "summary": "Claude Code and cross-agent skill stack that turns product planning, architecture review, QA, security, release, and retrospectives into repeatable agent workflows.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Codex CLI",
+   "repo": "openai/codex",
+   "url": "https://github.com/openai/codex",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 125493,
+   "tags": [
+    "terminal",
+    "coding-agent",
+    "local-execution"
+   ],
+   "summary": "Terminal-native coding agent that runs locally and exposes practical agent workflows for software tasks.",
+   "lists": [
+    "Picrew/awesome-agent-harness",
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Graphify",
+   "repo": "Graphify-Labs/graphify",
+   "url": "https://github.com/Graphify-Labs/graphify",
+   "category": "context",
+   "group": "Context & Working-State Engineering",
+   "stars": 119809,
+   "tags": [
+    "knowledge-graph",
+    "skills",
+    "codex"
+   ],
+   "summary": "Cross-agent skill and CLI that turns code, docs, schemas, and media into a queryable knowledge graph with Codex and Claude Code hooks.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Browser Use",
+   "repo": "browser-use/browser-use",
+   "url": "https://github.com/browser-use/browser-use",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 115500,
+   "tags": [
+    "browser-agent",
+    "automation",
+    "benchmarks"
+   ],
+   "summary": "Browser-agent framework that exposes websites to LLMs through browser state, tools, cloud browsers, and benchmarked task runs.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "pi",
+   "repo": "earendil-works/pi",
+   "url": "https://github.com/earendil-works/pi",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 107664,
+   "tags": [
+    "coding-agent",
+    "runtime",
+    "monorepo"
+   ],
+   "summary": "Agent harness monorepo combining a coding-agent CLI, shared runtime, and multi-provider LLM stack.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Gemini CLI",
+   "repo": "google-gemini/gemini-cli",
+   "url": "https://github.com/google-gemini/gemini-cli",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 107094,
+   "tags": [
+    "terminal",
+    "coding-agent",
+    "mcp"
+   ],
+   "summary": "Open-source terminal agent with built-in tools, MCP support, checkpointing, and sandboxing controls.",
+   "lists": [
+    "Picrew/awesome-agent-harness",
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Addy's Agent Skills",
+   "repo": "addyosmani/agent-skills",
+   "url": "https://github.com/addyosmani/agent-skills",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 97516,
+   "tags": [
+    "skills",
+    "quality-gates",
+    "coding-agents"
+   ],
+   "summary": "Production-grade engineering skills for coding agents that package lifecycle workflows, quality gates, reviews, testing, debugging, security, and release practices.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "OpenDesign",
+   "repo": "nexu-io/open-design",
+   "url": "https://github.com/nexu-io/open-design",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 97256,
+   "tags": [
+    "runtime-adapters",
+    "skills",
+    "session-resume"
+   ],
+   "summary": "Local-first design-agent workspace with declarative CLI runtime adapters, structured event streaming, session resume, cancellation, composable skills, and sandboxed artifact previews.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "claude-mem",
+   "repo": "thedotmack/claude-mem",
+   "url": "https://github.com/thedotmack/claude-mem",
+   "category": "context",
+   "group": "Context & Working-State Engineering",
+   "stars": 94325,
+   "tags": [
+    "memory",
+    "context",
+    "session"
+   ],
+   "summary": "Plugin-style memory layer that captures session history and reinjects relevant context into future coding runs.",
+   "lists": [
+    "Picrew/awesome-agent-harness",
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "MCP Servers",
+   "repo": "modelcontextprotocol/servers",
+   "url": "https://github.com/modelcontextprotocol/servers",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 90494,
+   "tags": [
+    "mcp",
+    "servers",
+    "implementations"
+   ],
+   "summary": "Official collection of MCP server implementations across tools and domains.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "OpenHands",
+   "repo": "OpenHands/OpenHands",
+   "url": "https://github.com/OpenHands/OpenHands",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 88617,
+   "tags": [
+    "coding-agent",
+    "software-engineering",
+    "repo"
+   ],
+   "summary": "Open-source AI software engineer focused on repo-level coding task execution.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "DeerFlow",
+   "repo": "bytedance/deer-flow",
+   "url": "https://github.com/bytedance/deer-flow",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 82751,
+   "tags": [
+    "long-horizon",
+    "memory",
+    "subagents"
+   ],
+   "summary": "Long-horizon super-agent harness integrating memory, tools, subagents, and sandboxes.",
+   "lists": [
+    "Picrew/awesome-agent-harness",
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "LobeHub",
+   "repo": "lobehub/lobehub",
+   "url": "https://github.com/lobehub/lobehub",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 82678,
+   "tags": [
+    "operator",
+    "multi-agent",
+    "scheduling"
+   ],
+   "summary": "Chief-agent-operator platform for scheduling, running, and reporting on multi-agent workstreams.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Paperclip",
+   "repo": "paperclipai/paperclip",
+   "url": "https://github.com/paperclipai/paperclip",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 81124,
+   "tags": [
+    "managed-agents",
+    "control-plane",
+    "governance"
+   ],
+   "summary": "Managed-agent control plane with org charts, ticketing, budgets, heartbeats, and audit trails for coordinating agent teams.",
+   "lists": [
+    "Picrew/awesome-agent-harness",
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "learn-claude-code",
+   "repo": "shareAI-lab/learn-claude-code",
+   "url": "https://github.com/shareAI-lab/learn-claude-code",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 77266,
+   "tags": [
+    "tutorial",
+    "harness",
+    "claude-code"
+   ],
+   "summary": "Hands-on harness tutorial for building Claude Code-like systems from scratch.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Orca",
+   "repo": "stablyai/orca",
+   "url": "https://github.com/stablyai/orca",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 73332,
+   "tags": [
+    "control-plane",
+    "worktrees",
+    "cross-agent"
+   ],
+   "summary": "Cross-agent desktop and mobile control plane for running CLI coding agents in isolated worktrees, monitoring their state, reviewing changes, and steering remote or local sessions.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Headroom",
+   "repo": "headroomlabs-ai/headroom",
+   "url": "https://github.com/headroomlabs-ai/headroom",
+   "category": "context",
+   "group": "Context & Working-State Engineering",
+   "stars": 73220,
+   "tags": [
+    "context-compression",
+    "tool-output",
+    "mcp"
+   ],
+   "summary": "Context-compression layer for agent tool outputs, logs, files, RAG chunks, and conversations, available as a library, proxy, agent wrapper, and MCP server.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Ruflo",
+   "repo": "ruvnet/ruflo",
+   "url": "https://github.com/ruvnet/ruflo",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 72915,
+   "tags": [
+    "multi-agent",
+    "swarm",
+    "mcp"
+   ],
+   "summary": "Multi-agent orchestration platform for Claude Code with swarms, persistent memory, federation, plugins, and MCP hooks.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Daytona",
+   "repo": "daytonaio/daytona",
+   "url": "https://github.com/daytonaio/daytona",
+   "category": "sandbox",
+   "group": "Execution Substrates & Sandboxing",
+   "stars": 71744,
+   "tags": [
+    "sandbox",
+    "execution",
+    "infra"
+   ],
+   "summary": "Secure and elastic sandbox infrastructure for running AI-generated code with file, Git, LSP, and execution APIs.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "CodeGraph",
+   "repo": "colbymchenry/codegraph",
+   "url": "https://github.com/colbymchenry/codegraph",
+   "category": "context",
+   "group": "Context & Working-State Engineering",
+   "stars": 71564,
+   "tags": [
+    "knowledge-graph",
+    "mcp",
+    "code-context"
+   ],
+   "summary": "Local code knowledge-graph MCP server and installer that wires semantic code intelligence into Claude Code, Codex, Gemini, Cursor, OpenCode, and other agents.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "oh-my-openagent",
+   "repo": "code-yeongyu/oh-my-openagent",
+   "url": "https://github.com/code-yeongyu/oh-my-openagent",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 69218,
+   "tags": [
+    "multi-harness",
+    "team-mode",
+    "skills"
+   ],
+   "summary": "Multi-harness agent OS for OpenCode, Codex, Claude Code, and other coding agents with team-mode orchestration, background agents, MCPs, and skills.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Cline",
+   "repo": "cline/cline",
+   "url": "https://github.com/cline/cline",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 68867,
+   "tags": [
+    "coding-agent",
+    "mcp",
+    "checkpoints"
+   ],
+   "summary": "Open-source coding agent spanning IDE, terminal, SDK, and kanban surfaces with shared approvals, MCP, checkpoints, and agent teams.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "OmniRoute",
+   "repo": "diegosouzapw/OmniRoute",
+   "url": "https://github.com/diegosouzapw/OmniRoute",
+   "category": "ops",
+   "group": "Guardrails, Security & Governance",
+   "stars": 68493,
+   "tags": [
+    "gateway",
+    "routing",
+    "guardrails"
+   ],
+   "summary": "Local-first AI gateway for coding agents with quota-aware routing, provider fallback, credential pools, circuit breakers, usage controls, compression, MCP/A2A interfaces, and guardrails.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Open Interpreter",
+   "repo": "openinterpreter/openinterpreter",
+   "url": "https://github.com/openinterpreter/openinterpreter",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 68390,
+   "tags": [
+    "terminal",
+    "coding-agent",
+    "harness-emulation"
+   ],
+   "summary": "Terminal coding agent with selectable harness emulation, native sandboxing, provider switching, skills, hooks, permissions, MCP, and AGENTS.md support.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Mem0",
+   "repo": "mem0ai/mem0",
+   "url": "https://github.com/mem0ai/mem0",
+   "category": "context",
+   "group": "Context & Working-State Engineering",
+   "stars": 65708,
+   "tags": [
+    "memory",
+    "state-management",
+    "retrieval"
+   ],
+   "summary": "Universal memory layer for AI agents with user, session, and agent state, hybrid retrieval, SDKs, and self-hosted deployment.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "AutoGen",
+   "repo": "microsoft/autogen",
+   "url": "https://github.com/microsoft/autogen",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 61077,
+   "tags": [
+    "multi-agent",
+    "orchestration",
+    "framework"
+   ],
+   "summary": "Programming framework for agentic AI with multi-agent interaction and orchestration.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "LiteLLM",
+   "repo": "BerriAI/litellm",
+   "url": "https://github.com/BerriAI/litellm",
+   "category": "ops",
+   "group": "Guardrails, Security & Governance",
+   "stars": 59227,
+   "tags": [
+    "gateway",
+    "proxy",
+    "guardrails"
+   ],
+   "summary": "Unified LLM gateway/proxy with cost tracking, load balancing, and guardrails.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "MemPalace",
+   "repo": "MemPalace/mempalace",
+   "url": "https://github.com/MemPalace/mempalace",
+   "category": "context",
+   "group": "Context & Working-State Engineering",
+   "stars": 59173,
+   "tags": [
+    "memory",
+    "local-first",
+    "mcp"
+   ],
+   "summary": "Local-first verbatim memory layer with scoped semantic retrieval, pluggable storage backends, conversation mining, MCP integration, and reproducible LongMemEval results.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "CrewAI",
+   "repo": "crewAIInc/crewAI",
+   "url": "https://github.com/crewAIInc/crewAI",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 58818,
+   "tags": [
+    "multi-agent",
+    "workflows",
+    "control-plane"
+   ],
+   "summary": "Multi-agent automation framework with production Flows, autonomous Crews, event-driven control, tracing, guardrails, memory, and human review hooks.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "OpenManus",
+   "repo": "FoundationAgents/OpenManus",
+   "url": "https://github.com/FoundationAgents/OpenManus",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 58361,
+   "tags": [
+    "general-agent",
+    "autonomy",
+    "workflows"
+   ],
+   "summary": "Open foundation for broad autonomous agent workflows with coding-heavy use cases.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "goose",
+   "repo": "aaif-goose/goose",
+   "url": "https://github.com/aaif-goose/goose",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 54497,
+   "tags": [
+    "desktop",
+    "cli",
+    "mcp"
+   ],
+   "summary": "Linux Foundation AAIF open-source AI agent spanning desktop, CLI, and embeddable API with provider adapters, ACP access, and MCP extensions.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Chrome DevTools MCP",
+   "repo": "ChromeDevTools/chrome-devtools-mcp",
+   "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 52360,
+   "tags": [
+    "mcp",
+    "browser",
+    "devtools"
+   ],
+   "summary": "Official MCP server that gives coding agents Chrome DevTools access for reliable browser automation, debugging, and performance analysis.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Multica",
+   "repo": "multica-ai/multica",
+   "url": "https://github.com/multica-ai/multica",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 50868,
+   "tags": [
+    "managed-agents",
+    "coding-agent",
+    "runtimes"
+   ],
+   "summary": "Managed-agents platform that assigns issues to coding agents, routes execution through runtimes, and compounds reusable skills.",
+   "lists": [
+    "Picrew/awesome-agent-harness",
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "CLI-Anything",
+   "repo": "HKUDS/CLI-Anything",
+   "url": "https://github.com/HKUDS/CLI-Anything",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 49620,
+   "tags": [
+    "cli",
+    "tool-use",
+    "automation"
+   ],
+   "summary": "CLI agent system that unifies command-line tool usage in agent loops.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "aider",
+   "repo": "Aider-AI/aider",
+   "url": "https://github.com/Aider-AI/aider",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 49081,
+   "tags": [
+    "terminal",
+    "repo-map",
+    "testing"
+   ],
+   "summary": "Terminal coding assistant with repo mapping, git-aware edits, and built-in lint/test feedback loops.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "nanobot",
+   "repo": "HKUDS/nanobot",
+   "url": "https://github.com/HKUDS/nanobot",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 48404,
+   "tags": [
+    "runtime",
+    "memory",
+    "multi-channel"
+   ],
+   "summary": "Ultra-lightweight agent runtime with WebUI, chat channels, tools, memory, MCP, model routing, deployment, and long-running goal support.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "CowAgent",
+   "repo": "zhayujie/CowAgent",
+   "url": "https://github.com/zhayujie/CowAgent",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 47052,
+   "tags": [
+    "reference",
+    "skills",
+    "multi-channel"
+   ],
+   "summary": "Reference agent harness implementation with planning, memory, knowledge, skills, tools, MCP integration, schedulers, browser automation, and multi-channel delivery.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "AAS Core",
+   "repo": "sickn33/agentic-awesome-skills",
+   "url": "https://github.com/sickn33/agentic-awesome-skills",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 46635,
+   "tags": [
+    "skills",
+    "control-plane",
+    "validation"
+   ],
+   "summary": "Local agent-first control plane for discovering, selecting, validating, and planning reproducible skill stacks through a read-only MCP interface, manifests, plugins, and host-specific installers.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Kong",
+   "repo": "Kong/kong",
+   "url": "https://github.com/Kong/kong",
+   "category": "ops",
+   "group": "Guardrails, Security & Governance",
+   "stars": 44160,
+   "tags": [
+    "gateway",
+    "policy",
+    "infra"
+   ],
+   "summary": "API and AI gateway infrastructure useful for policy enforcement in agent systems.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "agent-browser",
+   "repo": "vercel-labs/agent-browser",
+   "url": "https://github.com/vercel-labs/agent-browser",
+   "category": "sandbox",
+   "group": "Execution Substrates & Sandboxing",
+   "stars": 42920,
+   "tags": [
+    "browser",
+    "automation",
+    "cli"
+   ],
+   "summary": "Native browser automation CLI for AI agents with accessibility snapshots, semantic locators, screenshots, streaming, and batch execution.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Agno",
+   "repo": "agno-agi/agno",
+   "url": "https://github.com/agno-agi/agno",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 42268,
+   "tags": [
+    "scale",
+    "runtime",
+    "management"
+   ],
+   "summary": "Agent software runtime focused on running and managing agentic systems at scale.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "LangGraph",
+   "repo": "langchain-ai/langgraph",
+   "url": "https://github.com/langchain-ai/langgraph",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 42012,
+   "tags": [
+    "graph",
+    "workflow",
+    "runtime"
+   ],
+   "summary": "Graph-based runtime for resilient stateful agents and deterministic workflow control.",
+   "lists": [
+    "Picrew/awesome-agent-harness",
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "CodeWhale",
+   "repo": "Hmbown/CodeWhale",
+   "url": "https://github.com/Hmbown/CodeWhale",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 41008,
+   "tags": [
+    "coding-agent",
+    "approval-gates",
+    "runtime-policy"
+   ],
+   "summary": "Local-first coding-agent harness with explicit authority ordering, evidence loops, approval-gated tools, side-git snapshots, rollback, subagents, and runtime APIs.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "OpenHuman",
+   "repo": "tinyhumansai/openhuman",
+   "url": "https://github.com/tinyhumansai/openhuman",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 39925,
+   "tags": [
+    "durable-execution",
+    "memory",
+    "governance"
+   ],
+   "summary": "Local-first agent harness combining persistent memory, checkpointed graph orchestration, approval-gated workflows, failure circuit breakers, and replayable event journals.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Claude Code Plugins: Orchestration and Automation",
+   "repo": "wshobson/agents",
+   "url": "https://github.com/wshobson/agents",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 39831,
+   "tags": [
+    "claude-code",
+    "plugins",
+    "orchestration"
+   ],
+   "summary": "Production-ready Claude Code plugin marketplace bundling agents, skills, tools, and multi-agent workflow orchestrators.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Herdr",
+   "repo": "herdrdev/herdr",
+   "url": "https://github.com/herdrdev/herdr",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 39811,
+   "tags": [
+    "terminal-runtime",
+    "persistent-sessions",
+    "cross-agent"
+   ],
+   "summary": "Persistent terminal runtime for coding agents with reconnectable sessions, blocked and idle detection, agent-driven orchestration APIs, and plugin-extensible workflows.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "oh-my-claudecode",
+   "repo": "Yeachan-Heo/oh-my-claudecode",
+   "url": "https://github.com/Yeachan-Heo/oh-my-claudecode",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 39269,
+   "tags": [
+    "claude-code",
+    "multi-agent",
+    "worktrees"
+   ],
+   "summary": "Team-first orchestration layer for Claude Code with staged multi-agent execution, worktree-aware setup, and persistent session artifacts.",
+   "lists": [
+    "Picrew/awesome-agent-harness",
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Awesome Copilot",
+   "repo": "github/awesome-copilot",
+   "url": "https://github.com/github/awesome-copilot",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 39191,
+   "tags": [
+    "github-copilot",
+    "skills",
+    "hooks"
+   ],
+   "summary": "GitHub-managed collection of Copilot agents, instructions, skills, hooks, workflows, plugins, tools, and machine-readable listings.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Agent TARS",
+   "repo": "bytedance/UI-TARS-desktop",
+   "url": "https://github.com/bytedance/UI-TARS-desktop",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 39060,
+   "tags": [
+    "computer-use",
+    "browser-agent",
+    "mcp"
+   ],
+   "summary": "Multimodal computer and browser agent stack with CLI/Web UI, hybrid GUI/DOM browser control, MCP tools, event streams, and sandbox support.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "OpenCodeReview",
+   "repo": "alibaba/open-code-review",
+   "url": "https://github.com/alibaba/open-code-review",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 38244,
+   "tags": [
+    "code-review",
+    "deterministic-pipeline",
+    "verification"
+   ],
+   "summary": "Production-tested code-review agent harness combining deterministic file coverage and rule selection with isolated subagents, tool-driven context retrieval, comment verification, sessions, CI, and tracing.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "OpenViking",
+   "repo": "volcengine/OpenViking",
+   "url": "https://github.com/volcengine/OpenViking",
+   "category": "context",
+   "group": "Context & Working-State Engineering",
+   "stars": 38171,
+   "tags": [
+    "context-database",
+    "memory",
+    "retrieval"
+   ],
+   "summary": "Context database for agents that unifies memory, resources, and skills in a virtual filesystem with tiered loading, recursive retrieval, observable trajectories, and session-to-memory extraction.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Playwright MCP",
+   "repo": "microsoft/playwright-mcp",
+   "url": "https://github.com/microsoft/playwright-mcp",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 37390,
+   "tags": [
+    "mcp",
+    "browser",
+    "playwright"
+   ],
+   "summary": "Official Playwright MCP server giving agents structured accessibility snapshots and deterministic browser automation tools.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Claude Code Router",
+   "repo": "musistudio/claude-code-router",
+   "url": "https://github.com/musistudio/claude-code-router",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 37338,
+   "tags": [
+    "control-plane",
+    "routing",
+    "observability"
+   ],
+   "summary": "Local model gateway and control plane for coding agents with provider profiles, conditional routing, credential pools, retries, fallbacks, tool extensions, quotas, and request traces.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Claude Code Plugins Directory",
+   "repo": "anthropics/claude-plugins-official",
+   "url": "https://github.com/anthropics/claude-plugins-official",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 36546,
+   "tags": [
+    "plugins",
+    "claude-code",
+    "marketplace"
+   ],
+   "summary": "Anthropic-managed Claude Code plugin marketplace defining plugin manifests, MCP configuration, commands, agents, skills, and submission quality gates.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "DeepSeek-Reasonix",
+   "repo": "esengine/DeepSeek-Reasonix",
+   "url": "https://github.com/esengine/DeepSeek-Reasonix",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 35644,
+   "tags": [
+    "deepseek",
+    "prefix-cache",
+    "coding-agent"
+   ],
+   "summary": "DeepSeek-native coding-agent harness optimized for prefix-cache stability, with separate planner and executor sessions, cache-aware compaction, MCP plugins, permissions, workspace sandboxing, and per-turn checkpoints.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Langfuse",
+   "repo": "langfuse/langfuse",
+   "url": "https://github.com/langfuse/langfuse",
+   "category": "ops",
+   "group": "Observability & Reliability Operations",
+   "stars": 34854,
+   "tags": [
+    "llmops",
+    "tracing",
+    "metrics"
+   ],
+   "summary": "Open-source LLM engineering platform for traces, metrics, prompts, and evals.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "ChatDev",
+   "repo": "OpenBMB/ChatDev",
+   "url": "https://github.com/OpenBMB/ChatDev",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 34349,
+   "tags": [
+    "multi-agent",
+    "orchestration",
+    "workflows"
+   ],
+   "summary": "Zero-code multi-agent orchestration platform for defining agents, workflows, and tasks, evolved from a virtual software-company harness.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Buzz",
+   "repo": "block/buzz",
+   "url": "https://github.com/block/buzz",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 33737,
+   "tags": [
+    "collaboration",
+    "event-log",
+    "audit"
+   ],
+   "summary": "Self-hostable human-agent workspace built on a signed event log, with scoped identities, audit trails, agent-first CLI and ACP bridges, workflows, Git events, search, and approvals.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "OpenAI Codex Plugin for Claude Code",
+   "repo": "openai/codex-plugin-cc",
+   "url": "https://github.com/openai/codex-plugin-cc",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 33368,
+   "tags": [
+    "plugin",
+    "codex",
+    "cross-agent"
+   ],
+   "summary": "Official Claude Code plugin that exposes Codex review, adversarial review, delegation, status, result, and cancel commands inside another coding-agent harness.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "oh-my-codex",
+   "repo": "Yeachan-Heo/oh-my-codex",
+   "url": "https://github.com/Yeachan-Heo/oh-my-codex",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 33282,
+   "tags": [
+    "codex",
+    "workflow",
+    "worktrees"
+   ],
+   "summary": "Workflow layer for OpenAI Codex CLI with stronger session startup, standard planning-to-completion flows, durable state, skills, hooks, and worktree launches.",
+   "lists": [
+    "Picrew/awesome-agent-harness",
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "GitHub MCP Server",
+   "repo": "github/github-mcp-server",
+   "url": "https://github.com/github/github-mcp-server",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 33083,
+   "tags": [
+    "mcp",
+    "github",
+    "official"
+   ],
+   "summary": "GitHub's official MCP server connecting agents to repositories, issues, pull requests, CI workflows, releases, and code analysis tools.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "AionUi",
+   "repo": "iOfficeAI/AionUi",
+   "url": "https://github.com/iOfficeAI/AionUi",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 32985,
+   "tags": [
+    "multi-agent",
+    "control-plane",
+    "scheduling"
+   ],
+   "summary": "Cross-platform cowork control plane with a built-in agent engine, external CLI-agent orchestration, team mode, per-agent approvals, remote channels, MCP management, and scheduled runs.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "ZeroClaw",
+   "repo": "zeroclaw-labs/zeroclaw",
+   "url": "https://github.com/zeroclaw-labs/zeroclaw",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 32844,
+   "tags": [
+    "runtime",
+    "approval-gates",
+    "sandboxing"
+   ],
+   "summary": "Single-binary agent runtime with providers, channels, tools, memory, SOPs, approval gates, sandboxing, ACP, and tool receipts.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "oh-my-pi",
+   "repo": "can1357/oh-my-pi",
+   "url": "https://github.com/can1357/oh-my-pi",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 32092,
+   "tags": [
+    "terminal",
+    "lsp",
+    "subagents"
+   ],
+   "summary": "Terminal AI coding agent with edit safety, LSP integration, and subagent support.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "skills",
+   "repo": "vercel-labs/skills",
+   "url": "https://github.com/vercel-labs/skills",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 32075,
+   "tags": [
+    "skills",
+    "cli",
+    "cross-agent"
+   ],
+   "summary": "CLI for installing, using, finding, updating, and initializing Agent Skills across OpenCode, Claude Code, Codex, Cursor, and other coding agents.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "code-review-graph",
+   "repo": "tirth8205/code-review-graph",
+   "url": "https://github.com/tirth8205/code-review-graph",
+   "category": "context",
+   "group": "Context & Working-State Engineering",
+   "stars": 31651,
+   "tags": [
+    "code-context",
+    "mcp",
+    "incremental-indexing"
+   ],
+   "summary": "Local-first code intelligence graph that incrementally maps dependencies and exposes targeted review context, blast-radius analysis, and risk-scored CI gates through MCP and CLI.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Cognee",
+   "repo": "topoteretes/cognee",
+   "url": "https://github.com/topoteretes/cognee",
+   "category": "context",
+   "group": "Context & Working-State Engineering",
+   "stars": 31543,
+   "tags": [
+    "memory",
+    "knowledge-graph",
+    "sessions"
+   ],
+   "summary": "Persistent agent memory platform combining knowledge graphs, vector retrieval, session distillation, feedback, and MCP or SDK integration across runs.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Vercel Agent Skills",
+   "repo": "vercel-labs/agent-skills",
+   "url": "https://github.com/vercel-labs/agent-skills",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 31394,
+   "tags": [
+    "skills",
+    "vercel",
+    "official"
+   ],
+   "summary": "Vercel's official Agent Skills collection packaging reusable instructions and scripts in the open Agent Skills format for coding-agent workflows.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "NanoClaw",
+   "repo": "nanocoai/nanoclaw",
+   "url": "https://github.com/nanocoai/nanoclaw",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 30808,
+   "tags": [
+    "containers",
+    "claude-sdk",
+    "scheduling"
+   ],
+   "summary": "Container-isolated Claude agent harness with channel routing, scheduled jobs, per-group memory, and small-codebase customization.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Serena",
+   "repo": "oraios/serena",
+   "url": "https://github.com/oraios/serena",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 29641,
+   "tags": [
+    "mcp",
+    "coding-agents",
+    "semantic-tools"
+   ],
+   "summary": "MCP toolkit that gives coding agents IDE-like semantic retrieval, editing, refactoring, debugging, and memory tools.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "deepagents",
+   "repo": "langchain-ai/deepagents",
+   "url": "https://github.com/langchain-ai/deepagents",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 29594,
+   "tags": [
+    "runtime",
+    "orchestration",
+    "long-running"
+   ],
+   "summary": "Open-source harness for long-running, tool-using agents with planning and subagent patterns.",
+   "lists": [
+    "Picrew/awesome-agent-harness",
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "OpenAI Agents SDK (Python)",
+   "repo": "openai/openai-agents-python",
+   "url": "https://github.com/openai/openai-agents-python",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 29580,
+   "tags": [
+    "sdk",
+    "handoff",
+    "workflows"
+   ],
+   "summary": "Lightweight framework for multi-agent workflows, handoffs, and production patterns.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "agentmemory",
+   "repo": "rohitg00/agentmemory",
+   "url": "https://github.com/rohitg00/agentmemory",
+   "category": "context",
+   "group": "Context & Working-State Engineering",
+   "stars": 28639,
+   "tags": [
+    "memory",
+    "mcp",
+    "hooks"
+   ],
+   "summary": "Persistent memory server for coding agents using hooks, MCP/REST integration, hybrid search, and shared session recall.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Semantic Kernel",
+   "repo": "microsoft/semantic-kernel",
+   "url": "https://github.com/microsoft/semantic-kernel",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 28581,
+   "tags": [
+    "enterprise",
+    "orchestration",
+    "plugins"
+   ],
+   "summary": "Enterprise-grade agentic application framework with orchestration and plugin patterns.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Crush",
+   "repo": "charmbracelet/crush",
+   "url": "https://github.com/charmbracelet/crush",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 28203,
+   "tags": [
+    "terminal",
+    "coding-agent",
+    "mcp"
+   ],
+   "summary": "Terminal coding agent that wires project tools, code, workflows, sessions, LSP context, model switching, and MCP extensions into an LLM runtime.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Vibe Kanban",
+   "repo": "BloopAI/vibe-kanban",
+   "url": "https://github.com/BloopAI/vibe-kanban",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 28140,
+   "tags": [
+    "coding-agent",
+    "workspaces",
+    "review"
+   ],
+   "summary": "Kanban control plane for planning, running, reviewing, and merging work from coding agents in isolated workspaces.",
+   "lists": [
+    "Picrew/awesome-agent-harness",
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "MLflow",
+   "repo": "mlflow/mlflow",
+   "url": "https://github.com/mlflow/mlflow",
+   "category": "ops",
+   "group": "Observability & Reliability Operations",
+   "stars": 28054,
+   "tags": [
+    "platform",
+    "monitoring",
+    "evaluation"
+   ],
+   "summary": "Broad AI engineering platform with monitoring and evaluation support for agents.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "DESIGN.md",
+   "repo": "google-labs-code/design.md",
+   "url": "https://github.com/google-labs-code/design.md",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 28016,
+   "tags": [
+    "spec",
+    "design-contract",
+    "cli"
+   ],
+   "summary": "Format specification and CLI for giving coding agents persistent, machine-readable design tokens and human-readable design rationale.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Qwen Code",
+   "repo": "QwenLM/qwen-code",
+   "url": "https://github.com/QwenLM/qwen-code",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 28013,
+   "tags": [
+    "terminal",
+    "coding-agent",
+    "cli"
+   ],
+   "summary": "Terminal-native open-source coding agent tuned for practical dev loops.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "FastMCP",
+   "repo": "PrefectHQ/fastmcp",
+   "url": "https://github.com/PrefectHQ/fastmcp",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 27794,
+   "tags": [
+    "mcp",
+    "python",
+    "framework"
+   ],
+   "summary": "Python framework for building MCP servers and clients with generated schemas, validation, documentation, production deployment patterns, and governance hooks.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Kilo Code",
+   "repo": "Kilo-Org/kilocode",
+   "url": "https://github.com/Kilo-Org/kilocode",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 27377,
+   "tags": [
+    "coding-agent",
+    "ide",
+    "autonomous"
+   ],
+   "summary": "Open-source coding agent spanning VS Code, JetBrains, CLI, cloud agents, reviews, custom modes, browser and terminal control, MCP marketplace, and autonomous CI runs.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Beads",
+   "repo": "gastownhall/beads",
+   "url": "https://github.com/gastownhall/beads",
+   "category": "context",
+   "group": "Context & Working-State Engineering",
+   "stars": 27326,
+   "tags": [
+    "memory",
+    "issue-tracking",
+    "work-state"
+   ],
+   "summary": "Agent-optimized distributed issue tracker that stores long-horizon coding work as dependency-aware graph state with memory recall and multi-branch sync.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Symphony",
+   "repo": "openai/symphony",
+   "url": "https://github.com/openai/symphony",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 27305,
+   "tags": [
+    "orchestration",
+    "control-plane",
+    "workflows"
+   ],
+   "summary": "Ticket-driven orchestration layer that turns project work into isolated autonomous implementation runs.",
+   "lists": [
+    "Picrew/awesome-agent-harness",
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "cmux",
+   "repo": "manaflow-ai/cmux",
+   "url": "https://github.com/manaflow-ai/cmux",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 27277,
+   "tags": [
+    "macos",
+    "workspace",
+    "browser"
+   ],
+   "summary": "Native macOS terminal and browser workspace for AI coding agents with notifications, split panes, and scriptable control.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "TencentDB Agent Memory",
+   "repo": "TencentCloud/TencentDB-Agent-Memory",
+   "url": "https://github.com/TencentCloud/TencentDB-Agent-Memory",
+   "category": "context",
+   "group": "Context & Working-State Engineering",
+   "stars": 27035,
+   "tags": [
+    "memory",
+    "context-offloading",
+    "openclaw"
+   ],
+   "summary": "Local agent memory plugin combining symbolic short-term state, layered long-term memory, traceability, and OpenClaw/Hermes integrations.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "planning-with-files",
+   "repo": "OthmanAdi/planning-with-files",
+   "url": "https://github.com/OthmanAdi/planning-with-files",
+   "category": "context",
+   "group": "Context & Working-State Engineering",
+   "stars": 27020,
+   "tags": [
+    "planning",
+    "skills",
+    "persistence"
+   ],
+   "summary": "Skill package for persistent file-based planning in coding-agent workflows.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Grok Build",
+   "repo": "xai-org/grok-build",
+   "url": "https://github.com/xai-org/grok-build",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 26912,
+   "tags": [
+    "coding-agent",
+    "tui",
+    "acp"
+   ],
+   "summary": "Official Rust coding-agent harness and TUI with interactive, headless, and ACP modes plus MCP, skills, plugins, hooks, sandboxing, subagents, and long-running task support.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Agent Skills Specification",
+   "repo": "agentskills/agentskills",
+   "url": "https://github.com/agentskills/agentskills",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 25536,
+   "tags": [
+    "skills",
+    "spec",
+    "progressive-disclosure"
+   ],
+   "summary": "Open specification and documentation for packaging reusable agent capabilities, workflows, scripts, references, and assets behind progressive disclosure.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Promptfoo",
+   "repo": "promptfoo/promptfoo",
+   "url": "https://github.com/promptfoo/promptfoo",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": 25307,
+   "tags": [
+    "eval",
+    "red-team",
+    "ci"
+   ],
+   "summary": "Config-driven prompt/agent/RAG testing, comparison, and red-team evaluation tool.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Compound Engineering",
+   "repo": "EveryInc/compound-engineering-plugin",
+   "url": "https://github.com/EveryInc/compound-engineering-plugin",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 25174,
+   "tags": [
+    "plugins",
+    "worktrees",
+    "review"
+   ],
+   "summary": "Cross-agent engineering plugin that codifies brainstorming, planning, worktree execution, review, and knowledge compounding loops.",
+   "lists": [
+    "Picrew/awesome-agent-harness",
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "CUA",
+   "repo": "trycua/cua",
+   "url": "https://github.com/trycua/cua",
+   "category": "sandbox",
+   "group": "Execution Substrates & Sandboxing",
+   "stars": 24998,
+   "tags": [
+    "computer-use",
+    "sandbox",
+    "infra"
+   ],
+   "summary": "Infrastructure stack for computer-use agents with sandbox, SDK, and benchmark support.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "AGENTS.md",
+   "repo": "agentsmd/agents.md",
+   "url": "https://github.com/agentsmd/agents.md",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 24501,
+   "tags": [
+    "spec",
+    "agent-file",
+    "instructions"
+   ],
+   "summary": "Open format for repository-local instructions that coding agents can follow.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "MCP Python SDK",
+   "repo": "modelcontextprotocol/python-sdk",
+   "url": "https://github.com/modelcontextprotocol/python-sdk",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 24350,
+   "tags": [
+    "mcp",
+    "python",
+    "sdk"
+   ],
+   "summary": "Official Python implementation of MCP for building clients and servers that expose tools, resources, prompts, protocol lifecycle events, and standard transports.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Hindsight",
+   "repo": "vectorize-io/hindsight",
+   "url": "https://github.com/vectorize-io/hindsight",
+   "category": "context",
+   "group": "Context & Working-State Engineering",
+   "stars": 24051,
+   "tags": [
+    "memory",
+    "learning",
+    "mcp"
+   ],
+   "summary": "Production agent memory system with retain, recall, and reflect operations, isolated memory banks, evidence-backed observations, coding-agent integrations, MCP, and memory-defense policies.",
+   "lists": [
+    "Picrew/awesome-agent-harness",
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "SuperClaude Framework",
+   "repo": "SuperClaude-Org/SuperClaude_Framework",
+   "url": "https://github.com/SuperClaude-Org/SuperClaude_Framework",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 23902,
+   "tags": [
+    "config",
+    "personas",
+    "workflow"
+   ],
+   "summary": "Configuration framework adding commands, personas, and method templates to coding agents.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Context Mode",
+   "repo": "mksglu/context-mode",
+   "url": "https://github.com/mksglu/context-mode",
+   "category": "context",
+   "group": "Context & Working-State Engineering",
+   "stars": 23749,
+   "tags": [
+    "context",
+    "mcp",
+    "session"
+   ],
+   "summary": "MCP context optimization server that sandboxes tool output, indexes session events, and restores continuity across agent compactions.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Archon",
+   "repo": "coleam00/Archon",
+   "url": "https://github.com/coleam00/Archon",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 23507,
+   "tags": [
+    "workflow-engine",
+    "worktrees",
+    "validation"
+   ],
+   "summary": "Workflow engine for AI coding agents with YAML-defined phases, isolated worktrees, and validation gates.",
+   "lists": [
+    "Picrew/awesome-agent-harness",
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Go Micro",
+   "repo": "micro/go-micro",
+   "url": "https://github.com/micro/go-micro",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 23068,
+   "tags": [
+    "go",
+    "service-runtime",
+    "durable-flows"
+   ],
+   "summary": "Go agent harness and service framework combining model loops, durable memory, tools, planning, delegation, guardrails, service discovery, MCP, A2A, and durable flows.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Opik",
+   "repo": "comet-ml/opik",
+   "url": "https://github.com/comet-ml/opik",
+   "category": "ops",
+   "group": "Observability & Reliability Operations",
+   "stars": 22160,
+   "tags": [
+    "monitoring",
+    "eval",
+    "tracing"
+   ],
+   "summary": "End-to-end debug/eval/monitoring stack for LLM apps and agent workflows.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Prime Agent",
+   "repo": "PrimeIntellect-ai/prime-agent",
+   "url": "https://github.com/PrimeIntellect-ai/prime-agent",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 21595,
+   "tags": [
+    "long-running",
+    "rlm",
+    "quality-gates"
+   ],
+   "summary": "Long-running coding and research harness with a persistent Python REPL, recursive subagents, resumable daemon sessions, durable harness state, and budgeted autonomous quality gates.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Google ADK (Python)",
+   "repo": "google/adk-python",
+   "url": "https://github.com/google/adk-python",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 21581,
+   "tags": [
+    "toolkit",
+    "deployment",
+    "evaluation"
+   ],
+   "summary": "Code-first toolkit to build, evaluate, and deploy advanced AI agents.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "SWE-agent",
+   "repo": "SWE-agent/SWE-agent",
+   "url": "https://github.com/SWE-agent/SWE-agent",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 20370,
+   "tags": [
+    "swe",
+    "issue-fixing",
+    "tooling"
+   ],
+   "summary": "Research-grade coding agent that resolves GitHub issues with explicit tooling loops.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Google Agent Skills",
+   "repo": "google/skills",
+   "url": "https://github.com/google/skills",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 20202,
+   "tags": [
+    "skills",
+    "google-cloud",
+    "official"
+   ],
+   "summary": "Official Google Agent Skills repository for Google products and technologies, including Agent Platform and Google Cloud workflows.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "PydanticAI",
+   "repo": "pydantic/pydantic-ai",
+   "url": "https://github.com/pydantic/pydantic-ai",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 20070,
+   "tags": [
+    "python",
+    "typing",
+    "schema"
+   ],
+   "summary": "Type-safe Python framework for agents with strong schema contracts and tooling.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "jcode",
+   "repo": "1jehuang/jcode",
+   "url": "https://github.com/1jehuang/jcode",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 19934,
+   "tags": [
+    "coding-agent",
+    "terminal",
+    "rust"
+   ],
+   "summary": "Rust coding-agent harness built for multi-session workflows, customization, memory, and terminal performance.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Devika",
+   "repo": "stitionai/devika",
+   "url": "https://github.com/stitionai/devika",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 19566,
+   "tags": [
+    "assistant",
+    "planning",
+    "coding"
+   ],
+   "summary": "Open-source coding assistant system for planning and implementing development tasks.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "elizaOS",
+   "repo": "elizaOS/eliza",
+   "url": "https://github.com/elizaOS/eliza",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 19394,
+   "tags": [
+    "agent-os",
+    "plugins",
+    "benchmarks"
+   ],
+   "summary": "Extensible agent runtime and operating system with CLI scaffolding, agent loop, plugins, memory/state primitives, dashboards, connectors, and benchmark suites.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "DeepEval",
+   "repo": "confident-ai/deepeval",
+   "url": "https://github.com/confident-ai/deepeval",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": 18352,
+   "tags": [
+    "evaluation",
+    "framework",
+    "testing"
+   ],
+   "summary": "LLM evaluation framework supporting agent and workflow quality testing.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Parlant",
+   "repo": "emcie-co/parlant",
+   "url": "https://github.com/emcie-co/parlant",
+   "category": "ops",
+   "group": "Guardrails, Security & Governance",
+   "stars": 18287,
+   "tags": [
+    "interaction-control",
+    "guardrails",
+    "customer-agents"
+   ],
+   "summary": "Interaction-control harness for customer-facing agents focused on consistent, predictable, and governed LLM behavior.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "OpenFang",
+   "repo": "RightNow-AI/openfang",
+   "url": "https://github.com/RightNow-AI/openfang",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 18205,
+   "tags": [
+    "agent-os",
+    "guardrails",
+    "rust"
+   ],
+   "summary": "Rust agent operating system with autonomous capability packages, manifests, guardrails, tools, memory, sandboxing, audit trails, and channel adapters.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Gas Town",
+   "repo": "gastownhall/gastown",
+   "url": "https://github.com/gastownhall/gastown",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 18127,
+   "tags": [
+    "multi-agent",
+    "workspaces",
+    "coordination"
+   ],
+   "summary": "Multi-agent workspace manager for coordinating coding agents with persistent work tracking, git-backed hooks, handoffs, supervision, and merge queues.",
+   "lists": [
+    "Picrew/awesome-agent-harness",
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Agent Skills for Context Engineering",
+   "repo": "muratcankoylan/Agent-Skills-for-Context-Engineering",
+   "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering",
+   "category": "context",
+   "group": "Context & Working-State Engineering",
+   "stars": 18010,
+   "tags": [
+    "skills",
+    "context",
+    "production"
+   ],
+   "summary": "Large skill library oriented around context engineering and production agents.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "SkillSpector",
+   "repo": "NVIDIA/SkillSpector",
+   "url": "https://github.com/NVIDIA/SkillSpector",
+   "category": "ops",
+   "group": "Guardrails, Security & Governance",
+   "stars": 17898,
+   "tags": [
+    "skill-security",
+    "static-analysis",
+    "risk-scoring"
+   ],
+   "summary": "Security scanner for AI agent skills with static and optional LLM analysis, vulnerability patterns, risk scoring, and CI-friendly report formats.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Paseo",
+   "repo": "getpaseo/paseo",
+   "url": "https://github.com/getpaseo/paseo",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 17857,
+   "tags": [
+    "coding-agent",
+    "daemon",
+    "multi-device"
+   ],
+   "summary": "Multi-device coding-agent daemon and client stack for orchestrating local agents, parallel runs, and cross-provider workflows.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Browser Harness",
+   "repo": "browser-use/browser-harness",
+   "url": "https://github.com/browser-use/browser-harness",
+   "category": "sandbox",
+   "group": "Execution Substrates & Sandboxing",
+   "stars": 17840,
+   "tags": [
+    "browser",
+    "cdp",
+    "self-healing"
+   ],
+   "summary": "Thin editable CDP harness that connects LLMs directly to real browsers and lets agents extend helpers in flight.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "CAMEL",
+   "repo": "camel-ai/camel",
+   "url": "https://github.com/camel-ai/camel",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 17747,
+   "tags": [
+    "multi-agent",
+    "scalability",
+    "benchmarks"
+   ],
+   "summary": "Multi-agent framework for large-scale agent systems with communication, stateful memory, environments, benchmarks, and coordination primitives.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "SkillOpt",
+   "repo": "microsoft/SkillOpt",
+   "url": "https://github.com/microsoft/SkillOpt",
+   "category": "context",
+   "group": "Context & Working-State Engineering",
+   "stars": 17287,
+   "tags": [
+    "skills",
+    "optimization",
+    "validation-gates"
+   ],
+   "summary": "Microsoft optimizer that trains reusable natural-language agent skills through trajectory edits, validation gates, and deployable skill artifacts.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Memori",
+   "repo": "MemoriLabs/Memori",
+   "url": "https://github.com/MemoriLabs/Memori",
+   "category": "context",
+   "group": "Context & Working-State Engineering",
+   "stars": 17099,
+   "tags": [
+    "memory",
+    "context-injection",
+    "sessions"
+   ],
+   "summary": "Agent memory layer with entity and process attribution, session capture, persistent recall, context injection, and SDK, MCP, OpenClaw, and Hermes integrations.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "DeepCode",
+   "repo": "HKUDS/DeepCode",
+   "url": "https://github.com/HKUDS/DeepCode",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 16597,
+   "tags": [
+    "coding-agent",
+    "verification-loop",
+    "durable-sessions"
+   ],
+   "summary": "Coding-agent harness with durable sessions, goal-driven loops, evidence-based completion, permission and sandbox controls, reusable skills, parallel agents, context compaction, and headless automation.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "MCP Toolbox for Databases",
+   "repo": "googleapis/mcp-toolbox",
+   "url": "https://github.com/googleapis/mcp-toolbox",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 16464,
+   "tags": [
+    "mcp",
+    "databases",
+    "google"
+   ],
+   "summary": "Google open-source MCP server and custom tools framework for connecting agents, IDEs, and applications to enterprise databases.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "RagaAI Catalyst",
+   "repo": "raga-ai-hub/RagaAI-Catalyst",
+   "url": "https://github.com/raga-ai-hub/RagaAI-Catalyst",
+   "category": "ops",
+   "group": "Observability & Reliability Operations",
+   "stars": 16162,
+   "tags": [
+    "agentops",
+    "analytics",
+    "monitoring"
+   ],
+   "summary": "Agent observability and monitoring framework with timeline and graph analytics.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "OpenHarness",
+   "repo": "HKUDS/OpenHarness",
+   "url": "https://github.com/HKUDS/OpenHarness",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 15809,
+   "tags": [
+    "tool-use",
+    "memory",
+    "multi-agent"
+   ],
+   "summary": "Open agent harness implementation covering tool use, skills, memory, permissions, and multi-agent coordination.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "RAGAS",
+   "repo": "vibrantlabsai/ragas",
+   "url": "https://github.com/vibrantlabsai/ragas",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": 15792,
+   "tags": [
+    "rag",
+    "metrics",
+    "evaluation"
+   ],
+   "summary": "Open evaluation toolkit for LLM and RAG quality metrics.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Learn Harness Engineering",
+   "repo": "walkinglabs/learn-harness-engineering",
+   "url": "https://github.com/walkinglabs/learn-harness-engineering",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 15471,
+   "tags": [
+    "tutorial",
+    "verification",
+    "workflows"
+   ],
+   "summary": "Project-based harness engineering course with runnable templates and staged implementations for instructions, state, verification, observability, automated loops, graph workflows, rollback, and human approval.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "OpenSandbox",
+   "repo": "opensandbox-group/OpenSandbox",
+   "url": "https://github.com/opensandbox-group/OpenSandbox",
+   "category": "sandbox",
+   "group": "Execution Substrates & Sandboxing",
+   "stars": 15426,
+   "tags": [
+    "sandbox",
+    "security",
+    "runtime"
+   ],
+   "summary": "Secure and extensible sandbox runtime built for agent workloads.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Eigent",
+   "repo": "eigent-ai/eigent",
+   "url": "https://github.com/eigent-ai/eigent",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 15340,
+   "tags": [
+    "desktop",
+    "cowork",
+    "productivity"
+   ],
+   "summary": "Open-source desktop cowork agent for autonomous task execution and productivity.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "QM",
+   "repo": "yc-software/qm",
+   "url": "https://github.com/yc-software/qm",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 15179,
+   "tags": [
+    "multi-user",
+    "durable-sandbox",
+    "policy"
+   ],
+   "summary": "Multiplayer organizational agent harness with per-person and per-room scopes, durable sandboxes, memory, permissions, schedules, policy controls, and swappable coding-agent runtimes.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Trellis",
+   "repo": "mindfold-ai/Trellis",
+   "url": "https://github.com/mindfold-ai/Trellis",
+   "category": "context",
+   "group": "Context & Working-State Engineering",
+   "stars": 14744,
+   "tags": [
+    "specs",
+    "memory",
+    "workflow"
+   ],
+   "summary": "Multi-platform coding-agent workflow framework with task context, project memory, and spec injection.",
+   "lists": [
+    "Picrew/awesome-agent-harness",
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Aperant",
+   "repo": "AndyMik90/Aperant",
+   "url": "https://github.com/AndyMik90/Aperant",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 14563,
+   "tags": [
+    "coding-agent",
+    "parallel",
+    "memory"
+   ],
+   "summary": "Autonomous multi-agent coding framework with parallel execution, isolated workspaces, QA loops, and persistent memory.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "memU",
+   "repo": "NevaMind-AI/memU",
+   "url": "https://github.com/NevaMind-AI/memU",
+   "category": "context",
+   "group": "Context & Working-State Engineering",
+   "stars": 14418,
+   "tags": [
+    "memory",
+    "context",
+    "retrieval"
+   ],
+   "summary": "Memory harness for AI agents that turns raw workspace data into structured, queryable context for agent retrieval.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Superset",
+   "repo": "superset-sh/superset",
+   "url": "https://github.com/superset-sh/superset",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 14415,
+   "tags": [
+    "worktrees",
+    "desktop",
+    "parallel"
+   ],
+   "summary": "Worktree-based desktop orchestrator for running and reviewing parallel CLI coding agents from one workspace.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "lm-evaluation-harness",
+   "repo": "EleutherAI/lm-evaluation-harness",
+   "url": "https://github.com/EleutherAI/lm-evaluation-harness",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": 14035,
+   "tags": [
+    "benchmark",
+    "harness",
+    "llm"
+   ],
+   "summary": "Popular benchmark harness for consistent LLM evaluation across tasks.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "E2B",
+   "repo": "e2b-dev/E2B",
+   "url": "https://github.com/e2b-dev/E2B",
+   "category": "sandbox",
+   "group": "Execution Substrates & Sandboxing",
+   "stars": 13891,
+   "tags": [
+    "cloud-sandbox",
+    "execution",
+    "enterprise"
+   ],
+   "summary": "Secure cloud environments with real tools for production-grade agent execution.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "CloudCLI",
+   "repo": "siteboon/claudecodeui",
+   "url": "https://github.com/siteboon/claudecodeui",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 13745,
+   "tags": [
+    "control-plane",
+    "sessions",
+    "coding-agents"
+   ],
+   "summary": "Web and mobile control surface for Claude Code, OpenCode, Cursor CLI, Codex, and Gemini CLI with project, terminal, file, Git, session, and plugin management.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Microsoft Agent Framework",
+   "repo": "microsoft/agent-framework",
+   "url": "https://github.com/microsoft/agent-framework",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 13620,
+   "tags": [
+    "multi-agent",
+    "workflows",
+    "observability"
+   ],
+   "summary": "Multi-language framework for building, orchestrating, and deploying AI agents with graph workflows and observability.",
+   "lists": [
+    "Picrew/awesome-agent-harness",
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "MCP TypeScript SDK",
+   "repo": "modelcontextprotocol/typescript-sdk",
+   "url": "https://github.com/modelcontextprotocol/typescript-sdk",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 13433,
+   "tags": [
+    "mcp",
+    "typescript",
+    "sdk"
+   ],
+   "summary": "Official TypeScript MCP SDK with server and client packages, transports, auth helpers, middleware adapters, and runnable examples.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "EverOS",
+   "repo": "EverMind-AI/EverOS",
+   "url": "https://github.com/EverMind-AI/EverOS",
+   "category": "context",
+   "group": "Context & Working-State Engineering",
+   "stars": 13089,
+   "tags": [
+    "memory",
+    "local-first",
+    "skills"
+   ],
+   "summary": "Portable self-evolving memory runtime for agents, persisting readable Markdown with local SQLite/LanceDB indexes and reusable cases and skills.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Portkey Gateway",
+   "repo": "Portkey-AI/gateway",
+   "url": "https://github.com/Portkey-AI/gateway",
+   "category": "ops",
+   "group": "Guardrails, Security & Governance",
+   "stars": 13041,
+   "tags": [
+    "gateway",
+    "guardrails",
+    "routing"
+   ],
+   "summary": "AI gateway with routing and guardrails for multi-model production traffic.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "InsForge",
+   "repo": "InsForge/InsForge",
+   "url": "https://github.com/InsForge/InsForge",
+   "category": "sandbox",
+   "group": "Execution Substrates & Sandboxing",
+   "stars": 13008,
+   "tags": [
+    "backend",
+    "mcp",
+    "coding-agents"
+   ],
+   "summary": "Backend substrate for agentic coding that exposes database, auth, storage, compute, hosting, logs, and model-gateway operations through MCP and CLI/Skills.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "IronClaw",
+   "repo": "nearai/ironclaw",
+   "url": "https://github.com/nearai/ironclaw",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 12623,
+   "tags": [
+    "security",
+    "wasm",
+    "routines"
+   ],
+   "summary": "Security-first personal agent harness with WASM sandboxing, routines, tool plugins, and persistent memory.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "CubeSandbox",
+   "repo": "TencentCloud/CubeSandbox",
+   "url": "https://github.com/TencentCloud/CubeSandbox",
+   "category": "sandbox",
+   "group": "Execution Substrates & Sandboxing",
+   "stars": 12620,
+   "tags": [
+    "microvm",
+    "sandbox",
+    "e2b-compatible"
+   ],
+   "summary": "MicroVM-based sandbox service for AI agents with sub-60ms startup, E2B-compatible APIs, and hardware-level isolation.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Agent S",
+   "repo": "simular-ai/Agent-S",
+   "url": "https://github.com/simular-ai/Agent-S",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 12331,
+   "tags": [
+    "computer-use",
+    "gui-agent",
+    "evaluation"
+   ],
+   "summary": "Open-source computer-use agent framework with grounding models, reflection, local code execution option, and OSWorld-style evaluation support.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Agent Orchestrator",
+   "repo": "Untrivial-ai/agent-orchestrator",
+   "url": "https://github.com/Untrivial-ai/agent-orchestrator",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 12215,
+   "tags": [
+    "worktrees",
+    "parallel",
+    "dashboard"
+   ],
+   "summary": "Worktree-based orchestration layer for parallel coding agents with autonomous CI and review feedback handling.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "TensorZero",
+   "repo": "tensorzero/tensorzero",
+   "url": "https://github.com/tensorzero/tensorzero",
+   "category": "ops",
+   "group": "Observability & Reliability Operations",
+   "stars": 11721,
+   "tags": [
+    "llmops",
+    "gateway",
+    "optimization"
+   ],
+   "summary": "Open LLMOps stack unifying gateway, observability, evaluation, and optimization.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Arize Phoenix",
+   "repo": "Arize-ai/phoenix",
+   "url": "https://github.com/Arize-ai/phoenix",
+   "category": "ops",
+   "group": "Observability & Reliability Operations",
+   "stars": 11548,
+   "tags": [
+    "observability",
+    "tracing",
+    "evaluation"
+   ],
+   "summary": "Open platform for AI observability, tracing, and evaluation analytics.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "MemOS",
+   "repo": "MemTensor/MemOS",
+   "url": "https://github.com/MemTensor/MemOS",
+   "category": "context",
+   "group": "Context & Working-State Engineering",
+   "stars": 11485,
+   "tags": [
+    "persistent-memory",
+    "hybrid-retrieval",
+    "cross-agent"
+   ],
+   "summary": "Agent memory infrastructure with editable memory graphs, isolated or shared memory cubes, asynchronous ingestion, and local hybrid-retrieval plugins for OpenClaw, Hermes, and DeepSeek Harness.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "holaOS",
+   "repo": "holaboss-ai/holaOS",
+   "url": "https://github.com/holaboss-ai/holaOS",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 11329,
+   "tags": [
+    "long-horizon",
+    "desktop",
+    "durable-state"
+   ],
+   "summary": "Desktop-first long-horizon agent environment with runtime, memory, tools, apps, and durable state.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "GitHub Copilot CLI",
+   "repo": "github/copilot-cli",
+   "url": "https://github.com/github/copilot-cli",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 11188,
+   "tags": [
+    "terminal",
+    "coding-agent",
+    "mcp"
+   ],
+   "summary": "Official terminal coding agent built on GitHub's Copilot harness with MCP extensibility, approval controls, and GitHub-native context.",
+   "lists": [
+    "Picrew/awesome-agent-harness",
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Hugging Face Skills",
+   "repo": "huggingface/skills",
+   "url": "https://github.com/huggingface/skills",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 11072,
+   "tags": [
+    "skills",
+    "hugging-face",
+    "official"
+   ],
+   "summary": "Official Hugging Face Agent Skills collection for packaging Hub, dataset, training, evaluation, Spaces, and tooling workflows across major coding agents.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Hive",
+   "repo": "aden-hive/hive",
+   "url": "https://github.com/aden-hive/hive",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 11057,
+   "tags": [
+    "harness",
+    "orchestration",
+    "runtime"
+   ],
+   "summary": "Outcome-driven agent runtime harness with explicit control loops and orchestration blocks.",
+   "lists": [
+    "Picrew/awesome-agent-harness",
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "MCP Inspector",
+   "repo": "modelcontextprotocol/inspector",
+   "url": "https://github.com/modelcontextprotocol/inspector",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 10914,
+   "tags": [
+    "mcp",
+    "debugging",
+    "testing"
+   ],
+   "summary": "Official developer tool for testing and debugging MCP servers through an interactive client UI and protocol bridge.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "ML Intern",
+   "repo": "huggingface/ml-intern",
+   "url": "https://github.com/huggingface/ml-intern",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 10821,
+   "tags": [
+    "ml-agent",
+    "sandbox-tools",
+    "traces"
+   ],
+   "summary": "Hugging Face ML engineering agent with local and sandbox tool runtimes, private Space sandboxes, trace logging, and CLI execution.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Agent Reinforcement Trainer",
+   "repo": "OpenPipe/ART",
+   "url": "https://github.com/OpenPipe/ART",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": 10761,
+   "tags": [
+    "rl",
+    "training",
+    "evaluation"
+   ],
+   "summary": "Agent reinforcement-training harness for multi-step agents with GRPO, trajectory capture, reward assignment, training loops, and LangGraph/MCP examples.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Open SWE",
+   "repo": "langchain-ai/open-swe",
+   "url": "https://github.com/langchain-ai/open-swe",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 10738,
+   "tags": [
+    "async",
+    "coding-agent",
+    "swe"
+   ],
+   "summary": "Asynchronous open-source coding agent focused on software issue workflows.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "mcp-use",
+   "repo": "mcp-use/mcp-use",
+   "url": "https://github.com/mcp-use/mcp-use",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 10656,
+   "tags": [
+    "mcp",
+    "framework",
+    "apps"
+   ],
+   "summary": "Full-stack MCP framework for building MCP apps for ChatGPT and Claude and MCP servers for AI agents.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "VoltAgent",
+   "repo": "VoltAgent/voltagent",
+   "url": "https://github.com/VoltAgent/voltagent",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 10649,
+   "tags": [
+    "typescript",
+    "platform",
+    "runtime"
+   ],
+   "summary": "TypeScript agent engineering platform built around open runtime abstractions.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "GitHub Copilot SDK",
+   "repo": "github/copilot-sdk",
+   "url": "https://github.com/github/copilot-sdk",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 10498,
+   "tags": [
+    "sdk",
+    "agent-runtime",
+    "json-rpc"
+   ],
+   "summary": "Official multi-language SDK for embedding the Copilot CLI agent runtime with sessions, planning, tools, file edits, permissions, custom agents, skills, MCP, hooks, and JSON-RPC lifecycle management.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Omnigent",
+   "repo": "omnigent-ai/omnigent",
+   "url": "https://github.com/omnigent-ai/omnigent",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 10116,
+   "tags": [
+    "meta-harness",
+    "policies",
+    "sandboxes"
+   ],
+   "summary": "Open-source meta-harness that orchestrates Claude Code, Codex, Cursor, Pi, and custom agents with shared sessions, cloud sandboxes, policies, and collaboration.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "CAI (Cybersecurity AI)",
+   "repo": "aliasrobotics/cai",
+   "url": "https://github.com/aliasrobotics/cai",
+   "category": "ops",
+   "group": "Guardrails, Security & Governance",
+   "stars": 9835,
+   "tags": [
+    "security",
+    "governance",
+    "framework"
+   ],
+   "summary": "Security-focused agent framework for offensive/defensive AI workflows.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "AWS MCP Servers",
+   "repo": "awslabs/mcp",
+   "url": "https://github.com/awslabs/mcp",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 9714,
+   "tags": [
+    "mcp",
+    "aws",
+    "servers"
+   ],
+   "summary": "AWS Labs suite of MCP servers exposing AWS documentation, cloud workflows, infrastructure operations, and service tooling to MCP clients.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Higress",
+   "repo": "higress-group/higress",
+   "url": "https://github.com/higress-group/higress",
+   "category": "ops",
+   "group": "Guardrails, Security & Governance",
+   "stars": 9417,
+   "tags": [
+    "ai-gateway",
+    "mcp",
+    "governance"
+   ],
+   "summary": "CNCF AI-native gateway for unified LLM API and MCP API management, including hosted remote MCP servers and gateway controls for agent tool access.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Model Context Protocol",
+   "repo": "modelcontextprotocol/modelcontextprotocol",
+   "url": "https://github.com/modelcontextprotocol/modelcontextprotocol",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 9259,
+   "tags": [
+    "mcp",
+    "protocol",
+    "interoperability"
+   ],
+   "summary": "Core specification and docs for MCP-based tool and context interoperability.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Context-Engineering Handbook",
+   "repo": "davidkimai/Context-Engineering",
+   "url": "https://github.com/davidkimai/Context-Engineering",
+   "category": "context",
+   "group": "Context & Working-State Engineering",
+   "stars": 9252,
+   "tags": [
+    "context-engineering",
+    "handbook",
+    "practices"
+   ],
+   "summary": "First-principles handbook focused on practical context engineering for agent systems.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "PraisonAI",
+   "repo": "MervinPraison/PraisonAI",
+   "url": "https://github.com/MervinPraison/PraisonAI",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 9080,
+   "tags": [
+    "multi-agent",
+    "workflow",
+    "memory"
+   ],
+   "summary": "Multi-agent workforce framework with autonomous planning, execution, memory, RAG, dashboards, and multi-provider model support.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Harness",
+   "repo": "revfactory/harness",
+   "url": "https://github.com/revfactory/harness",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 9036,
+   "tags": [
+    "claude-code",
+    "meta-factory",
+    "agent-teams"
+   ],
+   "summary": "Claude Code meta-factory that generates domain-specific agent teams, skills, orchestration patterns, and validation steps from a project description.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "OpenShell",
+   "repo": "NVIDIA/OpenShell",
+   "url": "https://github.com/NVIDIA/OpenShell",
+   "category": "sandbox",
+   "group": "Execution Substrates & Sandboxing",
+   "stars": 8711,
+   "tags": [
+    "sandbox",
+    "policy",
+    "runtime"
+   ],
+   "summary": "Safe private runtime for autonomous agents with sandbox lifecycle control and declarative filesystem, network, process, and inference policies.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "mcp-agent",
+   "repo": "lastmile-ai/mcp-agent",
+   "url": "https://github.com/lastmile-ai/mcp-agent",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 8549,
+   "tags": [
+    "mcp",
+    "runtime",
+    "workflow"
+   ],
+   "summary": "Practical agent framework centered on MCP tool ecosystems and workflow composition.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Claude Squad",
+   "repo": "smtg-ai/claude-squad",
+   "url": "https://github.com/smtg-ai/claude-squad",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 8502,
+   "tags": [
+    "terminal",
+    "sessions",
+    "worktrees"
+   ],
+   "summary": "Terminal control plane for managing multiple Claude Code, Codex, Gemini, OpenCode, Amp, and other agent sessions with isolated git workspaces and review flows.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "CCPM",
+   "repo": "automazeio/ccpm",
+   "url": "https://github.com/automazeio/ccpm",
+   "category": "context",
+   "group": "Context & Working-State Engineering",
+   "stars": 8381,
+   "tags": [
+    "planning",
+    "github-issues",
+    "parallel-execution"
+   ],
+   "summary": "Spec-driven project-manager skill that turns PRDs and GitHub issues into persistent context and parallel agent execution.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Flue",
+   "repo": "withastro/flue",
+   "url": "https://github.com/withastro/flue",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 8319,
+   "tags": [
+    "typescript",
+    "headless",
+    "sandbox"
+   ],
+   "summary": "TypeScript harness framework for building headless agents with sessions, tools, skills, and pluggable sandboxes.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Microsandbox",
+   "repo": "superradcompany/microsandbox",
+   "url": "https://github.com/superradcompany/microsandbox",
+   "category": "sandbox",
+   "group": "Execution Substrates & Sandboxing",
+   "stars": 8301,
+   "tags": [
+    "sandbox",
+    "vm",
+    "mcp"
+   ],
+   "summary": "Rootless local VM sandbox runtime with SDKs, detached long-running sessions, agent skills, and MCP server integration.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Sandcastle",
+   "repo": "mattpocock/sandcastle",
+   "url": "https://github.com/mattpocock/sandcastle",
+   "category": "sandbox",
+   "group": "Execution Substrates & Sandboxing",
+   "stars": 8067,
+   "tags": [
+    "sandbox",
+    "typescript",
+    "branch-strategy"
+   ],
+   "summary": "TypeScript library for orchestrating coding agents inside isolated sandboxes with configurable branch strategies.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Yao",
+   "repo": "YaoApp/yao",
+   "url": "https://github.com/YaoApp/yao",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 7981,
+   "tags": [
+    "single-binary",
+    "runtime",
+    "autonomous"
+   ],
+   "summary": "Single-binary runtime for defining and running autonomous agents.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "OSAURUS",
+   "repo": "osaurus-ai/osaurus",
+   "url": "https://github.com/osaurus-ai/osaurus",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 7972,
+   "tags": [
+    "macos",
+    "local-first",
+    "memory"
+   ],
+   "summary": "Native macOS harness for autonomous coding agents with persistent memory.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "mini-swe-agent",
+   "repo": "SWE-agent/mini-swe-agent",
+   "url": "https://github.com/SWE-agent/mini-swe-agent",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 7822,
+   "tags": [
+    "minimal",
+    "swe",
+    "coding-agent"
+   ],
+   "summary": "Minimal coding agent implementation with strong benchmark competitiveness.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Agent Squad",
+   "repo": "2FastLabs/agent-squad",
+   "url": "https://github.com/2FastLabs/agent-squad",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 7765,
+   "tags": [
+    "routing",
+    "multi-agent",
+    "context"
+   ],
+   "summary": "Multi-agent orchestration framework that routes requests, preserves conversation context, supports Python/TypeScript, and coordinates specialist agents.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Munder Difflin",
+   "repo": "chaitanyagiri/munder-difflin",
+   "url": "https://github.com/chaitanyagiri/munder-difflin",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 7724,
+   "tags": [
+    "multi-agent",
+    "desktop",
+    "memory"
+   ],
+   "summary": "Desktop multi-agent harness that wraps terminal-agent CLIs with hive mailboxes, shared memory, an orchestrator, approvals, worktrees, and telemetry.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "OpenLLMetry",
+   "repo": "traceloop/openllmetry",
+   "url": "https://github.com/traceloop/openllmetry",
+   "category": "ops",
+   "group": "Observability & Reliability Operations",
+   "stars": 7442,
+   "tags": [
+    "opentelemetry",
+    "instrumentation",
+    "tracing"
+   ],
+   "summary": "OpenTelemetry-based instrumentation for GenAI and LLM applications.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Strands Agents",
+   "repo": "strands-agents/harness-sdk",
+   "url": "https://github.com/strands-agents/harness-sdk",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 7374,
+   "tags": [
+    "sdk",
+    "mcp",
+    "tools"
+   ],
+   "summary": "Model-driven agent SDK and monorepo with Python/TypeScript agent loops, provider adapters, tools, MCP integration, multi-agent systems, and streaming.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "MCP Registry",
+   "repo": "modelcontextprotocol/registry",
+   "url": "https://github.com/modelcontextprotocol/registry",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 7265,
+   "tags": [
+    "mcp",
+    "registry",
+    "discovery"
+   ],
+   "summary": "Official MCP registry service and publisher tooling that lets clients discover MCP servers through a shared server catalog.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Yuxi",
+   "repo": "xerrors/Yuxi",
+   "url": "https://github.com/xerrors/Yuxi",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 7139,
+   "tags": [
+    "multi-tenant",
+    "knowledge-graph",
+    "mcp"
+   ],
+   "summary": "Multi-tenant agent harness platform combining RAG, knowledge graphs, LangGraph orchestration, skills, MCP, subagents, and sandbox tools.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Plano",
+   "repo": "katanemo/plano",
+   "url": "https://github.com/katanemo/plano",
+   "category": "ops",
+   "group": "Guardrails, Security & Governance",
+   "stars": 7060,
+   "tags": [
+    "proxy",
+    "safety",
+    "data-plane"
+   ],
+   "summary": "AI-native proxy and data plane with orchestration, safety, and observability.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "OpenAI Realtime Agents",
+   "repo": "openai/openai-realtime-agents",
+   "url": "https://github.com/openai/openai-realtime-agents",
+   "category": "ops",
+   "group": "Guardrails, Security & Governance",
+   "stars": 6984,
+   "tags": [
+    "realtime",
+    "orchestration",
+    "control"
+   ],
+   "summary": "Advanced agentic realtime patterns with structured control and interaction loops.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Open Multi-Agent",
+   "repo": "open-multi-agent/open-multi-agent",
+   "url": "https://github.com/open-multi-agent/open-multi-agent",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 6945,
+   "tags": [
+    "multi-agent",
+    "dag",
+    "tracing"
+   ],
+   "summary": "TypeScript-native multi-agent orchestrator that turns goals into task DAGs with parallel execution, MCP integration, and live tracing.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Engram",
+   "repo": "Gentleman-Programming/engram",
+   "url": "https://github.com/Gentleman-Programming/engram",
+   "category": "context",
+   "group": "Context & Working-State Engineering",
+   "stars": 6720,
+   "tags": [
+    "memory",
+    "mcp",
+    "single-binary"
+   ],
+   "summary": "Agent-agnostic persistent memory system packaged as a Go binary with SQLite/FTS5, MCP server, HTTP API, CLI, TUI, and sync workflows.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "OpenAI CS Agents Demo",
+   "repo": "openai/openai-cs-agents-demo",
+   "url": "https://github.com/openai/openai-cs-agents-demo",
+   "category": "ops",
+   "group": "Guardrails, Security & Governance",
+   "stars": 6574,
+   "tags": [
+    "demo",
+    "handoffs",
+    "governance"
+   ],
+   "summary": "Customer-service multi-agent demo highlighting handoffs and guardrail-like control points.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "AIOS",
+   "repo": "agiresearch/AIOS",
+   "url": "https://github.com/agiresearch/AIOS",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 6403,
+   "tags": [
+    "agent-os",
+    "kernel",
+    "runtime"
+   ],
+   "summary": "AI Agent Operating System with a kernel and SDK for scheduling, context management, memory, storage, tools, deployment modes, and computer-use sandboxing.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Agent Governance Toolkit",
+   "repo": "microsoft/agent-governance-toolkit",
+   "url": "https://github.com/microsoft/agent-governance-toolkit",
+   "category": "ops",
+   "group": "Guardrails, Security & Governance",
+   "stars": 6298,
+   "tags": [
+    "governance",
+    "policy",
+    "sandboxing"
+   ],
+   "summary": "Runtime governance toolkit that deterministically enforces agent policy, identity, sandboxing, and audit controls before actions execute.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Helicone",
+   "repo": "Helicone/helicone",
+   "url": "https://github.com/Helicone/helicone",
+   "category": "ops",
+   "group": "Observability & Reliability Operations",
+   "stars": 6166,
+   "tags": [
+    "monitoring",
+    "traffic",
+    "production"
+   ],
+   "summary": "Lightweight platform for monitoring and evaluating LLM traffic in production.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Webwright",
+   "repo": "microsoft/Webwright",
+   "url": "https://github.com/microsoft/Webwright",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 6010,
+   "tags": [
+    "browser-agent",
+    "code-as-action",
+    "playwright"
+   ],
+   "summary": "Minimal browser-agent harness that lets coding models solve web tasks by writing rerunnable Playwright scripts in a workspace.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Google Agents CLI",
+   "repo": "google/agents-cli",
+   "url": "https://github.com/google/agents-cli",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 5969,
+   "tags": [
+    "google-cloud",
+    "lifecycle",
+    "skills"
+   ],
+   "summary": "Google Cloud CLI and skill bundle that gives coding agents scaffold, evaluation, deployment, publishing, and observability workflows.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "agent-infra sandbox",
+   "repo": "agent-infra/sandbox",
+   "url": "https://github.com/agent-infra/sandbox",
+   "category": "sandbox",
+   "group": "Execution Substrates & Sandboxing",
+   "stars": 5959,
+   "tags": [
+    "all-in-one",
+    "browser",
+    "shell"
+   ],
+   "summary": "All-in-one sandbox combining browser, shell, files, MCP, and IDE server.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "SWE-bench",
+   "repo": "SWE-bench/SWE-bench",
+   "url": "https://github.com/SWE-bench/SWE-bench",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": 5878,
+   "tags": [
+    "benchmark",
+    "swe",
+    "evaluation"
+   ],
+   "summary": "Standard benchmark for evaluating issue-fixing software engineering agents.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Nexent",
+   "repo": "ModelEngine-Group/nexent",
+   "url": "https://github.com/ModelEngine-Group/nexent",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 5875,
+   "tags": [
+    "zero-code",
+    "control-plane",
+    "multi-agent"
+   ],
+   "summary": "Zero-code agent platform built around harness engineering principles, unifying tools, skills, memory, orchestration, constraints, feedback loops, and control planes.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "AgentOps SDK",
+   "repo": "AgentOps-AI/agentops",
+   "url": "https://github.com/AgentOps-AI/agentops",
+   "category": "ops",
+   "group": "Observability & Reliability Operations",
+   "stars": 5833,
+   "tags": [
+    "agentops",
+    "monitoring",
+    "cost"
+   ],
+   "summary": "Monitoring and benchmarking SDK for agent workflows with cost and trace tracking.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Coze Loop",
+   "repo": "coze-dev/coze-loop",
+   "url": "https://github.com/coze-dev/coze-loop",
+   "category": "ops",
+   "group": "Observability & Reliability Operations",
+   "stars": 5740,
+   "tags": [
+    "evaluation",
+    "tracing",
+    "monitoring"
+   ],
+   "summary": "Full-lifecycle agent optimization platform combining prompt development, automated evaluation, experiment management, trace collection, execution inspection, and production monitoring.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "AgentTeams",
+   "repo": "agentscope-ai/AgentTeams",
+   "url": "https://github.com/agentscope-ai/AgentTeams",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 5648,
+   "tags": [
+    "multi-agent",
+    "human-in-the-loop",
+    "shared-state"
+   ],
+   "summary": "Collaborative multi-agent OS with manager-worker coordination, shared state, human-in-the-loop oversight, pluggable runtimes, and Kubernetes deployment through Matrix rooms.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Cloudflare Agents",
+   "repo": "cloudflare/agents",
+   "url": "https://github.com/cloudflare/agents",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 5609,
+   "tags": [
+    "platform",
+    "deployment",
+    "runtime"
+   ],
+   "summary": "Platform runtime for building and deploying agents with production infrastructure primitives.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "1Code",
+   "repo": "21st-dev/1code",
+   "url": "https://github.com/21st-dev/1code",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 5596,
+   "tags": [
+    "coding-agent",
+    "orchestration",
+    "worktrees"
+   ],
+   "summary": "Desktop-first coding-agent orchestrator with worktree isolation, background sandboxes, MCP tooling, and automation triggers.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": ".NET Agent Skills",
+   "repo": "dotnet/skills",
+   "url": "https://github.com/dotnet/skills",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 5454,
+   "tags": [
+    "skills",
+    "dotnet",
+    "official"
+   ],
+   "summary": "Microsoft .NET team's curated plugins, skills, custom agents, and evaluation dashboard for grounding coding agents on .NET and C# workflows.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Harbor",
+   "repo": "harbor-framework/harbor",
+   "url": "https://github.com/harbor-framework/harbor",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": 5435,
+   "tags": [
+    "evaluation",
+    "harness",
+    "rl-env"
+   ],
+   "summary": "Framework for running agent evaluations and constructing RL-style environments.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "SkillHub",
+   "repo": "iflytek/skillhub",
+   "url": "https://github.com/iflytek/skillhub",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 5130,
+   "tags": [
+    "skills",
+    "registry",
+    "governance"
+   ],
+   "summary": "Self-hosted enterprise agent skill registry with package publishing, versioning, discovery, namespaces, RBAC, reviews, and audit logs.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "ByteRover CLI",
+   "repo": "campfirein/byterover-cli",
+   "url": "https://github.com/campfirein/byterover-cli",
+   "category": "context",
+   "group": "Context & Working-State Engineering",
+   "stars": 4966,
+   "tags": [
+    "context-memory",
+    "cli",
+    "mcp"
+   ],
+   "summary": "Portable context-memory CLI for coding agents with a context tree, review workflow, versioning, built-in tools, cloud sync, and MCP integration.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "AgentGateway",
+   "repo": "agentgateway/agentgateway",
+   "url": "https://github.com/agentgateway/agentgateway",
+   "category": "ops",
+   "group": "Guardrails, Security & Governance",
+   "stars": 4940,
+   "tags": [
+    "gateway",
+    "mcp",
+    "proxy"
+   ],
+   "summary": "Agentic proxy gateway for AI agents and MCP server ecosystems.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "LangWatch",
+   "repo": "langwatch/langwatch",
+   "url": "https://github.com/langwatch/langwatch",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": 4840,
+   "tags": [
+    "simulation",
+    "evaluation",
+    "testing"
+   ],
+   "summary": "End-to-end platform for agent simulations, evaluation loops, and production testing.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Agenta",
+   "repo": "Agenta-AI/agenta",
+   "url": "https://github.com/Agenta-AI/agenta",
+   "category": "ops",
+   "group": "Observability & Reliability Operations",
+   "stars": 4769,
+   "tags": [
+    "llmops",
+    "evaluation",
+    "observability"
+   ],
+   "summary": "Open-source LLMOps platform combining prompt management, evaluation, human and automated feedback, and tracing for production LLM applications.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "AI-DLC Workflows",
+   "repo": "awslabs/aidlc-workflows",
+   "url": "https://github.com/awslabs/aidlc-workflows",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 4723,
+   "tags": [
+    "workflow-rules",
+    "quality-gates",
+    "steering"
+   ],
+   "summary": "Official AWS workflow ruleset that steers coding agents through adaptive phases, quality gates, and IDE-specific context files.",
+   "lists": [
+    "Picrew/awesome-agent-harness",
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Latitude",
+   "repo": "latitude-dev/latitude-llm",
+   "url": "https://github.com/latitude-dev/latitude-llm",
+   "category": "ops",
+   "group": "Observability & Reliability Operations",
+   "stars": 4662,
+   "tags": [
+    "platform",
+    "eval",
+    "observability"
+   ],
+   "summary": "Open-source agent engineering platform with eval and observability capabilities.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "verifiers",
+   "repo": "PrimeIntellect-ai/verifiers",
+   "url": "https://github.com/PrimeIntellect-ai/verifiers",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": 4635,
+   "tags": [
+    "verifier",
+    "rl",
+    "evaluation"
+   ],
+   "summary": "Library for RL environments and verifier-based evaluation loops.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "ContextForge",
+   "repo": "IBM/mcp-context-forge",
+   "url": "https://github.com/IBM/mcp-context-forge",
+   "category": "ops",
+   "group": "Guardrails, Security & Governance",
+   "stars": 4504,
+   "tags": [
+    "gateway",
+    "governance",
+    "observability"
+   ],
+   "summary": "Registry and proxy layer that unifies MCP, A2A, and REST/gRPC endpoints with centralized governance and observability.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Embabel Agent Framework",
+   "repo": "embabel/embabel-agent",
+   "url": "https://github.com/embabel/embabel-agent",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 4456,
+   "tags": [
+    "jvm",
+    "planning",
+    "typed-flows"
+   ],
+   "summary": "JVM agent framework for typed agentic flows with goals, actions, conditions, dynamic planning, platform modes, and testability.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Judge0",
+   "repo": "judge0/judge0",
+   "url": "https://github.com/judge0/judge0",
+   "category": "sandbox",
+   "group": "Execution Substrates & Sandboxing",
+   "stars": 4436,
+   "tags": [
+    "code-execution",
+    "sandbox",
+    "backend"
+   ],
+   "summary": "Scalable sandboxed code execution system usable as an agent execution backend.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "gptme",
+   "repo": "gptme/gptme",
+   "url": "https://github.com/gptme/gptme",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 4420,
+   "tags": [
+    "terminal",
+    "tools",
+    "mcp"
+   ],
+   "summary": "Terminal-native personal agent with local tools, shell and web access, provider-agnostic models, plugins, skills, MCP, guardrails, and autonomous loops.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Builder.io Agent Skills",
+   "repo": "BuilderIO/skills",
+   "url": "https://github.com/BuilderIO/skills",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 4334,
+   "tags": [
+    "skills",
+    "review",
+    "planning"
+   ],
+   "summary": "Composable coding-agent skills for visual planning, visual recaps, watchdog reviews, plan arbitration, and autonomous execution discipline.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Agent Client Protocol",
+   "repo": "agentclientprotocol/agent-client-protocol",
+   "url": "https://github.com/agentclientprotocol/agent-client-protocol",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 4294,
+   "tags": [
+    "acp",
+    "protocol",
+    "coding-agents"
+   ],
+   "summary": "Open protocol that standardizes communication between code editors and coding agents.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Archestra",
+   "repo": "archestra-ai/archestra",
+   "url": "https://github.com/archestra-ai/archestra",
+   "category": "ops",
+   "group": "Guardrails, Security & Governance",
+   "stars": 4287,
+   "tags": [
+    "enterprise",
+    "guardrails",
+    "governance"
+   ],
+   "summary": "Enterprise AI platform with guardrails, MCP registry, and orchestration services.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "nono",
+   "repo": "always-further/nono",
+   "url": "https://github.com/always-further/nono",
+   "category": "ops",
+   "group": "Guardrails, Security & Governance",
+   "stars": 4146,
+   "tags": [
+    "policy",
+    "sandbox",
+    "audit"
+   ],
+   "summary": "Capability-based, policy-governed runtime that narrows agent access to explicit filesystem, network, credential, operation, sandbox, and audit capabilities.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "directories (rules and MCP indexes)",
+   "repo": "leerob/directories",
+   "url": "https://github.com/leerob/directories",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 3991,
+   "tags": [
+    "directories",
+    "mcp",
+    "rules"
+   ],
+   "summary": "Curated directories of agent rules and MCP servers for tool discovery.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Agent Sandbox",
+   "repo": "kubernetes-sigs/agent-sandbox",
+   "url": "https://github.com/kubernetes-sigs/agent-sandbox",
+   "category": "sandbox",
+   "group": "Execution Substrates & Sandboxing",
+   "stars": 3960,
+   "tags": [
+    "kubernetes",
+    "sandbox",
+    "stateful"
+   ],
+   "summary": "Kubernetes-native sandbox control plane for isolated, stateful agent runtimes with stable identity, persistence, and warm-pool support.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "cascadeflow",
+   "repo": "lemony-ai/cascadeflow",
+   "url": "https://github.com/lemony-ai/cascadeflow",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 3946,
+   "tags": [
+    "runtime-policy",
+    "model-routing",
+    "budget-gates"
+   ],
+   "summary": "In-process agent harness for per-step model routing, tool budget gates, runtime policy actions, and auditable control inside agent loops.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "OpenAI Agents SDK (JS/TS)",
+   "repo": "openai/openai-agents-js",
+   "url": "https://github.com/openai/openai-agents-js",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 3836,
+   "tags": [
+    "typescript",
+    "workflows",
+    "sandbox-agents"
+   ],
+   "summary": "JavaScript/TypeScript framework for multi-agent workflows with handoffs, tools, guardrails, sessions, tracing, and sandbox agents.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Atmosphere",
+   "repo": "Atmosphere/atmosphere",
+   "url": "https://github.com/Atmosphere/atmosphere",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 3815,
+   "tags": [
+    "jvm",
+    "multi-protocol",
+    "governance"
+   ],
+   "summary": "JVM runtime for streaming governable AI agents across MCP, A2A, AG-UI, and browser-facing transports.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Tracecat",
+   "repo": "TracecatHQ/tracecat",
+   "url": "https://github.com/TracecatHQ/tracecat",
+   "category": "ops",
+   "group": "Guardrails, Security & Governance",
+   "stars": 3806,
+   "tags": [
+    "security",
+    "automation",
+    "policy"
+   ],
+   "summary": "AI automation platform for security teams with policy and workflow controls.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Reef",
+   "repo": "Human-Agent-Society/reef",
+   "url": "https://github.com/Human-Agent-Society/reef",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 3768,
+   "tags": [
+    "continual-learning",
+    "harness-optimization",
+    "versioning"
+   ],
+   "summary": "Continual learning infrastructure connecting agent inference, feedback, evaluation, and versioned delivery to improve model weights, prompts, rules, and skills.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "AgentBench",
+   "repo": "THUDM/AgentBench",
+   "url": "https://github.com/THUDM/AgentBench",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": 3742,
+   "tags": [
+    "benchmark",
+    "cross-domain",
+    "agent"
+   ],
+   "summary": "Cross-environment benchmark for evaluating LLM agents as tool-using systems.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Acontext",
+   "repo": "memodb-io/Acontext",
+   "url": "https://github.com/memodb-io/Acontext",
+   "category": "context",
+   "group": "Context & Working-State Engineering",
+   "stars": 3691,
+   "tags": [
+    "skills",
+    "memory",
+    "progressive-disclosure"
+   ],
+   "summary": "Skill-memory layer that distills agent runs into inspectable skill files and recalls them through agent-controlled tools.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Microsoft MCP Servers",
+   "repo": "microsoft/mcp",
+   "url": "https://github.com/microsoft/mcp",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 3689,
+   "tags": [
+    "mcp",
+    "enterprise",
+    "servers"
+   ],
+   "summary": "Microsoft's official MCP server catalog for enterprise data and tools.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "LangChain MCP Adapters",
+   "repo": "langchain-ai/langchain-mcp-adapters",
+   "url": "https://github.com/langchain-ai/langchain-mcp-adapters",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 3659,
+   "tags": [
+    "mcp",
+    "adapters",
+    "integration"
+   ],
+   "summary": "Adapters connecting LangChain components with MCP servers.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "TinyAGI",
+   "repo": "TinyAGI/tinyagi",
+   "url": "https://github.com/TinyAGI/tinyagi",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 3616,
+   "tags": [
+    "team-orchestration",
+    "autonomous",
+    "workflows"
+   ],
+   "summary": "Team-style agent orchestrator for one-person-company style autonomous workflows.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "TruLens",
+   "repo": "truera/trulens",
+   "url": "https://github.com/truera/trulens",
+   "category": "ops",
+   "group": "Observability & Reliability Operations",
+   "stars": 3565,
+   "tags": [
+    "evaluation",
+    "tracing",
+    "agentops"
+   ],
+   "summary": "Evaluation and tracking platform for LLM apps and AI agents with traces, tool-call capture, and agentic evaluators.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "EvalScope",
+   "repo": "modelscope/evalscope",
+   "url": "https://github.com/modelscope/evalscope",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": 3450,
+   "tags": [
+    "benchmark",
+    "framework",
+    "llm"
+   ],
+   "summary": "Customizable framework for large-model benchmarking and performance evaluation.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Open Claude Cowork",
+   "repo": "DevAgentForge/Open-Claude-Cowork",
+   "url": "https://github.com/DevAgentForge/Open-Claude-Cowork",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 3395,
+   "tags": [
+    "desktop",
+    "ui",
+    "orchestration"
+   ],
+   "summary": "Desktop coding cowork assistant that turns agent orchestration into GUI workflows.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Amazon Bedrock AgentCore Samples",
+   "repo": "awslabs/agentcore-samples",
+   "url": "https://github.com/awslabs/agentcore-samples",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 3387,
+   "tags": [
+    "aws",
+    "runtime",
+    "operations"
+   ],
+   "summary": "Official sample suite for deploying and operating agents with runtime, gateway, memory, observability, evaluation, and policy layers.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Maestro",
+   "repo": "RunMaestro/Maestro",
+   "url": "https://github.com/RunMaestro/Maestro",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 3354,
+   "tags": [
+    "desktop",
+    "worktrees",
+    "orchestration"
+   ],
+   "summary": "Desktop command center for parallel coding agents with worktree isolation, queued tasks, auto-run playbooks, and reusable sessions.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Docker Agent",
+   "repo": "docker/docker-agent",
+   "url": "https://github.com/docker/docker-agent",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 3337,
+   "tags": [
+    "docker",
+    "runtime",
+    "container"
+   ],
+   "summary": "Agent builder and runtime stack emphasizing container-native execution.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Awesome Context Engineering",
+   "repo": "Meirtz/Awesome-Context-Engineering",
+   "url": "https://github.com/Meirtz/Awesome-Context-Engineering",
+   "category": "context",
+   "group": "Context & Working-State Engineering",
+   "stars": 3308,
+   "tags": [
+    "awesome-list",
+    "context",
+    "survey"
+   ],
+   "summary": "Survey-style list for context engineering resources and frameworks.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Laminar",
+   "repo": "lmnr-ai/lmnr",
+   "url": "https://github.com/lmnr-ai/lmnr",
+   "category": "ops",
+   "group": "Observability & Reliability Operations",
+   "stars": 3270,
+   "tags": [
+    "observability",
+    "tracing",
+    "evals"
+   ],
+   "summary": "Agent-focused observability stack with tracing, evaluation runs, monitoring, and dashboards.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "ACPX",
+   "repo": "openclaw/acpx",
+   "url": "https://github.com/openclaw/acpx",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 3267,
+   "tags": [
+    "acp",
+    "client",
+    "sessions"
+   ],
+   "summary": "Headless CLI client for stateful Agent Client Protocol sessions.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Desloppify",
+   "repo": "peteromallet/desloppify",
+   "url": "https://github.com/peteromallet/desloppify",
+   "category": "ops",
+   "group": "Observability & Reliability Operations",
+   "stars": 3137,
+   "tags": [
+    "quality-gates",
+    "codebase-health",
+    "ci"
+   ],
+   "summary": "Agent-facing codebase quality harness with scans, scoring, LLM review, prioritized fix loops, persistent state, and CI gates.",
+   "lists": [
+    "Picrew/awesome-agent-harness",
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Claude Code Harness",
+   "repo": "Chachamaru127/claude-code-harness",
+   "url": "https://github.com/Chachamaru127/claude-code-harness",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 3125,
+   "tags": [
+    "claude-code",
+    "workflow",
+    "review-loop"
+   ],
+   "summary": "Claude Code development harness that turns agent work into a repeatable spec, plan, work, review, and release loop.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Snyk Agent Scan",
+   "repo": "snyk/agent-scan",
+   "url": "https://github.com/snyk/agent-scan",
+   "category": "ops",
+   "group": "Guardrails, Security & Governance",
+   "stars": 3074,
+   "tags": [
+    "security-scanner",
+    "mcp",
+    "skills"
+   ],
+   "summary": "Security scanner that inventories local agent harnesses, MCP servers, and skills, then checks for prompt injection, tool poisoning, malware payloads, and sensitive-data risks.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Microsoft Agent Skills",
+   "repo": "microsoft/skills",
+   "url": "https://github.com/microsoft/skills",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 3039,
+   "tags": [
+    "skills",
+    "mcp",
+    "official"
+   ],
+   "summary": "Microsoft-maintained skills, custom agents, AGENTS.md templates, and MCP configurations for Azure SDK and Microsoft AI Foundry coding-agent workflows.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "GitAgentProtocol",
+   "repo": "open-gitagent/gitagent-protocol",
+   "url": "https://github.com/open-gitagent/gitagent-protocol",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 2948,
+   "tags": [
+    "standard",
+    "git-native",
+    "workflows"
+   ],
+   "summary": "Git-native, framework-agnostic standard for defining agents, skills, workflows, tools, and runtime memory in repositories.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "OpenGAP",
+   "repo": "open-gitagent/opengap",
+   "url": "https://github.com/open-gitagent/opengap",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 2948,
+   "tags": [
+    "git-native",
+    "cli",
+    "agent-contract"
+   ],
+   "summary": "Reference CLI for the Git Agent Protocol, turning repository files into portable agent manifests, rules, skills, workflows, tools, memory, hooks, and compliance contracts.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "TEAQL Agent Kit",
+   "repo": "teaql/teaql-agent-kit",
+   "url": "https://github.com/teaql/teaql-agent-kit",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": 2812,
+   "tags": [
+    "coding-agent",
+    "evaluation",
+    "auditability"
+   ],
+   "summary": "Controlled evaluation environment for coding agents on auditable business software tasks with API adherence, framework discipline, self-repair, and human-gate metrics.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "OpenLIT",
+   "repo": "openlit/openlit",
+   "url": "https://github.com/openlit/openlit",
+   "category": "ops",
+   "group": "Observability & Reliability Operations",
+   "stars": 2774,
+   "tags": [
+    "opentelemetry",
+    "observability",
+    "evaluations"
+   ],
+   "summary": "OpenTelemetry-native AI engineering platform for LLM and coding-agent observability, evaluations, guardrails, prompt management, secrets, and dashboards.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "NeMo Agent Toolkit",
+   "repo": "NVIDIA/NeMo-Agent-Toolkit",
+   "url": "https://github.com/NVIDIA/NeMo-Agent-Toolkit",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 2636,
+   "tags": [
+    "multi-agent",
+    "optimization",
+    "toolkit"
+   ],
+   "summary": "Open toolkit for connecting and optimizing teams of AI agents.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Apache Burr",
+   "repo": "apache/burr",
+   "url": "https://github.com/apache/burr",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 2553,
+   "tags": [
+    "state-machine",
+    "persistence",
+    "tracing"
+   ],
+   "summary": "State-machine framework for decision-making agents and LLM apps with persistence, telemetry UI, tracing, and framework-agnostic execution.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "claude-code-reverse",
+   "repo": "Yuyz0112/claude-code-reverse",
+   "url": "https://github.com/Yuyz0112/claude-code-reverse",
+   "category": "ops",
+   "group": "Observability & Reliability Operations",
+   "stars": 2431,
+   "tags": [
+    "trace",
+    "visualization",
+    "debugging"
+   ],
+   "summary": "Tooling to visualize and inspect Claude Code LLM interaction traces.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "AX",
+   "repo": "google/ax",
+   "url": "https://github.com/google/ax",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 2358,
+   "tags": [
+    "distributed-runtime",
+    "isolated-actors",
+    "policy"
+   ],
+   "summary": "Google's distributed agent runtime for coordinating agent loops, isolated actors, event logging, auditing, and policy.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "agentic-stack",
+   "repo": "codejunkie99/agentic-stack",
+   "url": "https://github.com/codejunkie99/agentic-stack",
+   "category": "context",
+   "group": "Context & Working-State Engineering",
+   "stars": 2271,
+   "tags": [
+    "cross-harness",
+    "memory",
+    "skills"
+   ],
+   "summary": "Portable memory, skills, protocols, and dashboard layer that keeps state across multiple coding-agent harnesses.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Shannon",
+   "repo": "Kocoro-lab/Shannon",
+   "url": "https://github.com/Kocoro-lab/Shannon",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 2259,
+   "tags": [
+    "multi-agent",
+    "temporal",
+    "sandbox"
+   ],
+   "summary": "Production-oriented multi-agent orchestration framework with Temporal workflows, WASI sandboxing, OPA approvals, token budgets, and OpenTelemetry tracing.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Agent Vault",
+   "repo": "Infisical/agent-vault",
+   "url": "https://github.com/Infisical/agent-vault",
+   "category": "ops",
+   "group": "Guardrails, Security & Governance",
+   "stars": 2241,
+   "tags": [
+    "credentials",
+    "egress-policy",
+    "proxy"
+   ],
+   "summary": "Credential proxy and vault that brokers agent API access without exposing real secrets, with egress filtering and request logging.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Kimchi",
+   "repo": "getkimchi/kimchi",
+   "url": "https://github.com/getkimchi/kimchi",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 2227,
+   "tags": [
+    "terminal",
+    "multi-model",
+    "project-state"
+   ],
+   "summary": "Terminal coding-agent harness with multi-model orchestration roles, phase tracking, persistent project state, and subagent delegation.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Open Cowork",
+   "repo": "OpenCoworkAI/open-cowork",
+   "url": "https://github.com/OpenCoworkAI/open-cowork",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 2160,
+   "tags": [
+    "desktop",
+    "sandbox",
+    "mcp"
+   ],
+   "summary": "Desktop agent app with VM-backed sandboxing, MCP connectors, GUI control, and built-in skill workflows.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "tau2-bench",
+   "repo": "sierra-research/tau2-bench",
+   "url": "https://github.com/sierra-research/tau2-bench",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": 2076,
+   "tags": [
+    "tool-use",
+    "interaction",
+    "benchmark"
+   ],
+   "summary": "Tool-agent-user interaction benchmark emphasizing multi-step execution quality.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Pilot Shell",
+   "repo": "maxritter/pilot-shell",
+   "url": "https://github.com/maxritter/pilot-shell",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 2074,
+   "tags": [
+    "codex",
+    "claude-code",
+    "quality-gates"
+   ],
+   "summary": "Claude Code and Codex workflow harness with spec-driven planning, enforced TDD, persistent memory, quality gates, and reusable skills.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Future AGI",
+   "repo": "future-agi/future-agi",
+   "url": "https://github.com/future-agi/future-agi",
+   "category": "ops",
+   "group": "Observability & Reliability Operations",
+   "stars": 2041,
+   "tags": [
+    "observability",
+    "evaluation",
+    "guardrails"
+   ],
+   "summary": "Self-hostable platform that closes the loop across agent tracing, evaluation, simulation, guardrails, and gateway operations.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Microsoft Learn MCP",
+   "repo": "MicrosoftDocs/mcp",
+   "url": "https://github.com/MicrosoftDocs/mcp",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 1896,
+   "tags": [
+    "mcp",
+    "docs",
+    "grounding"
+   ],
+   "summary": "MCP server and CLI for grounding agents with Microsoft documentation sources.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "ClawManager",
+   "repo": "Yuan-lab-LLM/ClawManager",
+   "url": "https://github.com/Yuan-lab-LLM/ClawManager",
+   "category": "ops",
+   "group": "Guardrails, Security & Governance",
+   "stars": 1896,
+   "tags": [
+    "control-plane",
+    "governance",
+    "runtimes"
+   ],
+   "summary": "Kubernetes-native control plane for governing agent runtimes, AI gateway access, and reusable skills across multiple agent backends.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "tRPC-Agent-Go",
+   "repo": "trpc-group/trpc-agent-go",
+   "url": "https://github.com/trpc-group/trpc-agent-go",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 1810,
+   "tags": [
+    "go",
+    "graph-workflows",
+    "observability"
+   ],
+   "summary": "Go framework for production agent systems with graph workflows, tools, memory, evaluation, protocols, and OpenTelemetry observability.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "stakpak/agent",
+   "repo": "stakpak/agent",
+   "url": "https://github.com/stakpak/agent",
+   "category": "sandbox",
+   "group": "Execution Substrates & Sandboxing",
+   "stars": 1791,
+   "tags": [
+    "always-on",
+    "autonomous",
+    "ops"
+   ],
+   "summary": "Always-on open agent that runs on your machines with autonomous operational loops.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Scion",
+   "repo": "GoogleCloudPlatform/scion",
+   "url": "https://github.com/GoogleCloudPlatform/scion",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 1699,
+   "tags": [
+    "multi-agent",
+    "containers",
+    "orchestration"
+   ],
+   "summary": "Experimental multi-agent orchestration testbed that runs isolated agent harnesses in containers, worktrees, and remote runtimes.",
+   "lists": [
+    "Picrew/awesome-agent-harness",
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "WebArena",
+   "repo": "web-arena-x/webarena",
+   "url": "https://github.com/web-arena-x/webarena",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": 1610,
+   "tags": [
+    "web-agent",
+    "benchmark",
+    "environment"
+   ],
+   "summary": "Self-hostable web environment and evaluation harness for autonomous web agents with reproducible end-to-end tasks.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Meta-Harness",
+   "repo": "stanford-iris-lab/meta-harness",
+   "url": "https://github.com/stanford-iris-lab/meta-harness",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": 1595,
+   "tags": [
+    "harness-search",
+    "optimization",
+    "terminal-bench"
+   ],
+   "summary": "Framework for automated search over task-specific model harnesses, with reference experiments for memory systems and terminal-agent scaffolds.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "deepagentsjs",
+   "repo": "langchain-ai/deepagentsjs",
+   "url": "https://github.com/langchain-ai/deepagentsjs",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 1571,
+   "tags": [
+    "typescript",
+    "langgraph",
+    "subagents"
+   ],
+   "summary": "TypeScript agent harness with built-in planning, filesystem tools, subagents, and LangGraph-native runtime hooks.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Sandbox Agent",
+   "repo": "rivet-dev/sandbox-agent",
+   "url": "https://github.com/rivet-dev/sandbox-agent",
+   "category": "sandbox",
+   "group": "Execution Substrates & Sandboxing",
+   "stars": 1570,
+   "tags": [
+    "sandbox",
+    "coding-agents",
+    "session-schema"
+   ],
+   "summary": "HTTP/SSE control server for running coding agents inside sandboxes with normalized sessions, permissions, event streaming, and replay.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "E2B Desktop Sandbox",
+   "repo": "e2b-dev/desktop",
+   "url": "https://github.com/e2b-dev/desktop",
+   "category": "sandbox",
+   "group": "Execution Substrates & Sandboxing",
+   "stars": 1491,
+   "tags": [
+    "desktop",
+    "sandbox",
+    "computer-use"
+   ],
+   "summary": "Secure virtual desktop sandbox for computer-use agents with SDK control and screen streaming.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "OSS-Fuzz Gen",
+   "repo": "google/oss-fuzz-gen",
+   "url": "https://github.com/google/oss-fuzz-gen",
+   "category": "sandbox",
+   "group": "Execution Substrates & Sandboxing",
+   "stars": 1437,
+   "tags": [
+    "fuzzing",
+    "security",
+    "execution"
+   ],
+   "summary": "LLM-powered fuzzing workflows integrated with controlled execution contexts.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Haft",
+   "repo": "m0n0x41d/haft",
+   "url": "https://github.com/m0n0x41d/haft",
+   "category": "ops",
+   "group": "Guardrails, Security & Governance",
+   "stars": 1393,
+   "tags": [
+    "governance",
+    "decisions",
+    "mcp"
+   ],
+   "summary": "Decision-governance harness that records falsifiable contracts, evidence, and commissions before agents execute.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "oh-my-agent",
+   "repo": "first-fluke/oh-my-agent",
+   "url": "https://github.com/first-fluke/oh-my-agent",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 1315,
+   "tags": [
+    "multi-agent",
+    "skills",
+    "cross-runtime"
+   ],
+   "summary": "Portable multi-agent harness that projects shared agents, skills, workflows, and rules into multiple coding-agent runtimes.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "LiteLLM Agent Control Plane",
+   "repo": "LiteLLM-Labs/litellm-agent-control-plane",
+   "url": "https://github.com/LiteLLM-Labs/litellm-agent-control-plane",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 1293,
+   "tags": [
+    "control-plane",
+    "sessions",
+    "runtime"
+   ],
+   "summary": "Agent control plane that provides one API and UI across OpenCode, Hermes, Claude Managed Agents, Cursor Agents API, DeepAgents, and OpenClaw runtimes.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "OpenInference",
+   "repo": "Arize-ai/openinference",
+   "url": "https://github.com/Arize-ai/openinference",
+   "category": "ops",
+   "group": "Observability & Reliability Operations",
+   "stars": 1225,
+   "tags": [
+    "spec",
+    "instrumentation",
+    "observability"
+   ],
+   "summary": "Open instrumentation specification and tooling for AI observability.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "thClaws",
+   "repo": "thClaws/thClaws",
+   "url": "https://github.com/thClaws/thClaws",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 1224,
+   "tags": [
+    "rust",
+    "workspace",
+    "skills"
+   ],
+   "summary": "Native Rust agent workspace with shared agent loop, sessions, tools, skills, MCP, memory, hooks, and sandboxing.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "NeMo Gym",
+   "repo": "NVIDIA-NeMo/Gym",
+   "url": "https://github.com/NVIDIA-NeMo/Gym",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": 1201,
+   "tags": [
+    "rl-env",
+    "training",
+    "evaluation"
+   ],
+   "summary": "Toolkit for building RL environments suitable for LLM/agent training and eval.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Chorus",
+   "repo": "Chorus-AIDLC/Chorus",
+   "url": "https://github.com/Chorus-AIDLC/Chorus",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 1173,
+   "tags": [
+    "ai-dlc",
+    "permissions",
+    "task-state"
+   ],
+   "summary": "AI-human collaboration harness for session lifecycle, task state, sub-agent orchestration, observability, and recovery.",
+   "lists": [
+    "Picrew/awesome-agent-harness",
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "mini-coding-agent",
+   "repo": "rasbt/mini-coding-agent",
+   "url": "https://github.com/rasbt/mini-coding-agent",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 1169,
+   "tags": [
+    "coding-agent",
+    "minimal",
+    "approvals"
+   ],
+   "summary": "Minimal coding agent harness illustrating approvals, memory, bounded delegation, and durable transcripts.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "AgentBay SDK",
+   "repo": "agentbay-ai/wuying-agentbay-sdk",
+   "url": "https://github.com/agentbay-ai/wuying-agentbay-sdk",
+   "category": "sandbox",
+   "group": "Execution Substrates & Sandboxing",
+   "stars": 1148,
+   "tags": [
+    "cloud-sandbox",
+    "computer-use",
+    "sdk"
+   ],
+   "summary": "Cloud sandbox SDK for agents spanning browser, desktop, mobile, and code execution environments.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "MateClaw",
+   "repo": "matevip/mateclaw",
+   "url": "https://github.com/matevip/mateclaw",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 1117,
+   "tags": [
+    "self-hosted",
+    "approvals",
+    "channels"
+   ],
+   "summary": "Self-hosted multi-user agent harness with StateGraph reasoning, skills, MCP/ACP registry, approvals, audit trail, and channel adapters.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Flock",
+   "repo": "Onelevenvy/flock",
+   "url": "https://github.com/Onelevenvy/flock",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 1110,
+   "tags": [
+    "desktop",
+    "visual-workflow",
+    "sandbox"
+   ],
+   "summary": "Desktop multi-agent harness with visual workflows, local and sandboxed execution, tool approvals, VNC takeover, MCP, skills, and scheduled tasks.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Judgeval",
+   "repo": "JudgmentLabs/judgeval",
+   "url": "https://github.com/JudgmentLabs/judgeval",
+   "category": "ops",
+   "group": "Observability & Reliability Operations",
+   "stars": 1063,
+   "tags": [
+    "tracing",
+    "agent-judges",
+    "monitoring"
+   ],
+   "summary": "Agent improvement SDK with OpenTelemetry tracing, agent judges, online monitoring, replay evaluations, CLI workflows, and MCP access to traces and behaviors.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "ClawKeeper",
+   "repo": "SafeAI-Lab-X/ClawKeeper",
+   "url": "https://github.com/SafeAI-Lab-X/ClawKeeper",
+   "category": "ops",
+   "group": "Guardrails, Security & Governance",
+   "stars": 1020,
+   "tags": [
+    "safety",
+    "runtime-monitoring",
+    "governance"
+   ],
+   "summary": "Safety framework for autonomous agents combining skill-based policies, runtime plugins, and watcher-based governance.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Tensorlake",
+   "repo": "tensorlakeai/tensorlake",
+   "url": "https://github.com/tensorlakeai/tensorlake",
+   "category": "sandbox",
+   "group": "Execution Substrates & Sandboxing",
+   "stars": 1003,
+   "tags": [
+    "microvm",
+    "sandbox",
+    "orchestration"
+   ],
+   "summary": "Serverless runtime for agent sandboxes with MicroVM isolation, snapshots, suspend-resume, and background orchestration.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Pydantic AI Harness",
+   "repo": "pydantic/pydantic-ai-harness",
+   "url": "https://github.com/pydantic/pydantic-ai-harness",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 907,
+   "tags": [
+    "capabilities",
+    "hooks",
+    "pydantic"
+   ],
+   "summary": "Official Pydantic AI capability library for composing tools, lifecycle hooks, instructions, and model settings into reusable agent harnesses.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Agentic Harness Engineering",
+   "repo": "china-qijizhifeng/agentic-harness-engineering",
+   "url": "https://github.com/china-qijizhifeng/agentic-harness-engineering",
+   "category": "ops",
+   "group": "Observability & Reliability Operations",
+   "stars": 896,
+   "tags": [
+    "harness-optimization",
+    "trace-analysis",
+    "terminal-bench"
+   ],
+   "summary": "Observability-driven system for evolving coding-agent harness components through evaluate, analyze, and improve loops.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "codex-autorunner",
+   "repo": "Git-on-my-level/codex-autorunner",
+   "url": "https://github.com/Git-on-my-level/codex-autorunner",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 881,
+   "tags": [
+    "meta-harness",
+    "tickets",
+    "long-running"
+   ],
+   "summary": "Meta-harness that treats tickets as the control plane for long-running coding agents, with queue execution, hub UI, and chat notifications.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "CUGA",
+   "repo": "cuga-project/cuga-agent",
+   "url": "https://github.com/cuga-project/cuga-agent",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 879,
+   "tags": [
+    "enterprise",
+    "policies",
+    "mcp"
+   ],
+   "summary": "Enterprise generalist agent harness with MCP/OpenAPI tools, policy controls, HITL gates, memory, skills, and hybrid API/browser execution.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "AgentScope Runtime",
+   "repo": "agentscope-ai/agentscope-runtime",
+   "url": "https://github.com/agentscope-ai/agentscope-runtime",
+   "category": "sandbox",
+   "group": "Execution Substrates & Sandboxing",
+   "stars": 870,
+   "tags": [
+    "runtime",
+    "sandbox",
+    "deployment"
+   ],
+   "summary": "Production runtime for agent apps with secure tool sandboxes, deployment APIs, observability, and state services.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "DefenseClaw",
+   "repo": "cisco-ai-defense/defenseclaw",
+   "url": "https://github.com/cisco-ai-defense/defenseclaw",
+   "category": "ops",
+   "group": "Guardrails, Security & Governance",
+   "stars": 846,
+   "tags": [
+    "governance",
+    "runtime-guardrails",
+    "audit"
+   ],
+   "summary": "Security governance stack for OpenClaw and agentic runtimes, combining admission control, runtime inspection, CodeGuard checks, sandbox policy, audit logs, and observability export.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "context-space",
+   "repo": "context-space/context-space",
+   "url": "https://github.com/context-space/context-space",
+   "category": "context",
+   "group": "Context & Working-State Engineering",
+   "stars": 814,
+   "tags": [
+    "context",
+    "infrastructure",
+    "mcp"
+   ],
+   "summary": "Infrastructure project focused on context engineering building blocks and MCP-centric integrations.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "ClawBench",
+   "repo": "TIGER-AI-Lab/ClawBench",
+   "url": "https://github.com/TIGER-AI-Lab/ClawBench",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": 801,
+   "tags": [
+    "browser-agent",
+    "benchmark",
+    "recording"
+   ],
+   "summary": "Browser-agent benchmark with live-site tasks, isolated containers, five-layer recording, and agentic scoring.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Memorix",
+   "repo": "AVIDS2/memorix",
+   "url": "https://github.com/AVIDS2/memorix",
+   "category": "context",
+   "group": "Context & Working-State Engineering",
+   "stars": 792,
+   "tags": [
+    "memory",
+    "mcp",
+    "cross-agent"
+   ],
+   "summary": "Local-first cross-agent memory control plane with MCP support, workspace sync, sessions, and orchestration state.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "TheAgentCompany",
+   "repo": "TheAgentCompany/TheAgentCompany",
+   "url": "https://github.com/TheAgentCompany/TheAgentCompany",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": 780,
+   "tags": [
+    "benchmark",
+    "workplace",
+    "multi-step"
+   ],
+   "summary": "Agent benchmark with simulated software-company tasks for evaluating multi-step workplace autonomy.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "CheetahClaws",
+   "repo": "SafeRL-Lab/cheetahclaws",
+   "url": "https://github.com/SafeRL-Lab/cheetahclaws",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 780,
+   "tags": [
+    "coding-agent",
+    "python",
+    "mcp"
+   ],
+   "summary": "Python agent harness infrastructure for long-horizon, multi-model, tool-using coding assistants with MCP, skills, memory, approvals, checkpoints, and bridges.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Claw-Eval",
+   "repo": "claw-eval/claw-eval",
+   "url": "https://github.com/claw-eval/claw-eval",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": 773,
+   "tags": [
+    "benchmark",
+    "trajectory",
+    "safety"
+   ],
+   "summary": "Evaluation harness and benchmark for autonomous agents with human-verified tasks, trajectory auditing, and completion, safety, and robustness rubrics.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Terminal-Bench",
+   "repo": "harbor-framework/terminal-bench",
+   "url": "https://github.com/harbor-framework/terminal-bench",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": 738,
+   "tags": [
+    "terminal",
+    "benchmark",
+    "long-horizon"
+   ],
+   "summary": "Terminal-native benchmark suite for long-horizon, verification-heavy agent tasks.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Inspect Evals",
+   "repo": "UKGovernmentBEIS/inspect_evals",
+   "url": "https://github.com/UKGovernmentBEIS/inspect_evals",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": 675,
+   "tags": [
+    "inspect",
+    "eval-suite",
+    "reproducibility"
+   ],
+   "summary": "Evaluation suite collection for Inspect AI workflows.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Dexto",
+   "repo": "truffle-ai/dexto",
+   "url": "https://github.com/truffle-ai/dexto",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 650,
+   "tags": [
+    "coding-agent",
+    "sessions",
+    "mcp"
+   ],
+   "summary": "Open agent harness for AI applications with YAML configs, stateful sessions, tool orchestration, memory, observability, permissions, and subagents.",
+   "lists": [
+    "Picrew/awesome-agent-harness",
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "SWE-ReX",
+   "repo": "SWE-agent/SWE-ReX",
+   "url": "https://github.com/SWE-agent/SWE-ReX",
+   "category": "sandbox",
+   "group": "Execution Substrates & Sandboxing",
+   "stars": 595,
+   "tags": [
+    "sandbox",
+    "execution",
+    "coding-agent"
+   ],
+   "summary": "Sandboxed execution infrastructure for AI coding agents at local and cloud scale.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "auto-harness",
+   "repo": "neosigmaai/auto-harness",
+   "url": "https://github.com/neosigmaai/auto-harness",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": 537,
+   "tags": [
+    "optimization",
+    "regression",
+    "evals"
+   ],
+   "summary": "Benchmark-gated optimization loop that mines failures, edits agent code, and guards against regressions overnight.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "SWE-Bench Pro",
+   "repo": "scaleapi/SWE-bench_Pro-os",
+   "url": "https://github.com/scaleapi/SWE-bench_Pro-os",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": 527,
+   "tags": [
+    "swe",
+    "benchmark",
+    "long-horizon"
+   ],
+   "summary": "Long-horizon software-engineering benchmark with reproducible Docker-based evaluation for issue-driven coding agents.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "WildClawBench",
+   "repo": "InternLM/WildClawBench",
+   "url": "https://github.com/InternLM/WildClawBench",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": 523,
+   "tags": [
+    "benchmark",
+    "harness-comparison",
+    "multimodal"
+   ],
+   "summary": "In-the-wild benchmark that compares multiple agent harnesses on end-to-end multimodal, coding, safety, and productivity tasks inside a live OpenClaw environment.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "sandboxed.sh",
+   "repo": "Th0rgal/sandboxed.sh",
+   "url": "https://github.com/Th0rgal/sandboxed.sh",
+   "category": "sandbox",
+   "group": "Execution Substrates & Sandboxing",
+   "stars": 513,
+   "tags": [
+    "self-hosted",
+    "isolation",
+    "orchestrator"
+   ],
+   "summary": "Self-hosted orchestrator running coding agents inside isolated Linux workspaces.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Cordum",
+   "repo": "cordum-io/cordum",
+   "url": "https://github.com/cordum-io/cordum",
+   "category": "ops",
+   "group": "Guardrails, Security & Governance",
+   "stars": 508,
+   "tags": [
+    "governance",
+    "approvals",
+    "audit"
+   ],
+   "summary": "Agent control plane for pre-execution policies, approval gates, safety-kernel verdicts, live monitoring, audit trails, and Claude Code compliance firewall hooks.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "OpenClaw.NET",
+   "repo": "clawdotnet/openclaw.net",
+   "url": "https://github.com/clawdotnet/openclaw.net",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 508,
+   "tags": [
+    "dotnet",
+    "gateway",
+    "governance"
+   ],
+   "summary": "NativeAOT-friendly .NET agent runtime and gateway with tools, memory, MCP, governance ledger, evidence bundles, and harness regression tests.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Sponsio",
+   "repo": "SponsioLabs/Sponsio",
+   "url": "https://github.com/SponsioLabs/Sponsio",
+   "category": "ops",
+   "group": "Guardrails, Security & Governance",
+   "stars": 441,
+   "tags": [
+    "contracts",
+    "runtime-safety",
+    "guardrails"
+   ],
+   "summary": "Runtime enforcement layer that checks every agent action against deterministic contracts before execution.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "IBM MCP",
+   "repo": "IBM/mcp",
+   "url": "https://github.com/IBM/mcp",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 405,
+   "tags": [
+    "mcp",
+    "clients",
+    "tooling"
+   ],
+   "summary": "IBM collection of MCP servers, clients, and developer tooling.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Agent Evaluation",
+   "repo": "awslabs/agent-evaluation",
+   "url": "https://github.com/awslabs/agent-evaluation",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": 374,
+   "tags": [
+    "evaluation",
+    "testing",
+    "ci"
+   ],
+   "summary": "AWS framework for testing virtual agents with evaluator-driven multi-turn conversations, hooks, and CI-friendly workflows.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Water",
+   "repo": "manthanguptaa/water",
+   "url": "https://github.com/manthanguptaa/water",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 337,
+   "tags": [
+    "python",
+    "framework",
+    "approval-gates"
+   ],
+   "summary": "Python agent harness framework for orchestration, resilience, observability, guardrails, approval gates, sandboxing, and deployment.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "DashClaw",
+   "repo": "ucsandman/DashClaw",
+   "url": "https://github.com/ucsandman/DashClaw",
+   "category": "ops",
+   "group": "Guardrails, Security & Governance",
+   "stars": 306,
+   "tags": [
+    "approvals",
+    "policy",
+    "audit"
+   ],
+   "summary": "Governance layer that intercepts risky agent actions, enforces policy, routes approvals, and records audit-ready decision trails.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Capsule",
+   "repo": "capsulerun/capsule",
+   "url": "https://github.com/capsulerun/capsule",
+   "category": "sandbox",
+   "group": "Execution Substrates & Sandboxing",
+   "stars": 296,
+   "tags": [
+    "wasm",
+    "sandbox",
+    "task-runtime"
+   ],
+   "summary": "Durable runtime that coordinates agent tasks inside isolated WebAssembly sandboxes with retries and lifecycle tracking.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "WorkArena",
+   "repo": "ServiceNow/WorkArena",
+   "url": "https://github.com/ServiceNow/WorkArena",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": 273,
+   "tags": [
+    "browser",
+    "benchmark",
+    "enterprise"
+   ],
+   "summary": "Browser benchmark for practical enterprise-like knowledge work tasks.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "OmniCoreAgent",
+   "repo": "omnirexflora-labs/omnicoreagent",
+   "url": "https://github.com/omnirexflora-labs/omnicoreagent",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 245,
+   "tags": [
+    "python",
+    "mcp",
+    "serving"
+   ],
+   "summary": "Python production harness with model loop, tools, MCP, memory, workspace files, guardrails, events, subagents, background tasks, and REST/SSE serving.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "agentbox",
+   "repo": "mattolson/agent-sandbox",
+   "url": "https://github.com/mattolson/agent-sandbox",
+   "category": "sandbox",
+   "group": "Execution Substrates & Sandboxing",
+   "stars": 205,
+   "tags": [
+    "sandbox",
+    "coding-agents",
+    "network-policy"
+   ],
+   "summary": "Locked-down local sandbox for AI coding agents with scoped filesystem access, egress policy, secret injection, firewalling, and persistent agent state.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "sd0x-dev-flow",
+   "repo": "sd0xdev/sd0x-dev-flow",
+   "url": "https://github.com/sd0xdev/sd0x-dev-flow",
+   "category": "context",
+   "group": "Context & Working-State Engineering",
+   "stars": 189,
+   "tags": [
+    "hooks",
+    "state-machine",
+    "claude-code"
+   ],
+   "summary": "Claude Code harness layer with hook-enforced dual review, durable state-machine gates, context-compaction recovery, and fail-closed safety.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "HexAgent",
+   "repo": "UnicomAI/hexagent",
+   "url": "https://github.com/UnicomAI/hexagent",
+   "category": "sandbox",
+   "group": "Execution Substrates & Sandboxing",
+   "stars": 142,
+   "tags": [
+    "computer-layer",
+    "sandbox",
+    "runtime"
+   ],
+   "summary": "Agent harness that separates the runtime from the computer it operates on through local, VM, and cloud sandbox backends.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Utah",
+   "repo": "inngest/utah",
+   "url": "https://github.com/inngest/utah",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": 137,
+   "tags": [
+    "durable-execution",
+    "event-driven",
+    "multi-channel"
+   ],
+   "summary": "Inngest-powered durable agent harness with a think-act-observe loop, step-level retries, singleton concurrency, cancellation, and multi-channel adapters.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "hankweave",
+   "repo": "SouthBridgeAI/hankweave-runtime",
+   "url": "https://github.com/SouthBridgeAI/hankweave-runtime",
+   "category": "sdlc",
+   "group": "Harness Architecture & Orchestration",
+   "stars": 135,
+   "tags": [
+    "long-horizon",
+    "runtime",
+    "checkpoints"
+   ],
+   "summary": "Headless-first long-horizon runtime that orchestrates existing agent harnesses with sentinels, loops, checkpoints, and event journals.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "OpenHands Benchmarks",
+   "repo": "OpenHands/benchmarks",
+   "url": "https://github.com/OpenHands/benchmarks",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": 124,
+   "tags": [
+    "openhands",
+    "eval",
+    "harness"
+   ],
+   "summary": "Evaluation harness and benchmark definitions for OpenHands systems.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Tandem",
+   "repo": "frumu-ai/tandem",
+   "url": "https://github.com/frumu-ai/tandem",
+   "category": "ops",
+   "group": "Guardrails, Security & Governance",
+   "stars": 121,
+   "tags": [
+    "runtime-authority",
+    "approvals",
+    "audit"
+   ],
+   "summary": "Governed runtime authority layer for agents with scoped execution, tool visibility, permissioned memory, approval gates, and audit trails.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "AGENT.md",
+   "repo": "agentmd/agent.md",
+   "url": "https://github.com/agentmd/agent.md",
+   "category": "standards",
+   "group": "Protocols, Tool Interfaces & Agent Contracts",
+   "stars": 105,
+   "tags": [
+    "standard",
+    "agent-file",
+    "interoperability"
+   ],
+   "summary": "Standardized machine-readable file format for agentic coding tools.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "terminal-bench-env",
+   "repo": "ucsb-mlsec/terminal-bench-env",
+   "url": "https://github.com/ucsb-mlsec/terminal-bench-env",
+   "category": "sandbox",
+   "group": "Execution Substrates & Sandboxing",
+   "stars": 75,
+   "tags": [
+    "terminal",
+    "benchmark-env",
+    "sandbox"
+   ],
+   "summary": "Environment layer for terminal-agent benchmark execution.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "WebArena-Verified",
+   "repo": "ServiceNow/webarena-verified",
+   "url": "https://github.com/ServiceNow/webarena-verified",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": 60,
+   "tags": [
+    "web-agent",
+    "benchmark",
+    "deterministic"
+   ],
+   "summary": "Verified web-agent benchmark with deterministic evaluators.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "HarnessBench",
+   "repo": "reacher-z/HarnessBench",
+   "url": "https://github.com/reacher-z/HarnessBench",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": 54,
+   "tags": [
+    "harness-comparison",
+    "browser-agent",
+    "benchmark"
+   ],
+   "summary": "Benchmark for comparing agent harnesses on the same everyday web tasks with fixed models and per-harness containers.",
+   "lists": [
+    "Picrew/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Emdash",
+   "repo": "generalaction/emdash",
+   "url": "https://github.com/generalaction/emdash",
+   "category": "sdlc",
+   "group": "Agent Orchestrators",
+   "stars": null,
+   "tags": [],
+   "summary": "Open-source Agentic Development Environment (YC W26). Runs parallel agents in isolated worktrees, locally or over SSH — making the \"corrections are cheap\" principle practical for remote teams.",
+   "lists": [
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Warp",
+   "repo": "warpdotdev/Warp",
+   "url": "https://github.com/warpdotdev/Warp",
+   "category": "sdlc",
+   "group": "Agent Orchestrators",
+   "stars": null,
+   "tags": [],
+   "summary": "Agentic development environment built for coding with multiple AI agents.",
+   "lists": [
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Oh My OpenCode",
+   "repo": "code-yeongyu/oh-my-opencode",
+   "url": "https://github.com/code-yeongyu/oh-my-opencode",
+   "category": "sdlc",
+   "group": "Agent Orchestrators",
+   "stars": null,
+   "tags": [],
+   "summary": "Performance optimization harness for OpenCode with 44 lifecycle hooks.",
+   "lists": [
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Everything Claude Code",
+   "repo": "affaan-m/everything-claude-code",
+   "url": "https://github.com/affaan-m/everything-claude-code",
+   "category": "sdlc",
+   "group": "Agent Orchestrators",
+   "stars": null,
+   "tags": [],
+   "summary": "Skills, instincts, memory, and security harness for Claude Code and Codex.",
+   "lists": [
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Desplega Agent Swarm",
+   "repo": "desplega-ai/agent-swarm",
+   "url": "https://github.com/desplega-ai/agent-swarm",
+   "category": "sdlc",
+   "group": "Agent Orchestrators",
+   "stars": null,
+   "tags": [],
+   "summary": "Open-source multi-agent orchestration framework. Coordinates specialized AI agents (Claude Code-powered) through task delegation, session continuity, shared memory, and service discovery. Features include epics, scheduling, Slack integration, and cross-agent communication channels.",
+   "lists": [
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Composio Agent Orchestrator",
+   "repo": "ComposioHQ/agent-orchestrator",
+   "url": "https://github.com/ComposioHQ/agent-orchestrator",
+   "category": "sdlc",
+   "group": "Agent Orchestrators",
+   "stars": null,
+   "tags": [],
+   "summary": "Agentic orchestrator for parallel coding agents. Plans tasks, spawns agents in isolated worktrees, autonomously handles CI fixes, merge conflicts, and code reviews.",
+   "lists": [
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Oh My AG",
+   "repo": "first-fluke/oh-my-ag",
+   "url": "https://github.com/first-fluke/oh-my-ag",
+   "category": "sdlc",
+   "group": "Agent Orchestrators",
+   "stars": null,
+   "tags": [],
+   "summary": "Multi-agent harness for Google Antigravity with 6 specialized agents.",
+   "lists": [
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "ruflo",
+   "repo": "ruflo-ai/ruflo",
+   "url": "https://github.com/ruflo-ai/ruflo",
+   "category": "sdlc",
+   "group": "Agent Orchestrators",
+   "stars": null,
+   "tags": [],
+   "summary": "Claude agent orchestration with swarm mode. Coordinates multiple Claude Code agents for parallel task execution.",
+   "lists": [
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Octogent",
+   "repo": "hesamsheikh/octogent",
+   "url": "https://github.com/hesamsheikh/octogent",
+   "category": "sdlc",
+   "group": "Agent Orchestrators",
+   "stars": null,
+   "tags": [],
+   "summary": "Claude Code multi-agent orchestration dashboard. Humans control worker agents directly from the orchestration layer with real-time visibility into parallel execution.",
+   "lists": [
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Baton",
+   "repo": "shayne-snap/baton",
+   "url": "https://github.com/shayne-snap/baton",
+   "category": "sdlc",
+   "group": "Task Runners",
+   "stars": null,
+   "tags": [],
+   "summary": "Go implementation of Symphony. Polls Linear for claimable issues, spawns isolated Codex workspaces per issue, streams workflow prompts, and cleans up on completion.",
+   "lists": [
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Linear Coding Agent Harness",
+   "repo": "coleam00/Linear-Coding-Agent-Harness",
+   "url": "https://github.com/coleam00/Linear-Coding-Agent-Harness",
+   "category": "sdlc",
+   "group": "Task Runners",
+   "stars": null,
+   "tags": [],
+   "summary": "Linear → autonomous coding agent → PR pipeline.",
+   "lists": [
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Axon",
+   "repo": "axon-core/axon",
+   "url": "https://github.com/axon-core/axon",
+   "category": "sdlc",
+   "group": "Task Runners",
+   "stars": null,
+   "tags": [],
+   "summary": "Kubernetes-native framework. Apply a Task CRD, get back a PR and cost in USD. TaskSpawner watches GitHub Issues.",
+   "lists": [
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "ralph",
+   "repo": "snarktank/ralph",
+   "url": "https://github.com/snarktank/ralph",
+   "category": "sdlc",
+   "group": "Task Runners",
+   "stars": null,
+   "tags": [],
+   "summary": "PRD-driven autonomous agent loop. Runs until all PRD items are completed, bridging spec-to-execution for single-agent workflows.",
+   "lists": [
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Gambit",
+   "repo": "bolt-foundry/gambit",
+   "url": "https://github.com/bolt-foundry/gambit",
+   "category": "runtime",
+   "group": "Agent Harness Frameworks",
+   "stars": null,
+   "tags": [],
+   "summary": "Framework for building, running, and verifying LLM workflows.",
+   "lists": [
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Harness Kit",
+   "repo": "deepklarity/harness-kit",
+   "url": "https://github.com/deepklarity/harness-kit",
+   "category": "runtime",
+   "group": "Agent Harness Frameworks",
+   "stars": null,
+   "tags": [],
+   "summary": "Patterns and engineering practices for building with AI agents.",
+   "lists": [
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Bridle",
+   "repo": "neiii/bridle",
+   "url": "https://github.com/neiii/bridle",
+   "category": "runtime",
+   "group": "Agent Harness Frameworks",
+   "stars": null,
+   "tags": [],
+   "summary": "TUI/CLI config manager for agent harnesses (Amp, Claude Code, OpenCode, Goose, Copilot CLI, Droid).",
+   "lists": [
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Zylos",
+   "repo": "zylos-ai/zylos-core",
+   "url": "https://github.com/zylos-ai/zylos-core",
+   "category": "runtime",
+   "group": "Agent Harness Frameworks",
+   "stars": null,
+   "tags": [],
+   "summary": "Persistent agent harness for Claude Code. Tiered memory system, skill-based progressive disclosure, multi-channel communication bridge, task scheduler, and activity monitor — enabling autonomous, long-running agents that remember across sessions.",
+   "lists": [
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "GenericAgent",
+   "repo": "lsdefine/GenericAgent",
+   "url": "https://github.com/lsdefine/GenericAgent",
+   "category": "runtime",
+   "group": "Agent Harness Frameworks",
+   "stars": null,
+   "tags": [],
+   "summary": "Self-evolving agent framework. Grows a skill tree from 3.3K lines of seed code, achieving 6x token efficiency reduction through learned capabilities.",
+   "lists": [
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "EvoMap Evolver",
+   "repo": "EvoMap/evolver",
+   "url": "https://github.com/EvoMap/evolver",
+   "category": "runtime",
+   "group": "Agent Harness Frameworks",
+   "stars": null,
+   "tags": [],
+   "summary": "Genome Evolution Protocol (GEP) engine for agent self-evolution. Applies evolutionary algorithms to optimize agent behavior and harness configuration over time.",
+   "lists": [
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "get-shit-done",
+   "repo": "gsd-build/get-shit-done",
+   "url": "https://github.com/gsd-build/get-shit-done",
+   "category": "runtime",
+   "group": "Agent Harness Frameworks",
+   "stars": null,
+   "tags": [],
+   "summary": "Meta-prompting and context engineering system for Claude Code. Structures work as milestone→phase→plan with progressive context delivery.",
+   "lists": [
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Nanoclaw",
+   "repo": "qwibitai/nanoclaw",
+   "url": "https://github.com/qwibitai/nanoclaw",
+   "category": "runtime",
+   "group": "Agent Runtimes",
+   "stars": null,
+   "tags": [],
+   "summary": "Lightweight alternative to OpenClaw that runs in containers. Connects to WhatsApp, Telegram, and other channels with a security-first, container-based isolation model.",
+   "lists": [
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "cq",
+   "repo": "nicholasgasior/cq",
+   "url": "https://github.com/nicholasgasior/cq",
+   "category": "context",
+   "group": "Agent Knowledge & Memory",
+   "stars": null,
+   "tags": [],
+   "summary": "Mozilla developer project enabling AI coding agents to share learned knowledge. A commons where agents deposit and retrieve solutions, avoiding redundant problem-solving. Has Claude Code and OpenCode plugins.",
+   "lists": [
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Honcho",
+   "repo": "plastic-labs/honcho",
+   "url": "https://github.com/plastic-labs/honcho",
+   "category": "context",
+   "group": "Agent Knowledge & Memory",
+   "stars": null,
+   "tags": [],
+   "summary": "Agent state memory library. Provides the persistence layer for stateful agents — session history, user context, and learned preferences.",
+   "lists": [
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "CodeBurn",
+   "repo": "AgentSeal/codeburn",
+   "url": "https://github.com/AgentSeal/codeburn",
+   "category": "context",
+   "group": "Agent Knowledge & Memory",
+   "stars": null,
+   "tags": [],
+   "summary": "Claude Code token usage analytics. Breaks down token consumption by task, enabling cost attribution and optimization.",
+   "lists": [
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "OpenCode",
+   "repo": "sst/opencode",
+   "url": "https://github.com/sst/opencode",
+   "category": "runtime",
+   "group": "Coding Agents",
+   "stars": null,
+   "tags": [],
+   "summary": "Open-source coding agent with a plugin system (44 lifecycle hooks), server mode HTTP API, and TypeScript SDK. The most extensible harness integration point for custom workflows.",
+   "lists": [
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Aider",
+   "repo": "paul-gauthier/aider",
+   "url": "https://github.com/paul-gauthier/aider",
+   "category": "runtime",
+   "group": "Coding Agents",
+   "stars": null,
+   "tags": [],
+   "summary": "AI pair programming in your terminal.",
+   "lists": [
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Pi Mono",
+   "repo": "badlogic/pi-mono",
+   "url": "https://github.com/badlogic/pi-mono",
+   "category": "runtime",
+   "group": "Coding Agents",
+   "stars": null,
+   "tags": [],
+   "summary": "AI agent toolkit: coding agent CLI, unified LLM API, TUI & web UI libraries, Slack bot, vLLM pods. Full-stack agent infrastructure in a single monorepo.",
+   "lists": [
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "OpenSpec",
+   "repo": "FissionAI/openspec",
+   "url": "https://github.com/FissionAI/openspec",
+   "category": "standards",
+   "group": "Requirements & Spec Tools",
+   "stars": null,
+   "tags": [],
+   "summary": "Spec-driven development CLI. Generate structured specs from natural language.",
+   "lists": [
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "Open Pencil",
+   "repo": "open-pencil/open-pencil",
+   "url": "https://github.com/open-pencil/open-pencil",
+   "category": "standards",
+   "group": "Requirements & Spec Tools",
+   "stars": null,
+   "tags": [],
+   "summary": "Open-source AI-native design editor (MIT). 75+ tools and an MCP server let coding agents read/write .fig files headlessly.",
+   "lists": [
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "GitAgent",
+   "repo": "open-gitagent/gitagent",
+   "url": "https://github.com/open-gitagent/gitagent",
+   "category": "standards",
+   "group": "Standards & Protocols",
+   "stars": null,
+   "tags": [],
+   "summary": "Git-native, framework-agnostic standard for defining AI agents. Your repo is the agent: agent.yaml manifest + SOUL.md identity + RULES.md constraints.",
+   "lists": [
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  },
+  {
+   "name": "HXA-Connect",
+   "repo": "coco-xyz/hxa-connect",
+   "url": "https://github.com/coco-xyz/hxa-connect",
+   "category": "standards",
+   "group": "Standards & Protocols",
+   "stars": null,
+   "tags": [],
+   "summary": "B2B messaging hub for AI agents. WebSocket-based real-time communication with org-scoped authentication, collaboration threads, @mention routing, and reply-to threading. Enables multi-agent coordination across different harnesses.",
+   "lists": [
+    "AutoJunjie/awesome-agent-harness"
+   ]
+  }
+ ]
+}

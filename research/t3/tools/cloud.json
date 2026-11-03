@@ -1,0 +1,364 @@
+{
+ "category": "cloud",
+ "checked": "2026-11-03",
+ "tools": [
+  {
+   "id": "claude-managed-agents",
+   "name": "Claude Managed Agents",
+   "kind": "commercial",
+   "vendor": "Anthropic",
+   "repo": null,
+   "url": "https://docs.claude.com",
+   "license": "Proprietary",
+   "pricing": "API usage plus runtime (beta)",
+   "status": "beta",
+   "tier": "deep",
+   "summary": "Anthropic-hosted agent harness with a managed sandbox: you define the agent (model, tools, skills, MCP) and Anthropic runs sessions in its containers. Beta header managed-agents-2026-04-01; not covered by zero-data-retention.",
+   "how": "Create an agent and environment through the API; start sessions; stream events; the harness and sandbox are operated by Anthropic.",
+   "features": [
+    "Hosted harness and sandbox",
+    "Skills and MCP",
+    "Session events",
+    "Session events stream",
+    "Environments define packages and network access"
+   ],
+   "strengths": [
+    "No infrastructure to run",
+    "Same agent loop as Claude Code with Anthropic-run scaling",
+    "Built-in tool set (bash, files, web) without building a runtime"
+   ],
+   "weaknesses": [
+    "Beta; no ZDR; code leaves Azm infrastructure",
+    "Single model vendor"
+   ],
+   "gaps": [
+    "Cross-vendor comparison"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Candidate runtime for autonomous channel agents if data policy allows."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 2,
+    "openness": 1,
+    "agnostic": 1,
+    "config": 3,
+    "measure": 2,
+    "safety": 4
+   },
+   "links": [
+    [
+     "Docs",
+     "https://docs.claude.com"
+    ]
+   ],
+   "sources": [
+    "https://docs.claude.com",
+    "https://code.claude.com/docs"
+   ],
+   "category": "cloud"
+  },
+  {
+   "id": "codex-cloud",
+   "name": "Codex cloud",
+   "kind": "commercial",
+   "vendor": "OpenAI",
+   "repo": null,
+   "url": "https://chatgpt.com/codex",
+   "license": "Proprietary",
+   "pricing": "ChatGPT plans",
+   "summary": "Cloud coding agent that runs tasks in OpenAI-hosted containers in parallel and opens PRs.",
+   "how": "Connect GitHub; tasks from web, IDE or Slack.",
+   "features": [
+    "Parallel cloud tasks",
+    "PRs"
+   ],
+   "strengths": [
+    "Zero setup"
+   ],
+   "weaknesses": [
+    "Code on vendor cloud"
+   ],
+   "gaps": [
+    "—"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Comparison point for squad-kit's autonomous mode."
+   },
+   "scores": {
+    "fit": 2,
+    "maturity": 4,
+    "openness": 1,
+    "agnostic": 1,
+    "config": 2,
+    "measure": 1,
+    "safety": 4
+   },
+   "links": [
+    [
+     "Website",
+     "https://chatgpt.com/codex"
+    ]
+   ],
+   "sources": [
+    "https://developers.openai.com/codex"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "cloud"
+  },
+  {
+   "id": "copilot-coding-agent",
+   "name": "GitHub Copilot coding agent",
+   "kind": "commercial",
+   "vendor": "GitHub",
+   "repo": null,
+   "url": "https://docs.github.com/copilot",
+   "license": "Proprietary",
+   "pricing": "Copilot plans",
+   "summary": "Assign an issue to Copilot; it works in a GitHub Actions environment and opens a PR. GitHub publishes how it evaluates its harness across models.",
+   "how": "Runs in Actions runners with firewall; custom instructions and MCP.",
+   "features": [
+    "Issue → PR",
+    "Actions runtime"
+   ],
+   "strengths": [
+    "Native to GitHub"
+   ],
+   "weaknesses": [
+    "GitHub only"
+   ],
+   "gaps": [
+    "—"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Comparison point; its published eval method is a model for Azm."
+   },
+   "scores": {
+    "fit": 2,
+    "maturity": 4,
+    "openness": 1,
+    "agnostic": 2,
+    "config": 3,
+    "measure": 2,
+    "safety": 4
+   },
+   "links": [
+    [
+     "Eval method",
+     "https://github.blog/ai-and-ml/github-copilot/evaluating-performance-and-efficiency-of-the-github-copilot-agentic-harness-across-models-and-tasks/"
+    ]
+   ],
+   "sources": [
+    "https://github.blog/ai-and-ml/github-copilot/evaluating-performance-and-efficiency-of-the-github-copilot-agentic-harness-across-models-and-tasks/"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "cloud"
+  },
+  {
+   "id": "cursor-cloud-agents",
+   "name": "Cursor cloud agents",
+   "kind": "commercial",
+   "vendor": "Anysphere",
+   "repo": null,
+   "url": "https://cursor.com",
+   "license": "Proprietary",
+   "pricing": "Cursor plans",
+   "summary": "Background agents that run in Cursor-hosted VMs, triggered from the IDE, web, Slack or Linear.",
+   "how": "Remote environments configured per repo.",
+   "features": [
+    "Remote VMs",
+    "Slack/Linear triggers"
+   ],
+   "strengths": [
+    "Channel triggers"
+   ],
+   "weaknesses": [
+    "Vendor lock-in"
+   ],
+   "gaps": [
+    "—"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Comparison point."
+   },
+   "scores": {
+    "fit": 2,
+    "maturity": 4,
+    "openness": 1,
+    "agnostic": 2,
+    "config": 2,
+    "measure": 1,
+    "safety": 3
+   },
+   "links": [
+    [
+     "Website",
+     "https://cursor.com"
+    ]
+   ],
+   "sources": [
+    "https://cursor.com"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "cloud"
+  },
+  {
+   "id": "claude-code-web",
+   "name": "Claude Code on the web",
+   "kind": "commercial",
+   "vendor": "Anthropic",
+   "repo": null,
+   "url": "https://claude.ai/code",
+   "license": "Proprietary",
+   "pricing": "Claude plans",
+   "summary": "Claude Code sessions in Anthropic-hosted sandboxes, started from the browser or phone, with GitHub integration.",
+   "how": "Cloud environment per session with network policy.",
+   "features": [
+    "Hosted sessions",
+    "Network policies"
+   ],
+   "strengths": [
+    "Same harness as local"
+   ],
+   "weaknesses": [
+    "Vendor cloud"
+   ],
+   "gaps": [
+    "—"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Comparison point."
+   },
+   "scores": {
+    "fit": 2,
+    "maturity": 3,
+    "openness": 1,
+    "agnostic": 1,
+    "config": 3,
+    "measure": 1,
+    "safety": 4
+   },
+   "links": [
+    [
+     "Website",
+     "https://claude.ai/code"
+    ]
+   ],
+   "sources": [
+    "https://code.claude.com/docs"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "cloud"
+  },
+  {
+   "id": "jules",
+   "name": "Jules",
+   "kind": "commercial",
+   "vendor": "Google",
+   "repo": null,
+   "url": "https://jules.google",
+   "license": "Proprietary",
+   "pricing": "Google plans",
+   "summary": "Google's asynchronous coding agent that works in cloud VMs on GitHub repos.",
+   "how": "Tasks from web; plans shown before execution.",
+   "features": [
+    "Async tasks",
+    "Plan approval"
+   ],
+   "strengths": [
+    "Gemini models"
+   ],
+   "weaknesses": [
+    "Vendor cloud"
+   ],
+   "gaps": [
+    "—"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Comparison point."
+   },
+   "scores": {
+    "fit": 2,
+    "maturity": 3,
+    "openness": 1,
+    "agnostic": 1,
+    "config": 2,
+    "measure": 1,
+    "safety": 3
+   },
+   "links": [
+    [
+     "Website",
+     "https://jules.google"
+    ]
+   ],
+   "sources": [
+    "https://jules.google"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "cloud"
+  },
+  {
+   "id": "devin",
+   "name": "Devin",
+   "kind": "commercial",
+   "vendor": "Cognition",
+   "repo": null,
+   "url": "https://devin.ai",
+   "license": "Proprietary",
+   "pricing": "Team/Enterprise plans",
+   "summary": "Autonomous software engineer with its own cloud workspace, Slack interface and knowledge base.",
+   "how": "Sessions from Slack/web; playbooks; VPC option for enterprise.",
+   "features": [
+    "Slack-first",
+    "Playbooks",
+    "Enterprise VPC"
+   ],
+   "strengths": [
+    "Channel-native autonomous agent"
+   ],
+   "weaknesses": [
+    "Cost; closed"
+   ],
+   "gaps": [
+    "—"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Reference for channel-based autonomous agents."
+   },
+   "scores": {
+    "fit": 2,
+    "maturity": 4,
+    "openness": 1,
+    "agnostic": 1,
+    "config": 3,
+    "measure": 1,
+    "safety": 3
+   },
+   "links": [
+    [
+     "Website",
+     "https://devin.ai"
+    ]
+   ],
+   "sources": [
+    "https://devin.ai"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "cloud"
+  }
+ ]
+}

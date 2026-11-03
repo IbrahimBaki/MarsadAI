@@ -13,6 +13,18 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  // Focus mode (see src/lib/focus.ts): the plain home opens the research hub.
+  async redirects() {
+    if (process.env.NEXT_PUBLIC_MARSAD_FOCUS === "off") return [];
+    return [
+      {
+        source: "/",
+        missing: [{ type: "query", key: "v" }],
+        destination: "/research",
+        permanent: false,
+      },
+    ];
+  },
   async headers() {
     return [
       {

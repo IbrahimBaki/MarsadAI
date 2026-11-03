@@ -1,0 +1,416 @@
+{
+ "category": "ops",
+ "checked": "2026-11-03",
+ "tools": [
+  {
+   "id": "langfuse",
+   "name": "Langfuse",
+   "kind": "open-core",
+   "vendor": "Langfuse (ClickHouse)",
+   "repo": "langfuse/langfuse",
+   "url": "https://langfuse.com",
+   "license": "MIT core; enterprise features under EE license",
+   "pricing": "Self-host free; cloud plans",
+   "version": "v4.74.0",
+   "tier": "deep",
+   "summary": "Open-source LLM engineering platform: tracing, sessions, cost and latency, evaluations (LLM-judge, human, datasets) and prompt management; OpenTelemetry-native.",
+   "how": "Send traces via SDKs or OTel; group by session/user; attach scores; run dataset experiments.",
+   "features": [
+    "Tracing via OpenTelemetry",
+    "Cost and token tracking",
+    "Datasets and experiments",
+    "Self-hostable"
+   ],
+   "strengths": [
+    "De-facto open standard for LLM observability",
+    "Self-hostable, MIT core",
+    "Datasets and experiments allow regression comparisons between harness versions"
+   ],
+   "weaknesses": [
+    "Some enterprise features licensed",
+    "Self-hosting needs ClickHouse, Postgres, Redis and object storage"
+   ],
+   "gaps": [
+    "Harness-level comparisons out of the box"
+   ],
+   "fit": {
+    "verdict": "adopt",
+    "role": "Observability store for sandbox runs and for squad-kit in production (OTel from Claude Code → Langfuse)."
+   },
+   "scores": {
+    "fit": 4,
+    "maturity": 5,
+    "openness": 4,
+    "agnostic": 5,
+    "config": 4,
+    "measure": 5,
+    "safety": 3
+   },
+   "links": [
+    [
+     "Website",
+     "https://langfuse.com"
+    ],
+    [
+     "GitHub",
+     "https://github.com/langfuse/langfuse"
+    ]
+   ],
+   "sources": [
+    "https://github.com/langfuse/langfuse",
+    "https://langfuse.com/docs"
+   ],
+   "status": "active",
+   "category": "ops"
+  },
+  {
+   "id": "phoenix",
+   "name": "Arize Phoenix",
+   "kind": "open-core",
+   "vendor": "Arize",
+   "repo": "Arize-ai/phoenix",
+   "url": "https://phoenix.arize.com",
+   "license": "Elastic License 2.0",
+   "pricing": "Self-host free",
+   "summary": "OTel-based tracing and evaluation for LLM apps and agents.",
+   "how": "OpenInference instrumentation; evals and experiments.",
+   "features": [
+    "OTel tracing",
+    "Evals"
+   ],
+   "strengths": [
+    "Strong evals"
+   ],
+   "weaknesses": [
+    "ELv2 limits offering as a service"
+   ],
+   "gaps": [
+    "—"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Alternative to Langfuse."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 4,
+    "openness": 3,
+    "agnostic": 5,
+    "config": 3,
+    "measure": 5,
+    "safety": 2
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/Arize-ai/phoenix"
+    ]
+   ],
+   "sources": [
+    "https://github.com/Arize-ai/phoenix"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "ops"
+  },
+  {
+   "id": "litellm",
+   "name": "LiteLLM Proxy",
+   "kind": "open-core",
+   "vendor": "BerriAI",
+   "repo": "BerriAI/litellm",
+   "url": "https://litellm.ai",
+   "license": "MIT (enterprise/ directory licensed separately)",
+   "pricing": "Open source free; enterprise plans",
+   "summary": "An OpenAI-compatible gateway to 100+ model providers with keys, budgets, rate limits, logging and cost tracking; used by Fullscript and AWS benchmarks to route harnesses to many models.",
+   "how": "Run the proxy; point harnesses at it; set virtual keys and budgets per team.",
+   "features": [
+    "One API for all providers",
+    "Per-team keys and budgets",
+    "Cost logging"
+   ],
+   "strengths": [
+    "Lets any harness use any model in the sandbox"
+   ],
+   "weaknesses": [
+    "Ops overhead"
+   ],
+   "gaps": [
+    "—"
+   ],
+   "fit": {
+    "verdict": "adopt",
+    "role": "Model gateway for the sandbox (and for per-team budgets later)."
+   },
+   "scores": {
+    "fit": 4,
+    "maturity": 5,
+    "openness": 4,
+    "agnostic": 5,
+    "config": 5,
+    "measure": 4,
+    "safety": 3
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/BerriAI/litellm"
+    ]
+   ],
+   "sources": [
+    "https://github.com/BerriAI/litellm"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "ops"
+  },
+  {
+   "id": "agent-governance-toolkit",
+   "name": "Microsoft Agent Governance Toolkit",
+   "kind": "open-source",
+   "vendor": "Microsoft",
+   "repo": "microsoft/agent-governance-toolkit",
+   "url": "https://github.com/microsoft/agent-governance-toolkit",
+   "license": "MIT",
+   "pricing": "Free",
+   "version": "v5.0.0",
+   "summary": "Policy enforcement, identity, sandboxing and audit for autonomous agents across frameworks.",
+   "how": "Middleware that checks actions against policies and logs them.",
+   "features": [
+    "Policies",
+    "Audit trail",
+    "Framework adapters"
+   ],
+   "strengths": [
+    "Governance for channel agents"
+   ],
+   "weaknesses": [
+    "Breadth over depth"
+   ],
+   "gaps": [
+    "—"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Governance layer for autonomous agents."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 3,
+    "openness": 5,
+    "agnostic": 4,
+    "config": 4,
+    "measure": 2,
+    "safety": 4
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/microsoft/agent-governance-toolkit"
+    ]
+   ],
+   "sources": [
+    "https://github.com/microsoft/agent-governance-toolkit"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "ops"
+  },
+  {
+   "id": "skillspector",
+   "name": "NVIDIA SkillSpector",
+   "kind": "open-source",
+   "vendor": "NVIDIA",
+   "repo": "NVIDIA/SkillSpector",
+   "url": "https://github.com/NVIDIA/SkillSpector",
+   "license": "Apache-2.0",
+   "pricing": "Free",
+   "summary": "Scans agent skills for security issues and quality problems before you install them.",
+   "how": "Static and model-assisted checks over SKILL.md and scripts.",
+   "features": [
+    "Skill security scan"
+   ],
+   "strengths": [
+    "Gate for Track 1 skill packages"
+   ],
+   "weaknesses": [
+    "New"
+   ],
+   "gaps": [
+    "—"
+   ],
+   "fit": {
+    "verdict": "adopt-part",
+    "role": "Run on every Azm skill/standard package before publishing."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 2,
+    "openness": 5,
+    "agnostic": 5,
+    "config": 3,
+    "measure": 2,
+    "safety": 5
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/NVIDIA/SkillSpector"
+    ]
+   ],
+   "sources": [
+    "https://github.com/NVIDIA/SkillSpector"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "ops"
+  },
+  {
+   "id": "agent-scan",
+   "name": "Snyk Agent Scan (formerly mcp-scan)",
+   "kind": "open-source",
+   "vendor": "Snyk (Invariant Labs)",
+   "repo": "snyk/agent-scan",
+   "url": "https://github.com/snyk/agent-scan",
+   "license": "Apache-2.0",
+   "pricing": "Free",
+   "summary": "Scans installed agents, MCP servers and skills for prompt injection, tool poisoning and toxic flows.",
+   "how": "CLI inspects configs on the machine.",
+   "features": [
+    "MCP and skill scanning"
+   ],
+   "strengths": [
+    "Security gate"
+   ],
+   "weaknesses": [
+    "—"
+   ],
+   "gaps": [
+    "—"
+   ],
+   "fit": {
+    "verdict": "adopt-part",
+    "role": "Security check in the sandbox setup step."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 3,
+    "openness": 5,
+    "agnostic": 5,
+    "config": 2,
+    "measure": 2,
+    "safety": 5
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/snyk/agent-scan"
+    ]
+   ],
+   "sources": [
+    "https://github.com/snyk/agent-scan"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "ops"
+  },
+  {
+   "id": "agent-vault",
+   "name": "Infisical Agent Vault",
+   "kind": "open-core",
+   "vendor": "Infisical",
+   "repo": "Infisical/agent-vault",
+   "url": "https://github.com/Infisical/agent-vault",
+   "license": "MIT core + EE",
+   "pricing": "Free core",
+   "summary": "A credential proxy so agents use secrets without ever seeing them.",
+   "how": "Agents call through a proxy that injects credentials.",
+   "features": [
+    "Secret brokering"
+   ],
+   "strengths": [
+    "Keeps keys out of sandboxes"
+   ],
+   "weaknesses": [
+    "—"
+   ],
+   "gaps": [
+    "—"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Secrets pattern for sandbox and channel agents."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 2,
+    "openness": 4,
+    "agnostic": 5,
+    "config": 3,
+    "measure": 1,
+    "safety": 5
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/Infisical/agent-vault"
+    ]
+   ],
+   "sources": [
+    "https://github.com/Infisical/agent-vault"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "ops"
+  },
+  {
+   "id": "skillopt",
+   "name": "Microsoft SkillOpt",
+   "kind": "open-source",
+   "vendor": "Microsoft",
+   "repo": "microsoft/SkillOpt",
+   "url": "https://github.com/microsoft/SkillOpt",
+   "license": "MIT",
+   "pricing": "Free",
+   "summary": "Optimises agent skills automatically against evaluation tasks.",
+   "how": "Iteratively rewrites skills and keeps versions that score better.",
+   "features": [
+    "Skill optimisation loop"
+   ],
+   "strengths": [
+    "Links Track 1 skills with Track 3 evals"
+   ],
+   "weaknesses": [
+    "Early (v0.2)"
+   ],
+   "gaps": [
+    "—"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Phase 2: tune Azm skills in the sandbox."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 1,
+    "openness": 5,
+    "agnostic": 4,
+    "config": 3,
+    "measure": 4,
+    "safety": 2
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/microsoft/SkillOpt"
+    ]
+   ],
+   "sources": [
+    "https://github.com/microsoft/SkillOpt"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "ops"
+  }
+ ]
+}

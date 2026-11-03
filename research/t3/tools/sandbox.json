@@ -1,0 +1,1001 @@
+{
+ "category": "sandbox",
+ "checked": "2026-11-03",
+ "tools": [
+  {
+   "id": "e2b",
+   "name": "E2B",
+   "kind": "open-core",
+   "vendor": "E2B",
+   "repo": "e2b-dev/E2B",
+   "url": "https://e2b.dev",
+   "license": "Apache-2.0 (SDK and infra)",
+   "pricing": "Hobby free with credits; Pro $150/mo; ~$0.0504/vCPU-h usage; BYOC / self-host on Enterprise (Sept 2026)",
+   "tier": "deep",
+   "summary": "Firecracker microVM sandboxes for AI agents with ~150 ms start, Python/JS SDKs and a code-interpreter API. The infrastructure is open source and can be self-hosted (GCP/AWS via Terraform) or run as BYOC.",
+   "how": "An SDK call creates a sandbox from a template (a Dockerfile built into a microVM image); the agent runs commands, reads/writes files and can pause/resume. Templates let you preinstall Claude Code, Codex or a project's toolchain.",
+   "features": [
+    "Firecracker microVM isolation",
+    "Custom templates from Dockerfiles",
+    "Pause/resume, file system and process APIs",
+    "Self-hostable infra (Apache-2.0); BYOC"
+   ],
+   "strengths": [
+    "Most widely used agent sandbox; CubeSandbox and others copy its API",
+    "Strong isolation (microVM)",
+    "Self-host option keeps code on Azm infrastructure"
+   ],
+   "weaknesses": [
+    "Self-hosting is non-trivial (Nomad, Firecracker hosts)",
+    "Session length limits on lower tiers"
+   ],
+   "gaps": [
+    "Benchmark orchestration (use Harbor on top)"
+   ],
+   "fit": {
+    "verdict": "adopt-part",
+    "role": "Primary candidate for cloud/self-hosted isolation of harness runs; start with the managed service, move to self-host/BYOC for private code."
+   },
+   "scores": {
+    "fit": 4,
+    "maturity": 4,
+    "openness": 4,
+    "agnostic": 5,
+    "config": 4,
+    "measure": 2,
+    "safety": 5
+   },
+   "links": [
+    [
+     "Website",
+     "https://e2b.dev"
+    ],
+    [
+     "GitHub",
+     "https://github.com/e2b-dev/E2B"
+    ],
+    [
+     "Infra",
+     "https://github.com/e2b-dev/infra"
+    ]
+   ],
+   "sources": [
+    "https://upstash.com/blog/ai-agent-sandbox-providers-compared-2026",
+    "https://github.com/e2b-dev/E2B"
+   ],
+   "status": "active",
+   "category": "sandbox"
+  },
+  {
+   "id": "k8s-agent-sandbox",
+   "name": "Kubernetes Agent Sandbox",
+   "kind": "open-source",
+   "vendor": "Kubernetes SIG Apps",
+   "repo": "kubernetes-sigs/agent-sandbox",
+   "url": "https://github.com/kubernetes-sigs/agent-sandbox",
+   "license": "Apache-2.0",
+   "pricing": "Free (your cluster)",
+   "tier": "deep",
+   "summary": "A Kubernetes-native API (Sandbox CRD, templates, warm pools) for running isolated, stateful, singleton agent workloads, with gVisor or Kata isolation.",
+   "how": "A controller manages Sandbox resources: a stable identity, persistent storage and a single pod; SandboxTemplate and SandboxWarmPool give fast starts; isolation comes from the runtime class (gVisor, Kata).",
+   "features": [
+    "Sandbox / SandboxTemplate / SandboxClaim / WarmPool CRDs",
+    "gVisor or Kata runtime isolation",
+    "Python SDK",
+    "Stable network identity and persistent volume per sandbox",
+    "Pause/resume (scale to zero) of idle sandboxes"
+   ],
+   "strengths": [
+    "Runs on any Kubernetes Azm already operates",
+    "Vendor-neutral standard backed by SIG Apps",
+    "Isolation runtime is pluggable (gVisor, Kata)"
+   ],
+   "weaknesses": [
+    "Needs a Kubernetes team; early-stage API",
+    "Requires cluster operators for gVisor/Kata"
+   ],
+   "gaps": [
+    "Agent-specific tooling (file APIs) is thinner than E2B"
+   ],
+   "fit": {
+    "verdict": "adopt-part",
+    "role": "Self-hosted sandbox option if Azm runs Kubernetes; Inspect's k8s sandbox and Harbor's custom environments can target it."
+   },
+   "scores": {
+    "fit": 4,
+    "maturity": 2,
+    "openness": 5,
+    "agnostic": 5,
+    "config": 4,
+    "measure": 1,
+    "safety": 4
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/kubernetes-sigs/agent-sandbox"
+    ]
+   ],
+   "sources": [
+    "https://github.com/kubernetes-sigs/agent-sandbox",
+    "https://agent-sandbox.sigs.k8s.io"
+   ],
+   "status": "active",
+   "category": "sandbox"
+  },
+  {
+   "id": "opensandbox",
+   "name": "OpenSandbox",
+   "kind": "open-source",
+   "vendor": "OpenSandbox Group (Alibaba origin; AAIF)",
+   "repo": "opensandbox-group/OpenSandbox",
+   "url": "https://github.com/opensandbox-group/OpenSandbox",
+   "license": "Apache-2.0",
+   "pricing": "Free",
+   "tier": "deep",
+   "summary": "A general-purpose sandbox platform for AI apps: multi-language SDKs, a unified sandbox API, Docker and Kubernetes runtimes, for coding agents, browser use and RL training.",
+   "how": "A server exposes a sandbox lifecycle API; runtimes are Docker locally or Kubernetes at scale; SDKs in Python, Java, JS, Go and C#; built-in commands, files, code interpreter and network policies.",
+   "features": [
+    "Unified sandbox API with many SDKs",
+    "Docker and Kubernetes runtimes",
+    "Network egress policies",
+    "Examples for Claude Code, Gemini CLI, Codex"
+   ],
+   "strengths": [
+    "Self-hosted, Apache, with a clear API",
+    "Same API from laptop (Docker) to cluster (K8s)",
+    "Covers code, browser and desktop use cases",
+    "Many SDK languages"
+   ],
+   "weaknesses": [
+    "Young server versions (v0.2.x)",
+    "Documentation partly translated from Chinese"
+   ],
+   "gaps": [
+    "MicroVM isolation depends on runtime choice"
+   ],
+   "fit": {
+    "verdict": "benchmark",
+    "role": "Self-hosted alternative to E2B; trial alongside k8s agent-sandbox."
+   },
+   "scores": {
+    "fit": 4,
+    "maturity": 2,
+    "openness": 5,
+    "agnostic": 5,
+    "config": 4,
+    "measure": 1,
+    "safety": 4
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/opensandbox-group/OpenSandbox"
+    ]
+   ],
+   "sources": [
+    "https://github.com/opensandbox-group/OpenSandbox",
+    "https://upstash.com/blog/ai-agent-sandbox-providers-compared-2026"
+   ],
+   "status": "active",
+   "category": "sandbox"
+  },
+  {
+   "id": "cubesandbox",
+   "name": "CubeSandbox",
+   "kind": "open-source",
+   "vendor": "Tencent Cloud",
+   "repo": "TencentCloud/CubeSandbox",
+   "url": "https://github.com/TencentCloud/CubeSandbox",
+   "license": "Tencent open-source license (check terms)",
+   "pricing": "Free",
+   "summary": "Tencent's high-density microVM sandbox service with an E2B-compatible API, aimed at running very many agent sandboxes per host.",
+   "how": "KVM-based lightweight VMs with fast snapshot start; E2B SDKs work against it.",
+   "features": [
+    "E2B-compatible API",
+    "High-density microVMs",
+    "Snapshot start"
+   ],
+   "strengths": [
+    "Drop-in E2B compatibility for self-hosting"
+   ],
+   "weaknesses": [
+    "License terms need legal review; rc releases"
+   ],
+   "gaps": [
+    "Community outside China"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Option for self-hosted E2B-compatible capacity."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 2,
+    "openness": 3,
+    "agnostic": 5,
+    "config": 3,
+    "measure": 1,
+    "safety": 4
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/TencentCloud/CubeSandbox"
+    ]
+   ],
+   "sources": [
+    "https://github.com/TencentCloud/CubeSandbox"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "sandbox"
+  },
+  {
+   "id": "microsandbox",
+   "name": "microsandbox",
+   "kind": "open-source",
+   "vendor": "Superrad",
+   "repo": "superradcompany/microsandbox",
+   "url": "https://github.com/superradcompany/microsandbox",
+   "license": "Apache-2.0",
+   "pricing": "Free",
+   "version": "v0.7.13",
+   "summary": "Self-hosted microVM sandboxes (libkrun) that start in under 200 ms, run OCI images, and expose an MCP server for agents.",
+   "how": "A local server runs microVMs from container images; SDKs and MCP let agents run code.",
+   "features": [
+    "microVM isolation on your machine",
+    "OCI images",
+    "MCP server"
+   ],
+   "strengths": [
+    "Strong isolation on a laptop or server"
+   ],
+   "weaknesses": [
+    "Single-node focus"
+   ],
+   "gaps": [
+    "Fleet orchestration"
+   ],
+   "fit": {
+    "verdict": "benchmark",
+    "role": "Local, stronger-than-Docker isolation for squad-kit's Builder and for dev-box runs of the sandbox."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 2,
+    "openness": 5,
+    "agnostic": 5,
+    "config": 3,
+    "measure": 1,
+    "safety": 5
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/superradcompany/microsandbox"
+    ]
+   ],
+   "sources": [
+    "https://github.com/superradcompany/microsandbox"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "sandbox"
+  },
+  {
+   "id": "openshell",
+   "name": "NVIDIA OpenShell",
+   "kind": "open-source",
+   "vendor": "NVIDIA",
+   "repo": "NVIDIA/OpenShell",
+   "url": "https://github.com/NVIDIA/OpenShell",
+   "license": "Apache-2.0",
+   "pricing": "Free",
+   "summary": "A safe, private runtime for autonomous agents: sandboxed execution with declarative policies for files, network and processes, including a VM runtime.",
+   "how": "Agents run inside OpenShell sandboxes governed by YAML policies; network egress and file access are allow-listed.",
+   "features": [
+    "Declarative security policies",
+    "Sandboxed and VM runtimes",
+    "Built for long-running agents"
+   ],
+   "strengths": [
+    "Policy-as-config fits per-team YAML"
+   ],
+   "weaknesses": [
+    "New"
+   ],
+   "gaps": [
+    "Eval"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Policy model reference for the sandbox's safety layer."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 2,
+    "openness": 5,
+    "agnostic": 4,
+    "config": 4,
+    "measure": 1,
+    "safety": 5
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/NVIDIA/OpenShell"
+    ]
+   ],
+   "sources": [
+    "https://github.com/NVIDIA/OpenShell"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "sandbox"
+  },
+  {
+   "id": "sandbox-runtime",
+   "name": "Anthropic Sandbox Runtime (srt)",
+   "kind": "open-source",
+   "vendor": "Anthropic (experimental)",
+   "repo": "anthropic-experimental/sandbox-runtime",
+   "url": "https://github.com/anthropic-experimental/sandbox-runtime",
+   "license": "Apache-2.0",
+   "pricing": "Free",
+   "version": "v0.0.81",
+   "summary": "The lightweight OS-level sandbox behind Claude Code's sandboxing: restricts file system and network access for any process using macOS Seatbelt or Linux bubblewrap, without containers.",
+   "how": "Wrap a command with `srt`; a config lists allowed paths and domains; network goes through a filtering proxy.",
+   "features": [
+    "No container needed",
+    "File and network allow-lists",
+    "Used by Claude Code"
+   ],
+   "strengths": [
+    "Cheap safety layer for local runs"
+   ],
+   "weaknesses": [
+    "Process-level, weaker than VMs"
+   ],
+   "gaps": [
+    "Resource limits, fleet"
+   ],
+   "fit": {
+    "verdict": "adopt-part",
+    "role": "Minimum safety layer for local squad-kit runs (Builder/Tester) before moving to containers."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 2,
+    "openness": 5,
+    "agnostic": 5,
+    "config": 3,
+    "measure": 1,
+    "safety": 3
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/anthropic-experimental/sandbox-runtime"
+    ]
+   ],
+   "sources": [
+    "https://github.com/anthropic-experimental/sandbox-runtime"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "sandbox"
+  },
+  {
+   "id": "container-use",
+   "name": "Container Use",
+   "kind": "open-source",
+   "vendor": "Dagger",
+   "repo": "dagger/container-use",
+   "url": "https://github.com/dagger/container-use",
+   "license": "Apache-2.0",
+   "pricing": "Free",
+   "version": "v0.4.2",
+   "summary": "An MCP server that gives each coding agent its own container and git branch, so several agents work in parallel without touching your files.",
+   "how": "Agents call MCP tools to create environments; Dagger builds containers; results are branches you can inspect or merge.",
+   "features": [
+    "Container + branch per agent",
+    "MCP interface for any agent",
+    "Logs of every command"
+   ],
+   "strengths": [
+    "Agent-agnostic via MCP"
+   ],
+   "weaknesses": [
+    "Last release Aug 2026"
+   ],
+   "gaps": [
+    "Eval"
+   ],
+   "fit": {
+    "verdict": "inspire",
+    "role": "Pattern for 'container + branch per ticket' in squad-kit."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 2,
+    "openness": 5,
+    "agnostic": 5,
+    "config": 3,
+    "measure": 1,
+    "safety": 3
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/dagger/container-use"
+    ]
+   ],
+   "sources": [
+    "https://github.com/dagger/container-use"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "sandbox"
+  },
+  {
+   "id": "sandcastle",
+   "name": "Sandcastle",
+   "kind": "open-source",
+   "vendor": "Matt Pocock",
+   "repo": "mattpocock/sandcastle",
+   "url": "https://github.com/mattpocock/sandcastle",
+   "license": "MIT",
+   "pricing": "Free",
+   "version": "v0.14.0",
+   "summary": "A TypeScript library to run coding agents (Claude Code and others) inside sandboxes (Docker and cloud providers) from code, for orchestrated AFK runs.",
+   "how": "Programmatic API: create a sandbox, run the agent with a prompt, collect the branch.",
+   "features": [
+    "TS API for sandboxed agent runs",
+    "Multiple providers"
+   ],
+   "strengths": [
+    "Simple building block"
+   ],
+   "weaknesses": [
+    "Young"
+   ],
+   "gaps": [
+    "Scoring"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Possible building block for a Node-based runner."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 2,
+    "openness": 5,
+    "agnostic": 4,
+    "config": 3,
+    "measure": 1,
+    "safety": 3
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/mattpocock/sandcastle"
+    ]
+   ],
+   "sources": [
+    "https://github.com/mattpocock/sandcastle"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "sandbox"
+  },
+  {
+   "id": "aio-sandbox",
+   "name": "AIO Sandbox",
+   "kind": "open-source",
+   "vendor": "agent-infra (ByteDance)",
+   "repo": "agent-infra/sandbox",
+   "url": "https://github.com/agent-infra/sandbox",
+   "license": "Apache-2.0",
+   "pricing": "Free",
+   "version": "v1.11.0",
+   "summary": "An all-in-one Docker sandbox with browser, shell, file system, VS Code server and MCP in one container.",
+   "how": "Run one image; agents use HTTP/MCP APIs for browser, shell and files.",
+   "features": [
+    "Browser + shell + VS Code in one image",
+    "MCP"
+   ],
+   "strengths": [
+    "Quick start for browser + code tasks"
+   ],
+   "weaknesses": [
+    "Container isolation only"
+   ],
+   "gaps": [
+    "Fleet"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Useful when tasks need a browser (Tester screenshots)."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 3,
+    "openness": 5,
+    "agnostic": 4,
+    "config": 2,
+    "measure": 1,
+    "safety": 3
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/agent-infra/sandbox"
+    ]
+   ],
+   "sources": [
+    "https://github.com/agent-infra/sandbox"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "sandbox"
+  },
+  {
+   "id": "nono",
+   "name": "nono",
+   "kind": "open-source",
+   "vendor": "Always Further",
+   "repo": "always-further/nono",
+   "url": "https://github.com/always-further/nono",
+   "license": "Apache-2.0",
+   "pricing": "Free",
+   "summary": "A capability-based sandbox for AI agents using kernel-level enforcement (Landlock on Linux, Seatbelt on macOS) with no container.",
+   "how": "Run the agent under nono with an allowed-capabilities profile.",
+   "features": [
+    "Kernel-enforced allow-lists",
+    "Profiles per agent"
+   ],
+   "strengths": [
+    "Very light"
+   ],
+   "weaknesses": [
+    "Process-level"
+   ],
+   "gaps": [
+    "Resource limits"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Alternative to srt."
+   },
+   "scores": {
+    "fit": 2,
+    "maturity": 2,
+    "openness": 5,
+    "agnostic": 5,
+    "config": 3,
+    "measure": 1,
+    "safety": 3
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/always-further/nono"
+    ]
+   ],
+   "sources": [
+    "https://github.com/always-further/nono"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "sandbox"
+  },
+  {
+   "id": "sandbox-agent",
+   "name": "Sandbox Agent (Rivet)",
+   "kind": "open-source",
+   "vendor": "Rivet",
+   "repo": "rivet-dev/sandbox-agent",
+   "url": "https://github.com/rivet-dev/sandbox-agent",
+   "license": "Apache-2.0",
+   "pricing": "Free",
+   "summary": "One HTTP API to run Claude Code, Codex, opencode and Amp inside any sandbox provider (E2B, Daytona, Docker...), with a unified event stream.",
+   "how": "A small server inside the sandbox adapts each agent CLI to a common API and event schema.",
+   "features": [
+    "Universal agent API",
+    "Works across sandbox providers",
+    "Unified session events"
+   ],
+   "strengths": [
+    "Exactly the 'harness adapter' layer the Azm sandbox needs"
+   ],
+   "weaknesses": [
+    "Young (v0.5)"
+   ],
+   "gaps": [
+    "Scoring"
+   ],
+   "fit": {
+    "verdict": "benchmark",
+    "role": "Candidate adapter layer: drive any harness in any sandbox through one API."
+   },
+   "scores": {
+    "fit": 4,
+    "maturity": 2,
+    "openness": 5,
+    "agnostic": 5,
+    "config": 3,
+    "measure": 2,
+    "safety": 3
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/rivet-dev/sandbox-agent"
+    ]
+   ],
+   "sources": [
+    "https://github.com/rivet-dev/sandbox-agent"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "sandbox"
+  },
+  {
+   "id": "daytona",
+   "name": "Daytona",
+   "kind": "commercial",
+   "vendor": "Daytona",
+   "repo": "daytonaio/daytona",
+   "url": "https://daytona.io",
+   "license": "AGPL-3.0 (open-source repo, unmaintained since June 2026)",
+   "pricing": "Usage-based; BYOC available",
+   "status": "caution",
+   "summary": "Fast (<90 ms) container/VM sandboxes with LSP support and Harbor integration. The public open-source repository has had no commits since 2026-06-25; the managed service continues.",
+   "how": "SDK creates sandboxes from images or snapshots; Harbor supports --env daytona.",
+   "features": [
+    "Very fast start",
+    "LSP and git APIs",
+    "Harbor/LangChain integrations"
+   ],
+   "strengths": [
+    "Good managed DX"
+   ],
+   "weaknesses": [
+    "OSS path stalled: don't plan on self-hosting it"
+   ],
+   "gaps": [
+    "—"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Usable as a managed Harbor backend; not as a self-hosted base."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 3,
+    "openness": 2,
+    "agnostic": 5,
+    "config": 3,
+    "measure": 1,
+    "safety": 4
+   },
+   "links": [
+    [
+     "Website",
+     "https://daytona.io"
+    ]
+   ],
+   "sources": [
+    "https://upstash.com/blog/ai-agent-sandbox-providers-compared-2026",
+    "https://github.com/daytonaio/daytona"
+   ],
+   "tier": "brief",
+   "category": "sandbox"
+  },
+  {
+   "id": "modal",
+   "name": "Modal Sandboxes",
+   "kind": "commercial",
+   "vendor": "Modal",
+   "repo": null,
+   "url": "https://modal.com",
+   "license": "Proprietary",
+   "pricing": "Usage-based (per CPU/GPU second)",
+   "summary": "gVisor-isolated sandboxes on Modal's serverless platform, up to 24 h, with GPUs; a Harbor backend.",
+   "how": "Python SDK creates sandboxes from images; scales to thousands in parallel.",
+   "features": [
+    "gVisor",
+    "GPUs",
+    "Massive parallelism"
+   ],
+   "strengths": [
+    "Scale for large eval sweeps"
+   ],
+   "weaknesses": [
+    "Managed only"
+   ],
+   "gaps": [
+    "Self-host"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Burst capacity for large benchmark runs."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 4,
+    "openness": 1,
+    "agnostic": 5,
+    "config": 3,
+    "measure": 1,
+    "safety": 4
+   },
+   "links": [
+    [
+     "Website",
+     "https://modal.com"
+    ]
+   ],
+   "sources": [
+    "https://upstash.com/blog/ai-agent-sandbox-providers-compared-2026"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "sandbox"
+  },
+  {
+   "id": "vercel-sandbox",
+   "name": "Vercel Sandbox",
+   "kind": "commercial",
+   "vendor": "Vercel",
+   "repo": null,
+   "url": "https://vercel.com/docs/vercel-sandbox",
+   "license": "Proprietary",
+   "pricing": "~$0.128 per active vCPU-hour (Sept 2026)",
+   "summary": "Firecracker microVMs with Claude Code, Codex, opencode and pi preinstalled; supports Harbor evals.",
+   "how": "SDK/CLI creates a sandbox; billed only for active CPU.",
+   "features": [
+    "Preinstalled agent CLIs",
+    "Harbor support",
+    "Active-CPU billing"
+   ],
+   "strengths": [
+    "Fast path to try harnesses"
+   ],
+   "weaknesses": [
+    "Managed only"
+   ],
+   "gaps": [
+    "Self-host"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Quick managed trial environment."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 3,
+    "openness": 1,
+    "agnostic": 4,
+    "config": 3,
+    "measure": 1,
+    "safety": 4
+   },
+   "links": [
+    [
+     "Docs",
+     "https://vercel.com/docs/vercel-sandbox"
+    ]
+   ],
+   "sources": [
+    "https://upstash.com/blog/ai-agent-sandbox-providers-compared-2026"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "sandbox"
+  },
+  {
+   "id": "tensorlake",
+   "name": "Tensorlake Sandboxes",
+   "kind": "commercial",
+   "vendor": "Tensorlake",
+   "repo": null,
+   "url": "https://tensorlake.ai",
+   "license": "Proprietary",
+   "pricing": "Usage-based; BYOC",
+   "summary": "Firecracker sandboxes with BYOC deployment and a Harbor integration.",
+   "how": "SDK; Harbor --env tensorlake.",
+   "features": [
+    "Firecracker",
+    "BYOC",
+    "Harbor"
+   ],
+   "strengths": [
+    "BYOC + Harbor"
+   ],
+   "weaknesses": [
+    "Smaller vendor"
+   ],
+   "gaps": [
+    "—"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "BYOC Harbor backend option."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 2,
+    "openness": 1,
+    "agnostic": 4,
+    "config": 3,
+    "measure": 1,
+    "safety": 4
+   },
+   "links": [
+    [
+     "Website",
+     "https://tensorlake.ai"
+    ]
+   ],
+   "sources": [
+    "https://upstash.com/blog/ai-agent-sandbox-providers-compared-2026"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "sandbox"
+  },
+  {
+   "id": "northflank",
+   "name": "Northflank Sandboxes",
+   "kind": "commercial",
+   "vendor": "Northflank",
+   "repo": null,
+   "url": "https://northflank.com",
+   "license": "Proprietary",
+   "pricing": "From ~$0.01667/vCPU-h; BYOC (Sept 2026)",
+   "summary": "Kata/gVisor-isolated sandboxes, deployable into your own cloud account, at low unit cost.",
+   "how": "Platform API; BYOC into AWS/GCP/Azure.",
+   "features": [
+    "Kata/gVisor",
+    "BYOC",
+    "Low cost"
+   ],
+   "strengths": [
+    "Cheapest BYOC option in the comparison"
+   ],
+   "weaknesses": [
+    "General PaaS, less agent tooling"
+   ],
+   "gaps": [
+    "—"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Cost-efficient BYOC option."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 3,
+    "openness": 1,
+    "agnostic": 4,
+    "config": 3,
+    "measure": 1,
+    "safety": 4
+   },
+   "links": [
+    [
+     "Website",
+     "https://northflank.com"
+    ]
+   ],
+   "sources": [
+    "https://upstash.com/blog/ai-agent-sandbox-providers-compared-2026"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "sandbox"
+  },
+  {
+   "id": "cloudflare-sandbox",
+   "name": "Cloudflare Sandbox SDK",
+   "kind": "commercial",
+   "vendor": "Cloudflare",
+   "repo": null,
+   "url": "https://developers.cloudflare.com/sandbox/",
+   "license": "Proprietary (SDK open)",
+   "pricing": "Workers/Containers pricing",
+   "summary": "Container-in-VM sandboxes driven from Workers (TypeScript only).",
+   "how": "TS SDK from a Worker.",
+   "features": [
+    "Edge-native",
+    "TS SDK"
+   ],
+   "strengths": [
+    "Good for web-facing agents"
+   ],
+   "weaknesses": [
+    "TypeScript-only control plane"
+   ],
+   "gaps": [
+    "—"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Only if Azm agents run on Cloudflare."
+   },
+   "scores": {
+    "fit": 2,
+    "maturity": 3,
+    "openness": 2,
+    "agnostic": 3,
+    "config": 2,
+    "measure": 1,
+    "safety": 4
+   },
+   "links": [
+    [
+     "Docs",
+     "https://developers.cloudflare.com/sandbox/"
+    ]
+   ],
+   "sources": [
+    "https://upstash.com/blog/ai-agent-sandbox-providers-compared-2026"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "sandbox"
+  },
+  {
+   "id": "blaxel",
+   "name": "Blaxel",
+   "kind": "commercial",
+   "vendor": "Blaxel",
+   "repo": null,
+   "url": "https://blaxel.ai",
+   "license": "Proprietary",
+   "pricing": "Usage-based",
+   "summary": "Persistent microVM sandboxes that resume in ~25 ms; a Harbor backend.",
+   "how": "SDK; sandboxes hibernate and resume.",
+   "features": [
+    "Fast resume",
+    "Harbor"
+   ],
+   "strengths": [
+    "Long-lived dev boxes"
+   ],
+   "weaknesses": [
+    "Managed only"
+   ],
+   "gaps": [
+    "—"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Option for long-lived agent workspaces."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 2,
+    "openness": 1,
+    "agnostic": 4,
+    "config": 3,
+    "measure": 1,
+    "safety": 4
+   },
+   "links": [
+    [
+     "Website",
+     "https://blaxel.ai"
+    ]
+   ],
+   "sources": [
+    "https://upstash.com/blog/ai-agent-sandbox-providers-compared-2026"
+   ],
+   "tier": "brief",
+   "status": "active",
+   "category": "sandbox"
+  }
+ ]
+}
