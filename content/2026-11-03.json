@@ -1,0 +1,1212 @@
+{
+  "date": "2026-11-03",
+  "headline": "Vitest 5.1 يشغّل الاختبارات المتأثرة فقط، وGitHub يحظر pull_request_target افتراضيًا من 2 ديسمبر مع تعطيل تجريبي في 9 نوفمبر، وGoogle تغلق Jules نهاية العام. وفي الأمان: اختراق Trigger.dev وثغرات حرجة في Langflow.",
+  "headline_en": "Vitest 5.1 runs only affected tests, GitHub will block pull_request_target by default from December 2 with a brownout on November 9, and Google is shutting down Jules at year end. In security: a Trigger.dev breach and critical Langflow flaws.",
+  "items": [
+    {
+      "id": "vitest-5-1-since-last-run",
+      "section": "testing",
+      "kind": "release",
+      "title": "Vitest 5.1: تشغيل الاختبارات المتأثرة فقط بـ --since-last-run، ومراجعة اللقطات واحدة واحدة",
+      "summary": "أصدر فريق Vitest النسخة 5.1 في 2 نوفمبر. أبرز ما فيها خيار تجريبي --since-last-run يشغّل فقط الاختبارات التي تغيّرت ملفاتها منذ آخر تشغيل لها، وخيار --last-failed لإعادة تشغيل الاختبارات الفاشلة فقط، ومراجعة تفاعلية للقطات الفاشلة، وجعل Trace View مستقرًا ومفعّلًا افتراضيًا عند الفشل في Browser Mode.",
+      "why": "يقلّص زمن دورة الاختبار بعد كل تعديل، وهو مفيد خاصة لوكلاء البرمجة الذين يشغّلون الاختبارات مرارًا: يشغّل الوكيل بعد كل تغيير الاختبارات المتأثرة فقط بدل الحزمة كاملة، مثلًا في تطبيق React أو مكتبة TypeScript كبيرة.",
+      "about": "الخيار --since-last-run تجريبي، ويقارن الملفات بآخر تشغيل لكل اختبار وفق وقت التعديل (mtime) وليس وفق Git، بخلاف --changed الذي يحتاج مستودعًا ويتوقف عن رصد التغيير بمجرد الـ commit. والاختبارات التي فشلت في المرة السابقة تستمر في التشغيل حتى تنجح. أما --last-failed فيقرأ إخفاقات التشغيل السابق من ذاكرة النتائج المؤقتة ويشغّلها وحدها حتى في عملية جديدة.\n\nفي وضع المراقبة يمكن الضغط على i لمراجعة اللقطات الفاشلة واحدة تلو الأخرى، ثم a لقبول اللقطة الجديدة أو r للإبقاء على القديمة، وتشمل المراجعة اللقطات المضمّنة وملفات .snap ولقطات ARIA. وفي Browser Mode أصبح Trace View مستقرًا ومفعّلًا افتراضيًا بوضع 'failure-only' الذي يحتفظ بالأثر للاختبارات الفاشلة فقط، ويلتقط الآن شجرة إمكانية الوصول للصفحة.\n\nهناك خيار تجريبي browser.importMapMocks يقدّم المحاكاة (mocks) عبر import maps في Chromium 133+ وSafari 18.4+ وFirefox 150+. تنبيه: صار Vitest يُظهر خطأ إذا استُورِدت وحدة قبل أن يسجّلها vi.mock، ويمكن تعطيل ذلك بضبط browser.importMapMocks على false. كما أضاف خيار fakeNodeBuiltins لمحاكاة node:timers وnode:timers/promises، وهو معطّل افتراضيًا.",
+      "features": [
+        "--since-last-run لتشغيل الاختبارات المتأثرة فقط (تجريبي)",
+        "--last-failed لإعادة تشغيل الإخفاقات السابقة فقط",
+        "مراجعة تفاعلية للقطات بالمفاتيح i ثم a أو r",
+        "Trace View مستقر ومفعّل عند الفشل مع شجرة إمكانية الوصول",
+        "محاكاة الوحدات عبر import maps في Browser Mode (تجريبي)"
+      ],
+      "usage": [
+        "vitest run --since-last-run",
+        "vitest run --last-failed",
+        "vitest run --last-failed -t login"
+      ],
+      "repo": "vitest-dev/vitest",
+      "alternatives": [
+        "ess-vitest",
+        "ess-playwright"
+      ],
+      "links": [
+        {
+          "label": "مقال الإصدار",
+          "url": "https://vitest.dev/blog/vitest-5-1"
+        },
+        {
+          "label": "المستودع",
+          "url": "https://github.com/vitest-dev/vitest"
+        }
+      ],
+      "url": "https://vitest.dev/blog/vitest-5-1",
+      "source": "vitest.dev",
+      "importance": 3,
+      "tags": [
+        "Vitest",
+        "testing",
+        "JavaScript",
+        "agents",
+        "Browser Mode"
+      ],
+      "en": {
+        "title": "Vitest 5.1: run only affected tests with --since-last-run, and review snapshots one by one",
+        "summary": "The Vitest team released 5.1 on November 2. Highlights: an experimental --since-last-run flag that runs only tests whose files changed since their last run, a --last-failed flag that reruns only failed tests, interactive review of failed snapshots, and Trace View now stable and on by default for failures in Browser Mode.",
+        "why": "It shortens the test loop after each edit, which matters most for coding agents that run tests repeatedly: after every change the agent runs only the affected tests instead of the whole suite, for example in a React app or a large TypeScript library.",
+        "about": "--since-last-run is experimental and compares files with each test's last run by modification time (mtime), not Git, unlike --changed, which needs a repository and stops seeing a change once it is committed. Tests that failed last time keep running until they pass. --last-failed reads the previous run's failures from the results cache and runs only those, even in a new process.\n\nIn watch mode, press i to review failed snapshots one at a time, then a to accept the new snapshot or r to keep the old one; the review covers inline snapshots, .snap files and ARIA snapshots. In Browser Mode, Trace View is now stable and on by default in 'failure-only' mode, which keeps traces only for failing tests, and it now captures the page's accessibility tree.\n\nA new experimental browser.importMapMocks option serves mocks through import maps in Chromium 133+, Safari 18.4+ and Firefox 150+. Caveat: Vitest now reports an error when a module was imported before vi.mock registered it; set browser.importMapMocks to false to turn this off. A new fakeNodeBuiltins option also fakes node:timers and node:timers/promises, and is off by default.",
+        "features": [
+          "--since-last-run to run only affected tests (experimental)",
+          "--last-failed to rerun only previous failures",
+          "Interactive snapshot review with i, then a or r",
+          "Trace View stable and on for failures, with the accessibility tree",
+          "Module mocking through import maps in Browser Mode (experimental)"
+        ],
+        "usage": [
+          "vitest run --since-last-run",
+          "vitest run --last-failed",
+          "vitest run --last-failed -t login"
+        ],
+        "links": [
+          "Release post",
+          "Repository"
+        ]
+      }
+    },
+    {
+      "id": "github-actions-pull-request-target-blocked-dec-2",
+      "section": "devops",
+      "kind": "article",
+      "title": "GitHub Actions سيحظر pull_request_target افتراضيًا في المستودعات العامة من 2 ديسمبر، مع فترتي تعطيل تجريبيتين في نوفمبر",
+      "summary": "أعلنت GitHub أن Actions سيحظر أحداث pull_request_target افتراضيًا في المستودعات العامة بدءًا من 2 ديسمبر 2026 بدل 2 نوفمبر، ما لم تسمح بها سياسة أحداث صراحةً. وقبل ذلك ستُجرى فترتا حظر مؤقت يومي 9 و16 نوفمبر من 16:00 إلى 18:00 UTC تفشل فيهما سير العمل المتأثرة.",
+      "why": "إذا كان مستودعك العام يعتمد على pull_request_target، مثلًا لإضافة وسوم أو تعليقات تلقائية على طلبات الدمج من الـ forks، فقد تتوقف هذه السير يوم 9 نوفمبر. افحص الآن ما سيُحظر وقرّر هل تسمح به صراحةً أم تستبدله.",
+      "about": "يعمل الحدث pull_request_target في سياق المستودع الأساسي مع وصول إلى أسراره، لذلك فإن تشغيل شيفرة غير موثوقة من fork عبره قد يخترق خط CI أو يسرّب الأسرار. لهذا تجعل GitHub الحظر هو الوضع الافتراضي.\n\nيشمل التغيير المستودعات العامة على GitHub Free وTeam وEnterprise Cloud، ولا يشمل المستودعات الخاصة والداخلية ولا GitHub Enterprise Server. حتى 2 ديسمبر تعمل القاعدة في وضع التقييم: تُظهر التحذيرات دون حظر، إلا في فترتي 9 و16 نوفمبر حيث تفشل التشغيلات المحظورة مع رسالة خطأ ولا يُنفَّذ سير العمل.\n\nللاستعداد: استخدم Insights قبل 9 نوفمبر لمعرفة التشغيلات التي ستُحظر، ثم إما أن تُبقي الحظر الافتراضي، وإما أن تسمح بالحدث في سياسة أحداث Actions، مع إمكانية السماح لملفات سير عمل محددة فقط.",
+      "features": [
+        "الحظر الافتراضي يبدأ في 2 ديسمبر 2026",
+        "حظر مؤقت يومي 9 و16 نوفمبر من 16:00 إلى 18:00 UTC",
+        "يشمل المستودعات العامة فقط على Free وTeam وEnterprise Cloud",
+        "السماح الصريح عبر سياسة أحداث مع استهداف ملفات سير عمل محددة"
+      ],
+      "links": [
+        {
+          "label": "إعلان GitHub",
+          "url": "https://github.blog/changelog/2026-11-02-pull_request_target-blocked-by-default-december-2"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-11-02-pull_request_target-blocked-by-default-december-2",
+      "source": "github.blog",
+      "importance": 3,
+      "tags": [
+        "GitHub Actions",
+        "CI/CD",
+        "security",
+        "pull_request_target"
+      ],
+      "en": {
+        "title": "GitHub Actions will block pull_request_target by default in public repos from December 2, with two brownouts in November",
+        "summary": "GitHub announced that Actions will block pull_request_target events by default in public repositories starting December 2, 2026, instead of November 2, unless an event policy explicitly allows them. Before that, two brownouts on November 9 and 16, 16:00–18:00 UTC, will make affected workflows fail.",
+        "why": "If your public repository relies on pull_request_target, for example to label or comment on pull requests from forks, those workflows may stop on November 9. Check now what would be blocked and decide whether to allow it explicitly or replace it.",
+        "about": "pull_request_target runs in the base repository's context with access to its secrets, so running untrusted fork code through it can compromise the CI pipeline or leak secrets. That is why GitHub is making blocking the default.\n\nThe change covers public repositories on GitHub Free, Team and Enterprise Cloud. Private and internal repositories and GitHub Enterprise Server are not affected. Until December 2 the rule runs in evaluate mode, showing warnings without blocking, except during the November 9 and 16 windows, when blocked runs fail with an error annotation and the workflow does not run.\n\nTo prepare, use Insights before November 9 to see which runs would be blocked. Then either keep the default block or allow the event in an Actions event policy, optionally only for specific workflow files.",
+        "features": [
+          "Default blocking starts December 2, 2026",
+          "Brownouts on November 9 and 16, 16:00–18:00 UTC",
+          "Public repositories only, on Free, Team and Enterprise Cloud",
+          "Explicit allow through an event policy, targeting specific workflow files"
+        ],
+        "links": [
+          "GitHub announcement"
+        ]
+      }
+    },
+    {
+      "id": "trigger-dev-env-vars-security-incident",
+      "section": "security",
+      "kind": "article",
+      "title": "اختراق في Trigger.dev: المهاجم وصل إلى متغيرات البيئة لبعض المؤسسات",
+      "summary": "أعلنت منصة Trigger.dev للمهام الخلفية وسير عمل وكلاء AI في 1 نوفمبر أن مهاجمًا حصل على وصول غير مصرّح به إلى متغيرات البيئة لمجموعة من المؤسسات. تقول الشركة إنها أغلقت الثغرة المستغلة وراسلت أصحاب الحسابات المتأثرة بخطوات المعالجة، ولم تكشف عدد المؤسسات أو السبب الجذري بعد.",
+      "why": "متغيرات البيئة في منصات المهام الخلفية تحمل عادة مفاتيح API وكلمات مرور قواعد البيانات. إذا كنت تستخدم Trigger.dev فراجع بريدك من الشركة، وتدوير الأسرار المخزنة هناك احتياط معقول حتى لو لم تصلك رسالة.",
+      "about": "بحسب المنشور الرسمي، وقع الحادث يوم الأحد 1 نوفمبر 2026، وتمكّن المهاجم من الوصول إلى متغيرات البيئة لمجموعة من المؤسسات دون تحديد عددها. وقالت الشركة: «حظرنا الثغرة المستخدمة في هذا الهجوم»، ووُضعت حالة الحادث على صفحة الحالة على أنه محلول.\n\nلم تنشر الشركة خطوات معالجة عامة؛ أُرسلت التعليمات بالبريد إلى أصحاب الحسابات المتأثرة فقط، ووعدت بمزيد من التفاصيل لاحقًا. ولم يذكر المنشور هل تأثرت النسخ المستضافة ذاتيًا.\n\nتنبيه: تدوير الأسرار ممارسة عامة عند أي تسريب محتمل، وليست توصية واردة في المنشور الرسمي.",
+      "features": [
+        "الحادث وقع في 1 نوفمبر 2026",
+        "الوصول شمل متغيرات البيئة لمجموعة من المؤسسات",
+        "الثغرة أُغلقت والمتأثرون أُبلغوا بالبريد",
+        "السبب الجذري وعدد المتأثرين لم يُكشفا بعد"
+      ],
+      "alternatives": [
+        "ess-gitleaks",
+        "ess-trufflehog"
+      ],
+      "links": [
+        {
+          "label": "منشور الحادث",
+          "url": "https://trigger.dev/blog/security-incident-nov-2026"
+        },
+        {
+          "label": "صفحة الحالة",
+          "url": "https://status.trigger.dev/incident/1110434"
+        }
+      ],
+      "url": "https://trigger.dev/blog/security-incident-nov-2026",
+      "source": "trigger.dev",
+      "importance": 3,
+      "tags": [
+        "security",
+        "breach",
+        "secrets",
+        "Trigger.dev"
+      ],
+      "en": {
+        "title": "Trigger.dev breach: an attacker accessed environment variables of some organizations",
+        "summary": "Trigger.dev, a platform for background jobs and AI agent workflows, announced on November 1 that an attacker gained unauthorized access to environment variables for a subset of organizations. The company says it has blocked the exploit and emailed owners of affected accounts with mitigation steps. It has not disclosed how many organizations or the root cause.",
+        "why": "Environment variables on background-job platforms usually hold API keys and database passwords. If you use Trigger.dev, check your email from the company; rotating secrets stored there is a reasonable precaution even if you did not get a message.",
+        "about": "According to the official post, the incident happened on Sunday, November 1, 2026, and the attacker accessed environment variables for a subset of organizations, number not given. The company said: \"We've blocked the exploit used in this attack\", and the status page marks the incident as resolved.\n\nNo public mitigation steps were published; instructions were emailed only to owners of affected accounts, and more details were promised later. The post does not say whether self-hosted deployments were affected.\n\nNote: rotating secrets is general practice after any possible leak, not a recommendation from the official post.",
+        "features": [
+          "Incident occurred on November 1, 2026",
+          "Access covered environment variables of a subset of organizations",
+          "Exploit blocked and affected owners notified by email",
+          "Root cause and number affected not yet disclosed"
+        ],
+        "links": [
+          "Incident post",
+          "Status page"
+        ]
+      }
+    },
+    {
+      "id": "langflow-critical-cves-upgrade-1-13",
+      "section": "security",
+      "kind": "article",
+      "title": "ثغرات حرجة في Langflow تسمح بتنفيذ شيفرة دون تسجيل دخول، إحداها عبر نقطة MCP: حدّث إلى 1.13.0",
+      "summary": "كشفت تقارير في 2 نوفمبر عن ثغرات في Langflow، أداة بناء سير عمل وكلاء AI، أخطرها CVE-2026-93680 لتجاوز المصادقة وCVE-2026-110186 لتنفيذ الشيفرة، وكلتاهما بدرجة 9.8 ودون تسجيل دخول. الإصدارات من 1.0.0 حتى 1.12.8 متأثرة، والإصلاح في 1.13.0.",
+      "why": "إذا كانت لديك نسخة Langflow مكشوفة على الشبكة، مثلًا خادم داخلي لنماذج أولية من الوكلاء، فقد يتمكن أي شخص يصل إليها من تنفيذ أوامر عليها. التحديث إلى 1.13.0 وعدم كشف الواجهة للعامة هما الخطوة الأولى.",
+      "about": "بحسب The Hacker News، تشمل الثغرات أيضًا CVE-2026-110193 (8.8) التي تسمح للمساعد الوكيلي بإنتاج شيفرة تنفّذ أوامر نظام لمستخدم مسجّل، وCVE-2026-110192 (6.5) لكشف بيانات الاعتماد. ويوجد وحدة Metasploit علنية تتصل بنقطة MCP في Langflow دون بيانات اعتماد وتعرض الأدوات المتاحة.\n\nالإصدار 1.13.0 متاح على PyPI منذ 22 أكتوبر، ويعطّل LANGFLOW_AUTO_LOGIN افتراضيًا، وهو الإعداد الذي كان في 1.12.8 يسجّل دخول المستخدمين كمشرف عام تلقائيًا. ويُنصح بأخذ نسخة احتياطية من قاعدة البيانات والمفتاح السري والملفات المرفوعة قبل التحديث.\n\nحتى 30 أكتوبر لم تكن أي من هذه الثغرات مدرجة في قائمة CISA للثغرات المستغلة فعليًا.",
+      "features": [
+        "CVE-2026-93680 وCVE-2026-110186 بدرجة 9.8 ودون مصادقة",
+        "الإصدارات المتأثرة: 1.0.0 حتى 1.12.8",
+        "الإصلاح في 1.13.0 مع تعطيل LANGFLOW_AUTO_LOGIN افتراضيًا",
+        "وحدة Metasploit علنية تستهدف نقطة MCP"
+      ],
+      "links": [
+        {
+          "label": "تقرير The Hacker News",
+          "url": "https://thehackernews.com/2026/11/critical-langflow-flaws-could-let.html"
+        }
+      ],
+      "url": "https://thehackernews.com/2026/11/critical-langflow-flaws-could-let.html",
+      "source": "thehackernews.com",
+      "importance": 3,
+      "tags": [
+        "security",
+        "CVE",
+        "Langflow",
+        "MCP",
+        "agents"
+      ],
+      "en": {
+        "title": "Critical Langflow flaws allow unauthenticated code execution, one via the MCP endpoint: upgrade to 1.13.0",
+        "summary": "Reports on November 2 detailed flaws in Langflow, a tool for building AI agent workflows. The most severe are CVE-2026-93680 (authentication bypass) and CVE-2026-110186 (code execution), both rated 9.8 and exploitable without login. Versions 1.0.0 through 1.12.8 are affected, and the fix is in 1.13.0.",
+        "why": "If you run a Langflow instance reachable over the network, for example an internal server for agent prototypes, anyone who can reach it may be able to run commands on it. Upgrading to 1.13.0 and not exposing the interface publicly are the first steps.",
+        "about": "According to The Hacker News, the flaws also include CVE-2026-110193 (8.8), which lets the agentic assistant produce code that runs OS commands for a logged-in user, and CVE-2026-110192 (6.5), a credential exposure. A public Metasploit module connects to Langflow's MCP endpoint without credentials and lists the available tools.\n\nVersion 1.13.0 has been on PyPI since October 22 and turns LANGFLOW_AUTO_LOGIN off by default; in 1.12.8 that setting logged users in as superuser automatically. Back up the database, secret key and uploads before upgrading.\n\nAs of October 30, none of these flaws was listed in CISA's catalog of exploited vulnerabilities.",
+        "features": [
+          "CVE-2026-93680 and CVE-2026-110186 rated 9.8, no authentication needed",
+          "Affected versions: 1.0.0 through 1.12.8",
+          "Fixed in 1.13.0, with LANGFLOW_AUTO_LOGIN off by default",
+          "Public Metasploit module targets the MCP endpoint"
+        ],
+        "links": [
+          "The Hacker News report"
+        ]
+      }
+    },
+    {
+      "id": "google-jules-shutdown-dec-31",
+      "section": "agents",
+      "kind": "article",
+      "title": "Google تغلق Jules في 31 ديسمبر، وإنهاء الجلسات متاح حتى 11 نوفمبر فقط",
+      "summary": "أعلنت Google أن وكيل البرمجة Jules سيتوقف في 31 ديسمبر 2026 ضمن توحيد جهودها في البرمجة الوكيلية، وأن خبرته تنتقل إلى Google Antigravity. يمكن إنهاء الجلسات حتى 11 نوفمبر، ثم يصبح Jules للقراءة فقط حتى نهاية العام، مع أداة لتصدير الإعدادات والجلسات.",
+      "why": "إذا كنت تعتمد على Jules في مهام مجدولة أو جلسات طويلة، فأمامك حتى 11 نوفمبر لإنهاء العمل الجاري وتصدير الإعدادات والذاكرة وسكربتات التهيئة قبل الانتقال إلى أداة أخرى.",
+      "about": "الشيفرة والفروع وطلبات الدمج موجودة أصلًا في GitHub وتبقى كما هي؛ التصدير يخص الإعدادات والسجل المخزّن داخل Jules فقط. يشمل التصدير إعدادات الحساب، ومتغيرات البيئة، والمهام المجدولة، والمستودعات المرتبطة، والذاكرة، وسكربتات التهيئة، وكل جلسة مع التعليمات والخطة وسجل النشاط والتعديلات.\n\nطريقة التصدير: ثبّت أداة Jules وسجّل الدخول، ثم افتح وكيل برمجة في سطر الأوامر من مجلد المنزل والصق تعليمات التصدير الموجودة في الصفحة الرسمية. تُحفظ البيانات في المجلد ~/jules-export.\n\nتنبيهان: الملف env-variables.json يحتوي على القيم الفعلية لمتغيرات البيئة، فأبقِ المجلد خاصًا وخارج المستودعات. ولكي تتضمن البيانات معلومات المستودعات يجب ربط حساب GitHub بـ Jules قبل التصدير.",
+      "features": [
+        "الإغلاق النهائي في 31 ديسمبر 2026",
+        "إنهاء الجلسات حتى 11 نوفمبر ثم قراءة فقط",
+        "تصدير الإعدادات والذاكرة والمهام والجلسات إلى ~/jules-export",
+        "الشيفرة وطلبات الدمج تبقى في GitHub"
+      ],
+      "install": [
+        {
+          "label": "تثبيت أداة Jules",
+          "cmd": "npm install -g @google/jules"
+        },
+        {
+          "label": "تسجيل الدخول",
+          "cmd": "jules login"
+        }
+      ],
+      "alternatives": [
+        "ess-antigravity-cli",
+        "ess-openai-codex-cli",
+        "ess-github-copilot"
+      ],
+      "links": [
+        {
+          "label": "إعلان الإغلاق وتعليمات التصدير",
+          "url": "https://jules.google/docs/changelog/2026-10-29"
+        }
+      ],
+      "url": "https://jules.google/docs/changelog/2026-10-29",
+      "source": "jules.google",
+      "importance": 3,
+      "tags": [
+        "Jules",
+        "Google",
+        "coding agent",
+        "shutdown",
+        "Antigravity"
+      ],
+      "en": {
+        "title": "Google is shutting down Jules on December 31; sessions can be finished only until November 11",
+        "summary": "Google announced that its Jules coding agent will wind down on December 31, 2026, as part of unifying its agentic coding efforts, with its lessons moving into Google Antigravity. Sessions can be finished until November 11; after that Jules is read-only until year end, and an export tool covers settings and sessions.",
+        "why": "If you rely on Jules for scheduled tasks or long sessions, you have until November 11 to finish ongoing work and export settings, memories and setup scripts before moving to another tool.",
+        "about": "Your code, branches and pull requests already live in GitHub and stay there; the export covers only configuration and history stored inside Jules. It includes account settings, environment variables, scheduled tasks, connected repositories, memories, setup scripts, and every session with its prompt, plan, activity log and patches.\n\nTo export: install Jules Tools and sign in, then open a CLI coding agent from your home directory and paste the export prompt from the official page. Data is saved to ~/jules-export.\n\nTwo cautions: env-variables.json contains the actual values of your environment variables, so keep the folder private and out of repositories. To include repository data, connect your GitHub account to Jules before exporting.",
+        "features": [
+          "Final shutdown on December 31, 2026",
+          "Sessions can be finished until November 11, then read-only",
+          "Export settings, memories, tasks and sessions to ~/jules-export",
+          "Code and pull requests stay in GitHub"
+        ],
+        "install": [
+          "Install Jules Tools",
+          "Sign in"
+        ],
+        "links": [
+          "Shutdown notice and export instructions"
+        ]
+      }
+    },
+    {
+      "id": "antigravity-plugin-marketplace",
+      "section": "agents",
+      "kind": "tool",
+      "title": "سوق إضافات Antigravity: مهارات وخوادم MCP وقواعد وخطافات ووكلاء في حزمة واحدة",
+      "summary": "أطلقت Google سوق إضافات لتطبيق Antigravity وسطر أوامره. الإضافة حزمة ذات إصدار يصفها ملف plugin.json، وقد تضم مهارات وخوادم MCP وقواعد وخطافات ووكلاء مخصصين تُثبَّت وتُحدَّث معًا، مع أكثر من 60 شريكًا عند الإطلاق منهم Figma وStripe وSupabase وVercel وSentry.",
+      "why": "بدل إعداد خادم MCP ومهارة وقواعد كلًّا على حدة، يثبّت الفريق إضافة واحدة بأمر واحد ويحصل على كل ما يلزم لأداة ما، مثل إضافة Stripe لبناء صفحة دفع، مع تحديث مركزي للجميع.",
+      "about": "تتكون الإضافة من خمسة أجزاء اختيارية: مهارات بصيغة SKILL.md، وخوادم MCP في mcp.json (بعيدة عبر Streamable HTTP أو محلية عبر stdio مع دعم OAuth 2.0)، وقواعد في rules/AGENTS.md، وخطافات في hooks.json لأحداث مثل SessionStart وPreToolUse وPostToolUse وStop، ووكلاء مخصصين في agents/<name>.md.\n\nتصل الميزة تدريجيًا إلى تطبيق Antigravity عبر تبويب Plugins في Customizations وإلى سطر الأوامر agy. ويمكن أيضًا التحقق من إضافة محلية وتثبيتها أثناء تطويرها.\n\nالفكرة قريبة من أسواق إضافات Claude Code وCodex، ما يعني أن كثيرًا من المهارات وخوادم MCP صار قابلًا للنقل بين الوكلاء بتغليف مختلف.",
+      "features": [
+        "حزمة بإصدار عبر plugin.json تجمع خمسة أنواع من المكونات",
+        "خطافات لأحداث SessionStart وPreToolUse وPostToolUse وStop",
+        "أكثر من 60 شريكًا عند الإطلاق",
+        "تثبيت وتحقق محلي من سطر الأوامر agy"
+      ],
+      "usage": [
+        "agy plugin install <plugin-name>",
+        "agy plugin validate ./<plugin-name>",
+        "agy plugin list"
+      ],
+      "pricing": {
+        "model": "freemium",
+        "note": "جزء من خطط Google للذكاء الاصطناعي"
+      },
+      "alternatives": [
+        "ess-antigravity-cli",
+        "ess-claude-plugins-official"
+      ],
+      "links": [
+        {
+          "label": "إعلان سوق الإضافات",
+          "url": "https://antigravity.google/blog/plugin-marketplace-in-antigravity/"
+        }
+      ],
+      "url": "https://antigravity.google/blog/plugin-marketplace-in-antigravity/",
+      "source": "antigravity.google",
+      "importance": 2,
+      "tags": [
+        "Antigravity",
+        "plugins",
+        "MCP",
+        "skills",
+        "Google"
+      ],
+      "en": {
+        "title": "Antigravity plugin marketplace: skills, MCP servers, rules, hooks and agents in one bundle",
+        "summary": "Google launched a plugin marketplace for the Antigravity app and CLI. A plugin is a versioned bundle described by plugin.json that can include skills, MCP servers, rules, hooks and custom agents, installed and updated together, with over 60 launch partners including Figma, Stripe, Supabase, Vercel and Sentry.",
+        "why": "Instead of setting up an MCP server, a skill and rules separately, a team installs one plugin with one command and gets everything a tool needs, such as a Stripe plugin for building a checkout page, with central updates for everyone.",
+        "about": "A plugin has up to five optional parts: skills as SKILL.md, MCP servers in mcp.json (remote over Streamable HTTP or local over stdio, with OAuth 2.0 support), rules in rules/AGENTS.md, hooks in hooks.json for events such as SessionStart, PreToolUse, PostToolUse and Stop, and custom agents in agents/<name>.md.\n\nThe feature is rolling out to the Antigravity app under Customizations, Plugins tab, and to the agy CLI. You can also validate and install a local plugin while developing it.\n\nThe idea is close to the Claude Code and Codex plugin marketplaces, which means many skills and MCP servers are now portable across agents with different packaging.",
+        "features": [
+          "Versioned bundle via plugin.json with five component types",
+          "Hooks for SessionStart, PreToolUse, PostToolUse and Stop",
+          "Over 60 launch partners",
+          "Install and validate locally from the agy CLI"
+        ],
+        "usage": [
+          "agy plugin install <plugin-name>",
+          "agy plugin validate ./<plugin-name>",
+          "agy plugin list"
+        ],
+        "links": [
+          "Marketplace announcement"
+        ],
+        "pricingNote": "Part of Google AI plans"
+      }
+    },
+    {
+      "id": "claude-code-v2-1-317",
+      "section": "claude",
+      "kind": "release",
+      "title": "Claude Code v2.1.317: تقرير تكاليف لبوابة Claude، وخطافات SDK تحظر عند الفشل، وإصلاحات للضغط والجلسات",
+      "summary": "يضيف Claude Code v2.1.317 الخيار onFailure: \"block\" لخطافات Agent SDK، وتقرير تكاليف في واجهة إدارة بوابة تطبيقات Claude، وسمات الخطة ونوع المقعد والمزوّد إلى مقاييس OTel، وسؤالًا قبل أن يرسل أي أمر بريد حسابك إلى الشبكة، إلى جانب عشرات الإصلاحات.",
+      "why": "لمن يبني وكلاء بـ Agent SDK: يمكن الآن أن يمنع خطاف فاشل الإجراء بدل أن يتركه يمر، مثل خطاف فحص أمني يتعطل. ولمن يدير فرقًا: تقرير الإنفاق حسب المطوّر واليوم ومجموعة الهوية يسهّل متابعة التكاليف.",
+      "about": "من الإضافات: تحذير في /schedule عندما تحصل مهمة سحابية مجدولة على موصلات لم تطلبها مع طريقة إزالتها، ونقطة GET /v1/organizations/analytics/cost لقراءة الإنفاق السابق إجمالًا أو حسب المطوّر أو اليوم أو مجموعة IdP، وسمات anthropic.plan وanthropic.seat_type وanthropic.provider وanthropic.custom_base_url في مقاييس OTel وأحداثه.\n\nوأضاف المتغير CLAUDE_CODE_DISABLE_NESTED_SESSION_ID لمن يستخدم مشغّلًا مستضافًا ذاتيًا ويريد أن يستخدم claude -p داخل جلسة معرّف تلك الجلسة كما في الإصدارات السابقة.\n\nومن الإصلاحات: انقطاع خوادم MCP الخاصة بالمشروع بعد الدور الأول في بعض جلسات التطبيق المكتبي، وخطأ «Prompt is too long» بعد الضغط التلقائي عند تغيّر ملف CLAUDE.md كبير، وخروج claude -p برمز 0 عند امتلاء القرص وفقدان السجل، وفشل وضع auto في كل دور عندما ترد بوابة LLM بالرمز 403 أو 422.",
+      "features": [
+        "onFailure: \"block\" لخطافات Agent SDK",
+        "تقرير تكاليف في واجهة إدارة بوابة تطبيقات Claude",
+        "سمات الخطة ونوع المقعد والمزوّد في OTel",
+        "سؤال قبل إرسال بريد الحساب عبر أدوات الويب أو الطرفية",
+        "إصلاح انقطاع MCP وأخطاء الضغط ورموز الخروج"
+      ],
+      "repo": "anthropics/claude-code",
+      "alternatives": [
+        "ess-claude-code-hooks",
+        "ess-claude-agent-sdk"
+      ],
+      "links": [
+        {
+          "label": "سجل التغييرات",
+          "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+        },
+        {
+          "label": "صفحة الإصدار",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.317"
+        }
+      ],
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.317",
+      "source": "github.com",
+      "importance": 2,
+      "tags": [
+        "Claude Code",
+        "Agent SDK",
+        "hooks",
+        "OpenTelemetry"
+      ],
+      "en": {
+        "title": "Claude Code v2.1.317: a cost report for the Claude apps gateway, SDK hooks that block on failure, and compaction and session fixes",
+        "summary": "Claude Code v2.1.317 adds onFailure: \"block\" for Agent SDK hook callbacks, a cost report in the Claude apps gateway admin API, plan, seat type and provider attributes in OTel metrics, and a prompt before any tool call sends your account email to the network, plus dozens of fixes.",
+        "why": "For people building agents with the Agent SDK, a failing hook can now block the action instead of letting it run, for example a security-check hook that crashes. For team admins, spend per developer, day or identity group makes costs easier to track.",
+        "about": "Additions include a warning in /schedule when a cloud scheduled task gets connectors you did not ask for, with how to remove them; GET /v1/organizations/analytics/cost for reading past spend in total or per developer, day or IdP group; and anthropic.plan, anthropic.seat_type, anthropic.provider and anthropic.custom_base_url in OTel metrics and events.\n\nIt also adds CLAUDE_CODE_DISABLE_NESTED_SESSION_ID for self-hosted runners that want claude -p inside a session to use that session's ID, as in earlier versions.\n\nFixes include project MCP servers disconnecting after the first turn in some desktop sessions, \"Prompt is too long\" after automatic compaction when a large CLAUDE.md changed, claude -p exiting 0 when a full disk lost its transcript, and auto mode failing every turn when an LLM gateway answered 403 or 422.",
+        "features": [
+          "onFailure: \"block\" for Agent SDK hooks",
+          "Cost report in the Claude apps gateway admin API",
+          "Plan, seat type and provider attributes in OTel",
+          "Prompt before web or shell tools send your account email",
+          "Fixes for MCP disconnects, compaction errors and exit codes"
+        ],
+        "links": [
+          "Changelog",
+          "Release page"
+        ]
+      }
+    },
+    {
+      "id": "gemini-api-computer-use-ga",
+      "section": "llm",
+      "kind": "model",
+      "title": "Computer Use في Gemini API أصبح متاحًا للجميع: تحكم بالمتصفح وAndroid وسطح المكتب",
+      "summary": "أعلنت Google في 30 أكتوبر إتاحة أداة Computer Use للجميع في Interactions API وGenerateContent API. يقترح النموذج إجراءات بإحداثيات على لقطات الشاشة، وينفذها تطبيقك ثم يعيد لقطة جديدة، مع ثلاث بيئات: browser وmobile لـ Android وdesktop للتحكم في نظام التشغيل.",
+      "why": "يتيح بناء وكلاء ينجزون مهام في واجهات ليس لها API، مثل تعبئة نماذج في لوحة إدارة قديمة أو اختبار تطبيق Android يدويًا، مع ضوابط أمان مدمجة تطلب التأكيد قبل الإجراءات الحساسة.",
+      "about": "تُفعَّل الأداة بالنوع computer_use مع اختيار البيئة. الحلقة تعمل في جانبك: النموذج يقترح الإجراء، وعميلك ينفذه عبر أداة مثل Playwright أو ADB، ثم يرسل لقطة شاشة جديدة. وتضيف بيئة mobile إجراءات خاصة بـ Android مثل open_app وlong_press.\n\nللأمان، توجد فئات سياسات مدمجة قد تُرجع require_confirmation أو blocked، ويمكن تعديلها عبر disabled_safety_policies. أما فحص حقن التعليمات في المحتوى فهو اختياري عبر enable_prompt_injection_detection ومعطّل افتراضيًا.\n\nلم تنشر Google تسعيرًا خاصًا بالأداة؛ تُحتسب وفق تسعير النموذج المستخدم.",
+      "features": [
+        "متاح للجميع في Interactions API وGenerateContent API",
+        "ثلاث بيئات: browser وmobile وdesktop",
+        "سياسات أمان تطلب التأكيد أو تحظر الإجراء",
+        "فحص اختياري لحقن التعليمات"
+      ],
+      "pricing": {
+        "model": "paid",
+        "note": "وفق تسعير نموذج Gemini المستخدم"
+      },
+      "alternatives": [
+        "ess-browser-use",
+        "ess-playwright-mcp"
+      ],
+      "links": [
+        {
+          "label": "توثيق Computer Use",
+          "url": "https://ai.google.dev/gemini-api/docs/computer-use"
+        },
+        {
+          "label": "سجل تغييرات Gemini API",
+          "url": "https://ai.google.dev/gemini-api/docs/changelog"
+        }
+      ],
+      "url": "https://ai.google.dev/gemini-api/docs/computer-use",
+      "source": "ai.google.dev",
+      "importance": 2,
+      "tags": [
+        "Gemini",
+        "computer use",
+        "agents",
+        "browser automation",
+        "Android"
+      ],
+      "en": {
+        "title": "Gemini API Computer Use is now generally available: control a browser, Android and the desktop",
+        "summary": "Google made the Computer Use tool generally available on October 30 across the Interactions API and GenerateContent API. The model proposes actions with coordinates on screenshots, your app executes them and sends back a new screenshot, with three environments: browser, mobile for Android, and desktop for OS-level control.",
+        "why": "It lets you build agents that work in interfaces with no API, such as filling forms in an old admin panel or manually testing an Android app, with built-in safety controls that ask for confirmation before sensitive actions.",
+        "about": "You enable the tool with type computer_use and choose an environment. The loop runs on your side: the model proposes an action, your client executes it with a tool such as Playwright or ADB, then sends a new screenshot. The mobile environment adds Android actions such as open_app and long_press.\n\nFor safety, built-in policy categories can return require_confirmation or blocked, and can be adjusted with disabled_safety_policies. Prompt-injection screening of content is opt-in via enable_prompt_injection_detection and off by default.\n\nGoogle has not published Computer Use-specific pricing; it is billed at the pricing of the model you use.",
+        "features": [
+          "Generally available in the Interactions and GenerateContent APIs",
+          "Three environments: browser, mobile and desktop",
+          "Safety policies that require confirmation or block actions",
+          "Optional prompt-injection detection"
+        ],
+        "links": [
+          "Computer Use docs",
+          "Gemini API changelog"
+        ],
+        "pricingNote": "Billed at the Gemini model's pricing"
+      }
+    },
+    {
+      "id": "gemini-api-cli-beta",
+      "section": "llm",
+      "kind": "tool",
+      "title": "gemini-api: أداة سطر أوامر رسمية لـ Gemini API بلا اعتماديات، موجّهة لوكلاء البرمجة وCI",
+      "summary": "أطلقت Google أداة gemini-api في نسخة تجريبية: عميل سطر أوامر عديم الحالة وبلا اعتماديات مبني على Interactions API. يغطي توليد النص والصور والفيديو والموسيقى والصوت، والتفريغ النصي والتحليل، وتشغيل الوكلاء المُدارة مثل deep-research. ليست وكيلًا تفاعليًا بل أداة تُستدعى من السكربتات والوكلاء.",
+      "why": "تتيح لوكيل البرمجة أو لخط CI استدعاء نماذج Gemini بأمر واحد دون كتابة شيفرة SDK، مثل توليد صورة لملف README أو تفريغ تسجيل صوتي ضمن سكربت.",
+      "about": "الأوامر المتاحة تشمل generate وimage وvideo وmusic وtts وtranscribe وanalyze وagent run وfiles وmodels وconfigure وwhoami. تتم المصادقة بالمتغير GEMINI_API_KEY أو بحفظ المفتاح في سلسلة مفاتيح النظام عبر configure.\n\nقيود النسخة التجريبية: قد تحتوي الإصدارات الفرعية على تغييرات كاسرة لذا ثبّت الإصدار في CI، وحد المدخلات المضمّنة 14 MB، والملفات المرفوعة تُحذف بعد 48 ساعة، ولا يوجد دعم لـ WebSockets.\n\nملاحظة من سجل التغييرات نفسه: المشاريع المدفوعة الجديدة على GenerateContent أصبحت تفعّل store=true لتسجيل الطلبات افتراضيًا، مع إمكانية إلغاء ذلك، والمشاريع الحالية لم تتأثر.",
+      "features": [
+        "عميل عديم الحالة وبلا اعتماديات",
+        "نص وصور وفيديو وموسيقى وصوت وتفريغ",
+        "تشغيل وكلاء مُدارة مثل deep-research",
+        "حفظ مفتاح API في سلسلة مفاتيح النظام"
+      ],
+      "install": [
+        {
+          "label": "التثبيت على macOS وLinux",
+          "cmd": "curl -fsSL https://raw.githubusercontent.com/google-gemini/gemini-api-cli/main/scripts/install.sh | bash"
+        },
+        {
+          "label": "التثبيت عبر Go",
+          "cmd": "go install github.com/google-gemini/gemini-api-cli/cmd/gemini-api@latest"
+        },
+        {
+          "label": "حفظ مفتاح API",
+          "cmd": "gemini-api configure --api-key \"YOUR_API_KEY\""
+        }
+      ],
+      "requirements": [
+        "مفتاح Gemini API"
+      ],
+      "repo": "google-gemini/gemini-api-cli",
+      "pricing": {
+        "model": "oss",
+        "note": "الأداة مفتوحة المصدر، والاستدعاءات تُحتسب وفق تسعير Gemini API"
+      },
+      "alternatives": [
+        "ess-antigravity-cli"
+      ],
+      "links": [
+        {
+          "label": "توثيق الأداة",
+          "url": "https://ai.google.dev/gemini-api/docs/cli"
+        },
+        {
+          "label": "المستودع",
+          "url": "https://github.com/google-gemini/gemini-api-cli"
+        }
+      ],
+      "url": "https://ai.google.dev/gemini-api/docs/cli",
+      "source": "ai.google.dev",
+      "importance": 2,
+      "tags": [
+        "Gemini",
+        "CLI",
+        "agents",
+        "CI",
+        "Google"
+      ],
+      "en": {
+        "title": "gemini-api: an official zero-dependency CLI for the Gemini API, aimed at coding agents and CI",
+        "summary": "Google released gemini-api in beta: a stateless, zero-dependency command-line client built on the Interactions API. It covers text, image, video, music and speech generation, transcription and analysis, and running managed agents such as deep-research. It is not an interactive agent but a tool for scripts and agents to call.",
+        "why": "It lets a coding agent or CI pipeline call Gemini models with one command and no SDK code, such as generating an image for a README or transcribing a recording inside a script.",
+        "about": "Commands include generate, image, video, music, tts, transcribe, analyze, agent run, files, models, configure and whoami. Authentication uses GEMINI_API_KEY or a key saved in the OS keychain with configure.\n\nBeta limits: minor versions can include breaking changes, so pin a version in CI; inline inputs are capped at 14 MB; uploaded files are deleted after 48 hours; and there is no WebSocket support.\n\nA note from the same changelog: new paid projects on GenerateContent now default to store=true for request logging, with an opt-out; existing projects are unaffected.",
+        "features": [
+          "Stateless, zero-dependency client",
+          "Text, images, video, music, speech and transcription",
+          "Run managed agents such as deep-research",
+          "Save the API key in the OS keychain"
+        ],
+        "install": [
+          "Install on macOS and Linux",
+          "Install with Go",
+          "Save the API key"
+        ],
+        "requirements": [
+          "A Gemini API key"
+        ],
+        "links": [
+          "CLI docs",
+          "Repository"
+        ],
+        "pricingNote": "The CLI is open source; calls are billed at Gemini API pricing"
+      }
+    },
+    {
+      "id": "mcp-release-cycle-sep-3398",
+      "section": "mcp",
+      "kind": "article",
+      "title": "تغيير دورة إصدارات MCP: المواصفة التالية تنتقل من ديسمبر 2026 إلى 30 مارس 2027، ثم إصدار كل ستة أشهر",
+      "summary": "قُبل المقترح SEP-3398 الذي يعيد تنظيم إصدارات Model Context Protocol: تصدر المواصفات في آخر ثلاثاء من مارس وسبتمبر، والإصدار الذي كان مقررًا في ديسمبر 2026 ينتقل إلى 30 مارس 2027. لا تغييرات على البروتوكول نفسه، بل على الجدول والمراحل.",
+      "why": "لمن يطوّر خوادم أو عملاء MCP: صار هناك جدول متوقع يسمح بالتخطيط، مثل معرفة متى تصل نسخ SDK التجريبية قبل المواصفة بشهر ونصف، ومتى يُجمَّد قبول التغييرات.",
+      "about": "كل دورة تمتد ثمانية أشهر مع تداخل شهرين بين الدورات. المراحل قبل الإصدار: فتح مراجعة المشرفين الأساسيين قبل 6 أشهر، والتجميد المرن قبل شهرين ونصف (يجب أن تكون المقترحات نهائية ومدمجة)، ونسخ تجريبية من SDKs الفئة الأولى قبل شهر ونصف، والتجميد الصارم قبل شهر حيث لا تُقبل إلا الإصلاحات الطارئة. وتصدر SDKs الفئة الأولى المستقرة قبل نشر المواصفة.\n\nكل إصدار له مدير إصدار أساسي وآخر احتياطي، والمقترحات (SEPs) تحتاج الآن راعيًا من مجموعة عمل أو من المشرفين الأساسيين وتمر بطابور مراجعة علني.\n\nآخر مواصفة صدرت هي 2026-07-28، وما زالت الصياغة النهائية للمقترح قيد الإكمال.",
+      "features": [
+        "إصدار كل ستة أشهر في آخر ثلاثاء من مارس وسبتمبر",
+        "الإصدار التالي في 30 مارس 2027 بدل ديسمبر 2026",
+        "تجميد مرن وصارم ونسخ SDK تجريبية قبل الإصدار",
+        "لا تغييرات على البروتوكول نفسه"
+      ],
+      "repo": "modelcontextprotocol/modelcontextprotocol",
+      "alternatives": [
+        "ess-mcp-docs"
+      ],
+      "links": [
+        {
+          "label": "نص المقترح SEP-3398",
+          "url": "https://modelcontextprotocol.io/seps/3398-release-cycle-updates"
+        }
+      ],
+      "url": "https://modelcontextprotocol.io/seps/3398-release-cycle-updates",
+      "source": "modelcontextprotocol.io",
+      "importance": 2,
+      "tags": [
+        "MCP",
+        "specification",
+        "release cycle",
+        "SDK"
+      ],
+      "en": {
+        "title": "MCP release cycle changes: the next spec moves from December 2026 to March 30, 2027, then a release every six months",
+        "summary": "SEP-3398, now accepted, reorganizes Model Context Protocol releases: specs ship on the last Tuesday of March and September, and the release planned for December 2026 moves to March 30, 2027. There are no protocol changes, only to the schedule and milestones.",
+        "why": "For anyone building MCP servers or clients, there is now a predictable schedule to plan around, such as knowing that SDK betas arrive a month and a half before the spec and when changes stop being accepted.",
+        "about": "Each cycle lasts eight months with two months of overlap. Milestones before release: core maintainer review opens at 6 months, soft freeze at 2.5 months (SEPs must be final and merged), Tier 1 SDK betas at 1.5 months, and hard freeze at 1 month, when only emergency fixes are accepted. Stable Tier 1 SDKs ship before the spec is published.\n\nEach release has a primary and a secondary release manager, and SEPs now need a sponsor from a working group or the core maintainers and go through a public review queue.\n\nThe latest spec is 2026-07-28, and the final wording of the SEP is still being completed.",
+        "features": [
+          "A release every six months, on the last Tuesday of March and September",
+          "Next release on March 30, 2027 instead of December 2026",
+          "Soft and hard freezes and SDK betas before release",
+          "No changes to the protocol itself"
+        ],
+        "links": [
+          "SEP-3398 text"
+        ]
+      }
+    },
+    {
+      "id": "aws-labs-mcp-servers-cves",
+      "section": "security",
+      "kind": "article",
+      "title": "ثغرتان في خوادم MCP من AWS Labs: تجاوز مسار في serverless-mcp وتجاوز تحقق OAuth في api-mcp",
+      "summary": "نشرت AWS في 2 نوفمبر نشرة أمنية عن CVE-2026-116635 في aws-serverless-mcp-server: تجاوز مسار يسمح بقراءة ملفات JSON خارج المجلد المقصود، أو إنشائها والكتابة فوقها إذا كانت الكتابة مفعّلة. الإصلاح في 0.2.1. وقبلها أُصلحت CVE-2026-115413 في aws-api-mcp-server بالإصدار 1.6.0.",
+      "why": "خوادم MCP تعمل بصلاحيات حسابك السحابي، وأي شخص يستطيع التأثير في مدخلات الوكيل، مثل محتوى مستودع أو صفحة يقرؤها، قد يستغل الثغرة. إذا كنت تستخدم هذه الخوادم مع وكيل برمجة فحدّثها الآن.",
+      "about": "في الثغرة الأولى، كان مكوّن حالة النشر في الإصدارات الأقدم من 0.2.1 يقبل تسلسلات تجاوز المجلدات أو مسارًا مطلقًا في اسم المشروع. لا توجد حلول بديلة، وتوصي AWS بالتحديث وبتحديث أي نسخ معدّلة (forks). الدرجة 6.1 وفق CVSS 3.1.\n\nالثغرة الثانية تخص aws-api-mcp-server من 1.3.0 وحتى ما قبل 1.6.0 عند التشغيل عبر streamable-http مع OAuth: لم يكن يتحقق من جمهور الرمز (audience)، فقد يُقبل رمز صادر لخدمة أخرى. درجتها 7.8، ولا يُعرف استغلالها، والإصلاح في 1.6.0.\n\nالدرس العام: تعامل مع خوادم MCP كأي اعتمادية تشغّل شيفرة بصلاحياتك، وثبّت إصداراتها وتابع تحديثاتها الأمنية.",
+      "features": [
+        "CVE-2026-116635: تجاوز مسار، الإصلاح في 0.2.1",
+        "CVE-2026-115413: تجاوز تحقق جمهور OAuth، الإصلاح في 1.6.0",
+        "لا حلول بديلة سوى التحديث",
+        "لا استغلال معروف حتى الآن"
+      ],
+      "repo": "awslabs/mcp",
+      "links": [
+        {
+          "label": "نشرة AWS الأمنية",
+          "url": "https://aws.amazon.com/security/security-bulletins/2026-164-aws/"
+        }
+      ],
+      "url": "https://aws.amazon.com/security/security-bulletins/2026-164-aws/",
+      "source": "aws.amazon.com",
+      "importance": 2,
+      "tags": [
+        "security",
+        "MCP",
+        "AWS",
+        "CVE"
+      ],
+      "en": {
+        "title": "Two flaws in AWS Labs MCP servers: path traversal in serverless-mcp and an OAuth check bypass in api-mcp",
+        "summary": "AWS published a security bulletin on November 2 for CVE-2026-116635 in aws-serverless-mcp-server: a path traversal that allows reading JSON files outside the intended directory, or creating and overwriting them if writes are enabled. It is fixed in 0.2.1. Earlier, CVE-2026-115413 in aws-api-mcp-server was fixed in 1.6.0.",
+        "why": "MCP servers run with your cloud account's permissions, and anyone who can influence the agent's input, such as repository content or a page it reads, might exploit the flaw. If you use these servers with a coding agent, update them now.",
+        "about": "In the first flaw, the deployment-status component in versions before 0.2.1 accepted directory traversal sequences or an absolute path in the project name. There are no workarounds; AWS recommends upgrading and updating any forks. It scores 6.1 on CVSS 3.1.\n\nThe second affects aws-api-mcp-server from 1.3.0 up to before 1.6.0 when running over streamable-http with OAuth: it did not validate the token audience, so a token issued for another service could be accepted. It scores 7.8, no exploitation is known, and it is fixed in 1.6.0.\n\nThe general lesson: treat MCP servers like any dependency that runs code with your permissions, pin their versions and follow their security updates.",
+        "features": [
+          "CVE-2026-116635: path traversal, fixed in 0.2.1",
+          "CVE-2026-115413: OAuth audience check bypass, fixed in 1.6.0",
+          "No workaround other than upgrading",
+          "No known exploitation so far"
+        ],
+        "links": [
+          "AWS security bulletin"
+        ]
+      }
+    },
+    {
+      "id": "coolify-v4-6-0",
+      "section": "devops",
+      "kind": "release",
+      "title": "Coolify v4.6.0: صلاحيات لكل مشروع، وقنوات تحديث، وتغييرات كاسرة في رموز API وإنهاء دعم Windows",
+      "summary": "أصدر Coolify النسخة 4.6.0 في 2 نوفمبر. تتيح تقييد أعضاء الفريق ورموز API بمشاريع أو بيئات أو موارد محددة، واختيار قناة تحديث (stable أو preview أو nightly)، وتضيف أدوات MCP جديدة. وفيها تغييرات كاسرة: الحذف عبر API يحتاج صلاحية delete، وانتهى دعم Windows مع Docker Desktop.",
+      "why": "لمن يستضيف تطبيقاته بنفسه على Coolify: يمكن الآن إعطاء مطوّر أو سكربت CI صلاحية النشر لمشروع واحد فقط دون الحذف. لكن راجع رموز API قبل التحديث، لأن الرموز التي تملك write فقط لن تستطيع الحذف بعد الآن.",
+      "about": "مستويات الصلاحية الجديدة: read وread sensitive وdeploy وwrite وdelete وroot، مع قوالب جاهزة (viewer وdeveloper وoperator وfull access). وصار يمكن تعديل رموز API وإيقافها مؤقتًا وتدويرها. ومن الإضافات: أدوات MCP لإدارة DNS ورموز التكامل ومديري الأسرار، واستنساخ مستودعات خاصة عبر HTTPS من خوادم Git مخصصة، وتصريف السجلات إلى Amazon CloudWatch، وشهادة SBOM لكل صورة.\n\nأمنيًا: إخفاء قيم متغيرات البيئة المقفلة في نقاط قوائم الموارد، وحصر تعطيل API أو تشغيل خادم MCP بمشرف النسخة، وعدم كشف واجهة Reverb HTTP تحت /apps، وتثبيت إجراءات CI على commit SHA كاملة.\n\nتنبيهات الترقية: طبقات الصور تستخدم الآن zstd، فيتطلب سحبها Docker Engine 23.0 أو أحدث، ويتطلب Coolify نفسه 24.0. أُزيلت وسوم الصور next وsha-<commit> وصيغة rc، ويحذف سكربت الترقية المتغير COOLIFY_VERSION من ملف .env.",
+      "features": [
+        "صلاحيات دقيقة لكل مشروع أو بيئة أو مورد",
+        "قنوات تحديث: stable وpreview وnightly وصورة مخصصة",
+        "كاسر: الحذف عبر API وMCP يحتاج صلاحية delete",
+        "كاسر: انتهاء دعم Windows مع Docker Desktop",
+        "يتطلب Docker Engine 24.0 بسبب ضغط zstd"
+      ],
+      "requirements": [
+        "Docker Engine 24.0 أو أحدث"
+      ],
+      "repo": "coollabsio/coolify",
+      "alternatives": [
+        "ess-coolify",
+        "ess-dokploy"
+      ],
+      "links": [
+        {
+          "label": "ملاحظات الإصدار",
+          "url": "https://github.com/coollabsio/coolify/releases/tag/v4.6.0"
+        }
+      ],
+      "url": "https://github.com/coollabsio/coolify/releases/tag/v4.6.0",
+      "source": "github.com",
+      "importance": 2,
+      "tags": [
+        "Coolify",
+        "self-hosted",
+        "DevOps",
+        "permissions",
+        "breaking changes"
+      ],
+      "en": {
+        "title": "Coolify v4.6.0: per-project permissions, update channels, and breaking changes to API tokens and Windows support",
+        "summary": "Coolify released 4.6.0 on November 2. You can now limit team members and API tokens to specific projects, environments or resources, choose an update channel (stable, preview or nightly), and use new MCP tools. Breaking changes: deletes through the API need the delete ability, and Windows support with Docker Desktop is gone.",
+        "why": "For anyone self-hosting apps on Coolify, you can now give a developer or a CI script deploy access to a single project without delete rights. Review your API tokens before upgrading, since tokens with only write can no longer delete.",
+        "about": "The new permission levels are read, read sensitive, deploy, write, delete and root, with presets (viewer, developer, operator and full access). API tokens can now be edited, paused and rolled. Other additions: MCP tools for DNS, integration tokens and secret managers, HTTPS cloning of private repositories from custom Git hosts, an Amazon CloudWatch log drain, and an SBOM attestation for every image.\n\nSecurity: locked environment variable values are hidden in resource list endpoints, only an instance admin can disable the API or toggle the MCP server, the Reverb HTTP API is no longer exposed under /apps, and CI actions are pinned to full commit SHAs.\n\nUpgrade notes: image layers now use zstd, so pulling them needs Docker Engine 23.0 or later and Coolify itself requires 24.0. The next, sha-<commit> and rc image tags are removed, and the upgrade script removes COOLIFY_VERSION from .env.",
+        "features": [
+          "Fine-grained permissions per project, environment or resource",
+          "Update channels: stable, preview, nightly and custom image",
+          "Breaking: deletes via API and MCP need the delete ability",
+          "Breaking: Windows with Docker Desktop no longer supported",
+          "Requires Docker Engine 24.0 because of zstd compression"
+        ],
+        "requirements": [
+          "Docker Engine 24.0 or later"
+        ],
+        "links": [
+          "Release notes"
+        ]
+      }
+    },
+    {
+      "id": "docker-compose-v5-7-0",
+      "section": "devops",
+      "kind": "release",
+      "title": "Docker Compose v5.7.0: خطة تنفيذ موحدة لـ up وscale وstart، وخيارات جديدة لـ run وpush وstats",
+      "summary": "تجمع Docker Compose 5.7.0 أوامر up وscale وstart وإعادة البناء في watch على خطة تنفيذ واحدة، وتضيف run --no-recreate وpush --ignore-missing وstats --all-projects وخاصية umask للخدمات. ومن الإصلاحات أن down -v لم يعد يحذف وحدات تخزين لا يملكها المشروع.",
+      "why": "لمن يدير بيئات تطوير أو خوادم صغيرة بـ Compose: سلوك أكثر اتساقًا بين أوامر التشغيل، وحماية من حذف بيانات بالخطأ، مثل وحدة تخزين قاعدة بيانات مشتركة بين مشروعين.",
+      "about": "مع الخطة الموحدة، ينفذ up مرحلتي الإنشاء والتشغيل على لقطة واحدة من حالة Docker daemon. ومن الخيارات الجديدة: run --no-recreate لإعادة استخدام الاعتماديات الموجودة، وpush --ignore-missing لتخطي الصور غير الموجودة محليًا (مع إهمال --ignore-push-failures)، وstats --all-projects و--aggregate، وإمكانية ألا يكون اسم الخدمة اسمًا مستعارًا في الشبكة.\n\nومن الإصلاحات: احتفاظ الاعتمادية المعاد إنشاؤها بوحدات تخزينها المجهولة، وتجاهل watch لمجلد .git على أي عمق، وحصول خطافات pre_start على env_file وenvironment الخاصة بالخدمة. وتحدّثت الاعتماديات إلى Go 1.26.10 وcontainerd v2.4.2.\n\nالتغييرات الكاسرة تخص فقط البرامج التي تستورد Compose كمكتبة Go، مثل تقسيم api.Compose إلى ست واجهات، ولا تمس مستخدمي سطر الأوامر.",
+      "features": [
+        "خطة تنفيذ موحدة لـ up وscale وstart وwatch",
+        "run --no-recreate وpush --ignore-missing",
+        "stats --all-projects و--aggregate",
+        "down -v لا يحذف وحدات تخزين لا يملكها المشروع",
+        "خاصية umask جديدة للخدمات"
+      ],
+      "repo": "docker/compose",
+      "alternatives": [
+        "ess-docker-compose",
+        "ess-lazydocker"
+      ],
+      "links": [
+        {
+          "label": "صفحة الإصدار",
+          "url": "https://github.com/docker/compose/releases/tag/v5.7.0"
+        }
+      ],
+      "url": "https://github.com/docker/compose/releases/tag/v5.7.0",
+      "source": "github.com",
+      "importance": 2,
+      "tags": [
+        "Docker",
+        "Docker Compose",
+        "DevOps",
+        "containers"
+      ],
+      "en": {
+        "title": "Docker Compose v5.7.0: one execution plan for up, scale and start, and new options for run, push and stats",
+        "summary": "Docker Compose 5.7.0 puts up, scale, start and watch rebuilds on one execution plan, and adds run --no-recreate, push --ignore-missing, stats --all-projects and a umask service attribute. Among the fixes, down -v no longer removes volumes the project does not own.",
+        "why": "For anyone running dev environments or small servers with Compose: more consistent behavior across commands and protection from deleting data by mistake, such as a database volume shared between two projects.",
+        "about": "With the unified plan, up runs its create and start phases over a single snapshot of the Docker daemon's state. New options include run --no-recreate to reuse existing dependencies, push --ignore-missing to skip images not available locally (deprecating --ignore-push-failures), stats --all-projects and --aggregate, and a way for a service to opt out of having its name as a network alias.\n\nFixes include a recreated dependency keeping its anonymous volumes, watch ignoring .git at any depth, and pre_start hooks receiving the service's env_file and environment. Dependencies moved to Go 1.26.10 and containerd v2.4.2.\n\nBreaking changes affect only programs that import Compose as a Go library, such as api.Compose being split into six interfaces, not CLI users.",
+        "features": [
+          "One execution plan for up, scale, start and watch",
+          "run --no-recreate and push --ignore-missing",
+          "stats --all-projects and --aggregate",
+          "down -v keeps volumes the project does not own",
+          "New umask service attribute"
+        ],
+        "links": [
+          "Release page"
+        ]
+      }
+    },
+    {
+      "id": "tailwindcss-v4-3-4-turbopack-loader",
+      "section": "frontend",
+      "kind": "release",
+      "title": "Tailwind CSS v4.3.4: محمّل Turbopack رسمي لـ Next.js، وإصلاح إعادة التحميل الكامل لملفات PHP في Vite",
+      "summary": "صدرت Tailwind CSS 4.3.4 في 2 نوفمبر مع أول إصدار مستقر لحزمة @tailwindcss/turbopack، وهي محمّل Turbopack لاستخدام Tailwind مع Next.js، ونحو 40 إصلاحًا، منها توقيع صحيح لملفات macOS التنفيذية المستقلة، وإيقاف إعادة تحميل الصفحة كاملة في Vite عند تعديل ملفات مثل .php.",
+      "why": "لمستخدمي Next.js مع Turbopack: طريقة رسمية ومباشرة لدمج Tailwind. ولمستخدمي Laravel مع Vite: تعديل قالب Blade لم يعد يفرض إعادة تحميل الصفحة كاملة، فيبقى التطوير أسرع.",
+      "about": "تُضاف الحزمة الجديدة كقاعدة في إعداد turbopack داخل next.config.js لملفات *.css، ثم يُكتب @import 'tailwindcss'; في ملف CSS. وقبل هذا الإصدار كانت متاحة في نسخ insiders فقط.\n\nمن الإصلاحات الأخرى: لم يعد macOS 27 يوقف الملفات التنفيذية المستقلة عند التشغيل بسبب التوقيع، ولم يعد @tailwindcss/vite يتعطل مع وضع bundledDev التجريبي في Vite، ويعود @tailwindcss/oxide إلى WASM على المنصات التي لا تملك ربطًا أصليًا، ويحترم الاكتشاف التلقائي للمصادر أنماط النفي في .gitignore.\n\nوهناك إصلاحات كثيرة في توحيد صيغ الأصناف، مثل تحويل max-[64rem]:flex إلى max-lg:flex.",
+      "features": [
+        "حزمة @tailwindcss/turbopack مستقرة لـ Next.js",
+        "Vite لا يعيد تحميل الصفحة كاملة لملفات مثل .php",
+        "توقيع صحيح لملفات macOS التنفيذية المستقلة",
+        "الرجوع إلى WASM عند غياب الربط الأصلي",
+        "احترام أنماط النفي في .gitignore"
+      ],
+      "install": [
+        {
+          "label": "تثبيت محمّل Turbopack",
+          "cmd": "npm install @tailwindcss/turbopack"
+        }
+      ],
+      "repo": "tailwindlabs/tailwindcss",
+      "alternatives": [
+        "ess-tailwindcss",
+        "ess-nextjs",
+        "ess-vite"
+      ],
+      "links": [
+        {
+          "label": "صفحة الإصدار",
+          "url": "https://github.com/tailwindlabs/tailwindcss/releases/tag/v4.3.4"
+        },
+        {
+          "label": "حزمة @tailwindcss/turbopack",
+          "url": "https://github.com/tailwindlabs/tailwindcss/tree/main/packages/@tailwindcss-turbopack"
+        }
+      ],
+      "url": "https://github.com/tailwindlabs/tailwindcss/releases/tag/v4.3.4",
+      "source": "github.com",
+      "importance": 2,
+      "tags": [
+        "Tailwind CSS",
+        "Next.js",
+        "Turbopack",
+        "Vite",
+        "CSS"
+      ],
+      "en": {
+        "title": "Tailwind CSS v4.3.4: an official Turbopack loader for Next.js, and no more full reloads for PHP files in Vite",
+        "summary": "Tailwind CSS 4.3.4 shipped on November 2 with the first stable release of @tailwindcss/turbopack, a Turbopack loader for using Tailwind with Next.js, and about 40 fixes, including a valid signature for the standalone macOS binaries and no more full-page reloads in Vite when editing files such as .php.",
+        "why": "For Next.js users on Turbopack, an official, direct way to integrate Tailwind. For Laravel users on Vite, editing a Blade template no longer forces a full page reload, so development stays faster.",
+        "about": "You add the new package as a rule in the turbopack config inside next.config.js for *.css files, then write @import 'tailwindcss'; in your CSS file. Before this release it was available only in insiders builds.\n\nOther fixes: macOS 27 no longer kills the standalone binaries at launch because of the signature, @tailwindcss/vite no longer crashes in Vite's experimental bundledDev mode, @tailwindcss/oxide falls back to WASM on platforms without native bindings, and automatic source detection respects negation patterns in .gitignore.\n\nThere are also many class canonicalization fixes, such as turning max-[64rem]:flex into max-lg:flex.",
+        "features": [
+          "Stable @tailwindcss/turbopack package for Next.js",
+          "Vite no longer fully reloads for files such as .php",
+          "Valid signature for standalone macOS binaries",
+          "WASM fallback when native bindings are missing",
+          "Respects negation patterns in .gitignore"
+        ],
+        "install": [
+          "Install the Turbopack loader"
+        ],
+        "links": [
+          "Release page",
+          "@tailwindcss/turbopack package"
+        ]
+      }
+    },
+    {
+      "id": "better-auth-security-release-nov-3",
+      "section": "backend",
+      "kind": "article",
+      "title": "إصدار أمني لـ Better Auth اليوم 3 نوفمبر لخطّي 1.7.x و1.8.0-beta",
+      "summary": "أعلن فريق Better Auth، مكتبة المصادقة لـ TypeScript، عن إصدار أمني اليوم الثلاثاء 3 نوفمبر 2026 يشمل خطّي v1.7.x وv1.8.0-beta.x. ستُنشر النسخ الجديدة على npm والتنبيهات على GitHub Security Advisories في الوقت نفسه، ولم تُعلن تفاصيل الثغرات أو أرقام النسخ المصلحة بعد.",
+      "why": "إذا كان تطبيقك، مثل SaaS أو لوحة إدارة، يعتمد على Better Auth لتسجيل الدخول، فجهّز اليوم للتحديث فور صدور النسخ: ابقَ على أحدث نسخة في خطك، وإن كنت تثبّت الإصدارات فاستعد لتحديثها.",
+      "about": "نُشر الإعلان في 30 أكتوبر حتى يتمكن من يستخدم نسخًا خارج الخطين المشمولين من الترقية مسبقًا. ووعد الفريق بتحديث المنشور بأرقام النسخ وروابط التنبيهات يوم الإصدار.\n\nحتى صباح اليوم بتوقيت UTC، كانت أحدث نسخة على npm هي 1.7.15 (1 نوفمبر)، والنسخة التجريبية 1.8.0-beta.4. وقد شددت 1.7.15 إضافة admin: صارت ترفض المستخدمين المحظورين عند إنشاء جلسة عبر internalAdapter.createSession، وترد بخطأ 400 إذا حاول الطلب تغيير id المستخدم.\n\nلم تُكشف خطورة الثغرات ولا عددها حتى الآن، لذا تابع صفحة الإصدارات في GitHub.",
+      "features": [
+        "الإصدار الأمني مقرر في 3 نوفمبر 2026",
+        "يشمل v1.7.x وv1.8.0-beta.x",
+        "التنبيهات على GitHub Security Advisories مع النسخ",
+        "1.7.15 شددت إضافة admin مسبقًا"
+      ],
+      "repo": "better-auth/better-auth",
+      "alternatives": [
+        "ess-better-auth"
+      ],
+      "links": [
+        {
+          "label": "إعلان الإصدار الأمني",
+          "url": "https://better-auth.com/blog/security-release-2026-11-03"
+        }
+      ],
+      "url": "https://better-auth.com/blog/security-release-2026-11-03",
+      "source": "better-auth.com",
+      "importance": 2,
+      "tags": [
+        "Better Auth",
+        "security",
+        "authentication",
+        "TypeScript"
+      ],
+      "en": {
+        "title": "Better Auth security release today, November 3, for the 1.7.x and 1.8.0-beta lines",
+        "summary": "The Better Auth team, maker of the TypeScript authentication library, announced a security release for today, Tuesday November 3, 2026, covering v1.7.x and v1.8.0-beta.x. New versions go to npm and advisories to GitHub Security Advisories at the same time; vulnerability details and fixed version numbers have not been announced yet.",
+        "why": "If your app, such as a SaaS or an admin dashboard, uses Better Auth for sign-in, get ready to update as soon as the versions land: stay on the latest release of your line, and if you pin versions, be ready to bump them.",
+        "about": "The announcement went out on October 30 so that people on versions outside the covered lines can upgrade ahead of time. The team promised to update the post with version numbers and advisory links on release day.\n\nAs of this morning UTC, the latest npm version was 1.7.15 (November 1) and the beta was 1.8.0-beta.4. Version 1.7.15 hardened the admin plugin: it rejects banned users when a session is created through internalAdapter.createSession, and returns a 400 error if a request tries to change the user's id.\n\nSeverity and number of vulnerabilities have not been disclosed yet, so watch the GitHub releases page.",
+        "features": [
+          "Security release scheduled for November 3, 2026",
+          "Covers v1.7.x and v1.8.0-beta.x",
+          "Advisories on GitHub Security Advisories with the versions",
+          "1.7.15 already hardened the admin plugin"
+        ],
+        "links": [
+          "Security release announcement"
+        ]
+      }
+    },
+    {
+      "id": "lxd-microcloud-cve-2026-112816",
+      "section": "security",
+      "kind": "article",
+      "title": "ثغرة بدرجة 10.0 في LXD وMicroCloud: انتحال عميل موثوق بشهادته العامة فقط",
+      "summary": "كشفت Canonical عن CVE-2026-112816 في LXD وMicroCloud بدرجة 10.0: لم يكن الخادم يتحقق من امتلاك العميل للمفتاح الخاص لشهادته، فيمكن لمن يملك الشهادة العامة لعميل موثوق انتحاله. الإصلاح في LXD 6.10.1 و5.21.9 و5.0.11 و4.0.15، وMicroCloud 3.4.1 و2.1.5، وIncus 7.6.0.",
+      "why": "لمن يدير حاويات أو آلات افتراضية بـ LXD أو Incus على خوادم أو في مختبر منزلي: إذا كانت واجهة HTTPS مكشوفة على الشبكة فحدّث فورًا، لأن الشهادة العامة ليست سرًا.",
+      "about": "يحتاج المهاجم إلى الوصول الشبكي إلى واجهة HTTPS البرمجية. ولا تكشف نسخة LXD المستقلة هذه الواجهة افتراضيًا؛ إذ تتطلب ضبط core.https_address، بينما تعتمد عليها بيئات MicroCloud العنقودية.\n\nالحزم المتأثرة هي حزم snap؛ أما حزم LXD في أرشيف Ubuntu فمدرجة على أنها غير متأثرة أو غير مشحونة. ولم تقدم Canonical حلًا بديلًا، وقالت إن النسخ المصلحة كانت تنتقل من قناة candidate إلى stable.\n\nلا يُعرف استغلال للثغرة حتى الآن. وتأثر Incus، الفرع المجتمعي من LXD، أيضًا وأُصلح في 7.6.0.",
+      "features": [
+        "درجة CVSS 10.0",
+        "انتحال عميل موثوق دون مفتاحه الخاص",
+        "يتطلب وصولًا شبكيًا إلى واجهة HTTPS",
+        "الإصلاح في LXD 6.10.1 وMicroCloud 3.4.1 وIncus 7.6.0"
+      ],
+      "links": [
+        {
+          "label": "تقرير The Hacker News",
+          "url": "https://thehackernews.com/2026/11/critical-lxd-and-microcloud-flaw-cvss.html"
+        },
+        {
+          "label": "صفحة Ubuntu للثغرة",
+          "url": "https://ubuntu.com/security/CVE-2026-112816"
+        }
+      ],
+      "url": "https://ubuntu.com/security/CVE-2026-112816",
+      "source": "ubuntu.com",
+      "importance": 2,
+      "tags": [
+        "security",
+        "LXD",
+        "Incus",
+        "CVE",
+        "Linux"
+      ],
+      "en": {
+        "title": "A 10.0-rated flaw in LXD and MicroCloud: impersonate a trusted client with only its public certificate",
+        "summary": "Canonical disclosed CVE-2026-112816 in LXD and MicroCloud, rated 10.0: the server did not verify that the client held the private key for its certificate, so anyone with a trusted client's public certificate could impersonate it. Fixed in LXD 6.10.1, 5.21.9, 5.0.11 and 4.0.15, MicroCloud 3.4.1 and 2.1.5, and Incus 7.6.0.",
+        "why": "For anyone running containers or VMs with LXD or Incus on servers or in a home lab: if the HTTPS API is reachable over the network, update now, because a public certificate is not a secret.",
+        "about": "The attacker needs network access to the HTTPS API. Standalone LXD does not expose it by default; it requires setting core.https_address, while MicroCloud clusters rely on it.\n\nThe affected packages are snaps; LXD packages in the Ubuntu archive are listed as not affected or not shipped. Canonical gave no workaround and said the fixed releases were moving from the candidate to the stable channel.\n\nNo exploitation is known so far. Incus, the community fork of LXD, was also affected and is fixed in 7.6.0.",
+        "features": [
+          "CVSS 10.0",
+          "Impersonate a trusted client without its private key",
+          "Requires network access to the HTTPS API",
+          "Fixed in LXD 6.10.1, MicroCloud 3.4.1 and Incus 7.6.0"
+        ],
+        "links": [
+          "The Hacker News report",
+          "Ubuntu CVE page"
+        ]
+      }
+    },
+    {
+      "id": "vercel-blocks-malicious-npm-packages",
+      "section": "security",
+      "kind": "article",
+      "title": "Vercel تحظر حزم npm الخبيثة قبل التثبيت وأثناءه في كل عمليات البناء",
+      "summary": "أعلنت Vercel في 2 نوفمبر أنها تفحص ملفات القفل المدعومة قبل التثبيت، بما فيها الاعتماديات المستعادة من ذاكرة البناء المؤقتة، وتمنع أثناء التثبيت تنزيل نسخ حزم npm العامة المصنّفة خبيثة أو ضعيفة. الميزة تلقائية على كل الخطط دون إعداد.",
+      "why": "تضيف طبقة حماية من هجمات سلسلة التوريد دون أي جهد: إذا سحب مشروعك نسخة مخترقة من حزمة شائعة، يفشل النشر مع اسم الحزمة ونسختها بدل أن تصل الشيفرة الخبيثة إلى الإنتاج.",
+      "about": "عند اكتشاف اعتمادية محظورة يفشل النشر ويذكر اسم الحزمة ونسختها، وتحاول Vercel إبطال ذاكرة البناء المؤقتة المتأثرة. والحل هو تحديث الاعتمادية وملف القفل ثم إعادة النشر.\n\nتصل القواعد الجديدة عادةً إلى عمليات البناء الجديدة خلال دقائق. وتشمل القائمة نسخ الحزم المصنفة بأنها برمجيات خبيثة أو ذات ثغرات.\n\nالميزة تحمي بيئة البناء على Vercel فقط، ولا تغني عن فحص الاعتماديات على أجهزة المطورين وفي CI.",
+      "features": [
+        "فحص ملفات القفل قبل التثبيت",
+        "حظر التنزيل أثناء التثبيت",
+        "تشمل الاعتماديات من ذاكرة البناء المؤقتة",
+        "تلقائية على كل الخطط"
+      ],
+      "pricing": {
+        "model": "free",
+        "note": "متاحة على كل خطط Vercel دون تكلفة إضافية"
+      },
+      "alternatives": [
+        "ess-socket-dev"
+      ],
+      "links": [
+        {
+          "label": "إعلان Vercel",
+          "url": "https://vercel.com/changelog/blocking-malicious-npm-packages-before-and-during-installation"
+        }
+      ],
+      "url": "https://vercel.com/changelog/blocking-malicious-npm-packages-before-and-during-installation",
+      "source": "vercel.com",
+      "importance": 2,
+      "tags": [
+        "Vercel",
+        "npm",
+        "supply chain",
+        "security"
+      ],
+      "en": {
+        "title": "Vercel now blocks malicious npm packages before and during installation in every build",
+        "summary": "Vercel announced on November 2 that it checks supported lockfiles before install, including dependencies restored from the build cache, and blocks downloads of public npm package versions flagged as malicious or vulnerable during install. It is automatic on all plans with no configuration.",
+        "why": "It adds a layer of supply-chain protection with no effort: if your project pulls a compromised version of a popular package, the deployment fails with the package name and version instead of the malicious code reaching production.",
+        "about": "When a blocked dependency is found, the deployment fails and names the package and version, and Vercel tries to invalidate the affected build cache. The fix is to update the dependency and lockfile, then redeploy.\n\nNew rules typically reach new builds within minutes. The list covers package versions flagged for malware or vulnerabilities.\n\nThe feature protects only Vercel's build environment and does not replace dependency scanning on developer machines and in CI.",
+        "features": [
+          "Lockfile checks before install",
+          "Downloads blocked during install",
+          "Covers dependencies from the build cache",
+          "Automatic on all plans"
+        ],
+        "links": [
+          "Vercel announcement"
+        ],
+        "pricingNote": "Available on all Vercel plans at no extra cost"
+      }
+    },
+    {
+      "id": "mobbin-skills-mcp",
+      "section": "design",
+      "kind": "plugin",
+      "title": "Mobbin Skills: إضافة رسمية تتيح للوكيل البحث في شاشات تطبيقات حقيقية وإعادة تصميم الواجهات بناءً عليها",
+      "summary": "نشرت Mobbin، مكتبة مراجع تصميم الواجهات، إضافة رسمية تضم خادم MCP وأربع مهارات: best-practices وsearch وredesign-screen وplain-writing. يستطيع الوكيل البحث في مكتبة Mobbin من الشاشات والتدفقات وأقسام المواقع من تطبيقات منشورة، وإعادة تصميم شاشة انطلاقًا من لقطة أو شيفرة أو ملف تصميم.",
+      "why": "بدل أن يخترع الوكيل واجهة عامة، يستند إلى كيف حلّت تطبيقات حقيقية الشاشة نفسها، مثل صفحة اشتراك مع فترة تجريبية أو شاشة فارغة في تطبيق مصاريف، ثم يعدّل شيفرة الواجهة على هذا الأساس.",
+      "about": "الإضافة متاحة لـ Claude Code وCodex وAntigravity CLI وGemini CLI وKimi Code CLI، ويمكن تثبيت المهارات وحدها عبر npx skills مع إضافة خادم MCP يدويًا على العنوان https://api.mobbin.com/mcp. عند أول استخدام يفتح الوكيل المتصفح لتسجيل الدخول إلى Mobbin.\n\nمهارة search تعلّم الوكيل اختيار الأداة المناسبة (search_screens أو search_flows أو search_sections) وكتابة استعلامات بثلاثة قيود على الأكثر. وتنبيه: المنصات المدعومة هي ios وweb فقط، فطلبات Android تبحث في مراجع iOS.\n\nمهارة redesign-screen تعيد تصميم شاشة أو قسم أو مكوّن استنادًا إلى أنماط من تطبيقات حقيقية أو إلى الشاشات المحفوظة في مجموعاتك على Mobbin.",
+      "features": [
+        "خادم MCP رسمي مع أربع مهارات",
+        "بحث في شاشات وتدفقات وأقسام من تطبيقات حقيقية",
+        "إعادة تصميم شاشة من لقطة أو شيفرة أو ملف تصميم",
+        "يدعم Claude Code وCodex وAntigravity وGemini CLI"
+      ],
+      "install": [
+        {
+          "label": "إضافة السوق في Claude Code",
+          "cmd": "claude plugin marketplace add mobbin/skills"
+        },
+        {
+          "label": "تثبيت الإضافة في Claude Code",
+          "cmd": "claude plugin install mobbin@mobbin"
+        },
+        {
+          "label": "المهارات فقط عبر skills.sh",
+          "cmd": "npx skills add mobbin/skills"
+        }
+      ],
+      "requirements": [
+        "اشتراك Mobbin بخطة Pro أو Team أو Enterprise"
+      ],
+      "repo": "mobbin/skills",
+      "pricing": {
+        "model": "paid",
+        "note": "الإضافة مجانية، لكن الاستخدام يتطلب خطة Mobbin مدفوعة"
+      },
+      "alternatives": [
+        "ess-ui-ux-pro-max",
+        "ess-impeccable",
+        "ess-google-stitch"
+      ],
+      "links": [
+        {
+          "label": "المستودع",
+          "url": "https://github.com/mobbin/skills"
+        },
+        {
+          "label": "Mobbin",
+          "url": "https://mobbin.com"
+        }
+      ],
+      "url": "https://github.com/mobbin/skills",
+      "source": "github.com",
+      "importance": 2,
+      "tags": [
+        "Mobbin",
+        "UI design",
+        "skills",
+        "MCP",
+        "plugins"
+      ],
+      "en": {
+        "title": "Mobbin Skills: an official plugin that lets agents search real app screens and redesign UIs from them",
+        "summary": "Mobbin, the UI design reference library, published an official plugin with an MCP server and four skills: best-practices, search, redesign-screen and plain-writing. Agents can search Mobbin's library of screens, flows and website sections from shipped apps, and redesign a screen from a screenshot, code or a design file.",
+        "why": "Instead of the agent inventing a generic UI, it grounds the work in how real apps solved the same screen, such as a paywall with a free trial or an empty state in an expense app, then edits the UI code accordingly.",
+        "about": "The plugin is available for Claude Code, Codex, Antigravity CLI, Gemini CLI and Kimi Code CLI, and you can install only the skills with npx skills and add the MCP server manually at https://api.mobbin.com/mcp. On first use the agent opens a browser to sign in to Mobbin.\n\nThe search skill teaches the agent to pick the right tool (search_screens, search_flows or search_sections) and write queries with at most three constraints. Caveat: the supported platforms are ios and web only, so Android requests search iOS references.\n\nThe redesign-screen skill redesigns a screen, section or component based on patterns from real apps or on screens saved to your Mobbin collections.",
+        "features": [
+          "Official MCP server with four skills",
+          "Search screens, flows and sections from real apps",
+          "Redesign a screen from a screenshot, code or a design file",
+          "Supports Claude Code, Codex, Antigravity and Gemini CLI"
+        ],
+        "install": [
+          "Add the marketplace in Claude Code",
+          "Install the plugin in Claude Code",
+          "Skills only via skills.sh"
+        ],
+        "requirements": [
+          "A Mobbin Pro, Team or Enterprise plan"
+        ],
+        "links": [
+          "Repository",
+          "Mobbin"
+        ],
+        "pricingNote": "The plugin is free, but using it requires a paid Mobbin plan"
+      }
+    },
+    {
+      "id": "omnidiff-difftool",
+      "section": "devtools",
+      "kind": "tool",
+      "title": "OmniDiff: أداة مقارنة سريعة بـ Rust تفهم بنية الشيفرة والصور والخطوط وملفات PDF، لـ git وjj",
+      "summary": "OmniDiff أداة مقارنة مفتوحة المصدر مكتوبة بـ Rust، تقارن نحو 25 لغة برمجة مقارنة بنيوية عبر tree-sitter، وتقارن الصور بكسلًا ببكسل والخطوط حرفًا بحرف وملفات PDF صفحة بصفحة. صدرت 0.3.0 في 1 نوفمبر، ووصل عرضها على Hacker News إلى أكثر من 300 نقطة.",
+      "why": "عند مراجعة تعديلات كبيرة، خاصة التي يكتبها وكلاء البرمجة، تُظهر المقارنة البنيوية التغيير الحقيقي بدل ضجيج المسافات وإعادة الترتيب، ويمكن مراجعة تغيير في صورة أو أيقونة داخل المستودع نفسه.",
+      "about": "تعمل الأداة بواجهة طرفية تفاعلية، أو بوضع غير تفاعلي، أو بمخرجات JSON عبر --mode json، وتتكامل مع git وJujutsu وVS Code وNeovim. ويمكن ربطها بـ git كأداة difftool بأمر واحد.\n\nيذكر المشروع زمن مقارنة وسيطًا يبلغ 4.2 ms على عيّناته الخاصة، لكن الـ README يقرّ بأن أهداف الدقة لم تتحقق بالكامل بعد.\n\nالرخصة AGPL-3.0-only، مع رخصة تجارية مدفوعة عبر GitHub Sponsors لمن يحتاجها.",
+      "features": [
+        "مقارنة بنيوية لنحو 25 لغة عبر tree-sitter",
+        "مقارنة الصور والخطوط والأرشيفات وPDF",
+        "واجهة طرفية تفاعلية ومخرجات JSON",
+        "يعمل مع git وJujutsu وVS Code وNeovim"
+      ],
+      "install": [
+        {
+          "label": "التثبيت عبر Cargo",
+          "cmd": "cargo install --locked omnidiff"
+        },
+        {
+          "label": "التثبيت عبر Homebrew",
+          "cmd": "brew install ivankovic/omnidiff/omnidiff"
+        },
+        {
+          "label": "ربطه بـ git",
+          "cmd": "omnidiff git configure"
+        }
+      ],
+      "repo": "ivankovic/omnidiff",
+      "pricing": {
+        "model": "oss",
+        "note": "AGPL-3.0، مع رخصة تجارية مدفوعة اختيارية"
+      },
+      "alternatives": [
+        "ess-lazygit"
+      ],
+      "links": [
+        {
+          "label": "المستودع",
+          "url": "https://github.com/ivankovic/omnidiff"
+        },
+        {
+          "label": "نقاش Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50325253"
+        }
+      ],
+      "url": "https://github.com/ivankovic/omnidiff",
+      "source": "github.com",
+      "importance": 2,
+      "tags": [
+        "git",
+        "diff",
+        "Rust",
+        "CLI",
+        "Jujutsu"
+      ],
+      "en": {
+        "title": "OmniDiff: a fast Rust difftool that understands code structure, images, fonts and PDFs, for git and jj",
+        "summary": "OmniDiff is an open-source diff tool written in Rust. It diffs about 25 programming languages structurally with tree-sitter, and compares images pixel by pixel, fonts glyph by glyph and PDFs page by page. Version 0.3.0 shipped on November 1, and its Show HN passed 300 points.",
+        "why": "When reviewing large changes, especially those written by coding agents, a structural diff shows the real change instead of whitespace and reordering noise, and you can review a changed image or icon in the same repository.",
+        "about": "It runs as an interactive TUI, in headless mode, or with JSON output via --mode json, and works with git, Jujutsu, VS Code and Neovim. You can set it up as a git difftool with one command.\n\nThe project reports a 4.2 ms median diff time on its own fixtures, but the README says its accuracy goals are not fully met yet.\n\nIt is licensed AGPL-3.0-only, with a paid commercial license via GitHub Sponsors for those who need one.",
+        "features": [
+          "Structural diffs for about 25 languages via tree-sitter",
+          "Diffs for images, fonts, archives and PDFs",
+          "Interactive TUI and JSON output",
+          "Works with git, Jujutsu, VS Code and Neovim"
+        ],
+        "install": [
+          "Install with Cargo",
+          "Install with Homebrew",
+          "Set it up with git"
+        ],
+        "links": [
+          "Repository",
+          "Hacker News discussion"
+        ],
+        "pricingNote": "AGPL-3.0, with an optional paid commercial license"
+      }
+    },
+    {
+      "id": "suno-official-mcp-server",
+      "section": "video",
+      "kind": "mcp",
+      "title": "خادم MCP رسمي من Suno (تجريبي): أنشئ الأغاني من Claude وChatGPT وGemini وCursor",
+      "summary": "أطلقت Suno خادم MCP بعيدًا في مرحلة تجريبية على العنوان https://api.suno.com/mcp. يتيح إنشاء أغانٍ من وصف نصي، وتحويل ملف صوتي أو مذكرة صوتية إلى أغنية، وعمل نسخ مغطاة ودمج وتمديد، واستخدام الأصوات المحفوظة، ومعرفة الرصيد المتبقي، مع تسجيل دخول عبر OAuth دون مفتاح API.",
+      "why": "لصنّاع المحتوى ومن يبني أدوات إبداعية: يمكن طلب موسيقى خلفية لفيديو أو أغنية قصيرة لإعلان من داخل محادثة الوكيل نفسها، ضمن سير عمل يجمع النص والصوت والمونتاج.",
+      "about": "يستهلك الإنشاء الرصيد الموجود في خطة Suno الحالية للمستخدم. ويُضاف إلى Claude Code بأمر واحد ثم يُستخدم /mcp لتسجيل الدخول، وفي Cursor يُضاف كعنوان في ملف mcp.json.\n\nالخادم في مرحلة تجريبية، وتعرض صفحة suno.com/mcp نموذجًا لطلب الوصول المبكر، لذا قد لا يكون متاحًا لكل الحسابات فورًا.",
+      "features": [
+        "إنشاء أغانٍ من نص أو من تسجيل صوتي",
+        "نسخ مغطاة ودمج وتمديد للأغاني",
+        "تسجيل دخول OAuth دون مفتاح API",
+        "يستخدم رصيد خطة Suno الحالية"
+      ],
+      "install": [
+        {
+          "label": "الإضافة إلى Claude Code",
+          "cmd": "claude mcp add --transport http suno https://api.suno.com/mcp"
+        }
+      ],
+      "pricing": {
+        "model": "freemium",
+        "note": "يستهلك رصيد خطة Suno الحالية"
+      },
+      "alternatives": [
+        "ess-elevenlabs"
+      ],
+      "links": [
+        {
+          "label": "صفحة Suno MCP",
+          "url": "https://suno.com/mcp"
+        },
+        {
+          "label": "مقال المساعدة",
+          "url": "https://help.suno.com/en/articles/14551425"
+        }
+      ],
+      "url": "https://suno.com/mcp",
+      "source": "suno.com",
+      "importance": 1,
+      "tags": [
+        "Suno",
+        "AI music",
+        "MCP",
+        "audio"
+      ],
+      "en": {
+        "title": "Official Suno MCP server (beta): create songs from Claude, ChatGPT, Gemini and Cursor",
+        "summary": "Suno launched a remote MCP server in beta at https://api.suno.com/mcp. It can create songs from a text description, turn an audio file or voice memo into a song, make covers, mashups and extensions, use saved Voices and check remaining credits, with OAuth sign-in and no API key.",
+        "why": "For creators and people building creative tools: you can ask for background music for a video or a short jingle for an ad from inside the agent conversation, in a workflow that combines script, audio and editing.",
+        "about": "Generation uses the credits on the user's current Suno plan. It is added to Claude Code with one command, then /mcp is used to sign in; in Cursor it is added as a URL in mcp.json.\n\nThe server is in beta, and suno.com/mcp shows an early access form, so it may not be available to every account right away.",
+        "features": [
+          "Create songs from text or from a recording",
+          "Covers, mashups and song extensions",
+          "OAuth sign-in with no API key",
+          "Uses your current Suno plan credits"
+        ],
+        "install": [
+          "Add to Claude Code"
+        ],
+        "links": [
+          "Suno MCP page",
+          "Help article"
+        ],
+        "pricingNote": "Uses your current Suno plan credits"
+      }
+    }
+  ]
+}

@@ -1,0 +1,241 @@
+{
+  "date": "2026-11-03",
+  "generated": "2026-11-03T05:43:25.295Z",
+  "awesome": [
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "firecrawl/firecrawl-alexandria",
+      "url": "https://github.com/firecrawl/cli/tree/main/skills/firecrawl-alexandria",
+      "desc": "firecrawl/firecrawl-alexandria - Find and run Firecrawl Alexandria tools for structured data",
+      "heading": "Official Skills by"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "zilliztech/milvus-skill",
+      "url": "https://github.com/zilliztech/milvus-skill",
+      "desc": "zilliztech/milvus-skill - Manage Milvus collections, indexes, vector searches, and RAG workflows",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "appeeky/aso-skills",
+      "url": "https://github.com/appeeky/aso-skills",
+      "desc": "appeeky/aso-skills - 30+ App Store Optimization skills for keyword research, metadata optimization, competitor analysis, creative optimization, and mobile growth strategies via Appeeky API",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "heygen-com/hyperframes",
+      "url": "https://github.com/heygen-com/hyperframes",
+      "desc": "heygen-com/hyperframes - Write videos as HTML and render them to MP4: launch films, explainers, captions, charts and 450+ ready-made blocks, by HeyGen",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "arcmira/find-quotes",
+      "url": "https://github.com/arcmira/mcp/tree/master/plugins/arcmira/skills/find-quotes",
+      "desc": "arcmira/find-quotes - Find timestamped quotes and clips in YouTube and podcast transcripts",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "JimmySadek/video-fetcher-to-markdown",
+      "url": "https://github.com/JimmySadek/video-fetcher-to-markdown",
+      "desc": "JimmySadek/video-fetcher-to-markdown - Create Obsidian-ready Markdown notes from YouTube videos",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "bablobanov/hermes-agent-telegram-checklist",
+      "url": "https://github.com/bablobanov/hermes-agent-telegram-checklist",
+      "desc": "bablobanov/hermes-agent-telegram-checklist - Create and manage native Telegram checklists with verified writes",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "MetcalfSolutions/Satori",
+      "url": "https://github.com/MetcalfSolutions/Satori",
+      "desc": "MetcalfSolutions/Satori - Open-source wisdom companion skill (Apache 2.0) for coding agents and web chat, built to be outgrown: one lens per turn, a local SQLite memory vault, and trigger discipline that stays silent during pure coding work.",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "salemalem/npmscan-mcp-plugin",
+      "url": "https://github.com/salemalem/npmscan-mcp-plugin",
+      "desc": "salemalem/npmscan-mcp-plugin - Audit npm packages for malware and trust vulnerabilities",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "krisyangdev/motionboard",
+      "url": "https://github.com/krisyangdev/motionboard/tree/main/skills/motionboard",
+      "desc": "krisyangdev/motionboard - Make product launch films from 38 Apple/Linear-style shot recipes.",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "GAURAV-1313/codecall",
+      "url": "https://github.com/GAURAV-1313/codecall/tree/main/plugins/codecall/skills/codecall",
+      "desc": "GAURAV-1313/codecall - Quizzes you on agent-written code, traces flows, runs debugging drills",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "9929y/mesh-gradient-generation",
+      "url": "https://github.com/9929y/mesh-gradient-generation",
+      "desc": "9929y/mesh-gradient-generation - Create editable mesh gradients with Figma and SVG workflows",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "mobbin/redesign-screen",
+      "url": "https://github.com/mobbin/skills/tree/main/skills/redesign-screen",
+      "desc": "mobbin/redesign-screen - Redesign screens using patterns from real shipped apps",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "mobbin/search",
+      "url": "https://github.com/mobbin/skills/tree/main/skills/search",
+      "desc": "mobbin/search - Search 600k+ real app screens, flows and sections",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "awrshift/agent-memory-kit",
+      "url": "https://github.com/awrshift/agent-memory-kit",
+      "desc": "awrshift/agent-memory-kit - Persistent memory with hooks, wiki, and daily synthesis for multi-project workflows",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "tinqiao-oss/engramory",
+      "url": "https://github.com/tinqiao-oss/engramory",
+      "desc": "tinqiao-oss/engramory - Curated plain-Markdown long-term memory with a size-capped index",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "punkpeye/awesome-mcp-servers",
+      "section": "mcp",
+      "name": "jackjin1997/markindex",
+      "url": "https://github.com/jackjin1997/markindex",
+      "desc": "jackjin1997/markindex - Vectorless, structure-first retrieval over large Markdown libraries: walk library, folder, document and section trees, read original text with line numbers for citations, and fall back to mixed Chinese/English BM25 search. Five read-only tools, no embeddings, no API key.",
+      "heading": "Knowledge & Memory"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "BestPrice",
+      "url": "https://github.com/TheBestCo/bestprice-mcp",
+      "desc": "BestPrice - Greek price comparison: products, live shop offers and price history",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "npmscan",
+      "url": "https://github.com/salemalem/npmscan-mcp-plugin",
+      "desc": "npmscan - Audit npm packages for malware before agents install them",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "Keenable",
+      "url": "https://github.com/keenableai/keenable-mcp",
+      "desc": "Keenable - Keyless web search and page fetching with Keenable",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "Datacircle",
+      "url": "https://datacircle.dev/docs/mcp",
+      "desc": "Datacircle - Find the best GTM APIs.",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "looot",
+      "url": "https://looot.ai/mcp",
+      "desc": "looot - Remote MCP server to search and call 300+ data providers",
+      "heading": "Table of Contents"
+    }
+  ],
+  "releases": [
+    {
+      "repo": "anthropics/claude-code",
+      "section": "claude",
+      "tag": "v2.1.317",
+      "previous": "v2.1.316",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.317"
+    },
+    {
+      "repo": "anthropics/claude-agent-sdk-python",
+      "section": "claude",
+      "tag": "v0.2.177",
+      "previous": "v0.2.176",
+      "url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.177"
+    },
+    {
+      "repo": "anthropics/claude-agent-sdk-typescript",
+      "section": "claude",
+      "tag": "v0.3.317",
+      "previous": "v0.3.316",
+      "url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.317"
+    },
+    {
+      "repo": "tailwindlabs/tailwindcss",
+      "section": "frontend",
+      "tag": "v4.3.4",
+      "previous": "v4.3.3",
+      "url": "https://github.com/tailwindlabs/tailwindcss/releases/tag/v4.3.4"
+    },
+    {
+      "repo": "github/spec-kit",
+      "section": "architecture",
+      "tag": "v1.2.6",
+      "previous": "v1.2.5",
+      "url": "https://github.com/github/spec-kit/releases/tag/v1.2.6"
+    },
+    {
+      "repo": "vercel/ai",
+      "section": "llm",
+      "tag": "ai@7.0.162",
+      "previous": "ai@7.0.159",
+      "url": "https://github.com/vercel/ai/releases/tag/ai%407.0.162"
+    },
+    {
+      "repo": "docker/compose",
+      "section": "devops",
+      "tag": "v5.7.0",
+      "previous": "v5.6.1",
+      "url": "https://github.com/docker/compose/releases/tag/v5.7.0"
+    },
+    {
+      "repo": "coollabsio/coolify",
+      "section": "devops",
+      "tag": "v4.6.0",
+      "previous": "v4.5.3",
+      "url": "https://github.com/coollabsio/coolify/releases/tag/v4.6.0"
+    }
+  ],
+  "trending": []
+}

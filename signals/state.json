@@ -1,62 +1,62 @@
 {
   "awesome": {
     "hesreallyhim/awesome-claude-code": {
-      "sha": "1c88da78767b4ae664e76861b7afc17a2754d4d4",
-      "date": "2026-11-02T12:31:04.725Z"
+      "sha": "870f76451f3dc9a6b3669e2208cc5c6becbae8cd",
+      "date": "2026-11-03T05:43:26.765Z"
     },
     "jqueryscript/awesome-claude-code": {
       "sha": "4d0db41e85da437e354a8efcac6e8201d3b187d0",
-      "date": "2026-11-02T12:31:05.149Z"
+      "date": "2026-11-03T05:43:27.660Z"
     },
     "ComposioHQ/awesome-claude-skills": {
       "sha": "be2a406907dbc61b73e6827ded415c96139d13a2",
-      "date": "2026-11-02T12:31:05.466Z"
+      "date": "2026-11-03T05:43:28.555Z"
     },
     "travisvn/awesome-claude-skills": {
       "sha": "1da55aa810f206d3fe2005e7e3989b15a275d942",
-      "date": "2026-11-02T12:31:05.858Z"
+      "date": "2026-11-03T05:43:29.479Z"
     },
     "VoltAgent/awesome-agent-skills": {
-      "sha": "a6f9992ceaef05841a9b92e6849d90004a61710c",
-      "date": "2026-11-02T12:31:06.338Z"
+      "sha": "459d2421bdfe2f8111d291fff161926815939288",
+      "date": "2026-11-03T05:43:31.036Z"
     },
     "VoltAgent/awesome-claude-code-subagents": {
-      "sha": "408d3c9eee2d0c75c12a3abb5de29e53c2ca6b9e",
-      "date": "2026-11-02T12:31:06.713Z"
+      "sha": "ed74d115b7fb7026a22a4f816a8e3250f425e3b4",
+      "date": "2026-11-03T05:43:32.510Z"
     },
     "punkpeye/awesome-mcp-servers": {
-      "sha": "f225f117f92626e6b7d5d2912746d9269e3d037b",
-      "date": "2026-11-02T12:31:08.187Z"
+      "sha": "29f2d490cc02468e7c9d87b0cf68d40d3041e7ef",
+      "date": "2026-11-03T05:43:34.715Z"
     },
     "wong2/awesome-mcp-servers": {
       "sha": "39eb1d76d76e562657f3c657266a504cea159e23",
-      "date": "2026-11-02T12:31:08.515Z"
+      "date": "2026-11-03T05:43:35.666Z"
     },
     "appcypher/awesome-mcp-servers": {
       "sha": "280218b4bba97a49facf929f8012dec5e30384b6",
-      "date": "2026-11-02T12:31:08.841Z"
+      "date": "2026-11-03T05:43:36.569Z"
     },
     "e2b-dev/awesome-ai-agents": {
       "sha": "9596ab1e69fbbb6c95291141c8dab5c181083216",
-      "date": "2026-11-02T12:31:09.733Z"
+      "date": "2026-11-03T05:43:38.924Z"
     },
     "Shubhamsaboo/awesome-llm-apps": {
       "sha": "6c16b23f1bacd0fdf240bb5141ef45e59e82c306",
-      "date": "2026-11-02T12:31:10.062Z"
+      "date": "2026-11-03T05:43:39.869Z"
     },
     "github/awesome-copilot": {
-      "sha": "5269f7ea2d6c3a9bfda5ed878b6726cf509121fd",
-      "date": "2026-11-02T12:31:10.684Z"
+      "sha": "8178d1939a203f691067073dcab2a3f1e14072d3",
+      "date": "2026-11-03T05:43:41.358Z"
     },
     "VoltAgent/official-mcp-servers": {
-      "sha": "3964a7030860613df3550c6c58974ea10615498f",
-      "date": "2026-11-02T12:31:09.271Z"
+      "sha": "9183df990f9b33c675fa09e78cab3debcbb4a541",
+      "date": "2026-11-03T05:43:38.007Z"
     }
   },
   "releases": {
-    "anthropics/claude-code": "v2.1.316",
-    "anthropics/claude-agent-sdk-python": "v0.2.176",
-    "anthropics/claude-agent-sdk-typescript": "v0.3.316",
+    "anthropics/claude-code": "v2.1.317",
+    "anthropics/claude-agent-sdk-python": "v0.2.177",
+    "anthropics/claude-agent-sdk-typescript": "v0.3.317",
     "obra/superpowers": "v7.0.1",
     "openai/codex": "rust-v0.166.0",
     "google-gemini/gemini-cli": "v0.66.0",
@@ -73,14 +73,14 @@
     "livewire/livewire": "v4.4.8",
     "prism-php/prism": "v0.102.0",
     "vercel/next.js": "v16.4.4",
-    "tailwindlabs/tailwindcss": "v4.3.3",
+    "tailwindlabs/tailwindcss": "v4.3.4",
     "microsoft/playwright": "v1.64.1",
-    "github/spec-kit": "v1.2.5",
+    "github/spec-kit": "v1.2.6",
     "n8n-io/n8n": "n8n@3.0.1",
     "ollama/ollama": "v0.40.13",
-    "vercel/ai": "ai@7.0.159",
-    "docker/compose": "v5.6.1",
-    "coollabsio/coolify": "v4.5.3"
+    "vercel/ai": "ai@7.0.162",
+    "docker/compose": "v5.7.0",
+    "coollabsio/coolify": "v4.6.0"
   },
   "trending": {
     "Gathin23/cleanyourtv": "2026-10-31",
