@@ -61,7 +61,31 @@
     "https://langfuse.com/docs"
    ],
    "status": "active",
-   "category": "ops"
+   "category": "ops",
+   "ar": {
+    "summary": "منصة هندسة نماذج لغوية مفتوحة المصدر: تتبّع وجلسات وتكلفة وزمن، وتقييمات (نموذج حَكَم وبشر ومجموعات بيانات)، وإدارة للتعليمات؛ وتدعم OpenTelemetry أصلًا.",
+    "how": "أرسل التتبّعات عبر الحزم أو OTel؛ وجمّعها حسب الجلسة أو المستخدم؛ وأرفق الدرجات؛ وشغّل تجارب على مجموعات البيانات.",
+    "features": [
+     "تتبّع عبر OpenTelemetry",
+     "تتبّع التكلفة والرموز",
+     "مجموعات بيانات وتجارب",
+     "قابلة للاستضافة الذاتية"
+    ],
+    "strengths": [
+     "المعيار المفتوح الفعلي لمراقبة النماذج اللغوية",
+     "استضافة ذاتية ونواة بترخيص MIT",
+     "مجموعات البيانات والتجارب تتيح مقارنة إصدارات الـ harness"
+    ],
+    "weaknesses": [
+     "بعض مزايا المؤسسات مرخّصة",
+     "الاستضافة الذاتية تحتاج ClickHouse وPostgres وRedis وتخزين كائنات"
+    ],
+    "gaps": [
+     "مقارنات على مستوى الـ harness بشكل جاهز"
+    ],
+    "role": "مخزن المراقبة لتشغيلات بيئة الاختبار ولـ squad-kit في الإنتاج (OTel من Claude Code إلى Langfuse).",
+    "pricing": "مجانية مستضافة ذاتيًا؛ وخطط سحابية"
+   }
   },
   {
    "id": "phoenix",
@@ -85,7 +109,7 @@
     "ELv2 limits offering as a service"
    ],
    "gaps": [
-    "—"
+    "A permissive license for embedding"
    ],
    "fit": {
     "verdict": "watch",
@@ -111,7 +135,26 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "ops"
+   "category": "ops",
+   "ar": {
+    "summary": "تتبّع وتقييم مبنيان على OTel لتطبيقات النماذج اللغوية والوكلاء.",
+    "how": "تجهيز عبر OpenInference؛ وتقييمات وتجارب.",
+    "features": [
+     "تتبّع OTel",
+     "تقييمات"
+    ],
+    "strengths": [
+     "تقييمات قوية"
+    ],
+    "weaknesses": [
+     "ترخيص ELv2 يقيّد تقديمه كخدمة"
+    ],
+    "gaps": [
+     "ترخيص متساهل للتضمين"
+    ],
+    "role": "بديل لـ Langfuse.",
+    "pricing": "مجاني مستضافًا ذاتيًا"
+   }
   },
   {
    "id": "litellm",
@@ -136,7 +179,7 @@
     "Ops overhead"
    ],
    "gaps": [
-    "—"
+    "Tracing (pair with Langfuse)"
    ],
    "fit": {
     "verdict": "adopt",
@@ -162,7 +205,27 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "ops"
+   "category": "ops",
+   "ar": {
+    "summary": "بوابة متوافقة مع OpenAI لأكثر من 100 مزوّد نماذج، مع مفاتيح وميزانيات وحدود للمعدل وسجلات وتتبع للتكلفة؛ استخدمتها مقاييس Fullscript وAWS لتوجيه أدوات الـ harness إلى نماذج كثيرة.",
+    "how": "شغّل الوسيط، ووجّه أدوات الـ harness إليه، واضبط مفاتيح افتراضية وميزانيات لكل فريق.",
+    "features": [
+     "واجهة واحدة لكل المزوّدين",
+     "مفاتيح وميزانيات لكل فريق",
+     "سجل التكلفة"
+    ],
+    "strengths": [
+     "تتيح لأي harness استخدام أي نموذج في بيئة الاختبار"
+    ],
+    "weaknesses": [
+     "عبء تشغيلي"
+    ],
+    "gaps": [
+     "التتبّع (نستخدم معها Langfuse)"
+    ],
+    "role": "بوابة النماذج لبيئة الاختبار (ولميزانيات الفرق لاحقًا).",
+    "pricing": "مجانية مفتوحة المصدر؛ وخطط للمؤسسات"
+   }
   },
   {
    "id": "agent-governance-toolkit",
@@ -188,7 +251,7 @@
     "Breadth over depth"
    ],
    "gaps": [
-    "—"
+    "Proven use with coding harnesses"
    ],
    "fit": {
     "verdict": "watch",
@@ -214,7 +277,27 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "ops"
+   "category": "ops",
+   "ar": {
+    "summary": "فرض السياسات والهوية والعزل والتدقيق للوكلاء المستقلين عبر الأطر المختلفة.",
+    "how": "وسيط يفحص الأفعال مقابل السياسات ويسجلها.",
+    "features": [
+     "سياسات",
+     "سجل تدقيق",
+     "موصّلات للأطر"
+    ],
+    "strengths": [
+     "حوكمة لوكلاء القنوات"
+    ],
+    "weaknesses": [
+     "اتساع على حساب العمق"
+    ],
+    "gaps": [
+     "استخدام مُثبت مع أدوات harness البرمجة"
+    ],
+    "role": "طبقة حوكمة للوكلاء المستقلين.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "skillspector",
@@ -237,10 +320,10 @@
     "New"
    ],
    "gaps": [
-    "—"
+    "Track record"
    ],
    "fit": {
-    "verdict": "adopt-part",
+    "verdict": "adopt",
     "role": "Run on every Azm skill/standard package before publishing."
    },
    "scores": {
@@ -263,7 +346,25 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "ops"
+   "category": "ops",
+   "ar": {
+    "summary": "يفحص مهارات الوكلاء بحثًا عن مشكلات أمنية ومشكلات جودة قبل تثبيتها.",
+    "how": "فحوص ثابتة وأخرى بمساعدة نموذج على SKILL.md والسكربتات.",
+    "features": [
+     "فحص أمان المهارات"
+    ],
+    "strengths": [
+     "بوابة لحزم مهارات المسار 1"
+    ],
+    "weaknesses": [
+     "حديث"
+    ],
+    "gaps": [
+     "سجل خبرة"
+    ],
+    "role": "نشغّله على كل حزمة مهارات أو معايير من عزم قبل نشرها.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "agent-scan",
@@ -286,10 +387,10 @@
     "—"
    ],
    "gaps": [
-    "—"
+    "Runtime enforcement (it scans, it does not block)"
    ],
    "fit": {
-    "verdict": "adopt-part",
+    "verdict": "adopt",
     "role": "Security check in the sandbox setup step."
    },
    "scores": {
@@ -312,7 +413,25 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "ops"
+   "category": "ops",
+   "ar": {
+    "summary": "يفحص الوكلاء المثبتين وخوادم MCP والمهارات بحثًا عن حقن الأوامر وتسميم الأدوات والتدفقات الخطرة.",
+    "how": "أداة سطر أوامر تفحص الإعدادات على الجهاز.",
+    "features": [
+     "فحص MCP والمهارات"
+    ],
+    "strengths": [
+     "بوابة أمان"
+    ],
+    "weaknesses": [
+     "لا يفحص إلا الإعدادات"
+    ],
+    "gaps": [
+     "الفرض أثناء التشغيل (يفحص ولا يمنع)"
+    ],
+    "role": "فحص أمني في خطوة تجهيز بيئة الاختبار.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "agent-vault",
@@ -335,7 +454,7 @@
     "—"
    ],
    "gaps": [
-    "—"
+    "Track record"
    ],
    "fit": {
     "verdict": "watch",
@@ -361,7 +480,25 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "ops"
+   "category": "ops",
+   "ar": {
+    "summary": "وسيط للاعتمادات يجعل الوكلاء يستخدمون الأسرار دون أن يروها.",
+    "how": "يمر استدعاء الوكلاء عبر وسيط يحقن الاعتمادات.",
+    "features": [
+     "وساطة الأسرار"
+    ],
+    "strengths": [
+     "يُبقي المفاتيح خارج بيئات العزل"
+    ],
+    "weaknesses": [
+     "حديث"
+    ],
+    "gaps": [
+     "سجل خبرة"
+    ],
+    "role": "نمط لإدارة الأسرار في بيئة الاختبار ووكلاء القنوات.",
+    "pricing": "النواة مجانية"
+   }
   },
   {
    "id": "skillopt",
@@ -384,7 +521,7 @@
     "Early (v0.2)"
    ],
    "gaps": [
-    "—"
+    "Azm skills and tasks to optimise against"
    ],
    "fit": {
     "verdict": "watch",
@@ -410,7 +547,25 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "ops"
+   "category": "ops",
+   "ar": {
+    "summary": "يحسّن مهارات الوكلاء آليًا مقابل مهام تقييم.",
+    "how": "يعيد كتابة المهارات تكرارًا ويحتفظ بالنسخ ذات الدرجة الأعلى.",
+    "features": [
+     "حلقة تحسين المهارات"
+    ],
+    "strengths": [
+     "يربط مهارات المسار 1 بتقييمات المسار 3"
+    ],
+    "weaknesses": [
+     "مبكر (v0.2)"
+    ],
+    "gaps": [
+     "مهارات ومهام عزم للتحسين مقابلها"
+    ],
+    "role": "المرحلة الثانية: ضبط مهارات عزم في بيئة الاختبار.",
+    "pricing": "مجاني"
+   }
   }
  ]
 }

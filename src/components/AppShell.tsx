@@ -5,7 +5,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useMemo, useState, type ReactNode } from "react";
 import type { SectionId } from "@/lib/sections";
 import { FOCUS } from "@/lib/focus";
-import { TRACKS } from "@/lib/research";
+import { NAV_TRACKS as TRACKS } from "@/lib/research-nav";
 import { useApp } from "./AppContext";
 import { LanguageSwitch, useLocale } from "./LocaleProvider";
 import {

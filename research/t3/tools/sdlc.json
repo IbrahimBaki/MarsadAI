@@ -14,41 +14,46 @@
    "pricing": "Free; runs on the user's own Claude Code subscription",
    "version": "v1.1.1 (2026-11-03)",
    "tier": "deep",
-   "summary": "An agent harness for the whole software cycle. A squad of role agents (Analyst, Architect, Builder, Tester, Reviewer) takes a ticket from plain-language ask to a tagged release, with human approvals at spec, design, proof and release. A local web board shows every ticket; project memory lives in readable files under .squad/.",
-   "how": "`squad` opens a local web app (127.0.0.1:4571) with a board per project. The Analyst asks clarifying questions and writes spec.md with a 'done when' list; the Architect writes design.md; the Builder codes in its own copy of the repo; squad-kit runs tests, lint and build; the Reviewer checks with fresh context; the Tester screenshots each 'done when' as proof. Release writes the changelog, version and git tag. Everything a teammate needs (tickets, specs, decisions, rules per role, learned knowledge) is stored as Markdown/YAML in .squad/ and committed on the ticket branch; personal state (chats, tokens, cost) stays in ~/.squad-kit/. Azure DevOps Boards/Repos integration moves work items and opens PRs. A Quality setting (Best / Balanced / Thrifty) picks model levels per role and step.",
+   "summary": "Azm's own agent harness for the whole software cycle. Since 1.0 (2 Nov 2026) it is no longer a planning CLI: a local app runs a squad of role agents (Analyst, Architect, Builder, Tester, Reviewer, plus Triage for bugs) that takes a ticket from a plain-language ask to a tagged release. People approve at four points (answers, spec, design, proof) and press Release; the squad does the rest.",
+   "how": "`squad` opens one local app (127.0.0.1:4571) for all projects, each with its own board. A ticket goes through questions, spec, design, build, checks, review, proof and release, on a Full track or an Express track for small fixes. squad-kit itself is the boss: it runs the tests, lint and build, starts a fresh Reviewer session, and does all git and tracker work; agents never merge, push or grade their own work. The Builder works in its own copy of the code. Changes after approval go through 'Propose a change' (old and new wording side by side, rated small or big, and only the affected parts are rebuilt). Project memory lives in .squad/ as readable Markdown and YAML (tickets, linked decisions, releases, rules per role, knowledge) and travels with the code; chats, screenshots, sign-ins and cost stay in ~/.squad-kit/. The model level is set per role and step (strongest, balanced, fast) and cost per ticket and role is shown at API prices. AI tools and trackers plug in as modules: Claude Code and Azure DevOps today.",
    "features": [
-    "Five role agents with human gates: spec, design, proof ('Looks right'), release",
-    "Local board UI plus a terminal command for every button",
-    "Project memory as files: .squad/config.yaml, tickets/, decisions/, rules/, knowledge/, releases/",
-    "Azure DevOps integration: pull items, post plans and answers as comments, open PRs",
-    "Status Q&A in English or Arabic at no AI cost; slow-step and failure recovery buttons",
-    "Quality levels per role/step; cost tracked per ticket in Usage",
-    "Hand over a ticket to a teammate via its branch; works across multi-repo folders"
+    "Six role agents: Analyst, Architect, Builder, Tester, Reviewer and Triage",
+    "Four human checkpoints plus Release; Full and Express tracks",
+    "Independent quality gates: squad-kit runs tests, lint, build and a fresh-session review; agents never grade their own work",
+    "Proof for every 'done when' item, with before and after screenshots",
+    "Propose a change: controlled spec changes, and only the affected work is rebuilt",
+    "Readable project memory in .squad/: decisions linked to tickets, rules per role, learned knowledge",
+    "Chat with any agent in Arabic or English without stopping the work; status answers at no AI cost",
+    "Hand a ticket over to a teammate through its branch; a fresh clone restores the whole board",
+    "Model level per role and step; cost per ticket and role",
+    "Azure DevOps Boards and Repos integration; one inbox across projects; phone layout"
    ],
    "strengths": [
-    "Covers the full SDLC end to end, which most peers don't (spec → release)",
-    "Non-developers can drive it (BAs, PMs); Arabic support",
-    "Readable, versioned project memory that survives machines and teammates",
-    "Strong UX on transparency: what's happening, what's next, ways out",
-    "Built in-house: Azm can change it freely (MIT)"
+    "The only tool found that covers the full cycle from idea to tagged release with human approval at the right points",
+    "Separation of duties: the harness, not the agent, runs the checks, git and the tracker, which is a strong safety and quality design",
+    "Non-developers (business analysts, project managers) can drive it, in Arabic or English",
+    "Project memory is plain files that survive machines and teammates",
+    "Built in-house under MIT: Azm controls the roadmap",
+    "Visible cost per role makes model tuning measurable"
    ],
    "weaknesses": [
     "Runs on Claude Code only today; Codex is detected but cannot run yet",
-    "Local, single-machine app; no shared server or team-wide queue",
-    "Builder works in a copy of the repo, not an isolated sandbox (network, secrets, resources are the host's)",
-    "Tracker integration is Azure DevOps only",
-    "No built-in way to measure quality across tickets or compare against other harnesses"
+    "A local, single-machine app: no shared server or team-wide queue",
+    "The Builder works in a copy of the repo on the same machine, with the same network, files and credentials, so it is not a sandbox",
+    "Azure DevOps is the only tracker in 1.x",
+    "Two to five tickets at a time, because all projects share one AI account",
+    "No way yet to measure quality across many tickets or against other harnesses"
    ],
    "gaps": [
-    "Harness adapter for automated runs (headless mode) so the sandbox can drive it on benchmark tasks",
-    "Multi-model / multi-harness backends (Codex, opencode, pi)",
-    "Sandboxed execution (container or microVM per ticket)",
-    "Evaluation loop: score tickets (tests, standards, reviewer findings) and feed back into rules/",
-    "Jira / GitHub tracker adapters; server mode for teams"
+    "A headless mode so the sandbox can run it on benchmark tasks and read the result",
+    "More engines: Codex, opencode, pi (the module design is ready)",
+    "Isolated execution per ticket (container or microVM)",
+    "A quality report across tickets that feeds back into rules/",
+    "Jira and GitHub tracker modules, and a server mode for teams"
    ],
    "fit": {
     "verdict": "benchmark",
-    "role": "Azm's own SDLC harness and the first subject in the sandbox: benchmark it against Archon, AI-DLC and Superpowers on the same Azm tasks, and use the results to direct its roadmap."
+    "role": "Azm's main SDLC harness and the first subject of the sandbox. Test it against Archon, AI-DLC and Superpowers on the same Azm tasks; the gaps listed here become its roadmap."
    },
    "scores": {
     "fit": 5,
@@ -56,8 +61,8 @@
     "openness": 5,
     "agnostic": 2,
     "config": 4,
-    "measure": 2,
-    "safety": 3
+    "measure": 3,
+    "safety": 4
    },
    "links": [
     [
@@ -71,13 +76,59 @@
     [
      "npm",
      "https://www.npmjs.com/package/squad-kit"
+    ],
+    [
+     "Changelog",
+     "https://github.com/AzmSquad/Squad-Kit/blob/main/CHANGELOG.md"
     ]
    ],
    "sources": [
+    "https://squad-kit.com",
     "https://github.com/AzmSquad/Squad-Kit",
-    "https://squad-kit.com"
+    "https://github.com/AzmSquad/Squad-Kit/blob/main/CHANGELOG.md"
    ],
-   "status": "active"
+   "status": "active",
+   "ar": {
+    "summary": "أداة الـ harness الخاصة بعزم لدورة البرمجيات كاملة. منذ الإصدار 1.0 (2 نوفمبر 2026) لم تعد أداة تخطيط في سطر الأوامر: تطبيق محلي يشغّل فريقًا من الوكلاء بأدوار (المحلل والمعماري والباني والمختبِر والمراجع، إضافة إلى الفرز للأخطاء) ينقل التذكرة من طلب مكتوب بلغة عادية إلى إصدار موسوم. يوافق البشر في أربع نقاط (الإجابات والمواصفات والتصميم والإثبات) ثم يضغطون «إصدار»، ويتولى الفريق الباقي.",
+    "how": "يفتح الأمر `squad` تطبيقًا محليًا واحدًا (127.0.0.1:4571) لكل المشاريع، ولكل مشروع لوحته. تمر التذكرة بالأسئلة ثم المواصفات ثم التصميم ثم البناء ثم الفحوص ثم المراجعة ثم الإثبات ثم الإصدار، في مسار كامل أو مسار سريع للإصلاحات الصغيرة. وsquad-kit نفسه هو المتحكم: يشغّل الاختبارات وفحص الأسلوب والبناء، ويبدأ جلسة مراجعة جديدة، ويتولى كل عمل git وأداة التذاكر؛ فالوكلاء لا يدمجون ولا يدفعون ولا يقيّمون عملهم أبدًا. ويعمل الباني في نسخة خاصة من الشيفرة. وتمر التغييرات بعد الموافقة عبر «اقتراح تغيير» (الصياغة القديمة والجديدة جنبًا إلى جنب، مع تصنيفه صغيرًا أو كبيرًا، ولا يُعاد بناء إلا ما تأثر). وتُحفظ ذاكرة المشروع في ‎.squad/‎ كملفات Markdown وYAML مقروءة (التذاكر والقرارات المرتبطة والإصدارات وقواعد كل دور والمعرفة) وتنتقل مع الشيفرة؛ أما المحادثات واللقطات وبيانات الدخول والتكلفة فتبقى في ‎~/.squad-kit/‎. ويُضبط مستوى النموذج لكل دور وخطوة (الأقوى أو المتوازن أو السريع)، وتظهر تكلفة كل تذكرة ودور بأسعار الواجهة البرمجية. وتُضاف أدوات الذكاء الاصطناعي وأدوات التذاكر كوحدات: Claude Code وAzure DevOps حاليًا.",
+    "features": [
+     "ستة وكلاء بأدوار: المحلل والمعماري والباني والمختبِر والمراجع والفرز",
+     "أربع نقاط موافقة بشرية ثم الإصدار؛ ومسار كامل ومسار سريع",
+     "بوابات جودة مستقلة: squad-kit يشغّل الاختبارات وفحص الأسلوب والبناء ومراجعة بجلسة جديدة؛ ولا يقيّم الوكلاء عملهم",
+     "إثبات لكل بند «يكتمل عندما» مع لقطات قبل وبعد",
+     "اقتراح تغيير: تعديل منضبط للمواصفات، ولا يُعاد بناء إلا ما تأثر",
+     "ذاكرة مشروع مقروءة في ‎.squad/‎: قرارات مرتبطة بالتذاكر، وقواعد لكل دور، ومعرفة مكتسبة",
+     "محادثة أي وكيل بالعربية أو الإنجليزية دون إيقاف العمل؛ وإجابات الحالة بلا تكلفة ذكاء اصطناعي",
+     "تسليم التذكرة لزميل عبر فرعها؛ ونسخة جديدة من المستودع تستعيد اللوحة كاملة",
+     "مستوى النموذج لكل دور وخطوة؛ وتكلفة كل تذكرة ودور",
+     "تكامل مع Azure DevOps Boards وRepos؛ وصندوق وارد واحد لكل المشاريع؛ وتصميم للهاتف"
+    ],
+    "strengths": [
+     "الأداة الوحيدة التي وجدناها تغطي الدورة كاملة من الفكرة إلى الإصدار الموسوم مع موافقة بشرية في المواضع الصحيحة",
+     "فصل المسؤوليات: الـ harness لا الوكيل هو من يشغّل الفحوص وgit وأداة التذاكر، وهذا تصميم قوي للأمان والجودة",
+     "يستطيع غير المطورين (محللو الأعمال ومديرو المشاريع) قيادته، بالعربية أو الإنجليزية",
+     "ذاكرة المشروع ملفات عادية تبقى رغم تغيّر الأجهزة والزملاء",
+     "مبني داخل عزم بترخيص MIT: عزم تتحكم في خارطة طريقه",
+     "ظهور تكلفة كل دور يجعل ضبط النماذج قابلًا للقياس"
+    ],
+    "weaknesses": [
+     "يعمل على Claude Code فقط حاليًا؛ يكتشف Codex لكنه لا يستطيع تشغيله بعد",
+     "تطبيق محلي على جهاز واحد: لا خادم مشترك ولا قائمة انتظار للفريق",
+     "يعمل الباني في نسخة من المستودع على الجهاز نفسه، بالشبكة والملفات والاعتمادات نفسها، فليس بيئة عزل",
+     "Azure DevOps هو أداة التذاكر الوحيدة في الإصدار 1.x",
+     "من تذكرتين إلى خمس في الوقت نفسه، لأن كل المشاريع تتشارك حساب ذكاء اصطناعي واحدًا",
+     "لا وسيلة بعد لقياس الجودة عبر تذاكر كثيرة أو مقارنته بأدوات harness أخرى"
+    ],
+    "gaps": [
+     "وضع تشغيل بلا واجهة لتستطيع بيئة الاختبار تشغيله على مهام القياس وقراءة النتيجة",
+     "محركات إضافية: Codex وopencode وpi (تصميم الوحدات جاهز)",
+     "تنفيذ معزول لكل تذكرة (حاوية أو آلة افتراضية مصغرة)",
+     "تقرير جودة عبر التذاكر يغذي مجلد rules/",
+     "وحدات لـ Jira وGitHub، ووضع خادم للفرق"
+    ],
+    "role": "أداة دورة التطوير الأساسية في عزم، وأول ما نختبره في بيئة الاختبار. نختبره أمام Archon وAI-DLC وSuperpowers على مهام عزم نفسها؛ والنواقص المذكورة هنا تصبح خارطة طريقه.",
+    "pricing": "مجاني؛ يعمل باشتراك Claude Code لدى المستخدم"
+   }
   },
   {
    "id": "archon",
@@ -136,7 +187,33 @@
     "https://github.com/coleam00/Archon",
     "https://github.com/coleam00/Archon#readme"
    ],
-   "status": "active"
+   "status": "active",
+   "ar": {
+    "summary": "«باني مصانع»: تصف طريقة إنجاز العمل في ملفات سير عمل YAML (خطوات وفحوص وبوابات موافقة)، ويشغّلها Archon بوكلاء ذكاء اصطناعي وسكربتات وقرارات بشرية. وتنقل حزمة دورة التطوير المرفقة التذكرة إلى طلب دمج مدموج.",
+    "how": "سير العمل ملفات YAML: كل خطوة تعليمات لوكيل أو سكربت أو بوابة بشرية. تدفع قوائم الانتظار العمل إلى الأمام؛ وحين يصل التشغيل إلى قرار لا يستطيع اتخاذه يتوقف كعنصر انتباه واحد مع توصية وخيارات. ولكل تشغيل سجل أحداث كامل ونص المحادثة. يُستضاف ذاتيًا ويعمل مع أدوات وكلاء البرمجة الموجودة.",
+    "features": [
+     "تعريف سير العمل بـ YAML مع خطوات وفحوص وبوابات",
+     "حزمة دورة تطوير مرفقة: تذكرة ← خطة ← تنفيذ ← مراجعة ← تحقق ← طلب دمج",
+     "قوائم انتظار وعناصر انتباه (الإنسان فوق الحلقة لا داخلها)",
+     "سجل أحداث كامل ونص محادثة لكل تشغيل",
+     "يشغّل أي عملية، لا البرمجيات فقط"
+    ],
+    "strengths": [
+     "العملية كشيفرة في YAML: هذا بالضبط نموذج الإعداد لكل فريق الذي تريده عزم",
+     "حوكمة مدمجة (بوابات وسجلات)",
+     "ترخيص MIT ونشط جدًا"
+    ],
+    "weaknesses": [
+     "جودة سير العمل تعتمد على ملف YAML الذي تكتبه؛ وإعداداته الجاهزة قليلة خارج حزمة دورة التطوير",
+     "لا تقييم مدمج عبر التشغيلات"
+    ],
+    "gaps": [
+     "قياس وتقييم نسخ سير العمل المختلفة",
+     "بيئة عزل لكل تشغيل (يعتمد على الجهاز المضيف أو أداة خارجية)"
+    ],
+    "role": "أقوى نظير مفتوح المصدر لـ squad-kit؛ نختبره أمامه، وندرس مخطط YAML لديه لإعدادات فرق عزم.",
+    "pricing": "مجاني ومستضاف ذاتيًا"
+   }
   },
   {
    "id": "aidlc",
@@ -197,7 +274,31 @@
     "https://github.com/awslabs/aidlc-workflows",
     "https://aws.amazon.com/blogs/devops/ai-driven-development-life-cycle/"
    ],
-   "status": "active"
+   "status": "active",
+   "ar": {
+    "summary": "دورة حياة التطوير المدفوعة بالذكاء الاصطناعي من AWS في نواة واحدة محايدة تعمل داخل Claude Code وKiro (سطر الأوامر وبيئة التطوير) وCodex CLI وCursor وopencode وGitHub Copilot. تحوّل مساعدي البرمجة إلى سير تسليم منظم وقابل للتحقق.",
+    "how": "يثبّت الأمر `aidlc` قواعد سير العمل وخطافاته وأوامره في كل أداة مدعومة. تقسّم المنهجية العمل إلى التأسيس (النية والمتطلبات والوحدات) والبناء (التصميم والشيفرة والاختبارات) والتشغيل، ويقترح الذكاء الاصطناعي ويوافق البشر في كل مرحلة («الحوار المعكوس»). ويشرح التوثيق التثبيت ودورة الحياة وسلوك كل أداة.",
+    "features": [
+     "نواة واحدة لسبع أدوات (Claude Code وKiro CLI/IDE وCodex CLI وCursor وopencode وCopilot)",
+     "دورة حياة بمراحل ونقاط موافقة بشرية",
+     "مثبّت أصلي لا يحتاج Node أو Bun",
+     "منهجية مدعومة بمنشورات AWS"
+    ],
+    "strengths": [
+     "محايد تجاه الأدوات بتصميمه: المعيار نفسه يعمل في كل أداة",
+     "ترخيص MIT-0: يمكن نسخه في معيار عزم دون إسناد",
+     "نشط جدًا (إصدارات يومية)"
+    ],
+    "weaknesses": [
+     "منهجية وقواعد لا بيئة تشغيل: بلا لوحة ولا عزل ولا تقييم",
+     "إصدارات تجريبية وتغيّر متكرر"
+    ],
+    "gaps": [
+     "قياس هل يحسّن سير العمل النتائج فعلًا"
+    ],
+    "role": "مرجع للمسار 1 (معيار محايد تجاه الأدوات) ومنافس في اختبار المسار 3؛ وطريقته «نواة واحدة لأدوات كثيرة» نموذج لتوزيع معيار عزم.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "chorus",
@@ -258,7 +359,31 @@
     "https://github.com/Chorus-AIDLC/Chorus",
     "https://doc.chorus-ai.dev"
    ],
-   "status": "active"
+   "status": "active",
+   "ar": {
+    "summary": "«الـ harness في المستوى الأعلى»: خط عمل ينقل فيه فريق من وكلاء البرمجة مع البشر الأفكار إلى برمجيات مُسلَّمة (فكرة ← مقترح ← وثيقة ورسم مهام ← تنفيذ ← تحقق ← انتهاء)، مستوحى من AI-DLC. يتولى دورة الجلسات وحالة المهام وتنسيق الوكلاء الفرعيين والمراقبة والتعافي من الأعطال.",
+    "how": "تحتاج كل مرحلة إلى صلاحية (idea:write وproposal:write وtask:write و‎*:admin‎) يمكن منحها لإنسان أو وكيل أو كليهما، فهي مصفوفة صلاحيات 5 × 3 بدل أدوار ثابتة. الوكلاء يقترحون والبشر يتحققون، وتربط الإضافات وكلاء البرمجة مثل Claude Code.",
+    "features": [
+     "خط عمل AI-DLC مع رسوم مهام",
+     "صلاحيات دقيقة لكل وكيل",
+     "دورة الجلسات والتعافي والمراقبة",
+     "وكلاء متعددون مع إنسان في الحلقة"
+    ],
+    "strengths": [
+     "نموذج الصلاحيات أمرن من الأدوار الثابتة",
+     "المراقبة والتعافي مدمجان",
+     "رسوم المهام توضّح الاعتماديات والعمل المتوازي"
+    ],
+    "weaknesses": [
+     "ترخيص AGPL-3.0: تعديله وتقديمه كخدمة عبر الشبكة يُلزم بنشر الشيفرة",
+     "مجتمع أصغر"
+    ],
+    "gaps": [
+     "حلقة تقييم وقياس"
+    ],
+    "role": "نستعير نموذج الصلاحيات ورسوم المهام؛ وترخيص AGPL يجعل إعادة استخدامه مباشرة داخل منتجات عزم محفوفة بالمخاطر.",
+    "pricing": "مجاني مستضافًا ذاتيًا؛ وخيارات مستضافة"
+   }
   },
   {
    "id": "multica",
@@ -319,7 +444,31 @@
     "https://github.com/multica-ai/multica",
     "https://multica.ai/docs"
    ],
-   "status": "active"
+   "status": "active",
+   "ar": {
+    "summary": "مساحة عمل تُسند فيها التذاكر إلى وكلاء البرمجة (Claude Code وCodex وCursor وغيرها) كما تُسند إلى الزملاء: يلتقطون العمل، ويعلّقون على التقدم، ويرفعون العوائق، ويعيدونه للمراجعة، على بيئات تتحكم فيها.",
+    "how": "لوحة تذاكر يكون فيها الوكلاء أعضاء؛ يعمل كل وكيل على بيئة تسجّلها (جهازك أو خادم) ويبقي النية والتشغيل والقرارات والتعديلات على التذكرة. يُستضاف ذاتيًا، وله تطبيق مكتبي وسحابة.",
+    "features": [
+     "الوكلاء أعضاء في اللوحة بإسناد مهام",
+     "استخدام أدوات الوكلاء التي لديك",
+     "دليل للاستضافة الذاتية",
+     "تعليقات تقدم وعوائق على التذكرة"
+    ],
+    "strengths": [
+     "تنسيق كثير من الوكلاء على مستوى الفريق، بتجربة استخدام قوية",
+     "قابل للاستضافة الذاتية",
+     "يعمل مع أدوات وكلاء كثيرة (Claude Code وCodex وCursor وغيرها)"
+    ],
+    "weaknesses": [
+     "شروط ترخيص متاح المصدر فوق Apache: يجب مراجعتها قبل التضمين",
+     "لا طبقة تقييم"
+    ],
+    "gaps": [
+     "عزل لكل تشغيل؛ وقياس"
+    ],
+    "role": "منافس ونظير للوحة squad-kit؛ نتابع مزايا الفرق التي يفتقدها squad-kit (خادم مشترك ووكلاء كثيرون).",
+    "pricing": "مجاني مستضافًا ذاتيًا؛ وخطط سحابية"
+   }
   },
   {
    "id": "paperclip",
@@ -371,7 +520,27 @@
     "https://github.com/paperclipai/paperclip"
    ],
    "tier": "brief",
-   "status": "active"
+   "status": "active",
+   "ar": {
+    "summary": "تنسيق مفتوح المصدر لفرق من وكلاء الذكاء الاصطناعي منظمة كشركة: هيكل تنظيمي وأهداف وميزانيات وحوكمة وتتبع للتكلفة فوق أي وكيل وأي harness.",
+    "how": "خادم Node.js وواجهة React؛ تحدد هدفًا، و«توظّف» وكلاء (من أي مزوّد أو harness) في أدوار، وتضع الميزانيات وتوافق على الاستراتيجية؛ وتربط الموصّلات عمليات مخصصة وواجهات HTTP.",
+    "features": [
+     "هيكل تنظيمي وأهداف وميزانيات",
+     "اختيار النموذج والـ harness لكل وكيل",
+     "تتبع التكلفة والحوكمة"
+    ],
+    "strengths": [
+     "مفاهيم الميزانية والحوكمة مفيدة للوكلاء المستقلين"
+    ],
+    "weaknesses": [
+     "تركيز على أهداف الأعمال وعمق أقل في دورة التطوير"
+    ],
+    "gaps": [
+     "بوابات جودة هندسية"
+    ],
+    "role": "أفكار للميزانيات والحوكمة لوكلاء عزم المستقلين في القنوات.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "symphony",
@@ -427,7 +596,27 @@
     "https://github.com/openai/symphony"
    ],
    "tier": "brief",
-   "status": "active"
+   "status": "active",
+   "ar": {
+    "summary": "مواصفة من OpenAI مع تطبيق مرجعي لتحويل لوحة عمل (مثل Linear) إلى تشغيلات تنفيذ مستقلة ومعزولة، مع إثبات للعمل (حالة CI وملاحظات المراجعة وفيديوهات شرح) قبل دمج طلب الدمج.",
+    "how": "يراقب اللوحة، ويشغّل وكيلًا معزولًا لكل مهمة، ويجمع إثبات العمل، ويدمج طلبات الدمج المقبولة. نُشر كملف SPEC.md لتبني الفرق نسختها؛ ويوجد تطبيق مرجعي بلغة Elixir. يعمل أفضل في المستودعات التي طبقت هندسة الـ harness.",
+    "features": [
+     "تشغيلات مستقلة تنطلق من اللوحة",
+     "حزمة إثبات عمل لكل مهمة",
+     "ملف SPEC.md لتبني نسختك"
+    ],
+    "strengths": [
+     "مواصفة واضحة من OpenAI لإدارة العمل لا إدارة الوكلاء"
+    ],
+    "weaknesses": [
+     "معاينة هندسية للبيئات الموثوقة فقط"
+    ],
+    "gaps": [
+     "الجاهزية للإنتاج"
+    ],
+    "role": "نقرأ المواصفة مرجعًا لتصميم الوضع المستقل وإثبات العمل في squad-kit.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "omnigent",
@@ -479,7 +668,28 @@
     "https://github.com/omnigent-ai/omnigent"
    ],
    "tier": "brief",
-   "status": "active"
+   "status": "active",
+   "ar": {
+    "summary": "«harness أعلى» مفتوح المصدر: طبقة تنسيق واحدة فوق Claude Code وCodex وCursor وOpenCode وHermes وPi والوكلاء المعرّفين بـ YAML، مع سياسات وعزل وجلسات تتبعك بين الطرفية والمتصفح والهاتف.",
+    "how": "يغلّف كل harness بنموذج جلسة موحد؛ يمكن للوكلاء مراجعة عمل بعضهم أو تقسيم العمل؛ وتُفرض السياسات والعزل مركزيًا؛ ويمكن استخدام أي نموذج أو اشتراك.",
+    "features": [
+     "طبقة موحدة فوق أدوات harness كثيرة",
+     "وكلاء مخصصون بـ YAML",
+     "سياسات وعزل",
+     "جلسات عبر الأجهزة"
+    ],
+    "strengths": [
+     "يعالج مباشرة التشغيل المحايد تجاه الـ harness"
+    ],
+    "weaknesses": [
+     "حديث (إصدارات تطوير) ونطاقه واسع"
+    ],
+    "gaps": [
+     "القياس"
+    ],
+    "role": "طبقة موصّلات مشتركة محتملة إن أرادت عزم واجهة واحدة لتشغيل أدوات harness كثيرة.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "spec-kit",
@@ -537,7 +747,32 @@
     "https://github.com/github/spec-kit",
     "https://github.github.com/spec-kit/"
    ],
-   "status": "active"
+   "status": "active",
+   "ar": {
+    "summary": "مجموعة أدوات GitHub للتطوير المبني على المواصفات: أداة سطر أوامر (specify) وأوامر تنقلك من الدستور والمواصفات إلى الخطة والمهام والتنفيذ، عبر وكلاء برمجة كثيرين.",
+    "how": "يجهّز الأمر `specify init` القوالب والأوامر للوكيل المختار؛ وتنتج الأوامر ‎/constitution‎ و‎/specify‎ و‎/plan‎ و‎/tasks‎ و‎/implement‎ ملفات Markdown توجّه الوكيل خطوة بخطوة.",
+    "features": [
+     "الدستور ← المواصفات ← الخطة ← المهام ← التنفيذ",
+     "يدعم وكلاء كثيرين (Claude Code وCopilot وGemini وCursor وغيرها)",
+     "قوالب وإضافات",
+     "إضافات وإعدادات مسبقة",
+     "تجهيز عبر أداة specify"
+    ],
+    "strengths": [
+     "مرجع منتشر للتطوير المبني على المواصفات، ومحايد تجاه المزوّدين",
+     "ملفات Markdown بسيطة يقرؤها أي فريق",
+     "دعم GitHub ومجتمع كبير"
+    ],
+    "weaknesses": [
+     "هيكل للعملية فقط: بلا بيئة تشغيل ولا بوابات ولا قياس",
+     "قد ينتج وثائق ثقيلة لتغييرات صغيرة"
+    ],
+    "gaps": [
+     "تقييم جودة المواصفات"
+    ],
+    "role": "مرجع لوثائق المسار 1 (قوالب المواصفات والخطة والمهام)؛ ويوثّق squad-kit مقارنة معه بالفعل (docs/vs-spec-kit.md).",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "bmad",
@@ -588,7 +823,27 @@
     "https://github.com/bmad-code-org/BMAD-METHOD"
    ],
    "tier": "brief",
-   "status": "active"
+   "status": "active",
+   "ar": {
+    "summary": "إطار Agile قائم على الشخصيات (المحلل ومدير المنتج والمعماري وScrum Master والمطور وضمان الجودة) يُقدَّم كوكلاء وسير عمل قابلة للتثبيت في مساعدي البرمجة.",
+    "how": "يضيف المثبّت وكلاء الشخصيات وملفات سير العمل إلى المشروع؛ ويجري الفريق التخطيط (وثيقة المتطلبات والمعمار) ثم التطوير قصةً بقصة مع ضمان الجودة.",
+    "features": [
+     "وكلاء بشخصيات عبر دورة Agile",
+     "وثائق تخطيط (متطلبات ومعمار وقصص)",
+     "تثبيت في بيئات تطوير متعددة"
+    ],
+    "strengths": [
+     "مجتمع كبير؛ وروحه قريبة من أدوار squad-kit"
+    ],
+    "weaknesses": [
+     "عملية توثيق ثقيلة؛ بلا بوابات تشغيل ولا تقييم"
+    ],
+    "gaps": [
+     "القياس"
+    ],
+    "role": "نُدرجه خط أساس للعملية في بيئة الاختبار (المهام نفسها: سير BMAD مقابل squad-kit).",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "superpowers",
@@ -646,7 +901,32 @@
     "https://github.com/obra/superpowers",
     "https://builders.fullscript.com/posts/benchmarking-the-agents-that-write-our-code"
    ],
-   "status": "active"
+   "status": "active",
+   "ar": {
+    "summary": "مكتبة مهارات وسير عمل لوكلاء البرمجة: عصف ذهني ← خطة ← تطوير بوكلاء فرعيين مع التطوير بالاختبار ومراجعة الشيفرة، تُقدَّم كمهارات إضافة لـ Claude Code (وتُستخدم مع أدوات أخرى).",
+    "how": "تُفعَّل المهارات تلقائيًا (العصف الذهني وكتابة الخطط والتطوير بالاختبار وتتبع الأخطاء المنهجي وطلب المراجعة)؛ وينفذ وكلاء فرعيون المهام واحدة تلو الأخرى مع مراجعة بينها.",
+    "features": [
+     "تفعيل تلقائي للمهارات",
+     "مهارات للتطوير بالاختبار وتتبع الأخطاء المنهجي",
+     "تطوير بوكلاء فرعيين مع مراجعات",
+     "سير عمل بفروع git worktree",
+     "تثبيت من متجر الإضافات"
+    ],
+    "strengths": [
+     "أكثر مجموعات مهارات Claude Code انتشارًا، وقيست في دراسة Fullscript",
+     "انضباط مجرّب في التطوير بالاختبار",
+     "خفيف: بلا خادم ولا لوحة"
+    ],
+    "weaknesses": [
+     "قد تتعارض حزم المهارات؛ ووجدت Fullscript أن تكديس مجموعات المهارات لم يفز أبدًا",
+     "Claude Code أساسًا (والأدوات الأخرى عبر نسخ منقولة)"
+    ],
+    "gaps": [
+     "عملية للفريق (تذاكر وموافقات)"
+    ],
+    "role": "نُدرجه خط أساس خفيفًا: Claude Code مع Superpowers مقابل squad-kit على المهام نفسها.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "gstack",
@@ -697,7 +977,27 @@
     "https://github.com/garrytan/gstack"
    ],
    "tier": "brief",
-   "status": "active"
+   "status": "active",
+   "ar": {
+    "summary": "مجموعة مهارات لـ Claude Code تعمل كفريق افتراضي (مراجعة المدير التنفيذي، ومدير الهندسة، والمصمم، وضمان الجودة بمتصفح حقيقي، ومهندس الإصدار).",
+    "how": "أوامر مهارات لمراجعات التخطيط وضمان الجودة بمتصفح دون واجهة والإطلاق والمراجعات الدورية.",
+    "features": [
+     "مهارات بأدوار",
+     "ضمان جودة بالمتصفح",
+     "أوامر للإطلاق والمراجعة الدورية"
+    ],
+    "strengths": [
+     "نمط عملي لضمان الجودة بالمتصفح"
+    ],
+    "weaknesses": [
+     "متمحور حول Claude Code؛ وسير عمل شخصي"
+    ],
+    "gaps": [
+     "إعدادات الفريق والتقييم"
+    ],
+    "role": "أفكار لتعليمات المختبِر والمراجع في squad-kit.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "compound-engineering",
@@ -749,7 +1049,27 @@
     "https://github.com/EveryInc/compound-engineering-plugin"
    ],
    "tier": "brief",
-   "status": "active"
+   "status": "active",
+   "ar": {
+    "summary": "إضافة من Every لحلقة خطة ← عمل ← مراجعة ← تراكم، حيث تغذي كل مهمة منتهية المشروعَ بالدروس فتسهل المهمة التالية.",
+    "how": "أوامر للتخطيط والتنفيذ والمراجعة بعدة وكلاء، وخطوة «تراكم» تكتب الدروس في الوثائق والقواعد.",
+    "features": [
+     "حلقة خطة/عمل/مراجعة/تراكم",
+     "مراجعة بعدة وكلاء",
+     "حفظ الدروس في المستودع"
+    ],
+    "strengths": [
+     "خطوة التراكم تشبه مجلد knowledge/ في squad-kit"
+    ],
+    "weaknesses": [
+     "لا قياس لأثر التراكم"
+    ],
+    "gaps": [
+     "التقييم"
+    ],
+    "role": "نمط لإعادة نتائج بيئة الاختبار إلى قواعد الفرق.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "ecc",
@@ -799,7 +1119,26 @@
     "https://github.com/affaan-m/ECC"
    ],
    "tier": "brief",
-   "status": "active"
+   "status": "active",
+   "ar": {
+    "summary": "حزمة كبيرة لأداء الـ harness: وكلاء ومهارات وخطافات وقواعد وأنماط ذاكرة لـ Claude Code ووكلاء آخرين، تستهدف كفاءة الرموز والتحقق.",
+    "how": "ثبّت الوحدات التي تختارها (وكلاء ومهارات وخطافات وقواعد)؛ وتضم حلقات تحقق وفحصًا أمنيًا.",
+    "features": [
+     "وكلاء ومهارات وخطافات وقواعد",
+     "وحدات للتحقق والأمان"
+    ],
+    "strengths": [
+     "مخزون غني يمكن الاستفادة منه"
+    ],
+    "weaknesses": [
+     "كبيرة جدًا وخطر التضخم (المهارات المركّزة تفوقت على الحزم الكبيرة في SkillsBench)"
+    ],
+    "gaps": [
+     "أثر مقاس"
+    ],
+    "role": "مصدر لقواعد وخطافات مرشحة نختبرها في بيئة الاختبار واحدة تلو الأخرى.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "trellis",
@@ -851,7 +1190,27 @@
     "https://github.com/mindfold-ai/Trellis"
    ],
    "tier": "brief",
-   "status": "active"
+   "status": "active",
+   "ar": {
+    "summary": "إطار منظم للبرمجة بالذكاء الاصطناعي مع مواصفات وسير مهام وذاكرة مشروع عبر Claude Code وCursor وأدوات أخرى.",
+    "how": "يحقن سياق المواصفات والمهام في كل جلسة عبر الخطافات، ويحفظ يوميات لكل مطور.",
+    "features": [
+     "حقن المواصفات",
+     "سير المهام",
+     "أدوات متعددة"
+    ],
+    "strengths": [
+     "تصميم حقن السياق"
+    ],
+    "weaknesses": [
+     "ترخيص AGPL؛ إصدار تجريبي"
+    ],
+    "gaps": [
+     "التقييم"
+    ],
+    "role": "مرجع فقط.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "gastown",
@@ -903,7 +1262,27 @@
     "https://github.com/gastownhall/gastown"
    ],
    "tier": "brief",
-   "status": "active"
+   "status": "active",
+   "ar": {
+    "summary": "مدير مساحات عمل لعدة وكلاء ينسّق كثيرًا من وكلاء Claude Code (وغيرهم) على قاعدة شيفرة واحدة، مع تتبع دائم للعمل (beads) وأدوار مثل العمدة والعمال.",
+    "how": "يعمل الوكلاء في مساحات عمل تديرها tmux؛ ويوزع منسقٌ عناصر العمل المحفوظة في نظام تذاكر مبني على git؛ وتدمج قوائم الدمج النتائج.",
+    "features": [
+     "وكلاء كثيرون بالتوازي",
+     "تتبع العمل عبر git",
+     "قائمة دمج"
+    ],
+    "strengths": [
+     "يتسع لعدد كبير من الوكلاء بالتوازي"
+    ],
+    "weaknesses": [
+     "معقد في التشغيل؛ والعزل على مستوى المضيف"
+    ],
+    "gaps": [
+     "العزل والتقييم"
+    ],
+    "role": "مرجع للتشغيلات المتوازية الكبيرة.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "agent-orchestrator",
@@ -954,7 +1333,27 @@
     "https://github.com/ComposioHQ/agent-orchestrator"
    ],
    "tier": "brief",
-   "status": "active"
+   "status": "active",
+   "ar": {
+    "summary": "يشغّل وكلاء برمجة متوازين، كلٌّ في فرع git worktree خاص، ويتعامل آليًا مع إخفاقات CI وتعليقات المراجعة ومتابعات طلبات الدمج.",
+    "how": "إضافات للوكلاء (Claude Code وCodex وAider) وبيئات التشغيل (tmux وDocker) وأدوات التذاكر (GitHub وLinear)؛ ويتفاعل مع أحداث CI والمراجعة.",
+    "features": [
+     "وكلاء متوازون في worktrees",
+     "يتفاعل مع CI وتعليقات المراجعة",
+     "معمار إضافات"
+    ],
+    "strengths": [
+     "خانات إضافة للوكيل وبيئة التشغيل وأداة التذاكر"
+    ],
+    "weaknesses": [
+     "إصدارات ليلية وتغيّر سريع"
+    ],
+    "gaps": [
+     "التقييم"
+    ],
+    "role": "خانات الإضافة لديه (وكيل / بيئة تشغيل / أداة تذاكر) شكل جيد لتكاملات squad-kit.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "orca",
@@ -1004,7 +1403,26 @@
     "https://github.com/stablyai/orca"
    ],
    "tier": "brief",
-   "status": "active"
+   "status": "active",
+   "ar": {
+    "summary": "بيئة تطوير مكتبية لتشغيل وكلاء برمجة كثيرين بالتوازي عبر worktrees، مع أدوات للمراجعة والدمج.",
+    "how": "لكل مهمة worktree وطرفية وكيل؛ وتُراجع التعديلات داخل التطبيق.",
+    "features": [
+     "worktrees متوازية",
+     "مراجعة التعديلات مدمجة"
+    ],
+    "strengths": [
+     "تجربة استخدام مصقولة للوكلاء المتوازين"
+    ],
+    "weaknesses": [
+     "مستخدم واحد على سطح المكتب"
+    ],
+    "gaps": [
+     "عملية الفريق والتقييم"
+    ],
+    "role": "مرجع لتجربة الاستخدام.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "qm",
@@ -1026,7 +1444,7 @@
     "Any model via Pi"
    ],
    "strengths": [
-    "Very close to the 'autonomous agents through channels' goal in the month's compass",
+    "Very close to the goal of autonomous agents reachable through chat channels",
     "MIT, self-hosted, vendor-neutral",
     "Scoped secrets and permissions per person and room"
    ],
@@ -1039,7 +1457,7 @@
    ],
    "fit": {
     "verdict": "benchmark",
-    "role": "Candidate base for Azm's autonomous channel agents (Slack/Teams); trial before building one."
+    "role": "Candidate base for Azm's autonomous channel agents (Slack or Teams); try it before building one."
    },
    "scores": {
     "fit": 4,
@@ -1060,7 +1478,31 @@
     "https://github.com/yc-software/qm",
     "https://github.com/yc-software/qm#readme"
    ],
-   "status": "active"
+   "status": "active",
+   "ar": {
+    "summary": "harness جماعي للعمل في Slack وعلى الويب، يُنشر في سحابتك بنماذجك ومفاتيحك. لكل شخص وكل قناة ذاكرة وملفات وخزنة مفاتيح وصلاحيات ومهام مجدولة وبيئة عزل دائمة خاصة به.",
+    "how": "يُنشر بأن تطلب من وكيل برمجة اتباع دليل النشر في المستودع؛ ويعمل الوكلاء على Pi فيمكن تبديل النماذج من مزوّدين كثيرين؛ وعزل لكل شخص وكل غرفة مع أسرار محصورة.",
+    "features": [
+     "واجهات Slack والويب",
+     "ذاكرة وملفات وصلاحيات ومهام مجدولة لكل شخص وغرفة",
+     "بيئة عزل دائمة لكل نطاق",
+     "أي نموذج عبر Pi"
+    ],
+    "strengths": [
+     "قريب جدًا من هدف الوكلاء المستقلين الذين يُستدعون عبر قنوات المحادثة",
+     "ترخيص MIT، ومستضاف ذاتيًا، ومحايد تجاه المزوّدين",
+     "أسرار وصلاحيات محصورة لكل شخص وغرفة"
+    ],
+    "weaknesses": [
+     "موجّه للشركات الناشئة؛ وضوابط المؤسسات تحتاج مراجعة",
+     "النشر والتشغيل على عاتقك"
+    ],
+    "gaps": [
+     "سير عمل خاص بدورة التطوير"
+    ],
+    "role": "قاعدة مرشحة لوكلاء عزم المستقلين في القنوات (Slack/Teams)؛ نجربه قبل بناء بديل.",
+    "pricing": "مجاني؛ يُستضاف في سحابتك"
+   }
   },
   {
    "id": "ruflo",
@@ -1112,7 +1554,27 @@
     "https://github.com/ruvnet/ruflo"
    ],
    "tier": "brief",
-   "status": "active"
+   "status": "active",
+   "ar": {
+    "summary": "منصة لتنسيق أسراب الوكلاء لـ Claude Code مع أنواع وكلاء كثيرة وذاكرة وأدوات MCP.",
+    "how": "أوضاع السرب والعقل الجماعي تنسّق وكلاء كثيرين عبر أدوات MCP وذاكرة مشتركة.",
+    "features": [
+     "تنسيق الأسراب",
+     "ذاكرة مشتركة",
+     "مجموعة كبيرة من أدوات MCP"
+    ],
+    "strengths": [
+     "غني بالمزايا"
+    ],
+    "weaknesses": [
+     "معقد؛ وادعاءاته صعبة التحقق"
+    ],
+    "gaps": [
+     "تقييم مستقل"
+    ],
+    "role": "فقط إن أثبتت بيئة الاختبار قيمته.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "oh-my-claudecode",
@@ -1162,7 +1624,26 @@
     "https://github.com/Yeachan-Heo/oh-my-claudecode"
    ],
    "tier": "brief",
-   "status": "active"
+   "status": "active",
+   "ar": {
+    "summary": "إضافة لتنسيق عدة وكلاء في Claude Code مع أوضاع للفريق ووكلاء متخصصين وسير عمل آلي.",
+    "how": "إضافة بوكلاء وخطافات وأوضاع (آلي، وفريق، وحلقات على طريقة ralph).",
+    "features": [
+     "أوضاع الفريق والتشغيل الآلي",
+     "وكلاء متخصصون"
+    ],
+    "strengths": [
+     "منتشر ونشط"
+    ],
+    "weaknesses": [
+     "Claude Code فقط"
+    ],
+    "gaps": [
+     "التقييم"
+    ],
+    "role": "مرجع فقط.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "claude-squad",
@@ -1212,7 +1693,26 @@
     "https://github.com/smtg-ai/claude-squad"
    ],
    "tier": "brief",
-   "status": "active"
+   "status": "active",
+   "ar": {
+    "summary": "تطبيق طرفية يدير عدة جلسات Claude Code أو Codex أو Aider، كلٌّ في git worktree خاص.",
+    "how": "جلسات tmux مع worktrees؛ المراجعة والدفع من داخل التطبيق.",
+    "features": [
+     "جلسات متوازية",
+     "عزل عبر worktree"
+    ],
+    "strengths": [
+     "بسيط"
+    ],
+    "weaknesses": [
+     "ترخيص AGPL؛ ونشاط منخفض منذ أغسطس 2026"
+    ],
+    "gaps": [
+     "كل ما يتجاوز إدارة الجلسات"
+    ],
+    "role": "تجاوزته أدوات أغنى؛ والتشابه مع اسم squad-kit في الاسم فقط.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "vibe-kanban",
@@ -1261,7 +1761,25 @@
    "sources": [
     "https://github.com/BloopAI/vibe-kanban"
    ],
-   "tier": "brief"
+   "tier": "brief",
+   "ar": {
+    "summary": "لوحة كانبان لتنسيق وكلاء البرمجة في worktrees. أعلن المشروع أنه يتوقف تدريجيًا.",
+    "how": "المهام على اللوحة تطلق وكلاء في worktrees معزولة مع مراجعة.",
+    "features": [
+     "لوحة كانبان للوكلاء"
+    ],
+    "strengths": [
+     "كان مرجعًا مبكرًا"
+    ],
+    "weaknesses": [
+     "يتوقف تدريجيًا"
+    ],
+    "gaps": [
+     "—"
+    ],
+    "role": "لا نبني عليه.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "ccpm",
@@ -1311,7 +1829,26 @@
     "https://github.com/automazeio/ccpm"
    ],
    "tier": "brief",
-   "status": "active"
+   "status": "active",
+   "ar": {
+    "summary": "إدارة مشاريع لـ Claude Code عبر GitHub Issues وworktrees: وثيقة متطلبات ← ملحمة ← مهام ← وكلاء متوازون، مع تتبع كامل.",
+    "how": "أوامر تنشئ وثائق المتطلبات والملاحم، وتزامنها مع GitHub Issues، وتشغّل وكيلًا لكل مهمة.",
+    "features": [
+     "تدفق المتطلبات/الملحمة/المهمة",
+     "مزامنة مع GitHub Issues"
+    ],
+    "strengths": [
+     "تتبع عبر التذاكر"
+    ],
+    "weaknesses": [
+     "Claude Code وGitHub فقط"
+    ],
+    "gaps": [
+     "التقييم"
+    ],
+    "role": "مرجع للمزامنة مع GitHub.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "gsd",
@@ -1361,7 +1898,26 @@
     "https://github.com/gsd-build/get-shit-done"
    ],
    "tier": "brief",
-   "status": "active"
+   "status": "active",
+   "ar": {
+    "summary": "نظام خفيف للتعليمات العليا وهندسة السياق للعمل المبني على المواصفات في Claude Code ووكلاء آخرين.",
+    "how": "أوامر للنقاش ← التخطيط ← التنفيذ ← التحقق مع سياقات وكلاء فرعيين جديدة.",
+    "features": [
+     "مراحل مبنية على المواصفات",
+     "تجنّب تدهور السياق"
+    ],
+    "strengths": [
+     "خفيف"
+    ],
+    "weaknesses": [
+     "إصدارات تجريبية وتباطؤ منذ مايو 2026"
+    ],
+    "gaps": [
+     "التقييم"
+    ],
+    "role": "مرجع فقط.",
+    "pricing": "مجاني"
+   }
   }
  ]
 }

@@ -14,19 +14,49 @@
         "en": "Harness Sandbox",
         "ar": "بيئة اختبار الـ Harness"
       },
-      "question": "What already exists for running, comparing and benchmarking AI coding-agent harnesses in isolated sandboxes, which parts can Azm adopt, and what is left to build?",
+      "question": {
+        "en": "What already exists for running, comparing and benchmarking AI coding-agent harnesses in isolated sandboxes, which parts can Azm adopt, and what is left to build?",
+        "ar": "ما الموجود فعلًا لتشغيل أدوات الـ harness الخاصة بوكلاء البرمجة ومقارنتها وقياسها داخل بيئات معزولة؟ وما الذي يمكن لعزم أن تعتمده، وما الذي بقي عليها أن تبنيه؟"
+      },
       "scope": [
-        "Coding-agent harnesses: SDLC/team harnesses (ticket to release) and agent runtimes (the engine inside).",
-        "Harness evaluation and benchmarking: frameworks, public benchmarks, and methods for scoring harnesses on your own code.",
-        "Sandboxes: isolated execution for agents, managed and self-hosted.",
-        "Observability and governance needed to measure and control agent runs.",
-        "Commercial cloud coding agents, as baselines to compare against."
+        {
+          "en": "Coding-agent harnesses: SDLC/team harnesses (ticket to release) and agent runtimes (the engine inside).",
+          "ar": "أدوات الـ harness لوكلاء البرمجة: أدوات دورة التطوير للفرق (من التذكرة إلى الإصدار) ومحركات الوكلاء التي تعمل بداخلها."
+        },
+        {
+          "en": "Harness evaluation and benchmarking: frameworks, public benchmarks, and methods for scoring harnesses on your own code.",
+          "ar": "تقييم الـ harness وقياسه: أُطر التقييم، والمقاييس المعيارية العامة، وطرق تقييم الـ harness على شيفرتك أنت."
+        },
+        {
+          "en": "Sandboxes: isolated execution for agents, managed and self-hosted.",
+          "ar": "بيئات العزل (sandbox): تشغيل الوكلاء في بيئة معزولة، كخدمة مُدارة أو على خوادمنا."
+        },
+        {
+          "en": "Observability and governance needed to measure and control agent runs.",
+          "ar": "المراقبة والحوكمة اللازمتان لقياس تشغيل الوكلاء والتحكم فيه."
+        },
+        {
+          "en": "Commercial cloud coding agents, as baselines to compare against.",
+          "ar": "وكلاء البرمجة السحابيون التجاريون، مرجعًا للمقارنة."
+        }
       ],
       "assumptions": [
-        "\"Harness sandbox\" = a place where Azm can run any harness (squad-kit, azm-harness, or others) on real Azm tasks in isolation, and measure quality, cost, speed and standards compliance.",
-        "Research phase: open source and paid tools are both in scope; budget is available.",
-        "Every model and agent is allowed for now.",
-        "The result must be general: it should work for every team, configured per project with YAML in the future."
+        {
+          "en": "\"Harness sandbox\" = a place where Azm can run any harness (squad-kit, azm-harness, or others) on real Azm tasks in isolation, and measure quality, cost, speed and standards compliance.",
+          "ar": "«بيئة اختبار الـ harness» = مكان تستطيع فيه عزم تشغيل أي harness (squad-kit أو azm-harness أو غيرهما) على مهام حقيقية من عزم في بيئة معزولة، وقياس الجودة والتكلفة والسرعة والالتزام بالمعايير."
+        },
+        {
+          "en": "Research phase: open source and paid tools are both in scope; budget is available.",
+          "ar": "نحن في مرحلة البحث: الأدوات المفتوحة المصدر والمدفوعة كلها في النطاق، والميزانية متاحة."
+        },
+        {
+          "en": "Every model and agent is allowed for now.",
+          "ar": "كل النماذج والوكلاء مسموح بها حاليًا."
+        },
+        {
+          "en": "The result must be general: it should work for every team, configured per project with YAML in the future.",
+          "ar": "يجب أن تكون النتيجة عامة: تصلح لكل الفرق، ويضبطها كل مشروع بملف YAML مستقبلًا."
+        }
       ],
       "categories": [
         {
@@ -184,28 +214,28 @@
       ],
       "verdicts": {
         "adopt": {
-          "en": "Use it as a building block",
-          "ar": "نعتمده لبنةً أساسية"
+          "en": "Use it as is",
+          "ar": "نستخدمها كما هي"
         },
         "adopt-part": {
-          "en": "Reuse a part or pattern of it",
-          "ar": "نعيد استخدام جزء منه أو نمطه"
+          "en": "Borrow a part or an idea",
+          "ar": "نأخذ منها جزءًا أو فكرة"
         },
         "benchmark": {
-          "en": "Benchmark against it in the sandbox",
-          "ar": "نقارنه في بيئة الاختبار"
+          "en": "Try it in our tests",
+          "ar": "نجرّبها في اختباراتنا"
         },
         "inspire": {
-          "en": "Learn from it; don't adopt",
-          "ar": "نتعلم منه ولا نعتمده"
+          "en": "Read it for ideas",
+          "ar": "نقرؤها للاستفادة من أفكارها"
         },
         "watch": {
-          "en": "Watch; too early or unclear",
-          "ar": "نراقبه؛ مبكر أو غير واضح"
+          "en": "Keep an eye on it",
+          "ar": "نتابعها فقط"
         },
         "avoid": {
-          "en": "Avoid for now",
-          "ar": "نتجنبه حاليًا"
+          "en": "Don't use it",
+          "ar": "لا نستخدمها"
         }
       },
       "watch": [
@@ -232,12 +262,27 @@
         "en": "Standards Package",
         "ar": "حزمة المعايير"
       },
-      "question": "How do other organizations package AI development standards (skills, rules, workflows), make them configurable per project, and track adoption?",
+      "question": {
+        "en": "How do other organizations package AI development standards (skills, rules, workflows), make them configurable per project, and track adoption?",
+        "ar": "كيف تجمع المؤسسات الأخرى معايير التطوير بالذكاء الاصطناعي (المهارات والقواعد وسير العمل) في حزم، وتجعلها قابلة للضبط لكل مشروع، وتتابع مدى تطبيقها؟"
+      },
       "scope": [
-        "Standard formats: AGENTS.md, Agent Skills (SKILL.md), plugins and marketplaces, rules files.",
-        "Methodologies that ship as packages: Spec Kit, BMAD, Superpowers, AI-DLC, Kiro specs and others.",
-        "Distribution and versioning of standards across many repositories.",
-        "Measuring adoption and compliance per project."
+        {
+          "en": "Standard formats: AGENTS.md, Agent Skills (SKILL.md), plugins and marketplaces, rules files.",
+          "ar": "صيغ المعايير: AGENTS.md وAgent Skills (SKILL.md) والإضافات ومتاجرها وملفات القواعد."
+        },
+        {
+          "en": "Methodologies that ship as packages: Spec Kit, BMAD, Superpowers, AI-DLC, Kiro specs and others.",
+          "ar": "منهجيات تُوزَّع كحزم: Spec Kit وBMAD وSuperpowers وAI-DLC ومواصفات Kiro وغيرها."
+        },
+        {
+          "en": "Distribution and versioning of standards across many repositories.",
+          "ar": "توزيع المعايير وإدارة نسخها عبر مستودعات كثيرة."
+        },
+        {
+          "en": "Measuring adoption and compliance per project.",
+          "ar": "قياس تطبيق المعايير والالتزام بها في كل مشروع."
+        }
       ],
       "assumptions": [],
       "categories": [],
@@ -263,12 +308,27 @@
         "en": "Azm Brain",
         "ar": "عقل عزم"
       },
-      "question": "What are the options for a shared knowledge base across dev centers that serves both developers and AI agents?",
+      "question": {
+        "en": "What are the options for a shared knowledge base across dev centers that serves both developers and AI agents?",
+        "ar": "ما الخيارات المتاحة لبناء قاعدة معرفة مشتركة بين مراكز التطوير تخدم المطورين ووكلاء الذكاء الاصطناعي معًا؟"
+      },
       "scope": [
-        "Agent memory and knowledge layers (graph, vector, file-based).",
-        "Code and documentation intelligence: code graphs, wikis, search.",
-        "Enterprise knowledge platforms and MCP servers that expose knowledge to agents.",
-        "Governance: freshness, ownership, access control."
+        {
+          "en": "Agent memory and knowledge layers (graph, vector, file-based).",
+          "ar": "طبقات الذاكرة والمعرفة للوكلاء (رسومية، ومتجهية، وقائمة على الملفات)."
+        },
+        {
+          "en": "Code and documentation intelligence: code graphs, wikis, search.",
+          "ar": "فهم الشيفرة والتوثيق: رسوم الشيفرة والويكي والبحث."
+        },
+        {
+          "en": "Enterprise knowledge platforms and MCP servers that expose knowledge to agents.",
+          "ar": "منصات المعرفة المؤسسية وخوادم MCP التي تتيح المعرفة للوكلاء."
+        },
+        {
+          "en": "Governance: freshness, ownership, access control.",
+          "ar": "الحوكمة: حداثة المعلومات وملكيتها والتحكم في الوصول."
+        }
       ],
       "assumptions": [],
       "categories": [],

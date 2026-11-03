@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getLocale, pageTitle } from "@/lib/locale-server";
+import { TABS, TRACK_IDS, trackData, type Tab } from "@/lib/research";
+import { toolMap } from "@/lib/research-server";
 import { Radar } from "@/components/research/Radar";
-import { TABS, TRACKS, trackData, type Tab } from "@/lib/research";
+import { BigPicture } from "@/components/research/Blueprint";
 import {
   ArticlesTab,
   IndexTab,
   MatrixTab,
-  OverviewTab,
   PlanTab,
   PlannedTrack,
   RadarTab,
   TrackHeader,
-  ContentNote,
 } from "@/components/research/TrackView";
 
 type Props = {
@@ -21,32 +21,32 @@ type Props = {
 };
 
 export function generateStaticParams() {
-  return TRACKS.map((t) => ({ track: t.id }));
+  return TRACK_IDS.map((track) => ({ track }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { track } = await params;
-  const d = trackData(track);
   const locale = await getLocale();
+  const d = trackData(track, locale);
   return { title: await pageTitle((t) => d?.track.name[locale] ?? t.research.title) };
 }
 
 export default async function TrackPage({ params, searchParams }: Props) {
   const { track: id } = await params;
-  const d = trackData(id);
+  const locale = await getLocale();
+  const d = trackData(id, locale);
   if (!d) notFound();
   const raw = (await searchParams).tab;
   const tab: Tab = TABS.includes(raw as Tab) ? (raw as Tab) : "overview";
-  const { track, tools, articles, synthesis, index } = d;
+  const { track, tools, articles, synthesis, blueprint, index } = d;
   const stats = { tools: tools.length, index: index.items.length, articles: articles.length };
-  const planned = track.status === "planned" || !synthesis;
+  const planned = track.status === "planned" || !synthesis || !blueprint;
 
   return (
     <div className="flex flex-col gap-5">
       <TrackHeader track={track} tab={tab} stats={stats} checked={d.checked}>
-        {!planned && tab === "overview" ? <Radar track={track} tools={tools} /> : null}
+        {!planned && tab === "matrix" ? <Radar track={track} tools={tools} /> : null}
       </TrackHeader>
-      {!planned && <ContentNote />}
       {planned ? (
         <PlannedTrack track={track} />
       ) : tab === "matrix" ? (
@@ -58,9 +58,9 @@ export default async function TrackPage({ params, searchParams }: Props) {
       ) : tab === "radar" ? (
         <RadarTab track={track} />
       ) : tab === "index" ? (
-        <IndexTab track={track} items={index.items} sources={index.sources} />
+        <IndexTab track={track} items={index.items} sources={index.sources} note={index.note} />
       ) : (
-        <OverviewTab track={track} s={synthesis} tools={tools} />
+        <BigPicture track={track} bp={blueprint} tools={toolMap(tools)} />
       )}
     </div>
   );

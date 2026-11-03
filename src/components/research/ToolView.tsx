@@ -7,7 +7,7 @@ import { BackIcon, ExternalIcon } from "../icons";
 import { Bullets, CriteriaBars, Panel, ScoreDial, VerdictChip } from "./parts";
 import { NIGHT_COLOR } from "./Radar";
 
-export function ToolView({ track, tool, related }: { track: Track; tool: Tool; related: Tool[] }) {
+export function ToolView({ track, tool, related, blocks }: { track: Track; tool: Tool; related: Tool[]; blocks: { id: string; name: string; order: number }[] }) {
   const { t, locale } = useLocale();
   const r = t.research;
   const cat = track.categories.find((c) => c.id === tool.category);
@@ -120,6 +120,23 @@ export function ToolView({ track, tool, related }: { track: Track; tool: Tool; r
         </div>
 
         <aside className="flex flex-col gap-5">
+          {blocks.length > 0 && (
+            <Panel title={r.tabs.overview}>
+              <ul className="flex flex-col gap-2">
+                {blocks.map((b) => (
+                  <li key={b.id}>
+                    <Link
+                      href={`/research/${track.id}/block/${b.id}`}
+                      className="flex items-center gap-3 rounded-xl bg-sunken px-3 py-2.5 text-[14px] font-medium hover:bg-line"
+                    >
+                      <span className="grid size-6 place-items-center rounded-full bg-night text-[12px] font-semibold text-night-ink">{b.order}</span>
+                      {b.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </Panel>
+          )}
           <Panel>
             <dl className="flex flex-col divide-y divide-line text-[14px]">
               {facts

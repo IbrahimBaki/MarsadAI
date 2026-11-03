@@ -1,0 +1,1812 @@
+{
+ "track": "t3",
+ "checked": "2026-11-03",
+ "goal": {
+  "en": "Build one place where Azm can run any harness (squad-kit, azm-harness, Claude Code, others) on the same real Azm tasks, in isolation, and get a clear answer: which harness, with which model, gives the best quality for the cost, and does it follow our standards?",
+  "ar": "بناء مكان واحد تشغّل فيه عزم أي harness (مثل squad-kit وazm-harness وClaude Code وغيرها) على المهام الحقيقية نفسها من مشاريع عزم، في بيئة معزولة، لتحصل على إجابة واضحة: أي harness، مع أي نموذج، يعطي أفضل جودة مقابل التكلفة، وهل يلتزم بمعاييرنا؟"
+ },
+ "answer": {
+  "en": "Most pieces already exist and are free. We adopt the run engine (Harbor), the isolation layer (Docker first, then a self-hosted sandbox), the model gateway (LiteLLM) and tracing (Langfuse). We build the parts that are specific to Azm: our task set, adapters for our harnesses, standards scoring, per-team configuration and the report.",
+  "ar": "معظم الأجزاء موجودة بالفعل ومجانية. نعتمد محرك التشغيل (Harbor)، وطبقة العزل (Docker أولًا ثم بيئة عزل مستضافة لدينا)، وبوابة النماذج (LiteLLM)، والتتبّع (Langfuse). ونبني الأجزاء الخاصة بعزم: مجموعة المهام، وموصّلات أدواتنا، وتقييم الالتزام بالمعايير، وإعدادات كل فريق، والتقرير."
+ },
+ "flow": [
+  {
+   "id": "tasks",
+   "name": {
+    "en": "Pick the tasks",
+    "ar": "نختار المهام"
+   },
+   "desc": {
+    "en": "Real tickets from Azm repos, each with hidden tests.",
+    "ar": "تذاكر حقيقية من مستودعات عزم، لكل منها اختبارات مخفية."
+   }
+  },
+  {
+   "id": "harnesses",
+   "name": {
+    "en": "Pick harness × model",
+    "ar": "نختار الـ harness والنموذج"
+   },
+   "desc": {
+    "en": "squad-kit, azm-harness and others, on several models.",
+    "ar": "squad-kit وazm-harness وغيرهما، على عدة نماذج."
+   }
+  },
+  {
+   "id": "runner",
+   "name": {
+    "en": "Run them",
+    "ar": "نشغّلها"
+   },
+   "desc": {
+    "en": "The run engine starts every combination in parallel.",
+    "ar": "يشغّل محرك التشغيل كل التوليفات بالتوازي."
+   }
+  },
+  {
+   "id": "sandbox",
+   "name": {
+    "en": "In isolation",
+    "ar": "في بيئة معزولة"
+   },
+   "desc": {
+    "en": "Each run gets its own sandbox: no access to real systems.",
+    "ar": "كل تشغيل في بيئة معزولة خاصة به، بلا وصول إلى الأنظمة الحقيقية."
+   }
+  },
+  {
+   "id": "measure",
+   "name": {
+    "en": "Measure",
+    "ar": "نقيس"
+   },
+   "desc": {
+    "en": "Tokens, cost, time and traces are recorded.",
+    "ar": "تُسجَّل الرموز والتكلفة والوقت وتفاصيل التنفيذ."
+   }
+  },
+  {
+   "id": "scoring",
+   "name": {
+    "en": "Score and report",
+    "ar": "نقيّم ونصدر التقرير"
+   },
+   "desc": {
+    "en": "Hidden tests, standards checks and a cost/quality report.",
+    "ar": "اختبارات مخفية وفحص المعايير وتقرير الجودة مقابل التكلفة."
+   }
+  }
+ ],
+ "blocks": [
+  {
+   "id": "tasks",
+   "order": 1,
+   "categories": [
+    "eval"
+   ],
+   "name": {
+    "en": "Task set",
+    "ar": "مجموعة المهام"
+   },
+   "need": {
+    "en": "We need real work to test on. Public benchmarks don't reflect Azm's stacks or our standards, so the results would not tell us much.",
+    "ar": "نحتاج إلى عمل حقيقي نختبر عليه. المقاييس العامة لا تعكس تقنيات عزم ولا معاييرها، فلن تفيدنا نتائجها كثيرًا."
+   },
+   "decision": "build",
+   "plan": {
+    "en": "Build Azm's own task set with the SWE-bench recipe: take a closed ticket, pin the repo before the fix, write the brief from the ticket, and keep hidden tests that fail before and pass after. Start with 10 tasks from one repo, grow to 20-50 per team. Keep a small slice of Terminal-Bench 2.0 as a public sanity check.",
+    "ar": "نبني مجموعة مهام خاصة بعزم على طريقة SWE-bench: نأخذ تذكرة مغلقة، ونثبّت المستودع على حالته قبل الإصلاح، ونكتب وصف المهمة من التذكرة، ونحتفظ باختبارات مخفية تفشل قبل الإصلاح وتنجح بعده. نبدأ بعشر مهام من مستودع واحد، ثم نصل إلى 20-50 مهمة لكل فريق. ونُبقي جزءًا صغيرًا من Terminal-Bench 2.0 للتحقق العام."
+   },
+   "pick": [
+    "swe-bench"
+   ],
+   "alternatives": [
+    "terminal-bench",
+    "skillsbench",
+    "aws-harness-benchmarks"
+   ],
+   "compare": {
+    "tools": [
+     "swe-bench",
+     "terminal-bench",
+     "skillsbench",
+     "aws-harness-benchmarks"
+    ],
+    "rows": [
+     {
+      "label": {
+       "en": "Where tasks come from",
+       "ar": "مصدر المهام"
+      },
+      "values": [
+       {
+        "en": "Real GitHub issues",
+        "ar": "تذاكر حقيقية من GitHub"
+       },
+       {
+        "en": "Hand-built terminal tasks",
+        "ar": "مهام طرفية مصممة يدويًا"
+       },
+       {
+        "en": "Hand-built tasks with a skill each",
+        "ar": "مهام مصممة يدويًا مع مهارة لكل منها"
+       },
+       {
+        "en": "Your own closed issues",
+        "ar": "تذاكرك المغلقة أنت"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "How it scores",
+       "ar": "طريقة التقييم"
+      },
+      "values": [
+       {
+        "en": "Hidden tests (fail → pass)",
+        "ar": "اختبارات مخفية (فشل ← نجاح)"
+       },
+       {
+        "en": "Hidden test script",
+        "ar": "سكربت اختبار مخفي"
+       },
+       {
+        "en": "Deterministic checks",
+        "ar": "فحوص حتمية"
+       },
+       {
+        "en": "LLM judge with a rubric",
+        "ar": "نموذج حَكَم بمعايير مكتوبة"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "Size",
+       "ar": "الحجم"
+      },
+      "values": [
+       {
+        "en": "500 (Verified) to 1,800+ (Pro)",
+        "ar": "من 500 (Verified) إلى أكثر من 1,800 (Pro)"
+       },
+       {
+        "en": "89 tasks",
+        "ar": "89 مهمة"
+       },
+       {
+        "en": "87 tasks",
+        "ar": "87 مهمة"
+       },
+       {
+        "en": "As many as you mine",
+        "ar": "بقدر ما تستخرج"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "Good for Azm",
+       "ar": "مناسبته لعزم"
+      },
+      "values": [
+       {
+        "en": "The recipe for our own tasks",
+        "ar": "الطريقة التي نبني بها مهامنا"
+       },
+       {
+        "en": "Public comparison only",
+        "ar": "للمقارنة العامة فقط"
+       },
+       {
+        "en": "Measuring Track 1 skills",
+        "ar": "قياس مهارات المسار 1"
+       },
+       {
+        "en": "Closest to our goal; copy its method",
+        "ar": "الأقرب لهدفنا؛ ننسخ طريقته"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "Main weakness",
+       "ar": "أبرز عيب"
+      },
+      "values": [
+       {
+        "en": "Python-heavy; leaked into training data",
+        "ar": "يغلب عليه Python؛ تسرّب إلى بيانات التدريب"
+       },
+       {
+        "en": "Not product development",
+        "ar": "لا يمثل تطوير المنتجات"
+       },
+       {
+        "en": "Generic domains",
+        "ar": "مجالات عامة"
+       },
+       {
+        "en": "Judge bias; sample code",
+        "ar": "تحيّز الحَكَم؛ شيفرة تجريبية"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "harnesses",
+   "order": 2,
+   "categories": [
+    "sdlc",
+    "runtime"
+   ],
+   "name": {
+    "en": "Harnesses under test",
+    "ar": "أدوات الـ harness التي نختبرها"
+   },
+   "need": {
+    "en": "These are the things we compare. Two kinds: team harnesses that run the whole cycle (ticket → spec → code → review → release), and agent engines that do the coding inside them.",
+    "ar": "هذه هي الأدوات التي نقارن بينها، وهي نوعان: أدوات الفرق التي تدير الدورة كاملة (تذكرة ← مواصفات ← شيفرة ← مراجعة ← إصدار)، ومحركات الوكلاء التي تكتب الشيفرة بداخلها."
+   },
+   "decision": "benchmark",
+   "plan": {
+    "en": "Test squad-kit and azm-harness against the strongest alternatives on the same tasks: Archon and AI-DLC for the full cycle, Superpowers as a light baseline. Under them, compare Claude Code, Codex CLI, opencode and pi, with mini-swe-agent as the control group (how much does a harness add over a 100-line agent?).",
+    "ar": "نختبر squad-kit وazm-harness أمام أقوى البدائل على المهام نفسها: Archon وAI-DLC للدورة الكاملة، وSuperpowers كخط أساس خفيف. وتحتها نقارن Claude Code وCodex CLI وopencode وpi، مع mini-swe-agent كمجموعة ضابطة (كم يضيف الـ harness فوق وكيل من 100 سطر؟)."
+   },
+   "pick": [
+    "squad-kit",
+    "archon",
+    "aidlc",
+    "superpowers"
+   ],
+   "alternatives": [
+    "bmad",
+    "spec-kit",
+    "chorus",
+    "multica",
+    "qm"
+   ],
+   "compare": {
+    "tools": [
+     "squad-kit",
+     "archon",
+     "aidlc",
+     "superpowers",
+     "bmad"
+    ],
+    "rows": [
+     {
+      "label": {
+       "en": "What it is",
+       "ar": "ما هي"
+      },
+      "values": [
+       {
+        "en": "App + role agents, ticket to release",
+        "ar": "تطبيق ووكلاء بأدوار، من التذكرة إلى الإصدار"
+       },
+       {
+        "en": "YAML workflow engine with gates",
+        "ar": "محرك سير عمل بملفات YAML وبوابات"
+       },
+       {
+        "en": "Method + rules installed into many tools",
+        "ar": "منهجية وقواعد تُثبَّت في أدوات كثيرة"
+       },
+       {
+        "en": "Skills library for one agent",
+        "ar": "مكتبة مهارات لوكيل واحد"
+       },
+       {
+        "en": "Persona agents + agile documents",
+        "ar": "وكلاء بشخصيات ووثائق Agile"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "Covers",
+       "ar": "ما تغطيه"
+      },
+      "values": [
+       {
+        "en": "Questions, spec, design, build, checks, review, proof, release",
+        "ar": "الأسئلة والمواصفات والتصميم والبناء والفحوص والمراجعة والإثبات والإصدار"
+       },
+       {
+        "en": "Issue → plan → code → review → PR (bundled pack)",
+        "ar": "تذكرة ← خطة ← شيفرة ← مراجعة ← طلب دمج (الحزمة المرفقة)"
+       },
+       {
+        "en": "Inception, construction, operations",
+        "ar": "التأسيس والبناء والتشغيل"
+       },
+       {
+        "en": "Plan, TDD, debugging, review",
+        "ar": "التخطيط والتطوير بالاختبار وتتبع الأخطاء والمراجعة"
+       },
+       {
+        "en": "PRD, architecture, stories, QA",
+        "ar": "وثيقة المتطلبات والمعمار والقصص وضمان الجودة"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "Human approvals",
+       "ar": "موافقات بشرية"
+      },
+      "values": [
+       {
+        "en": "Spec, design, proof, release",
+        "ar": "المواصفات والتصميم والإثبات والإصدار"
+       },
+       {
+        "en": "Gates you define in YAML",
+        "ar": "بوابات تحددها في YAML"
+       },
+       {
+        "en": "At each stage",
+        "ar": "في كل مرحلة"
+       },
+       {
+        "en": "Informal",
+        "ar": "غير رسمية"
+       },
+       {
+        "en": "Informal",
+        "ar": "غير رسمية"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "Agents/models",
+       "ar": "الوكلاء والنماذج"
+      },
+      "values": [
+       {
+        "en": "Claude Code only (Codex later)",
+        "ar": "Claude Code فقط (Codex لاحقًا)"
+       },
+       {
+        "en": "Several CLIs",
+        "ar": "عدة أدوات سطر أوامر"
+       },
+       {
+        "en": "7 tools: Claude Code, Kiro, Codex, Cursor, opencode, Copilot",
+        "ar": "7 أدوات: Claude Code وKiro وCodex وCursor وopencode وCopilot"
+       },
+       {
+        "en": "Mainly Claude Code",
+        "ar": "Claude Code أساسًا"
+       },
+       {
+        "en": "Many IDEs",
+        "ar": "بيئات تطوير كثيرة"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "Team configuration",
+       "ar": "إعدادات الفريق"
+      },
+      "values": [
+       {
+        "en": ".squad/ files: config, rules per role",
+        "ar": "ملفات .squad/: الإعدادات وقواعد كل دور"
+       },
+       {
+        "en": "YAML workflows per repo",
+        "ar": "سير عمل YAML لكل مستودع"
+       },
+       {
+        "en": "Rules files",
+        "ar": "ملفات قواعد"
+       },
+       {
+        "en": "Skill files",
+        "ar": "ملفات مهارات"
+       },
+       {
+        "en": "Config + templates",
+        "ar": "إعدادات وقوالب"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "Tracker",
+       "ar": "أداة التذاكر"
+      },
+      "values": [
+       {
+        "en": "Azure DevOps",
+        "ar": "Azure DevOps"
+       },
+       {
+        "en": "GitHub",
+        "ar": "GitHub"
+       },
+       {
+        "en": "None built in",
+        "ar": "لا يوجد"
+       },
+       {
+        "en": "None",
+        "ar": "لا يوجد"
+       },
+       {
+        "en": "None",
+        "ar": "لا يوجد"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "Biggest strength",
+       "ar": "أبرز ميزة"
+      },
+      "values": [
+       {
+        "en": "Full cycle, non-developers can drive it, Arabic",
+        "ar": "الدورة كاملة، ويستخدمه غير المطورين، ويدعم العربية"
+       },
+       {
+        "en": "Process as code, MIT",
+        "ar": "العملية كشيفرة، ترخيص MIT"
+       },
+       {
+        "en": "Works in every tool",
+        "ar": "يعمل في كل الأدوات"
+       },
+       {
+        "en": "Light, proven discipline",
+        "ar": "خفيف وانضباطه مجرّب"
+       },
+       {
+        "en": "Large community",
+        "ar": "مجتمع كبير"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "Biggest weakness",
+       "ar": "أبرز عيب"
+      },
+      "values": [
+       {
+        "en": "One agent, one machine, no sandbox",
+        "ar": "وكيل واحد وجهاز واحد وبلا عزل"
+       },
+       {
+        "en": "Few defaults beyond SDLC pack",
+        "ar": "إعدادات افتراضية قليلة خارج حزمة دورة التطوير"
+       },
+       {
+        "en": "Rules only: no app, no measurement",
+        "ar": "قواعد فقط: بلا تطبيق ولا قياس"
+       },
+       {
+        "en": "No team process",
+        "ar": "لا عملية للفريق"
+       },
+       {
+        "en": "Heavy documents",
+        "ar": "وثائق ثقيلة"
+       }
+      ]
+     }
+    ]
+   },
+   "compare2": {
+    "title": {
+     "en": "Agent engines",
+     "ar": "محركات الوكلاء"
+    },
+    "tools": [
+     "claude-code",
+     "codex-cli",
+     "opencode",
+     "pi",
+     "openhands",
+     "mini-swe-agent"
+    ],
+    "rows": [
+     {
+      "label": {
+       "en": "License",
+       "ar": "الترخيص"
+      },
+      "values": [
+       {
+        "en": "Proprietary CLI; SDK MIT",
+        "ar": "أداة مغلقة؛ حزمة SDK بترخيص MIT"
+       },
+       {
+        "en": "Apache-2.0",
+        "ar": "Apache-2.0"
+       },
+       {
+        "en": "MIT",
+        "ar": "MIT"
+       },
+       {
+        "en": "MIT",
+        "ar": "MIT"
+       },
+       {
+        "en": "MIT",
+        "ar": "MIT"
+       },
+       {
+        "en": "MIT",
+        "ar": "MIT"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "Models",
+       "ar": "النماذج"
+      },
+      "values": [
+       {
+        "en": "Claude",
+        "ar": "Claude"
+       },
+       {
+        "en": "OpenAI first",
+        "ar": "OpenAI أولًا"
+       },
+       {
+        "en": "Any (75+ providers)",
+        "ar": "أي نموذج (أكثر من 75 مزودًا)"
+       },
+       {
+        "en": "Any",
+        "ar": "أي نموذج"
+       },
+       {
+        "en": "Any",
+        "ar": "أي نموذج"
+       },
+       {
+        "en": "Any",
+        "ar": "أي نموذج"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "Extension points",
+       "ar": "نقاط التوسعة"
+      },
+      "values": [
+       {
+        "en": "Skills, hooks, plugins, subagents, MCP",
+        "ar": "مهارات وخطافات وإضافات ووكلاء فرعيون وMCP"
+       },
+       {
+        "en": "AGENTS.md, MCP",
+        "ar": "AGENTS.md وMCP"
+       },
+       {
+        "en": "Agents, modes, MCP",
+        "ar": "وكلاء وأوضاع وMCP"
+       },
+       {
+        "en": "Extensions, packages",
+        "ar": "إضافات وحزم"
+       },
+       {
+        "en": "SDK, tools, condensers",
+        "ar": "SDK وأدوات ومكثّفات سياق"
+       },
+       {
+        "en": "None (bash only)",
+        "ar": "لا شيء (bash فقط)"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "Built-in isolation",
+       "ar": "عزل مدمج"
+      },
+      "values": [
+       {
+        "en": "OS sandbox (optional)",
+        "ar": "عزل على مستوى النظام (اختياري)"
+       },
+       {
+        "en": "OS sandbox by default",
+        "ar": "عزل على مستوى النظام افتراضيًا"
+       },
+       {
+        "en": "No",
+        "ar": "لا"
+       },
+       {
+        "en": "No",
+        "ar": "لا"
+       },
+       {
+        "en": "Docker runtime",
+        "ar": "بيئة Docker"
+       },
+       {
+        "en": "No",
+        "ar": "لا"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "Role in our test",
+       "ar": "دورها في الاختبار"
+      },
+      "values": [
+       {
+        "en": "Baseline; engine of squad-kit",
+        "ar": "خط الأساس؛ محرك squad-kit"
+       },
+       {
+        "en": "Second baseline; squad-kit's next engine",
+        "ar": "خط أساس ثانٍ؛ المحرك القادم لـ squad-kit"
+       },
+       {
+        "en": "Open models baseline",
+        "ar": "خط أساس للنماذج المفتوحة"
+       },
+       {
+        "en": "Light harness; beat Claude Code in one study",
+        "ar": "harness خفيف؛ تفوّق على Claude Code في دراسة"
+       },
+       {
+        "en": "Open-source platform baseline",
+        "ar": "خط أساس لمنصة مفتوحة المصدر"
+       },
+       {
+        "en": "Control group",
+        "ar": "مجموعة ضابطة"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "runner",
+   "order": 3,
+   "categories": [
+    "eval"
+   ],
+   "name": {
+    "en": "Run engine",
+    "ar": "محرك التشغيل"
+   },
+   "need": {
+    "en": "Something has to start each harness on each task, many at once, collect logs and run the hidden tests afterwards. Building this ourselves would take months.",
+    "ar": "نحتاج إلى أداة تشغّل كل harness على كل مهمة، وكثيرًا منها في الوقت نفسه، وتجمع السجلات، ثم تشغّل الاختبارات المخفية بعد الانتهاء. بناء ذلك بأنفسنا سيستغرق شهورًا."
+   },
+   "decision": "adopt",
+   "plan": {
+    "en": "Use Harbor. It already runs Claude Code, Codex CLI, OpenHands and others in containers, locally or in cloud sandboxes, and accepts our own tasks. We write one adapter per Azm harness. Use Inspect AI only for non-code tasks (spec quality, reviews).",
+    "ar": "نستخدم Harbor؛ فهو يشغّل بالفعل Claude Code وCodex CLI وOpenHands وغيرها داخل حاويات، محليًا أو في بيئات سحابية، ويقبل مهامنا الخاصة. نكتب موصّلًا واحدًا لكل harness من عزم. ونستخدم Inspect AI للمهام غير البرمجية فقط (جودة المواصفات والمراجعات)."
+   },
+   "pick": [
+    "harbor"
+   ],
+   "alternatives": [
+    "inspect-ai",
+    "aws-harness-benchmarks",
+    "runloop-benchmarks",
+    "openhands-benchmarks"
+   ],
+   "compare": {
+    "tools": [
+     "harbor",
+     "inspect-ai",
+     "aws-harness-benchmarks",
+     "runloop-benchmarks"
+    ],
+    "rows": [
+     {
+      "label": {
+       "en": "Type",
+       "ar": "النوع"
+      },
+      "values": [
+       {
+        "en": "Open source (Apache-2.0)",
+        "ar": "مفتوح المصدر (Apache-2.0)"
+       },
+       {
+        "en": "Open source (MIT)",
+        "ar": "مفتوح المصدر (MIT)"
+       },
+       {
+        "en": "Sample code (MIT-0)",
+        "ar": "شيفرة تجريبية (MIT-0)"
+       },
+       {
+        "en": "Paid service",
+        "ar": "خدمة مدفوعة"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "Runs CLI harnesses as-is",
+       "ar": "يشغّل الـ harness كما هو"
+      },
+      "values": [
+       {
+        "en": "Yes, many built in",
+        "ar": "نعم، وكثير منها جاهز"
+       },
+       {
+        "en": "Through Inspect SWE",
+        "ar": "عبر Inspect SWE"
+       },
+       {
+        "en": "5 harnesses",
+        "ar": "5 أدوات harness"
+       },
+       {
+        "en": "Yes, in devboxes",
+        "ar": "نعم، في أجهزة افتراضية"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "Isolation",
+       "ar": "العزل"
+      },
+      "values": [
+       {
+        "en": "Docker or cloud sandboxes",
+        "ar": "Docker أو بيئات سحابية"
+       },
+       {
+        "en": "Docker, Kubernetes, VMs",
+        "ar": "Docker وKubernetes وأجهزة افتراضية"
+       },
+       {
+        "en": "None (clone and delete)",
+        "ar": "لا يوجد (نسخ ثم حذف)"
+       },
+       {
+        "en": "VMs",
+        "ar": "أجهزة افتراضية"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "Scoring",
+       "ar": "التقييم"
+      },
+      "values": [
+       {
+        "en": "Hidden test scripts",
+        "ar": "سكربتات اختبار مخفية"
+       },
+       {
+        "en": "Code, model or human graders",
+        "ar": "تقييم بالشيفرة أو بنموذج أو بإنسان"
+       },
+       {
+        "en": "LLM judge",
+        "ar": "نموذج حَكَم"
+       },
+       {
+        "en": "Tests and custom scorers",
+        "ar": "اختبارات ومقيّمات مخصصة"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "Cost",
+       "ar": "التكلفة"
+      },
+      "values": [
+       {
+        "en": "Free",
+        "ar": "مجاني"
+       },
+       {
+        "en": "Free",
+        "ar": "مجاني"
+       },
+       {
+        "en": "Free",
+        "ar": "مجاني"
+       },
+       {
+        "en": "Usage-based",
+        "ar": "حسب الاستخدام"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "Best for",
+       "ar": "الأنسب لـ"
+      },
+      "values": [
+       {
+        "en": "Our main engine",
+        "ar": "محركنا الأساسي"
+       },
+       {
+        "en": "Non-code tasks, strict isolation",
+        "ar": "المهام غير البرمجية والعزل الصارم"
+       },
+       {
+        "en": "Copying its metrics and reports",
+        "ar": "نسخ مقاييسه وتقاريره"
+       },
+       {
+        "en": "If we don't want to run infrastructure",
+        "ar": "إن لم نرد تشغيل البنية بأنفسنا"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "sandbox",
+   "order": 4,
+   "categories": [
+    "sandbox"
+   ],
+   "name": {
+    "en": "Isolation (sandbox)",
+    "ar": "بيئة العزل (sandbox)"
+   },
+   "need": {
+    "en": "An agent can run any command. Each run must happen in a closed box with no access to real systems, real secrets or other runs, and with fixed CPU and memory so results are comparable.",
+    "ar": "الوكيل يستطيع تنفيذ أي أمر، لذا يجب أن يجري كل تشغيل داخل صندوق مغلق بلا وصول إلى الأنظمة الحقيقية أو الأسرار الحقيقية أو التشغيلات الأخرى، مع موارد ثابتة من المعالج والذاكرة لتكون النتائج قابلة للمقارنة."
+   },
+   "decision": "adopt",
+   "plan": {
+    "en": "Three ways to provide it, used together: (1) on each developer's machine, Docker or microsandbox, so anyone can run a small benchmark or let squad-kit build safely; (2) on Azm servers, a self-hosted sandbox (Kubernetes agent-sandbox, or E2B self-hosted) for team-wide and scheduled runs on private code; (3) a paid managed service only for large bursts or public benchmarks, never for private repos without a data agreement.",
+    "ar": "ثلاث طرق لتوفيره تُستخدم معًا: (1) على جهاز كل مطور عبر Docker أو microsandbox، ليستطيع أي شخص تشغيل اختبار صغير أو ليعمل squad-kit بأمان؛ (2) على خوادم عزم عبر بيئة عزل مستضافة لدينا (Kubernetes agent-sandbox أو E2B المستضاف ذاتيًا) للتشغيلات الجماعية والمجدولة على الشيفرة الخاصة؛ (3) خدمة مدفوعة مُدارة فقط للأحمال الكبيرة المؤقتة أو المقاييس العامة، وليس للمستودعات الخاصة دون اتفاقية بيانات."
+   },
+   "pick": [
+    "k8s-agent-sandbox",
+    "e2b",
+    "microsandbox"
+   ],
+   "alternatives": [
+    "opensandbox",
+    "sandbox-runtime",
+    "container-use",
+    "modal",
+    "vercel-sandbox",
+    "runloop-benchmarks",
+    "northflank",
+    "daytona"
+   ],
+   "modes": [
+    {
+     "id": "local",
+     "name": {
+      "en": "On each developer's machine",
+      "ar": "على جهاز كل مطور"
+     },
+     "desc": {
+      "en": "Runs on the laptop or workstation. Free, private, simple; limited to one machine's power.",
+      "ar": "يعمل على حاسوب المطور. مجاني وخاص وبسيط، لكنه محدود بقدرة جهاز واحد."
+     },
+     "tools": [
+      "microsandbox",
+      "sandbox-runtime",
+      "container-use",
+      "sandcastle",
+      "aio-sandbox",
+      "nono"
+     ],
+     "pros": [
+      {
+       "en": "Free and fast to start",
+       "ar": "مجاني وسريع البدء"
+      },
+      {
+       "en": "Code never leaves the machine",
+       "ar": "الشيفرة لا تغادر الجهاز"
+      },
+      {
+       "en": "Fits squad-kit's local model",
+       "ar": "يناسب طريقة squad-kit المحلية"
+      }
+     ],
+     "cons": [
+      {
+       "en": "Slow for many runs",
+       "ar": "بطيء مع التشغيلات الكثيرة"
+      },
+      {
+       "en": "Results vary between machines",
+       "ar": "تختلف النتائج بين الأجهزة"
+      },
+      {
+       "en": "Each developer must set it up",
+       "ar": "يجب أن يجهّزه كل مطور"
+      }
+     ],
+     "use": {
+      "en": "Pilot, personal experiments, and safe local building in squad-kit.",
+      "ar": "التجربة الأولى، والتجارب الشخصية، والبناء المحلي الآمن في squad-kit."
+     }
+    },
+    {
+     "id": "self",
+     "name": {
+      "en": "On Azm's own servers",
+      "ar": "على خوادم عزم"
+     },
+     "desc": {
+      "en": "A sandbox platform we run on our servers or our cloud account. Our data stays with us; we operate it.",
+      "ar": "منصة عزل نشغّلها على خوادمنا أو حسابنا السحابي. بياناتنا تبقى عندنا، ونتولى تشغيلها."
+     },
+     "tools": [
+      "k8s-agent-sandbox",
+      "e2b",
+      "opensandbox",
+      "cubesandbox",
+      "openshell"
+     ],
+     "pros": [
+      {
+       "en": "Private code stays in-house",
+       "ar": "الشيفرة الخاصة تبقى داخل الشركة"
+      },
+      {
+       "en": "Same fixed resources for every run",
+       "ar": "موارد ثابتة لكل تشغيل"
+      },
+      {
+       "en": "Scales to every team",
+       "ar": "يتسع لكل الفرق"
+      }
+     ],
+     "cons": [
+      {
+       "en": "Needs a DevOps owner",
+       "ar": "يحتاج إلى مسؤول DevOps"
+      },
+      {
+       "en": "Setup effort (Kubernetes or Firecracker hosts)",
+       "ar": "جهد في التجهيز (Kubernetes أو خوادم Firecracker)"
+      },
+      {
+       "en": "Server cost",
+       "ar": "تكلفة الخوادم"
+      }
+     ],
+     "use": {
+      "en": "The main home of the harness sandbox for team-wide and scheduled runs.",
+      "ar": "المقر الأساسي لبيئة الاختبار للتشغيلات الجماعية والمجدولة."
+     }
+    },
+    {
+     "id": "managed",
+     "name": {
+      "en": "Paid managed service",
+      "ar": "خدمة مدفوعة مُدارة"
+     },
+     "desc": {
+      "en": "A vendor runs the sandboxes; we pay per use. Fastest to start and scale; code goes to the vendor's cloud.",
+      "ar": "يشغّل المزوّد بيئات العزل وندفع حسب الاستخدام. الأسرع في البدء والتوسع، لكن الشيفرة تذهب إلى سحابة المزوّد."
+     },
+     "tools": [
+      "e2b",
+      "modal",
+      "vercel-sandbox",
+      "runloop-benchmarks",
+      "northflank",
+      "daytona",
+      "blaxel",
+      "tensorlake",
+      "cloudflare-sandbox"
+     ],
+     "pros": [
+      {
+       "en": "Nothing to operate",
+       "ar": "لا شيء نشغّله بأنفسنا"
+      },
+      {
+       "en": "Thousands of runs in parallel",
+       "ar": "آلاف التشغيلات بالتوازي"
+      },
+      {
+       "en": "Many integrate with Harbor",
+       "ar": "كثير منها يتكامل مع Harbor"
+      }
+     ],
+     "cons": [
+      {
+       "en": "Private code leaves Azm",
+       "ar": "الشيفرة الخاصة تغادر عزم"
+      },
+      {
+       "en": "Cost grows with use",
+       "ar": "التكلفة تزيد مع الاستخدام"
+      },
+      {
+       "en": "Vendor lock-in risk",
+       "ar": "خطر الارتباط بمزوّد"
+      }
+     ],
+     "use": {
+      "en": "Large one-off sweeps and public benchmarks; BYOC options (E2B, Northflank, Tensorlake) if we need scale on private code.",
+      "ar": "التشغيلات الكبيرة لمرة واحدة والمقاييس العامة؛ وخيارات النشر داخل حسابنا السحابي (E2B وNorthflank وTensorlake) إن احتجنا إلى التوسع على شيفرة خاصة."
+     }
+    }
+   ],
+   "compare": {
+    "tools": [
+     "k8s-agent-sandbox",
+     "e2b",
+     "opensandbox",
+     "microsandbox",
+     "modal",
+     "vercel-sandbox"
+    ],
+    "rows": [
+     {
+      "label": {
+       "en": "Where it runs",
+       "ar": "أين يعمل"
+      },
+      "values": [
+       {
+        "en": "Our Kubernetes",
+        "ar": "Kubernetes لدينا"
+       },
+       {
+        "en": "Their cloud, our cloud (BYOC) or our servers",
+        "ar": "سحابتهم أو سحابتنا أو خوادمنا"
+       },
+       {
+        "en": "Our Docker or Kubernetes",
+        "ar": "Docker أو Kubernetes لدينا"
+       },
+       {
+        "en": "Any machine",
+        "ar": "أي جهاز"
+       },
+       {
+        "en": "Their cloud",
+        "ar": "سحابتهم"
+       },
+       {
+        "en": "Their cloud",
+        "ar": "سحابتهم"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "Isolation",
+       "ar": "قوة العزل"
+      },
+      "values": [
+       {
+        "en": "gVisor or Kata",
+        "ar": "gVisor أو Kata"
+       },
+       {
+        "en": "Firecracker microVM",
+        "ar": "آلة افتراضية مصغرة Firecracker"
+       },
+       {
+        "en": "Containers (+ runtime choice)",
+        "ar": "حاويات (مع اختيار بيئة التشغيل)"
+       },
+       {
+        "en": "microVM",
+        "ar": "آلة افتراضية مصغرة"
+       },
+       {
+        "en": "gVisor",
+        "ar": "gVisor"
+       },
+       {
+        "en": "Firecracker microVM",
+        "ar": "آلة افتراضية مصغرة Firecracker"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "Cost",
+       "ar": "التكلفة"
+      },
+      "values": [
+       {
+        "en": "Our servers",
+        "ar": "خوادمنا"
+       },
+       {
+        "en": "~$0.05/vCPU-hour managed; free self-hosted",
+        "ar": "نحو 0.05 دولار لكل ساعة معالج مُدارًا؛ مجاني مستضافًا لدينا"
+       },
+       {
+        "en": "Free",
+        "ar": "مجاني"
+       },
+       {
+        "en": "Free",
+        "ar": "مجاني"
+       },
+       {
+        "en": "Per second of use",
+        "ar": "لكل ثانية استخدام"
+       },
+       {
+        "en": "~$0.13 per active vCPU-hour",
+        "ar": "نحو 0.13 دولار لكل ساعة معالج نشطة"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "Effort to run",
+       "ar": "جهد التشغيل"
+      },
+      "values": [
+       {
+        "en": "High (cluster team)",
+        "ar": "مرتفع (فريق Kubernetes)"
+       },
+       {
+        "en": "Low managed; high self-hosted",
+        "ar": "منخفض مُدارًا؛ مرتفع مستضافًا"
+       },
+       {
+        "en": "Medium",
+        "ar": "متوسط"
+       },
+       {
+        "en": "Low",
+        "ar": "منخفض"
+       },
+       {
+        "en": "Low",
+        "ar": "منخفض"
+       },
+       {
+        "en": "Low",
+        "ar": "منخفض"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "Works with Harbor",
+       "ar": "يعمل مع Harbor"
+      },
+      "values": [
+       {
+        "en": "Custom environment",
+        "ar": "عبر بيئة مخصصة"
+       },
+       {
+        "en": "Via adapters",
+        "ar": "عبر موصّلات"
+       },
+       {
+        "en": "Custom environment",
+        "ar": "عبر بيئة مخصصة"
+       },
+       {
+        "en": "Custom environment",
+        "ar": "عبر بيئة مخصصة"
+       },
+       {
+        "en": "Yes, built in",
+        "ar": "نعم، مدمج"
+       },
+       {
+        "en": "Yes, built in",
+        "ar": "نعم، مدمج"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "Verdict",
+       "ar": "التوصية"
+      },
+      "values": [
+       {
+        "en": "Main option if Azm runs Kubernetes",
+        "ar": "الخيار الأساسي إن كانت عزم تشغّل Kubernetes"
+       },
+       {
+        "en": "Best all-round; start managed, move in-house",
+        "ar": "الأفضل عمومًا؛ نبدأ مُدارًا ثم ننقله لدينا"
+       },
+       {
+        "en": "Trial next to agent-sandbox",
+        "ar": "نجرّبه بجانب agent-sandbox"
+       },
+       {
+        "en": "For developer machines",
+        "ar": "لأجهزة المطورين"
+       },
+       {
+        "en": "Burst capacity",
+        "ar": "للأحمال المؤقتة"
+       },
+       {
+        "en": "Quick trials",
+        "ar": "للتجارب السريعة"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "measure",
+   "order": 5,
+   "categories": [
+    "ops"
+   ],
+   "name": {
+    "en": "Model gateway and tracing",
+    "ar": "بوابة النماذج والتتبّع"
+   },
+   "need": {
+    "en": "Every harness must reach any model through one door, with a budget per team, and every run must leave a record: tokens, cost, time and what the agent did.",
+    "ar": "يجب أن يصل كل harness إلى أي نموذج عبر باب واحد، مع ميزانية لكل فريق، وأن يترك كل تشغيل سجلًا: الرموز والتكلفة والوقت وما فعله الوكيل."
+   },
+   "decision": "adopt",
+   "plan": {
+    "en": "LiteLLM as the model gateway (one API, per-team keys and budgets). OpenTelemetry from each harness into Langfuse for traces and cost. Both are open source and self-hosted.",
+    "ar": "نستخدم LiteLLM بوابةً للنماذج (واجهة واحدة، ومفاتيح وميزانيات لكل فريق)، ونرسل بيانات OpenTelemetry من كل harness إلى Langfuse للتتبّع والتكلفة. كلاهما مفتوح المصدر ومستضاف لدينا."
+   },
+   "pick": [
+    "litellm",
+    "langfuse"
+   ],
+   "alternatives": [
+    "phoenix"
+   ],
+   "compare": {
+    "tools": [
+     "litellm",
+     "langfuse",
+     "phoenix"
+    ],
+    "rows": [
+     {
+      "label": {
+       "en": "Job",
+       "ar": "الوظيفة"
+      },
+      "values": [
+       {
+        "en": "Route any harness to any model; budgets",
+        "ar": "توجيه أي harness إلى أي نموذج؛ الميزانيات"
+       },
+       {
+        "en": "Traces, cost, datasets, experiments",
+        "ar": "التتبّع والتكلفة ومجموعات البيانات والتجارب"
+       },
+       {
+        "en": "Traces and evaluations",
+        "ar": "التتبّع والتقييمات"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "License",
+       "ar": "الترخيص"
+      },
+      "values": [
+       {
+        "en": "MIT (+ enterprise folder)",
+        "ar": "MIT (مع جزء للمؤسسات)"
+       },
+       {
+        "en": "MIT core (+ enterprise features)",
+        "ar": "نواة MIT (مع مزايا للمؤسسات)"
+       },
+       {
+        "en": "Elastic License 2.0",
+        "ar": "Elastic License 2.0"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "Self-hosted",
+       "ar": "استضافة ذاتية"
+      },
+      "values": [
+       {
+        "en": "Yes",
+        "ar": "نعم"
+       },
+       {
+        "en": "Yes",
+        "ar": "نعم"
+       },
+       {
+        "en": "Yes",
+        "ar": "نعم"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "Verdict",
+       "ar": "التوصية"
+      },
+      "values": [
+       {
+        "en": "Use it as is",
+        "ar": "نستخدمها كما هي"
+       },
+       {
+        "en": "Use it as is",
+        "ar": "نستخدمها كما هي"
+       },
+       {
+        "en": "Alternative to Langfuse",
+        "ar": "بديل لـ Langfuse"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "scoring",
+   "order": 6,
+   "categories": [
+    "eval",
+    "ops"
+   ],
+   "name": {
+    "en": "Scoring, standards and reports",
+    "ar": "التقييم والمعايير والتقارير"
+   },
+   "need": {
+    "en": "Passing tests is not enough for Azm: we also need to know if the work follows our standards (Track 1), how much it cost, and how stable the result is across runs, in a report a manager can read.",
+    "ar": "اجتياز الاختبارات لا يكفي لعزم؛ نحتاج أيضًا إلى معرفة هل التزم العمل بمعاييرنا (المسار 1)، وكم كلّف، ومدى ثبات النتيجة بين التشغيلات، في تقرير يستطيع المدير قراءته."
+   },
+   "decision": "build",
+   "plan": {
+    "en": "Build this layer. Score each run: resolved (hidden tests), a developer-value score 0-100, standards compliance from Track 1 checks, and zero for any safety violation; repeat 3-5 times and report variance. Report a harness × model × team matrix and a cost/quality chart, borrowing AWS's frontier chart and the Harness Card. Add a CI gate so no harness or standard change ships if it scores worse.",
+    "ar": "نبني هذه الطبقة. نقيّم كل تشغيل: هل حُلّت المهمة (اختبارات مخفية)، ودرجة قيمة للمطور من 0 إلى 100، والالتزام بالمعايير من فحوص المسار 1، وصفر لأي مخالفة أمان؛ ونكرر 3-5 مرات ونعرض التباين. نعرض مصفوفة harness × نموذج × فريق ورسمًا للجودة مقابل التكلفة، مستفيدين من رسم AWS وبطاقة الـ Harness. ونضيف بوابة في CI تمنع أي تغيير في الـ harness أو المعايير إن قلّل الدرجة."
+   },
+   "pick": [
+    "aws-harness-benchmarks",
+    "promptfoo"
+   ],
+   "alternatives": [
+    "deepeval",
+    "skillsbench"
+   ],
+   "compare": {
+    "tools": [
+     "aws-harness-benchmarks",
+     "promptfoo",
+     "deepeval"
+    ],
+    "rows": [
+     {
+      "label": {
+       "en": "What we take",
+       "ar": "ما نأخذه"
+      },
+      "values": [
+       {
+        "en": "Metrics, frontier chart, model router idea",
+        "ar": "المقاييس ورسم الحدود وفكرة توجيه النماذج"
+       },
+       {
+        "en": "YAML test suites and red-team checks",
+        "ar": "مجموعات اختبار YAML وفحوص الهجوم"
+       },
+       {
+        "en": "Rubric metrics",
+        "ar": "مقاييس بمعايير مكتوبة"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "License",
+       "ar": "الترخيص"
+      },
+      "values": [
+       {
+        "en": "MIT-0",
+        "ar": "MIT-0"
+       },
+       {
+        "en": "MIT (now owned by OpenAI)",
+        "ar": "MIT (أصبحت مملوكة لـ OpenAI)"
+       },
+       {
+        "en": "Apache-2.0",
+        "ar": "Apache-2.0"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "Missing",
+       "ar": "ما ينقصها"
+      },
+      "values": [
+       {
+        "en": "Hidden tests, standards scoring",
+        "ar": "الاختبارات المخفية وتقييم المعايير"
+       },
+       {
+        "en": "Running harnesses on repos",
+        "ar": "تشغيل الـ harness على المستودعات"
+       },
+       {
+        "en": "Running harnesses on repos",
+        "ar": "تشغيل الـ harness على المستودعات"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "safety",
+   "order": 7,
+   "categories": [
+    "ops",
+    "sandbox"
+   ],
+   "name": {
+    "en": "Safety and governance",
+    "ar": "الأمان والحوكمة"
+   },
+   "need": {
+    "en": "Skills, MCP servers and agents can carry hidden risks, and agents must never see real secrets. We need checks before anything runs and rules for what agents may do.",
+    "ar": "قد تحمل المهارات وخوادم MCP والوكلاء مخاطر خفية، ويجب ألا يرى الوكلاء الأسرار الحقيقية أبدًا. نحتاج إلى فحوص قبل أي تشغيل، وقواعد لما يُسمح للوكلاء بفعله."
+   },
+   "decision": "adopt",
+   "plan": {
+    "en": "Scan every skill package with SkillSpector and every agent setup with Snyk Agent Scan before it enters the sandbox. Keep secrets out of sandboxes (a credential proxy such as Agent Vault). Use OpenShell-style YAML policies for network and file access.",
+    "ar": "نفحص كل حزمة مهارات بـ SkillSpector وكل إعداد وكيل بـ Snyk Agent Scan قبل دخوله بيئة الاختبار، ونُبقي الأسرار خارج بيئات العزل (عبر وسيط للاعتمادات مثل Agent Vault)، ونستخدم سياسات YAML على طريقة OpenShell للتحكم في الشبكة والملفات."
+   },
+   "pick": [
+    "skillspector",
+    "agent-scan"
+   ],
+   "alternatives": [
+    "agent-vault",
+    "openshell",
+    "agent-governance-toolkit"
+   ],
+   "compare": {
+    "tools": [
+     "skillspector",
+     "agent-scan",
+     "agent-vault",
+     "openshell"
+    ],
+    "rows": [
+     {
+      "label": {
+       "en": "Protects against",
+       "ar": "يحمي من"
+      },
+      "values": [
+       {
+        "en": "Unsafe or low-quality skills",
+        "ar": "مهارات غير آمنة أو رديئة"
+       },
+       {
+        "en": "Prompt injection, tool poisoning in MCP and skills",
+        "ar": "حقن الأوامر وتسميم الأدوات في MCP والمهارات"
+       },
+       {
+        "en": "Agents seeing secrets",
+        "ar": "اطلاع الوكلاء على الأسرار"
+       },
+       {
+        "en": "Unwanted network and file access",
+        "ar": "الوصول غير المرغوب إلى الشبكة والملفات"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "License",
+       "ar": "الترخيص"
+      },
+      "values": [
+       {
+        "en": "Apache-2.0",
+        "ar": "Apache-2.0"
+       },
+       {
+        "en": "Apache-2.0",
+        "ar": "Apache-2.0"
+       },
+       {
+        "en": "MIT core",
+        "ar": "نواة MIT"
+       },
+       {
+        "en": "Apache-2.0",
+        "ar": "Apache-2.0"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "Verdict",
+       "ar": "التوصية"
+      },
+      "values": [
+       {
+        "en": "Use it as is",
+        "ar": "نستخدمها كما هي"
+       },
+       {
+        "en": "Use it as is",
+        "ar": "نستخدمها كما هي"
+       },
+       {
+        "en": "Keep an eye on it",
+        "ar": "نتابعها فقط"
+       },
+       {
+        "en": "Keep an eye on it",
+        "ar": "نتابعها فقط"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "optimize",
+   "order": 8,
+   "categories": [
+    "eval"
+   ],
+   "name": {
+    "en": "Improving harnesses automatically (later)",
+    "ar": "تحسين الـ harness تلقائيًا (لاحقًا)"
+   },
+   "need": {
+    "en": "Once we can measure, we can let tools improve our harness prompts, rules and skills automatically, keeping only changes that score better.",
+    "ar": "بعد أن نستطيع القياس، يمكننا أن ندع أدوات تحسّن تعليمات الـ harness وقواعده ومهاراته تلقائيًا، ونحتفظ فقط بالتغييرات التي ترفع الدرجة."
+   },
+   "decision": "later",
+   "plan": {
+    "en": "Phase 2. Try Meta-Harness or auto-harness against our task set to tune squad-kit and azm-harness, and SkillOpt for Track 1 skills. Not before the task set and scoring are stable.",
+    "ar": "المرحلة الثانية: نجرب Meta-Harness أو auto-harness على مجموعة مهامنا لضبط squad-kit وazm-harness، وSkillOpt لمهارات المسار 1. ليس قبل أن تستقر مجموعة المهام والتقييم."
+   },
+   "pick": [
+    "meta-harness",
+    "auto-harness"
+   ],
+   "alternatives": [
+    "ahe",
+    "skillopt"
+   ],
+   "compare": {
+    "tools": [
+     "meta-harness",
+     "auto-harness",
+     "ahe",
+     "skillopt"
+    ],
+    "rows": [
+     {
+      "label": {
+       "en": "What it changes",
+       "ar": "ما الذي يغيّره"
+      },
+      "values": [
+       {
+        "en": "Harness code: prompts, memory, tools",
+        "ar": "شيفرة الـ harness: التعليمات والذاكرة والأدوات"
+       },
+       {
+        "en": "System prompt and tools",
+        "ar": "تعليمات النظام والأدوات"
+       },
+       {
+        "en": "Seven harness components",
+        "ar": "سبعة مكونات للـ harness"
+       },
+       {
+        "en": "Skills",
+        "ar": "المهارات"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "Proof",
+       "ar": "الدليل"
+      },
+      "values": [
+       {
+        "en": "ICML 2026 paper",
+        "ar": "ورقة في ICML 2026"
+       },
+       {
+        "en": "Tau3: 0.56 → 0.78",
+        "ar": "Tau3: من 0.56 إلى 0.78"
+       },
+       {
+        "en": "Terminal-Bench 2: 69.7% → 77.0%",
+        "ar": "Terminal-Bench 2: من 69.7% إلى 77.0%"
+       },
+       {
+        "en": "Early (v0.2)",
+        "ar": "مبكر (v0.2)"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "Readiness",
+       "ar": "الجاهزية"
+      },
+      "values": [
+       {
+        "en": "Research code",
+        "ar": "شيفرة بحثية"
+       },
+       {
+        "en": "Small demo",
+        "ar": "تجربة صغيرة"
+       },
+       {
+        "en": "Research system",
+        "ar": "نظام بحثي"
+       },
+       {
+        "en": "Early",
+        "ar": "مبكر"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "baselines",
+   "order": 9,
+   "categories": [
+    "cloud"
+   ],
+   "name": {
+    "en": "Commercial cloud agents (for comparison)",
+    "ar": "وكلاء سحابيون تجاريون (للمقارنة)"
+   },
+   "need": {
+    "en": "Managers will ask: why not just buy Devin, Copilot or Codex cloud? We compare our results with them on a few public tasks to answer that with numbers.",
+    "ar": "سيسأل المديرون: لماذا لا نشتري Devin أو Copilot أو Codex السحابي ببساطة؟ نقارن نتائجنا بها على بعض المهام العامة لنجيب بالأرقام."
+   },
+   "decision": "compare",
+   "plan": {
+    "en": "Not part of the sandbox. Use their published numbers and a small trial for a cost and quality comparison with our setup.",
+    "ar": "ليست جزءًا من بيئة الاختبار. نستخدم أرقامها المنشورة وتجربة صغيرة للمقارنة مع منظومتنا في التكلفة والجودة."
+   },
+   "pick": [],
+   "alternatives": [
+    "claude-code-web",
+    "codex-cloud",
+    "copilot-coding-agent",
+    "cursor-cloud-agents",
+    "devin",
+    "jules",
+    "claude-managed-agents"
+   ],
+   "compare": {
+    "tools": [
+     "copilot-coding-agent",
+     "codex-cloud",
+     "devin",
+     "claude-managed-agents"
+    ],
+    "rows": [
+     {
+      "label": {
+       "en": "Where code runs",
+       "ar": "أين تعمل الشيفرة"
+      },
+      "values": [
+       {
+        "en": "GitHub Actions runners",
+        "ar": "مشغّلات GitHub Actions"
+       },
+       {
+        "en": "OpenAI containers",
+        "ar": "حاويات OpenAI"
+       },
+       {
+        "en": "Cognition's cloud (VPC on Enterprise)",
+        "ar": "سحابة Cognition (أو شبكتك على خطة المؤسسات)"
+       },
+       {
+        "en": "Anthropic containers",
+        "ar": "حاويات Anthropic"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "Start from",
+       "ar": "تبدأ من"
+      },
+      "values": [
+       {
+        "en": "A GitHub issue",
+        "ar": "تذكرة GitHub"
+       },
+       {
+        "en": "Web, IDE, Slack",
+        "ar": "الويب أو بيئة التطوير أو Slack"
+       },
+       {
+        "en": "Slack, web",
+        "ar": "Slack أو الويب"
+       },
+       {
+        "en": "API",
+        "ar": "واجهة برمجية"
+       }
+      ]
+     },
+     {
+      "label": {
+       "en": "Main limit",
+       "ar": "القيد الأساسي"
+      },
+      "values": [
+       {
+        "en": "GitHub only",
+        "ar": "GitHub فقط"
+       },
+       {
+        "en": "Code on vendor cloud",
+        "ar": "الشيفرة على سحابة المزوّد"
+       },
+       {
+        "en": "Cost; closed",
+        "ar": "التكلفة؛ مغلق"
+       },
+       {
+        "en": "Beta; not zero-data-retention",
+        "ar": "تجريبي؛ لا يضمن عدم الاحتفاظ بالبيانات"
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ]
+}

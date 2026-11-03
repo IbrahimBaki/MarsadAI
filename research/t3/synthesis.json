@@ -6,26 +6,96 @@
   "Prior art exists and is recent: AWS published a harness-vs-model cost/quality benchmark on your own code (MIT-0, 21 Oct 2026); Fullscript ran 36 tasks mined from its own commits (Aug 2026); GitHub published its harness evaluation protocol (Jun 2026). Azm's sandbox should combine their methods, not reinvent them.",
   "The harness matters more than the model: harness variance was 7.8x model variance in a 3x3 study, and the same model moved ~10 points on SWE-bench Pro between harnesses. That justifies the track.",
   "Execution and isolation are solved problems: Harbor (Apache-2.0) for running agents on tasks; Docker locally, then E2B (self-host/BYOC) or Kubernetes agent-sandbox / OpenSandbox on Azm infrastructure.",
-  "squad-kit has no direct equivalent that covers spec → release with human gates and readable project memory, but Archon (YAML workflows, MIT) and AI-DLC (one core, seven harnesses) are close peers to benchmark against.",
+  "squad-kit (1.1, now a full harness) has no direct equivalent that covers idea → tagged release with human gates and readable project memory; Archon (YAML workflows, MIT) and AI-DLC (one core, seven tools) are the closest peers to test it against. Its main gaps for the sandbox: a headless mode, more engines than Claude Code, and isolation.",
   "The real gap, unclaimed by any tool found: measuring harnesses on a company's own SDLC work, including standards compliance and non-code steps, with per-team configuration."
  ],
  "priorArt": [
-  {"name": "AWS agentic coding harness benchmarks", "ref": "aws-harness-benchmarks", "takes": "Task mining from closed issues, 5 harnesses, LLM judge, cost/quality frontier, swe-router.", "lacks": "Hidden tests, real sandbox, multi-team config, standards scoring."},
-  {"name": "Fullscript internal benchmark", "ref": "fullscript-bench", "takes": "Fail-before/pass-after tasks from own commits, developer-value score, safety zeroing, LiteLLM gateway.", "lacks": "Published code; per-team config; ongoing service."},
-  {"name": "GitHub Copilot harness evaluation", "ref": "copilot-harness-eval", "takes": "Normalised comparisons, ≥5 runs with ±1σ, infra-failure policy.", "lacks": "Not reusable code; GitHub-internal."},
-  {"name": "Harbor / Terminal-Bench", "ref": "harbor", "takes": "Agent-agnostic runner, containers, cloud parallelism, adapters.", "lacks": "Azm tasks, standards scoring, org reporting."},
-  {"name": "HarnessBench / WildClawBench", "ref": "harnessbench", "takes": "Fixed-model / varied-harness design, post-run grader injection.", "lacks": "Coding/SDLC tasks."}
+  {
+   "name": "AWS agentic coding harness benchmarks",
+   "ref": "aws-harness-benchmarks",
+   "takes": "Task mining from closed issues, 5 harnesses, LLM judge, cost/quality frontier, swe-router.",
+   "lacks": "Hidden tests, real sandbox, multi-team config, standards scoring."
+  },
+  {
+   "name": "Fullscript internal benchmark",
+   "ref": "fullscript-bench",
+   "takes": "Fail-before/pass-after tasks from own commits, developer-value score, safety zeroing, LiteLLM gateway.",
+   "lacks": "Published code; per-team config; ongoing service."
+  },
+  {
+   "name": "GitHub Copilot harness evaluation",
+   "ref": "copilot-harness-eval",
+   "takes": "Normalised comparisons, ≥5 runs with ±1σ, infra-failure policy.",
+   "lacks": "Not reusable code; GitHub-internal."
+  },
+  {
+   "name": "Harbor / Terminal-Bench",
+   "ref": "harbor",
+   "takes": "Agent-agnostic runner, containers, cloud parallelism, adapters.",
+   "lacks": "Azm tasks, standards scoring, org reporting."
+  },
+  {
+   "name": "HarnessBench / WildClawBench",
+   "ref": "harnessbench",
+   "takes": "Fixed-model / varied-harness design, post-run grader injection.",
+   "lacks": "Coding/SDLC tasks."
+  }
  ],
  "architecture": [
-  {"layer": "Task suite", "decision": "build", "use": "SWE-bench recipe", "detail": "Mine 20-50 tasks per team from Azm repos and tickets: pinned commit before the fix, brief from the real ticket, hidden fail-before/pass-after tests, plus non-code tasks (spec, design, review) graded by rubric. Refresh quarterly to avoid saturation."},
-  {"layer": "Runner", "decision": "adopt", "use": "Harbor (Inspect AI for non-code tasks)", "detail": "Run every harness × model on every task in parallel; inject graders only after the run."},
-  {"layer": "Harness adapters", "decision": "build", "use": "Harbor BaseInstalledAgent; Rivet sandbox-agent as an option", "detail": "Adapters for squad-kit (needs a headless mode), azm-harness, Claude Code, Codex CLI, opencode, pi, and mini-swe-agent as the control."},
-  {"layer": "Sandbox", "decision": "adopt", "use": "Docker → E2B self-host/BYOC or k8s agent-sandbox / OpenSandbox", "detail": "Fixed, recorded CPU/memory/time per task (infra noise is ~6 pp otherwise); egress allow-lists; no production secrets."},
-  {"layer": "Model gateway", "decision": "adopt", "use": "LiteLLM", "detail": "Any harness to any model; per-team keys and budgets; cost per run."},
-  {"layer": "Observability", "decision": "adopt", "use": "OpenTelemetry → Langfuse", "detail": "Traces, tokens, cost, latency per run; transcripts for review."},
-  {"layer": "Scoring", "decision": "build", "use": "Hidden tests + rubric judge + Track 1 rules", "detail": "Resolved, developer-value score (0-100), standards-compliance score from Track 1 checks, safety violations zero the run, pass^k over 3-5 runs."},
-  {"layer": "Config", "decision": "build", "use": "Per-team YAML (Promptfoo/Archon style)", "detail": "suite.yaml per team: repos, tasks, harnesses, models, budgets, thresholds."},
-  {"layer": "Reports & gates", "decision": "build", "use": "AWS frontier charts; Harness Card", "detail": "Harness × model × team matrix, cost/quality frontier, variance, trends; CI regression gate for harness or standard changes; a Harness Card per harness."}
+  {
+   "layer": "Task suite",
+   "decision": "build",
+   "use": "SWE-bench recipe",
+   "detail": "Mine 20-50 tasks per team from Azm repos and tickets: pinned commit before the fix, brief from the real ticket, hidden fail-before/pass-after tests, plus non-code tasks (spec, design, review) graded by rubric. Refresh quarterly to avoid saturation."
+  },
+  {
+   "layer": "Runner",
+   "decision": "adopt",
+   "use": "Harbor (Inspect AI for non-code tasks)",
+   "detail": "Run every harness × model on every task in parallel; inject graders only after the run."
+  },
+  {
+   "layer": "Harness adapters",
+   "decision": "build",
+   "use": "Harbor BaseInstalledAgent; Rivet sandbox-agent as an option",
+   "detail": "Adapters for squad-kit (needs a headless mode), azm-harness, Claude Code, Codex CLI, opencode, pi, and mini-swe-agent as the control."
+  },
+  {
+   "layer": "Sandbox",
+   "decision": "adopt",
+   "use": "Docker → E2B self-host/BYOC or k8s agent-sandbox / OpenSandbox",
+   "detail": "Fixed, recorded CPU/memory/time per task (infra noise is ~6 pp otherwise); egress allow-lists; no production secrets."
+  },
+  {
+   "layer": "Model gateway",
+   "decision": "adopt",
+   "use": "LiteLLM",
+   "detail": "Any harness to any model; per-team keys and budgets; cost per run."
+  },
+  {
+   "layer": "Observability",
+   "decision": "adopt",
+   "use": "OpenTelemetry → Langfuse",
+   "detail": "Traces, tokens, cost, latency per run; transcripts for review."
+  },
+  {
+   "layer": "Scoring",
+   "decision": "build",
+   "use": "Hidden tests + rubric judge + Track 1 rules",
+   "detail": "Resolved, developer-value score (0-100), standards-compliance score from Track 1 checks, safety violations zero the run, pass^k over 3-5 runs."
+  },
+  {
+   "layer": "Config",
+   "decision": "build",
+   "use": "Per-team YAML (Promptfoo/Archon style)",
+   "detail": "suite.yaml per team: repos, tasks, harnesses, models, budgets, thresholds."
+  },
+  {
+   "layer": "Reports & gates",
+   "decision": "build",
+   "use": "AWS frontier charts; Harness Card",
+   "detail": "Harness × model × team matrix, cost/quality frontier, variance, trends; CI regression gate for harness or standard changes; a Harness Card per harness."
+  }
  ],
  "buildList": [
   "Task-mining pipeline (repo + ticket → task with hidden tests)",
@@ -37,12 +107,52 @@
   "Harness Card registry"
  ],
  "phases": [
-  {"name": "Week 1 — Pilot", "items": ["Harbor + Docker on one laptop/server", "10 tasks mined from one Azm repo", "Claude Code, Codex CLI, mini-swe-agent baselines", "3 runs each; first frontier chart"]},
-  {"name": "Weeks 2-3 — Azm harnesses", "items": ["squad-kit headless adapter", "Rubric + standards scoring", "Add Archon, AI-DLC, Superpowers as contenders", "LiteLLM + Langfuse"]},
-  {"name": "Week 4 — Teams", "items": ["suite.yaml per team", "Move runs to E2B or k8s sandbox", "Weekly report and CI gate", "Harness Cards"]},
-  {"name": "Later", "items": ["Harness and skill optimisation loops (Meta-Harness, auto-harness, SkillOpt)", "Channel agents evaluated with Promptfoo red-team checks"]}
+  {
+   "name": "Week 1 — Pilot",
+   "items": [
+    "Harbor + Docker on one laptop/server",
+    "10 tasks mined from one Azm repo",
+    "Claude Code, Codex CLI, mini-swe-agent baselines",
+    "3 runs each; first frontier chart"
+   ]
+  },
+  {
+   "name": "Weeks 2-3 — Azm harnesses",
+   "items": [
+    "squad-kit headless adapter",
+    "Rubric + standards scoring",
+    "Add Archon, AI-DLC, Superpowers as contenders",
+    "LiteLLM + Langfuse"
+   ]
+  },
+  {
+   "name": "Week 4 — Teams",
+   "items": [
+    "suite.yaml per team",
+    "Move runs to E2B or k8s sandbox",
+    "Weekly report and CI gate",
+    "Harness Cards"
+   ]
+  },
+  {
+   "name": "Later",
+   "items": [
+    "Harness and skill optimisation loops (Meta-Harness, auto-harness, SkillOpt)",
+    "Channel agents evaluated with Promptfoo red-team checks"
+   ]
+  }
  ],
- "metrics": ["Resolved (hidden tests)", "Developer-value score 0-100", "Standards compliance %", "Cost per task ($)", "Tokens (incl. cache)", "Wall time", "Human interventions", "pass^k and ±1σ over 3-5 runs", "Safety violations"],
+ "metrics": [
+  "Resolved (hidden tests)",
+  "Developer-value score 0-100",
+  "Standards compliance %",
+  "Cost per task ($)",
+  "Tokens (incl. cache)",
+  "Wall time",
+  "Human interventions",
+  "pass^k and ±1σ over 3-5 runs",
+  "Safety violations"
+ ],
  "risks": [
   "Task leakage: keep hidden tests out of the sandbox until grading.",
   "Judge bias: prefer tests; calibrate the rubric judge against human scores.",
@@ -56,5 +166,161 @@
   "Docker on an Azm server first, or E2B managed for the pilot?",
   "Does squad-kit get a headless mode (needed for automated runs)?",
   "Budget ceiling per benchmark round (tokens + sandbox)?"
- ]
+ ],
+ "ar": {
+  "headline": "لا تبنِ محركًا لقياس أدوات الـ harness: Harbor (ومعه Inspect للمهام غير البرمجية) يشغّل بالفعل أي harness على مهام داخل حاويات وعلى نطاق واسع. ما لم يبنه أحد هو طبقة عزم فوقه: مهام مستخرجة من مستودعات عزم، وموصّلات لـ squad-kit وazm-harness، وتقييم الالتزام بالمعايير، وإعدادات YAML لكل فريق، وتقرير يمكن التصرف بناءً عليه.",
+  "bottomLine": [
+   "الأعمال السابقة موجودة وحديثة: نشرت AWS في 21 أكتوبر 2026 مقياسًا للتكلفة والجودة يقارن أدوات الـ harness والنماذج على شيفرتك (MIT-0)؛ وشغّلت Fullscript ‏36 مهمة من الـ commits الخاصة بها (أغسطس 2026)؛ ونشرت GitHub بروتوكول تقييم الـ harness لديها (يونيو 2026). على بيئة عزم أن تجمع طرقهم لا أن تعيد اختراعها.",
+   "الـ harness أهم من النموذج: كان تباين الـ harness أكبر 7.8 مرات من تباين النموذج في دراسة 3×3، وتحرك النموذج نفسه نحو 10 نقاط على SWE-bench Pro بين أداة وأخرى. وهذا يبرر المسار.",
+   "التشغيل والعزل مشكلتان محلولتان: Harbor ‏(Apache-2.0) لتشغيل الوكلاء على المهام؛ وDocker محليًا، ثم E2B (مستضافًا لدينا أو داخل حسابنا) أو Kubernetes agent-sandbox أو OpenSandbox على بنية عزم.",
+   "لا يوجد مقابل مباشر لـ squad-kit (الإصدار 1.1، وأصبح harness كاملًا) يغطي الفكرة ← الإصدار الموسوم مع بوابات بشرية وذاكرة مشروع مقروءة؛ وأقرب النظراء لاختباره أمامهم Archon (سير عمل YAML، ترخيص MIT) وAI-DLC (نواة واحدة لسبع أدوات). وأبرز نواقصه لبيئة الاختبار: وضع تشغيل بلا واجهة، ومحركات غير Claude Code، والعزل.",
+   "الفجوة الحقيقية التي لم تتبنها أي أداة وجدناها: قياس أدوات الـ harness على عمل دورة التطوير الخاص بالشركة، بما في ذلك الالتزام بالمعايير والخطوات غير البرمجية، مع إعدادات لكل فريق."
+  ],
+  "priorArt": [
+   {
+    "takes": "استخراج المهام من التذاكر المغلقة، وخمس أدوات harness، ونموذج حَكَم، وحدود التكلفة والجودة، وswe-router.",
+    "lacks": "اختبارات مخفية، وعزل حقيقي، وإعدادات متعددة الفرق، وتقييم المعايير."
+   },
+   {
+    "takes": "مهام تفشل قبل الإصلاح وتنجح بعده من الـ commits الخاصة، ودرجة قيمة للمطور، وتصفير مخالفات الأمان، وبوابة LiteLLM.",
+    "lacks": "شيفرة منشورة، وإعدادات لكل فريق، وخدمة مستمرة."
+   },
+   {
+    "takes": "مقارنات موحّدة، وخمس تشغيلات على الأقل مع الانحراف المعياري، وسياسة أعطال البنية.",
+    "lacks": "شيفرة قابلة لإعادة الاستخدام؛ داخلي في GitHub."
+   },
+   {
+    "takes": "مشغّل محايد تجاه الوكلاء، وحاويات، وتوازٍ سحابي، وموصّلات.",
+    "lacks": "مهام عزم، وتقييم المعايير، وتقارير المؤسسة."
+   },
+   {
+    "takes": "تثبيت النموذج وتغيير الـ harness، وحقن المقيّمات بعد التشغيل.",
+    "lacks": "مهام برمجة ودورة تطوير."
+   }
+  ],
+  "names": [
+   "مقاييس AWS لأدوات الـ harness",
+   "مقياس Fullscript الداخلي",
+   "تقييم GitHub لـ harness الخاص بـ Copilot",
+   "Harbor / Terminal-Bench",
+   "HarnessBench / WildClawBench"
+  ],
+  "architecture": [
+   {
+    "layer": "مجموعة المهام",
+    "use": "وصفة SWE-bench",
+    "detail": "نستخرج 20-50 مهمة لكل فريق من مستودعات عزم وتذاكرها: نسخة مثبتة قبل الإصلاح، ووصف من التذكرة الحقيقية، واختبارات مخفية تفشل قبل الإصلاح وتنجح بعده، إضافة إلى مهام غير برمجية (مواصفات وتصميم ومراجعة) تُقيَّم بالمعايير. نجددها كل ربع سنة لتجنب التشبع."
+   },
+   {
+    "layer": "المشغّل",
+    "use": "Harbor ‏(وInspect AI للمهام غير البرمجية)",
+    "detail": "نشغّل كل harness × نموذج على كل مهمة بالتوازي، ولا نحقن المقيّمات إلا بعد التشغيل."
+   },
+   {
+    "layer": "موصّلات الـ harness",
+    "use": "BaseInstalledAgent في Harbor؛ وRivet sandbox-agent خيارًا",
+    "detail": "موصّلات لـ squad-kit (يحتاج وضعًا بلا واجهة) وazm-harness وClaude Code وCodex CLI وopencode وpi، وmini-swe-agent مجموعةً ضابطة."
+   },
+   {
+    "layer": "بيئة العزل",
+    "use": "Docker ← E2B مستضافًا لدينا أو داخل حسابنا، أو k8s agent-sandbox / OpenSandbox",
+    "detail": "موارد ثابتة ومسجلة من المعالج والذاكرة والوقت لكل مهمة (وإلا فضوضاء البنية نحو 6 نقاط)؛ وقوائم سماح لخروج الشبكة؛ ولا أسرار إنتاج."
+   },
+   {
+    "layer": "بوابة النماذج",
+    "use": "LiteLLM",
+    "detail": "أي harness إلى أي نموذج؛ ومفاتيح وميزانيات لكل فريق؛ وتكلفة كل تشغيل."
+   },
+   {
+    "layer": "المراقبة",
+    "use": "OpenTelemetry ← Langfuse",
+    "detail": "التتبّع والرموز والتكلفة والزمن لكل تشغيل؛ والسجلات للمراجعة."
+   },
+   {
+    "layer": "التقييم",
+    "use": "اختبارات مخفية + حَكَم بالمعايير + قواعد المسار 1",
+    "detail": "الحل، ودرجة قيمة للمطور (0-100)، ودرجة الالتزام بالمعايير من فحوص المسار 1، وتصفير التشغيل عند مخالفة الأمان، وpass^k عبر 3-5 تشغيلات."
+   },
+   {
+    "layer": "الإعدادات",
+    "use": "YAML لكل فريق (على طريقة Promptfoo وArchon)",
+    "detail": "ملف suite.yaml لكل فريق: المستودعات والمهام وأدوات الـ harness والنماذج والميزانيات والحدود."
+   },
+   {
+    "layer": "التقارير والبوابات",
+    "use": "رسوم حدود AWS؛ وبطاقة الـ harness",
+    "detail": "مصفوفة harness × نموذج × فريق، وحدود التكلفة والجودة، والتباين، والاتجاهات؛ وبوابة انحدار في CI لتغييرات الـ harness أو المعايير؛ وبطاقة لكل harness."
+   }
+  ],
+  "buildList": [
+   "خط استخراج المهام (مستودع + تذكرة ← مهمة باختبارات مخفية)",
+   "وضع بلا واجهة لـ squad-kit مع موصّل Harbor؛ وموصّل azm-harness",
+   "مقيّم الالتزام بالمعايير المرتبط بالمسار 1",
+   "مخطط suite.yaml لكل فريق ومحمّله",
+   "التقرير: المصفوفة والحدود والتباين والاتجاهات؛ وملخص أسبوعي بالبريد أو Teams",
+   "بوابة انحدار في CI لتغييرات الـ harness والمعايير",
+   "سجل بطاقات الـ harness"
+  ],
+  "phases": [
+   {
+    "name": "الأسبوع 1: التجربة الأولى",
+    "items": [
+     "Harbor مع Docker على حاسوب أو خادم واحد",
+     "10 مهام من مستودع واحد في عزم",
+     "خطوط أساس Claude Code وCodex CLI وmini-swe-agent",
+     "3 تشغيلات لكل منها؛ وأول رسم للحدود"
+    ]
+   },
+   {
+    "name": "الأسبوعان 2-3: أدوات عزم",
+    "items": [
+     "موصّل squad-kit بلا واجهة",
+     "التقييم بالمعايير وفحص المعايير",
+     "إضافة Archon وAI-DLC وSuperpowers كمنافسين",
+     "LiteLLM وLangfuse"
+    ]
+   },
+   {
+    "name": "الأسبوع 4: الفرق",
+    "items": [
+     "suite.yaml لكل فريق",
+     "نقل التشغيلات إلى E2B أو بيئة k8s",
+     "تقرير أسبوعي وبوابة في CI",
+     "بطاقات الـ harness"
+    ]
+   },
+   {
+    "name": "لاحقًا",
+    "items": [
+     "حلقات تحسين الـ harness والمهارات (Meta-Harness وauto-harness وSkillOpt)",
+     "تقييم وكلاء القنوات بفحوص Promptfoo الهجومية"
+    ]
+   }
+  ],
+  "metrics": [
+   "الحل (اختبارات مخفية)",
+   "درجة قيمة للمطور 0-100",
+   "نسبة الالتزام بالمعايير",
+   "تكلفة المهمة (دولار)",
+   "الرموز (مع المخزنة مؤقتًا)",
+   "الزمن الفعلي",
+   "تدخلات البشر",
+   "pass^k والانحراف المعياري عبر 3-5 تشغيلات",
+   "مخالفات الأمان"
+  ],
+  "risks": [
+   "تسرب المهام: نُبقي الاختبارات المخفية خارج بيئة العزل حتى التقييم.",
+   "تحيّز الحَكَم: نفضّل الاختبارات، ونعاير الحَكَم بدرجات بشرية.",
+   "الضوضاء: موارد ثابتة، و3 تشغيلات على الأقل، وعرض التباين؛ ولا نرتب على فروق أقل من 5 نقاط.",
+   "التشبع: نجدد المهام كل ربع سنة.",
+   "التراخيص: أدوات AGPL ‏(Chorus وTrellis) وELv2 ‏(Phoenix) تحتاج حذرًا إن ضُمّنت.",
+   "البيانات: بيئات العزل المُدارة والوكلاء المستضافون يرسلون الشيفرة خارج بنية عزم؛ نستخدم الاستضافة الذاتية أو حسابنا السحابي للمستودعات الخاصة."
+  ],
+  "decisions": [
+   "أي مستودع أو اثنين من عزم نأخذ منهما مهام التجربة الأولى؟",
+   "Docker على خادم في عزم أولًا، أم E2B المُدار للتجربة؟",
+   "هل يحصل squad-kit على وضع بلا واجهة (لازم للتشغيل الآلي)؟",
+   "ما سقف الميزانية لكل جولة قياس (رموز + بيئة عزل)؟"
+  ]
+ }
 }

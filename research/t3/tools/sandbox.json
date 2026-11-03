@@ -33,7 +33,7 @@
     "Benchmark orchestration (use Harbor on top)"
    ],
    "fit": {
-    "verdict": "adopt-part",
+    "verdict": "adopt",
     "role": "Primary candidate for cloud/self-hosted isolation of harness runs; start with the managed service, move to self-host/BYOC for private code."
    },
    "scores": {
@@ -64,7 +64,31 @@
     "https://github.com/e2b-dev/E2B"
    ],
    "status": "active",
-   "category": "sandbox"
+   "category": "sandbox",
+   "ar": {
+    "summary": "بيئات عزل لوكلاء الذكاء الاصطناعي على آلات افتراضية مصغرة (Firecracker) تبدأ خلال نحو 150 جزءًا من الثانية، مع حزم Python وJavaScript وواجهة لتنفيذ الشيفرة. البنية التحتية مفتوحة المصدر، ويمكن استضافتها ذاتيًا (على GCP أو AWS عبر Terraform) أو نشرها داخل حسابك السحابي.",
+    "how": "ينشئ استدعاء من الحزمة بيئة عزل من قالب (ملف Dockerfile يُبنى كصورة آلة افتراضية مصغرة)؛ فيشغّل الوكيل الأوامر ويقرأ الملفات ويكتبها ويمكنه الإيقاف المؤقت والاستئناف. وتتيح القوالب تثبيت Claude Code أو Codex أو أدوات المشروع مسبقًا.",
+    "features": [
+     "عزل بآلات Firecracker الافتراضية المصغرة",
+     "قوالب مخصصة من ملفات Dockerfile",
+     "إيقاف واستئناف، وواجهات لنظام الملفات والعمليات",
+     "بنية قابلة للاستضافة الذاتية (Apache-2.0) أو داخل حسابك السحابي"
+    ],
+    "strengths": [
+     "أكثر بيئات عزل الوكلاء استخدامًا؛ وتنسخ CubeSandbox وغيرها واجهته",
+     "عزل قوي (آلة افتراضية مصغرة)",
+     "خيار الاستضافة الذاتية يُبقي الشيفرة على بنية عزم"
+    ],
+    "weaknesses": [
+     "الاستضافة الذاتية ليست سهلة (Nomad وخوادم Firecracker)",
+     "حدود لمدة الجلسة في الخطط الأدنى"
+    ],
+    "gaps": [
+     "تنسيق تشغيل المقاييس (نستخدم Harbor فوقه)"
+    ],
+    "role": "المرشح الأساسي لعزل تشغيلات الـ harness سحابيًا أو مستضافًا لدينا؛ نبدأ بالخدمة المُدارة، ثم ننتقل إلى الاستضافة الذاتية أو حسابنا السحابي للشيفرة الخاصة.",
+    "pricing": "خطة Hobby مجانية برصيد؛ Pro بـ 150 دولارًا شهريًا؛ ونحو 0.0504 دولار لكل ساعة معالج؛ والاستضافة الذاتية أو داخل حسابك على خطة المؤسسات (سبتمبر 2026)"
+   }
   },
   {
    "id": "k8s-agent-sandbox",
@@ -98,8 +122,8 @@
     "Agent-specific tooling (file APIs) is thinner than E2B"
    ],
    "fit": {
-    "verdict": "adopt-part",
-    "role": "Self-hosted sandbox option if Azm runs Kubernetes; Inspect's k8s sandbox and Harbor's custom environments can target it."
+    "verdict": "adopt",
+    "role": "Main self-hosted sandbox if Azm runs Kubernetes: team-wide and scheduled runs on private code; Inspect's k8s sandbox and Harbor custom environments can target it."
    },
    "scores": {
     "fit": 4,
@@ -121,7 +145,32 @@
     "https://agent-sandbox.sigs.k8s.io"
    ],
    "status": "active",
-   "category": "sandbox"
+   "category": "sandbox",
+   "ar": {
+    "summary": "واجهة أصلية في Kubernetes (موارد Sandbox وقوالب ومجمّعات جاهزة) لتشغيل أحمال الوكلاء المعزولة ذات الحالة، مع عزل gVisor أو Kata.",
+    "how": "يدير متحكمٌ موارد Sandbox: هوية ثابتة وتخزين دائم وحاوية واحدة؛ وتتيح SandboxTemplate وSandboxWarmPool بدءًا سريعًا؛ ويأتي العزل من فئة بيئة التشغيل (gVisor أو Kata).",
+    "features": [
+     "موارد Sandbox وSandboxTemplate وSandboxClaim وWarmPool",
+     "عزل عبر gVisor أو Kata",
+     "حزمة Python",
+     "هوية شبكة ثابتة وتخزين دائم لكل بيئة",
+     "إيقاف واستئناف (التوسع إلى الصفر) للبيئات الخاملة"
+    ],
+    "strengths": [
+     "يعمل على أي Kubernetes تشغّله عزم بالفعل",
+     "معيار محايد تدعمه مجموعة SIG Apps",
+     "بيئة العزل قابلة للتبديل (gVisor أو Kata)"
+    ],
+    "weaknesses": [
+     "يحتاج فريق Kubernetes؛ والواجهة في مرحلة مبكرة",
+     "يتطلب مشغلي عناقيد لإعداد gVisor أو Kata"
+    ],
+    "gaps": [
+     "أدوات الوكلاء (واجهات الملفات) أقل من E2B"
+    ],
+    "role": "بيئة العزل الأساسية المستضافة لدينا إن كانت عزم تشغّل Kubernetes: للتشغيلات الجماعية والمجدولة على الشيفرة الخاصة، ويمكن أن يستهدفها عزل Inspect على k8s وبيئات Harbor المخصصة.",
+    "pricing": "مجاني (على عنقودك)"
+   }
   },
   {
    "id": "opensandbox",
@@ -178,7 +227,32 @@
     "https://upstash.com/blog/ai-agent-sandbox-providers-compared-2026"
    ],
    "status": "active",
-   "category": "sandbox"
+   "category": "sandbox",
+   "ar": {
+    "summary": "منصة عزل عامة لتطبيقات الذكاء الاصطناعي: حزم بلغات متعددة، وواجهة موحدة، وبيئتا Docker وKubernetes، لوكلاء البرمجة واستخدام المتصفح وتدريب التعلم المعزز.",
+    "how": "يعرض خادمٌ واجهة لدورة حياة بيئة العزل؛ وبيئات التشغيل Docker محليًا أو Kubernetes على نطاق واسع؛ وحزم Python وJava وJS وGo وC#؛ مع أوامر وملفات ومنفذ شيفرة وسياسات شبكة مدمجة.",
+    "features": [
+     "واجهة عزل موحدة بحزم كثيرة",
+     "بيئتا Docker وKubernetes",
+     "سياسات لخروج الشبكة",
+     "أمثلة لـ Claude Code وGemini CLI وCodex"
+    ],
+    "strengths": [
+     "مستضاف ذاتيًا، بترخيص Apache، وواجهة واضحة",
+     "الواجهة نفسها من الحاسوب (Docker) إلى العنقود (K8s)",
+     "يغطي الشيفرة والمتصفح وسطح المكتب",
+     "حزم بلغات كثيرة"
+    ],
+    "weaknesses": [
+     "إصدارات خادم حديثة (v0.2.x)",
+     "التوثيق مترجم جزئيًا من الصينية"
+    ],
+    "gaps": [
+     "العزل بآلات افتراضية مصغرة يعتمد على بيئة التشغيل المختارة"
+    ],
+    "role": "بديل مستضاف لدينا عن E2B؛ نجربه بجانب Kubernetes agent-sandbox.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "cubesandbox",
@@ -229,7 +303,27 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "sandbox"
+   "category": "sandbox",
+   "ar": {
+    "summary": "خدمة عزل من Tencent بآلات افتراضية مصغرة عالية الكثافة وواجهة متوافقة مع E2B، تستهدف تشغيل عدد كبير جدًا من بيئات الوكلاء على كل خادم.",
+    "how": "آلات افتراضية خفيفة على KVM تبدأ سريعًا من لقطات؛ وتعمل حزم E2B معها.",
+    "features": [
+     "واجهة متوافقة مع E2B",
+     "آلات افتراضية مصغرة عالية الكثافة",
+     "بدء من لقطات"
+    ],
+    "strengths": [
+     "توافق مباشر مع E2B للاستضافة الذاتية"
+    ],
+    "weaknesses": [
+     "شروط الترخيص تحتاج مراجعة قانونية؛ وإصدارات مرشحة"
+    ],
+    "gaps": [
+     "مجتمع خارج الصين"
+    ],
+    "role": "خيار لسعة متوافقة مع E2B مستضافة لدينا.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "microsandbox",
@@ -258,8 +352,8 @@
     "Fleet orchestration"
    ],
    "fit": {
-    "verdict": "benchmark",
-    "role": "Local, stronger-than-Docker isolation for squad-kit's Builder and for dev-box runs of the sandbox."
+    "verdict": "adopt",
+    "role": "Sandbox for developer machines: stronger-than-Docker isolation for squad-kit's Builder and for local benchmark runs."
    },
    "scores": {
     "fit": 3,
@@ -281,7 +375,27 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "sandbox"
+   "category": "sandbox",
+   "ar": {
+    "summary": "بيئات عزل بآلات افتراضية مصغرة (libkrun) مستضافة ذاتيًا تبدأ في أقل من 200 جزء من الثانية، وتشغّل صور OCI، وتوفر خادم MCP للوكلاء.",
+    "how": "خادم محلي يشغّل آلات افتراضية مصغرة من صور الحاويات؛ وتتيح الحزم وMCP للوكلاء تشغيل الشيفرة.",
+    "features": [
+     "عزل بآلة افتراضية مصغرة على جهازك",
+     "صور OCI",
+     "خادم MCP"
+    ],
+    "strengths": [
+     "عزل قوي على الحاسوب أو الخادم"
+    ],
+    "weaknesses": [
+     "يركز على عقدة واحدة"
+    ],
+    "gaps": [
+     "تنسيق أسطول من الخوادم"
+    ],
+    "role": "بيئة العزل لأجهزة المطورين: عزل أقوى من Docker لباني squad-kit ولتشغيل الاختبارات محليًا.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "openshell",
@@ -332,7 +446,27 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "sandbox"
+   "category": "sandbox",
+   "ar": {
+    "summary": "بيئة تشغيل آمنة وخاصة للوكلاء المستقلين: تنفيذ معزول بسياسات تصريحية للملفات والشبكة والعمليات، مع بيئة آلات افتراضية.",
+    "how": "يعمل الوكلاء داخل بيئات OpenShell تحكمها سياسات YAML؛ ويُسمح بخروج الشبكة والوصول إلى الملفات وفق قوائم سماح.",
+    "features": [
+     "سياسات أمان تصريحية",
+     "بيئات معزولة وآلات افتراضية",
+     "مصمم للوكلاء طويلي التشغيل"
+    ],
+    "strengths": [
+     "السياسات كإعدادات تناسب YAML لكل فريق"
+    ],
+    "weaknesses": [
+     "حديث"
+    ],
+    "gaps": [
+     "التقييم"
+    ],
+    "role": "مرجع لنموذج السياسات في طبقة الأمان ببيئة الاختبار.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "sandbox-runtime",
@@ -384,7 +518,27 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "sandbox"
+   "category": "sandbox",
+   "ar": {
+    "summary": "بيئة العزل الخفيفة على مستوى نظام التشغيل التي يعتمد عليها Claude Code: تقيّد الوصول إلى الملفات والشبكة لأي عملية عبر Seatbelt في macOS أو bubblewrap في Linux، دون حاويات.",
+    "how": "تغلّف الأمر بـ `srt`؛ وتسرد الإعدادات المسارات والنطاقات المسموح بها؛ وتمر الشبكة عبر وسيط مُرشِّح.",
+    "features": [
+     "بلا حاويات",
+     "قوائم سماح للملفات والشبكة",
+     "يستخدمها Claude Code"
+    ],
+    "strengths": [
+     "طبقة أمان رخيصة للتشغيل المحلي"
+    ],
+    "weaknesses": [
+     "على مستوى العملية، فهي أضعف من الآلات الافتراضية"
+    ],
+    "gaps": [
+     "حدود الموارد وإدارة الأسطول"
+    ],
+    "role": "حد أدنى من الأمان لتشغيل squad-kit محليًا (الباني والمختبِر) قبل الانتقال إلى الحاويات.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "container-use",
@@ -436,7 +590,27 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "sandbox"
+   "category": "sandbox",
+   "ar": {
+    "summary": "خادم MCP يمنح كل وكيل برمجة حاويته وفرع git الخاص، فيعمل عدة وكلاء بالتوازي دون المساس بملفاتك.",
+    "how": "يستدعي الوكلاء أدوات MCP لإنشاء البيئات؛ ويبني Dagger الحاويات؛ والنتائج فروع يمكنك فحصها أو دمجها.",
+    "features": [
+     "حاوية وفرع لكل وكيل",
+     "واجهة MCP لأي وكيل",
+     "سجل لكل أمر"
+    ],
+    "strengths": [
+     "محايد تجاه الوكلاء عبر MCP"
+    ],
+    "weaknesses": [
+     "آخر إصدار في أغسطس 2026"
+    ],
+    "gaps": [
+     "التقييم"
+    ],
+    "role": "نمط «حاوية وفرع لكل تذكرة» في squad-kit.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "sandcastle",
@@ -487,7 +661,26 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "sandbox"
+   "category": "sandbox",
+   "ar": {
+    "summary": "مكتبة TypeScript لتشغيل وكلاء البرمجة (Claude Code وغيره) داخل بيئات عزل (Docker ومزوّدين سحابيين) برمجيًا، لتشغيلات منظمة دون حضور.",
+    "how": "واجهة برمجية: أنشئ بيئة عزل، وشغّل الوكيل بتعليمات، واستلم الفرع.",
+    "features": [
+     "واجهة TS لتشغيل الوكلاء معزولين",
+     "مزوّدون متعددون"
+    ],
+    "strengths": [
+     "لبنة بسيطة"
+    ],
+    "weaknesses": [
+     "حديثة"
+    ],
+    "gaps": [
+     "التقييم"
+    ],
+    "role": "لبنة محتملة لمشغّل مبني على Node.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "aio-sandbox",
@@ -538,7 +731,26 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "sandbox"
+   "category": "sandbox",
+   "ar": {
+    "summary": "بيئة عزل Docker شاملة: متصفح وطرفية ونظام ملفات وخادم VS Code وMCP في حاوية واحدة.",
+    "how": "شغّل صورة واحدة؛ ويستخدم الوكلاء واجهات HTTP أو MCP للمتصفح والطرفية والملفات.",
+    "features": [
+     "متصفح وطرفية وVS Code في صورة واحدة",
+     "MCP"
+    ],
+    "strengths": [
+     "بدء سريع للمهام التي تجمع المتصفح والشيفرة"
+    ],
+    "weaknesses": [
+     "عزل بالحاويات فقط"
+    ],
+    "gaps": [
+     "إدارة الأسطول"
+    ],
+    "role": "مفيد حين تحتاج المهام متصفحًا (لقطات المختبِر).",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "nono",
@@ -588,7 +800,26 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "sandbox"
+   "category": "sandbox",
+   "ar": {
+    "summary": "بيئة عزل للوكلاء قائمة على القدرات بفرض من نواة النظام (Landlock في Linux وSeatbelt في macOS) دون حاويات.",
+    "how": "شغّل الوكيل تحت nono مع ملف قدرات مسموح بها.",
+    "features": [
+     "قوائم سماح يفرضها النظام",
+     "ملفات تعريف لكل وكيل"
+    ],
+    "strengths": [
+     "خفيف جدًا"
+    ],
+    "weaknesses": [
+     "على مستوى العملية"
+    ],
+    "gaps": [
+     "حدود الموارد"
+    ],
+    "role": "بديل عن srt.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "sandbox-agent",
@@ -639,7 +870,27 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "sandbox"
+   "category": "sandbox",
+   "ar": {
+    "summary": "واجهة HTTP واحدة لتشغيل Claude Code وCodex وopencode وAmp داخل أي مزوّد عزل (E2B وDaytona وDocker...) مع تدفق أحداث موحد.",
+    "how": "خادم صغير داخل بيئة العزل يحوّل كل أداة وكيل إلى واجهة وصيغة أحداث مشتركة.",
+    "features": [
+     "واجهة موحدة للوكلاء",
+     "يعمل عبر مزوّدي العزل",
+     "أحداث جلسات موحدة"
+    ],
+    "strengths": [
+     "هو بالضبط طبقة «موصّل الـ harness» التي تحتاجها بيئة عزم"
+    ],
+    "weaknesses": [
+     "حديث (v0.5)"
+    ],
+    "gaps": [
+     "التقييم"
+    ],
+    "role": "طبقة موصّلات مرشحة: تشغيل أي harness في أي بيئة عزل عبر واجهة واحدة.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "daytona",
@@ -665,7 +916,7 @@
     "OSS path stalled: don't plan on self-hosting it"
    ],
    "gaps": [
-    "—"
+    "A maintained open-source path"
    ],
    "fit": {
     "verdict": "watch",
@@ -691,7 +942,27 @@
     "https://github.com/daytonaio/daytona"
    ],
    "tier": "brief",
-   "category": "sandbox"
+   "category": "sandbox",
+   "ar": {
+    "summary": "بيئات عزل سريعة جدًا (أقل من 90 جزءًا من الثانية) بحاويات أو آلات افتراضية مع دعم LSP وتكامل مع Harbor. لم يُحدَّث مستودعها المفتوح منذ 25 يونيو 2026، بينما تستمر الخدمة المُدارة.",
+    "how": "تنشئ الحزمة بيئات من صور أو لقطات؛ ويدعم Harbor الخيار ‎--env daytona‎.",
+    "features": [
+     "بدء سريع جدًا",
+     "واجهات LSP وgit",
+     "تكامل مع Harbor وLangChain"
+    ],
+    "strengths": [
+     "تجربة مطور جيدة كخدمة مُدارة"
+    ],
+    "weaknesses": [
+     "المسار المفتوح المصدر متوقف: لا نخطط لاستضافته ذاتيًا"
+    ],
+    "gaps": [
+     "مسار مفتوح المصدر يُصان"
+    ],
+    "role": "صالح كخلفية مُدارة لـ Harbor؛ لا كأساس مستضاف لدينا.",
+    "pricing": "حسب الاستخدام؛ والنشر داخل حسابك متاح"
+   }
   },
   {
    "id": "modal",
@@ -742,7 +1013,27 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "sandbox"
+   "category": "sandbox",
+   "ar": {
+    "summary": "بيئات عزل gVisor على منصة Modal بلا خوادم، حتى 24 ساعة، مع معالجات رسومية؛ وخلفية لـ Harbor.",
+    "how": "تنشئ حزمة Python بيئات من صور، وتتوسع إلى آلاف التشغيلات بالتوازي.",
+    "features": [
+     "gVisor",
+     "معالجات رسومية",
+     "توازٍ ضخم"
+    ],
+    "strengths": [
+     "سعة كبيرة لجولات التقييم الواسعة"
+    ],
+    "weaknesses": [
+     "مُدار فقط"
+    ],
+    "gaps": [
+     "الاستضافة الذاتية"
+    ],
+    "role": "سعة مؤقتة للتشغيلات الكبيرة.",
+    "pricing": "حسب الاستخدام (لكل ثانية معالج أو معالج رسومي)"
+   }
   },
   {
    "id": "vercel-sandbox",
@@ -793,7 +1084,27 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "sandbox"
+   "category": "sandbox",
+   "ar": {
+    "summary": "آلات Firecracker الافتراضية المصغرة مع Claude Code وCodex وopencode وpi مثبتة مسبقًا؛ وتدعم تقييمات Harbor.",
+    "how": "تنشئ الحزمة أو سطر الأوامر بيئة؛ والفوترة على وقت المعالج النشط فقط.",
+    "features": [
+     "أدوات الوكلاء مثبتة مسبقًا",
+     "دعم Harbor",
+     "فوترة على المعالج النشط"
+    ],
+    "strengths": [
+     "طريق سريع لتجربة أدوات الـ harness"
+    ],
+    "weaknesses": [
+     "مُدار فقط"
+    ],
+    "gaps": [
+     "الاستضافة الذاتية"
+    ],
+    "role": "بيئة تجارب مُدارة سريعة.",
+    "pricing": "نحو 0.128 دولار لكل ساعة معالج نشطة (سبتمبر 2026)"
+   }
   },
   {
    "id": "tensorlake",
@@ -818,7 +1129,7 @@
     "Smaller vendor"
    ],
    "gaps": [
-    "—"
+    "Track record at scale"
    ],
    "fit": {
     "verdict": "watch",
@@ -844,7 +1155,27 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "sandbox"
+   "category": "sandbox",
+   "ar": {
+    "summary": "بيئات عزل Firecracker مع النشر داخل حسابك السحابي وتكامل مع Harbor.",
+    "how": "حزمة برمجية؛ وHarbor عبر ‎--env tensorlake‎.",
+    "features": [
+     "Firecracker",
+     "النشر داخل حسابك",
+     "Harbor"
+    ],
+    "strengths": [
+     "النشر داخل حسابك مع Harbor"
+    ],
+    "weaknesses": [
+     "مزوّد أصغر"
+    ],
+    "gaps": [
+     "سجل خبرة على نطاق واسع"
+    ],
+    "role": "خيار خلفية لـ Harbor داخل حسابنا السحابي.",
+    "pricing": "حسب الاستخدام؛ والنشر داخل حسابك"
+   }
   },
   {
    "id": "northflank",
@@ -869,7 +1200,7 @@
     "General PaaS, less agent tooling"
    ],
    "gaps": [
-    "—"
+    "Agent-specific tooling"
    ],
    "fit": {
     "verdict": "watch",
@@ -895,7 +1226,27 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "sandbox"
+   "category": "sandbox",
+   "ar": {
+    "summary": "بيئات عزل Kata أو gVisor يمكن نشرها داخل حسابك السحابي، بتكلفة وحدة منخفضة.",
+    "how": "واجهة المنصة؛ والنشر داخل AWS أو GCP أو Azure الخاصة بك.",
+    "features": [
+     "Kata وgVisor",
+     "النشر داخل حسابك",
+     "تكلفة منخفضة"
+    ],
+    "strengths": [
+     "أرخص خيار للنشر داخل حسابك في المقارنة"
+    ],
+    "weaknesses": [
+     "منصة عامة بأدوات وكلاء أقل"
+    ],
+    "gaps": [
+     "أدوات خاصة بالوكلاء"
+    ],
+    "role": "خيار اقتصادي للنشر داخل حسابنا.",
+    "pricing": "من نحو 0.01667 دولار لكل ساعة معالج؛ والنشر داخل حسابك (سبتمبر 2026)"
+   }
   },
   {
    "id": "cloudflare-sandbox",
@@ -919,7 +1270,7 @@
     "TypeScript-only control plane"
    ],
    "gaps": [
-    "—"
+    "Control from languages other than TypeScript"
    ],
    "fit": {
     "verdict": "watch",
@@ -945,7 +1296,26 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "sandbox"
+   "category": "sandbox",
+   "ar": {
+    "summary": "بيئات عزل من نوع حاوية داخل آلة افتراضية، تُدار من Workers (TypeScript فقط).",
+    "how": "حزمة TS من داخل Worker.",
+    "features": [
+     "على الحافة",
+     "حزمة TS"
+    ],
+    "strengths": [
+     "مناسب للوكلاء المواجهين للويب"
+    ],
+    "weaknesses": [
+     "التحكم من TypeScript فقط"
+    ],
+    "gaps": [
+     "التحكم بلغات غير TypeScript"
+    ],
+    "role": "فقط إن كانت وكلاء عزم تعمل على Cloudflare.",
+    "pricing": "تسعير Workers وContainers"
+   }
   },
   {
    "id": "blaxel",
@@ -969,7 +1339,7 @@
     "Managed only"
    ],
    "gaps": [
-    "—"
+    "Self-hosting"
    ],
    "fit": {
     "verdict": "watch",
@@ -995,7 +1365,26 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "sandbox"
+   "category": "sandbox",
+   "ar": {
+    "summary": "بيئات عزل دائمة بآلات افتراضية مصغرة تُستأنف خلال نحو 25 جزءًا من الثانية؛ وخلفية لـ Harbor.",
+    "how": "حزمة برمجية؛ وتسبت البيئات ثم تُستأنف.",
+    "features": [
+     "استئناف سريع",
+     "Harbor"
+    ],
+    "strengths": [
+     "أجهزة تطوير طويلة العمر"
+    ],
+    "weaknesses": [
+     "مُدار فقط"
+    ],
+    "gaps": [
+     "الاستضافة الذاتية"
+    ],
+    "role": "خيار لمساحات عمل وكلاء طويلة العمر.",
+    "pricing": "حسب الاستخدام"
+   }
   }
  ]
 }

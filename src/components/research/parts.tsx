@@ -42,20 +42,20 @@ export function VerdictChip({ track, verdict, long }: { track: Track; verdict: V
 
 export function verdictShort(v: Verdict, locale: "en" | "ar") {
   const en: Record<Verdict, string> = {
-    adopt: "Adopt",
-    "adopt-part": "Reuse part",
-    benchmark: "Benchmark",
-    inspire: "Learn from",
-    watch: "Watch",
-    avoid: "Avoid",
+    adopt: "Use as is",
+    "adopt-part": "Borrow a part",
+    benchmark: "Try in tests",
+    inspire: "Ideas only",
+    watch: "Keep an eye",
+    avoid: "Don't use",
   };
   const ar: Record<Verdict, string> = {
-    adopt: "نعتمده",
+    adopt: "نستخدمها",
     "adopt-part": "نأخذ جزءًا",
-    benchmark: "نقارنه",
-    inspire: "نتعلم منه",
-    watch: "نراقبه",
-    avoid: "نتجنبه",
+    benchmark: "نجرّبها",
+    inspire: "للأفكار فقط",
+    watch: "نتابعها",
+    avoid: "لا نستخدمها",
   };
   return (locale === "ar" ? ar : en)[v];
 }

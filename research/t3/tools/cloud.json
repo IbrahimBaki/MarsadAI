@@ -18,7 +18,6 @@
    "features": [
     "Hosted harness and sandbox",
     "Skills and MCP",
-    "Session events",
     "Session events stream",
     "Environments define packages and network access"
    ],
@@ -57,7 +56,31 @@
     "https://docs.claude.com",
     "https://code.claude.com/docs"
    ],
-   "category": "cloud"
+   "category": "cloud",
+   "ar": {
+    "summary": "harness مستضاف من Anthropic مع بيئة عزل مُدارة: تعرّف الوكيل (النموذج والأدوات والمهارات وMCP) وتشغّل Anthropic الجلسات في حاوياتها. إصدار تجريبي، ولا يشمله ضمان عدم الاحتفاظ بالبيانات.",
+    "how": "أنشئ وكيلًا وبيئة عبر الواجهة البرمجية، وابدأ الجلسات، واستقبل تدفق الأحداث؛ وتتولى Anthropic تشغيل الـ harness وبيئة العزل.",
+    "features": [
+     "harness وبيئة عزل مستضافان",
+     "مهارات وMCP",
+     "تدفق أحداث الجلسة",
+     "البيئات تحدد الحزم والوصول إلى الشبكة"
+    ],
+    "strengths": [
+     "لا بنية تحتية تشغّلها",
+     "حلقة الوكيل نفسها في Claude Code مع توسع تديره Anthropic",
+     "مجموعة أدوات مدمجة (bash والملفات والويب) دون بناء بيئة تشغيل"
+    ],
+    "weaknesses": [
+     "تجريبي؛ لا ضمان لعدم الاحتفاظ بالبيانات؛ والشيفرة تغادر بنية عزم",
+     "مزوّد نماذج واحد"
+    ],
+    "gaps": [
+     "المقارنة بين المزوّدين"
+    ],
+    "role": "بيئة تشغيل مرشحة لوكلاء القنوات المستقلين إن سمحت سياسة البيانات.",
+    "pricing": "استخدام الواجهة البرمجية مع وقت التشغيل (تجريبي)"
+   }
   },
   {
    "id": "codex-cloud",
@@ -81,7 +104,7 @@
     "Code on vendor cloud"
    ],
    "gaps": [
-    "—"
+    "Self-hosting; use on private code without a data agreement"
    ],
    "fit": {
     "verdict": "watch",
@@ -107,7 +130,26 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "cloud"
+   "category": "cloud",
+   "ar": {
+    "summary": "وكيل برمجة سحابي ينفذ المهام في حاويات تستضيفها OpenAI بالتوازي ويفتح طلبات دمج.",
+    "how": "اربط GitHub؛ والمهام من الويب أو بيئة التطوير أو Slack.",
+    "features": [
+     "مهام سحابية متوازية",
+     "طلبات دمج"
+    ],
+    "strengths": [
+     "بلا إعداد"
+    ],
+    "weaknesses": [
+     "الشيفرة على سحابة المزوّد"
+    ],
+    "gaps": [
+     "الاستضافة الذاتية، والاستخدام على شيفرة خاصة دون اتفاقية بيانات"
+    ],
+    "role": "نقطة مقارنة للوضع المستقل في squad-kit.",
+    "pricing": "خطط ChatGPT"
+   }
   },
   {
    "id": "copilot-coding-agent",
@@ -131,7 +173,7 @@
     "GitHub only"
    ],
    "gaps": [
-    "—"
+    "Use outside GitHub"
    ],
    "fit": {
     "verdict": "watch",
@@ -157,7 +199,26 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "cloud"
+   "category": "cloud",
+   "ar": {
+    "summary": "أسند تذكرة إلى Copilot فيعمل في بيئة GitHub Actions ويفتح طلب دمج. وتنشر GitHub طريقة تقييمها لـ harness الخاص بها عبر النماذج.",
+    "how": "يعمل في مشغّلات Actions مع جدار حماية؛ وتعليمات مخصصة وMCP.",
+    "features": [
+     "من التذكرة إلى طلب الدمج",
+     "بيئة Actions"
+    ],
+    "strengths": [
+     "أصلي في GitHub"
+    ],
+    "weaknesses": [
+     "GitHub فقط"
+    ],
+    "gaps": [
+     "الاستخدام خارج GitHub"
+    ],
+    "role": "نقطة مقارنة؛ وطريقة تقييمها المنشورة نموذج لعزم.",
+    "pricing": "خطط Copilot"
+   }
   },
   {
    "id": "cursor-cloud-agents",
@@ -181,7 +242,7 @@
     "Vendor lock-in"
    ],
    "gaps": [
-    "—"
+    "Self-hosting"
    ],
    "fit": {
     "verdict": "watch",
@@ -207,7 +268,26 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "cloud"
+   "category": "cloud",
+   "ar": {
+    "summary": "وكلاء خلفية يعملون في آلات افتراضية تستضيفها Cursor، ويُطلقون من بيئة التطوير أو الويب أو Slack أو Linear.",
+    "how": "بيئات بعيدة تُضبط لكل مستودع.",
+    "features": [
+     "آلات افتراضية بعيدة",
+     "إطلاق من Slack وLinear"
+    ],
+    "strengths": [
+     "إطلاق من القنوات"
+    ],
+    "weaknesses": [
+     "ارتباط بالمزوّد"
+    ],
+    "gaps": [
+     "الاستضافة الذاتية"
+    ],
+    "role": "نقطة مقارنة.",
+    "pricing": "خطط Cursor"
+   }
   },
   {
    "id": "claude-code-web",
@@ -231,7 +311,7 @@
     "Vendor cloud"
    ],
    "gaps": [
-    "—"
+    "Self-hosting"
    ],
    "fit": {
     "verdict": "watch",
@@ -257,7 +337,26 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "cloud"
+   "category": "cloud",
+   "ar": {
+    "summary": "جلسات Claude Code في بيئات عزل تستضيفها Anthropic، تُبدأ من المتصفح أو الهاتف، مع تكامل GitHub.",
+    "how": "بيئة سحابية لكل جلسة مع سياسة للشبكة.",
+    "features": [
+     "جلسات مستضافة",
+     "سياسات الشبكة"
+    ],
+    "strengths": [
+     "الـ harness نفسه المحلي"
+    ],
+    "weaknesses": [
+     "سحابة المزوّد"
+    ],
+    "gaps": [
+     "الاستضافة الذاتية"
+    ],
+    "role": "نقطة مقارنة.",
+    "pricing": "خطط Claude"
+   }
   },
   {
    "id": "jules",
@@ -281,7 +380,7 @@
     "Vendor cloud"
    ],
    "gaps": [
-    "—"
+    "Self-hosting"
    ],
    "fit": {
     "verdict": "watch",
@@ -307,7 +406,26 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "cloud"
+   "category": "cloud",
+   "ar": {
+    "summary": "وكيل البرمجة غير المتزامن من Google، يعمل في آلات افتراضية سحابية على مستودعات GitHub.",
+    "how": "المهام من الويب؛ وتُعرض الخطط قبل التنفيذ.",
+    "features": [
+     "مهام غير متزامنة",
+     "موافقة على الخطة"
+    ],
+    "strengths": [
+     "نماذج Gemini"
+    ],
+    "weaknesses": [
+     "سحابة المزوّد"
+    ],
+    "gaps": [
+     "الاستضافة الذاتية"
+    ],
+    "role": "نقطة مقارنة.",
+    "pricing": "خطط Google"
+   }
   },
   {
    "id": "devin",
@@ -332,7 +450,7 @@
     "Cost; closed"
    ],
    "gaps": [
-    "—"
+    "Self-hosting and model choice"
    ],
    "fit": {
     "verdict": "watch",
@@ -358,7 +476,27 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "cloud"
+   "category": "cloud",
+   "ar": {
+    "summary": "مهندس برمجيات مستقل بمساحة عمل سحابية خاصة وواجهة Slack وقاعدة معرفة.",
+    "how": "جلسات من Slack أو الويب؛ وأدلة عمل؛ وخيار شبكتك الخاصة للمؤسسات.",
+    "features": [
+     "Slack أولًا",
+     "أدلة عمل",
+     "شبكة خاصة للمؤسسات"
+    ],
+    "strengths": [
+     "وكيل مستقل أصلي في القنوات"
+    ],
+    "weaknesses": [
+     "التكلفة؛ ومغلق"
+    ],
+    "gaps": [
+     "الاستضافة الذاتية واختيار النموذج"
+    ],
+    "role": "مرجع لوكلاء القنوات المستقلين.",
+    "pricing": "خطط الفرق والمؤسسات"
+   }
   }
  ]
 }

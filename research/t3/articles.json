@@ -16,7 +16,11 @@
    ],
    "priority": "must",
    "summary": "Fullscript built an internal benchmark of 36 tasks mined from six months of their own commits (23 code, 13 non-code). Each task has a brief, a hidden answer key and hidden tests that fail before and pass after. They scored resolved plus a 0-100 developer-value score, zeroed any run with a safety violation, isolated runs in git worktrees and routed models through LiteLLM. pi resolved 22 tasks vs Claude Code's 18 at $22.66 vs $35.28, while Claude Code was ~40% faster. 10 of 12 skill sets matched or beat the baseline; stacking skill sets never won.",
-   "why": "The closest published version of the Azm harness sandbox. Copy the task recipe, the safety-zeroing rule, and their lessons: tasks saturate, single runs are noisy, judges are biased, re-mine tasks regularly."
+   "why": "The closest published version of the Azm harness sandbox. Copy the task recipe, the safety-zeroing rule, and their lessons: tasks saturate, single runs are noisy, judges are biased, re-mine tasks regularly.",
+   "ar": {
+    "summary": "بنت Fullscript مقياسًا داخليًا من 36 مهمة استُخرجت من ستة أشهر من الـ commits الخاصة بها (23 برمجية و13 غير برمجية). لكل مهمة وصف، ومفتاح إجابة مخفي، واختبارات مخفية تفشل قبل الإصلاح وتنجح بعده. قيّموا الحلّ ودرجة قيمة للمطور من 0 إلى 100، وصفّروا أي تشغيل فيه مخالفة أمان، وعزلوا التشغيلات في git worktrees، ومرروا النماذج عبر LiteLLM. حلّ pi ‏22 مهمة مقابل 18 لـ Claude Code بتكلفة 22.66 دولارًا مقابل 35.28، بينما كان Claude Code أسرع بنحو 40%. وطابقت 10 من 12 مجموعة مهارات خط الأساس أو تفوقت عليه، ولم يفز تكديس مجموعات المهارات أبدًا.",
+    "why": "أقرب نسخة منشورة لبيئة اختبار الـ harness في عزم. ننسخ وصفة المهام، وقاعدة تصفير مخالفات الأمان، ودروسهم: المهام تتشبع، والتشغيل الواحد مليء بالضوضاء، والحَكَم متحيز، ويجب استخراج المهام من جديد دوريًا."
+   }
   },
   {
    "id": "aws-tokenomics",
@@ -32,7 +36,11 @@
    ],
    "priority": "must",
    "summary": "AWS runs real tasks from closed issues through five harnesses and many models, scores them with an LLM judge, and plots the cost/quality frontier. Harness choice alone moved cost from ~$24 to ~$8 per task at similar quality; an open 27B model reached 78.5 at $1.47 vs 82.8 at $11.95 for the top closed model. A swe-router skill cut cost 44.7% for a 4.8% score drop. Code is MIT-0.",
-   "why": "Gives the metrics and the Pareto-frontier report Azm should produce, and proves harness choice is a cost lever, not just a quality one."
+   "why": "Gives the metrics and the Pareto-frontier report Azm should produce, and proves harness choice is a cost lever, not just a quality one.",
+   "ar": {
+    "summary": "تشغّل AWS مهام حقيقية من تذاكر مغلقة عبر خمس أدوات harness ونماذج كثيرة، وتقيّمها بنموذج حَكَم، وترسم حدود التكلفة مقابل الجودة. اختيار الـ harness وحده نقل التكلفة من نحو 24 دولارًا إلى نحو 8 دولارات للمهمة بجودة متقاربة؛ ووصل نموذج مفتوح بحجم 27 مليار معامل إلى 78.5 بتكلفة 1.47 دولار مقابل 82.8 بتكلفة 11.95 لأفضل نموذج مغلق. وخفّضت مهارة swe-router التكلفة 44.7% مقابل انخفاض 4.8% في الدرجة. الشيفرة بترخيص MIT-0.",
+    "why": "يعطينا المقاييس وتقرير حدود التكلفة والجودة الذي يجب أن تنتجه عزم، ويُثبت أن اختيار الـ harness أداة للتحكم في التكلفة لا الجودة فقط."
+   }
   },
   {
    "id": "harness-card",
@@ -47,7 +55,11 @@
    ],
    "priority": "must",
    "summary": "Across a 3x3 model-by-harness grid, harness variance was 7.8 times model variance; the same model scored 45.9% vs 55.4% on SWE-bench Pro depending on the harness. The paper proposes a Harness Card disclosing seven layers (Execution, Tools, Context, Scheduling, Observability, Verification, Governance) and locked-harness or factorial protocols.",
-   "why": "Justifies Track 3: the harness matters more than the model. Azm should publish a Harness Card for every harness it runs."
+   "why": "Justifies Track 3: the harness matters more than the model. Azm should publish a Harness Card for every harness it runs.",
+   "ar": {
+    "summary": "عبر شبكة 3×3 من النماذج وأدوات الـ harness، كان التباين بسبب الـ harness أكبر 7.8 مرات من التباين بسبب النموذج؛ وحقق النموذج نفسه 45.9% مقابل 55.4% على SWE-bench Pro حسب الـ harness. تقترح الورقة «بطاقة harness» تفصح عن سبع طبقات (التنفيذ والأدوات والسياق والجدولة والمراقبة والتحقق والحوكمة)، وبروتوكولات بـ harness ثابت أو عاملية.",
+    "why": "يبرر المسار 3: الـ harness أهم من النموذج. على عزم نشر بطاقة harness لكل أداة تشغّلها."
+   }
   },
   {
    "id": "copilot-harness-eval",
@@ -62,7 +74,11 @@
    ],
    "priority": "must",
    "summary": "GitHub compares its harness with others on the same model and tasks with normalised context, effort and tools, across SWE-bench Verified and Pro, SkillsBench, Terminal-Bench 2.0 and an internal suite. They report pass@1, tokens and cost per task with ±1σ over at least five runs, a 2-hour timeout, and re-run infrastructure failures while keeping model errors.",
-   "why": "A ready-made protocol for fair comparisons. Copy the normalisation rules and the infra-vs-model failure policy."
+   "why": "A ready-made protocol for fair comparisons. Copy the normalisation rules and the infra-vs-model failure policy.",
+   "ar": {
+    "summary": "تقارن GitHub الـ harness الخاص بها بغيره على النموذج والمهام نفسها مع توحيد السياق والجهد والأدوات، عبر SWE-bench Verified وPro وSkillsBench وTerminal-Bench 2.0 ومجموعة داخلية. يعرضون نسبة النجاح من أول محاولة والرموز والتكلفة لكل مهمة مع انحراف معياري عبر خمس تشغيلات على الأقل، ومهلة ساعتين، ويعيدون تشغيل أعطال البنية مع الإبقاء على أخطاء النموذج.",
+    "why": "بروتوكول جاهز للمقارنات العادلة؛ ننسخ قواعد التوحيد وسياسة التمييز بين أعطال البنية وأخطاء النموذج."
+   }
   },
   {
    "id": "infra-noise",
@@ -78,7 +94,11 @@
    ],
    "priority": "must",
    "summary": "Sandbox resources alone (CPU, memory, time limits) shifted Terminal-Bench scores by about six percentage points, more than many reported gaps between models. Results must state resource configuration and treat small differences as noise.",
-   "why": "The Azm sandbox must fix and record resources per run, or comparisons will be meaningless."
+   "why": "The Azm sandbox must fix and record resources per run, or comparisons will be meaningless.",
+   "ar": {
+    "summary": "موارد بيئة العزل وحدها (المعالج والذاكرة وحدود الوقت) حرّكت درجات Terminal-Bench بنحو ست نقاط مئوية، أكثر من فروق كثيرة معلنة بين النماذج. يجب أن تذكر النتائج إعداد الموارد، وأن تُعامل الفروق الصغيرة كضوضاء.",
+    "why": "يجب أن تثبّت بيئة عزم الموارد وتسجّلها لكل تشغيل، وإلا فقدت المقارنات معناها."
+   }
   },
   {
    "id": "fowler-harness",
@@ -93,7 +113,11 @@
    ],
    "priority": "must",
    "summary": "Frames a harness as guides (feed-forward: rules, skills, templates) and sensors (feedback: tests, linters, reviews), each either computational or inferential, in a steering loop. Recommends keeping quality checks early and continuous, making codebases 'harnessable', and harness templates per service topology. Open question: how to measure harness coverage and quality.",
-   "why": "Shared vocabulary for Tracks 1 and 3: Track 1 writes the guides, Track 3 measures them with sensors. The sandbox answers Fowler's open question."
+   "why": "Shared vocabulary for Tracks 1 and 3: Track 1 writes the guides, Track 3 measures them with sensors. The sandbox answers Fowler's open question.",
+   "ar": {
+    "summary": "يصف الـ harness بأنه موجِّهات (تغذية أمامية: قواعد ومهارات وقوالب) ومستشعرات (تغذية راجعة: اختبارات وفحص أسلوب ومراجعات)، كلٌّ منها حسابي أو استدلالي، في حلقة توجيه. يوصي بإبقاء فحوص الجودة مبكرة ومستمرة، وجعل قواعد الشيفرة «قابلة للتسخير»، وقوالب harness لكل نوع خدمة. والسؤال المفتوح: كيف نقيس تغطية الـ harness وجودته؟",
+    "why": "مفردات مشتركة للمسارين 1 و3: المسار 1 يكتب الموجِّهات، والمسار 3 يقيسها بالمستشعرات. وبيئة الاختبار تجيب عن سؤال Fowler المفتوح."
+   }
   },
   {
    "id": "openai-harness-eng",
@@ -108,7 +132,11 @@
    ],
    "priority": "must",
    "summary": "OpenAI's account of building a product with agents writing the code: engineers design the environment, feedback loops and documentation (AGENTS.md as a map, not a manual) so agents can work reliably.",
-   "why": "The original statement of the discipline; Symphony assumes repos built this way."
+   "why": "The original statement of the discipline; Symphony assumes repos built this way.",
+   "ar": {
+    "summary": "رواية OpenAI عن بناء منتج يكتب الوكلاء شيفرته: يصمم المهندسون البيئة وحلقات التغذية الراجعة والتوثيق (AGENTS.md كخريطة لا كدليل) ليعمل الوكلاء بموثوقية.",
+    "why": "البيان الأصلي لهذا التخصص؛ ويفترض Symphony مستودعات مبنية بهذه الطريقة."
+   }
   },
   {
    "id": "anthropic-evals",
@@ -123,7 +151,11 @@
    ],
    "priority": "must",
    "summary": "Practical guide to agent evals: start with 20-50 tasks drawn from real failures, combine code-based, model-based and human graders, report pass@k and pass^k for reliability, and read transcripts.",
-   "why": "Sets the minimum viable size and grading mix for the first Azm task set."
+   "why": "Sets the minimum viable size and grading mix for the first Azm task set.",
+   "ar": {
+    "summary": "دليل عملي لتقييم الوكلاء: ابدأ بـ 20-50 مهمة مأخوذة من إخفاقات حقيقية، واجمع بين التقييم بالشيفرة وبالنموذج وبالبشر، واعرض pass@k وpass^k للموثوقية، واقرأ السجلات.",
+    "why": "يحدد الحد الأدنى لحجم أول مجموعة مهام لعزم ومزيج طرق التقييم."
+   }
   },
   {
    "id": "long-running",
@@ -138,7 +170,11 @@
    ],
    "priority": "must",
    "summary": "How an initializer agent plus incremental coding sessions, progress files and feature lists let agents work across many context windows without losing track.",
-   "why": "Patterns squad-kit already partly uses (.squad/ memory); useful for long tickets."
+   "why": "Patterns squad-kit already partly uses (.squad/ memory); useful for long tickets.",
+   "ar": {
+    "summary": "كيف يتيح وكيلٌ مُهيِّئ مع جلسات برمجة تدريجية وملفات تقدم وقوائم مزايا للوكلاء العمل عبر نوافذ سياق كثيرة دون أن يضيعوا.",
+    "why": "أنماط يستخدم squad-kit جزءًا منها بالفعل (ذاكرة ‎.squad/‎)؛ ومفيدة للتذاكر الطويلة."
+   }
   },
   {
    "id": "anatomy",
@@ -153,7 +189,11 @@
    ],
    "priority": "must",
    "summary": "Breaks a harness into its parts (loop, tools, context management, memory, sandbox, permissions, subagents) and explains the trade-offs of each.",
-   "why": "Checklist for describing any harness in the sandbox (complements the Harness Card)."
+   "why": "Checklist for describing any harness in the sandbox (complements the Harness Card).",
+   "ar": {
+    "summary": "يفكك الـ harness إلى أجزائه (الحلقة والأدوات وإدارة السياق والذاكرة والعزل والصلاحيات والوكلاء الفرعيين) ويشرح مقايضات كل جزء.",
+    "why": "قائمة تحقق لوصف أي harness في بيئة الاختبار (تكمّل بطاقة الـ harness)."
+   }
   },
   {
    "id": "skillsbench-paper",
@@ -168,7 +208,11 @@
    ],
    "priority": "must",
    "summary": "87 tasks, 18 model-harness configurations: curated skills raised pass rates by 16.6 points on average; focused skills beat large bundles; small models with skills approached larger ones.",
-   "why": "Method to measure each Track 1 standard before rollout."
+   "why": "Method to measure each Track 1 standard before rollout.",
+   "ar": {
+    "summary": "87 مهمة و18 توليفة نموذج وharness: رفعت المهارات المنتقاة نسب النجاح 16.6 نقطة في المتوسط؛ وتفوقت المهارات المركّزة على الحزم الكبيرة؛ واقتربت النماذج الصغيرة مع المهارات من الأكبر.",
+    "why": "طريقة لقياس كل معيار من المسار 1 قبل تعميمه."
+   }
   },
   {
    "id": "skill-issue",
@@ -183,7 +227,11 @@
    ],
    "priority": "must",
    "summary": "Argues most 'model' failures are harness failures and shows concrete harness changes (context, tools, verification) that fix them.",
-   "why": "Supports measuring harness changes rather than swapping models."
+   "why": "Supports measuring harness changes rather than swapping models.",
+   "ar": {
+    "summary": "يجادل بأن معظم إخفاقات «النموذج» إخفاقات harness في الحقيقة، ويعرض تغييرات ملموسة في الـ harness (السياق والأدوات والتحقق) تصلحها.",
+    "why": "يدعم قياس تغييرات الـ harness بدل تبديل النماذج."
+   }
   },
   {
    "id": "awesome-picrew",
@@ -196,7 +244,10 @@
     "harness"
    ],
    "priority": "reference",
-   "summary": "Large curated map of harness tools, sandboxes, evals and readings; seed of Marsad's Track 3 index."
+   "summary": "Large curated map of harness tools, sandboxes, evals and readings; seed of Marsad's Track 3 index.",
+   "ar": {
+    "summary": "خريطة منسقة كبيرة لأدوات الـ harness وبيئات العزل والتقييمات والقراءات؛ وهي نواة فهرس المسار 3 في مرصد."
+   }
   },
   {
    "id": "awesome-autojunjie",
@@ -209,7 +260,10 @@
     "harness"
    ],
    "priority": "reference",
-   "summary": "Second curated harness list, grouped by layer; merged into Marsad's index."
+   "summary": "Second curated harness list, grouped by layer; merged into Marsad's index.",
+   "ar": {
+    "summary": "قائمة ثانية منسقة لأدوات الـ harness مصنفة حسب الطبقة؛ دُمجت في فهرس مرصد."
+   }
   },
   {
    "id": "upstash-sandboxes",
@@ -222,7 +276,10 @@
     "pricing"
    ],
    "priority": "read",
-   "summary": "Side-by-side table of agent sandbox providers: isolation tech, start time, limits, self-host/BYOC and prices (checked Sept 2026)."
+   "summary": "Side-by-side table of agent sandbox providers: isolation tech, start time, limits, self-host/BYOC and prices (checked Sept 2026).",
+   "ar": {
+    "summary": "جدول مقارنة لمزوّدي بيئات عزل الوكلاء: تقنية العزل وزمن البدء والحدود والاستضافة الذاتية والأسعار (روجع في سبتمبر 2026)."
+   }
   },
   {
    "id": "aisi-sandboxing",
@@ -235,7 +292,10 @@
     "eval"
    ],
    "priority": "read",
-   "summary": "How AISI isolates agent evaluations by tooling, host and network with Docker, Kubernetes and Proxmox plugins."
+   "summary": "How AISI isolates agent evaluations by tooling, host and network with Docker, Kubernetes and Proxmox plugins.",
+   "ar": {
+    "summary": "كيف يعزل معهد AISI تقييمات الوكلاء على مستوى الأدوات والمضيف والشبكة بإضافات Docker وKubernetes وProxmox."
+   }
   },
   {
    "id": "google-skills-codelab",
@@ -248,7 +308,10 @@
     "skills"
    ],
    "priority": "read",
-   "summary": "Hands-on codelab evaluating Agent Skills with Inspect AI and paired with/without runs."
+   "summary": "Hands-on codelab evaluating Agent Skills with Inspect AI and paired with/without runs.",
+   "ar": {
+    "summary": "درس عملي لتقييم Agent Skills بـ Inspect AI وتشغيلات مزدوجة مع المهارة وبدونها."
+   }
   },
   {
    "id": "aidlc-blog",
@@ -261,7 +324,10 @@
     "standards"
    ],
    "priority": "read",
-   "summary": "AWS's methodology where AI proposes and humans approve at each stage of inception, construction and operations."
+   "summary": "AWS's methodology where AI proposes and humans approve at each stage of inception, construction and operations.",
+   "ar": {
+    "summary": "منهجية AWS التي يقترح فيها الذكاء الاصطناعي ويوافق البشر في كل مرحلة من التأسيس والبناء والتشغيل."
+   }
   },
   {
    "id": "r0",
@@ -275,7 +341,10 @@
     "skills"
    ],
    "priority": "reference",
-   "summary": "Community collection of Claude Code skills, hooks, and orchestrator tooling."
+   "summary": "Community collection of Claude Code skills, hooks, and orchestrator tooling.",
+   "ar": {
+    "summary": "مجموعة مجتمعية لمهارات Claude Code وخطافاته وأدوات التنسيق."
+   }
   },
   {
    "id": "r1",
@@ -289,7 +358,10 @@
     "cross-harness"
    ],
    "priority": "reference",
-   "summary": "Curated cross-harness map of official and community Agent Skills for Claude Code, Codex, Gemini CLI, Cursor, OpenCode, Copilot, and related hosts."
+   "summary": "Curated cross-harness map of official and community Agent Skills for Claude Code, Codex, Gemini CLI, Cursor, OpenCode, Copilot, and related hosts.",
+   "ar": {
+    "summary": "خريطة منسقة للمهارات الرسمية والمجتمعية عبر Claude Code وCodex وGemini CLI وCursor وOpenCode وCopilot وغيرها."
+   }
   },
   {
    "id": "r2",
@@ -303,7 +375,10 @@
     "design"
    ],
    "priority": "reference",
-   "summary": "Catalog of reusable agentic design patterns and implementation motifs."
+   "summary": "Catalog of reusable agentic design patterns and implementation motifs.",
+   "ar": {
+    "summary": "كتالوج لأنماط تصميم الوكلاء القابلة لإعادة الاستخدام."
+   }
   },
   {
    "id": "r3",
@@ -317,7 +392,10 @@
     "tools"
    ],
    "priority": "reference",
-   "summary": "Curated MCP server index for tool interoperability in agent systems."
+   "summary": "Curated MCP server index for tool interoperability in agent systems.",
+   "ar": {
+    "summary": "فهرس منسق لخوادم MCP لتشغيل الأدوات بين أنظمة الوكلاء."
+   }
   },
   {
    "id": "r4",
@@ -331,7 +409,10 @@
     "harness"
    ],
    "priority": "reference",
-   "summary": "Curated list focused on harness engineering articles, benchmarks, and implementations."
+   "summary": "Curated list focused on harness engineering articles, benchmarks, and implementations.",
+   "ar": {
+    "summary": "قائمة منسقة تركز على مقالات هندسة الـ harness ومقاييسها وتطبيقاتها."
+   }
   },
   {
    "id": "r5",
@@ -344,7 +425,10 @@
     "principles"
    ],
    "priority": "read",
-   "summary": "Operations-oriented principles for building maintainable production agents."
+   "summary": "Operations-oriented principles for building maintainable production agents.",
+   "ar": {
+    "summary": "مبادئ تشغيلية لبناء وكلاء إنتاجيين قابلين للصيانة."
+   }
   },
   {
    "id": "r6",
@@ -357,7 +441,10 @@
     "architecture"
    ],
    "priority": "read",
-   "summary": "Clear decomposition of framework vs runtime vs harness responsibilities."
+   "summary": "Clear decomposition of framework vs runtime vs harness responsibilities.",
+   "ar": {
+    "summary": "تفكيك واضح لمسؤوليات الإطار وبيئة التشغيل والـ harness."
+   }
   },
   {
    "id": "r7",
@@ -370,7 +457,10 @@
     "orchestration"
    ],
    "priority": "read",
-   "summary": "OpenAI's orchestration write-up on turning issue trackers into always-on control planes for coding agents."
+   "summary": "OpenAI's orchestration write-up on turning issue trackers into always-on control planes for coding agents.",
+   "ar": {
+    "summary": "كتابة OpenAI عن تحويل أدوات التذاكر إلى لوحات تحكم دائمة لوكلاء البرمجة."
+   }
   },
   {
    "id": "r8",
@@ -383,7 +473,10 @@
     "sandboxing"
    ],
    "priority": "read",
-   "summary": "OpenAI's implementation report on enforcing filesystem and network boundaries for Codex on Windows with restricted tokens, SIDs, and a dedicated command runner."
+   "summary": "OpenAI's implementation report on enforcing filesystem and network boundaries for Codex on Windows with restricted tokens, SIDs, and a dedicated command runner.",
+   "ar": {
+    "summary": "تقرير OpenAI عن فرض حدود نظام الملفات والشبكة لـ Codex على Windows."
+   }
   },
   {
    "id": "r9",
@@ -396,7 +489,10 @@
     "agents"
    ],
    "priority": "read",
-   "summary": "Anthropic's practical guidance on when to use workflows vs. autonomous agents and how to structure them."
+   "summary": "Anthropic's practical guidance on when to use workflows vs. autonomous agents and how to structure them.",
+   "ar": {
+    "summary": "إرشادات Anthropic العملية لمتى تستخدم سير العمل ومتى تستخدم الوكلاء المستقلين وكيف تبسط."
+   }
   },
   {
    "id": "r10",
@@ -409,7 +505,10 @@
     "sdk"
    ],
    "priority": "read",
-   "summary": "Official Claude Agent SDK documentation for building agents on the Claude Code harness, including tools, MCP, permissions, hooks, subagents, and session flows."
+   "summary": "Official Claude Agent SDK documentation for building agents on the Claude Code harness, including tools, MCP, permissions, hooks, subagents, and session flows.",
+   "ar": {
+    "summary": "التوثيق الرسمي لـ Claude Agent SDK لبناء وكلاء على harness الخاص بـ Claude Code."
+   }
   },
   {
    "id": "r11",
@@ -422,7 +521,10 @@
     "permissions"
    ],
    "priority": "read",
-   "summary": "Anthropic's write-up on classifier-backed approval delegation for safer high-autonomy coding-agent runs."
+   "summary": "Anthropic's write-up on classifier-backed approval delegation for safer high-autonomy coding-agent runs.",
+   "ar": {
+    "summary": "كتابة Anthropic عن تفويض الموافقات بمصنِّف لبرمجة أكثر استقلالًا وأمانًا."
+   }
   },
   {
    "id": "r12",
@@ -435,7 +537,10 @@
     "mcp"
    ],
    "priority": "read",
-   "summary": "Anthropic's design notes on controlled code execution via MCP boundaries."
+   "summary": "Anthropic's design notes on controlled code execution via MCP boundaries.",
+   "ar": {
+    "summary": "ملاحظات تصميم Anthropic لتنفيذ الشيفرة المنضبط عبر حدود MCP."
+   }
   },
   {
    "id": "r14",
@@ -448,7 +553,10 @@
     "anthropic"
    ],
    "priority": "read",
-   "summary": "Guidance on context-window budgeting and working-state management for agents."
+   "summary": "Guidance on context-window budgeting and working-state management for agents.",
+   "ar": {
+    "summary": "إرشادات لإدارة ميزانية نافذة السياق وحالة العمل للوكلاء."
+   }
   },
   {
    "id": "r16",
@@ -461,7 +569,10 @@
     "evaluation"
    ],
    "priority": "read",
-   "summary": "LangChain's practical lessons on evaluating stateful and long-horizon agents."
+   "summary": "LangChain's practical lessons on evaluating stateful and long-horizon agents.",
+   "ar": {
+    "summary": "دروس LangChain العملية في تقييم الوكلاء ذوي الحالة والمهام الطويلة."
+   }
   },
   {
    "id": "r17",
@@ -474,7 +585,10 @@
     "execution"
    ],
    "priority": "read",
-   "summary": "OpenAI's engineering guide to agent execution with the Responses API, hosted shell containers, orchestration loops, compaction, skills, persistent files, and restricted networking."
+   "summary": "OpenAI's engineering guide to agent execution with the Responses API, hosted shell containers, orchestration loops, compaction, skills, persistent files, and restricted networking.",
+   "ar": {
+    "summary": "دليل OpenAI الهندسي لتنفيذ الوكلاء عبر Responses API وحاويات الطرفية المستضافة."
+   }
   },
   {
    "id": "r18",
@@ -487,7 +601,10 @@
     "anthropic"
    ],
    "priority": "read",
-   "summary": "Follow-up article on improving long-running app generation through harness structure."
+   "summary": "Follow-up article on improving long-running app generation through harness structure.",
+   "ar": {
+    "summary": "مقال متابعة عن تحسين توليد التطبيقات الطويلة عبر بنية الـ harness."
+   }
   },
   {
    "id": "r21",
@@ -500,7 +617,10 @@
     "efficiency"
    ],
    "priority": "read",
-   "summary": "OpenAI's engineering account of the Rust agentic harness behind Codex and ChatGPT Work, covering deferred tool discovery, bounded outputs, deterministic tool ordering, and prompt-cache preservation."
+   "summary": "OpenAI's engineering account of the Rust agentic harness behind Codex and ChatGPT Work, covering deferred tool discovery, bounded outputs, deterministic tool ordering, and prompt-cache preservation.",
+   "ar": {
+    "summary": "رواية OpenAI الهندسية عن harness المكتوب بـ Rust خلف Codex وChatGPT Work."
+   }
   },
   {
    "id": "r22",
@@ -513,7 +633,10 @@
     "multi-agent"
    ],
    "priority": "read",
-   "summary": "Anthropic architecture write-up on role separation and coordination in multi-agent systems."
+   "summary": "Anthropic architecture write-up on role separation and coordination in multi-agent systems.",
+   "ar": {
+    "summary": "كتابة Anthropic عن معمار فصل الأدوار والتنسيق في الأنظمة متعددة الوكلاء."
+   }
   },
   {
    "id": "r23",
@@ -526,7 +649,10 @@
     "containment"
    ],
    "priority": "read",
-   "summary": "Anthropic's cross-product containment architecture for claude.ai, Claude Code, and Cowork, spanning sandboxes, VMs, filesystem boundaries, egress controls, and approval fatigue."
+   "summary": "Anthropic's cross-product containment architecture for claude.ai, Claude Code, and Cowork, spanning sandboxes, VMs, filesystem boundaries, egress controls, and approval fatigue.",
+   "ar": {
+    "summary": "معمار Anthropic لاحتواء Claude عبر منتجاتها المختلفة."
+   }
   },
   {
    "id": "r24",
@@ -539,7 +665,10 @@
     "harness"
    ],
    "priority": "read",
-   "summary": "Evidence that harness improvements alone can move benchmark performance."
+   "summary": "Evidence that harness improvements alone can move benchmark performance.",
+   "ar": {
+    "summary": "دليل على أن تحسين الـ harness وحده قادر على تحريك نتائج المقاييس."
+   }
   },
   {
    "id": "r25",
@@ -552,7 +681,10 @@
     "runtime"
    ],
    "priority": "read",
-   "summary": "Google's distributed agent runtime design for durable execution, event-log snapshots, secure isolation, session consistency, reconnection, and trajectory branching."
+   "summary": "Google's distributed agent runtime design for durable execution, event-log snapshots, secure isolation, session consistency, reconnection, and trajectory branching.",
+   "ar": {
+    "summary": "تصميم Google لبيئة تشغيل موزعة للوكلاء بتنفيذ دائم ولقطات من سجل الأحداث."
+   }
   },
   {
    "id": "r26",
@@ -565,7 +697,10 @@
     "sandboxing"
    ],
    "priority": "read",
-   "summary": "How Anthropic uses sandbox boundaries to raise agent autonomy without giving up security controls."
+   "summary": "How Anthropic uses sandbox boundaries to raise agent autonomy without giving up security controls.",
+   "ar": {
+    "summary": "كيف تستخدم Anthropic حدود العزل لرفع استقلالية الوكيل دون التنازل عن ضوابط الأمان."
+   }
   },
   {
    "id": "r28",
@@ -578,7 +713,10 @@
     "governance"
    ],
    "priority": "read",
-   "summary": "OpenAI's operational blueprint for governing Codex with sandbox and approval policies, network controls, managed identity, configuration, telemetry, and audit trails."
+   "summary": "OpenAI's operational blueprint for governing Codex with sandbox and approval policies, network controls, managed identity, configuration, telemetry, and audit trails.",
+   "ar": {
+    "summary": "مخطط OpenAI التشغيلي لحوكمة Codex بسياسات العزل والموافقة والشبكة."
+   }
   },
   {
    "id": "r29",
@@ -591,7 +729,10 @@
     "architecture"
    ],
    "priority": "read",
-   "summary": "Anthropic's meta-harness architecture for decoupling session logs, harness loops, and sandboxes in long-horizon agents."
+   "summary": "Anthropic's meta-harness architecture for decoupling session logs, harness loops, and sandboxes in long-horizon agents.",
+   "ar": {
+    "summary": "معمار Anthropic لفصل سجلات الجلسة وحلقات الـ harness وبيئات العزل في الوكلاء المُدارين."
+   }
   },
   {
    "id": "r31",
@@ -604,7 +745,10 @@
     "evals"
    ],
    "priority": "read",
-   "summary": "OpenAI Developers guide for turning agent traces into repeatable skill evaluations."
+   "summary": "OpenAI Developers guide for turning agent traces into repeatable skill evaluations.",
+   "ar": {
+    "summary": "دليل OpenAI لتحويل سجلات الوكلاء إلى تقييمات متكررة للمهارات."
+   }
   },
   {
    "id": "r33",
@@ -617,7 +761,10 @@
     "sdk"
    ],
    "priority": "read",
-   "summary": "OpenAI's product and engineering post on model-native agent harnesses, native sandbox execution, manifests, memory, and filesystem and shell tools."
+   "summary": "OpenAI's product and engineering post on model-native agent harnesses, native sandbox execution, manifests, memory, and filesystem and shell tools.",
+   "ar": {
+    "summary": "منشور OpenAI عن harness أصلي للنموذج وتنفيذ معزول في Agents SDK."
+   }
   },
   {
    "id": "r34",
@@ -630,7 +777,10 @@
     "architecture"
    ],
    "priority": "read",
-   "summary": "OpenAI's architecture deep dive into sharing the Codex harness across clients through App Server, thread persistence, JSON-RPC, sandboxed tools, MCP, skills, and reconnectable sessions."
+   "summary": "OpenAI's architecture deep dive into sharing the Codex harness across clients through App Server, thread persistence, JSON-RPC, sandboxed tools, MCP, skills, and reconnectable sessions.",
+   "ar": {
+    "summary": "تعمق OpenAI في مشاركة harness الخاص بـ Codex بين العملاء عبر App Server."
+   }
   },
   {
    "id": "r35",
@@ -643,7 +793,10 @@
     "architecture"
    ],
    "priority": "read",
-   "summary": "OpenAI engineering deep dive into the Codex harness loop, prompt growth, tool-call replay, and stateless execution tradeoffs."
+   "summary": "OpenAI engineering deep dive into the Codex harness loop, prompt growth, tool-call replay, and stateless execution tradeoffs.",
+   "ar": {
+    "summary": "تعمق هندسي من OpenAI في حلقة Codex ونمو التعليمات وإعادة تشغيل استدعاءات الأدوات."
+   }
   },
   {
    "id": "r36",
@@ -656,7 +809,10 @@
     "cloud-agents"
    ],
    "priority": "read",
-   "summary": "Cognition's field report on secure cloud-agent infrastructure, VM isolation, full-state snapshots, orchestration, governance, integrations, and enterprise adoption."
+   "summary": "Cognition's field report on secure cloud-agent infrastructure, VM isolation, full-state snapshots, orchestration, governance, integrations, and enterprise adoption.",
+   "ar": {
+    "summary": "تقرير Cognition الميداني عن بنية الوكلاء السحابيين الآمنة وعزل الآلات الافتراضية واللقطات الكاملة."
+   }
   },
   {
    "id": "r37",
@@ -669,7 +825,10 @@
     "tools"
    ],
    "priority": "read",
-   "summary": "Best practices for tool interface design so agents call tools safely and reliably."
+   "summary": "Best practices for tool interface design so agents call tools safely and reliably.",
+   "ar": {
+    "summary": "أفضل الممارسات لتصميم واجهات الأدوات ليستدعيها الوكلاء بأمان وموثوقية."
+   }
   },
   {
    "id": "r38",
@@ -682,7 +841,10 @@
     "reliability"
    ],
    "priority": "read",
-   "summary": "Argument for reliability-first infrastructure around agents instead of framework-only thinking."
+   "summary": "Argument for reliability-first infrastructure around agents instead of framework-only thinking.",
+   "ar": {
+    "summary": "حجة لبنية تحتية تقدّم الموثوقية حول الوكلاء بدل الاكتفاء بالأطر."
+   }
   }
  ]
 }

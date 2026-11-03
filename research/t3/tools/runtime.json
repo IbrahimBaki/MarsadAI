@@ -61,7 +61,32 @@
     "https://code.claude.com/docs"
    ],
    "status": "active",
-   "category": "runtime"
+   "category": "runtime",
+   "ar": {
+    "summary": "أداة البرمجة الوكيلة من Anthropic في سطر الأوامر، وهي الـ harness الذي تعمل عليه معظم أدوات عزم (ومنها squad-kit) حاليًا. وتتيح Claude Agent SDK ‏(Python وTypeScript) الحلقة نفسها برمجيًا: الأدوات والوكلاء الفرعيون والخطافات والمهارات وMCP والصلاحيات والعزل.",
+    "how": "حلقة وكيل بأدوات مدمجة (القراءة والتعديل وbash والبحث والويب)، وذاكرة للمشروع (CLAUDE.md)، ومهارات وإضافات وخطافات ووكلاء فرعيين. ويجعلها الوضع بلا واجهة (`claude -p`) وAgent SDK قابلة للبرمجة، وهكذا يشغّلها Harbor وغيره.",
+    "features": [
+     "مهارات وإضافات وخطافات ووكلاء فرعيون وMCP",
+     "وضع بلا واجهة وAgent SDK",
+     "عزل على مستوى النظام (srt)",
+     "تصدير مقاييس وأحداث OpenTelemetry"
+    ],
+    "strengths": [
+     "نتائج في القمة على لوحات الـ harness مع نماذج Claude",
+     "نقاط توسعة غنية للمعايير (مهارات وخطافات وقواعد)",
+     "منتشرة؛ ويعرفها معظم مطوري عزم",
+     "الإضافات ومتاجرها توزّع المعايير على الفرق"
+    ],
+    "weaknesses": [
+     "مزوّد نماذج واحد",
+     "أداة مغلقة المصدر"
+    ],
+    "gaps": [
+     "نقل قواعد عزم بين أدوات harness مختلفة"
+    ],
+    "role": "خط الأساس في كل مقارنة، والمحرك تحت squad-kit.",
+    "pricing": "اشتراك Claude أو استخدام الواجهة البرمجية"
+   }
   },
   {
    "id": "codex-cli",
@@ -91,7 +116,7 @@
     "Fewer extension points (hooks, plugins) than Claude Code"
    ],
    "gaps": [
-    "—"
+    "Team process around it (tickets, approvals, releases)"
    ],
    "fit": {
     "verdict": "benchmark",
@@ -117,7 +142,31 @@
     "https://developers.openai.com/codex"
    ],
    "status": "active",
-   "category": "runtime"
+   "category": "runtime",
+   "ar": {
+    "summary": "وكيل البرمجة المفتوح المصدر من OpenAI في سطر الأوامر (مكتوب بـ Rust)، مع تنفيذ معزول، وتعليمات مشروع في AGENTS.md، وMCP، ووضع تنفيذ غير تفاعلي؛ ويتوفر أيضًا كـ Codex السحابي وكحزمة SDK.",
+    "how": "حلقة وكيل مع عزل على مستوى النظام (Seatbelt وLandlock) وأوضاع موافقة؛ والأمر `codex exec` للأتمتة؛ وAGENTS.md لقواعد المشروع.",
+    "features": [
+     "عزل مدمج على مستوى النظام وأوضاع موافقة",
+     "AGENTS.md",
+     "وضع exec لـ CI",
+     "MCP"
+    ],
+    "strengths": [
+     "مفتوح المصدر بإعدادات عزل قوية افتراضيًا",
+     "AGENTS.md عُرف مفتوح تقرؤه أدوات harness كثيرة",
+     "وضع exec والحزمة يسهّلان التشغيل الآلي"
+    ],
+    "weaknesses": [
+     "الأفضل مع نماذج OpenAI",
+     "نقاط توسعة أقل (خطافات وإضافات) من Claude Code"
+    ],
+    "gaps": [
+     "عملية فريق حوله (تذاكر وموافقات وإصدارات)"
+    ],
+    "role": "خط الأساس الثاني، والمحرك المستهدف التالي لـ squad-kit.",
+    "pricing": "خطة ChatGPT أو استخدام الواجهة البرمجية"
+   }
   },
   {
    "id": "opencode",
@@ -142,7 +191,7 @@
     "Rapid change"
    ],
    "gaps": [
-    "—"
+    "Team process and evaluation"
    ],
    "fit": {
     "verdict": "benchmark",
@@ -168,7 +217,27 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "runtime"
+   "category": "runtime",
+   "ar": {
+    "summary": "وكيل برمجة مفتوح المصدر في الطرفية، محايد تجاه النماذج، مع LSP ومزوّدين كثيرين وتصميم عميل وخادم.",
+    "how": "عميل طرفية فوق خادم؛ ويُضبط الوكلاء والأوضاع وMCP بملف JSON.",
+    "features": [
+     "أكثر من 75 مزوّدًا",
+     "LSP",
+     "عميل وخادم"
+    ],
+    "strengths": [
+     "محايد تجاه النماذج وبترخيص MIT"
+    ],
+    "weaknesses": [
+     "تغيّر سريع"
+    ],
+    "gaps": [
+     "عملية الفريق والتقييم"
+    ],
+    "role": "خط أساس مفتوح محايد تجاه النماذج (يتيح لبيئة الاختبار تجربة النماذج المفتوحة الأوزان).",
+    "pricing": "مجاني؛ استخدم أي نموذج"
+   }
   },
   {
    "id": "pi",
@@ -200,7 +269,7 @@
     "Smaller ecosystem than Claude Code"
    ],
    "gaps": [
-    "—"
+    "Team process and built-in isolation"
    ],
    "fit": {
     "verdict": "benchmark",
@@ -226,7 +295,33 @@
     "https://builders.fullscript.com/posts/benchmarking-the-agents-that-write-our-code"
    ],
    "status": "active",
-   "category": "runtime"
+   "category": "runtime",
+   "ar": {
+    "summary": "harness ومجموعة أدوات بسيطة وقابلة للتوسعة لوكلاء البرمجة (نواة وكيل وواجهة موحدة لمزوّدين متعددين وواجهة طرفية). في دراسة Fullscript حلّ pi مهام أكثر من Claude Code ‏(22 مقابل 18) بتكلفة أقل، ويُبنى عليه QM.",
+    "how": "حلقة وكيل صغيرة بأدوات قليلة وتعليمات نظام قصيرة؛ وتضيف الإضافات القدرات؛ ومحايد تجاه المزوّدين.",
+    "features": [
+     "نواة بسيطة",
+     "واجهة نماذج لمزوّدين متعددين",
+     "إضافات",
+     "تعليمات نظام قصيرة وأدوات قليلة",
+     "شجرة جلسات وتفرّع",
+     "حزم لمشاركة الإضافات والمهارات"
+    ],
+    "strengths": [
+     "يُثبت أن harness أخف قد يتفوق على الأثقل في مهام حقيقية",
+     "رخيص التشغيل (رموز أقل لكل مهمة في بيانات Fullscript)",
+     "ترخيص MIT ومحايد تجاه المزوّدين"
+    ],
+    "weaknesses": [
+     "تجمّع بنفسك أجزاء أكثر",
+     "منظومة أصغر من Claude Code"
+    ],
+    "gaps": [
+     "عملية الفريق والعزل المدمج"
+    ],
+    "role": "خط أساس خفيف، ومحرك محتمل لـ azm-harness.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "openhands",
@@ -257,7 +352,7 @@
     "UI-centric; SDLC gates are limited"
    ],
    "gaps": [
-    "—"
+    "Azm-style approvals and standards checks"
    ],
    "fit": {
     "verdict": "benchmark",
@@ -283,7 +378,31 @@
     "https://github.com/OpenHands/software-agent-sdk"
    ],
    "status": "active",
-   "category": "runtime"
+   "category": "runtime",
+   "ar": {
+    "summary": "منصة رائدة مفتوحة المصدر لوكلاء البرمجيات، مع بيئة تشغيل Docker أو بعيدة، وواجهة ويب، وسطر أوامر، وSoftware Agent SDK قابلة للتركيب، ومستودع مقاييس خاص بها.",
+    "how": "يعمل الوكلاء عبر بيئة تشغيل معزولة (Docker أو بعيدة)؛ وتركّب الحزمة الأدوات ومكثّفات السياق ومحللات الأمان.",
+    "features": [
+     "بيئة تشغيل معزولة",
+     "واجهة ويب وسطر أوامر وحلّ تذاكر GitHub",
+     "Agent SDK",
+     "مقاييس"
+    ],
+    "strengths": [
+     "محايد تجاه النماذج، بترخيص MIT، وبمستوى بحثي",
+     "نتائج قوية منشورة على SWE-bench",
+     "حلّ تذاكر GitHub/GitLab من التذكرة إلى طلب الدمج"
+    ],
+    "weaknesses": [
+     "أثقل في التشغيل",
+     "متمحور حول الواجهة؛ وبوابات دورة التطوير محدودة"
+    ],
+    "gaps": [
+     "موافقات وفحوص معايير على طريقة عزم"
+    ],
+    "role": "خط أساس لمنصة مفتوحة المصدر ومصدر لأفكار بيئة التشغيل.",
+    "pricing": "مجاني؛ وOpenHands Cloud مدفوع"
+   }
   },
   {
    "id": "mini-swe-agent",
@@ -308,7 +427,7 @@
     "No SDLC features"
    ],
    "gaps": [
-    "—"
+    "Everything beyond a bare loop: by design"
    ],
    "fit": {
     "verdict": "adopt-part",
@@ -334,7 +453,26 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "runtime"
+   "category": "runtime",
+   "ar": {
+    "summary": "وكيل من نحو 100 سطر يستخدم bash فقط، ويحقق مع ذلك نتائج جيدة على SWE-bench Verified؛ مجموعة ضابطة لسؤال: كم يضيف الـ harness؟",
+    "how": "سجل خطي وbash فقط وأي نموذج عبر LiteLLM.",
+    "features": [
+     "bash فقط",
+     "صغير ومقروء"
+    ],
+    "strengths": [
+     "مجموعة ضابطة مثالية"
+    ],
+    "weaknesses": [
+     "بلا مزايا لدورة التطوير"
+    ],
+    "gaps": [
+     "كل ما يتجاوز الحلقة البسيطة، عن قصد"
+    ],
+    "role": "خط أساس ضابط في كل تشغيل ببيئة الاختبار.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "goose",
@@ -358,7 +496,7 @@
     "General-purpose"
    ],
    "gaps": [
-    "—"
+    "Coding-specific team workflow"
    ],
    "fit": {
     "verdict": "watch",
@@ -384,7 +522,26 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "runtime"
+   "category": "runtime",
+   "ar": {
+    "summary": "وكيل مفتوح المصدر قابل للتوسعة على الجهاز (مكتبي وسطر أوامر) مع إضافات MCP ووصفات، وأصبح تحت مؤسسة Agentic AI Foundation.",
+    "how": "تعرّف الوصفات (YAML) مهامًا متكررة؛ والإضافات عبر MCP.",
+    "features": [
+     "وصفات بـ YAML",
+     "إضافات MCP"
+    ],
+    "strengths": [
+     "حوكمة مؤسسة محايدة"
+    ],
+    "weaknesses": [
+     "عام الغرض"
+    ],
+    "gaps": [
+     "سير عمل فريق خاص بالبرمجة"
+    ],
+    "role": "فكرة وصفات YAML لإعدادات الفرق.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "deepagents",
@@ -408,7 +565,7 @@
     "LangChain stack"
    ],
    "gaps": [
-    "—"
+    "A ready coding workflow; you build on it"
    ],
    "fit": {
     "verdict": "watch",
@@ -434,7 +591,26 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "runtime"
+   "category": "runtime",
+   "ar": {
+    "summary": "harness من LangChain للوكلاء طويلي التشغيل: أداة تخطيط ونظام ملفات افتراضي ووكلاء فرعيون وبيئات عزل قابلة للتبديل (Daytona وModal وغيرهما)؛ وله أيضًا سطر أوامر.",
+    "how": "وكيل مبني على LangGraph مع وسائط مدمجة.",
+    "features": [
+     "تخطيط وملفات ووكلاء فرعيون",
+     "خلفيات عزل"
+    ],
+    "strengths": [
+     "مكتبة جيدة لبناء azm-harness عليها"
+    ],
+    "weaknesses": [
+     "منظومة LangChain"
+    ],
+    "gaps": [
+     "سير عمل برمجة جاهز؛ تبني فوقه"
+    ],
+    "role": "خيار مكتبة لبناء وكلاء عزم المخصصين.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "openai-agents-sdk",
@@ -459,7 +635,7 @@
     "Alpha versions for sandbox"
    ],
    "gaps": [
-    "—"
+    "A ready coding harness; you build on it"
    ],
    "fit": {
     "verdict": "watch",
@@ -485,7 +661,27 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "runtime"
+   "category": "runtime",
+   "ar": {
+    "summary": "إطار الوكلاء من OpenAI؛ ومنذ أبريل 2026 يضم «وكلاء العزل» بـ harness أصلي للنموذج يعمل لدى مزوّدين مثل E2B وModal وDaytona وRunloop وغيرهم.",
+    "how": "وكلاء وأدوات وتسليم بين الوكلاء وحماية وتتبّع؛ وينفّذ وكلاء العزل الأدوات داخل مزوّد تختاره.",
+    "features": [
+     "وكلاء العزل",
+     "التتبّع",
+     "الحماية"
+    ],
+    "strengths": [
+     "تجريد للعزل محايد تجاه المزوّدين"
+    ],
+    "weaknesses": [
+     "إصدارات ألفا لميزة العزل"
+    ],
+    "gaps": [
+     "harness برمجة جاهز؛ تبني فوقه"
+    ],
+    "role": "خيار لبناء وكلاء القنوات المستقلين.",
+    "pricing": "الحزمة مجانية؛ وتدفع استخدام النماذج"
+   }
   },
   {
    "id": "copilot-sdk",
@@ -508,7 +704,7 @@
     "Preview"
    ],
    "gaps": [
-    "—"
+    "Model choice beyond Copilot"
    ],
    "fit": {
     "verdict": "watch",
@@ -534,7 +730,25 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "runtime"
+   "category": "runtime",
+   "ar": {
+    "summary": "حزمة لتضمين حلقة وكيل Copilot CLI في تطبيقاتك (Node وPython وGo و‎.NET).",
+    "how": "تتصل بـ Copilot CLI عبر JSON-RPC.",
+    "features": [
+     "حزمة متعددة اللغات"
+    ],
+    "strengths": [
+     "وصول إلى harness الخاص بـ Copilot"
+    ],
+    "weaknesses": [
+     "معاينة"
+    ],
+    "gaps": [
+     "اختيار نماذج خارج Copilot"
+    ],
+    "role": "هدف لموصّل إن استخدمت الفرق Copilot.",
+    "pricing": "خطة Copilot"
+   }
   },
   {
    "id": "deepseek-harness",
@@ -557,7 +771,7 @@
     "Alpha"
    ],
    "gaps": [
-    "—"
+    "Maturity and documentation"
    ],
    "fit": {
     "verdict": "watch",
@@ -583,7 +797,25 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "runtime"
+   "category": "runtime",
+   "ar": {
+    "summary": "harness مفتوح لوكيل البرمجة من DeepSeek (إصدار ألفا)، مضبوط لنماذجها.",
+    "how": "حلقة وكيل في الطرفية.",
+    "features": [
+     "harness مفتوح"
+    ],
+    "strengths": [
+     "مسار رخيص بنماذج مفتوحة الأوزان"
+    ],
+    "weaknesses": [
+     "إصدار ألفا"
+    ],
+    "gaps": [
+     "النضج والتوثيق"
+    ],
+    "role": "منافس محتمل منخفض التكلفة.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "docker-agent",
@@ -608,7 +840,7 @@
     "General agents, not SDLC"
    ],
    "gaps": [
-    "—"
+    "Coding workflow and evaluation"
    ],
    "fit": {
     "verdict": "inspire",
@@ -634,7 +866,27 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "runtime"
+   "category": "runtime",
+   "ar": {
+    "summary": "عرّف فرقًا من عدة وكلاء في ملف YAML وشغّلها بـ Docker؛ ويمكن للوكلاء استخدام أدوات MCP من كتالوج Docker.",
+    "how": "يصرّح ملف YAML بالوكلاء والنماذج والأدوات والوكلاء الفرعيين؛ ثم `docker agent run`.",
+    "features": [
+     "وكلاء بـ YAML",
+     "كتالوج MCP",
+     "تغليف Docker"
+    ],
+    "strengths": [
+     "الإعداد بـ YAML أولًا"
+    ],
+    "weaknesses": [
+     "وكلاء عامون لا دورة تطوير"
+    ],
+    "gaps": [
+     "سير عمل البرمجة والتقييم"
+    ],
+    "role": "مرجع لمخطط YAML لتعريف وكلاء كل فريق.",
+    "pricing": "مجاني"
+   }
   },
   {
    "id": "pydantic-ai-harness",
@@ -658,7 +910,7 @@
     "New"
    ],
    "gaps": [
-    "—"
+    "Maturity and community"
    ],
    "fit": {
     "verdict": "watch",
@@ -684,7 +936,26 @@
    ],
    "tier": "brief",
    "status": "active",
-   "category": "runtime"
+   "category": "runtime",
+   "ar": {
+    "summary": "harness لوكيل البرمجة مبني على Pydantic AI، مع مراقبة عبر Logfire.",
+    "how": "إطار وكلاء بأنواع بيانات صارمة مع أدوات.",
+    "features": [
+     "أدوات بأنواع صارمة",
+     "تتبّع عبر Logfire"
+    ],
+    "strengths": [
+     "صارم الأنواع وقابل للمراقبة"
+    ],
+    "weaknesses": [
+     "حديث"
+    ],
+    "gaps": [
+     "النضج والمجتمع"
+    ],
+    "role": "مرجع.",
+    "pricing": "مجاني"
+   }
   }
  ]
 }

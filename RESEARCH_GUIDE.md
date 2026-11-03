@@ -4,8 +4,9 @@ Marsad's research hub (`/research`) serves the three AI Champs tracks. The daily
 Goal: **never reinvent the wheel.** Anything that already does part of what a track needs must show up here,
 with an honest verdict, before Azm builds it.
 
-All research content is written in **English** (it is shared with the wider team and exported to Confluence).
-UI labels are bilingual; Arabic UI text is Modern Standard Arabic. Never mention private people, internal
+All research content is **bilingual**: English at the top level and an `ar` block next to it, in Modern
+Standard Arabic (never a dialect). Lists in `ar` must have the same number of items, in the same order, as the
+English lists. Readers are team leads and managers: write plainly, explain what a tool is for before how it works. Never mention private people, internal
 projects beyond the track names, or confidential details. squad-kit and azm-harness may be named.
 
 ## Files
@@ -15,7 +16,8 @@ projects beyond the track names, or confidential details. squad-kit and azm-harn
 | `research/tracks.json` | Tracks: question, scope, assumptions, categories, criteria (weights), verdicts, watch keywords. `status: active` or `planned`. |
 | `research/<track>/tools/<category>.json` | Dossiers, one file per category. |
 | `research/<track>/articles.json` | Articles, papers, case studies, lists. |
-| `research/<track>/synthesis.json` | Bottom line, prior art, adopt-vs-build architecture, build list, phases, metrics, risks, decisions. |
+| `research/<track>/blueprint.json` | **The big picture**: goal, short answer, the run flow, and one block per need (why we need it, what we do, decision, pick, alternatives, side-by-side comparison tables, and for sandboxes the three deployment modes: on each developer's machine, on Azm servers, paid managed service). Every text is `{ "en", "ar" }`. |
+| `research/<track>/synthesis.json` | Plan and decisions: bottom line, prior art, layers, build list, phases, metrics, risks, decisions; `ar` holds the Arabic version. |
 | `research/<track>/index.json` | Every project found on the awesome lists (light entries). |
 | `config/watch.json` | Repos/lists/topics the morning collector watches; entries with `"track"` feed the track's Radar tab. |
 
@@ -32,9 +34,18 @@ projects beyond the track names, or confidential details. squad-kit and azm-harn
   "features": [], "strengths": [], "weaknesses": [], "gaps": ["what it lacks for Azm"],
   "fit": { "verdict": "adopt | adopt-part | benchmark | inspire | watch | avoid", "role": "its role for Azm, one or two sentences" },
   "scores": { "<criterion id>": 1-5 },
-  "links": [["Label", "https://..."]], "sources": ["https://..."]
+  "links": [["Label", "https://..."]], "sources": ["https://..."],
+  "ar": { "summary": "", "how": "", "features": [], "strengths": [], "weaknesses": [], "gaps": [], "role": "", "pricing": "" }
 }
 ```
+
+Articles need `ar.summary` (and `ar.why` when `why` is set). Index items need `ar.summary` and `ar.group`.
+
+## Keeping the big picture current
+
+- A new tool that fits a block goes into that block's `alternatives` (or `pick` if it beats the current pick),
+  and into the comparison table if it is a serious option (add a value for every row, in both languages).
+- If a pick changes, say why in the block's `plan`, and update `synthesis.json`.
 
 - `deep` dossiers need ≥4 features, ≥3 strengths, ≥2 weaknesses, ≥1 gap and ≥2 sources; read the README
   (and docs/blog) before writing. `brief` needs ≥1 of each list.
@@ -52,11 +63,12 @@ projects beyond the track names, or confidential details. squad-kit and azm-harn
 4. **Prior-art alert**: if something new overlaps what Azm plans to build (see `synthesis.json` →
    `architecture` rows with `decision: "build"` and `buildList`), add it as a dossier, add it to
    `synthesis.priorArt`, and adjust the recommendation if needed. Mention it first in the commit message.
-5. Add useful articles to `articles.json` (`must` only for things that change decisions; include `why`).
-6. Add newly found projects to `index.json`; give the important ones a dossier.
-7. Update `checked` dates in every file you touched.
-8. Run `npm run validate:research` and fix every error, then `npm run build`.
-9. Commit as `research: <track> — <short summary>` and push to main.
+5. Update `blueprint.json` (see above) so the big picture always reflects the newest options.
+6. Add useful articles to `articles.json` (`must` only for things that change decisions; include `why`).
+7. Add newly found projects to `index.json`; give the important ones a dossier.
+8. Update `checked` dates in every file you touched.
+9. Run `npm run validate:research` and fix every error, then `npm run build`.
+10. Commit as `research: <track> — <short summary>` and push to main.
 
 Planned tracks (`status: "planned"`) are filled the same way when they become active: categories, criteria,
 dossiers, articles, synthesis.

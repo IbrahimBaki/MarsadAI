@@ -134,62 +134,6 @@ export function PlannedTrack({ track }: { track: Track }) {
   );
 }
 
-export function OverviewTab({ track, s, tools }: { track: Track; s: Synthesis; tools: Tool[] }) {
-  const { t } = useLocale();
-  const r = t.research;
-  return (
-    <div className="flex flex-col gap-5">
-      <section className="grid gap-6 rounded-[22px] border border-line bg-surface p-5 sm:p-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-10">
-        <div className="border-s-[3px] border-signal ps-5">
-          <h2 className="mb-3 text-[14px] font-semibold text-muted">{r.bottomLine}</h2>
-          <p dir="auto" className="font-display text-[21px] font-medium leading-[1.45] tracking-[-0.01em] sm:text-[24px]">
-            {s.headline}
-          </p>
-        </div>
-        <Bullets items={s.bottomLine} />
-      </section>
-
-      <Panel title={r.priorArt}>
-        <ul className="flex flex-col">
-          {s.priorArt.map((a) => {
-            const tool = tools.find((x) => x.id === a.ref);
-            return (
-              <li key={a.name} dir="ltr" className="grid gap-x-6 gap-y-1 border-t border-line py-4 first:border-t-0 first:pt-0 md:grid-cols-[220px_1fr_1fr]">
-                <span className="font-display text-[15.5px] font-semibold">
-                  {tool ? (
-                    <Link className="underline decoration-line decoration-2 underline-offset-4 hover:decoration-lens" href={`/research/${track.id}/${tool.id}`}>
-                      {a.name}
-                    </Link>
-                  ) : (
-                    a.name
-                  )}
-                </span>
-                <span className="text-[14px] leading-6 text-ink-2">
-                  <span className="me-1.5 font-semibold text-ok-ink">+</span>
-                  {a.takes}
-                </span>
-                <span className="text-[14px] leading-6 text-muted">
-                  <span className="me-1.5 font-semibold text-paid-ink">−</span>
-                  {a.lacks}
-                </span>
-              </li>
-            );
-          })}
-        </ul>
-      </Panel>
-
-      <div className="grid gap-5 lg:grid-cols-2">
-        <Panel title={r.scope}>
-          <Bullets items={track.scope} />
-        </Panel>
-        <Panel title={r.assumptions}>
-          <Bullets items={track.assumptions} />
-        </Panel>
-      </div>
-    </div>
-  );
-}
-
 export function PlanTab({ s }: { s: Synthesis }) {
   const { t } = useLocale();
   const r = t.research;
@@ -500,8 +444,8 @@ export function RadarTab({ track }: { track: Track }) {
 
 const IDX_PAGE = 60;
 
-export function IndexTab({ track, items, sources }: { track: Track; items: IndexItem[]; sources: { name: string; url: string }[] }) {
-  const { t, f } = useLocale();
+export function IndexTab({ track, items, sources, note }: { track: Track; items: IndexItem[]; sources: { name: string; url: string }[]; note: string }) {
+  const { t, f, locale } = useLocale();
   const r = t.research;
   const [q, setQ] = useState("");
   const [cat, setCat] = useState("all");
@@ -522,7 +466,7 @@ export function IndexTab({ track, items, sources }: { track: Track; items: Index
   return (
     <div className="flex flex-col gap-4">
       <p className="text-[14px] text-ink-2">
-        {r.indexNote}{" "}
+        {note}{" "}
         {sources.map((s, i) => (
           <a key={s.url} href={s.url} target="_blank" rel="noreferrer" className="text-accent-ink hover:underline" dir="ltr">
             {i ? " · " : ""}
@@ -536,7 +480,7 @@ export function IndexTab({ track, items, sources }: { track: Track; items: Index
           <option value="all">{r.allCategories} ({f.num(items.length)})</option>
           {cats.map(([id, n]) => (
             <option key={id} value={id}>
-              {(name(id)?.name.en ?? id)} ({f.num(n)})
+              {name(id)?.name[locale] ?? id} ({f.num(n)})
             </option>
           ))}
         </Select>

@@ -29,7 +29,11 @@
    "lists": [
     "Picrew/awesome-agent-harness",
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness مساعد شخصي محلي أولًا مع بوابة تحكم للجلسات والقنوات والأدوات والأحداث والمهارات ووكلاء فرعيين معزولين.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Superpowers",
@@ -46,7 +50,11 @@
    "summary": "Cross-agent software development methodology built from composable skills, mandatory workflows, worktrees, planning, TDD, review, and subagent execution.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "منهجية تطوير برمجيات عبر الوكلاء مبنية من مهارات قابلة للتركيب وسير عمل إلزامي وworktrees وتخطيط وتطوير بالاختبار ومراجعة وتنفيذ بوكلاء فرعيين.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "Matt Pocock Skills",
@@ -63,7 +71,11 @@
    "summary": "Composable engineering skills for Claude Code, Codex, and other coding agents, covering alignment, shared language, ADRs, specs, tests, and code review loops.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مهارات هندسية قابلة للتركيب لـ Claude Code وCodex وغيرهما، تغطي التوافق واللغة المشتركة وسجلات القرارات والمواصفات والاختبارات وحلقات مراجعة الشيفرة.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "ECC",
@@ -80,7 +92,11 @@
    "summary": "Cross-harness operator system combining skills, hooks, memory optimization, security scanning, and validation workflows for agentic work.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "نظام تشغيل عبر أدوات harness مختلفة يجمع المهارات والخطافات وتحسين الذاكرة والفحص الأمني وسير التحقق للعمل الوكيلي.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "Hermes Agent",
@@ -98,7 +114,11 @@
    "lists": [
     "Picrew/awesome-agent-harness",
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بيئة تشغيل وكيل تحسّن نفسها، مع ذاكرة وإنشاء مهارات ووكلاء فرعيين وأتمتة مجدولة وخلفيات طرفية قابلة للتبديل.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "DeepSeek Harness",
@@ -115,7 +135,11 @@
    "summary": "DeepSeek's official plugin-first agent harness with replaceable agent loops, model adapters, tool registries, durable session logs, sandbox and approval policies, and web or headless profiles.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness رسمي من DeepSeek قائم على الإضافات، بحلقات وكيل قابلة للاستبدال وموصّلات نماذج وسجلات أدوات وسجلات جلسات دائمة وسياسات عزل وموافقة، وملفات تعريف للويب أو بلا واجهة.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "OpenCode",
@@ -132,7 +156,11 @@
    "summary": "Open-source coding agent with built-in plan/build roles, subagents, LSP support, and a client-server runtime.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "وكيل برمجة مفتوح المصدر بأدوار تخطيط وبناء مدمجة ووكلاء فرعيين ودعم LSP وبيئة تشغيل بعميل وخادم.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Claw Code",
@@ -149,7 +177,11 @@
    "summary": "Public Rust implementation of the claw CLI agent harness with auth, sessions, parity checks, container workflows, and terminal execution guidance.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "تطبيق عام بلغة Rust لـ harness وكيل claw في سطر الأوامر، مع المصادقة والجلسات وفحوص التطابق وسير العمل بالحاويات وإرشادات التنفيذ في الطرفية.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Anthropic Agent Skills",
@@ -166,7 +198,11 @@
    "summary": "Official Agent Skills repository containing the skills specification, templates, and reference skill implementations for Claude.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "المستودع الرسمي لـ Agent Skills، ويضم مواصفة المهارات وقوالبها وتطبيقات مرجعية لمهارات Claude.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "Langflow",
@@ -183,7 +219,11 @@
    "summary": "Visual agent workflow platform with multi-agent orchestration, conversation management, stepwise testing, API and MCP deployment, and tracing integrations.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "منصة مرئية لسير عمل الوكلاء مع تنسيق عدة وكلاء وإدارة المحادثات والاختبار خطوة بخطوة والنشر كواجهة برمجية أو MCP وتكاملات للتتبّع.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "Claude Code",
@@ -200,7 +240,11 @@
    "summary": "Official terminal coding agent that understands codebases and executes editing, debugging, and Git workflows through natural language.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "وكيل البرمجة الرسمي في الطرفية الذي يفهم قواعد الشيفرة وينفذ التعديل وتتبع الأخطاء وسير git بلغة طبيعية.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "GitHub Spec Kit",
@@ -218,7 +262,11 @@
    "lists": [
     "Picrew/awesome-agent-harness",
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مجموعة أدوات للتطوير المبني على المواصفات لتوجيه تنفيذ الوكلاء بشكل حتمي.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "gstack",
@@ -235,7 +283,11 @@
    "summary": "Claude Code and cross-agent skill stack that turns product planning, architecture review, QA, security, release, and retrospectives into repeatable agent workflows.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مجموعة مهارات لـ Claude Code ووكلاء آخرين تحوّل تخطيط المنتج ومراجعة المعمار وضمان الجودة والأمان والإصدار والمراجعات الدورية إلى سير عمل متكرر.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "Codex CLI",
@@ -253,7 +305,11 @@
    "lists": [
     "Picrew/awesome-agent-harness",
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "وكيل برمجة أصلي في الطرفية يعمل محليًا ويتيح سير عمل عمليًا لمهام البرمجيات.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Graphify",
@@ -270,7 +326,11 @@
    "summary": "Cross-agent skill and CLI that turns code, docs, schemas, and media into a queryable knowledge graph with Codex and Claude Code hooks.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مهارة وأداة سطر أوامر تحوّل الشيفرة والوثائق والمخططات والوسائط إلى رسم معرفي قابل للاستعلام مع خطافات لـ Codex وClaude Code.",
+    "group": "هندسة السياق وحالة العمل"
+   }
   },
   {
    "name": "Browser Use",
@@ -287,7 +347,11 @@
    "summary": "Browser-agent framework that exposes websites to LLMs through browser state, tools, cloud browsers, and benchmarked task runs.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار لوكلاء المتصفح يعرض المواقع للنماذج عبر حالة المتصفح والأدوات والمتصفحات السحابية وتشغيلات مهام مقاسة.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "pi",
@@ -304,7 +368,11 @@
    "summary": "Agent harness monorepo combining a coding-agent CLI, shared runtime, and multi-provider LLM stack.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مستودع موحد لـ harness يجمع أداة وكيل برمجة في سطر الأوامر وبيئة تشغيل مشتركة وطبقة نماذج متعددة المزوّدين.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Gemini CLI",
@@ -322,7 +390,11 @@
    "lists": [
     "Picrew/awesome-agent-harness",
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "وكيل طرفية مفتوح المصدر بأدوات مدمجة ودعم MCP ونقاط حفظ وضوابط للعزل.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Addy's Agent Skills",
@@ -339,7 +411,11 @@
    "summary": "Production-grade engineering skills for coding agents that package lifecycle workflows, quality gates, reviews, testing, debugging, security, and release practices.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مهارات هندسية بمستوى الإنتاج لوكلاء البرمجة تجمع سير دورة الحياة وبوابات الجودة والمراجعات والاختبار وتتبع الأخطاء والأمان وممارسات الإصدار.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "OpenDesign",
@@ -356,7 +432,11 @@
    "summary": "Local-first design-agent workspace with declarative CLI runtime adapters, structured event streaming, session resume, cancellation, composable skills, and sandboxed artifact previews.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مساحة عمل لوكيل تصميم محلية أولًا مع موصّلات تشغيل تصريحية وتدفق أحداث منظم واستئناف الجلسات والإلغاء ومهارات قابلة للتركيب ومعاينات معزولة.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "claude-mem",
@@ -374,7 +454,11 @@
    "lists": [
     "Picrew/awesome-agent-harness",
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "طبقة ذاكرة على شكل إضافة تلتقط تاريخ الجلسات وتعيد حقن السياق المناسب في تشغيلات البرمجة اللاحقة.",
+    "group": "هندسة السياق وحالة العمل"
+   }
   },
   {
    "name": "MCP Servers",
@@ -391,7 +475,11 @@
    "summary": "Official collection of MCP server implementations across tools and domains.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مجموعة رسمية من تطبيقات خوادم MCP عبر أدوات ومجالات مختلفة.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "OpenHands",
@@ -408,7 +496,11 @@
    "summary": "Open-source AI software engineer focused on repo-level coding task execution.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مهندس برمجيات ذكي مفتوح المصدر يركز على تنفيذ مهام البرمجة على مستوى المستودع.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "DeerFlow",
@@ -426,7 +518,11 @@
    "lists": [
     "Picrew/awesome-agent-harness",
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness لوكيل خارق طويل المدى يدمج الذاكرة والأدوات والوكلاء الفرعيين وبيئات العزل.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "LobeHub",
@@ -443,7 +539,11 @@
    "summary": "Chief-agent-operator platform for scheduling, running, and reporting on multi-agent workstreams.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "منصة «وكيل رئيسي» لجدولة مسارات عمل عدة وكلاء وتشغيلها والتقرير عنها.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Paperclip",
@@ -461,7 +561,11 @@
    "lists": [
     "Picrew/awesome-agent-harness",
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "لوحة تحكم للوكلاء المُدارين بهياكل تنظيمية وتذاكر وميزانيات ونبضات حياة وسجلات تدقيق لتنسيق فرق الوكلاء.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "learn-claude-code",
@@ -478,7 +582,11 @@
    "summary": "Hands-on harness tutorial for building Claude Code-like systems from scratch.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "درس عملي لبناء أنظمة شبيهة بـ Claude Code من الصفر.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Orca",
@@ -495,7 +603,11 @@
    "summary": "Cross-agent desktop and mobile control plane for running CLI coding agents in isolated worktrees, monitoring their state, reviewing changes, and steering remote or local sessions.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "لوحة تحكم مكتبية ومحمولة لتشغيل وكلاء البرمجة في worktrees معزولة ومراقبة حالتهم ومراجعة التغييرات وتوجيه الجلسات البعيدة أو المحلية.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "Headroom",
@@ -512,7 +624,11 @@
    "summary": "Context-compression layer for agent tool outputs, logs, files, RAG chunks, and conversations, available as a library, proxy, agent wrapper, and MCP server.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "طبقة ضغط للسياق لمخرجات أدوات الوكلاء والسجلات والملفات ومقاطع RAG والمحادثات، تتوفر كمكتبة ووسيط وغلاف وكيل وخادم MCP.",
+    "group": "هندسة السياق وحالة العمل"
+   }
   },
   {
    "name": "Ruflo",
@@ -529,7 +645,11 @@
    "summary": "Multi-agent orchestration platform for Claude Code with swarms, persistent memory, federation, plugins, and MCP hooks.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "منصة تنسيق عدة وكلاء لـ Claude Code بأسراب وذاكرة دائمة واتحاد وإضافات وخطافات MCP.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "Daytona",
@@ -546,7 +666,11 @@
    "summary": "Secure and elastic sandbox infrastructure for running AI-generated code with file, Git, LSP, and execution APIs.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بنية عزل آمنة ومرنة لتشغيل الشيفرة المولّدة بالذكاء الاصطناعي، بواجهات للملفات وgit وLSP والتنفيذ.",
+    "group": "بيئات التنفيذ والعزل"
+   }
   },
   {
    "name": "CodeGraph",
@@ -563,7 +687,11 @@
    "summary": "Local code knowledge-graph MCP server and installer that wires semantic code intelligence into Claude Code, Codex, Gemini, Cursor, OpenCode, and other agents.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "خادم MCP محلي لرسم معرفي للشيفرة مع مثبّت يربط فهم الشيفرة الدلالي بـ Claude Code وCodex وGemini وCursor وOpenCode وغيرها.",
+    "group": "هندسة السياق وحالة العمل"
+   }
   },
   {
    "name": "oh-my-openagent",
@@ -580,7 +708,11 @@
    "summary": "Multi-harness agent OS for OpenCode, Codex, Claude Code, and other coding agents with team-mode orchestration, background agents, MCPs, and skills.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "نظام تشغيل للوكلاء عبر أدوات harness متعددة (OpenCode وCodex وClaude Code وغيرها) بتنسيق وضع الفريق ووكلاء خلفية وMCP ومهارات.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "Cline",
@@ -597,7 +729,11 @@
    "summary": "Open-source coding agent spanning IDE, terminal, SDK, and kanban surfaces with shared approvals, MCP, checkpoints, and agent teams.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "وكيل برمجة مفتوح المصدر عبر بيئة التطوير والطرفية وSDK ولوحة كانبان، بموافقات مشتركة وMCP ونقاط حفظ وفرق وكلاء.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "OmniRoute",
@@ -614,7 +750,11 @@
    "summary": "Local-first AI gateway for coding agents with quota-aware routing, provider fallback, credential pools, circuit breakers, usage controls, compression, MCP/A2A interfaces, and guardrails.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بوابة ذكاء اصطناعي محلية أولًا لوكلاء البرمجة، بتوجيه يراعي الحصص وبدائل للمزوّدين ومجمّعات اعتمادات وقواطع دوائر وضوابط استخدام وضغط وواجهات MCP/A2A وحمايات.",
+    "group": "الحمايات والأمان والحوكمة"
+   }
   },
   {
    "name": "Open Interpreter",
@@ -631,7 +771,11 @@
    "summary": "Terminal coding agent with selectable harness emulation, native sandboxing, provider switching, skills, hooks, permissions, MCP, and AGENTS.md support.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "وكيل برمجة في الطرفية بمحاكاة harness قابلة للاختيار وعزل أصلي وتبديل المزوّدين ومهارات وخطافات وصلاحيات وMCP ودعم AGENTS.md.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Mem0",
@@ -648,7 +792,11 @@
    "summary": "Universal memory layer for AI agents with user, session, and agent state, hybrid retrieval, SDKs, and self-hosted deployment.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "طبقة ذاكرة عامة لوكلاء الذكاء الاصطناعي بحالة المستخدم والجلسة والوكيل واسترجاع هجين وحزم ونشر مستضاف ذاتيًا.",
+    "group": "هندسة السياق وحالة العمل"
+   }
   },
   {
    "name": "AutoGen",
@@ -665,7 +813,11 @@
    "summary": "Programming framework for agentic AI with multi-agent interaction and orchestration.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار برمجي للذكاء الاصطناعي الوكيلي مع تفاعل عدة وكلاء وتنسيقهم.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "LiteLLM",
@@ -682,7 +834,11 @@
    "summary": "Unified LLM gateway/proxy with cost tracking, load balancing, and guardrails.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بوابة/وسيط موحد للنماذج مع تتبع التكلفة وموازنة الحمل والحمايات.",
+    "group": "الحمايات والأمان والحوكمة"
+   }
   },
   {
    "name": "MemPalace",
@@ -699,7 +855,11 @@
    "summary": "Local-first verbatim memory layer with scoped semantic retrieval, pluggable storage backends, conversation mining, MCP integration, and reproducible LongMemEval results.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "طبقة ذاكرة حرفية محلية أولًا مع استرجاع دلالي محصور وخلفيات تخزين قابلة للتبديل واستخراج من المحادثات وتكامل MCP ونتائج LongMemEval قابلة للتكرار.",
+    "group": "هندسة السياق وحالة العمل"
+   }
   },
   {
    "name": "CrewAI",
@@ -716,7 +876,11 @@
    "summary": "Multi-agent automation framework with production Flows, autonomous Crews, event-driven control, tracing, guardrails, memory, and human review hooks.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار أتمتة بعدة وكلاء مع تدفقات إنتاجية وفرق مستقلة وتحكم بالأحداث وتتبّع وحمايات وذاكرة وخطافات مراجعة بشرية.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "OpenManus",
@@ -733,7 +897,11 @@
    "summary": "Open foundation for broad autonomous agent workflows with coding-heavy use cases.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "أساس مفتوح لسير عمل وكلاء مستقلين واسع، مع حالات استخدام يغلب عليها البرمجة.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "goose",
@@ -750,7 +918,11 @@
    "summary": "Linux Foundation AAIF open-source AI agent spanning desktop, CLI, and embeddable API with provider adapters, ACP access, and MCP extensions.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "وكيل ذكاء اصطناعي مفتوح المصدر تحت مؤسسة AAIF التابعة لـ Linux Foundation، عبر سطح المكتب وسطر الأوامر وواجهة قابلة للتضمين، بموصّلات مزوّدين ووصول ACP وإضافات MCP.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Chrome DevTools MCP",
@@ -767,7 +939,11 @@
    "summary": "Official MCP server that gives coding agents Chrome DevTools access for reliable browser automation, debugging, and performance analysis.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "خادم MCP رسمي يمنح وكلاء البرمجة وصولًا إلى أدوات مطوري Chrome لأتمتة المتصفح وتتبع الأخطاء وتحليل الأداء بموثوقية.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "Multica",
@@ -785,7 +961,11 @@
    "lists": [
     "Picrew/awesome-agent-harness",
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "منصة وكلاء مُدارين تُسند التذاكر لوكلاء البرمجة وتوجّه التنفيذ عبر بيئات تشغيل وتراكم مهارات قابلة لإعادة الاستخدام.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "CLI-Anything",
@@ -802,7 +982,11 @@
    "summary": "CLI agent system that unifies command-line tool usage in agent loops.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "نظام وكيل في سطر الأوامر يوحّد استخدام أدوات الطرفية داخل حلقات الوكيل.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "aider",
@@ -819,7 +1003,11 @@
    "summary": "Terminal coding assistant with repo mapping, git-aware edits, and built-in lint/test feedback loops.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مساعد برمجة في الطرفية مع خريطة للمستودع وتعديلات تعي git وحلقات تغذية راجعة مدمجة لفحص الأسلوب والاختبارات.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "nanobot",
@@ -836,7 +1024,11 @@
    "summary": "Ultra-lightweight agent runtime with WebUI, chat channels, tools, memory, MCP, model routing, deployment, and long-running goal support.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بيئة تشغيل وكيل خفيفة جدًا بواجهة ويب وقنوات محادثة وأدوات وذاكرة وMCP وتوجيه نماذج ونشر ودعم للأهداف طويلة المدى.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "CowAgent",
@@ -853,7 +1045,11 @@
    "summary": "Reference agent harness implementation with planning, memory, knowledge, skills, tools, MCP integration, schedulers, browser automation, and multi-channel delivery.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "تطبيق مرجعي لـ harness وكيل بالتخطيط والذاكرة والمعرفة والمهارات والأدوات وتكامل MCP والمجدولات وأتمتة المتصفح والتسليم عبر قنوات متعددة.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "AAS Core",
@@ -870,7 +1066,11 @@
    "summary": "Local agent-first control plane for discovering, selecting, validating, and planning reproducible skill stacks through a read-only MCP interface, manifests, plugins, and host-specific installers.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "لوحة تحكم محلية للوكلاء لاكتشاف حزم المهارات واختيارها والتحقق منها وتخطيطها بشكل قابل للتكرار عبر واجهة MCP للقراءة فقط وملفات تعريف وإضافات ومثبّتات لكل بيئة.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "Kong",
@@ -887,7 +1087,11 @@
    "summary": "API and AI gateway infrastructure useful for policy enforcement in agent systems.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بنية بوابة للواجهات البرمجية والذكاء الاصطناعي مفيدة لفرض السياسات في أنظمة الوكلاء.",
+    "group": "الحمايات والأمان والحوكمة"
+   }
   },
   {
    "name": "agent-browser",
@@ -904,7 +1108,11 @@
    "summary": "Native browser automation CLI for AI agents with accessibility snapshots, semantic locators, screenshots, streaming, and batch execution.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "أداة أتمتة متصفح أصلية لوكلاء الذكاء الاصطناعي بلقطات إتاحة ومحددات دلالية ولقطات شاشة وبث وتنفيذ دفعي.",
+    "group": "بيئات التنفيذ والعزل"
+   }
   },
   {
    "name": "Agno",
@@ -921,7 +1129,11 @@
    "summary": "Agent software runtime focused on running and managing agentic systems at scale.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بيئة تشغيل برمجية للوكلاء تركز على تشغيل الأنظمة الوكيلية وإدارتها على نطاق واسع.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "LangGraph",
@@ -939,7 +1151,11 @@
    "lists": [
     "Picrew/awesome-agent-harness",
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بيئة تشغيل قائمة على الرسوم لوكلاء مرنين ذوي حالة وتحكم حتمي في سير العمل.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "CodeWhale",
@@ -956,7 +1172,11 @@
    "summary": "Local-first coding-agent harness with explicit authority ordering, evidence loops, approval-gated tools, side-git snapshots, rollback, subagents, and runtime APIs.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness وكيل برمجة محلي أولًا بترتيب صريح للصلاحيات وحلقات أدلة وأدوات مشروطة بالموافقة ولقطات git جانبية وتراجع ووكلاء فرعيين وواجهات تشغيل.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "OpenHuman",
@@ -973,7 +1193,11 @@
    "summary": "Local-first agent harness combining persistent memory, checkpointed graph orchestration, approval-gated workflows, failure circuit breakers, and replayable event journals.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness وكيل محلي أولًا يجمع ذاكرة دائمة وتنسيق رسوم بنقاط حفظ وسير عمل مشروط بالموافقة وقواطع للأعطال وسجلات أحداث قابلة لإعادة التشغيل.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Claude Code Plugins: Orchestration and Automation",
@@ -990,7 +1214,11 @@
    "summary": "Production-ready Claude Code plugin marketplace bundling agents, skills, tools, and multi-agent workflow orchestrators.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "متجر إضافات Claude Code جاهز للإنتاج يجمع وكلاء ومهارات وأدوات ومنسقي سير عمل متعدد الوكلاء.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Herdr",
@@ -1007,7 +1235,11 @@
    "summary": "Persistent terminal runtime for coding agents with reconnectable sessions, blocked and idle detection, agent-driven orchestration APIs, and plugin-extensible workflows.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بيئة طرفية دائمة لوكلاء البرمجة بجلسات قابلة لإعادة الاتصال وكشف التوقف والخمول وواجهات تنسيق يقودها الوكيل وسير عمل قابل للتوسعة بالإضافات.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "oh-my-claudecode",
@@ -1025,7 +1257,11 @@
    "lists": [
     "Picrew/awesome-agent-harness",
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "طبقة تنسيق تقدّم الفريق لـ Claude Code بتنفيذ متعدد الوكلاء على مراحل وإعداد يعي worktree ونواتج جلسات دائمة.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Awesome Copilot",
@@ -1042,7 +1278,11 @@
    "summary": "GitHub-managed collection of Copilot agents, instructions, skills, hooks, workflows, plugins, tools, and machine-readable listings.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مجموعة تديرها GitHub لوكلاء Copilot وتعليماته ومهاراته وخطافاته وسير عمله وإضافاته وأدواته وقوائم مقروءة آليًا.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "Agent TARS",
@@ -1059,7 +1299,11 @@
    "summary": "Multimodal computer and browser agent stack with CLI/Web UI, hybrid GUI/DOM browser control, MCP tools, event streams, and sandbox support.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "حزمة وكيل حاسوب ومتصفح متعدد الوسائط بسطر أوامر وواجهة ويب وتحكم هجين في المتصفح وأدوات MCP وتدفقات أحداث ودعم للعزل.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "OpenCodeReview",
@@ -1076,7 +1320,11 @@
    "summary": "Production-tested code-review agent harness combining deterministic file coverage and rule selection with isolated subagents, tool-driven context retrieval, comment verification, sessions, CI, and tracing.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness وكيل لمراجعة الشيفرة مجرّب في الإنتاج، يجمع تغطية حتمية للملفات واختيار القواعد مع وكلاء فرعيين معزولين واسترجاع سياق بالأدوات والتحقق من التعليقات والجلسات وCI والتتبّع.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "OpenViking",
@@ -1093,7 +1341,11 @@
    "summary": "Context database for agents that unifies memory, resources, and skills in a virtual filesystem with tiered loading, recursive retrieval, observable trajectories, and session-to-memory extraction.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "قاعدة بيانات سياق للوكلاء توحّد الذاكرة والموارد والمهارات في نظام ملفات افتراضي بتحميل متدرج واسترجاع متكرر ومسارات قابلة للمراقبة واستخراج الذاكرة من الجلسات.",
+    "group": "هندسة السياق وحالة العمل"
+   }
   },
   {
    "name": "Playwright MCP",
@@ -1110,7 +1362,11 @@
    "summary": "Official Playwright MCP server giving agents structured accessibility snapshots and deterministic browser automation tools.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "خادم MCP الرسمي لـ Playwright يمنح الوكلاء لقطات إتاحة منظمة وأدوات أتمتة متصفح حتمية.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "Claude Code Router",
@@ -1127,7 +1383,11 @@
    "summary": "Local model gateway and control plane for coding agents with provider profiles, conditional routing, credential pools, retries, fallbacks, tool extensions, quotas, and request traces.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بوابة نماذج محلية ولوحة تحكم لوكلاء البرمجة بملفات مزوّدين وتوجيه شرطي ومجمّعات اعتمادات وإعادة محاولات وبدائل وإضافات أدوات وحصص وتتبّع للطلبات.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "Claude Code Plugins Directory",
@@ -1144,7 +1404,11 @@
    "summary": "Anthropic-managed Claude Code plugin marketplace defining plugin manifests, MCP configuration, commands, agents, skills, and submission quality gates.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "متجر إضافات Claude Code الذي تديره Anthropic، يحدد ملفات تعريف الإضافات وإعداد MCP والأوامر والوكلاء والمهارات وبوابات جودة القبول.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "DeepSeek-Reasonix",
@@ -1161,7 +1425,11 @@
    "summary": "DeepSeek-native coding-agent harness optimized for prefix-cache stability, with separate planner and executor sessions, cache-aware compaction, MCP plugins, permissions, workspace sandboxing, and per-turn checkpoints.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness وكيل برمجة أصلي لنماذج DeepSeek محسّن لثبات التخزين المؤقت للبادئة، بجلسات منفصلة للتخطيط والتنفيذ وضغط يعي التخزين المؤقت وإضافات MCP وصلاحيات وعزل لمساحة العمل ونقاط حفظ لكل دورة.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Langfuse",
@@ -1178,7 +1446,11 @@
    "summary": "Open-source LLM engineering platform for traces, metrics, prompts, and evals.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "منصة هندسة نماذج لغوية مفتوحة المصدر للتتبّع والمقاييس والتعليمات والتقييمات.",
+    "group": "المراقبة وعمليات الموثوقية"
+   }
   },
   {
    "name": "ChatDev",
@@ -1195,7 +1467,11 @@
    "summary": "Zero-code multi-agent orchestration platform for defining agents, workflows, and tasks, evolved from a virtual software-company harness.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "منصة تنسيق عدة وكلاء بلا شيفرة لتعريف الوكلاء وسير العمل والمهام، تطورت من harness لشركة برمجيات افتراضية.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "Buzz",
@@ -1212,7 +1488,11 @@
    "summary": "Self-hostable human-agent workspace built on a signed event log, with scoped identities, audit trails, agent-first CLI and ACP bridges, workflows, Git events, search, and approvals.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مساحة عمل مستضافة ذاتيًا تجمع البشر والوكلاء على سجل أحداث موقّع، بهويات محصورة وسجلات تدقيق وجسور سطر أوامر وACP وسير عمل وأحداث git وبحث وموافقات.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "OpenAI Codex Plugin for Claude Code",
@@ -1229,7 +1509,11 @@
    "summary": "Official Claude Code plugin that exposes Codex review, adversarial review, delegation, status, result, and cancel commands inside another coding-agent harness.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إضافة رسمية لـ Claude Code تتيح أوامر Codex للمراجعة والمراجعة العدائية والتفويض والحالة والنتيجة والإلغاء داخل harness وكيل آخر.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "oh-my-codex",
@@ -1247,7 +1531,11 @@
    "lists": [
     "Picrew/awesome-agent-harness",
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "طبقة سير عمل لـ Codex CLI ببدء أقوى للجلسات وتدفقات معيارية من التخطيط حتى الإنجاز وحالة دائمة ومهارات وخطافات وإطلاق worktrees.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "GitHub MCP Server",
@@ -1264,7 +1552,11 @@
    "summary": "GitHub's official MCP server connecting agents to repositories, issues, pull requests, CI workflows, releases, and code analysis tools.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "خادم MCP الرسمي من GitHub يربط الوكلاء بالمستودعات والتذاكر وطلبات الدمج وسير CI والإصدارات وأدوات تحليل الشيفرة.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "AionUi",
@@ -1281,7 +1573,11 @@
    "summary": "Cross-platform cowork control plane with a built-in agent engine, external CLI-agent orchestration, team mode, per-agent approvals, remote channels, MCP management, and scheduled runs.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "لوحة تحكم للعمل المشترك عبر المنصات بمحرك وكيل مدمج وتنسيق وكلاء سطر أوامر خارجيين ووضع فريق وموافقات لكل وكيل وقنوات بعيدة وإدارة MCP وتشغيلات مجدولة.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "ZeroClaw",
@@ -1298,7 +1594,11 @@
    "summary": "Single-binary agent runtime with providers, channels, tools, memory, SOPs, approval gates, sandboxing, ACP, and tool receipts.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بيئة تشغيل وكيل في ملف تنفيذي واحد، بمزوّدين وقنوات وأدوات وذاكرة وإجراءات عمل قياسية وبوابات موافقة وعزل وACP وإيصالات للأدوات.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "oh-my-pi",
@@ -1315,7 +1615,11 @@
    "summary": "Terminal AI coding agent with edit safety, LSP integration, and subagent support.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "وكيل برمجة في الطرفية بأمان في التعديل وتكامل LSP ودعم وكلاء فرعيين.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "skills",
@@ -1332,7 +1636,11 @@
    "summary": "CLI for installing, using, finding, updating, and initializing Agent Skills across OpenCode, Claude Code, Codex, Cursor, and other coding agents.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "أداة سطر أوامر لتثبيت Agent Skills واستخدامها والبحث عنها وتحديثها وتهيئتها عبر OpenCode وClaude Code وCodex وCursor وغيرها.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "code-review-graph",
@@ -1349,7 +1657,11 @@
    "summary": "Local-first code intelligence graph that incrementally maps dependencies and exposes targeted review context, blast-radius analysis, and risk-scored CI gates through MCP and CLI.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "رسم محلي لفهم الشيفرة يربط الاعتماديات تدريجيًا ويتيح سياق مراجعة موجّهًا وتحليل نطاق الأثر وبوابات CI مقيّمة بالمخاطر عبر MCP وسطر الأوامر.",
+    "group": "هندسة السياق وحالة العمل"
+   }
   },
   {
    "name": "Cognee",
@@ -1366,7 +1678,11 @@
    "summary": "Persistent agent memory platform combining knowledge graphs, vector retrieval, session distillation, feedback, and MCP or SDK integration across runs.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "منصة ذاكرة دائمة للوكلاء تجمع الرسوم المعرفية والاسترجاع المتجهي وتقطير الجلسات والتغذية الراجعة وتكامل MCP أو SDK عبر التشغيلات.",
+    "group": "هندسة السياق وحالة العمل"
+   }
   },
   {
    "name": "Vercel Agent Skills",
@@ -1383,7 +1699,11 @@
    "summary": "Vercel's official Agent Skills collection packaging reusable instructions and scripts in the open Agent Skills format for coding-agent workflows.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مجموعة Vercel الرسمية من Agent Skills تجمع تعليمات وسكربتات قابلة لإعادة الاستخدام بالصيغة المفتوحة لسير عمل وكلاء البرمجة.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "NanoClaw",
@@ -1400,7 +1720,11 @@
    "summary": "Container-isolated Claude agent harness with channel routing, scheduled jobs, per-group memory, and small-codebase customization.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness لوكيل Claude معزول في حاويات مع توجيه للقنوات ومهام مجدولة وذاكرة لكل مجموعة وتخصيص سهل لقاعدة شيفرة صغيرة.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Serena",
@@ -1417,7 +1741,11 @@
    "summary": "MCP toolkit that gives coding agents IDE-like semantic retrieval, editing, refactoring, debugging, and memory tools.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مجموعة أدوات MCP تمنح وكلاء البرمجة أدوات شبيهة ببيئة التطوير للاسترجاع الدلالي والتعديل وإعادة الهيكلة وتتبع الأخطاء والذاكرة.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "deepagents",
@@ -1435,7 +1763,11 @@
    "lists": [
     "Picrew/awesome-agent-harness",
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness مفتوح المصدر للوكلاء طويلي التشغيل المستخدمين للأدوات، بأنماط التخطيط والوكلاء الفرعيين.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "OpenAI Agents SDK (Python)",
@@ -1452,7 +1784,11 @@
    "summary": "Lightweight framework for multi-agent workflows, handoffs, and production patterns.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار خفيف لسير عمل عدة وكلاء والتسليم بينهم وأنماط الإنتاج.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "agentmemory",
@@ -1469,7 +1805,11 @@
    "summary": "Persistent memory server for coding agents using hooks, MCP/REST integration, hybrid search, and shared session recall.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "خادم ذاكرة دائمة لوكلاء البرمجة يستخدم الخطافات وتكامل MCP/REST والبحث الهجين واستدعاء الجلسات المشتركة.",
+    "group": "هندسة السياق وحالة العمل"
+   }
   },
   {
    "name": "Semantic Kernel",
@@ -1486,7 +1826,11 @@
    "summary": "Enterprise-grade agentic application framework with orchestration and plugin patterns.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار بمستوى المؤسسات للتطبيقات الوكيلية بأنماط التنسيق والإضافات.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "Crush",
@@ -1503,7 +1847,11 @@
    "summary": "Terminal coding agent that wires project tools, code, workflows, sessions, LSP context, model switching, and MCP extensions into an LLM runtime.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "وكيل برمجة في الطرفية يربط أدوات المشروع والشيفرة وسير العمل والجلسات وسياق LSP وتبديل النماذج وإضافات MCP في بيئة تشغيل للنموذج.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Vibe Kanban",
@@ -1521,7 +1869,11 @@
    "lists": [
     "Picrew/awesome-agent-harness",
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "لوحة كانبان للتحكم في تخطيط عمل وكلاء البرمجة وتشغيله ومراجعته ودمجه في مساحات عمل معزولة.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "MLflow",
@@ -1538,7 +1890,11 @@
    "summary": "Broad AI engineering platform with monitoring and evaluation support for agents.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "منصة هندسة ذكاء اصطناعي واسعة مع دعم للمراقبة والتقييم للوكلاء.",
+    "group": "المراقبة وعمليات الموثوقية"
+   }
   },
   {
    "name": "DESIGN.md",
@@ -1555,7 +1911,11 @@
    "summary": "Format specification and CLI for giving coding agents persistent, machine-readable design tokens and human-readable design rationale.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مواصفة وأداة سطر أوامر تمنح وكلاء البرمجة رموز تصميم دائمة مقروءة آليًا ومبررات تصميم مقروءة للبشر.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "Qwen Code",
@@ -1572,7 +1932,11 @@
    "summary": "Terminal-native open-source coding agent tuned for practical dev loops.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "وكيل برمجة مفتوح المصدر أصلي في الطرفية، مضبوط لحلقات التطوير العملية.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "FastMCP",
@@ -1589,7 +1953,11 @@
    "summary": "Python framework for building MCP servers and clients with generated schemas, validation, documentation, production deployment patterns, and governance hooks.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار Python لبناء خوادم وعملاء MCP بمخططات مولّدة وتحقق وتوثيق وأنماط نشر إنتاجية وخطافات حوكمة.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "Kilo Code",
@@ -1606,7 +1974,11 @@
    "summary": "Open-source coding agent spanning VS Code, JetBrains, CLI, cloud agents, reviews, custom modes, browser and terminal control, MCP marketplace, and autonomous CI runs.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "وكيل برمجة مفتوح المصدر عبر VS Code وJetBrains وسطر الأوامر والوكلاء السحابيين والمراجعات والأوضاع المخصصة والتحكم في المتصفح والطرفية ومتجر MCP وتشغيلات CI المستقلة.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Beads",
@@ -1623,7 +1995,11 @@
    "summary": "Agent-optimized distributed issue tracker that stores long-horizon coding work as dependency-aware graph state with memory recall and multi-branch sync.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "أداة تذاكر موزعة محسّنة للوكلاء تحفظ عمل البرمجة طويل المدى كحالة رسم تعي الاعتماديات، مع استدعاء الذاكرة ومزامنة الفروع.",
+    "group": "هندسة السياق وحالة العمل"
+   }
   },
   {
    "name": "Symphony",
@@ -1641,7 +2017,11 @@
    "lists": [
     "Picrew/awesome-agent-harness",
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "طبقة تنسيق تنطلق من التذاكر وتحوّل عمل المشروع إلى تشغيلات تنفيذ مستقلة ومعزولة.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "cmux",
@@ -1658,7 +2038,11 @@
    "summary": "Native macOS terminal and browser workspace for AI coding agents with notifications, split panes, and scriptable control.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مساحة عمل أصلية في macOS تجمع الطرفية والمتصفح لوكلاء البرمجة، مع تنبيهات ولوحات مقسمة وتحكم بالسكربتات.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "TencentDB Agent Memory",
@@ -1675,7 +2059,11 @@
    "summary": "Local agent memory plugin combining symbolic short-term state, layered long-term memory, traceability, and OpenClaw/Hermes integrations.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إضافة ذاكرة محلية للوكلاء تجمع حالة قصيرة المدى رمزية وذاكرة طويلة المدى متعددة الطبقات وإمكانية التتبع وتكاملات OpenClaw وHermes.",
+    "group": "هندسة السياق وحالة العمل"
+   }
   },
   {
    "name": "planning-with-files",
@@ -1692,7 +2080,11 @@
    "summary": "Skill package for persistent file-based planning in coding-agent workflows.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "حزمة مهارات للتخطيط الدائم القائم على الملفات في سير عمل وكلاء البرمجة.",
+    "group": "هندسة السياق وحالة العمل"
+   }
   },
   {
    "name": "Grok Build",
@@ -1709,7 +2101,11 @@
    "summary": "Official Rust coding-agent harness and TUI with interactive, headless, and ACP modes plus MCP, skills, plugins, hooks, sandboxing, subagents, and long-running task support.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness رسمي بلغة Rust لوكيل البرمجة مع واجهة طرفية وأوضاع تفاعلية وبلا واجهة وACP، إضافة إلى MCP والمهارات والإضافات والخطافات والعزل والوكلاء الفرعيين ودعم المهام الطويلة.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Agent Skills Specification",
@@ -1726,7 +2122,11 @@
    "summary": "Open specification and documentation for packaging reusable agent capabilities, workflows, scripts, references, and assets behind progressive disclosure.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مواصفة مفتوحة وتوثيق لتغليف قدرات الوكلاء القابلة لإعادة الاستخدام وسير العمل والسكربتات والمراجع والأصول خلف إفصاح تدريجي.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "Promptfoo",
@@ -1743,7 +2143,11 @@
    "summary": "Config-driven prompt/agent/RAG testing, comparison, and red-team evaluation tool.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "أداة مبنية على الإعدادات لاختبار التعليمات والوكلاء وأنظمة RAG ومقارنتها وتقييمها هجوميًا.",
+    "group": "أدوات التقييم والمقاييس"
+   }
   },
   {
    "name": "Compound Engineering",
@@ -1761,7 +2165,11 @@
    "lists": [
     "Picrew/awesome-agent-harness",
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إضافة هندسية عبر الوكلاء تقنّن العصف الذهني والتخطيط والتنفيذ في worktrees والمراجعة وحلقات تراكم المعرفة.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "CUA",
@@ -1778,7 +2186,11 @@
    "summary": "Infrastructure stack for computer-use agents with sandbox, SDK, and benchmark support.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "حزمة بنية تحتية لوكلاء استخدام الحاسوب مع عزل وحزمة SDK ودعم للمقاييس.",
+    "group": "بيئات التنفيذ والعزل"
+   }
   },
   {
    "name": "AGENTS.md",
@@ -1795,7 +2207,11 @@
    "summary": "Open format for repository-local instructions that coding agents can follow.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "صيغة مفتوحة لتعليمات محلية في المستودع يتبعها وكلاء البرمجة.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "MCP Python SDK",
@@ -1812,7 +2228,11 @@
    "summary": "Official Python implementation of MCP for building clients and servers that expose tools, resources, prompts, protocol lifecycle events, and standard transports.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "تطبيق Python الرسمي لـ MCP لبناء عملاء وخوادم تتيح الأدوات والموارد والتعليمات وأحداث دورة البروتوكول ووسائط النقل المعيارية.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "Hindsight",
@@ -1830,7 +2250,11 @@
    "lists": [
     "Picrew/awesome-agent-harness",
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "نظام ذاكرة إنتاجي للوكلاء بعمليات الحفظ والاستدعاء والتأمل، وبنوك ذاكرة معزولة وملاحظات مدعومة بالأدلة وتكاملات لوكلاء البرمجة وMCP وسياسات دفاع عن الذاكرة.",
+    "group": "هندسة السياق وحالة العمل"
+   }
   },
   {
    "name": "SuperClaude Framework",
@@ -1847,7 +2271,11 @@
    "summary": "Configuration framework adding commands, personas, and method templates to coding agents.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار إعدادات يضيف أوامر وشخصيات وقوالب منهجية لوكلاء البرمجة.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Context Mode",
@@ -1864,7 +2292,11 @@
    "summary": "MCP context optimization server that sandboxes tool output, indexes session events, and restores continuity across agent compactions.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "خادم MCP لتحسين السياق يعزل مخرجات الأدوات ويفهرس أحداث الجلسة ويستعيد الاستمرارية بعد ضغط سياق الوكيل.",
+    "group": "هندسة السياق وحالة العمل"
+   }
   },
   {
    "name": "Archon",
@@ -1882,7 +2314,11 @@
    "lists": [
     "Picrew/awesome-agent-harness",
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "محرك سير عمل لوكلاء البرمجة بمراحل معرّفة بـ YAML وworktrees معزولة وبوابات تحقق.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "Go Micro",
@@ -1899,7 +2335,11 @@
    "summary": "Go agent harness and service framework combining model loops, durable memory, tools, planning, delegation, guardrails, service discovery, MCP, A2A, and durable flows.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness وكلاء وإطار خدمات بلغة Go يجمع حلقات النموذج والذاكرة الدائمة والأدوات والتخطيط والتفويض والحمايات واكتشاف الخدمات وMCP وA2A والتدفقات الدائمة.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "Opik",
@@ -1916,7 +2356,11 @@
    "summary": "End-to-end debug/eval/monitoring stack for LLM apps and agent workflows.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "حزمة متكاملة لتتبع الأخطاء والتقييم والمراقبة لتطبيقات النماذج اللغوية وسير عمل الوكلاء.",
+    "group": "المراقبة وعمليات الموثوقية"
+   }
   },
   {
    "name": "Prime Agent",
@@ -1933,7 +2377,11 @@
    "summary": "Long-running coding and research harness with a persistent Python REPL, recursive subagents, resumable daemon sessions, durable harness state, and budgeted autonomous quality gates.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness للبرمجة والبحث طويل التشغيل مع REPL دائم بـ Python ووكلاء فرعيين متداخلين وجلسات خلفية قابلة للاستئناف وحالة harness دائمة وبوابات جودة مستقلة بميزانية.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Google ADK (Python)",
@@ -1950,7 +2398,11 @@
    "summary": "Code-first toolkit to build, evaluate, and deploy advanced AI agents.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مجموعة أدوات تبدأ بالشيفرة لبناء وكلاء ذكاء اصطناعي متقدمين وتقييمهم ونشرهم.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "SWE-agent",
@@ -1967,7 +2419,11 @@
    "summary": "Research-grade coding agent that resolves GitHub issues with explicit tooling loops.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "وكيل برمجة بمستوى بحثي يحل تذاكر GitHub بحلقات أدوات صريحة.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Google Agent Skills",
@@ -1984,7 +2440,11 @@
    "summary": "Official Google Agent Skills repository for Google products and technologies, including Agent Platform and Google Cloud workflows.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مستودع Google الرسمي لـ Agent Skills لمنتجات Google وتقنياتها، ومنها Agent Platform وسير عمل Google Cloud.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "PydanticAI",
@@ -2001,7 +2461,11 @@
    "summary": "Type-safe Python framework for agents with strong schema contracts and tooling.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار Python آمن الأنواع للوكلاء مع عقود مخططات قوية وأدوات.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "jcode",
@@ -2018,7 +2482,11 @@
    "summary": "Rust coding-agent harness built for multi-session workflows, customization, memory, and terminal performance.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness وكيل برمجة بلغة Rust مبني لسير العمل متعدد الجلسات والتخصيص والذاكرة وأداء الطرفية.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Devika",
@@ -2035,7 +2503,11 @@
    "summary": "Open-source coding assistant system for planning and implementing development tasks.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "نظام مساعد برمجة مفتوح المصدر لتخطيط مهام التطوير وتنفيذها.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "elizaOS",
@@ -2052,7 +2524,11 @@
    "summary": "Extensible agent runtime and operating system with CLI scaffolding, agent loop, plugins, memory/state primitives, dashboards, connectors, and benchmark suites.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بيئة تشغيل ونظام تشغيل قابل للتوسعة للوكلاء بتجهيز في سطر الأوامر وحلقة وكيل وإضافات وأساسيات للذاكرة والحالة ولوحات وموصّلات ومجموعات مقاييس.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "DeepEval",
@@ -2069,7 +2545,11 @@
    "summary": "LLM evaluation framework supporting agent and workflow quality testing.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار لتقييم النماذج اللغوية يدعم اختبار جودة الوكلاء وسير العمل.",
+    "group": "أدوات التقييم والمقاييس"
+   }
   },
   {
    "name": "Parlant",
@@ -2086,7 +2566,11 @@
    "summary": "Interaction-control harness for customer-facing agents focused on consistent, predictable, and governed LLM behavior.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness للتحكم في التفاعل لوكلاء خدمة العملاء يركز على سلوك متسق ومتوقع ومحكوم للنموذج.",
+    "group": "الحمايات والأمان والحوكمة"
+   }
   },
   {
    "name": "OpenFang",
@@ -2103,7 +2587,11 @@
    "summary": "Rust agent operating system with autonomous capability packages, manifests, guardrails, tools, memory, sandboxing, audit trails, and channel adapters.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "نظام تشغيل للوكلاء بلغة Rust بحزم قدرات مستقلة وملفات تعريف وحمايات وأدوات وذاكرة وعزل وسجلات تدقيق وموصّلات قنوات.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Gas Town",
@@ -2121,7 +2609,11 @@
    "lists": [
     "Picrew/awesome-agent-harness",
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مدير مساحات عمل متعددة الوكلاء لتنسيق وكلاء البرمجة مع تتبع دائم للعمل وخطافات مبنية على git وتسليمات وإشراف وقوائم دمج.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "Agent Skills for Context Engineering",
@@ -2138,7 +2630,11 @@
    "summary": "Large skill library oriented around context engineering and production agents.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مكتبة مهارات كبيرة موجهة لهندسة السياق والوكلاء الإنتاجيين.",
+    "group": "هندسة السياق وحالة العمل"
+   }
   },
   {
    "name": "SkillSpector",
@@ -2155,7 +2651,11 @@
    "summary": "Security scanner for AI agent skills with static and optional LLM analysis, vulnerability patterns, risk scoring, and CI-friendly report formats.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "فاحص أمني لمهارات الوكلاء بتحليل ثابت وتحليل اختياري بالنماذج وأنماط ثغرات وتقييم للمخاطر وصيغ تقارير مناسبة لـ CI.",
+    "group": "الحمايات والأمان والحوكمة"
+   }
   },
   {
    "name": "Paseo",
@@ -2172,7 +2672,11 @@
    "summary": "Multi-device coding-agent daemon and client stack for orchestrating local agents, parallel runs, and cross-provider workflows.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "خادم خلفي وعميل لوكلاء البرمجة عبر الأجهزة لتنسيق الوكلاء المحليين والتشغيلات المتوازية وسير العمل عبر المزوّدين.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Browser Harness",
@@ -2189,7 +2693,11 @@
    "summary": "Thin editable CDP harness that connects LLMs directly to real browsers and lets agents extend helpers in flight.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness رفيع قابل للتعديل عبر CDP يربط النماذج بالمتصفحات الحقيقية مباشرة ويتيح للوكلاء توسيع أدواتهم أثناء العمل.",
+    "group": "بيئات التنفيذ والعزل"
+   }
   },
   {
    "name": "CAMEL",
@@ -2206,7 +2714,11 @@
    "summary": "Multi-agent framework for large-scale agent systems with communication, stateful memory, environments, benchmarks, and coordination primitives.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار متعدد الوكلاء لأنظمة واسعة بالتواصل والذاكرة ذات الحالة والبيئات والمقاييس وأساسيات التنسيق.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "SkillOpt",
@@ -2223,7 +2735,11 @@
    "summary": "Microsoft optimizer that trains reusable natural-language agent skills through trajectory edits, validation gates, and deployable skill artifacts.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مُحسِّن من Microsoft يدرّب مهارات وكلاء قابلة لإعادة الاستخدام بلغة طبيعية عبر تعديل المسارات وبوابات التحقق ومخرجات مهارات قابلة للنشر.",
+    "group": "هندسة السياق وحالة العمل"
+   }
   },
   {
    "name": "Memori",
@@ -2240,7 +2756,11 @@
    "summary": "Agent memory layer with entity and process attribution, session capture, persistent recall, context injection, and SDK, MCP, OpenClaw, and Hermes integrations.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "طبقة ذاكرة للوكلاء بنسبة الكيانات والعمليات والتقاط الجلسات والاستدعاء الدائم وحقن السياق وتكاملات SDK وMCP وOpenClaw وHermes.",
+    "group": "هندسة السياق وحالة العمل"
+   }
   },
   {
    "name": "DeepCode",
@@ -2257,7 +2777,11 @@
    "summary": "Coding-agent harness with durable sessions, goal-driven loops, evidence-based completion, permission and sandbox controls, reusable skills, parallel agents, context compaction, and headless automation.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness وكيل برمجة بجلسات دائمة وحلقات موجهة بالأهداف وإنجاز مبني على الأدلة وضوابط للصلاحيات والعزل ومهارات قابلة لإعادة الاستخدام ووكلاء متوازين وضغط للسياق وأتمتة بلا واجهة.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "MCP Toolbox for Databases",
@@ -2274,7 +2798,11 @@
    "summary": "Google open-source MCP server and custom tools framework for connecting agents, IDEs, and applications to enterprise databases.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "خادم MCP مفتوح المصدر من Google وإطار أدوات مخصصة لربط الوكلاء وبيئات التطوير والتطبيقات بقواعد بيانات المؤسسات.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "RagaAI Catalyst",
@@ -2291,7 +2819,11 @@
    "summary": "Agent observability and monitoring framework with timeline and graph analytics.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار لمراقبة الوكلاء ومتابعتهم بتحليلات زمنية ورسومية.",
+    "group": "المراقبة وعمليات الموثوقية"
+   }
   },
   {
    "name": "OpenHarness",
@@ -2308,7 +2840,11 @@
    "summary": "Open agent harness implementation covering tool use, skills, memory, permissions, and multi-agent coordination.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "تطبيق harness وكيل مفتوح يغطي استخدام الأدوات والمهارات والذاكرة والصلاحيات وتنسيق عدة وكلاء.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "RAGAS",
@@ -2325,7 +2861,11 @@
    "summary": "Open evaluation toolkit for LLM and RAG quality metrics.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مجموعة أدوات تقييم مفتوحة لمقاييس جودة النماذج اللغوية وأنظمة RAG.",
+    "group": "أدوات التقييم والمقاييس"
+   }
   },
   {
    "name": "Learn Harness Engineering",
@@ -2342,7 +2882,11 @@
    "summary": "Project-based harness engineering course with runnable templates and staged implementations for instructions, state, verification, observability, automated loops, graph workflows, rollback, and human approval.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "دورة عملية في هندسة الـ harness بقوالب قابلة للتشغيل وتطبيقات متدرجة للتعليمات والحالة والتحقق والمراقبة والحلقات الآلية وسير الرسوم والتراجع والموافقة البشرية.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "OpenSandbox",
@@ -2359,7 +2903,11 @@
    "summary": "Secure and extensible sandbox runtime built for agent workloads.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بيئة عزل آمنة وقابلة للتوسعة مبنية لأحمال الوكلاء.",
+    "group": "بيئات التنفيذ والعزل"
+   }
   },
   {
    "name": "Eigent",
@@ -2376,7 +2924,11 @@
    "summary": "Open-source desktop cowork agent for autonomous task execution and productivity.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "وكيل عمل مشترك مكتبي مفتوح المصدر لتنفيذ المهام والإنتاجية باستقلالية.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "QM",
@@ -2393,7 +2945,11 @@
    "summary": "Multiplayer organizational agent harness with per-person and per-room scopes, durable sandboxes, memory, permissions, schedules, policy controls, and swappable coding-agent runtimes.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness جماعي للمؤسسات بنطاقات لكل شخص وغرفة وبيئات عزل دائمة وذاكرة وصلاحيات وجداول وضوابط سياسات وبيئات وكلاء برمجة قابلة للتبديل.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "Trellis",
@@ -2411,7 +2967,11 @@
    "lists": [
     "Picrew/awesome-agent-harness",
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار سير عمل لوكلاء البرمجة متعدد المنصات بسياق المهام وذاكرة المشروع وحقن المواصفات.",
+    "group": "هندسة السياق وحالة العمل"
+   }
   },
   {
    "name": "Aperant",
@@ -2428,7 +2988,11 @@
    "summary": "Autonomous multi-agent coding framework with parallel execution, isolated workspaces, QA loops, and persistent memory.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار برمجة مستقل متعدد الوكلاء بتنفيذ متوازٍ ومساحات عمل معزولة وحلقات ضمان جودة وذاكرة دائمة.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "memU",
@@ -2445,7 +3009,11 @@
    "summary": "Memory harness for AI agents that turns raw workspace data into structured, queryable context for agent retrieval.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness ذاكرة للوكلاء يحوّل بيانات مساحة العمل الخام إلى سياق منظم قابل للاستعلام.",
+    "group": "هندسة السياق وحالة العمل"
+   }
   },
   {
    "name": "Superset",
@@ -2462,7 +3030,11 @@
    "summary": "Worktree-based desktop orchestrator for running and reviewing parallel CLI coding agents from one workspace.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "منسق مكتبي مبني على worktrees لتشغيل وكلاء البرمجة المتوازين ومراجعتهم من مساحة عمل واحدة.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "lm-evaluation-harness",
@@ -2479,7 +3051,11 @@
    "summary": "Popular benchmark harness for consistent LLM evaluation across tasks.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness مقاييس شائع لتقييم النماذج اللغوية بشكل متسق عبر المهام.",
+    "group": "أدوات التقييم والمقاييس"
+   }
   },
   {
    "name": "E2B",
@@ -2496,7 +3072,11 @@
    "summary": "Secure cloud environments with real tools for production-grade agent execution.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بيئات سحابية آمنة بأدوات حقيقية لتنفيذ الوكلاء بمستوى الإنتاج.",
+    "group": "بيئات التنفيذ والعزل"
+   }
   },
   {
    "name": "CloudCLI",
@@ -2513,7 +3093,11 @@
    "summary": "Web and mobile control surface for Claude Code, OpenCode, Cursor CLI, Codex, and Gemini CLI with project, terminal, file, Git, session, and plugin management.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "واجهة ويب وهاتف للتحكم في Claude Code وOpenCode وCursor CLI وCodex وGemini CLI مع إدارة المشاريع والطرفية والملفات وgit والجلسات والإضافات.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "Microsoft Agent Framework",
@@ -2531,7 +3115,11 @@
    "lists": [
     "Picrew/awesome-agent-harness",
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار متعدد اللغات لبناء الوكلاء وتنسيقهم ونشرهم بسير عمل رسومي ومراقبة.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "MCP TypeScript SDK",
@@ -2548,7 +3136,11 @@
    "summary": "Official TypeScript MCP SDK with server and client packages, transports, auth helpers, middleware adapters, and runnable examples.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "حزمة MCP الرسمية بـ TypeScript بحزم للخادم والعميل ووسائط نقل ومساعدات مصادقة وموصّلات وسيطة وأمثلة قابلة للتشغيل.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "EverOS",
@@ -2565,7 +3157,11 @@
    "summary": "Portable self-evolving memory runtime for agents, persisting readable Markdown with local SQLite/LanceDB indexes and reusable cases and skills.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بيئة ذاكرة محمولة تتطور ذاتيًا للوكلاء، تحفظ Markdown مقروءًا مع فهارس SQLite/LanceDB محلية وحالات ومهارات قابلة لإعادة الاستخدام.",
+    "group": "هندسة السياق وحالة العمل"
+   }
   },
   {
    "name": "Portkey Gateway",
@@ -2582,7 +3178,11 @@
    "summary": "AI gateway with routing and guardrails for multi-model production traffic.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بوابة ذكاء اصطناعي بالتوجيه والحمايات لحركة إنتاجية متعددة النماذج.",
+    "group": "الحمايات والأمان والحوكمة"
+   }
   },
   {
    "name": "InsForge",
@@ -2599,7 +3199,11 @@
    "summary": "Backend substrate for agentic coding that exposes database, auth, storage, compute, hosting, logs, and model-gateway operations through MCP and CLI/Skills.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بنية خلفية للبرمجة الوكيلية تتيح قاعدة البيانات والمصادقة والتخزين والحوسبة والاستضافة والسجلات وبوابة النماذج عبر MCP وسطر الأوامر والمهارات.",
+    "group": "بيئات التنفيذ والعزل"
+   }
   },
   {
    "name": "IronClaw",
@@ -2616,7 +3220,11 @@
    "summary": "Security-first personal agent harness with WASM sandboxing, routines, tool plugins, and persistent memory.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness وكيل شخصي يقدّم الأمان، بعزل WASM وروتينات وإضافات أدوات وذاكرة دائمة.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "CubeSandbox",
@@ -2633,7 +3241,11 @@
    "summary": "MicroVM-based sandbox service for AI agents with sub-60ms startup, E2B-compatible APIs, and hardware-level isolation.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "خدمة عزل للوكلاء بآلات افتراضية مصغرة تبدأ في أقل من 60 جزءًا من الثانية بواجهات متوافقة مع E2B وعزل على مستوى العتاد.",
+    "group": "بيئات التنفيذ والعزل"
+   }
   },
   {
    "name": "Agent S",
@@ -2650,7 +3262,11 @@
    "summary": "Open-source computer-use agent framework with grounding models, reflection, local code execution option, and OSWorld-style evaluation support.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار مفتوح المصدر لوكلاء استخدام الحاسوب بنماذج تأريض وتأمل وخيار تنفيذ الشيفرة محليًا ودعم تقييم على طريقة OSWorld.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Agent Orchestrator",
@@ -2667,7 +3283,11 @@
    "summary": "Worktree-based orchestration layer for parallel coding agents with autonomous CI and review feedback handling.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "طبقة تنسيق مبنية على worktrees لوكلاء البرمجة المتوازين، تتعامل باستقلالية مع CI وملاحظات المراجعة.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "TensorZero",
@@ -2684,7 +3304,11 @@
    "summary": "Open LLMOps stack unifying gateway, observability, evaluation, and optimization.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "حزمة LLMOps مفتوحة توحّد البوابة والمراقبة والتقييم والتحسين.",
+    "group": "المراقبة وعمليات الموثوقية"
+   }
   },
   {
    "name": "Arize Phoenix",
@@ -2701,7 +3325,11 @@
    "summary": "Open platform for AI observability, tracing, and evaluation analytics.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "منصة مفتوحة لمراقبة الذكاء الاصطناعي وتتبّعه وتحليلات التقييم.",
+    "group": "المراقبة وعمليات الموثوقية"
+   }
   },
   {
    "name": "MemOS",
@@ -2718,7 +3346,11 @@
    "summary": "Agent memory infrastructure with editable memory graphs, isolated or shared memory cubes, asynchronous ingestion, and local hybrid-retrieval plugins for OpenClaw, Hermes, and DeepSeek Harness.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بنية ذاكرة للوكلاء برسوم ذاكرة قابلة للتعديل ومكعبات ذاكرة معزولة أو مشتركة واستيعاب غير متزامن وإضافات استرجاع هجين محلية لـ OpenClaw وHermes وDeepSeek Harness.",
+    "group": "هندسة السياق وحالة العمل"
+   }
   },
   {
    "name": "holaOS",
@@ -2735,7 +3367,11 @@
    "summary": "Desktop-first long-horizon agent environment with runtime, memory, tools, apps, and durable state.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بيئة وكلاء طويلة المدى لسطح المكتب أولًا ببيئة تشغيل وذاكرة وأدوات وتطبيقات وحالة دائمة.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "GitHub Copilot CLI",
@@ -2753,7 +3389,11 @@
    "lists": [
     "Picrew/awesome-agent-harness",
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "وكيل البرمجة الرسمي في الطرفية المبني على harness الخاص بـ Copilot من GitHub، مع توسعة MCP وضوابط الموافقة وسياق أصلي من GitHub.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Hugging Face Skills",
@@ -2770,7 +3410,11 @@
    "summary": "Official Hugging Face Agent Skills collection for packaging Hub, dataset, training, evaluation, Spaces, and tooling workflows across major coding agents.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مجموعة Hugging Face الرسمية من Agent Skills لسير عمل Hub ومجموعات البيانات والتدريب والتقييم وSpaces والأدوات عبر وكلاء البرمجة الرئيسيين.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "Hive",
@@ -2788,7 +3432,11 @@
    "lists": [
     "Picrew/awesome-agent-harness",
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness بيئة تشغيل وكلاء موجهة بالنتائج بحلقات تحكم صريحة وكتل تنسيق.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "MCP Inspector",
@@ -2805,7 +3453,11 @@
    "summary": "Official developer tool for testing and debugging MCP servers through an interactive client UI and protocol bridge.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "أداة المطورين الرسمية لاختبار خوادم MCP وتتبع أخطائها عبر واجهة عميل تفاعلية وجسر للبروتوكول.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "ML Intern",
@@ -2822,7 +3474,11 @@
    "summary": "Hugging Face ML engineering agent with local and sandbox tool runtimes, private Space sandboxes, trace logging, and CLI execution.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "وكيل هندسة تعلم آلي من Hugging Face ببيئات أدوات محلية ومعزولة وبيئات Spaces خاصة وتسجيل للتتبّع وتنفيذ في سطر الأوامر.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Agent Reinforcement Trainer",
@@ -2839,7 +3495,11 @@
    "summary": "Agent reinforcement-training harness for multi-step agents with GRPO, trajectory capture, reward assignment, training loops, and LangGraph/MCP examples.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness لتدريب الوكلاء متعددي الخطوات بالتعلم المعزز عبر GRPO والتقاط المسارات وتوزيع المكافآت وحلقات التدريب وأمثلة LangGraph وMCP.",
+    "group": "أدوات التقييم والمقاييس"
+   }
   },
   {
    "name": "Open SWE",
@@ -2856,7 +3516,11 @@
    "summary": "Asynchronous open-source coding agent focused on software issue workflows.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "وكيل برمجة غير متزامن مفتوح المصدر يركز على سير عمل تذاكر البرمجيات.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "mcp-use",
@@ -2873,7 +3537,11 @@
    "summary": "Full-stack MCP framework for building MCP apps for ChatGPT and Claude and MCP servers for AI agents.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار MCP متكامل لبناء تطبيقات MCP لـ ChatGPT وClaude وخوادم MCP للوكلاء.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "VoltAgent",
@@ -2890,7 +3558,11 @@
    "summary": "TypeScript agent engineering platform built around open runtime abstractions.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "منصة هندسة وكلاء بـ TypeScript مبنية على تجريدات بيئة تشغيل مفتوحة.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "GitHub Copilot SDK",
@@ -2907,7 +3579,11 @@
    "summary": "Official multi-language SDK for embedding the Copilot CLI agent runtime with sessions, planning, tools, file edits, permissions, custom agents, skills, MCP, hooks, and JSON-RPC lifecycle management.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "حزمة SDK رسمية متعددة اللغات لتضمين بيئة وكيل Copilot CLI بالجلسات والتخطيط والأدوات وتعديل الملفات والصلاحيات والوكلاء المخصصين والمهارات وMCP والخطافات وإدارة دورة JSON-RPC.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Omnigent",
@@ -2924,7 +3600,11 @@
    "summary": "Open-source meta-harness that orchestrates Claude Code, Codex, Cursor, Pi, and custom agents with shared sessions, cloud sandboxes, policies, and collaboration.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness أعلى مفتوح المصدر ينسّق Claude Code وCodex وCursor وPi والوكلاء المخصصين بجلسات مشتركة وبيئات عزل سحابية وسياسات وتعاون.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "CAI (Cybersecurity AI)",
@@ -2941,7 +3621,11 @@
    "summary": "Security-focused agent framework for offensive/defensive AI workflows.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار وكلاء يركز على الأمن السيبراني لسير العمل الهجومي والدفاعي.",
+    "group": "الحمايات والأمان والحوكمة"
+   }
   },
   {
    "name": "AWS MCP Servers",
@@ -2958,7 +3642,11 @@
    "summary": "AWS Labs suite of MCP servers exposing AWS documentation, cloud workflows, infrastructure operations, and service tooling to MCP clients.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مجموعة خوادم MCP من AWS Labs تتيح توثيق AWS وسير العمل السحابي وعمليات البنية التحتية وأدوات الخدمات لعملاء MCP.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "Higress",
@@ -2975,7 +3663,11 @@
    "summary": "CNCF AI-native gateway for unified LLM API and MCP API management, including hosted remote MCP servers and gateway controls for agent tool access.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بوابة أصلية للذكاء الاصطناعي من CNCF لإدارة واجهات النماذج وواجهات MCP، بما في ذلك خوادم MCP بعيدة مستضافة وضوابط وصول الوكلاء إلى الأدوات.",
+    "group": "الحمايات والأمان والحوكمة"
+   }
   },
   {
    "name": "Model Context Protocol",
@@ -2992,7 +3684,11 @@
    "summary": "Core specification and docs for MCP-based tool and context interoperability.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "المواصفة الأساسية والتوثيق لتشغيل الأدوات والسياق بشكل متبادل عبر MCP.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "Context-Engineering Handbook",
@@ -3009,7 +3705,11 @@
    "summary": "First-principles handbook focused on practical context engineering for agent systems.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "دليل من المبادئ الأولى يركز على هندسة السياق العملية لأنظمة الوكلاء.",
+    "group": "هندسة السياق وحالة العمل"
+   }
   },
   {
    "name": "PraisonAI",
@@ -3026,7 +3726,11 @@
    "summary": "Multi-agent workforce framework with autonomous planning, execution, memory, RAG, dashboards, and multi-provider model support.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار قوة عمل متعددة الوكلاء بتخطيط وتنفيذ مستقلين وذاكرة وRAG ولوحات ودعم لنماذج متعددة المزوّدين.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "Harness",
@@ -3043,7 +3747,11 @@
    "summary": "Claude Code meta-factory that generates domain-specific agent teams, skills, orchestration patterns, and validation steps from a project description.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "«مصنع أعلى» لـ Claude Code يولّد فرق وكلاء ومهارات وأنماط تنسيق وخطوات تحقق خاصة بالمجال من وصف المشروع.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "OpenShell",
@@ -3060,7 +3768,11 @@
    "summary": "Safe private runtime for autonomous agents with sandbox lifecycle control and declarative filesystem, network, process, and inference policies.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بيئة تشغيل آمنة وخاصة للوكلاء المستقلين بتحكم في دورة حياة بيئة العزل وسياسات تصريحية لنظام الملفات والشبكة والعمليات والاستدلال.",
+    "group": "بيئات التنفيذ والعزل"
+   }
   },
   {
    "name": "mcp-agent",
@@ -3077,7 +3789,11 @@
    "summary": "Practical agent framework centered on MCP tool ecosystems and workflow composition.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار وكلاء عملي متمركز حول منظومات أدوات MCP وتركيب سير العمل.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "Claude Squad",
@@ -3094,7 +3810,11 @@
    "summary": "Terminal control plane for managing multiple Claude Code, Codex, Gemini, OpenCode, Amp, and other agent sessions with isolated git workspaces and review flows.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "لوحة تحكم في الطرفية لإدارة جلسات متعددة من Claude Code وCodex وGemini وOpenCode وAmp وغيرها، بمساحات git معزولة وتدفقات مراجعة.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "CCPM",
@@ -3111,7 +3831,11 @@
    "summary": "Spec-driven project-manager skill that turns PRDs and GitHub issues into persistent context and parallel agent execution.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مهارة إدارة مشاريع مبنية على المواصفات تحوّل وثائق المتطلبات وتذاكر GitHub إلى سياق دائم وتنفيذ متوازٍ للوكلاء.",
+    "group": "هندسة السياق وحالة العمل"
+   }
   },
   {
    "name": "Flue",
@@ -3128,7 +3852,11 @@
    "summary": "TypeScript harness framework for building headless agents with sessions, tools, skills, and pluggable sandboxes.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار harness بـ TypeScript لبناء وكلاء بلا واجهة بالجلسات والأدوات والمهارات وبيئات عزل قابلة للتبديل.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "Microsandbox",
@@ -3145,7 +3873,11 @@
    "summary": "Rootless local VM sandbox runtime with SDKs, detached long-running sessions, agent skills, and MCP server integration.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بيئة عزل محلية بآلات افتراضية دون صلاحيات الجذر، مع حزم وجلسات طويلة منفصلة ومهارات للوكلاء وتكامل خادم MCP.",
+    "group": "بيئات التنفيذ والعزل"
+   }
   },
   {
    "name": "Sandcastle",
@@ -3162,7 +3894,11 @@
    "summary": "TypeScript library for orchestrating coding agents inside isolated sandboxes with configurable branch strategies.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مكتبة TypeScript لتنسيق وكلاء البرمجة داخل بيئات عزل مع استراتيجيات فروع قابلة للضبط.",
+    "group": "بيئات التنفيذ والعزل"
+   }
   },
   {
    "name": "Yao",
@@ -3179,7 +3915,11 @@
    "summary": "Single-binary runtime for defining and running autonomous agents.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بيئة تشغيل في ملف تنفيذي واحد لتعريف الوكلاء المستقلين وتشغيلهم.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "OSAURUS",
@@ -3196,7 +3936,11 @@
    "summary": "Native macOS harness for autonomous coding agents with persistent memory.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness أصلي في macOS لوكلاء البرمجة المستقلين مع ذاكرة دائمة.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "mini-swe-agent",
@@ -3213,7 +3957,11 @@
    "summary": "Minimal coding agent implementation with strong benchmark competitiveness.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "تطبيق مبسط لوكيل برمجة بقدرة تنافسية قوية في المقاييس.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Agent Squad",
@@ -3230,7 +3978,11 @@
    "summary": "Multi-agent orchestration framework that routes requests, preserves conversation context, supports Python/TypeScript, and coordinates specialist agents.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار تنسيق متعدد الوكلاء يوجّه الطلبات ويحفظ سياق المحادثة ويدعم Python وTypeScript وينسّق وكلاء متخصصين.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "Munder Difflin",
@@ -3247,7 +3999,11 @@
    "summary": "Desktop multi-agent harness that wraps terminal-agent CLIs with hive mailboxes, shared memory, an orchestrator, approvals, worktrees, and telemetry.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness مكتبي متعدد الوكلاء يغلّف أدوات وكلاء الطرفية بصناديق بريد مشتركة وذاكرة مشتركة ومنسق وموافقات وworktrees وقياسات.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "OpenLLMetry",
@@ -3264,7 +4020,11 @@
    "summary": "OpenTelemetry-based instrumentation for GenAI and LLM applications.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "تجهيز قائم على OpenTelemetry لتطبيقات الذكاء الاصطناعي التوليدي والنماذج اللغوية.",
+    "group": "المراقبة وعمليات الموثوقية"
+   }
   },
   {
    "name": "Strands Agents",
@@ -3281,7 +4041,11 @@
    "summary": "Model-driven agent SDK and monorepo with Python/TypeScript agent loops, provider adapters, tools, MCP integration, multi-agent systems, and streaming.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "حزمة SDK لوكلاء يقودهم النموذج بحلقات Python وTypeScript وموصّلات مزوّدين وأدوات وتكامل MCP وأنظمة متعددة الوكلاء وبث.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "MCP Registry",
@@ -3298,7 +4062,11 @@
    "summary": "Official MCP registry service and publisher tooling that lets clients discover MCP servers through a shared server catalog.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "خدمة سجل MCP الرسمية مع أدوات النشر، تتيح للعملاء اكتشاف خوادم MCP عبر كتالوج مشترك.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "Yuxi",
@@ -3315,7 +4083,11 @@
    "summary": "Multi-tenant agent harness platform combining RAG, knowledge graphs, LangGraph orchestration, skills, MCP, subagents, and sandbox tools.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "منصة harness وكلاء متعددة المستأجرين تجمع RAG والرسوم المعرفية وتنسيق LangGraph والمهارات وMCP والوكلاء الفرعيين وأدوات العزل.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Plano",
@@ -3332,7 +4104,11 @@
    "summary": "AI-native proxy and data plane with orchestration, safety, and observability.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "وسيط وطبقة بيانات أصلية للذكاء الاصطناعي بالتنسيق والأمان والمراقبة.",
+    "group": "الحمايات والأمان والحوكمة"
+   }
   },
   {
    "name": "OpenAI Realtime Agents",
@@ -3349,7 +4125,11 @@
    "summary": "Advanced agentic realtime patterns with structured control and interaction loops.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "أنماط متقدمة للوكلاء في الزمن الحقيقي بتحكم منظم وحلقات تفاعل.",
+    "group": "الحمايات والأمان والحوكمة"
+   }
   },
   {
    "name": "Open Multi-Agent",
@@ -3366,7 +4146,11 @@
    "summary": "TypeScript-native multi-agent orchestrator that turns goals into task DAGs with parallel execution, MCP integration, and live tracing.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "منسق متعدد الوكلاء أصلي في TypeScript يحوّل الأهداف إلى رسوم مهام بتنفيذ متوازٍ وتكامل MCP وتتبّع مباشر.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "Engram",
@@ -3383,7 +4167,11 @@
    "summary": "Agent-agnostic persistent memory system packaged as a Go binary with SQLite/FTS5, MCP server, HTTP API, CLI, TUI, and sync workflows.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "نظام ذاكرة دائمة محايد تجاه الوكلاء في ملف Go تنفيذي مع SQLite/FTS5 وخادم MCP وواجهة HTTP وسطر أوامر وواجهة طرفية وسير مزامنة.",
+    "group": "هندسة السياق وحالة العمل"
+   }
   },
   {
    "name": "OpenAI CS Agents Demo",
@@ -3400,7 +4188,11 @@
    "summary": "Customer-service multi-agent demo highlighting handoffs and guardrail-like control points.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "عرض توضيحي متعدد الوكلاء لخدمة العملاء يبرز التسليم بين الوكلاء ونقاط تحكم شبيهة بالحمايات.",
+    "group": "الحمايات والأمان والحوكمة"
+   }
   },
   {
    "name": "AIOS",
@@ -3417,7 +4209,11 @@
    "summary": "AI Agent Operating System with a kernel and SDK for scheduling, context management, memory, storage, tools, deployment modes, and computer-use sandboxing.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "نظام تشغيل لوكلاء الذكاء الاصطناعي بنواة وحزمة SDK للجدولة وإدارة السياق والذاكرة والتخزين والأدوات وأوضاع النشر وعزل استخدام الحاسوب.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "Agent Governance Toolkit",
@@ -3434,7 +4230,11 @@
    "summary": "Runtime governance toolkit that deterministically enforces agent policy, identity, sandboxing, and audit controls before actions execute.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مجموعة أدوات حوكمة تشغيلية تفرض بشكل حتمي سياسات الوكيل وهويته وعزله وضوابط التدقيق قبل تنفيذ الأفعال.",
+    "group": "الحمايات والأمان والحوكمة"
+   }
   },
   {
    "name": "Helicone",
@@ -3451,7 +4251,11 @@
    "summary": "Lightweight platform for monitoring and evaluating LLM traffic in production.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "منصة خفيفة لمراقبة حركة النماذج اللغوية في الإنتاج وتقييمها.",
+    "group": "المراقبة وعمليات الموثوقية"
+   }
   },
   {
    "name": "Webwright",
@@ -3468,7 +4272,11 @@
    "summary": "Minimal browser-agent harness that lets coding models solve web tasks by writing rerunnable Playwright scripts in a workspace.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness مبسط لوكيل المتصفح يتيح لنماذج البرمجة حل مهام الويب بكتابة سكربتات Playwright قابلة لإعادة التشغيل.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Google Agents CLI",
@@ -3485,7 +4293,11 @@
    "summary": "Google Cloud CLI and skill bundle that gives coding agents scaffold, evaluation, deployment, publishing, and observability workflows.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "أداة سطر أوامر من Google Cloud وحزمة مهارات تمنح وكلاء البرمجة سير عمل للتجهيز والتقييم والنشر والإصدار والمراقبة.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "agent-infra sandbox",
@@ -3502,7 +4314,11 @@
    "summary": "All-in-one sandbox combining browser, shell, files, MCP, and IDE server.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بيئة عزل شاملة تجمع المتصفح والطرفية والملفات وMCP وخادم بيئة تطوير.",
+    "group": "بيئات التنفيذ والعزل"
+   }
   },
   {
    "name": "SWE-bench",
@@ -3519,7 +4335,11 @@
    "summary": "Standard benchmark for evaluating issue-fixing software engineering agents.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "المقياس المعياري لتقييم وكلاء هندسة البرمجيات في إصلاح التذاكر.",
+    "group": "أدوات التقييم والمقاييس"
+   }
   },
   {
    "name": "Nexent",
@@ -3536,7 +4356,11 @@
    "summary": "Zero-code agent platform built around harness engineering principles, unifying tools, skills, memory, orchestration, constraints, feedback loops, and control planes.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "منصة وكلاء بلا شيفرة مبنية على مبادئ هندسة الـ harness، توحّد الأدوات والمهارات والذاكرة والتنسيق والقيود وحلقات التغذية الراجعة ولوحات التحكم.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "AgentOps SDK",
@@ -3553,7 +4377,11 @@
    "summary": "Monitoring and benchmarking SDK for agent workflows with cost and trace tracking.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "حزمة مراقبة وقياس لسير عمل الوكلاء مع تتبع التكلفة والتنفيذ.",
+    "group": "المراقبة وعمليات الموثوقية"
+   }
   },
   {
    "name": "Coze Loop",
@@ -3570,7 +4398,11 @@
    "summary": "Full-lifecycle agent optimization platform combining prompt development, automated evaluation, experiment management, trace collection, execution inspection, and production monitoring.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "منصة لتحسين الوكلاء عبر دورة حياتها تجمع تطوير التعليمات والتقييم الآلي وإدارة التجارب وجمع التتبّع وفحص التنفيذ ومراقبة الإنتاج.",
+    "group": "المراقبة وعمليات الموثوقية"
+   }
   },
   {
    "name": "AgentTeams",
@@ -3587,7 +4419,11 @@
    "summary": "Collaborative multi-agent OS with manager-worker coordination, shared state, human-in-the-loop oversight, pluggable runtimes, and Kubernetes deployment through Matrix rooms.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "نظام تشغيل تعاوني متعدد الوكلاء بتنسيق مدير وعمال وحالة مشتركة وإشراف بشري وبيئات قابلة للتبديل ونشر على Kubernetes عبر غرف Matrix.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Cloudflare Agents",
@@ -3604,7 +4440,11 @@
    "summary": "Platform runtime for building and deploying agents with production infrastructure primitives.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بيئة منصة لبناء الوكلاء ونشرهم بأساسيات بنية إنتاجية.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "1Code",
@@ -3621,7 +4461,11 @@
    "summary": "Desktop-first coding-agent orchestrator with worktree isolation, background sandboxes, MCP tooling, and automation triggers.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "منسق وكلاء برمجة لسطح المكتب أولًا بعزل worktree وبيئات عزل في الخلفية وأدوات MCP ومحفزات أتمتة.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": ".NET Agent Skills",
@@ -3638,7 +4482,11 @@
    "summary": "Microsoft .NET team's curated plugins, skills, custom agents, and evaluation dashboard for grounding coding agents on .NET and C# workflows.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إضافات ومهارات ووكلاء مخصصون ولوحة تقييم من فريق .NET في Microsoft لتأريض وكلاء البرمجة في سير عمل .NET وC#.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "Harbor",
@@ -3655,7 +4503,11 @@
    "summary": "Framework for running agent evaluations and constructing RL-style environments.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار لتشغيل تقييمات الوكلاء وبناء بيئات بأسلوب التعلم المعزز.",
+    "group": "أدوات التقييم والمقاييس"
+   }
   },
   {
    "name": "SkillHub",
@@ -3672,7 +4524,11 @@
    "summary": "Self-hosted enterprise agent skill registry with package publishing, versioning, discovery, namespaces, RBAC, reviews, and audit logs.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "سجل مهارات وكلاء مستضاف ذاتيًا للمؤسسات بنشر الحزم والإصدارات والاكتشاف ومساحات الأسماء والتحكم بالأدوار والمراجعات وسجلات التدقيق.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "ByteRover CLI",
@@ -3689,7 +4545,11 @@
    "summary": "Portable context-memory CLI for coding agents with a context tree, review workflow, versioning, built-in tools, cloud sync, and MCP integration.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "أداة سطر أوامر محمولة لذاكرة السياق لوكلاء البرمجة بشجرة سياق وسير مراجعة وإصدارات وأدوات مدمجة ومزامنة سحابية وتكامل MCP.",
+    "group": "هندسة السياق وحالة العمل"
+   }
   },
   {
    "name": "AgentGateway",
@@ -3706,7 +4566,11 @@
    "summary": "Agentic proxy gateway for AI agents and MCP server ecosystems.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بوابة وسيطة وكيلية لوكلاء الذكاء الاصطناعي ومنظومات خوادم MCP.",
+    "group": "الحمايات والأمان والحوكمة"
+   }
   },
   {
    "name": "LangWatch",
@@ -3723,7 +4587,11 @@
    "summary": "End-to-end platform for agent simulations, evaluation loops, and production testing.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "منصة متكاملة لمحاكاة الوكلاء وحلقات التقييم والاختبار الإنتاجي.",
+    "group": "أدوات التقييم والمقاييس"
+   }
   },
   {
    "name": "Agenta",
@@ -3740,7 +4608,11 @@
    "summary": "Open-source LLMOps platform combining prompt management, evaluation, human and automated feedback, and tracing for production LLM applications.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "منصة LLMOps مفتوحة المصدر تجمع إدارة التعليمات والتقييم والتغذية الراجعة البشرية والآلية والتتبّع لتطبيقات النماذج الإنتاجية.",
+    "group": "المراقبة وعمليات الموثوقية"
+   }
   },
   {
    "name": "AI-DLC Workflows",
@@ -3758,7 +4630,11 @@
    "lists": [
     "Picrew/awesome-agent-harness",
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مجموعة قواعد سير العمل الرسمية من AWS توجّه وكلاء البرمجة عبر مراحل تكيفية وبوابات جودة وملفات سياق خاصة بكل بيئة تطوير.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Latitude",
@@ -3775,7 +4651,11 @@
    "summary": "Open-source agent engineering platform with eval and observability capabilities.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "منصة هندسة وكلاء مفتوحة المصدر بقدرات تقييم ومراقبة.",
+    "group": "المراقبة وعمليات الموثوقية"
+   }
   },
   {
    "name": "verifiers",
@@ -3792,7 +4672,11 @@
    "summary": "Library for RL environments and verifier-based evaluation loops.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مكتبة لبيئات التعلم المعزز وحلقات التقييم القائمة على المتحقِّقات.",
+    "group": "أدوات التقييم والمقاييس"
+   }
   },
   {
    "name": "ContextForge",
@@ -3809,7 +4693,11 @@
    "summary": "Registry and proxy layer that unifies MCP, A2A, and REST/gRPC endpoints with centralized governance and observability.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "طبقة سجل ووسيط توحّد نقاط MCP وA2A وREST/gRPC بحوكمة ومراقبة مركزية.",
+    "group": "الحمايات والأمان والحوكمة"
+   }
   },
   {
    "name": "Embabel Agent Framework",
@@ -3826,7 +4714,11 @@
    "summary": "JVM agent framework for typed agentic flows with goals, actions, conditions, dynamic planning, platform modes, and testability.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار وكلاء على JVM لتدفقات وكيلية بأنواع صارمة مع أهداف وأفعال وشروط وتخطيط ديناميكي وأوضاع منصة وقابلية للاختبار.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "Judge0",
@@ -3843,7 +4735,11 @@
    "summary": "Scalable sandboxed code execution system usable as an agent execution backend.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "نظام تنفيذ شيفرة معزول وقابل للتوسع يصلح خلفيةً لتنفيذ الوكلاء.",
+    "group": "بيئات التنفيذ والعزل"
+   }
   },
   {
    "name": "gptme",
@@ -3860,7 +4756,11 @@
    "summary": "Terminal-native personal agent with local tools, shell and web access, provider-agnostic models, plugins, skills, MCP, guardrails, and autonomous loops.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "وكيل شخصي أصلي في الطرفية بأدوات محلية ووصول إلى الطرفية والويب ونماذج محايدة تجاه المزوّدين وإضافات ومهارات وMCP وحمايات وحلقات مستقلة.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Builder.io Agent Skills",
@@ -3877,7 +4777,11 @@
    "summary": "Composable coding-agent skills for visual planning, visual recaps, watchdog reviews, plan arbitration, and autonomous execution discipline.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مهارات قابلة للتركيب لوكلاء البرمجة للتخطيط المرئي والملخصات المرئية ومراجعات المراقبة والتحكيم بين الخطط وانضباط التنفيذ المستقل.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "Agent Client Protocol",
@@ -3894,7 +4798,11 @@
    "summary": "Open protocol that standardizes communication between code editors and coding agents.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بروتوكول مفتوح يوحّد التواصل بين محررات الشيفرة ووكلاء البرمجة.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "Archestra",
@@ -3911,7 +4819,11 @@
    "summary": "Enterprise AI platform with guardrails, MCP registry, and orchestration services.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "منصة ذكاء اصطناعي للمؤسسات بحمايات وسجل MCP وخدمات تنسيق.",
+    "group": "الحمايات والأمان والحوكمة"
+   }
   },
   {
    "name": "nono",
@@ -3928,7 +4840,11 @@
    "summary": "Capability-based, policy-governed runtime that narrows agent access to explicit filesystem, network, credential, operation, sandbox, and audit capabilities.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بيئة تشغيل قائمة على القدرات ومحكومة بالسياسات تحصر وصول الوكيل في قدرات صريحة للملفات والشبكة والاعتمادات والعمليات والعزل والتدقيق.",
+    "group": "الحمايات والأمان والحوكمة"
+   }
   },
   {
    "name": "directories (rules and MCP indexes)",
@@ -3945,7 +4861,11 @@
    "summary": "Curated directories of agent rules and MCP servers for tool discovery.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "أدلة منسقة لقواعد الوكلاء وخوادم MCP لاكتشاف الأدوات.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "Agent Sandbox",
@@ -3962,7 +4882,11 @@
    "summary": "Kubernetes-native sandbox control plane for isolated, stateful agent runtimes with stable identity, persistence, and warm-pool support.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "لوحة تحكم أصلية في Kubernetes لبيئات تشغيل وكلاء معزولة ذات حالة بهوية ثابتة وتخزين دائم ودعم المجمّعات الجاهزة.",
+    "group": "بيئات التنفيذ والعزل"
+   }
   },
   {
    "name": "cascadeflow",
@@ -3979,7 +4903,11 @@
    "summary": "In-process agent harness for per-step model routing, tool budget gates, runtime policy actions, and auditable control inside agent loops.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness داخل العملية لتوجيه النموذج في كل خطوة وبوابات ميزانية الأدوات وأفعال السياسات أثناء التشغيل وتحكم قابل للتدقيق داخل حلقات الوكيل.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "OpenAI Agents SDK (JS/TS)",
@@ -3996,7 +4924,11 @@
    "summary": "JavaScript/TypeScript framework for multi-agent workflows with handoffs, tools, guardrails, sessions, tracing, and sandbox agents.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار JavaScript/TypeScript لسير عمل متعدد الوكلاء بالتسليم والأدوات والحمايات والجلسات والتتبّع ووكلاء العزل.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "Atmosphere",
@@ -4013,7 +4945,11 @@
    "summary": "JVM runtime for streaming governable AI agents across MCP, A2A, AG-UI, and browser-facing transports.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بيئة تشغيل على JVM لبث وكلاء ذكاء اصطناعي قابلين للحوكمة عبر MCP وA2A وAG-UI ووسائط موجهة للمتصفح.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "Tracecat",
@@ -4030,7 +4966,11 @@
    "summary": "AI automation platform for security teams with policy and workflow controls.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "منصة أتمتة بالذكاء الاصطناعي لفرق الأمن بضوابط للسياسات وسير العمل.",
+    "group": "الحمايات والأمان والحوكمة"
+   }
   },
   {
    "name": "Reef",
@@ -4047,7 +4987,11 @@
    "summary": "Continual learning infrastructure connecting agent inference, feedback, evaluation, and versioned delivery to improve model weights, prompts, rules, and skills.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بنية تعلم مستمر تربط استدلال الوكيل والتغذية الراجعة والتقييم والتسليم بإصدارات لتحسين أوزان النماذج والتعليمات والقواعد والمهارات.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "AgentBench",
@@ -4064,7 +5008,11 @@
    "summary": "Cross-environment benchmark for evaluating LLM agents as tool-using systems.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مقياس عبر بيئات متعددة لتقييم وكلاء النماذج كأنظمة تستخدم الأدوات.",
+    "group": "أدوات التقييم والمقاييس"
+   }
   },
   {
    "name": "Acontext",
@@ -4081,7 +5029,11 @@
    "summary": "Skill-memory layer that distills agent runs into inspectable skill files and recalls them through agent-controlled tools.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "طبقة ذاكرة مهارات تقطّر تشغيلات الوكيل إلى ملفات مهارات قابلة للفحص وتستدعيها عبر أدوات يتحكم فيها الوكيل.",
+    "group": "هندسة السياق وحالة العمل"
+   }
   },
   {
    "name": "Microsoft MCP Servers",
@@ -4098,7 +5050,11 @@
    "summary": "Microsoft's official MCP server catalog for enterprise data and tools.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "كتالوج خوادم MCP الرسمي من Microsoft لبيانات المؤسسات وأدواتها.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "LangChain MCP Adapters",
@@ -4115,7 +5071,11 @@
    "summary": "Adapters connecting LangChain components with MCP servers.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "موصّلات تربط مكونات LangChain بخوادم MCP.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "TinyAGI",
@@ -4132,7 +5092,11 @@
    "summary": "Team-style agent orchestrator for one-person-company style autonomous workflows.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "منسق وكلاء بأسلوب الفريق لسير عمل مستقل على طريقة «شركة الشخص الواحد».",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "TruLens",
@@ -4149,7 +5113,11 @@
    "summary": "Evaluation and tracking platform for LLM apps and AI agents with traces, tool-call capture, and agentic evaluators.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "منصة تقييم وتتبع لتطبيقات النماذج والوكلاء بالتتبّع والتقاط استدعاءات الأدوات ومقيّمات وكيلية.",
+    "group": "المراقبة وعمليات الموثوقية"
+   }
   },
   {
    "name": "EvalScope",
@@ -4166,7 +5134,11 @@
    "summary": "Customizable framework for large-model benchmarking and performance evaluation.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار قابل للتخصيص لقياس النماذج الكبيرة وتقييم أدائها.",
+    "group": "أدوات التقييم والمقاييس"
+   }
   },
   {
    "name": "Open Claude Cowork",
@@ -4183,7 +5155,11 @@
    "summary": "Desktop coding cowork assistant that turns agent orchestration into GUI workflows.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مساعد عمل مشترك مكتبي للبرمجة يحوّل تنسيق الوكلاء إلى سير عمل بواجهة رسومية.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Amazon Bedrock AgentCore Samples",
@@ -4200,7 +5176,11 @@
    "summary": "Official sample suite for deploying and operating agents with runtime, gateway, memory, observability, evaluation, and policy layers.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مجموعة أمثلة رسمية لنشر الوكلاء وتشغيلهم بطبقات بيئة التشغيل والبوابة والذاكرة والمراقبة والتقييم والسياسات.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Maestro",
@@ -4217,7 +5197,11 @@
    "summary": "Desktop command center for parallel coding agents with worktree isolation, queued tasks, auto-run playbooks, and reusable sessions.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مركز قيادة مكتبي لوكلاء البرمجة المتوازين بعزل worktree ومهام في قائمة انتظار وأدلة تشغيل آلية وجلسات قابلة لإعادة الاستخدام.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Docker Agent",
@@ -4234,7 +5218,11 @@
    "summary": "Agent builder and runtime stack emphasizing container-native execution.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "حزمة لبناء الوكلاء وتشغيلهم تركز على التنفيذ الأصلي في الحاويات.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "Awesome Context Engineering",
@@ -4251,7 +5239,11 @@
    "summary": "Survey-style list for context engineering resources and frameworks.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "قائمة مسحية لموارد هندسة السياق وأطرها.",
+    "group": "هندسة السياق وحالة العمل"
+   }
   },
   {
    "name": "Laminar",
@@ -4268,7 +5260,11 @@
    "summary": "Agent-focused observability stack with tracing, evaluation runs, monitoring, and dashboards.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "حزمة مراقبة تركز على الوكلاء بالتتبّع وتشغيلات التقييم والمتابعة واللوحات.",
+    "group": "المراقبة وعمليات الموثوقية"
+   }
   },
   {
    "name": "ACPX",
@@ -4285,7 +5281,11 @@
    "summary": "Headless CLI client for stateful Agent Client Protocol sessions.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "عميل سطر أوامر بلا واجهة لجلسات Agent Client Protocol ذات الحالة.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "Desloppify",
@@ -4303,7 +5303,11 @@
    "lists": [
     "Picrew/awesome-agent-harness",
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness لجودة قاعدة الشيفرة موجّه للوكلاء بالفحص والتقييم ومراجعة النماذج وحلقات إصلاح مرتبة بالأولوية وحالة دائمة وبوابات CI.",
+    "group": "المراقبة وعمليات الموثوقية"
+   }
   },
   {
    "name": "Claude Code Harness",
@@ -4320,7 +5324,11 @@
    "summary": "Claude Code development harness that turns agent work into a repeatable spec, plan, work, review, and release loop.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness تطوير لـ Claude Code يحوّل عمل الوكيل إلى حلقة متكررة من المواصفات والخطة والعمل والمراجعة والإصدار.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Snyk Agent Scan",
@@ -4337,7 +5345,11 @@
    "summary": "Security scanner that inventories local agent harnesses, MCP servers, and skills, then checks for prompt injection, tool poisoning, malware payloads, and sensitive-data risks.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "فاحص أمني يجرد أدوات harness المحلية وخوادم MCP والمهارات، ثم يفحص حقن الأوامر وتسميم الأدوات والحمولات الخبيثة ومخاطر البيانات الحساسة.",
+    "group": "الحمايات والأمان والحوكمة"
+   }
   },
   {
    "name": "Microsoft Agent Skills",
@@ -4354,7 +5366,11 @@
    "summary": "Microsoft-maintained skills, custom agents, AGENTS.md templates, and MCP configurations for Azure SDK and Microsoft AI Foundry coding-agent workflows.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مهارات ووكلاء مخصصون وقوالب AGENTS.md وإعدادات MCP تصونها Microsoft لسير عمل وكلاء البرمجة مع Azure SDK وMicrosoft AI Foundry.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "GitAgentProtocol",
@@ -4371,7 +5387,11 @@
    "summary": "Git-native, framework-agnostic standard for defining agents, skills, workflows, tools, and runtime memory in repositories.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "معيار أصلي في git ومحايد تجاه الأطر لتعريف الوكلاء والمهارات وسير العمل والأدوات وذاكرة التشغيل داخل المستودعات.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "OpenGAP",
@@ -4388,7 +5408,11 @@
    "summary": "Reference CLI for the Git Agent Protocol, turning repository files into portable agent manifests, rules, skills, workflows, tools, memory, hooks, and compliance contracts.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "أداة سطر أوامر مرجعية لبروتوكول Git Agent، تحوّل ملفات المستودع إلى ملفات تعريف وكلاء محمولة وقواعد ومهارات وسير عمل وأدوات وذاكرة وخطافات وعقود امتثال.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "TEAQL Agent Kit",
@@ -4405,7 +5429,11 @@
    "summary": "Controlled evaluation environment for coding agents on auditable business software tasks with API adherence, framework discipline, self-repair, and human-gate metrics.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بيئة تقييم منضبطة لوكلاء البرمجة على مهام برمجيات أعمال قابلة للتدقيق، بمقاييس الالتزام بالواجهات وانضباط الإطار والإصلاح الذاتي والبوابات البشرية.",
+    "group": "أدوات التقييم والمقاييس"
+   }
   },
   {
    "name": "OpenLIT",
@@ -4422,7 +5450,11 @@
    "summary": "OpenTelemetry-native AI engineering platform for LLM and coding-agent observability, evaluations, guardrails, prompt management, secrets, and dashboards.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "منصة هندسة ذكاء اصطناعي أصلية في OpenTelemetry لمراقبة النماذج ووكلاء البرمجة والتقييمات والحمايات وإدارة التعليمات والأسرار واللوحات.",
+    "group": "المراقبة وعمليات الموثوقية"
+   }
   },
   {
    "name": "NeMo Agent Toolkit",
@@ -4439,7 +5471,11 @@
    "summary": "Open toolkit for connecting and optimizing teams of AI agents.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مجموعة أدوات مفتوحة لربط فرق وكلاء الذكاء الاصطناعي وتحسينها.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "Apache Burr",
@@ -4456,7 +5492,11 @@
    "summary": "State-machine framework for decision-making agents and LLM apps with persistence, telemetry UI, tracing, and framework-agnostic execution.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار آلات حالة لوكلاء اتخاذ القرار وتطبيقات النماذج بالحفظ الدائم وواجهة قياسات وتتبّع وتنفيذ محايد تجاه الأطر.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "claude-code-reverse",
@@ -4473,7 +5513,11 @@
    "summary": "Tooling to visualize and inspect Claude Code LLM interaction traces.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "أدوات لعرض سجلات تفاعل Claude Code مع النموذج وفحصها.",
+    "group": "المراقبة وعمليات الموثوقية"
+   }
   },
   {
    "name": "AX",
@@ -4490,7 +5534,11 @@
    "summary": "Google's distributed agent runtime for coordinating agent loops, isolated actors, event logging, auditing, and policy.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بيئة تشغيل موزعة من Google لتنسيق حلقات الوكلاء والفاعلين المعزولين وتسجيل الأحداث والتدقيق والسياسات.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "agentic-stack",
@@ -4507,7 +5555,11 @@
    "summary": "Portable memory, skills, protocols, and dashboard layer that keeps state across multiple coding-agent harnesses.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "طبقة محمولة للذاكرة والمهارات والبروتوكولات ولوحة تحفظ الحالة عبر أدوات harness برمجة متعددة.",
+    "group": "هندسة السياق وحالة العمل"
+   }
   },
   {
    "name": "Shannon",
@@ -4524,7 +5576,11 @@
    "summary": "Production-oriented multi-agent orchestration framework with Temporal workflows, WASI sandboxing, OPA approvals, token budgets, and OpenTelemetry tracing.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار تنسيق متعدد الوكلاء موجّه للإنتاج بسير عمل Temporal وعزل WASI وموافقات OPA وميزانيات رموز وتتبّع OpenTelemetry.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "Agent Vault",
@@ -4541,7 +5597,11 @@
    "summary": "Credential proxy and vault that brokers agent API access without exposing real secrets, with egress filtering and request logging.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "وسيط وخزنة للاعتمادات يمنح الوكلاء وصولًا إلى الواجهات دون كشف الأسرار الحقيقية، مع ترشيح الخروج وتسجيل الطلبات.",
+    "group": "الحمايات والأمان والحوكمة"
+   }
   },
   {
    "name": "Kimchi",
@@ -4558,7 +5618,11 @@
    "summary": "Terminal coding-agent harness with multi-model orchestration roles, phase tracking, persistent project state, and subagent delegation.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness وكيل برمجة في الطرفية بأدوار تنسيق متعددة النماذج وتتبع المراحل وحالة مشروع دائمة وتفويض لوكلاء فرعيين.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Open Cowork",
@@ -4575,7 +5639,11 @@
    "summary": "Desktop agent app with VM-backed sandboxing, MCP connectors, GUI control, and built-in skill workflows.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "تطبيق وكيل مكتبي بعزل مدعوم بآلات افتراضية وموصّلات MCP وتحكم في الواجهة الرسومية وسير عمل مهارات مدمج.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "tau2-bench",
@@ -4592,7 +5660,11 @@
    "summary": "Tool-agent-user interaction benchmark emphasizing multi-step execution quality.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مقياس لتفاعل الأداة والوكيل والمستخدم يركز على جودة التنفيذ متعدد الخطوات.",
+    "group": "أدوات التقييم والمقاييس"
+   }
   },
   {
    "name": "Pilot Shell",
@@ -4609,7 +5681,11 @@
    "summary": "Claude Code and Codex workflow harness with spec-driven planning, enforced TDD, persistent memory, quality gates, and reusable skills.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness سير عمل لـ Claude Code وCodex بتخطيط مبني على المواصفات وتطوير بالاختبار إلزامي وذاكرة دائمة وبوابات جودة ومهارات قابلة لإعادة الاستخدام.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Future AGI",
@@ -4626,7 +5702,11 @@
    "summary": "Self-hostable platform that closes the loop across agent tracing, evaluation, simulation, guardrails, and gateway operations.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "منصة مستضافة ذاتيًا تغلق الحلقة عبر تتبّع الوكلاء وتقييمهم ومحاكاتهم والحمايات وعمليات البوابة.",
+    "group": "المراقبة وعمليات الموثوقية"
+   }
   },
   {
    "name": "Microsoft Learn MCP",
@@ -4643,7 +5723,11 @@
    "summary": "MCP server and CLI for grounding agents with Microsoft documentation sources.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "خادم MCP وأداة سطر أوامر لتأريض الوكلاء بمصادر توثيق Microsoft.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "ClawManager",
@@ -4660,7 +5744,11 @@
    "summary": "Kubernetes-native control plane for governing agent runtimes, AI gateway access, and reusable skills across multiple agent backends.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "لوحة تحكم أصلية في Kubernetes لحوكمة بيئات تشغيل الوكلاء والوصول إلى بوابات الذكاء الاصطناعي والمهارات القابلة لإعادة الاستخدام عبر خلفيات وكلاء متعددة.",
+    "group": "الحمايات والأمان والحوكمة"
+   }
   },
   {
    "name": "tRPC-Agent-Go",
@@ -4677,7 +5765,11 @@
    "summary": "Go framework for production agent systems with graph workflows, tools, memory, evaluation, protocols, and OpenTelemetry observability.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار Go لأنظمة وكلاء إنتاجية بسير عمل رسومي وأدوات وذاكرة وتقييم وبروتوكولات ومراقبة OpenTelemetry.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "stakpak/agent",
@@ -4694,7 +5786,11 @@
    "summary": "Always-on open agent that runs on your machines with autonomous operational loops.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "وكيل مفتوح يعمل دائمًا على أجهزتك بحلقات تشغيل مستقلة.",
+    "group": "بيئات التنفيذ والعزل"
+   }
   },
   {
    "name": "Scion",
@@ -4712,7 +5808,11 @@
    "lists": [
     "Picrew/awesome-agent-harness",
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "منصة تجريبية لتنسيق عدة وكلاء تشغّل أدوات harness معزولة في حاويات وworktrees وبيئات بعيدة.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "WebArena",
@@ -4729,7 +5829,11 @@
    "summary": "Self-hostable web environment and evaluation harness for autonomous web agents with reproducible end-to-end tasks.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بيئة ويب مستضافة ذاتيًا وharness تقييم لوكلاء الويب المستقلين بمهام متكاملة قابلة للتكرار.",
+    "group": "أدوات التقييم والمقاييس"
+   }
   },
   {
    "name": "Meta-Harness",
@@ -4746,7 +5850,11 @@
    "summary": "Framework for automated search over task-specific model harnesses, with reference experiments for memory systems and terminal-agent scaffolds.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار للبحث الآلي في أدوات harness النماذج الخاصة بكل مهمة، مع تجارب مرجعية لأنظمة الذاكرة وهياكل وكلاء الطرفية.",
+    "group": "أدوات التقييم والمقاييس"
+   }
   },
   {
    "name": "deepagentsjs",
@@ -4763,7 +5871,11 @@
    "summary": "TypeScript agent harness with built-in planning, filesystem tools, subagents, and LangGraph-native runtime hooks.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness وكيل بـ TypeScript بتخطيط مدمج وأدوات نظام ملفات ووكلاء فرعيين وخطافات تشغيل أصلية في LangGraph.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "Sandbox Agent",
@@ -4780,7 +5892,11 @@
    "summary": "HTTP/SSE control server for running coding agents inside sandboxes with normalized sessions, permissions, event streaming, and replay.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "خادم تحكم HTTP/SSE لتشغيل وكلاء البرمجة داخل بيئات العزل بجلسات موحدة وصلاحيات وبث للأحداث وإعادة تشغيل.",
+    "group": "بيئات التنفيذ والعزل"
+   }
   },
   {
    "name": "E2B Desktop Sandbox",
@@ -4797,7 +5913,11 @@
    "summary": "Secure virtual desktop sandbox for computer-use agents with SDK control and screen streaming.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بيئة سطح مكتب افتراضية معزولة وآمنة لوكلاء استخدام الحاسوب مع تحكم عبر الحزمة وبث للشاشة.",
+    "group": "بيئات التنفيذ والعزل"
+   }
   },
   {
    "name": "OSS-Fuzz Gen",
@@ -4814,7 +5934,11 @@
    "summary": "LLM-powered fuzzing workflows integrated with controlled execution contexts.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "سير عمل للفحص العشوائي (fuzzing) بالنماذج اللغوية مدمج في سياقات تنفيذ منضبطة.",
+    "group": "بيئات التنفيذ والعزل"
+   }
   },
   {
    "name": "Haft",
@@ -4831,7 +5955,11 @@
    "summary": "Decision-governance harness that records falsifiable contracts, evidence, and commissions before agents execute.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness لحوكمة القرارات يسجّل عقودًا قابلة للدحض وأدلة وتكليفات قبل تنفيذ الوكلاء.",
+    "group": "الحمايات والأمان والحوكمة"
+   }
   },
   {
    "name": "oh-my-agent",
@@ -4848,7 +5976,11 @@
    "summary": "Portable multi-agent harness that projects shared agents, skills, workflows, and rules into multiple coding-agent runtimes.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness محمول متعدد الوكلاء يُسقط وكلاء ومهارات وسير عمل وقواعد مشتركة على بيئات وكلاء برمجة متعددة.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "LiteLLM Agent Control Plane",
@@ -4865,7 +5997,11 @@
    "summary": "Agent control plane that provides one API and UI across OpenCode, Hermes, Claude Managed Agents, Cursor Agents API, DeepAgents, and OpenClaw runtimes.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "لوحة تحكم للوكلاء توفر واجهة برمجية وواجهة مستخدم واحدة عبر OpenCode وHermes وClaude Managed Agents وCursor Agents API وDeepAgents وOpenClaw.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "OpenInference",
@@ -4882,7 +6018,11 @@
    "summary": "Open instrumentation specification and tooling for AI observability.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مواصفة تجهيز مفتوحة وأدوات لمراقبة الذكاء الاصطناعي.",
+    "group": "المراقبة وعمليات الموثوقية"
+   }
   },
   {
    "name": "thClaws",
@@ -4899,7 +6039,11 @@
    "summary": "Native Rust agent workspace with shared agent loop, sessions, tools, skills, MCP, memory, hooks, and sandboxing.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مساحة عمل وكلاء أصلية بـ Rust بحلقة وكيل مشتركة وجلسات وأدوات ومهارات وMCP وذاكرة وخطافات وعزل.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "NeMo Gym",
@@ -4916,7 +6060,11 @@
    "summary": "Toolkit for building RL environments suitable for LLM/agent training and eval.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مجموعة أدوات لبناء بيئات تعلم معزز مناسبة لتدريب النماذج والوكلاء وتقييمهم.",
+    "group": "أدوات التقييم والمقاييس"
+   }
   },
   {
    "name": "Chorus",
@@ -4934,7 +6082,11 @@
    "lists": [
     "Picrew/awesome-agent-harness",
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness للتعاون بين الذكاء الاصطناعي والبشر لدورة الجلسات وحالة المهام وتنسيق الوكلاء الفرعيين والمراقبة والتعافي.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "mini-coding-agent",
@@ -4951,7 +6103,11 @@
    "summary": "Minimal coding agent harness illustrating approvals, memory, bounded delegation, and durable transcripts.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness مبسط لوكيل برمجة يوضح الموافقات والذاكرة والتفويض المحدود والسجلات الدائمة.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "AgentBay SDK",
@@ -4968,7 +6124,11 @@
    "summary": "Cloud sandbox SDK for agents spanning browser, desktop, mobile, and code execution environments.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "حزمة SDK لبيئات عزل سحابية للوكلاء تشمل المتصفح وسطح المكتب والهاتف وتنفيذ الشيفرة.",
+    "group": "بيئات التنفيذ والعزل"
+   }
   },
   {
    "name": "MateClaw",
@@ -4985,7 +6145,11 @@
    "summary": "Self-hosted multi-user agent harness with StateGraph reasoning, skills, MCP/ACP registry, approvals, audit trail, and channel adapters.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness وكلاء مستضاف ذاتيًا متعدد المستخدمين باستدلال StateGraph ومهارات وسجل MCP/ACP وموافقات وسجل تدقيق وموصّلات قنوات.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Flock",
@@ -5002,7 +6166,11 @@
    "summary": "Desktop multi-agent harness with visual workflows, local and sandboxed execution, tool approvals, VNC takeover, MCP, skills, and scheduled tasks.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness مكتبي متعدد الوكلاء بسير عمل مرئي وتنفيذ محلي ومعزول وموافقات على الأدوات وتولي التحكم عبر VNC وMCP ومهارات ومهام مجدولة.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Judgeval",
@@ -5019,7 +6187,11 @@
    "summary": "Agent improvement SDK with OpenTelemetry tracing, agent judges, online monitoring, replay evaluations, CLI workflows, and MCP access to traces and behaviors.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "حزمة لتحسين الوكلاء بتتبّع OpenTelemetry وحكام للوكلاء ومراقبة مباشرة وتقييمات بإعادة التشغيل وسير عمل في سطر الأوامر ووصول MCP إلى السجلات والسلوكيات.",
+    "group": "المراقبة وعمليات الموثوقية"
+   }
   },
   {
    "name": "ClawKeeper",
@@ -5036,7 +6208,11 @@
    "summary": "Safety framework for autonomous agents combining skill-based policies, runtime plugins, and watcher-based governance.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار أمان للوكلاء المستقلين يجمع سياسات قائمة على المهارات وإضافات تشغيل وحوكمة قائمة على المراقِبين.",
+    "group": "الحمايات والأمان والحوكمة"
+   }
   },
   {
    "name": "Tensorlake",
@@ -5053,7 +6229,11 @@
    "summary": "Serverless runtime for agent sandboxes with MicroVM isolation, snapshots, suspend-resume, and background orchestration.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بيئة تشغيل بلا خوادم لبيئات عزل الوكلاء بعزل الآلات الافتراضية المصغرة واللقطات والإيقاف والاستئناف والتنسيق في الخلفية.",
+    "group": "بيئات التنفيذ والعزل"
+   }
   },
   {
    "name": "Pydantic AI Harness",
@@ -5070,7 +6250,11 @@
    "summary": "Official Pydantic AI capability library for composing tools, lifecycle hooks, instructions, and model settings into reusable agent harnesses.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مكتبة القدرات الرسمية في Pydantic AI لتركيب الأدوات وخطافات دورة الحياة والتعليمات وإعدادات النموذج في أدوات harness قابلة لإعادة الاستخدام.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "Agentic Harness Engineering",
@@ -5087,7 +6271,11 @@
    "summary": "Observability-driven system for evolving coding-agent harness components through evaluate, analyze, and improve loops.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "نظام قائم على المراقبة لتطوير مكونات harness وكيل البرمجة عبر حلقات التقييم والتحليل والتحسين.",
+    "group": "المراقبة وعمليات الموثوقية"
+   }
   },
   {
    "name": "codex-autorunner",
@@ -5104,7 +6292,11 @@
    "summary": "Meta-harness that treats tickets as the control plane for long-running coding agents, with queue execution, hub UI, and chat notifications.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness أعلى يجعل التذاكر لوحة التحكم لوكلاء البرمجة طويلي التشغيل، مع تنفيذ من قائمة انتظار وواجهة مركزية وتنبيهات في المحادثة.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "CUGA",
@@ -5121,7 +6313,11 @@
    "summary": "Enterprise generalist agent harness with MCP/OpenAPI tools, policy controls, HITL gates, memory, skills, and hybrid API/browser execution.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness وكيل عام للمؤسسات بأدوات MCP/OpenAPI وضوابط سياسات وبوابات بشرية وذاكرة ومهارات وتنفيذ هجين عبر الواجهات والمتصفح.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "AgentScope Runtime",
@@ -5138,7 +6334,11 @@
    "summary": "Production runtime for agent apps with secure tool sandboxes, deployment APIs, observability, and state services.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بيئة تشغيل إنتاجية لتطبيقات الوكلاء ببيئات عزل آمنة للأدوات وواجهات نشر ومراقبة وخدمات للحالة.",
+    "group": "بيئات التنفيذ والعزل"
+   }
   },
   {
    "name": "DefenseClaw",
@@ -5155,7 +6355,11 @@
    "summary": "Security governance stack for OpenClaw and agentic runtimes, combining admission control, runtime inspection, CodeGuard checks, sandbox policy, audit logs, and observability export.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "حزمة حوكمة أمنية لـ OpenClaw وبيئات الوكلاء، تجمع التحكم في القبول والفحص أثناء التشغيل وفحوص CodeGuard وسياسة العزل وسجلات التدقيق وتصدير المراقبة.",
+    "group": "الحمايات والأمان والحوكمة"
+   }
   },
   {
    "name": "context-space",
@@ -5172,7 +6376,11 @@
    "summary": "Infrastructure project focused on context engineering building blocks and MCP-centric integrations.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مشروع بنية تحتية يركز على لبنات هندسة السياق وتكاملات متمحورة حول MCP.",
+    "group": "هندسة السياق وحالة العمل"
+   }
   },
   {
    "name": "ClawBench",
@@ -5189,7 +6397,11 @@
    "summary": "Browser-agent benchmark with live-site tasks, isolated containers, five-layer recording, and agentic scoring.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مقياس لوكلاء المتصفح بمهام على مواقع حية وحاويات معزولة وتسجيل خماسي الطبقات وتقييم وكيلي.",
+    "group": "أدوات التقييم والمقاييس"
+   }
   },
   {
    "name": "Memorix",
@@ -5206,7 +6418,11 @@
    "summary": "Local-first cross-agent memory control plane with MCP support, workspace sync, sessions, and orchestration state.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "لوحة تحكم محلية أولًا للذاكرة عبر الوكلاء بدعم MCP ومزامنة مساحة العمل والجلسات وحالة التنسيق.",
+    "group": "هندسة السياق وحالة العمل"
+   }
   },
   {
    "name": "TheAgentCompany",
@@ -5223,7 +6439,11 @@
    "summary": "Agent benchmark with simulated software-company tasks for evaluating multi-step workplace autonomy.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مقياس للوكلاء بمهام محاكاة لشركة برمجيات لتقييم الاستقلالية متعددة الخطوات في بيئة العمل.",
+    "group": "أدوات التقييم والمقاييس"
+   }
   },
   {
    "name": "CheetahClaws",
@@ -5240,7 +6460,11 @@
    "summary": "Python agent harness infrastructure for long-horizon, multi-model, tool-using coding assistants with MCP, skills, memory, approvals, checkpoints, and bridges.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بنية harness وكلاء بـ Python لمساعدي برمجة طويلي المدى متعددي النماذج يستخدمون الأدوات، مع MCP ومهارات وذاكرة وموافقات ونقاط حفظ وجسور.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Claw-Eval",
@@ -5257,7 +6481,11 @@
    "summary": "Evaluation harness and benchmark for autonomous agents with human-verified tasks, trajectory auditing, and completion, safety, and robustness rubrics.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness تقييم ومقياس للوكلاء المستقلين بمهام تحقق منها بشر وتدقيق للمسارات ومعايير للإنجاز والأمان والمتانة.",
+    "group": "أدوات التقييم والمقاييس"
+   }
   },
   {
    "name": "Terminal-Bench",
@@ -5274,7 +6502,11 @@
    "summary": "Terminal-native benchmark suite for long-horizon, verification-heavy agent tasks.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مجموعة مقاييس أصلية في الطرفية لمهام وكلاء طويلة المدى كثيفة التحقق.",
+    "group": "أدوات التقييم والمقاييس"
+   }
   },
   {
    "name": "Inspect Evals",
@@ -5291,7 +6523,11 @@
    "summary": "Evaluation suite collection for Inspect AI workflows.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مجموعة من حزم التقييم لسير عمل Inspect AI.",
+    "group": "أدوات التقييم والمقاييس"
+   }
   },
   {
    "name": "Dexto",
@@ -5309,7 +6545,11 @@
    "lists": [
     "Picrew/awesome-agent-harness",
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness وكلاء مفتوح للتطبيقات بإعدادات YAML وجلسات ذات حالة وتنسيق للأدوات وذاكرة ومراقبة وصلاحيات ووكلاء فرعيين.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "SWE-ReX",
@@ -5326,7 +6566,11 @@
    "summary": "Sandboxed execution infrastructure for AI coding agents at local and cloud scale.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بنية تنفيذ معزول لوكلاء البرمجة على نطاق محلي وسحابي.",
+    "group": "بيئات التنفيذ والعزل"
+   }
   },
   {
    "name": "auto-harness",
@@ -5343,7 +6587,11 @@
    "summary": "Benchmark-gated optimization loop that mines failures, edits agent code, and guards against regressions overnight.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "حلقة تحسين محكومة بالمقياس تستخرج الإخفاقات وتعدّل شيفرة الوكيل وتحمي من الانحدار خلال الليل.",
+    "group": "أدوات التقييم والمقاييس"
+   }
   },
   {
    "name": "SWE-Bench Pro",
@@ -5360,7 +6608,11 @@
    "summary": "Long-horizon software-engineering benchmark with reproducible Docker-based evaluation for issue-driven coding agents.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مقياس هندسة برمجيات طويل المدى بتقييم قابل للتكرار في Docker لوكلاء البرمجة القائمين على التذاكر.",
+    "group": "أدوات التقييم والمقاييس"
+   }
   },
   {
    "name": "WildClawBench",
@@ -5377,7 +6629,11 @@
    "summary": "In-the-wild benchmark that compares multiple agent harnesses on end-to-end multimodal, coding, safety, and productivity tasks inside a live OpenClaw environment.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مقياس واقعي يقارن عدة أدوات harness على مهام متكاملة متعددة الوسائط وبرمجية وأمنية وإنتاجية داخل بيئة OpenClaw حية.",
+    "group": "أدوات التقييم والمقاييس"
+   }
   },
   {
    "name": "sandboxed.sh",
@@ -5394,7 +6650,11 @@
    "summary": "Self-hosted orchestrator running coding agents inside isolated Linux workspaces.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "منسق مستضاف ذاتيًا يشغّل وكلاء البرمجة داخل مساحات عمل Linux معزولة.",
+    "group": "بيئات التنفيذ والعزل"
+   }
   },
   {
    "name": "Cordum",
@@ -5411,7 +6671,11 @@
    "summary": "Agent control plane for pre-execution policies, approval gates, safety-kernel verdicts, live monitoring, audit trails, and Claude Code compliance firewall hooks.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "لوحة تحكم للوكلاء بسياسات قبل التنفيذ وبوابات موافقة وأحكام نواة أمان ومراقبة مباشرة وسجلات تدقيق وخطافات جدار امتثال لـ Claude Code.",
+    "group": "الحمايات والأمان والحوكمة"
+   }
   },
   {
    "name": "OpenClaw.NET",
@@ -5428,7 +6692,11 @@
    "summary": "NativeAOT-friendly .NET agent runtime and gateway with tools, memory, MCP, governance ledger, evidence bundles, and harness regression tests.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بيئة تشغيل وبوابة وكلاء بـ .NET متوافقة مع NativeAOT بأدوات وذاكرة وMCP وسجل حوكمة وحزم أدلة واختبارات انحدار للـ harness.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "Sponsio",
@@ -5445,7 +6713,11 @@
    "summary": "Runtime enforcement layer that checks every agent action against deterministic contracts before execution.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "طبقة فرض أثناء التشغيل تفحص كل فعل للوكيل مقابل عقود حتمية قبل تنفيذه.",
+    "group": "الحمايات والأمان والحوكمة"
+   }
   },
   {
    "name": "IBM MCP",
@@ -5462,7 +6734,11 @@
    "summary": "IBM collection of MCP servers, clients, and developer tooling.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مجموعة IBM من خوادم MCP وعملائها وأدوات المطورين.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "Agent Evaluation",
@@ -5479,7 +6755,11 @@
    "summary": "AWS framework for testing virtual agents with evaluator-driven multi-turn conversations, hooks, and CI-friendly workflows.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار من AWS لاختبار الوكلاء الافتراضيين بمحادثات متعددة الأدوار يقودها مقيّم، مع خطافات وسير عمل مناسب لـ CI.",
+    "group": "أدوات التقييم والمقاييس"
+   }
   },
   {
    "name": "Water",
@@ -5496,7 +6776,11 @@
    "summary": "Python agent harness framework for orchestration, resilience, observability, guardrails, approval gates, sandboxing, and deployment.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار harness وكلاء بـ Python للتنسيق والمرونة والمراقبة والحمايات وبوابات الموافقة والعزل والنشر.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "DashClaw",
@@ -5513,7 +6797,11 @@
    "summary": "Governance layer that intercepts risky agent actions, enforces policy, routes approvals, and records audit-ready decision trails.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "طبقة حوكمة تعترض أفعال الوكلاء الخطرة وتفرض السياسات وتوجّه الموافقات وتسجل مسارات قرارات جاهزة للتدقيق.",
+    "group": "الحمايات والأمان والحوكمة"
+   }
   },
   {
    "name": "Capsule",
@@ -5530,7 +6818,11 @@
    "summary": "Durable runtime that coordinates agent tasks inside isolated WebAssembly sandboxes with retries and lifecycle tracking.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بيئة تشغيل دائمة تنسّق مهام الوكلاء داخل بيئات WebAssembly معزولة مع إعادة المحاولة وتتبع دورة الحياة.",
+    "group": "بيئات التنفيذ والعزل"
+   }
   },
   {
    "name": "WorkArena",
@@ -5547,7 +6839,11 @@
    "summary": "Browser benchmark for practical enterprise-like knowledge work tasks.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مقياس متصفح لمهام معرفية عملية شبيهة ببيئات المؤسسات.",
+    "group": "أدوات التقييم والمقاييس"
+   }
   },
   {
    "name": "OmniCoreAgent",
@@ -5564,7 +6860,11 @@
    "summary": "Python production harness with model loop, tools, MCP, memory, workspace files, guardrails, events, subagents, background tasks, and REST/SSE serving.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness إنتاجي بـ Python بحلقة نموذج وأدوات وMCP وذاكرة وملفات مساحة عمل وحمايات وأحداث ووكلاء فرعيين ومهام خلفية وخدمة REST/SSE.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "agentbox",
@@ -5581,7 +6881,11 @@
    "summary": "Locked-down local sandbox for AI coding agents with scoped filesystem access, egress policy, secret injection, firewalling, and persistent agent state.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بيئة عزل محلية محكمة لوكلاء البرمجة بوصول محصور لنظام الملفات وسياسة خروج وحقن أسرار وجدار حماية وحالة وكيل دائمة.",
+    "group": "بيئات التنفيذ والعزل"
+   }
   },
   {
    "name": "sd0x-dev-flow",
@@ -5598,7 +6902,11 @@
    "summary": "Claude Code harness layer with hook-enforced dual review, durable state-machine gates, context-compaction recovery, and fail-closed safety.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "طبقة harness لـ Claude Code بمراجعة مزدوجة تفرضها الخطافات وبوابات آلة حالة دائمة والتعافي من ضغط السياق وأمان يغلق عند الفشل.",
+    "group": "هندسة السياق وحالة العمل"
+   }
   },
   {
    "name": "HexAgent",
@@ -5615,7 +6923,11 @@
    "summary": "Agent harness that separates the runtime from the computer it operates on through local, VM, and cloud sandbox backends.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness وكلاء يفصل بيئة التشغيل عن الحاسوب الذي يعمل عليه عبر خلفيات عزل محلية وافتراضية وسحابية.",
+    "group": "بيئات التنفيذ والعزل"
+   }
   },
   {
    "name": "Utah",
@@ -5632,7 +6944,11 @@
    "summary": "Inngest-powered durable agent harness with a think-act-observe loop, step-level retries, singleton concurrency, cancellation, and multi-channel adapters.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness وكيل دائم مبني على Inngest بحلقة تفكير وفعل وملاحظة وإعادة محاولة لكل خطوة وتزامن أحادي وإلغاء وموصّلات قنوات متعددة.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
   },
   {
    "name": "hankweave",
@@ -5649,7 +6965,11 @@
    "summary": "Headless-first long-horizon runtime that orchestrates existing agent harnesses with sentinels, loops, checkpoints, and event journals.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بيئة تشغيل طويلة المدى بلا واجهة أولًا تنسّق أدوات harness الموجودة بحراس وحلقات ونقاط حفظ وسجلات أحداث.",
+    "group": "معمار الـ harness والتنسيق"
+   }
   },
   {
    "name": "OpenHands Benchmarks",
@@ -5666,7 +6986,11 @@
    "summary": "Evaluation harness and benchmark definitions for OpenHands systems.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness تقييم وتعريفات مقاييس لأنظمة OpenHands.",
+    "group": "أدوات التقييم والمقاييس"
+   }
   },
   {
    "name": "Tandem",
@@ -5683,7 +7007,11 @@
    "summary": "Governed runtime authority layer for agents with scoped execution, tool visibility, permissioned memory, approval gates, and audit trails.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "طبقة سلطة تشغيل محكومة للوكلاء بتنفيذ محصور ورؤية للأدوات وذاكرة بصلاحيات وبوابات موافقة وسجلات تدقيق.",
+    "group": "الحمايات والأمان والحوكمة"
+   }
   },
   {
    "name": "AGENT.md",
@@ -5700,7 +7028,11 @@
    "summary": "Standardized machine-readable file format for agentic coding tools.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "صيغة ملف معيارية مقروءة آليًا لأدوات البرمجة الوكيلية.",
+    "group": "البروتوكولات وواجهات الأدوات وعقود الوكلاء"
+   }
   },
   {
    "name": "terminal-bench-env",
@@ -5717,7 +7049,11 @@
    "summary": "Environment layer for terminal-agent benchmark execution.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "طبقة بيئة لتنفيذ مقاييس وكلاء الطرفية.",
+    "group": "بيئات التنفيذ والعزل"
+   }
   },
   {
    "name": "WebArena-Verified",
@@ -5734,7 +7070,11 @@
    "summary": "Verified web-agent benchmark with deterministic evaluators.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مقياس موثّق لوكلاء الويب بمقيّمات حتمية.",
+    "group": "أدوات التقييم والمقاييس"
+   }
   },
   {
    "name": "HarnessBench",
@@ -5751,7 +7091,11 @@
    "summary": "Benchmark for comparing agent harnesses on the same everyday web tasks with fixed models and per-harness containers.",
    "lists": [
     "Picrew/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مقياس لمقارنة أدوات harness الوكلاء على مهام الويب اليومية نفسها بنماذج ثابتة وحاوية لكل harness.",
+    "group": "أدوات التقييم والمقاييس"
+   }
   },
   {
    "name": "Emdash",
@@ -5764,7 +7108,11 @@
    "summary": "Open-source Agentic Development Environment (YC W26). Runs parallel agents in isolated worktrees, locally or over SSH — making the \"corrections are cheap\" principle practical for remote teams.",
    "lists": [
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بيئة تطوير وكيلية مفتوحة المصدر (YC W26) تشغّل وكلاء متوازين في worktrees معزولة محليًا أو عبر SSH، فتجعل مبدأ «التصحيح رخيص» عمليًا للفرق البعيدة.",
+    "group": "منسقو الوكلاء"
+   }
   },
   {
    "name": "Warp",
@@ -5777,7 +7125,11 @@
    "summary": "Agentic development environment built for coding with multiple AI agents.",
    "lists": [
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بيئة تطوير وكيلية مبنية للبرمجة مع عدة وكلاء ذكاء اصطناعي.",
+    "group": "منسقو الوكلاء"
+   }
   },
   {
    "name": "Oh My OpenCode",
@@ -5790,7 +7142,11 @@
    "summary": "Performance optimization harness for OpenCode with 44 lifecycle hooks.",
    "lists": [
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness لتحسين أداء OpenCode بـ 44 خطافًا لدورة الحياة.",
+    "group": "منسقو الوكلاء"
+   }
   },
   {
    "name": "Everything Claude Code",
@@ -5803,7 +7159,11 @@
    "summary": "Skills, instincts, memory, and security harness for Claude Code and Codex.",
    "lists": [
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness للمهارات والغرائز والذاكرة والأمان لـ Claude Code وCodex.",
+    "group": "منسقو الوكلاء"
+   }
   },
   {
    "name": "Desplega Agent Swarm",
@@ -5816,7 +7176,11 @@
    "summary": "Open-source multi-agent orchestration framework. Coordinates specialized AI agents (Claude Code-powered) through task delegation, session continuity, shared memory, and service discovery. Features include epics, scheduling, Slack integration, and cross-agent communication channels.",
    "lists": [
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار تنسيق متعدد الوكلاء مفتوح المصدر ينسّق وكلاء متخصصين (يعملون بـ Claude Code) عبر تفويض المهام واستمرارية الجلسات وذاكرة مشتركة واكتشاف الخدمات، مع ملاحم وجدولة وتكامل Slack وقنوات تواصل بين الوكلاء.",
+    "group": "منسقو الوكلاء"
+   }
   },
   {
    "name": "Composio Agent Orchestrator",
@@ -5829,7 +7193,11 @@
    "summary": "Agentic orchestrator for parallel coding agents. Plans tasks, spawns agents in isolated worktrees, autonomously handles CI fixes, merge conflicts, and code reviews.",
    "lists": [
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "منسق وكيلي لوكلاء البرمجة المتوازين يخطط المهام ويطلق الوكلاء في worktrees معزولة ويتولى باستقلالية إصلاحات CI وتعارضات الدمج ومراجعات الشيفرة.",
+    "group": "منسقو الوكلاء"
+   }
   },
   {
    "name": "Oh My AG",
@@ -5842,7 +7210,11 @@
    "summary": "Multi-agent harness for Google Antigravity with 6 specialized agents.",
    "lists": [
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness متعدد الوكلاء لـ Google Antigravity بستة وكلاء متخصصين.",
+    "group": "منسقو الوكلاء"
+   }
   },
   {
    "name": "ruflo",
@@ -5855,7 +7227,11 @@
    "summary": "Claude agent orchestration with swarm mode. Coordinates multiple Claude Code agents for parallel task execution.",
    "lists": [
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "تنسيق لوكلاء Claude بوضع السرب، ينسّق عدة وكلاء Claude Code لتنفيذ المهام بالتوازي.",
+    "group": "منسقو الوكلاء"
+   }
   },
   {
    "name": "Octogent",
@@ -5868,7 +7244,11 @@
    "summary": "Claude Code multi-agent orchestration dashboard. Humans control worker agents directly from the orchestration layer with real-time visibility into parallel execution.",
    "lists": [
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "لوحة تنسيق متعددة الوكلاء لـ Claude Code يتحكم فيها البشر بالوكلاء العاملين مباشرة مع رؤية لحظية للتنفيذ المتوازي.",
+    "group": "منسقو الوكلاء"
+   }
   },
   {
    "name": "Baton",
@@ -5881,7 +7261,11 @@
    "summary": "Go implementation of Symphony. Polls Linear for claimable issues, spawns isolated Codex workspaces per issue, streams workflow prompts, and cleans up on completion.",
    "lists": [
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "تطبيق لـ Symphony بلغة Go يستطلع Linear بحثًا عن تذاكر متاحة، ويطلق مساحة Codex معزولة لكل تذكرة، ويبث تعليمات سير العمل، وينظف عند الانتهاء.",
+    "group": "مشغّلات المهام"
+   }
   },
   {
    "name": "Linear Coding Agent Harness",
@@ -5894,7 +7278,11 @@
    "summary": "Linear → autonomous coding agent → PR pipeline.",
    "lists": [
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "خط عمل من Linear إلى وكيل برمجة مستقل إلى طلب دمج.",
+    "group": "مشغّلات المهام"
+   }
   },
   {
    "name": "Axon",
@@ -5907,7 +7295,11 @@
    "summary": "Kubernetes-native framework. Apply a Task CRD, get back a PR and cost in USD. TaskSpawner watches GitHub Issues.",
    "lists": [
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار أصلي في Kubernetes: تطبق مورد Task فتحصل على طلب دمج وتكلفته بالدولار، ويراقب TaskSpawner تذاكر GitHub.",
+    "group": "مشغّلات المهام"
+   }
   },
   {
    "name": "ralph",
@@ -5920,7 +7312,11 @@
    "summary": "PRD-driven autonomous agent loop. Runs until all PRD items are completed, bridging spec-to-execution for single-agent workflows.",
    "lists": [
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "حلقة وكيل مستقلة تقودها وثيقة المتطلبات، تعمل حتى اكتمال كل بنودها، وتربط المواصفات بالتنفيذ لسير عمل الوكيل الواحد.",
+    "group": "مشغّلات المهام"
+   }
   },
   {
    "name": "Gambit",
@@ -5933,7 +7329,11 @@
    "summary": "Framework for building, running, and verifying LLM workflows.",
    "lists": [
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار لبناء سير عمل النماذج اللغوية وتشغيله والتحقق منه.",
+    "group": "أطر الـ harness للوكلاء"
+   }
   },
   {
    "name": "Harness Kit",
@@ -5946,7 +7346,11 @@
    "summary": "Patterns and engineering practices for building with AI agents.",
    "lists": [
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "أنماط وممارسات هندسية للبناء بوكلاء الذكاء الاصطناعي.",
+    "group": "أطر الـ harness للوكلاء"
+   }
   },
   {
    "name": "Bridle",
@@ -5959,7 +7363,11 @@
    "summary": "TUI/CLI config manager for agent harnesses (Amp, Claude Code, OpenCode, Goose, Copilot CLI, Droid).",
    "lists": [
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مدير إعدادات بواجهة طرفية وسطر أوامر لأدوات harness الوكلاء (Amp وClaude Code وOpenCode وGoose وCopilot CLI وDroid).",
+    "group": "أطر الـ harness للوكلاء"
+   }
   },
   {
    "name": "Zylos",
@@ -5972,7 +7380,11 @@
    "summary": "Persistent agent harness for Claude Code. Tiered memory system, skill-based progressive disclosure, multi-channel communication bridge, task scheduler, and activity monitor — enabling autonomous, long-running agents that remember across sessions.",
    "lists": [
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "harness وكيل دائم لـ Claude Code بذاكرة متدرجة وإفصاح تدريجي قائم على المهارات وجسر تواصل متعدد القنوات ومجدول مهام ومراقب نشاط، لوكلاء مستقلين طويلي التشغيل يتذكرون عبر الجلسات.",
+    "group": "أطر الـ harness للوكلاء"
+   }
   },
   {
    "name": "GenericAgent",
@@ -5985,7 +7397,11 @@
    "summary": "Self-evolving agent framework. Grows a skill tree from 3.3K lines of seed code, achieving 6x token efficiency reduction through learned capabilities.",
    "lists": [
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "إطار وكيل يتطور ذاتيًا، ينمّي شجرة مهارات من 3.3 ألف سطر من شيفرة البذرة، ويحقق كفاءة رموز أعلى بست مرات عبر القدرات المكتسبة.",
+    "group": "أطر الـ harness للوكلاء"
+   }
   },
   {
    "name": "EvoMap Evolver",
@@ -5998,7 +7414,11 @@
    "summary": "Genome Evolution Protocol (GEP) engine for agent self-evolution. Applies evolutionary algorithms to optimize agent behavior and harness configuration over time.",
    "lists": [
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "محرك بروتوكول تطور الجينوم (GEP) للتطور الذاتي للوكلاء، يطبق خوارزميات تطورية لتحسين سلوك الوكيل وإعدادات الـ harness عبر الزمن.",
+    "group": "أطر الـ harness للوكلاء"
+   }
   },
   {
    "name": "get-shit-done",
@@ -6011,7 +7431,11 @@
    "summary": "Meta-prompting and context engineering system for Claude Code. Structures work as milestone→phase→plan with progressive context delivery.",
    "lists": [
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "نظام تعليمات عليا وهندسة سياق لـ Claude Code، ينظم العمل كمعلم ← مرحلة ← خطة مع تسليم تدريجي للسياق.",
+    "group": "أطر الـ harness للوكلاء"
+   }
   },
   {
    "name": "Nanoclaw",
@@ -6024,7 +7448,11 @@
    "summary": "Lightweight alternative to OpenClaw that runs in containers. Connects to WhatsApp, Telegram, and other channels with a security-first, container-based isolation model.",
    "lists": [
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "بديل خفيف لـ OpenClaw يعمل في الحاويات ويتصل بـ WhatsApp وTelegram وقنوات أخرى بنموذج عزل بالحاويات يقدّم الأمان.",
+    "group": "بيئات تشغيل الوكلاء"
+   }
   },
   {
    "name": "cq",
@@ -6037,7 +7465,11 @@
    "summary": "Mozilla developer project enabling AI coding agents to share learned knowledge. A commons where agents deposit and retrieve solutions, avoiding redundant problem-solving. Has Claude Code and OpenCode plugins.",
    "lists": [
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مشروع مطورين من Mozilla يتيح لوكلاء البرمجة مشاركة المعرفة المكتسبة؛ مشاع يودع فيه الوكلاء الحلول ويسترجعونها لتجنب تكرار حل المشكلات، مع إضافات لـ Claude Code وOpenCode.",
+    "group": "معرفة الوكلاء وذاكرتهم"
+   }
   },
   {
    "name": "Honcho",
@@ -6050,7 +7482,11 @@
    "summary": "Agent state memory library. Provides the persistence layer for stateful agents — session history, user context, and learned preferences.",
    "lists": [
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مكتبة ذاكرة لحالة الوكلاء توفر طبقة الحفظ للوكلاء ذوي الحالة: تاريخ الجلسات وسياق المستخدم والتفضيلات المكتسبة.",
+    "group": "معرفة الوكلاء وذاكرتهم"
+   }
   },
   {
    "name": "CodeBurn",
@@ -6063,7 +7499,11 @@
    "summary": "Claude Code token usage analytics. Breaks down token consumption by task, enabling cost attribution and optimization.",
    "lists": [
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "تحليلات لاستهلاك الرموز في Claude Code تفصّل الاستهلاك حسب المهمة لتوزيع التكلفة وتحسينها.",
+    "group": "معرفة الوكلاء وذاكرتهم"
+   }
   },
   {
    "name": "OpenCode",
@@ -6076,7 +7516,11 @@
    "summary": "Open-source coding agent with a plugin system (44 lifecycle hooks), server mode HTTP API, and TypeScript SDK. The most extensible harness integration point for custom workflows.",
    "lists": [
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "وكيل برمجة مفتوح المصدر بنظام إضافات (44 خطافًا لدورة الحياة) ووضع خادم بواجهة HTTP وحزمة TypeScript؛ أكثر نقاط تكامل الـ harness قابلية للتوسعة لسير العمل المخصص.",
+    "group": "وكلاء البرمجة"
+   }
   },
   {
    "name": "Aider",
@@ -6089,7 +7533,11 @@
    "summary": "AI pair programming in your terminal.",
    "lists": [
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "برمجة ثنائية بالذكاء الاصطناعي في الطرفية.",
+    "group": "وكلاء البرمجة"
+   }
   },
   {
    "name": "Pi Mono",
@@ -6102,7 +7550,11 @@
    "summary": "AI agent toolkit: coding agent CLI, unified LLM API, TUI & web UI libraries, Slack bot, vLLM pods. Full-stack agent infrastructure in a single monorepo.",
    "lists": [
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مجموعة أدوات وكلاء: أداة وكيل برمجة في سطر الأوامر وواجهة نماذج موحدة ومكتبات واجهات طرفية وويب وبوت Slack وحاويات vLLM، بنية وكلاء كاملة في مستودع واحد.",
+    "group": "وكلاء البرمجة"
+   }
   },
   {
    "name": "OpenSpec",
@@ -6115,7 +7567,11 @@
    "summary": "Spec-driven development CLI. Generate structured specs from natural language.",
    "lists": [
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "أداة سطر أوامر للتطوير المبني على المواصفات تولّد مواصفات منظمة من اللغة الطبيعية.",
+    "group": "أدوات المتطلبات والمواصفات"
+   }
   },
   {
    "name": "Open Pencil",
@@ -6128,7 +7584,11 @@
    "summary": "Open-source AI-native design editor (MIT). 75+ tools and an MCP server let coding agents read/write .fig files headlessly.",
    "lists": [
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "محرر تصميم مفتوح المصدر أصلي للذكاء الاصطناعي (MIT)، بأكثر من 75 أداة وخادم MCP يتيح لوكلاء البرمجة قراءة ملفات ‎.fig‎ وكتابتها دون واجهة.",
+    "group": "أدوات المتطلبات والمواصفات"
+   }
   },
   {
    "name": "GitAgent",
@@ -6141,7 +7601,11 @@
    "summary": "Git-native, framework-agnostic standard for defining AI agents. Your repo is the agent: agent.yaml manifest + SOUL.md identity + RULES.md constraints.",
    "lists": [
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "معيار أصلي في git ومحايد تجاه الأطر لتعريف الوكلاء: مستودعك هو الوكيل، بملف agent.yaml للتعريف وSOUL.md للهوية وRULES.md للقيود.",
+    "group": "المعايير والبروتوكولات"
+   }
   },
   {
    "name": "HXA-Connect",
@@ -6154,7 +7618,12 @@
    "summary": "B2B messaging hub for AI agents. WebSocket-based real-time communication with org-scoped authentication, collaboration threads, @mention routing, and reply-to threading. Enables multi-agent coordination across different harnesses.",
    "lists": [
     "AutoJunjie/awesome-agent-harness"
-   ]
+   ],
+   "ar": {
+    "summary": "مركز رسائل بين الشركات لوكلاء الذكاء الاصطناعي، بتواصل لحظي عبر WebSocket ومصادقة محصورة بالمؤسسة وسلاسل تعاون وتوجيه بالإشارة وردود متسلسلة، لتنسيق الوكلاء عبر أدوات harness مختلفة.",
+    "group": "المعايير والبروتوكولات"
+   }
   }
- ]
+ ],
+ "note_ar": "كل مشروع ورد في قوائم awesome الخاصة بالـ harness. عدد النجوم من لقطة القوائم. المشاريع التي لها ملف تفصيلي مرتبطة من خريطة الأدوات."
 }
