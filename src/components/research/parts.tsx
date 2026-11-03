@@ -75,8 +75,8 @@ export function CategoryTag({ track, id }: { track: Track; id: string }) {
   const { locale } = useLocale();
   const c = track.categories.find((x) => x.id === id);
   return (
-    <span style={catStyle(id)} className="sec-fg inline-flex items-center gap-1.5 whitespace-nowrap text-[12.5px] font-medium">
-      <span className="sec-bg size-2 rounded-[3px]" />
+    <span style={catStyle(id)} className="sec-fg inline-flex items-baseline gap-1.5 text-[12.5px] font-medium leading-5">
+      <span className="sec-bg size-2 shrink-0 translate-y-[1px] rounded-full" />
       {c ? c.name[locale] : id}
     </span>
   );
@@ -84,17 +84,33 @@ export function CategoryTag({ track, id }: { track: Track; id: string }) {
 
 export function ScoreBadge({ total }: { total: number }) {
   const { f } = useLocale();
-  const tone = total >= 75 ? "text-ok-ink" : total >= 55 ? "text-accent-ink" : "text-muted";
+  const tone = total >= 75 ? "text-ok-ink" : total >= 55 ? "text-ink" : "text-muted";
+  return <span className={`font-display text-[18px] font-semibold tabular-nums ${tone}`}>{f.num(total)}</span>;
+}
+
+/** A ring gauge for a 0–100 score. */
+export function ScoreDial({ total, size = 120, night }: { total: number; size?: number; night?: boolean }) {
+  const { f } = useLocale();
+  const r = 44;
+  const c = 2 * Math.PI * r;
   return (
-    <span className="inline-flex items-center gap-2">
-      <span className="relative h-1.5 w-12 overflow-hidden rounded-full bg-sunken">
-        <span
-          className="absolute inset-y-0 start-0 rounded-full bg-accent"
-          style={{ width: `${total}%` }}
-        />
-      </span>
-      <span className={`text-[13px] font-semibold tabular-nums ${tone}`}>{f.num(total)}</span>
-    </span>
+    <svg viewBox="0 0 100 100" width={size} height={size} aria-label={`${total}/100`} role="img">
+      <circle cx="50" cy="50" r={r} fill="none" stroke={night ? "rgb(255 255 255 / 0.12)" : "var(--sunken)"} strokeWidth="7" />
+      <circle
+        cx="50"
+        cy="50"
+        r={r}
+        fill="none"
+        stroke="var(--signal)"
+        strokeWidth="7"
+        strokeLinecap="round"
+        strokeDasharray={`${(total / 100) * c} ${c}`}
+        transform="rotate(-90 50 50)"
+      />
+      <text x="50" y="56" textAnchor="middle" fontSize="26" fontWeight="600" fill="currentColor" style={{ fontFamily: "var(--font-display)" }}>
+        {f.num(total)}
+      </text>
+    </svg>
   );
 }
 
@@ -122,12 +138,37 @@ export function CriteriaBars({ criteria, scores }: { criteria: Criterion[]; scor
   );
 }
 
-export function Panel({ title, children, className = "" }: { title?: ReactNode; children: ReactNode; className?: string }) {
+export function Panel({ title, children, className = "", aside }: { title?: ReactNode; children: ReactNode; className?: string; aside?: ReactNode }) {
   return (
-    <section className={`card p-5 sm:p-6 ${className}`}>
-      {title && <h2 className="mb-3 text-[17px] font-bold">{title}</h2>}
+    <section className={`rounded-[22px] border border-line bg-surface p-5 sm:p-7 ${className}`}>
+      {title && (
+        <div className="mb-4 flex items-baseline justify-between gap-3">
+          <h2 className="font-display text-[19px] font-semibold tracking-[-0.01em]">{title}</h2>
+          {aside}
+        </div>
+      )}
       {children}
     </section>
+  );
+}
+
+/** Seven cells, one per criterion, shaded by the 1–5 score. */
+export function CriteriaStrip({ criteria, scores }: { criteria: Criterion[]; scores: Record<string, number> }) {
+  const { locale } = useLocale();
+  return (
+    <span className="inline-flex gap-[3px]" aria-hidden>
+      {criteria.map((c) => {
+        const v = scores[c.id] ?? 0;
+        return (
+          <span
+            key={c.id}
+            title={`${c.name[locale]}: ${v}/5`}
+            className="h-4 w-3 rounded-[3px]"
+            style={{ background: `color-mix(in oklab, var(--lens) ${v * 20}%, var(--sunken))` }}
+          />
+        );
+      })}
+    </span>
   );
 }
 
@@ -152,9 +193,12 @@ export function TabLink({ href, active, children }: { href: string; active: bool
       href={href}
       scroll={false}
       aria-current={active ? "page" : undefined}
-      className={`whitespace-nowrap rounded-xl px-3.5 py-2 text-[14px] ${active ? "bg-ink font-semibold text-ground" : "text-ink-2 hover:bg-sunken"}`}
+      className={`relative whitespace-nowrap px-1 pb-3.5 pt-2 text-[14.5px] transition-colors ${
+        active ? "font-semibold text-night-ink" : "text-night-muted hover:text-night-ink"
+      }`}
     >
       {children}
+      {active && <span className="absolute inset-x-0 bottom-0 h-[3px] rounded-t-full bg-signal" />}
     </Link>
   );
 }

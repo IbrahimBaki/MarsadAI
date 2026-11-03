@@ -161,18 +161,18 @@ function NavContent({ onNavigate }: { onNavigate?: () => void }) {
               href={m.href}
               onClick={onNavigate}
               aria-current={m.active ? "page" : undefined}
-              className={`flex min-h-11 items-center gap-3 rounded-[14px] px-3 py-1.5 text-[15px] ${
-                m.active ? "bg-ink font-semibold text-ground" : "hover:bg-sunken"
+              className={`flex min-h-12 items-center gap-3 rounded-2xl px-3 py-2 text-[15px] ${
+                m.active ? "bg-night font-semibold text-night-ink" : "hover:bg-sunken"
               }`}
             >
               <m.icon width={19} height={19} className="shrink-0" />
               <span className="flex flex-1 flex-col leading-5">
-                {"sub" in m && <span className={`text-[12px] ${m.active ? "text-ground/70" : "text-faint"}`}>{m.sub}</span>}
+                {"sub" in m && <span className={`text-[12px] ${m.active ? "text-night-muted" : "text-faint"}`}>{m.sub}</span>}
                 <span>{m.label}</span>
               </span>
-              {m.status === "active" && <span className="size-2 rounded-full bg-star" aria-label={t.research.active} />}
+              {m.status === "active" && <span className="size-2 animate-pulse rounded-full bg-signal" aria-label={t.research.active} />}
               {m.status === "planned" && (
-                <span className={`text-[11.5px] ${m.active ? "text-ground/70" : "text-faint"}`}>{t.research.planned}</span>
+                <span className={`text-[11.5px] ${m.active ? "text-night-muted" : "text-faint"}`}>{t.research.planned}</span>
               )}
             </Link>
           ))}
@@ -292,13 +292,13 @@ function NavContent({ onNavigate }: { onNavigate?: () => void }) {
             <div className="flex gap-2">
               <Link
                 href="/login"
-                className="flex h-9 flex-1 items-center justify-center rounded-[10px] bg-ink text-[13.5px] font-semibold text-ground"
+                className="flex h-9 flex-1 items-center justify-center whitespace-nowrap rounded-[10px] bg-ink px-2 text-[13px] font-semibold text-ground"
               >
                 {t.guest.signIn}
               </Link>
               <Link
                 href="/register"
-                className="card flex h-9 flex-1 items-center justify-center !rounded-[10px] text-[13.5px] font-semibold"
+                className="card flex h-9 flex-1 items-center justify-center whitespace-nowrap !rounded-[10px] px-2 text-[13px] font-semibold"
               >
                 {t.guest.signUp}
               </Link>
@@ -358,7 +358,7 @@ function ShellInner({ children }: { children: ReactNode }) {
         </button>
         <Link href={FOCUS ? "/research" : "/"} className="flex flex-1 items-center gap-2">
           <Mark size={26} />
-          <span className="text-[21px] font-bold">{t.app.name}</span>
+          <span className="font-display text-[21px] font-semibold tracking-[-0.02em]">{t.app.name}</span>
         </Link>
         {user.guest ? (
           <Link
@@ -409,10 +409,10 @@ function ShellInner({ children }: { children: ReactNode }) {
 
       <div className="mx-auto flex w-full max-w-[1480px] gap-5 lg:px-5 lg:py-5">
         {/* Desktop sidebar */}
-        <aside className="card sticky top-5 hidden max-h-[calc(100dvh-40px)] w-[268px] shrink-0 flex-col overflow-y-auto !rounded-[24px] py-4 lg:flex">
+        <aside className="sticky top-5 hidden max-h-[calc(100dvh-40px)] w-[272px] shrink-0 flex-col overflow-y-auto rounded-[28px] border border-line bg-surface py-5 lg:flex">
           <Link href={FOCUS ? "/research" : "/"} className="mb-3 flex items-center gap-2.5 px-6 pt-1">
             <Mark size={30} />
-            <span className="text-[22px] font-bold">{t.app.name}</span>
+            <span className="font-display text-[23px] font-semibold tracking-[-0.02em]">{t.app.name}</span>
           </Link>
           <NavContent />
         </aside>

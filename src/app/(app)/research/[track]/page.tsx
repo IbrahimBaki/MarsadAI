@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getLocale, pageTitle } from "@/lib/locale-server";
+import { Radar } from "@/components/research/Radar";
 import { TABS, TRACKS, trackData, type Tab } from "@/lib/research";
 import {
   ArticlesTab,
@@ -11,6 +12,7 @@ import {
   PlannedTrack,
   RadarTab,
   TrackHeader,
+  ContentNote,
 } from "@/components/research/TrackView";
 
 type Props = {
@@ -41,7 +43,10 @@ export default async function TrackPage({ params, searchParams }: Props) {
 
   return (
     <div className="flex flex-col gap-5">
-      <TrackHeader track={track} tab={tab} stats={stats} checked={d.checked} />
+      <TrackHeader track={track} tab={tab} stats={stats} checked={d.checked}>
+        {!planned && tab === "overview" ? <Radar track={track} tools={tools} /> : null}
+      </TrackHeader>
+      {!planned && <ContentNote />}
       {planned ? (
         <PlannedTrack track={track} />
       ) : tab === "matrix" ? (

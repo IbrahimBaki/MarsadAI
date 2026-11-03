@@ -206,6 +206,11 @@ const en = {
   research: {
     title: "Research",
     hubTitle: "AI Champs research",
+    radarTitle: "Map of every tool, by category and verdict",
+    radarLegend: "Categories. Select one to focus it.",
+    shortlist: "Shortlist: adopt or reuse",
+    ringsNote: "Closer to the centre means a stronger recommendation for Azm. Larger dots have a full dossier.",
+    criteriaStrip: "Criteria",
     hubIntro:
       "External research for the three AI Champs tracks: what already exists, what each tool does well and lacks, and whether Azm should adopt it, reuse part of it, or build. Updated by the daily research task.",
     nav: "Research tracks",
@@ -486,6 +491,11 @@ const ar: Messages = {
   research: {
     title: "البحث",
     hubTitle: "أبحاث AI Champs",
+    radarTitle: "خريطة كل الأدوات حسب الفئة والتوصية",
+    radarLegend: "الفئات. اختر فئة لإبرازها.",
+    shortlist: "القائمة المختصرة: نعتمد أو نأخذ جزءًا",
+    ringsNote: "كلما اقتربت الأداة من المركز كانت التوصية بها لعزم أقوى. النقاط الأكبر لها ملف تفصيلي.",
+    criteriaStrip: "المعايير",
     hubIntro:
       "بحث خارجي يخدم مسارات AI Champs الثلاثة: ما الموجود فعلًا، وما الذي تُحسنه كل أداة وما الذي ينقصها، وهل نعتمدها في عزم أو نعيد استخدام جزء منها أو نبني بأنفسنا. تُحدّثه مهمة البحث اليومية.",
     nav: "مسارات البحث",
