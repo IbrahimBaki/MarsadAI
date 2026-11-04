@@ -1,6 +1,6 @@
 {
  "category": "sdlc",
- "checked": "2026-11-03",
+ "checked": "2026-11-04",
  "tools": [
   {
    "id": "squad-kit",
@@ -843,7 +843,8 @@
     ],
     "role": "نُدرجه خط أساس للعملية في بيئة الاختبار (المهام نفسها: سير BMAD مقابل squad-kit).",
     "pricing": "مجاني"
-   }
+   },
+   "version": "v6.12.4"
   },
   {
    "id": "superpowers",
@@ -855,7 +856,7 @@
    "url": "https://github.com/obra/superpowers",
    "license": "MIT",
    "pricing": "Free",
-   "version": "v7.0.1",
+   "version": "v7.0.2",
    "tier": "deep",
    "summary": "A skills library and workflow for coding agents: brainstorm → plan → subagent-driven development with TDD and code review, packaged as Claude Code plugin skills (also used with other harnesses).",
    "how": "Skills trigger automatically (brainstorming, writing plans, test-driven development, systematic debugging, requesting review); subagents implement tasks one by one with review between them.",

@@ -1,6 +1,6 @@
 {
  "category": "sandbox",
- "checked": "2026-11-03",
+ "checked": "2026-11-04",
  "tools": [
   {
    "id": "e2b",
@@ -170,7 +170,8 @@
     ],
     "role": "بيئة العزل الأساسية المستضافة لدينا إن كانت عزم تشغّل Kubernetes: للتشغيلات الجماعية والمجدولة على الشيفرة الخاصة، ويمكن أن يستهدفها عزل Inspect على k8s وبيئات Harbor المخصصة.",
     "pricing": "مجاني (على عنقودك)"
-   }
+   },
+   "version": "v1.0.9"
   },
   {
    "id": "opensandbox",
@@ -323,7 +324,8 @@
     ],
     "role": "خيار لسعة متوافقة مع E2B مستضافة لدينا.",
     "pricing": "مجاني"
-   }
+   },
+   "version": "v0.7.3"
   },
   {
    "id": "microsandbox",
@@ -466,7 +468,8 @@
     ],
     "role": "مرجع لنموذج السياسات في طبقة الأمان ببيئة الاختبار.",
     "pricing": "مجاني"
-   }
+   },
+   "version": "v0.1.7"
   },
   {
    "id": "sandbox-runtime",
@@ -1384,6 +1387,167 @@
     ],
     "role": "خيار لمساحات عمل وكلاء طويلة العمر.",
     "pricing": "حسب الاستخدام"
+   }
+  },
+  {
+   "id": "strands-box",
+   "name": "Strands Box",
+   "category": "sandbox",
+   "kind": "open-source",
+   "vendor": "AWS (Strands Agents)",
+   "repo": "strands-agents/box",
+   "url": "https://github.com/strands-agents/box",
+   "license": "Apache-2.0",
+   "pricing": "Free",
+   "status": "beta",
+   "version": "developer preview (Oct 2026)",
+   "tier": "brief",
+   "summary": "AWS's open-source local sandbox for agents (developer preview, 7 Oct 2026). It combines OS-level isolation with a policy engine whose rules can look at what the agent already did before allowing the next action.",
+   "how": "Shell commands, Python code, MCP tool calls and network traffic pass through four checkpoints (shell, Python interpreter, MCP broker, network gateway). Each asks the Dogwood policy engine; anything not allowed is denied. All checkpoints share one event history. Secrets stay outside: the agent holds a placeholder and the gateway injects the real key. Isolation uses macOS Seatbelt; files are granted in box.toml.",
+   "features": [
+    "Four checkpoints sharing one policy engine and history",
+    "Temporal policies (e.g. limits per time window) in the Dogwood language",
+    "Credential injection at the network gateway",
+    "Policy decisions exported as OTLP JSON",
+    "Harness-agnostic: you choose the agent binary"
+   ],
+   "strengths": [
+    "Policies that see earlier actions, which plain sandboxes cannot express",
+    "Secrets never enter the agent's environment"
+   ],
+   "weaknesses": [
+    "macOS on Apple silicon only for now; Linux is planned",
+    "Developer preview, early days"
+   ],
+   "gaps": [
+    "Linux and server runs needed for team-wide benchmarks",
+    "No built-in Harbor environment"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Watch as a developer-machine sandbox and as a model for action policies and secret injection; revisit when Linux or Kubernetes support lands."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 1,
+    "openness": 5,
+    "agnostic": 5,
+    "config": 4,
+    "measure": 3,
+    "safety": 5
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/strands-agents/box"
+    ],
+    [
+     "AWS blog",
+     "https://aws.amazon.com/blogs/opensource/introducing-strands-box-ai-agent-sandboxes-powered-by-dogwood/"
+    ]
+   ],
+   "sources": [
+    "https://raw.githubusercontent.com/strands-agents/box/main/README.md",
+    "https://aws.amazon.com/blogs/opensource/introducing-strands-box-ai-agent-sandboxes-powered-by-dogwood/",
+    "https://www.helpnetsecurity.com/2026/10/12/aws-strands-box-open-source-ai-agent-sandbox/"
+   ],
+   "ar": {
+    "summary": "بيئة عزم محلية مفتوحة المصدر من AWS للوكلاء (نسخة معاينة للمطورين، 7 أكتوبر 2026). تجمع العزل على مستوى نظام التشغيل مع محرك سياسات تستطيع قواعده النظر فيما فعله الوكيل سابقًا قبل السماح بالخطوة التالية.",
+    "how": "تمر أوامر الطرفية وشيفرة Python واستدعاءات أدوات MCP وحركة الشبكة عبر أربع نقاط تفتيش (الطرفية، ومفسّر Python، ووسيط MCP، وبوابة الشبكة). تسأل كل نقطة محرك السياسات Dogwood، ويُرفض كل ما لم يُسمح به. وتشترك النقاط كلها في سجل أحداث واحد. وتبقى الأسرار خارج البيئة: يحمل الوكيل قيمة بديلة وتضع البوابة المفتاح الحقيقي. ويعتمد العزل على macOS Seatbelt، وتُمنح الملفات في box.toml.",
+    "features": [
+     "أربع نقاط تفتيش تشترك في محرك سياسات وسجل واحد",
+     "سياسات زمنية (مثل حدود لكل فترة) بلغة Dogwood",
+     "حقن بيانات الاعتماد عند بوابة الشبكة",
+     "تصدير قرارات السياسات بصيغة OTLP JSON",
+     "مستقل عن الـ harness: أنت تختار برنامج الوكيل"
+    ],
+    "strengths": [
+     "سياسات ترى الأفعال السابقة، وهو ما لا تستطيع بيئات العزل العادية التعبير عنه",
+     "الأسرار لا تدخل بيئة الوكيل أبدًا"
+    ],
+    "weaknesses": [
+     "يعمل على macOS بمعالجات Apple فقط حاليًا، ودعم Linux مخطط له",
+     "نسخة معاينة للمطورين وفي بداياتها"
+    ],
+    "gaps": [
+     "التشغيل على Linux والخوادم اللازم للمقارنات على مستوى الفرق",
+     "لا توجد بيئة Harbor جاهزة"
+    ],
+    "role": "نتابعها بيئةَ عزل لأجهزة المطورين ونموذجًا لسياسات الأفعال وحقن الأسرار، ونعود إليها عند وصول دعم Linux أو Kubernetes.",
+    "pricing": "مجاني"
+   }
+  },
+  {
+   "id": "akamai-agent-sandbox",
+   "name": "Akamai Agent Sandbox",
+   "category": "sandbox",
+   "kind": "open-core",
+   "vendor": "Akamai (Fermyon Spin)",
+   "repo": null,
+   "url": "https://www.techzine.eu/news/infrastructure/145346/akamai-launches-ai-inference-service-and-agent-sandbox/",
+   "license": "Open-source component of the Spin framework (licence not stated in the announcement)",
+   "pricing": "Not published (Nov 2026)",
+   "status": "beta",
+   "tier": "brief",
+   "summary": "Akamai's agent sandbox, launched in beta on 28 Oct 2026 with Akamai Inference. It runs code written by agents in WebAssembly, separate from the agent itself.",
+   "how": "Agent-written code runs in a WebAssembly sandbox with limits on compute, memory, outbound connections and system privileges. It ships through the Spin SDK from Fermyon.",
+   "features": [
+    "WebAssembly isolation with compute, memory and network limits",
+    "Available through the Spin SDK",
+    "Runs on Akamai's edge cloud"
+   ],
+   "strengths": [
+    "Very light isolation for short code snippets"
+   ],
+   "weaknesses": [
+    "Wasm cannot run full CLI harnesses, git and test suites as-is",
+    "Beta; pricing not published"
+   ],
+   "gaps": [
+    "Running a whole harness on a repository"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Not a fit for running harnesses on repos; note it as a lightweight option for agent tool code."
+   },
+   "scores": {
+    "fit": 1,
+    "maturity": 2,
+    "openness": 3,
+    "agnostic": 2,
+    "config": 2,
+    "measure": 1,
+    "safety": 4
+   },
+   "links": [
+    [
+     "Announcement (Techzine)",
+     "https://www.techzine.eu/news/infrastructure/145346/akamai-launches-ai-inference-service-and-agent-sandbox/"
+    ]
+   ],
+   "sources": [
+    "https://www.techzine.eu/news/infrastructure/145346/akamai-launches-ai-inference-service-and-agent-sandbox/"
+   ],
+   "ar": {
+    "summary": "بيئة عزل للوكلاء من Akamai، أُطلقت نسخة تجريبية في 28 أكتوبر 2026 مع خدمة Akamai Inference. تشغّل الشيفرة التي يكتبها الوكلاء داخل WebAssembly بمعزل عن الوكيل نفسه.",
+    "how": "تعمل الشيفرة التي يكتبها الوكيل داخل بيئة WebAssembly معزولة مع حدود على المعالجة والذاكرة والاتصالات الخارجية وصلاحيات النظام، وتُتاح عبر Spin SDK من Fermyon.",
+    "features": [
+     "عزل WebAssembly مع حدود للمعالجة والذاكرة والشبكة",
+     "متاحة عبر Spin SDK",
+     "تعمل على سحابة Akamai الطرفية"
+    ],
+    "strengths": [
+     "عزل خفيف جدًا لمقاطع الشيفرة القصيرة"
+    ],
+    "weaknesses": [
+     "لا تستطيع WebAssembly تشغيل أدوات harness كاملة وgit ومجموعات الاختبار كما هي",
+     "نسخة تجريبية؛ والأسعار غير منشورة"
+    ],
+    "gaps": [
+     "تشغيل harness كامل على مستودع"
+    ],
+    "role": "لا تناسب تشغيل أدوات الـ harness على المستودعات؛ نذكرها خيارًا خفيفًا لشيفرة أدوات الوكلاء.",
+    "pricing": "غير منشورة (نوفمبر 2026)"
    }
   }
  ]

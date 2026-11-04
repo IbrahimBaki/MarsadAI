@@ -1,6 +1,6 @@
 {
  "category": "eval",
- "checked": "2026-11-03",
+ "checked": "2026-11-04",
  "tools": [
   {
    "id": "harbor",
@@ -204,7 +204,8 @@
     ],
     "role": "بديل أو مكمّل لـ Harbor في المهام غير البرمجية (أسئلة المستودع، مراجعة التصميم، أسئلة المعايير) وللعزل الصارم عبر إضافاته.",
     "pricing": "مجاني"
-   }
+   },
+   "version": "0.3.287"
   },
   {
    "id": "aws-harness-benchmarks",
@@ -1246,6 +1247,104 @@
     ],
     "role": "مكتبة مقاييس محتملة للتقييم بالمعايير؛ غير ضرورية إن استخدمنا Harbor ومقيّمات مخصصة.",
     "pricing": "مفتوح المصدر؛ وسحابة Confident AI مدفوعة"
+   }
+  },
+  {
+   "id": "qihoo-harness-bench",
+   "name": "Harness-Bench (Qihoo 360 / PKU)",
+   "category": "eval",
+   "kind": "open-source",
+   "vendor": "Peking University and Qiyuan Tech (Qihoo 360)",
+   "repo": "Qihoo360/harness-bench",
+   "url": "https://www.harness-bench.ai/",
+   "license": "Not stated on the project site; check the repo before reuse",
+   "pricing": "Free",
+   "status": "active",
+   "tier": "deep",
+   "summary": "A 2026 research benchmark that measures how much the harness changes results: 7 native harnesses (Claude Code, Codex, OpenCode, OpenClaw, Hermes, Goose, Nanobot) on 10 model backends across 300 sandboxed tasks, 20,454 scored runs.",
+   "how": "Each task runs in a sandbox; task-specific oracles score the final artifacts module by module (3-7 modules per task) with partial credit and no LLM judge. Safety and risk gates can zero a score. The pipeline also records turns, tokens, API requests and estimated cost. Results are reported as mean score, share of runs scoring at least 0.8, and full-credit rate.",
+   "features": [
+    "7 harnesses × 10 models on the same 300 tasks (81 software-engineering tasks)",
+    "Module-level oracle scoring with partial credit, no LLM judge",
+    "Safety/risk gates that zero a run",
+    "Cost, token and turn tracking per run",
+    "Public leaderboard and task browser"
+   ],
+   "strengths": [
+    "Closest published version of the harness × model matrix Azm plans to report",
+    "Shows that full-credit rate separates harnesses more than mean score does",
+    "Shows that picking a harness per model beats one shared harness (+2.5 to 2.7 points held-out)"
+   ],
+   "weaknesses": [
+    "Mostly general work tasks, not a team's own SDLC",
+    "Research benchmark; licence and long-term maintenance not confirmed"
+   ],
+   "gaps": [
+    "Azm repos and tickets as tasks",
+    "Standards-compliance scoring (Track 1)",
+    "Per-team configuration and CI gate"
+   ],
+   "fit": {
+    "verdict": "adopt-part",
+    "role": "Copy its reporting design (mean vs ≥0.8 vs full credit, cost per run, per-model harness choice) and module-level oracle scoring into the Azm report; possibly reuse its software-engineering tasks as a public control set."
+   },
+   "scores": {
+    "fit": 4,
+    "maturity": 2,
+    "openness": 3,
+    "agnostic": 5,
+    "config": 2,
+    "measure": 5,
+    "safety": 4
+   },
+   "links": [
+    [
+     "Paper",
+     "https://arxiv.org/abs/2605.27922"
+    ],
+    [
+     "Site",
+     "https://www.harness-bench.ai/"
+    ],
+    [
+     "Leaderboard",
+     "https://www.harness-bench.ai/leaderboard.html"
+    ],
+    [
+     "GitHub",
+     "https://github.com/Qihoo360/harness-bench"
+    ]
+   ],
+   "sources": [
+    "https://arxiv.org/html/2605.27922",
+    "https://www.harness-bench.ai/"
+   ],
+   "ar": {
+    "summary": "مقياس بحثي صدر في 2026 يقيس مقدار ما يغيّره الـ harness في النتائج: سبع أدوات harness أصلية (Claude Code وCodex وOpenCode وOpenClaw وHermes وGoose وNanobot) على عشرة نماذج، عبر 300 مهمة داخل بيئات معزولة، و20,454 تشغيلًا مُقيَّمًا.",
+    "how": "تعمل كل مهمة داخل بيئة معزولة، وتقيّم أدوات تحقق خاصة بكل مهمة الناتج النهائي جزءًا جزءًا (من 3 إلى 7 أجزاء لكل مهمة) مع درجات جزئية ودون نموذج حَكَم. ويمكن لبوابات الأمان والمخاطر أن تصفّر الدرجة. ويسجّل أيضًا عدد الأدوار والرموز وطلبات الواجهة والتكلفة التقديرية. وتُعرض النتائج بمتوسط الدرجة، ونسبة التشغيلات التي بلغت 0.8 فأكثر، ونسبة الإنجاز الكامل.",
+    "features": [
+     "سبع أدوات harness × عشرة نماذج على 300 مهمة نفسها (81 مهمة هندسة برمجيات)",
+     "تقييم بأدوات تحقق لكل جزء مع درجات جزئية، دون نموذج حَكَم",
+     "بوابات أمان ومخاطر تصفّر التشغيل",
+     "تتبّع التكلفة والرموز والأدوار لكل تشغيل",
+     "لوحة نتائج عامة ومتصفح للمهام"
+    ],
+    "strengths": [
+     "أقرب نسخة منشورة لمصفوفة harness × نموذج التي تخطط عزم لعرضها",
+     "يبيّن أن نسبة الإنجاز الكامل تفرّق بين أدوات الـ harness أكثر من متوسط الدرجة",
+     "يبيّن أن اختيار harness لكل نموذج أفضل من harness واحد مشترك (+2.5 إلى 2.7 نقطة على مهام محجوبة)"
+    ],
+    "weaknesses": [
+     "مهام عمل عامة في أغلبها، لا دورة تطوير خاصة بفريق",
+     "مقياس بحثي؛ لم يتأكد الترخيص ولا الاستمرار في الصيانة"
+    ],
+    "gaps": [
+     "مستودعات عزم وتذاكرها مهامًا",
+     "تقييم الالتزام بالمعايير (المسار 1)",
+     "إعدادات لكل فريق وبوابة في CI"
+    ],
+    "role": "ننسخ طريقة عرضه للنتائج (المتوسط مقابل 0.8 فأكثر مقابل الإنجاز الكامل، والتكلفة لكل تشغيل، واختيار الـ harness لكل نموذج) وتقييمه بأدوات التحقق لكل جزء في تقرير عزم؛ وربما نعيد استخدام مهام هندسة البرمجيات فيه مجموعةً ضابطة عامة.",
+    "pricing": "مجاني"
    }
   }
  ]

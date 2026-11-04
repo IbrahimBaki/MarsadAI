@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-03",
+ "updated": "2026-11-04",
  "sources": [
   {
    "name": "Picrew/awesome-agent-harness",
@@ -7622,6 +7622,57 @@
    "ar": {
     "summary": "مركز رسائل بين الشركات لوكلاء الذكاء الاصطناعي، بتواصل لحظي عبر WebSocket ومصادقة محصورة بالمؤسسة وسلاسل تعاون وتوجيه بالإشارة وردود متسلسلة، لتنسيق الوكلاء عبر أدوات harness مختلفة.",
     "group": "المعايير والبروتوكولات"
+   }
+  },
+  {
+   "name": "Harness-Bench",
+   "repo": "Qihoo360/harness-bench",
+   "url": "https://github.com/Qihoo360/harness-bench",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": null,
+   "tags": [
+    "found-by-search"
+   ],
+   "summary": "Benchmark of 7 native harnesses on 10 models across 300 sandboxed tasks, scored by task oracles with partial credit.",
+   "lists": [],
+   "ar": {
+    "summary": "مقياس لسبع أدوات harness أصلية على عشرة نماذج عبر 300 مهمة داخل بيئات معزولة، تُقيَّم بأدوات تحقق مع درجات جزئية.",
+    "group": "أدوات التقييم والمقاييس"
+   }
+  },
+  {
+   "name": "Strands Box",
+   "repo": "strands-agents/box",
+   "url": "https://github.com/strands-agents/box",
+   "category": "sandbox",
+   "group": "Execution Substrates & Sandboxing",
+   "stars": null,
+   "tags": [
+    "found-by-search"
+   ],
+   "summary": "AWS local agent sandbox with history-aware Dogwood policies and secret injection (macOS preview).",
+   "lists": [],
+   "ar": {
+    "summary": "بيئة عزل محلية للوكلاء من AWS بسياسات Dogwood تراعي السجل وحقن الأسرار (معاينة على macOS).",
+    "group": "بيئات التنفيذ والعزل"
+   }
+  },
+  {
+   "name": "JiuwenSwarm (openJiuwen)",
+   "repo": "openJiuwen-ai/jiuwenswarm",
+   "url": "https://github.com/openJiuwen-ai/jiuwenswarm",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": null,
+   "tags": [
+    "found-by-search"
+   ],
+   "summary": "Huawei's adaptive harness for long coding tasks: single agent, sub-agents or swarm, with goal mode and LSP feedback.",
+   "lists": [],
+   "ar": {
+    "summary": "harness متكيّف من Huawei للمهام البرمجية الطويلة: وكيل منفرد أو وكلاء فرعيون أو سرب، مع وضع الهدف وتغذية LSP.",
+    "group": "تطبيقات مرجعية للـ harness"
    }
   }
  ],

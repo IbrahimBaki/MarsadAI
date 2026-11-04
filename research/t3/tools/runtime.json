@@ -1,6 +1,6 @@
 {
  "category": "runtime",
- "checked": "2026-11-03",
+ "checked": "2026-11-04",
  "tools": [
   {
    "id": "claude-code",
@@ -321,7 +321,8 @@
     ],
     "role": "خط أساس خفيف، ومحرك محتمل لـ azm-harness.",
     "pricing": "مجاني"
-   }
+   },
+   "version": "v1.5.0"
   },
   {
    "id": "openhands",
@@ -332,7 +333,7 @@
    "url": "https://openhands.dev",
    "license": "MIT",
    "pricing": "Free; OpenHands Cloud paid",
-   "version": "v1.34.0",
+   "version": "v1.35.0",
    "tier": "deep",
    "summary": "A leading open-source software agent platform with a Docker/remote runtime, web UI, CLI and a composable Software Agent SDK, plus its own benchmarks repo.",
    "how": "Agents act through a sandboxed runtime (Docker or remote); the SDK composes tools, context condensers and security analysers.",
@@ -954,6 +955,83 @@
      "النضج والمجتمع"
     ],
     "role": "مرجع.",
+    "pricing": "مجاني"
+   }
+  },
+  {
+   "id": "openjiuwen",
+   "name": "openJiuwen (JiuwenSwarm)",
+   "category": "runtime",
+   "kind": "open-source",
+   "vendor": "Huawei (openJiuwen team)",
+   "repo": "openJiuwen-ai/jiuwenswarm",
+   "url": "https://github.com/openJiuwen-ai/jiuwenswarm",
+   "license": "Not stated in the paper; check the repo",
+   "pricing": "Free",
+   "status": "active",
+   "tier": "brief",
+   "summary": "An open-source harness for long coding tasks from Huawei that adapts its own runtime decisions as a task runs, while the model stays fixed. Its paper reports 82.6% on SWE-bench Verified and 87.19% on Terminal-Bench 2.1.",
+   "how": "One execution model supports a single agent, delegated sub-agents or a multi-agent swarm, with inner and outer control loops and 'Rail' components attached through lifecycle hooks. At run time it manages context, decides when a task is accepted or should stop (Goal Mode), feeds filtered LSP diagnostics back, and reuses lessons across tasks.",
+   "features": [
+    "Single agent, sub-agents or swarm on one execution model",
+    "Goal Mode for task acceptance and stopping",
+    "LSP diagnostics as passive feedback",
+    "Self-reflection that reuses experience across tasks"
+   ],
+   "strengths": [
+    "Strong reported scores; with the same model it slightly beats Claude Code on Terminal-Bench 2.1 (84.04% vs 83.8%)"
+   ],
+   "weaknesses": [
+    "Scores are self-reported system-level comparisons, as the authors note"
+   ],
+   "gaps": [
+    "No SDLC roles, gates or human approval"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Candidate extra harness for the benchmark matrix and a source of ideas (goal mode, LSP feedback) for azm-harness."
+   },
+   "scores": {
+    "fit": 2,
+    "maturity": 2,
+    "openness": 4,
+    "agnostic": 4,
+    "config": 3,
+    "measure": 2,
+    "safety": 2
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/openJiuwen-ai/jiuwenswarm"
+    ],
+    [
+     "Paper",
+     "https://arxiv.org/pdf/2608.27969"
+    ]
+   ],
+   "sources": [
+    "https://arxiv.org/pdf/2608.27969"
+   ],
+   "ar": {
+    "summary": "harness مفتوح المصدر من Huawei للمهام البرمجية الطويلة، يعدّل قراراته أثناء التشغيل مع بقاء النموذج ثابتًا. وتذكر ورقته البحثية 82.6% على SWE-bench Verified و87.19% على Terminal-Bench 2.1.",
+    "how": "نموذج تنفيذ واحد يدعم وكيلًا منفردًا أو وكلاء فرعيين أو سربًا من الوكلاء، مع حلقتي تحكم داخلية وخارجية ومكوّنات «Rail» تُربط عبر خطافات دورة الحياة. وأثناء التشغيل يدير السياق، ويقرر متى تُقبل المهمة أو يجب التوقف (Goal Mode)، ويعيد تشخيصات LSP المُرشّحة، ويستفيد من الدروس عبر المهام.",
+    "features": [
+     "وكيل منفرد أو وكلاء فرعيون أو سرب على نموذج تنفيذ واحد",
+     "وضع الهدف لقبول المهمة والتوقف",
+     "تشخيصات LSP تغذية راجعة غير مباشرة",
+     "مراجعة ذاتية تعيد استخدام الخبرة عبر المهام"
+    ],
+    "strengths": [
+     "نتائج قوية معلنة؛ ومع النموذج نفسه يتفوق قليلًا على Claude Code في Terminal-Bench 2.1 ‏(84.04% مقابل 83.8%)"
+    ],
+    "weaknesses": [
+     "النتائج مقارنات على مستوى النظام أعلنها أصحابها، كما يذكر المؤلفون"
+    ],
+    "gaps": [
+     "لا أدوار لدورة التطوير ولا بوابات ولا موافقة بشرية"
+    ],
+    "role": "مرشح لإضافته harness آخر في مصفوفة المقارنة، ومصدر أفكار (وضع الهدف وتغذية LSP) لـ azm-harness.",
     "pricing": "مجاني"
    }
   }

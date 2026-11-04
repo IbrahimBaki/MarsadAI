@@ -1,6 +1,6 @@
 {
  "track": "t3",
- "checked": "2026-11-03",
+ "checked": "2026-11-04",
  "goal": {
   "en": "Build one place where Azm can run any harness (squad-kit, azm-harness, Claude Code, others) on the same real Azm tasks, in isolation, and get a clear answer: which harness, with which model, gives the best quality for the cost, and does it follow our standards?",
   "ar": "بناء مكان واحد تشغّل فيه عزم أي harness (مثل squad-kit وazm-harness وClaude Code وغيرها) على المهام الحقيقية نفسها من مشاريع عزم، في بيئة معزولة، لتحصل على إجابة واضحة: أي harness، مع أي نموذج، يعطي أفضل جودة مقابل التكلفة، وهل يلتزم بمعاييرنا؟"
@@ -103,7 +103,8 @@
    "alternatives": [
     "terminal-bench",
     "skillsbench",
-    "aws-harness-benchmarks"
+    "aws-harness-benchmarks",
+    "qihoo-harness-bench"
    ],
    "compare": {
     "tools": [
@@ -896,7 +897,9 @@
     "vercel-sandbox",
     "runloop-benchmarks",
     "northflank",
-    "daytona"
+    "daytona",
+    "strands-box",
+    "akamai-agent-sandbox"
    ],
    "modes": [
     {
@@ -1393,20 +1396,22 @@
    },
    "decision": "build",
    "plan": {
-    "en": "Build this layer. Score each run: resolved (hidden tests), a developer-value score 0-100, standards compliance from Track 1 checks, and zero for any safety violation; repeat 3-5 times and report variance. Report a harness × model × team matrix and a cost/quality chart, borrowing AWS's frontier chart and the Harness Card. Add a CI gate so no harness or standard change ships if it scores worse.",
-    "ar": "نبني هذه الطبقة. نقيّم كل تشغيل: هل حُلّت المهمة (اختبارات مخفية)، ودرجة قيمة للمطور من 0 إلى 100، والالتزام بالمعايير من فحوص المسار 1، وصفر لأي مخالفة أمان؛ ونكرر 3-5 مرات ونعرض التباين. نعرض مصفوفة harness × نموذج × فريق ورسمًا للجودة مقابل التكلفة، مستفيدين من رسم AWS وبطاقة الـ Harness. ونضيف بوابة في CI تمنع أي تغيير في الـ harness أو المعايير إن قلّل الدرجة."
+    "en": "Build this layer. Score each run: resolved (hidden tests), a developer-value score 0-100, standards compliance from Track 1 checks, and zero for any safety violation; repeat 3-5 times and report variance. Report a harness × model × team matrix and a cost/quality chart, borrowing AWS's frontier chart and the Harness Card. Add a CI gate so no harness or standard change ships if it scores worse. Report full-credit rate and cost next to the mean score: Harness-Bench (2026) found they rank harnesses differently, and that the best harness depends on the model.",
+    "ar": "نبني هذه الطبقة. نقيّم كل تشغيل: هل حُلّت المهمة (اختبارات مخفية)، ودرجة قيمة للمطور من 0 إلى 100، والالتزام بالمعايير من فحوص المسار 1، وصفر لأي مخالفة أمان؛ ونكرر 3-5 مرات ونعرض التباين. نعرض مصفوفة harness × نموذج × فريق ورسمًا للجودة مقابل التكلفة، مستفيدين من رسم AWS وبطاقة الـ Harness. ونضيف بوابة في CI تمنع أي تغيير في الـ harness أو المعايير إن قلّل الدرجة. ونعرض نسبة الإنجاز الكامل والتكلفة بجانب متوسط الدرجة؛ فقد وجد Harness-Bench ‏(2026) أنها ترتّب أدوات الـ harness ترتيبًا مختلفًا، وأن أفضل harness يتوقف على النموذج."
    },
    "pick": [
     "aws-harness-benchmarks",
     "promptfoo"
    ],
    "alternatives": [
+    "qihoo-harness-bench",
     "deepeval",
     "skillsbench"
    ],
    "compare": {
     "tools": [
      "aws-harness-benchmarks",
+     "qihoo-harness-bench",
      "promptfoo",
      "deepeval"
     ],
@@ -1420,6 +1425,10 @@
        {
         "en": "Metrics, frontier chart, model router idea",
         "ar": "المقاييس ورسم الحدود وفكرة توجيه النماذج"
+       },
+       {
+        "en": "Module-level oracle scoring; mean vs ≥0.8 vs full-credit; cost per run",
+        "ar": "التقييم بأدوات تحقق لكل جزء؛ والمتوسط مقابل 0.8 فأكثر مقابل الإنجاز الكامل؛ والتكلفة لكل تشغيل"
        },
        {
         "en": "YAML test suites and red-team checks",
@@ -1442,6 +1451,10 @@
         "ar": "MIT-0"
        },
        {
+        "en": "Not stated on site (check repo)",
+        "ar": "غير مذكور في الموقع (يُراجع المستودع)"
+       },
+       {
         "en": "MIT (now owned by OpenAI)",
         "ar": "MIT (أصبحت مملوكة لـ OpenAI)"
        },
@@ -1460,6 +1473,10 @@
        {
         "en": "Hidden tests, standards scoring",
         "ar": "الاختبارات المخفية وتقييم المعايير"
+       },
+       {
+        "en": "Azm tasks, standards scoring, per-team config",
+        "ar": "مهام عزم وتقييم المعايير وإعدادات كل فريق"
        },
        {
         "en": "Running harnesses on repos",
@@ -1501,7 +1518,8 @@
    "alternatives": [
     "agent-vault",
     "openshell",
-    "agent-governance-toolkit"
+    "agent-governance-toolkit",
+    "strands-box"
    ],
    "compare": {
     "tools": [

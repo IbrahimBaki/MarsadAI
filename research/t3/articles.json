@@ -1,6 +1,6 @@
 {
  "track": "t3",
- "checked": "2026-11-03",
+ "checked": "2026-11-04",
  "articles": [
   {
    "id": "fullscript-bench",
@@ -844,6 +844,60 @@
    "summary": "Argument for reliability-first infrastructure around agents instead of framework-only thinking.",
    "ar": {
     "summary": "حجة لبنية تحتية تقدّم الموثوقية حول الوكلاء بدل الاكتفاء بالأطر."
+   }
+  },
+  {
+   "id": "harness-bench-paper",
+   "title": "Harness-Bench: Evaluating Agent Harnesses Across Models and Realistic Workflows",
+   "source": "arXiv (Peking University, Qiyuan Tech)",
+   "url": "https://arxiv.org/abs/2605.27922",
+   "type": "paper",
+   "tags": [
+    "prior-art",
+    "eval",
+    "harness-vs-model"
+   ],
+   "priority": "must",
+   "summary": "7 harnesses × 10 models on 300 sandboxed tasks, scored by task oracles with partial credit and safety gates. No harness was best on every model; for one model, full-credit rates differed by 13.5 points across harnesses. Half of runs scored ≥0.8 but only 26% earned full credit. A more expensive harness was not better: one cost 2.97× another yet had a lower full-credit rate. Choosing a harness per model improved held-out results by about 2.5-2.7 points.",
+   "why": "Published prior art for Azm's harness × model matrix. Report full-credit rate and cost next to the mean, and expect the best harness to depend on the model.",
+   "ar": {
+    "summary": "سبع أدوات harness × عشرة نماذج على 300 مهمة داخل بيئات معزولة، تُقيَّم بأدوات تحقق خاصة بكل مهمة مع درجات جزئية وبوابات أمان. لم تتصدر أي أداة على كل النماذج؛ ومع أحد النماذج اختلفت نسبة الإنجاز الكامل 13.5 نقطة بين الأدوات. بلغ نصف التشغيلات 0.8 فأكثر، لكن 26% فقط نالت الدرجة الكاملة. ولم تكن الأداة الأغلى أفضل: كلّفت إحداها 2.97 ضعف أخرى وجاءت نسبة إنجازها الكامل أقل. واختيار harness لكل نموذج حسّن النتائج على مهام محجوبة بنحو 2.5 إلى 2.7 نقطة.",
+    "why": "عمل سابق منشور لمصفوفة harness × نموذج التي تخطط لها عزم. نعرض نسبة الإنجاز الكامل والتكلفة بجانب المتوسط، ونتوقع أن يختلف أفضل harness باختلاف النموذج."
+   }
+  },
+  {
+   "id": "openjiuwen-paper",
+   "title": "openJiuwen: Beyond Static Harnesses for Long-Horizon Coding Agents",
+   "source": "arXiv (Huawei)",
+   "url": "https://arxiv.org/pdf/2608.27969",
+   "type": "paper",
+   "tags": [
+    "harness",
+    "swe-bench",
+    "terminal-bench"
+   ],
+   "priority": "read",
+   "summary": "Huawei's open-source coding harness that adapts at run time (context management, goal mode, LSP feedback, self-reflection) with the model fixed. Reports 82.6% on SWE-bench Verified and 87.19% on Terminal-Bench 2.1; the authors note leaderboard comparisons mix prompts, tools and agents.",
+   "ar": {
+    "summary": "harness برمجي مفتوح المصدر من Huawei يتكيف أثناء التشغيل (إدارة السياق، ووضع الهدف، وتغذية LSP، والمراجعة الذاتية) مع تثبيت النموذج. يذكر 82.6% على SWE-bench Verified و87.19% على Terminal-Bench 2.1، وينبّه المؤلفون إلى أن مقارنات لوحات النتائج تخلط بين التعليمات والأدوات والوكلاء."
+   }
+  },
+  {
+   "id": "strands-box-launch",
+   "title": "Introducing Strands Box: AI agent sandboxes powered by Dogwood",
+   "source": "AWS Open Source Blog",
+   "date": "2026-10-07",
+   "url": "https://aws.amazon.com/blogs/opensource/introducing-strands-box-ai-agent-sandboxes-powered-by-dogwood/",
+   "type": "reading",
+   "tags": [
+    "sandbox",
+    "policy",
+    "secrets"
+   ],
+   "priority": "read",
+   "summary": "AWS introduces an Apache-2.0 local agent sandbox whose policy rules can depend on earlier actions, with secret injection at the network gateway. macOS first; Bedrock AgentCore, ECS and Kubernetes deployment are planned.",
+   "ar": {
+    "summary": "تقدّم AWS بيئة عزل محلية للوكلاء بترخيص Apache-2.0 تستطيع قواعد سياساتها الاعتماد على الأفعال السابقة، مع حقن الأسرار عند بوابة الشبكة. تبدأ على macOS، والنشر على Bedrock AgentCore وECS وKubernetes مخطط له."
    }
   }
  ]
