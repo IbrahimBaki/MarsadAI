@@ -1,0 +1,419 @@
+{
+ "date": "2026-11-04",
+ "headline": "أطلقت Anthropic نسخة تجريبية من Message Threads تقلّص طلبات المحادثات الطويلة وتسرّع الرد الأول بنحو 35%، وصدر Laravel 13.40 مع تنبيهات للمهام الطويلة. وفي أمان الوكلاء: Strands Box من AWS بسياسات تراعي سجل الوكيل.",
+ "headline_en": "Anthropic's Message Threads beta shrinks long-conversation requests and speeds up the first token by about 35%, and Laravel 13.40 adds hooks for long-running jobs. In agent security: AWS Strands Box, with policies that consider the agent's history.",
+ "items": [
+  {
+   "id": "claude-message-threads-beta",
+   "section": "claude",
+   "kind": "release",
+   "title": "Message Threads في واجهة Claude البرمجية: أرسل الرسائل الجديدة فقط في المحادثات الطويلة",
+   "summary": "أطلقت Anthropic نسخة تجريبية عامة باسم Message Threads في Messages API: يرسل العميل المحادثة كاملة مرة واحدة، ثم يرسل في كل دور الرسائل الجديدة ومعرّف الرد السابق فقط. وفي اختبارات Claude Code انخفض حجم الطلب من نحو 800 كيلوبايت إلى 1.8 كيلوبايت، وانخفض وقت أول رمز بنحو 35% للطلبات الكبيرة جدًا.",
+   "why": "لمن يبني وكلاء يعملون لجلسات طويلة: طلبات أصغر واستجابة أولى أسرع دون تغيير في عدد الرموز المحاسَبة، مثل وكيل مراجعة شيفرة يتبادل مئات الأدوار مع الواجهة.",
+   "about": "يبدأ الخيط بطلب يحمل المحادثة كاملة مع التعليمات والأدوات ومعامل thread، فتحفظ الواجهة المحادثة والرد تحت معرّف. ثم يرسل الطلب التالي الرسائل الجديدة ومعرّف الرد السابق فقط، دون system وtools. وإذا تعذّرت متابعة الخيط يعيد العميل إرسال المحادثة كاملة في طلب جديد.\n\nينتهي الخيط بعد خمس دقائق من آخر طلب، وتُحذف محتوياته في مدة لا تتجاوز ساعة بعد آخر استخدام، ويُحفظ مشفّرًا في الذاكرة. ولا يتغير استهلاك الرموز ولا حد السياق ولا سلوك التخزين المؤقت للتعليمات؛ إذ يقرأ النموذج المحادثة كاملة في كل دور.\n\nالقيود: لا يعمل مع Message Batches ولا عدّ الرموز ولا الضغط عند الطلب ولا معظم تعديلات السياق، ولا يتاح للمؤسسات التي فعّلت Inference hooks، ولا يصلح لعدم الاحتفاظ بالبيانات أو HIPAA. ويبقى على العميل أن يحتفظ بنسخته الكاملة من المحادثة للاسترجاع.",
+   "features": [
+    "إرسال الرسائل الجديدة ومعرّف الرد السابق فقط",
+    "انخفاض وقت أول رمز بنحو 35% لطلبات 500 ألف إلى مليون رمز",
+    "انتهاء الخيط بعد خمس دقائق من آخر طلب",
+    "متاح على منصة Claude وعلى AWS وMicrosoft Foundry وGoogle Cloud",
+    "مفعّل افتراضيًا لمعظم مستخدمي Claude Code"
+   ],
+   "alternatives": [
+    "ess-claude-agent-sdk"
+   ],
+   "links": [
+    {
+     "label": "التوثيق",
+     "url": "https://platform.claude.com/docs/en/build-with-claude/message-threads"
+    },
+    {
+     "label": "الإعلان",
+     "url": "https://claude.com/resources/articles/message-threads"
+    },
+    {
+     "label": "تغطية Unite.AI",
+     "url": "https://www.unite.ai/anthropic-launches-message-threads-beta-for-long-running-agents/"
+    }
+   ],
+   "url": "https://claude.com/resources/articles/message-threads",
+   "source": "claude.com",
+   "importance": 3,
+   "tags": [
+    "Claude API",
+    "agents",
+    "latency",
+    "beta"
+   ],
+   "en": {
+    "title": "Message Threads in the Claude API: send only the new messages in long conversations",
+    "summary": "Anthropic launched Message Threads as a public beta in the Messages API: the client sends the full conversation once, then each turn sends only the new messages and the previous response ID. In Claude Code tests the median request shrank from about 800 KB to 1.8 KB, and time to first token fell about 35% for very large requests.",
+    "why": "For anyone building long-running agents: smaller requests and a faster first token with no change in billed tokens, for example a code-review agent that exchanges hundreds of turns with the API.",
+    "about": "A thread starts with a request carrying the full conversation, system prompt, tools and a thread parameter; the API stores the conversation and reply under an ID. The next request sends only the new messages and the previous response ID, without system and tools. If a thread cannot be continued, the client resends the full conversation in a new request.\n\nA thread expires five minutes after its last request, its contents are deleted no more than an hour after last use, and it is held encrypted in memory. Token usage, the context limit and prompt caching do not change: the model still reads the full conversation every turn.\n\nLimits: no support for Message Batches, token counting, on-demand compaction or most context editing; not available to organizations with Inference hooks enabled; not eligible for zero data retention or HIPAA. Clients must still keep their own full copy of the conversation for recovery.",
+    "features": [
+     "Send only new messages and the previous response ID",
+     "About 35% lower time to first token for 500K-1M token requests",
+     "Threads expire five minutes after the last request",
+     "Available on Claude Platform, AWS, Microsoft Foundry and Google Cloud",
+     "On by default for most Claude Code users"
+    ],
+    "links": [
+     "Docs",
+     "Announcement",
+     "Unite.AI coverage"
+    ]
+   }
+  },
+  {
+   "id": "claude-code-v2-1-318",
+   "section": "claude",
+   "kind": "release",
+   "title": "Claude Code v2.1.318: موعد انتهاء تسجيل الدخول في الوضع غير التفاعلي، وإصلاحات للجلسات والإعدادات",
+   "summary": "يضيف Claude Code v2.1.318 تاريخ انتهاء تسجيل الدخول المحفوظ إلى claude auth status ونتائج claude -p بصيغة JSON، وتحذيرًا قبل الانتهاء بعشرة أيام، وخيار effort للمهام الجانبية في الـ mods، إلى جانب عشرات الإصلاحات للجلسات المستأنفة وأوامر MCP والإضافات.",
+   "why": "لمن يشغّل Claude Code في CI أو مهام مجدولة: يمكن الآن معرفة موعد انتهاء تسجيل الدخول قبل أن تفشل المهمة، مثل خط تحقق ليلي يتوقف فجأة بسبب انتهاء الجلسة.",
+   "about": "من الإضافات: الحقل loginExpiresAt في claude auth status والحقل credential_expires_at في نتائج claude -p بصيغة JSON، وتحذير من سطر واحد على stderr يبدأ قبل عشرة أيام من انتهاء تسجيل الدخول، وخيار assume_role لمصادر mantle في بوابة تطبيقات Claude لتوزيع تكاليف AWS على المطورين.\n\nومن الإصلاحات: فقدان المحادثة السابقة مع --continue بعد استدعاء أداة معطوب (تراجع في 2.1.314)، وتوقف جلسات macOS مع كثرة أوامر Bash، وإجابة طلبات الأذونات بمفاتيح كُتبت بعد إرسال رسالة، وكتابة claude mcp add وremove للإعدادات دون قفل، وضغط خامل يستبدل المحادثة برد ليس ملخصًا.\n\nوحدّثت حزمة Agent SDK للغة Python إلى 0.2.178 لتضمين هذا الإصدار.",
+   "features": [
+    "loginExpiresAt وcredential_expires_at لمعرفة موعد انتهاء تسجيل الدخول",
+    "تحذير قبل عشرة أيام في claude -p",
+    "خيار effort للمهام الجانبية في الـ mods",
+    "إصلاح فقدان المحادثة مع --continue",
+    "قفل عند كتابة إعدادات MCP"
+   ],
+   "repo": "anthropics/claude-code",
+   "alternatives": [
+    "ess-claude-code-docs",
+    "ess-claude-agent-sdk"
+   ],
+   "links": [
+    {
+     "label": "سجل التغييرات",
+     "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+    },
+    {
+     "label": "صفحة الإصدار",
+     "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.318"
+    }
+   ],
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.318",
+   "source": "github.com",
+   "importance": 2,
+   "tags": [
+    "Claude Code",
+    "CI",
+    "MCP",
+    "Agent SDK"
+   ],
+   "en": {
+    "title": "Claude Code v2.1.318: sign-in expiry for headless runs, plus session and config fixes",
+    "summary": "Claude Code v2.1.318 adds the expiry date of a stored sign-in to claude auth status and claude -p JSON results, a warning starting 10 days before it ends, and an effort option for side jobs in mods, plus dozens of fixes for resumed sessions, MCP commands and plugins.",
+    "why": "For anyone running Claude Code in CI or scheduled jobs: you can now see when the sign-in ends before a job fails, for example a nightly check pipeline that suddenly stops because the session expired.",
+    "about": "Additions include loginExpiresAt in claude auth status and credential_expires_at in claude -p JSON results, a one-line stderr warning starting 10 days before a stored sign-in ends, and assume_role on mantle upstreams of the Claude apps gateway for per-developer AWS cost attribution.\n\nFixes include --continue losing the earlier conversation after a malformed tool call (a regression in 2.1.314), macOS sessions stalling with many running Bash commands, permission prompts being answered by keys typed just after sending a message, claude mcp add and remove writing config without its lock, and idle compaction replacing a conversation with a reply that was not a summary.\n\nThe Python Agent SDK moved to 0.2.178 to bundle this release.",
+    "features": [
+     "loginExpiresAt and credential_expires_at show when the sign-in ends",
+     "A warning 10 days ahead in claude -p",
+     "An effort option for side jobs in mods",
+     "Fix for --continue losing the conversation",
+     "Locking when writing MCP config"
+    ],
+    "links": [
+     "Changelog",
+     "Release page"
+    ]
+   }
+  },
+  {
+   "id": "laravel-13-40-0",
+   "section": "laravel",
+   "kind": "release",
+   "title": "Laravel 13.40: تنبيه عند طول مدة المهام في الطوابير والجدولة، ودوال جديدة لترتيب الـ middleware",
+   "summary": "صدر Laravel 13.40.0 في 3 نوفمبر 2026 مع Queue::whenJobRunsLongerThan وSchedule::whenTaskRunsLongerThan، ودالتي insertBefore وinsertAfter للـ middleware، وحدث ScheduledTaskSkipped عندما تكون المهمة قد عملت على خادم آخر، وإصلاحات كثيرة لقواعد البيانات.",
+   "why": "لمن يشغّل تطبيقات Laravel فيها طوابير ومهام مجدولة: يمكنك الآن تنفيذ إجراء عندما تتجاوز مهمة مدة محددة، مثل إرسال تنبيه إذا استغرق تقرير ليلي أكثر من عشر دقائق.",
+   "about": "يضيف الإصدار Queue::whenJobRunsLongerThan وSchedule::whenTaskRunsLongerThan للتعامل مع المهام التي تطول أكثر من المتوقع، ويُطلق الحدث ScheduledTaskSkipped عندما تكون المهمة المجدولة قد عملت على خادم آخر. وأصبح بإمكان $middleware->replace() قبول مصفوفة استبدالات، وأضيفت insertBefore() وinsertAfter().\n\nومن الإصلاحات: إعادة الاتصال بعد فقدانه أثناء معاملة، والرجوع إلى نقطة الحفظ عند أخطاء التزامن في المعاملات المتداخلة، ومنع تفريغ ذاكرة Redis ذات الوسوم من حجب Redis عند وجود وسوم كثيرة، وتحديث مسارات JSON بالمصفوفات على MySQL وMariaDB، وعدة إصلاحات لـ SQL Server وPostgreSQL وSQLite.\n\nويظهر في مخرجات queue:work الآن أن المهام المُعادة «released».",
+   "features": [
+    "Queue::whenJobRunsLongerThan وSchedule::whenTaskRunsLongerThan",
+    "insertBefore وinsertAfter للـ middleware",
+    "حدث ScheduledTaskSkipped",
+    "إعادة الاتصال بعد فقدانه أثناء معاملة",
+    "إصلاح حجب Redis عند تفريغ وسوم كثيرة"
+   ],
+   "repo": "laravel/framework",
+   "alternatives": [
+    "ess-laravel-boost"
+   ],
+   "links": [
+    {
+     "label": "سجل التغييرات",
+     "url": "https://github.com/laravel/framework/blob/13.x/CHANGELOG.md"
+    },
+    {
+     "label": "صفحة الإصدار",
+     "url": "https://github.com/laravel/framework/releases/tag/v13.40.0"
+    }
+   ],
+   "url": "https://github.com/laravel/framework/releases/tag/v13.40.0",
+   "source": "github.com",
+   "importance": 2,
+   "tags": [
+    "Laravel",
+    "PHP",
+    "queues",
+    "scheduler"
+   ],
+   "en": {
+    "title": "Laravel 13.40: hooks for long-running queue jobs and scheduled tasks, and new middleware ordering helpers",
+    "summary": "Laravel 13.40.0 shipped on 3 November 2026 with Queue::whenJobRunsLongerThan and Schedule::whenTaskRunsLongerThan, insertBefore and insertAfter for middleware, a ScheduledTaskSkipped event when a task already ran on another server, and many database fixes.",
+    "why": "For Laravel apps with queues and scheduled tasks: you can now act when a job runs past a set time, for example send an alert if a nightly report takes more than ten minutes.",
+    "about": "The release adds Queue::whenJobRunsLongerThan and Schedule::whenTaskRunsLongerThan for jobs that run longer than expected, and dispatches ScheduledTaskSkipped when a scheduled task already ran on another server. $middleware->replace() now accepts an array of replacements, and insertBefore() and insertAfter() were added.\n\nFixes include reconnecting after losing the connection during a transaction, rolling back to a savepoint on concurrency errors in nested transactions, Redis tagged cache flush no longer blocking Redis with many tags, updating JSON paths with arrays on MySQL and MariaDB, and several SQL Server, PostgreSQL and SQLite fixes.\n\nqueue:work output now shows released jobs as released.",
+    "features": [
+     "Queue::whenJobRunsLongerThan and Schedule::whenTaskRunsLongerThan",
+     "insertBefore and insertAfter for middleware",
+     "ScheduledTaskSkipped event",
+     "Reconnect after losing the connection during a transaction",
+     "Fix for Redis blocking when flushing many tags"
+    ],
+    "links": [
+     "Changelog",
+     "Release page"
+    ]
+   }
+  },
+  {
+   "id": "strands-box-agent-sandbox",
+   "section": "security",
+   "kind": "tool",
+   "title": "Strands Box من AWS: بيئة عزل مفتوحة المصدر للوكلاء بسياسات تراعي ما فعله الوكيل سابقًا",
+   "summary": "Strands Box بيئة عزل محلية مفتوحة المصدر (Apache-2.0) للوكلاء، في نسخة معاينة على macOS بمعالجات Apple. تمر أوامر الطرفية وشيفرة Python واستدعاءات MCP وحركة الشبكة عبر محرك سياسات واحد اسمه Dogwood يستطيع أن يأخذ الأفعال السابقة في الحسبان، ولا يرى الوكيل الأسرار الحقيقية.",
+   "why": "لمن يشغّل وكلاء برمجة على جهازه ويخشى الأفعال الخطرة: يمكنك كتابة قواعد مثل «لا أكثر من عدد معيّن من الطلبات في فترة زمنية» ومنع الوصول إلى المفاتيح، دون الاعتماد على طلبات الإذن وحدها.",
+   "about": "تمر الأفعال عبر أربع نقاط تفتيش: الطرفية، ومفسّر Python، ووسيط MCP، وبوابة الشبكة. تسأل كل نقطة محرك السياسات Dogwood، ويُرفض كل ما لم تسمح به قاعدة. وتكتب النقاط كلها في سجل أحداث واحد، لذلك يمكن أن تربط القواعد بين أفعال في أدوات مختلفة.\n\nللمفاتيح المُعدّة يحمل الوكيل قيمة بديلة، وتضع بوابة الشبكة القيمة الحقيقية، وتوقّع طلبات AWS بنفسها. وتُعرّف الملفات المسموح بها في box.toml، وتُكتب السياسات في policy.dw، وتُصدَّر قرارات السياسات بصيغة OTLP JSON.\n\nالقيود: يعمل حاليًا على macOS 15 أو أحدث بمعالجات Apple فقط، ودعم أنظمة أخرى أولوية قادمة، والمشروع في بداياته. والأداة مستقلة عن الـ harness؛ فأنت تختار برنامج الوكيل الذي يعمل داخلها.",
+   "features": [
+    "أربع نقاط تفتيش تشترك في محرك سياسات واحد",
+    "سياسات زمنية بلغة Dogwood",
+    "حقن بيانات الاعتماد عند بوابة الشبكة",
+    "تصدير القرارات بصيغة OTLP JSON",
+    "مستقلة عن أداة الوكيل"
+   ],
+   "install": [
+    {
+     "label": "التنزيل (من README)",
+     "cmd": "curl -fsSL https://raw.githubusercontent.com/strands-agents/box/main/download.sh | sh"
+    },
+    {
+     "label": "التحقق من الإصدار",
+     "cmd": "./box-core/box --version"
+    }
+   ],
+   "requirements": [
+    "macOS 15 أو أحدث بمعالج Apple",
+    "Node.js 22.21 أو أحدث"
+   ],
+   "repo": "strands-agents/box",
+   "pricing": {
+    "model": "oss"
+   },
+   "alternatives": [
+    "ess-snyk-agent-scan",
+    "ess-claude-security-review"
+   ],
+   "links": [
+    {
+     "label": "المستودع",
+     "url": "https://github.com/strands-agents/box"
+    },
+    {
+     "label": "مدونة AWS",
+     "url": "https://aws.amazon.com/blogs/opensource/introducing-strands-box-ai-agent-sandboxes-powered-by-dogwood/"
+    }
+   ],
+   "url": "https://aws.amazon.com/blogs/opensource/introducing-strands-box-ai-agent-sandboxes-powered-by-dogwood/",
+   "source": "aws.amazon.com",
+   "importance": 2,
+   "tags": [
+    "sandbox",
+    "agents",
+    "policy",
+    "secrets"
+   ],
+   "en": {
+    "title": "AWS Strands Box: an open-source agent sandbox with policies that consider what the agent already did",
+    "summary": "Strands Box is an open-source (Apache-2.0) local sandbox for agents, in preview on Apple silicon Macs. Shell commands, Python code, MCP calls and network traffic pass through one policy engine, Dogwood, which can take earlier actions into account, and the agent never sees the real secrets.",
+    "why": "For anyone running coding agents on their own machine and worried about risky actions: you can write rules such as a cap on requests per time window and keep keys out of reach, instead of relying on permission prompts alone.",
+    "about": "Actions pass through four checkpoints: the shell, a Python interpreter, an MCP broker and a network gateway. Each asks the Dogwood policy engine, and anything not allowed by a rule is denied. All checkpoints write to one event history, so rules can link actions across tools.\n\nFor configured keys the agent holds a placeholder and the network gateway substitutes the real value; it also signs AWS requests. Allowed files are listed in box.toml, policies are written in policy.dw, and policy decisions are exported as OTLP JSON.\n\nLimits: it currently runs only on macOS 15 or later with Apple silicon; other operating systems are a stated next priority, and the project is in its early days. It is harness-agnostic: you choose the agent program that runs inside it.",
+    "features": [
+     "Four checkpoints sharing one policy engine",
+     "Temporal policies in the Dogwood language",
+     "Credential injection at the network gateway",
+     "Decisions exported as OTLP JSON",
+     "Independent of the agent tool"
+    ],
+    "install": [
+     "Download (from the README)",
+     "Check the version"
+    ],
+    "requirements": [
+     "macOS 15 or later on Apple silicon",
+     "Node.js 22.21 or later"
+    ],
+    "links": [
+     "Repository",
+     "AWS blog"
+    ]
+   }
+  },
+  {
+   "id": "harness-bench-paper",
+   "section": "llm",
+   "kind": "article",
+   "title": "Harness-Bench: الأداة المحيطة بالنموذج تغيّر النتائج، ولا توجد أداة هي الأفضل مع كل النماذج",
+   "summary": "قارن مقياس Harness-Bench سبع أدوات وكلاء (منها Claude Code وCodex وOpenCode وGoose) على عشرة نماذج في 300 مهمة داخل بيئات معزولة، عبر 20,454 تشغيلًا. لم تتصدر أي أداة مع كل النماذج، وبلغ نصف التشغيلات 0.8 فأكثر بينما نالت 26% فقط الدرجة الكاملة.",
+   "why": "لمن يختار أداة وكيل لفريقه: النتيجة تعتمد على تركيبة الأداة والنموذج معًا، والأداة الأغلى ليست الأفضل دائمًا، لذلك يستحق الأمر تجربة التركيبات على مهامك قبل اعتماد واحدة.",
+   "about": "أعدّ المقياسَ باحثون من جامعة بكين وQiyuan Tech. تُقيَّم كل مهمة بأدوات تحقق خاصة بها جزءًا جزءًا مع درجات جزئية ودون نموذج حَكَم، ويمكن لبوابات الأمان أن تصفّر الدرجة، ويُسجَّل عدد الرموز والطلبات والتكلفة التقديرية لكل تشغيل.\n\nمن النتائج: مع أحد النماذج اختلفت نسبة الإنجاز الكامل 13.5 نقطة بين الأدوات. ومع نموذج آخر كلّفت إحدى الأدوات 2.97 ضعف أداة أخرى وجاءت نسبة إنجازها الكامل أقل (24.82% مقابل 31.02%). واختيار أداة لكل نموذج بدل أداة واحدة مشتركة حسّن النتائج على مهام محجوبة بنحو 2.5 إلى 2.7 نقطة.\n\nتشمل المهام 81 مهمة هندسة برمجيات، والبقية أعمال تشغيل وأنظمة وبحث وويب ومحتوى. والشيفرة والبيانات منشورة على GitHub، ومعها لوحة نتائج عامة.",
+   "features": [
+    "سبع أدوات × عشرة نماذج على 300 مهمة",
+    "تقييم بأدوات تحقق مع درجات جزئية دون نموذج حَكَم",
+    "تسجيل التكلفة والرموز لكل تشغيل",
+    "لوحة نتائج ومتصفح للمهام"
+   ],
+   "repo": "Qihoo360/harness-bench",
+   "links": [
+    {
+     "label": "الورقة البحثية",
+     "url": "https://arxiv.org/abs/2605.27922"
+    },
+    {
+     "label": "موقع المقياس",
+     "url": "https://www.harness-bench.ai/"
+    },
+    {
+     "label": "المستودع",
+     "url": "https://github.com/Qihoo360/harness-bench"
+    }
+   ],
+   "url": "https://www.harness-bench.ai/",
+   "source": "harness-bench.ai",
+   "importance": 2,
+   "tags": [
+    "benchmark",
+    "agents",
+    "evals",
+    "coding agents"
+   ],
+   "en": {
+    "title": "Harness-Bench: the tool around the model changes results, and no harness is best on every model",
+    "summary": "Harness-Bench compared seven agent harnesses (including Claude Code, Codex, OpenCode and Goose) on ten models across 300 sandboxed tasks and 20,454 runs. No harness led on every model, and half of runs scored at least 0.8 while only 26% earned full credit.",
+    "why": "For anyone choosing an agent tool for a team: results depend on the harness and model together, and the more expensive harness is not always better, so it pays to test combinations on your own tasks before standardizing on one.",
+    "about": "The benchmark comes from researchers at Peking University and Qiyuan Tech. Each task is scored module by module by task-specific oracles with partial credit and no LLM judge, safety gates can zero a score, and tokens, requests and estimated cost are recorded per run.\n\nFindings: with one model, full-credit rates differed by 13.5 points across harnesses. With another, one harness cost 2.97 times another yet had a lower full-credit rate (24.82% vs 31.02%). Choosing a harness per model instead of one shared harness improved held-out results by about 2.5 to 2.7 points.\n\nTasks include 81 software-engineering tasks; the rest cover operations, systems, research, web and content work. Code and data are on GitHub, with a public leaderboard.",
+    "features": [
+     "Seven harnesses × ten models on 300 tasks",
+     "Oracle scoring with partial credit, no LLM judge",
+     "Cost and token tracking per run",
+     "Leaderboard and task browser"
+    ],
+    "links": [
+     "Paper",
+     "Benchmark site",
+     "Repository"
+    ]
+   }
+  },
+  {
+   "id": "openjiuwen-adaptive-coding-harness",
+   "section": "agents",
+   "kind": "repo",
+   "title": "openJiuwen: أداة وكيل برمجة مفتوحة المصدر تعدّل سلوكها أثناء التشغيل",
+   "summary": "نشر فريق openJiuwen في Huawei ورقة وشيفرة لأداة وكيل برمجة مفتوحة المصدر للمهام الطويلة، تدير السياق وتقرر متى تكتمل المهمة وتستخدم تشخيصات LSP أثناء العمل. وتذكر الورقة 82.6% على SWE-bench Verified و87.19% على Terminal-Bench 2.1.",
+   "why": "لمن يتابع وكلاء البرمجة المفتوحة: خيار آخر يمكن تجربته بجانب الأدوات المعروفة، وأفكاره مثل استخدام أخطاء المحرر تغذيةً راجعة للوكيل مفيدة لمن يبني أداته الخاصة.",
+   "about": "تدعم الأداة وكيلًا منفردًا أو وكلاء فرعيين أو سربًا من الوكلاء على نموذج تنفيذ واحد، مع حلقتي تحكم داخلية وخارجية ومكوّنات تُربط عبر خطافات دورة الحياة. وتتكيف أثناء التشغيل عبر إدارة السياق، ووضع الهدف لقبول المهمة والتوقف، وتشخيصات LSP المُرشّحة، والمراجعة الذاتية التي تعيد استخدام الخبرة عبر المهام، مع بقاء النموذج ثابتًا.\n\nمع النموذج نفسه سجّلت 84.04% على Terminal-Bench 2.1 مقابل 83.8% لـ Claude Code. وينبّه المؤلفون إلى أن مقارنات لوحات النتائج تخلط بين التعليمات والأدوات وطريقة بناء الوكلاء، فهي مقارنات على مستوى النظام لا قياسًا للأداة وحدها.",
+   "features": [
+    "وكيل منفرد أو وكلاء فرعيون أو سرب",
+    "وضع الهدف لقبول المهمة والتوقف",
+    "تشخيصات LSP تغذية راجعة",
+    "مراجعة ذاتية عبر المهام"
+   ],
+   "repo": "openJiuwen-ai/jiuwenswarm",
+   "pricing": {
+    "model": "oss"
+   },
+   "alternatives": [
+    "ess-opencode",
+    "ess-goose"
+   ],
+   "links": [
+    {
+     "label": "المستودع",
+     "url": "https://github.com/openJiuwen-ai/jiuwenswarm"
+    },
+    {
+     "label": "الورقة البحثية",
+     "url": "https://arxiv.org/pdf/2608.27969"
+    }
+   ],
+   "url": "https://arxiv.org/pdf/2608.27969",
+   "source": "arxiv.org",
+   "importance": 1,
+   "tags": [
+    "coding agents",
+    "open source",
+    "SWE-bench",
+    "Terminal-Bench"
+   ],
+   "en": {
+    "title": "openJiuwen: an open-source coding agent harness that adapts while it runs",
+    "summary": "Huawei's openJiuwen team published a paper and code for an open-source coding harness for long tasks that manages context, decides when a task is done and uses LSP diagnostics while it works. The paper reports 82.6% on SWE-bench Verified and 87.19% on Terminal-Bench 2.1.",
+    "why": "For people following open coding agents: another option to try next to the known tools, and ideas such as feeding editor diagnostics back to the agent are useful for anyone building their own harness.",
+    "about": "The harness supports a single agent, delegated sub-agents or a multi-agent swarm on one execution model, with inner and outer control loops and components attached through lifecycle hooks. It adapts at run time through context management, a goal mode for task acceptance and stopping, filtered LSP diagnostics, and self-reflection that reuses experience across tasks, while the model stays fixed.\n\nWith the same model it scored 84.04% on Terminal-Bench 2.1 against 83.8% for Claude Code. The authors note that leaderboard comparisons mix prompts, tools and agent implementations, so they are system-level comparisons, not a measure of the harness alone.",
+    "features": [
+     "Single agent, sub-agents or swarm",
+     "Goal mode for task acceptance and stopping",
+     "LSP diagnostics as feedback",
+     "Self-reflection across tasks"
+    ],
+    "links": [
+     "Repository",
+     "Paper"
+    ]
+   }
+  },
+  {
+   "id": "akamai-agent-sandbox-beta",
+   "section": "devops",
+   "kind": "article",
+   "title": "Akamai تطلق Agent Sandbox تجريبيًا: تشغيل شيفرة الوكلاء داخل WebAssembly",
+   "summary": "أطلقت Akamai في 28 أكتوبر 2026 خدمة Akamai Inference ومعها Agent Sandbox في نسخة تجريبية. تشغّل البيئة الشيفرة التي يكتبها الوكلاء بمعزل عن الوكيل نفسه داخل WebAssembly، مع حدود على المعالجة والذاكرة والاتصالات وصلاحيات النظام، وتُتاح عبر Spin SDK.",
+   "why": "لمن يبني وكلاء ينفّذون شيفرة يولّدونها: خيار عزل خفيف لتشغيل مقاطع قصيرة قرب المستخدم، مثل وكيل يحسب أرقامًا أو يحوّل بيانات قبل الرد.",
+   "about": "Agent Sandbox مكوّن مفتوح المصدر ضمن إطار Spin من Fermyon، ويعتمد عزل WebAssembly لتقييد الموارد والشبكة والصلاحيات. وهو متاح الآن تجريبيًا عبر Spin SDK.\n\nالقيود: لا يذكر الإعلان الأسعار. وبيئة WebAssembly تناسب مقاطع الشيفرة والأدوات الصغيرة، ولا تشغّل أدوات وكلاء كاملة مع git ومجموعات الاختبار كما تفعل الحاويات والآلات الافتراضية المصغرة.",
+   "features": [
+    "عزل WebAssembly مع حدود للموارد والشبكة",
+    "متاحة عبر Spin SDK",
+    "نسخة تجريبية"
+   ],
+   "links": [
+    {
+     "label": "تغطية Techzine",
+     "url": "https://www.techzine.eu/news/infrastructure/145346/akamai-launches-ai-inference-service-and-agent-sandbox/"
+    }
+   ],
+   "url": "https://www.techzine.eu/news/infrastructure/145346/akamai-launches-ai-inference-service-and-agent-sandbox/",
+   "source": "techzine.eu",
+   "importance": 1,
+   "tags": [
+    "sandbox",
+    "WebAssembly",
+    "agents",
+    "edge"
+   ],
+   "en": {
+    "title": "Akamai launches Agent Sandbox in beta: run agent code inside WebAssembly",
+    "summary": "On 28 October 2026 Akamai launched Akamai Inference together with Agent Sandbox in beta. The sandbox runs code written by agents separately from the agent itself inside WebAssembly, with limits on compute, memory, outbound connections and system privileges, and ships through the Spin SDK.",
+    "why": "For people building agents that execute code they generate: a lightweight isolation option for running short snippets close to users, for example an agent that computes figures or transforms data before answering.",
+    "about": "Agent Sandbox is an open-source component of Fermyon's Spin framework and uses WebAssembly isolation to limit resources, network and privileges. It is available now in beta through the Spin SDK.\n\nLimits: the announcement does not mention pricing. WebAssembly suits code snippets and small tools; it does not run full agent harnesses with git and test suites the way containers and microVMs do.",
+    "features": [
+     "WebAssembly isolation with resource and network limits",
+     "Available through the Spin SDK",
+     "Beta"
+    ],
+    "links": [
+     "Techzine coverage"
+    ]
+   }
+  }
+ ]
+}
