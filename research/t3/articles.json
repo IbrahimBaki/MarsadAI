@@ -1,6 +1,6 @@
 {
  "track": "t3",
- "checked": "2026-11-04",
+ "checked": "2026-11-05",
  "articles": [
   {
    "id": "fullscript-bench",
@@ -898,6 +898,68 @@
    "summary": "AWS introduces an Apache-2.0 local agent sandbox whose policy rules can depend on earlier actions, with secret injection at the network gateway. macOS first; Bedrock AgentCore, ECS and Kubernetes deployment are planned.",
    "ar": {
     "summary": "تقدّم AWS بيئة عزل محلية للوكلاء بترخيص Apache-2.0 تستطيع قواعد سياساتها الاعتماد على الأفعال السابقة، مع حقن الأسرار عند بوابة الشبكة. تبدأ على macOS، والنشر على Bedrock AgentCore وECS وKubernetes مخطط له."
+   }
+  },
+  {
+   "id": "harnesstax-arena",
+   "title": "HarnessTax: How Much Does the Harness Matter for Coding Agents?",
+   "source": "Arena (UC Berkeley Sky Computing Lab authors)",
+   "date": "2026-09-16",
+   "url": "https://arena.ai/blog/coding-agents-harness-tax/",
+   "type": "paper",
+   "tags": [
+    "prior-art",
+    "eval",
+    "cost",
+    "variance"
+   ],
+   "priority": "must",
+   "summary": "21 model-harness pairs (seven models; Claude Code, Codex CLI and Pi) on 30 tasks each from SWE-bench Lite and Terminal-Bench 2.0, three runs per task. Harness choice barely changed success but changed cost a lot: the same model reached similar success at up to 5x the cost. An alternative harness gave the best success in nine of twelve comparisons, and Claude Code's starting context was over 10x Pi's.",
+   "why": "Confirms that the Azm report must put cost next to quality and test each model in more than its own vendor's harness.",
+   "ar": {
+    "summary": "‏21 زوجًا من نموذج وharness (سبعة نماذج؛ وClaude Code وCodex CLI وPi) على 30 مهمة من كل من SWE-bench Lite وTerminal-Bench 2.0، بثلاثة تشغيلات لكل مهمة. لم يغيّر اختيار الـ harness النجاح كثيرًا لكنه غيّر التكلفة كثيرًا: حقق النموذج نفسه نجاحًا متقاربًا بتكلفة تصل إلى خمسة أضعاف. وأعطى harness بديل أفضل نجاح في تسع مقارنات من اثنتي عشرة، وكان سياق البداية في Claude Code أكبر من عشرة أضعاف سياق Pi.",
+    "why": "يؤكد أن تقرير عزم يجب أن يضع التكلفة بجانب الجودة، وأن يختبر كل نموذج في أكثر من harness الشركة المصنّعة له."
+   }
+  },
+  {
+   "id": "shandong-harness-cost",
+   "title": "A coding agent's harness can triple its cost without making it more accurate, study finds",
+   "source": "VentureBeat (on a Shandong University paper, arXiv 2610.04433)",
+   "date": "2026-10-23",
+   "url": "https://venturebeat.com/orchestration/a-coding-agents-harness-can-triple-its-cost-without-making-it-more-accurate-study-finds",
+   "type": "paper",
+   "tags": [
+    "prior-art",
+    "eval",
+    "cost",
+    "variance",
+    "leakage"
+   ],
+   "priority": "must",
+   "summary": "Researchers ran Claude Code, OpenCode and mini-SWE-agent with five open and API models on 492 offline SWE-bench Verified tasks in isolated containers. Switching harness flipped 13% of the 45 hardest tasks, the same rate as rerunning an unchanged setup, while cost per task differed by up to 3x. 71% of web-enabled runs had retrieved the human-written fix from GitHub, so network access was blocked for the final evaluation.",
+   "why": "Two decisions: repeat runs before declaring a winner, and block open internet in benchmark sandboxes.",
+   "ar": {
+    "summary": "شغّل باحثون Claude Code وOpenCode وmini-SWE-agent مع خمسة نماذج مفتوحة وعبر الواجهة البرمجية على 492 مهمة من SWE-bench Verified دون اتصال، داخل حاويات معزولة. غيّر تبديل الـ harness نتيجة 13% من أصعب 45 مهمة، وهي النسبة نفسها عند إعادة تشغيل الإعداد دون تغيير، بينما اختلفت تكلفة المهمة حتى ثلاثة أضعاف. وكانت 71% من التشغيلات المتصلة بالإنترنت قد جلبت الإصلاح البشري من GitHub، فمُنع الوصول إلى الشبكة في التقييم النهائي.",
+    "why": "قراران: تكرار التشغيل قبل إعلان الفائز، ومنع الإنترنت المفتوح في بيئات القياس."
+   }
+  },
+  {
+   "id": "openkruise-agents-060",
+   "title": "OpenKruise Agents v0.6.0: Leaping ahead in agent Sandbox security and automation",
+   "source": "CNCF Blog",
+   "date": "2026-11-03",
+   "url": "https://www.cncf.io/blog/2026/11/03/openkruise-agents-v0-6-0-leaping-ahead-in-agent-sandbox-security-and-automation/",
+   "type": "reading",
+   "tags": [
+    "sandbox",
+    "kubernetes",
+    "network",
+    "secrets"
+   ],
+   "priority": "read",
+   "summary": "OpenKruise Agents, a CNCF project for agent sandboxes on Kubernetes with an E2B-compatible API, adds L4/L7 network rules, credential injection from Kubernetes Secrets, warm-pool autoscaling, checkpoint and restore, and automatic pause and resume.",
+   "ar": {
+    "summary": "يضيف OpenKruise Agents، مشروع CNCF لبيئات عزل الوكلاء على Kubernetes بواجهة متوافقة مع E2B، قواعد شبكة على مستويي L4 وL7، وحقن بيانات الاعتماد من أسرار Kubernetes، والتوسع التلقائي للمجمّعات الجاهزة، وحفظ النقاط واستعادتها، والإيقاف والاستئناف التلقائيين."
    }
   }
  ]

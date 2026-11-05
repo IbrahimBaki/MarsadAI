@@ -1,6 +1,6 @@
 {
  "category": "eval",
- "checked": "2026-11-04",
+ "checked": "2026-11-05",
  "tools": [
   {
    "id": "harbor",
@@ -1345,6 +1345,99 @@
     ],
     "role": "ننسخ طريقة عرضه للنتائج (المتوسط مقابل 0.8 فأكثر مقابل الإنجاز الكامل، والتكلفة لكل تشغيل، واختيار الـ harness لكل نموذج) وتقييمه بأدوات التحقق لكل جزء في تقرير عزم؛ وربما نعيد استخدام مهام هندسة البرمجيات فيه مجموعةً ضابطة عامة.",
     "pricing": "مجاني"
+   }
+  },
+  {
+   "id": "better-harness",
+   "name": "Better Harness",
+   "category": "eval",
+   "kind": "open-source",
+   "vendor": "Qoder",
+   "repo": "QoderAI/better-harness",
+   "url": "https://qoderai.github.io/better-harness/",
+   "license": "MIT",
+   "pricing": "Free; runs inside the coding agent you already use",
+   "status": "active",
+   "version": "0.6.6 (npm, Aug 2026; 0.7.0 in alpha)",
+   "tier": "deep",
+   "summary": "An open-source audit of the work loop around coding agents. Run inside Claude Code, Codex, Cursor, Copilot CLI and others, it reads the project and past sessions and reports what is missing in five areas, from task understanding to learning capture, with prioritized fixes.",
+   "how": "You install it as a plugin or skill in your coding agent and run `/better-harness`. Separate evidence agents read the project's harness assets (AGENTS.md, specs, skills, hooks, tests, CI) and, where the host allows, session history; a lead agent then scores the 'Agent Work Loop': Task Understanding, Controlled Execution, Change Validation, Reliable Delivery and Learning Capture. Each finding comes with its evidence, impact, a scoped fix and acceptance checks. Missing evidence is shown as missing, not guessed. Comparable reports over time form a history view of the five areas.",
+   "features": [
+    "Five-area 'Agent Work Loop' model for judging a team's agent setup",
+    "Findings tied to evidence, with a scoped fix and acceptance checks",
+    "Runs in Claude Code, Codex (CLI and desktop), Cursor, GitHub Copilot CLI, Qoder, Qwen Code, Pi, Kimi Code and others",
+    "Self-contained HTML plus Markdown reports; history view across reports",
+    "Harness Inspector: traces intent through prompts, tool calls, files and commits"
+   ],
+   "strengths": [
+    "Closest public tool to scoring how well a project follows good agent-engineering practice",
+    "Strict evidence rules: it never turns unobserved behavior into a score",
+    "MIT and works across many agents, including the ones Azm uses"
+   ],
+   "weaknesses": [
+    "Audits one project's setup; it does not run tasks, compare harnesses or models, or use hidden tests",
+    "Pre-1.0 and its findings come from an AI judge, so results need calibration"
+   ],
+   "gaps": [
+    "No link to Azm's own standards (Track 1) or to benchmark results",
+    "No team-wide or CI view; reports are per run on one machine"
+   ],
+   "fit": {
+    "verdict": "inspire",
+    "role": "Prior art for the standards-compliance scorer and the Harness Card: borrow its five-area model and its evidence rules; consider running it next to squad-kit projects as a cheap audit."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 2,
+    "openness": 5,
+    "agnostic": 5,
+    "config": 3,
+    "measure": 3,
+    "safety": 2
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/QoderAI/better-harness"
+    ],
+    [
+     "Website",
+     "https://qoderai.github.io/better-harness/"
+    ],
+    [
+     "npm",
+     "https://www.npmjs.com/package/@qoder-ai/better-harness"
+    ]
+   ],
+   "sources": [
+    "https://github.com/QoderAI/better-harness",
+    "https://www.npmjs.com/package/@qoder-ai/better-harness"
+   ],
+   "ar": {
+    "summary": "أداة مفتوحة المصدر لتدقيق حلقة العمل المحيطة بوكلاء البرمجة. تعمل داخل Claude Code وCodex وCursor وCopilot CLI وغيرها، فتقرأ المشروع والجلسات السابقة وتبيّن ما ينقص في خمسة مجالات، من فهم المهمة إلى حفظ الدروس، مع إصلاحات مرتبة حسب الأولوية.",
+    "how": "تثبّتها كإضافة أو مهارة في وكيل البرمجة لديك وتشغّل `/better-harness`. يقرأ وكلاء أدلة منفصلون مكونات الـ harness في المشروع (AGENTS.md والمواصفات والمهارات والخطافات والاختبارات وCI)، وسجل الجلسات حين يسمح المضيف؛ ثم يقيّم وكيل رئيسي «حلقة عمل الوكيل»: فهم المهمة، والتنفيذ المنضبط، والتحقق من التغيير، والتسليم الموثوق، وحفظ الدروس. وتأتي كل ملاحظة مع دليلها وأثرها وإصلاح محدد النطاق وفحوص قبول. والدليل الغائب يُعرض غائبًا ولا يُخمَّن. والتقارير المتماثلة عبر الزمن تكوّن عرضًا تاريخيًا للمجالات الخمسة.",
+    "features": [
+     "نموذج «حلقة عمل الوكيل» بخمسة مجالات للحكم على إعداد الفريق للوكلاء",
+     "ملاحظات مرتبطة بالأدلة، مع إصلاح محدد النطاق وفحوص قبول",
+     "تعمل في Claude Code وCodex (سطر الأوامر وتطبيق سطح المكتب) وCursor وGitHub Copilot CLI وQoder وQwen Code وPi وKimi Code وغيرها",
+     "تقارير HTML مستقلة مع Markdown؛ وعرض تاريخي عبر التقارير",
+     "Harness Inspector: يتتبع المقصد عبر التعليمات واستدعاءات الأدوات والملفات والـ commits"
+    ],
+    "strengths": [
+     "أقرب أداة منشورة لتقييم مدى اتباع المشروع للممارسات الجيدة في هندسة الوكلاء",
+     "قواعد صارمة للأدلة: لا تحوّل سلوكًا لم يُرصد إلى درجة",
+     "ترخيص MIT وتعمل مع وكلاء كثيرين، منهم ما تستخدمه عزم"
+    ],
+    "weaknesses": [
+     "تدقق إعداد مشروع واحد؛ لا تشغّل مهامًا ولا تقارن أدوات harness أو نماذج ولا تستخدم اختبارات مخفية",
+     "قبل الإصدار 1.0، وملاحظاتها من حَكَم ذكاء اصطناعي، فتحتاج نتائجها إلى معايرة"
+    ],
+    "gaps": [
+     "لا ربط بمعايير عزم (المسار 1) ولا بنتائج القياس",
+     "لا عرض للفريق كله ولا في CI؛ التقارير لكل تشغيل على جهاز واحد"
+    ],
+    "role": "سابقة لمقيّم الالتزام بالمعايير ولبطاقة الـ Harness: نستعير نموذج المجالات الخمسة وقواعد الأدلة؛ ويمكن تشغيلها بجانب مشاريع squad-kit كتدقيق رخيص.",
+    "pricing": "مجانية؛ تعمل داخل وكيل البرمجة الذي تستخدمه"
    }
   }
  ]

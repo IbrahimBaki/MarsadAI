@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-04",
+ "updated": "2026-11-05",
  "sources": [
   {
    "name": "Picrew/awesome-agent-harness",
@@ -7673,6 +7673,40 @@
    "ar": {
     "summary": "harness متكيّف من Huawei للمهام البرمجية الطويلة: وكيل منفرد أو وكلاء فرعيون أو سرب، مع وضع الهدف وتغذية LSP.",
     "group": "تطبيقات مرجعية للـ harness"
+   }
+  },
+  {
+   "name": "OpenKruise Agents",
+   "repo": "openkruise/agents",
+   "url": "https://github.com/openkruise/agents",
+   "category": "sandbox",
+   "group": "Execution Substrates & Sandboxing",
+   "stars": null,
+   "tags": [
+    "found-by-search"
+   ],
+   "summary": "CNCF project for agent sandboxes on Kubernetes with Kubernetes and E2B-compatible APIs, warm pools, network rules and pause/resume.",
+   "lists": [],
+   "ar": {
+    "summary": "مشروع CNCF لبيئات عزل الوكلاء على Kubernetes بواجهة Kubernetes وواجهة متوافقة مع E2B، مع مجمّعات جاهزة وقواعد للشبكة وإيقاف واستئناف.",
+    "group": "بيئات التنفيذ والعزل"
+   }
+  },
+  {
+   "name": "Better Harness",
+   "repo": "QoderAI/better-harness",
+   "url": "https://github.com/QoderAI/better-harness",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": null,
+   "tags": [
+    "found-by-search"
+   ],
+   "summary": "Audits the work loop around coding agents in five areas from project and session evidence, with prioritized, evidence-backed fixes.",
+   "lists": [],
+   "ar": {
+    "summary": "تدقق حلقة العمل حول وكلاء البرمجة في خمسة مجالات انطلاقًا من أدلة المشروع والجلسات، مع إصلاحات مرتبة ومدعومة بالأدلة.",
+    "group": "أدوات التقييم والمقاييس"
    }
   }
  ],

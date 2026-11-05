@@ -1,6 +1,6 @@
 {
  "track": "t3",
- "checked": "2026-11-04",
+ "checked": "2026-11-05",
  "goal": {
   "en": "Build one place where Azm can run any harness (squad-kit, azm-harness, Claude Code, others) on the same real Azm tasks, in isolation, and get a clear answer: which harness, with which model, gives the best quality for the cost, and does it follow our standards?",
   "ar": "بناء مكان واحد تشغّل فيه عزم أي harness (مثل squad-kit وazm-harness وClaude Code وغيرها) على المهام الحقيقية نفسها من مشاريع عزم، في بيئة معزولة، لتحصل على إجابة واضحة: أي harness، مع أي نموذج، يعطي أفضل جودة مقابل التكلفة، وهل يلتزم بمعاييرنا؟"
@@ -881,8 +881,8 @@
    },
    "decision": "adopt",
    "plan": {
-    "en": "Three ways to provide it, used together: (1) on each developer's machine, Docker or microsandbox, so anyone can run a small benchmark or let squad-kit build safely; (2) on Azm servers, a self-hosted sandbox (Kubernetes agent-sandbox, or E2B self-hosted) for team-wide and scheduled runs on private code; (3) a paid managed service only for large bursts or public benchmarks, never for private repos without a data agreement.",
-    "ar": "ثلاث طرق لتوفيره تُستخدم معًا: (1) على جهاز كل مطور عبر Docker أو microsandbox، ليستطيع أي شخص تشغيل اختبار صغير أو ليعمل squad-kit بأمان؛ (2) على خوادم عزم عبر بيئة عزل مستضافة لدينا (Kubernetes agent-sandbox أو E2B المستضاف ذاتيًا) للتشغيلات الجماعية والمجدولة على الشيفرة الخاصة؛ (3) خدمة مدفوعة مُدارة فقط للأحمال الكبيرة المؤقتة أو المقاييس العامة، وليس للمستودعات الخاصة دون اتفاقية بيانات."
+    "en": "Three ways to provide it, used together: (1) on each developer's machine, Docker or microsandbox, so anyone can run a small benchmark or let squad-kit build safely; (2) on Azm servers, a self-hosted sandbox (Kubernetes agent-sandbox, or E2B self-hosted) for team-wide and scheduled runs on private code; (3) a paid managed service only for large bursts or public benchmarks, never for private repos without a data agreement. Two 2026 studies are a warning for this block: in the Shandong study, 71% of web-enabled runs found the human-written fix online, so benchmark sandboxes must block open internet by default. OpenKruise Agents (v0.6.0) is a second self-hosted option that brings E2B's API, network rules and secret injection to our own cluster.",
+    "ar": "ثلاث طرق لتوفيره تُستخدم معًا: (1) على جهاز كل مطور عبر Docker أو microsandbox، ليستطيع أي شخص تشغيل اختبار صغير أو ليعمل squad-kit بأمان؛ (2) على خوادم عزم عبر بيئة عزل مستضافة لدينا (Kubernetes agent-sandbox أو E2B المستضاف ذاتيًا) للتشغيلات الجماعية والمجدولة على الشيفرة الخاصة؛ (3) خدمة مدفوعة مُدارة فقط للأحمال الكبيرة المؤقتة أو المقاييس العامة، وليس للمستودعات الخاصة دون اتفاقية بيانات. ودراستان من 2026 تحذّران في هذا الجانب: في دراسة جامعة شاندونغ وجد 71% من التشغيلات المتصلة بالإنترنت الإصلاحَ البشري منشورًا على الشبكة، لذا يجب أن تمنع بيئات القياس الإنترنت المفتوح افتراضيًا. وOpenKruise Agents ‏(v0.6.0) خيار ثانٍ مستضاف لدينا يجلب واجهة E2B وقواعد الشبكة وحقن الأسرار إلى عنقودنا."
    },
    "pick": [
     "k8s-agent-sandbox",
@@ -899,7 +899,8 @@
     "northflank",
     "daytona",
     "strands-box",
-    "akamai-agent-sandbox"
+    "akamai-agent-sandbox",
+    "openkruise-agents"
    ],
    "modes": [
     {
@@ -1065,7 +1066,8 @@
      "opensandbox",
      "microsandbox",
      "modal",
-     "vercel-sandbox"
+     "vercel-sandbox",
+     "openkruise-agents"
     ],
     "rows": [
      {
@@ -1097,6 +1099,10 @@
        {
         "en": "Their cloud",
         "ar": "سحابتهم"
+       },
+       {
+        "en": "Our Kubernetes",
+        "ar": "Kubernetes لدينا"
        }
       ]
      },
@@ -1129,6 +1135,10 @@
        {
         "en": "Firecracker microVM",
         "ar": "آلة افتراضية مصغرة Firecracker"
+       },
+       {
+        "en": "Depends on the cluster runtime",
+        "ar": "تعتمد على بيئة التشغيل في العنقود"
        }
       ]
      },
@@ -1161,6 +1171,10 @@
        {
         "en": "~$0.13 per active vCPU-hour",
         "ar": "نحو 0.13 دولار لكل ساعة معالج نشطة"
+       },
+       {
+        "en": "Free (our servers)",
+        "ar": "مجاني (خوادمنا)"
        }
       ]
      },
@@ -1193,6 +1207,10 @@
        {
         "en": "Low",
         "ar": "منخفض"
+       },
+       {
+        "en": "High (cluster team)",
+        "ar": "مرتفع (فريق Kubernetes)"
        }
       ]
      },
@@ -1225,6 +1243,10 @@
        {
         "en": "Yes, built in",
         "ar": "نعم، مدمج"
+       },
+       {
+        "en": "Custom environment, or its E2B-compatible API (untested)",
+        "ar": "عبر بيئة مخصصة، أو واجهته المتوافقة مع E2B (لم تُجرَّب)"
        }
       ]
      },
@@ -1257,6 +1279,10 @@
        {
         "en": "Quick trials",
         "ar": "للتجارب السريعة"
+       },
+       {
+        "en": "Trial next to agent-sandbox if we want E2B's API in-house",
+        "ar": "نجرّبه بجانب agent-sandbox إن أردنا واجهة E2B لدينا"
        }
       ]
      }
@@ -1396,8 +1422,8 @@
    },
    "decision": "build",
    "plan": {
-    "en": "Build this layer. Score each run: resolved (hidden tests), a developer-value score 0-100, standards compliance from Track 1 checks, and zero for any safety violation; repeat 3-5 times and report variance. Report a harness × model × team matrix and a cost/quality chart, borrowing AWS's frontier chart and the Harness Card. Add a CI gate so no harness or standard change ships if it scores worse. Report full-credit rate and cost next to the mean score: Harness-Bench (2026) found they rank harnesses differently, and that the best harness depends on the model.",
-    "ar": "نبني هذه الطبقة. نقيّم كل تشغيل: هل حُلّت المهمة (اختبارات مخفية)، ودرجة قيمة للمطور من 0 إلى 100، والالتزام بالمعايير من فحوص المسار 1، وصفر لأي مخالفة أمان؛ ونكرر 3-5 مرات ونعرض التباين. نعرض مصفوفة harness × نموذج × فريق ورسمًا للجودة مقابل التكلفة، مستفيدين من رسم AWS وبطاقة الـ Harness. ونضيف بوابة في CI تمنع أي تغيير في الـ harness أو المعايير إن قلّل الدرجة. ونعرض نسبة الإنجاز الكامل والتكلفة بجانب متوسط الدرجة؛ فقد وجد Harness-Bench ‏(2026) أنها ترتّب أدوات الـ harness ترتيبًا مختلفًا، وأن أفضل harness يتوقف على النموذج."
+    "en": "Build this layer. Score each run: resolved (hidden tests), a developer-value score 0-100, standards compliance from Track 1 checks, and zero for any safety violation; repeat 3-5 times and report variance. Report a harness × model × team matrix and a cost/quality chart, borrowing AWS's frontier chart and the Harness Card. Add a CI gate so no harness or standard change ships if it scores worse. Report full-credit rate and cost next to the mean score: Harness-Bench (2026) found they rank harnesses differently, and that the best harness depends on the model. Cost must be a first-class result: HarnessTax (Arena, Sep 2026) found the same model reaching similar success at up to 5x the cost across harnesses, and the Shandong study (Oct 2026) found that switching harness flipped 13% of hard tasks, the same rate as simply rerunning. So repeat runs are required before calling any harness better. For the standards score, borrow Better Harness's rule that missing evidence is reported as missing, never scored.",
+    "ar": "نبني هذه الطبقة. نقيّم كل تشغيل: هل حُلّت المهمة (اختبارات مخفية)، ودرجة قيمة للمطور من 0 إلى 100، والالتزام بالمعايير من فحوص المسار 1، وصفر لأي مخالفة أمان؛ ونكرر 3-5 مرات ونعرض التباين. نعرض مصفوفة harness × نموذج × فريق ورسمًا للجودة مقابل التكلفة، مستفيدين من رسم AWS وبطاقة الـ Harness. ونضيف بوابة في CI تمنع أي تغيير في الـ harness أو المعايير إن قلّل الدرجة. ونعرض نسبة الإنجاز الكامل والتكلفة بجانب متوسط الدرجة؛ فقد وجد Harness-Bench ‏(2026) أنها ترتّب أدوات الـ harness ترتيبًا مختلفًا، وأن أفضل harness يتوقف على النموذج. ويجب أن تكون التكلفة نتيجة أساسية: وجدت HarnessTax ‏(Arena، سبتمبر 2026) أن النموذج نفسه يحقق نجاحًا متقاربًا بتكلفة تصل إلى خمسة أضعاف بين أدوات الـ harness، ووجدت دراسة جامعة شاندونغ (أكتوبر 2026) أن تبديل الـ harness غيّر نتيجة 13% من المهام الصعبة، وهي النسبة نفسها عند مجرد إعادة التشغيل. لذا يلزم تكرار التشغيل قبل الحكم بأن harness أفضل من غيره. ولدرجة المعايير نستعير قاعدة Better Harness: الدليل الغائب يُعرض غائبًا ولا يُقيَّم."
    },
    "pick": [
     "aws-harness-benchmarks",
@@ -1406,14 +1432,16 @@
    "alternatives": [
     "qihoo-harness-bench",
     "deepeval",
-    "skillsbench"
+    "skillsbench",
+    "better-harness"
    ],
    "compare": {
     "tools": [
      "aws-harness-benchmarks",
      "qihoo-harness-bench",
      "promptfoo",
-     "deepeval"
+     "deepeval",
+     "better-harness"
     ],
     "rows": [
      {
@@ -1437,6 +1465,10 @@
        {
         "en": "Rubric metrics",
         "ar": "مقاييس بمعايير مكتوبة"
+       },
+       {
+        "en": "Five-area work-loop model and strict evidence rules for the standards score",
+        "ar": "نموذج حلقة العمل بخمسة مجالات وقواعد الأدلة الصارمة لدرجة المعايير"
        }
       ]
      },
@@ -1461,6 +1493,10 @@
        {
         "en": "Apache-2.0",
         "ar": "Apache-2.0"
+       },
+       {
+        "en": "MIT",
+        "ar": "MIT"
        }
       ]
      },
@@ -1485,6 +1521,10 @@
        {
         "en": "Running harnesses on repos",
         "ar": "تشغيل الـ harness على المستودعات"
+       },
+       {
+        "en": "Running tasks, hidden tests, comparing harnesses",
+        "ar": "تشغيل المهام والاختبارات المخفية ومقارنة أدوات الـ harness"
        }
       ]
      }

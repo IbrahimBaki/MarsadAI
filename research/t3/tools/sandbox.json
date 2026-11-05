@@ -1,6 +1,6 @@
 {
  "category": "sandbox",
- "checked": "2026-11-04",
+ "checked": "2026-11-05",
  "tools": [
   {
    "id": "e2b",
@@ -1548,6 +1548,105 @@
     ],
     "role": "لا تناسب تشغيل أدوات الـ harness على المستودعات؛ نذكرها خيارًا خفيفًا لشيفرة أدوات الوكلاء.",
     "pricing": "غير منشورة (نوفمبر 2026)"
+   }
+  },
+  {
+   "id": "openkruise-agents",
+   "name": "OpenKruise Agents",
+   "category": "sandbox",
+   "kind": "open-source",
+   "vendor": "OpenKruise (CNCF)",
+   "repo": "openkruise/agents",
+   "url": "https://openkruise.io/kruiseagents/introduction",
+   "license": "Apache-2.0",
+   "pricing": "Free (your cluster)",
+   "status": "active",
+   "version": "v0.6.0 (Nov 2026)",
+   "tier": "deep",
+   "summary": "A CNCF sub-project of OpenKruise that manages agent sandboxes at scale on Kubernetes, with both Kubernetes and E2B-compatible APIs. Version 0.6.0 (announced 3 Nov 2026) adds network access rules, credential injection, warm-pool autoscaling and automatic pause and resume.",
+   "how": "Controllers and a sandbox-manager run inside your cluster. You create sandboxes either with Kubernetes resources or with the E2B SDK, because the manager exposes an E2B-compatible API and the in-sandbox runtime speaks E2B's command, file and port protocol. Warm pools keep sandboxes ready; idle ones pause and wake on a schedule or on traffic. Since 0.6.0 a traffic control plane and proxy apply L4/L7 network rules and inject tokens from Kubernetes Secrets, so the agent never holds the real key. It stays compatible with the Kubernetes SIG agent-sandbox API when that is installed.",
+   "features": [
+    "Kubernetes CRD API and E2B-compatible API and SDK",
+    "Warm pools with a declarative PoolAutoscaler (0.6.0)",
+    "L4 and L7 network access rules (TrafficPolicy, SecurityProfile) (0.6.0)",
+    "Token management and credential injection from Kubernetes Secrets (0.6.0)",
+    "Automatic pause and resume: idle pause, scheduled wake, wake-on-traffic (0.6.0)",
+    "Checkpoint and restore that keeps the sandbox file system (0.6.0)",
+    "Examples for running Claude Code and E2B code-interpreter sandboxes"
+   ],
+   "strengths": [
+    "E2B-compatible API on our own cluster: code written for E2B can move in-house without a rewrite",
+    "Network rules and secret injection are built in, which matches what a benchmark sandbox on private code needs",
+    "Vendor-neutral CNCF project, Apache-2.0, and compatible with SIG agent-sandbox"
+   ],
+   "weaknesses": [
+    "Young project (v0.x) with a large change in 0.6.0 (CRDs went from 6 to 12)",
+    "Needs a Kubernetes team to run",
+    "Most community channels are in Chinese; the English community meeting is still marked TODO in the README"
+   ],
+   "gaps": [
+    "No benchmark or task layer: it only provides the sandboxes",
+    "Isolation strength depends on the cluster's runtime choice; not stated in the release material we read"
+   ],
+   "fit": {
+    "verdict": "benchmark",
+    "role": "Second option for the 'on Azm servers' sandbox, next to Kubernetes agent-sandbox: try it if we want E2B's API and network rules on our own cluster."
+   },
+   "scores": {
+    "fit": 4,
+    "maturity": 2,
+    "openness": 5,
+    "agnostic": 5,
+    "config": 4,
+    "measure": 1,
+    "safety": 4
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/openkruise/agents"
+    ],
+    [
+     "Docs",
+     "https://openkruise.io/kruiseagents/introduction"
+    ],
+    [
+     "v0.6.0 announcement (CNCF)",
+     "https://www.cncf.io/blog/2026/11/03/openkruise-agents-v0-6-0-leaping-ahead-in-agent-sandbox-security-and-automation/"
+    ]
+   ],
+   "sources": [
+    "https://github.com/openkruise/agents",
+    "https://www.cncf.io/blog/2026/11/03/openkruise-agents-v0-6-0-leaping-ahead-in-agent-sandbox-security-and-automation/"
+   ],
+   "ar": {
+    "summary": "مشروع فرعي من OpenKruise ضمن مؤسسة CNCF يدير بيئات عزل الوكلاء على نطاق واسع فوق Kubernetes، بواجهتين: واجهة Kubernetes وواجهة متوافقة مع E2B. ويضيف الإصدار 0.6.0 (أُعلن في 3 نوفمبر 2026) قواعد للوصول إلى الشبكة، وحقن بيانات الاعتماد، والتوسع التلقائي للمجمّعات الجاهزة، والإيقاف والاستئناف التلقائيين.",
+    "how": "تعمل وحدات التحكم ومدير البيئات داخل العنقود لديك. تُنشئ البيئات إما بموارد Kubernetes أو بحزمة E2B، لأن المدير يقدّم واجهة متوافقة مع E2B، وبيئة التشغيل داخل البيئة تتحدث بروتوكول E2B للأوامر والملفات والمنافذ. وتُبقي المجمّعات الجاهزة بيئات مستعدة، وتتوقف البيئات الخاملة ثم تستيقظ بجدول أو عند وصول طلب. ومنذ 0.6.0 تطبّق طبقة تحكم في حركة الشبكة ووكيلٌ قواعدَ على مستويي L4 وL7، وتحقن الرموز من أسرار Kubernetes، فلا يمسك الوكيل المفتاح الحقيقي أبدًا. ويبقى متوافقًا مع واجهة agent-sandbox من مجموعة SIG في Kubernetes عند تثبيتها.",
+    "features": [
+     "واجهة موارد Kubernetes وواجهة وحزمة متوافقتان مع E2B",
+     "مجمّعات جاهزة مع توسع تلقائي معرّف عبر PoolAutoscaler ‏(0.6.0)",
+     "قواعد وصول للشبكة على مستويي L4 وL7 ‏(TrafficPolicy وSecurityProfile) ‏(0.6.0)",
+     "إدارة الرموز وحقن بيانات الاعتماد من أسرار Kubernetes ‏(0.6.0)",
+     "إيقاف واستئناف تلقائيان: إيقاف عند الخمول، واستيقاظ مجدول، واستيقاظ عند وصول طلب (0.6.0)",
+     "حفظ نقطة واستعادتها مع الإبقاء على نظام ملفات البيئة (0.6.0)",
+     "أمثلة لتشغيل Claude Code وبيئات مفسّر الشيفرة من E2B"
+    ],
+    "strengths": [
+     "واجهة متوافقة مع E2B على عنقودنا: الشيفرة المكتوبة لـ E2B يمكن نقلها إلينا دون إعادة كتابة",
+     "قواعد الشبكة وحقن الأسرار مدمجة، وهذا ما تحتاجه بيئة قياس تعمل على شيفرة خاصة",
+     "مشروع محايد ضمن CNCF بترخيص Apache-2.0، ومتوافق مع agent-sandbox من مجموعة SIG"
+    ],
+    "weaknesses": [
+     "مشروع حديث (الإصدار 0.x) مع تغيير كبير في 0.6.0 (ارتفعت الموارد المخصصة من 6 إلى 12)",
+     "يحتاج فريق Kubernetes لتشغيله",
+     "معظم قنوات المجتمع بالصينية؛ واجتماع المجتمع بالإنجليزية ما زال معلّمًا «لاحقًا» في ملف README"
+    ],
+    "gaps": [
+     "لا طبقة قياس أو مهام: يوفر بيئات العزل فقط",
+     "قوة العزل تعتمد على بيئة التشغيل المختارة في العنقود؛ ولم تُذكر في مواد الإصدار التي قرأناها"
+    ],
+    "role": "خيار ثانٍ لبيئة العزل «على خوادم عزم»، بجانب Kubernetes agent-sandbox: نجرّبه إن أردنا واجهة E2B وقواعد الشبكة على عنقودنا.",
+    "pricing": "مجاني (على عنقودك)"
    }
   }
  ]

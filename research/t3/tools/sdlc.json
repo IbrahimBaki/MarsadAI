@@ -1,6 +1,6 @@
 {
  "category": "sdlc",
- "checked": "2026-11-04",
+ "checked": "2026-11-05",
  "tools": [
   {
    "id": "squad-kit",
@@ -12,9 +12,9 @@
    "url": "https://squad-kit.com",
    "license": "MIT",
    "pricing": "Free; runs on the user's own Claude Code subscription",
-   "version": "v1.1.1 (2026-11-03)",
+   "version": "v1.2.0 (2026-11-05)",
    "tier": "deep",
-   "summary": "Azm's own agent harness for the whole software cycle. Since 1.0 (2 Nov 2026) it is no longer a planning CLI: a local app runs a squad of role agents (Analyst, Architect, Builder, Tester, Reviewer, plus Triage for bugs) that takes a ticket from a plain-language ask to a tagged release. People approve at four points (answers, spec, design, proof) and press Release; the squad does the rest.",
+   "summary": "Azm's own agent harness for the whole software cycle. Since 1.0 (2 Nov 2026) it is no longer a planning CLI: a local app runs a squad of role agents (Analyst, Architect, Builder, Tester, Reviewer, plus Triage for bugs) that takes a ticket from a plain-language ask to a tagged release. People approve at four points (answers, spec, design, proof) and press Release; the squad does the rest. Version 1.2 (5 Nov 2026) adds a path from a whole requirements document (BRD) to built stories, its own browser for proof screenshots, and a guard around the project's commands.",
    "how": "`squad` opens one local app (127.0.0.1:4571) for all projects, each with its own board. A ticket goes through questions, spec, design, build, checks, review, proof and release, on a Full track or an Express track for small fixes. squad-kit itself is the boss: it runs the tests, lint and build, starts a fresh Reviewer session, and does all git and tracker work; agents never merge, push or grade their own work. The Builder works in its own copy of the code. Changes after approval go through 'Propose a change' (old and new wording side by side, rated small or big, and only the affected parts are rebuilt). Project memory lives in .squad/ as readable Markdown and YAML (tickets, linked decisions, releases, rules per role, knowledge) and travels with the code; chats, screenshots, sign-ins and cost stay in ~/.squad-kit/. The model level is set per role and step (strongest, balanced, fast) and cost per ticket and role is shown at API prices. AI tools and trackers plug in as modules: Claude Code and Azure DevOps today.",
    "features": [
     "Six role agents: Analyst, Architect, Builder, Tester, Reviewer and Triage",
@@ -26,7 +26,11 @@
     "Chat with any agent in Arabic or English without stopping the work; status answers at no AI cost",
     "Hand a ticket over to a teammate through its branch; a fresh clone restores the whole board",
     "Model level per role and step; cost per ticket and role",
-    "Azure DevOps Boards and Repos integration; one inbox across projects; phone layout"
+    "Azure DevOps Boards and Repos integration; one inbox across projects; phone layout",
+    "From a BRD to a built product (1.2): a Requirements page turns a PDF, Word or Markdown BRD into epics, features and stories, sends them to Azure DevOps and builds them one by one on a 'Builds by itself' track",
+    "squad-kit takes the proof screenshots itself with its own browser; each 'done when' gets a verdict: Met, Not working yet, Not shown yet or Not on a screen (1.2)",
+    "Fixed agent tools ('the window'): no free commands; requests outside it are refused and logged, and three refusals stop the agent (1.2)",
+    "Cost follows how you pay: subscription use shown as included, API-key use in real dollars with per-ticket and monthly budgets (1.2)"
    ],
    "strengths": [
     "The only tool found that covers the full cycle from idea to tagged release with human approval at the right points",
@@ -34,18 +38,19 @@
     "Non-developers (business analysts, project managers) can drive it, in Arabic or English",
     "Project memory is plain files that survive machines and teammates",
     "Built in-house under MIT: Azm controls the roadmap",
-    "Visible cost per role makes model tuning measurable"
+    "Visible cost per role makes model tuning measurable",
+    "The 'Builds by itself' track and screenshot verdicts make unattended runs possible, which is close to what a benchmark run needs"
    ],
    "weaknesses": [
     "Runs on Claude Code only today; Codex is detected but cannot run yet",
     "A local, single-machine app: no shared server or team-wide queue",
-    "The Builder works in a copy of the repo on the same machine, with the same network, files and credentials, so it is not a sandbox",
+    "Still not a sandbox: since 1.2 the project's own commands run in a guard on Mac and Linux that blocks keys, sign-ins and .env files, but work stays on the same machine and network, and Windows has no guard yet",
     "Azure DevOps is the only tracker in 1.x",
     "Two to five tickets at a time, because all projects share one AI account",
     "No way yet to measure quality across many tickets or against other harnesses"
    ],
    "gaps": [
-    "A headless mode so the sandbox can run it on benchmark tasks and read the result",
+    "A headless mode so the sandbox can run it on benchmark tasks and read the result (the 1.2 'Builds by itself' track is a step toward it)",
     "More engines: Codex, opencode, pi (the module design is ready)",
     "Isolated execution per ticket (container or microVM)",
     "A quality report across tickets that feeds back into rules/",
@@ -89,7 +94,7 @@
    ],
    "status": "active",
    "ar": {
-    "summary": "أداة الـ harness الخاصة بعزم لدورة البرمجيات كاملة. منذ الإصدار 1.0 (2 نوفمبر 2026) لم تعد أداة تخطيط في سطر الأوامر: تطبيق محلي يشغّل فريقًا من الوكلاء بأدوار (المحلل والمعماري والباني والمختبِر والمراجع، إضافة إلى الفرز للأخطاء) ينقل التذكرة من طلب مكتوب بلغة عادية إلى إصدار موسوم. يوافق البشر في أربع نقاط (الإجابات والمواصفات والتصميم والإثبات) ثم يضغطون «إصدار»، ويتولى الفريق الباقي.",
+    "summary": "أداة الـ harness الخاصة بعزم لدورة البرمجيات كاملة. منذ الإصدار 1.0 (2 نوفمبر 2026) لم تعد أداة تخطيط في سطر الأوامر: تطبيق محلي يشغّل فريقًا من الوكلاء بأدوار (المحلل والمعماري والباني والمختبِر والمراجع، إضافة إلى الفرز للأخطاء) ينقل التذكرة من طلب مكتوب بلغة عادية إلى إصدار موسوم. يوافق البشر في أربع نقاط (الإجابات والمواصفات والتصميم والإثبات) ثم يضغطون «إصدار»، ويتولى الفريق الباقي. ويضيف الإصدار 1.2 (5 نوفمبر 2026) مسارًا من وثيقة متطلبات كاملة (BRD) إلى قصص مبنية، ومتصفحًا خاصًا لالتقاط لقطات الإثبات، وحماية حول أوامر المشروع.",
     "how": "يفتح الأمر `squad` تطبيقًا محليًا واحدًا (127.0.0.1:4571) لكل المشاريع، ولكل مشروع لوحته. تمر التذكرة بالأسئلة ثم المواصفات ثم التصميم ثم البناء ثم الفحوص ثم المراجعة ثم الإثبات ثم الإصدار، في مسار كامل أو مسار سريع للإصلاحات الصغيرة. وsquad-kit نفسه هو المتحكم: يشغّل الاختبارات وفحص الأسلوب والبناء، ويبدأ جلسة مراجعة جديدة، ويتولى كل عمل git وأداة التذاكر؛ فالوكلاء لا يدمجون ولا يدفعون ولا يقيّمون عملهم أبدًا. ويعمل الباني في نسخة خاصة من الشيفرة. وتمر التغييرات بعد الموافقة عبر «اقتراح تغيير» (الصياغة القديمة والجديدة جنبًا إلى جنب، مع تصنيفه صغيرًا أو كبيرًا، ولا يُعاد بناء إلا ما تأثر). وتُحفظ ذاكرة المشروع في ‎.squad/‎ كملفات Markdown وYAML مقروءة (التذاكر والقرارات المرتبطة والإصدارات وقواعد كل دور والمعرفة) وتنتقل مع الشيفرة؛ أما المحادثات واللقطات وبيانات الدخول والتكلفة فتبقى في ‎~/.squad-kit/‎. ويُضبط مستوى النموذج لكل دور وخطوة (الأقوى أو المتوازن أو السريع)، وتظهر تكلفة كل تذكرة ودور بأسعار الواجهة البرمجية. وتُضاف أدوات الذكاء الاصطناعي وأدوات التذاكر كوحدات: Claude Code وAzure DevOps حاليًا.",
     "features": [
      "ستة وكلاء بأدوار: المحلل والمعماري والباني والمختبِر والمراجع والفرز",
@@ -101,7 +106,11 @@
      "محادثة أي وكيل بالعربية أو الإنجليزية دون إيقاف العمل؛ وإجابات الحالة بلا تكلفة ذكاء اصطناعي",
      "تسليم التذكرة لزميل عبر فرعها؛ ونسخة جديدة من المستودع تستعيد اللوحة كاملة",
      "مستوى النموذج لكل دور وخطوة؛ وتكلفة كل تذكرة ودور",
-     "تكامل مع Azure DevOps Boards وRepos؛ وصندوق وارد واحد لكل المشاريع؛ وتصميم للهاتف"
+     "تكامل مع Azure DevOps Boards وRepos؛ وصندوق وارد واحد لكل المشاريع؛ وتصميم للهاتف",
+     "من وثيقة المتطلبات إلى منتج مبني (1.2): صفحة المتطلبات تحوّل وثيقة BRD بصيغة PDF أو Word أو Markdown إلى ملاحم وميزات وقصص، وترسلها إلى Azure DevOps، وتبنيها واحدة تلو الأخرى في مسار «يُبنى وحده»",
+     "يلتقط squad-kit لقطات الإثبات بنفسه عبر متصفحه الخاص؛ ويحصل كل بند «يكتمل عندما» على حكم: متحقق، أو لا يعمل بعد، أو لم يظهر بعد، أو ليس على الشاشة (1.2)",
+     "أدوات ثابتة للوكلاء («النافذة»): لا أوامر حرة؛ ويُرفض أي طلب خارجها ويُسجَّل، وثلاث حالات رفض توقف الوكيل (1.2)",
+     "التكلفة تتبع طريقة الدفع: الاستخدام بالاشتراك يظهر مشمولًا، والاستخدام بمفتاح الواجهة البرمجية بالدولار مع ميزانية لكل تذكرة ولكل شهر (1.2)"
     ],
     "strengths": [
      "الأداة الوحيدة التي وجدناها تغطي الدورة كاملة من الفكرة إلى الإصدار الموسوم مع موافقة بشرية في المواضع الصحيحة",
@@ -109,18 +118,19 @@
      "يستطيع غير المطورين (محللو الأعمال ومديرو المشاريع) قيادته، بالعربية أو الإنجليزية",
      "ذاكرة المشروع ملفات عادية تبقى رغم تغيّر الأجهزة والزملاء",
      "مبني داخل عزم بترخيص MIT: عزم تتحكم في خارطة طريقه",
-     "ظهور تكلفة كل دور يجعل ضبط النماذج قابلًا للقياس"
+     "ظهور تكلفة كل دور يجعل ضبط النماذج قابلًا للقياس",
+     "مسار «يُبنى وحده» وأحكام اللقطات تجعل التشغيل دون تدخل ممكنًا، وهذا قريب مما يحتاجه تشغيل القياس"
     ],
     "weaknesses": [
      "يعمل على Claude Code فقط حاليًا؛ يكتشف Codex لكنه لا يستطيع تشغيله بعد",
      "تطبيق محلي على جهاز واحد: لا خادم مشترك ولا قائمة انتظار للفريق",
-     "يعمل الباني في نسخة من المستودع على الجهاز نفسه، بالشبكة والملفات والاعتمادات نفسها، فليس بيئة عزل",
+     "ما زال ليس بيئة عزل: منذ 1.2 تعمل أوامر المشروع داخل حماية على Mac وLinux تمنع قراءة المفاتيح وبيانات الدخول وملفات ‎.env‎، لكن العمل يبقى على الجهاز والشبكة نفسيهما، ولا حماية على Windows بعد",
      "Azure DevOps هو أداة التذاكر الوحيدة في الإصدار 1.x",
      "من تذكرتين إلى خمس في الوقت نفسه، لأن كل المشاريع تتشارك حساب ذكاء اصطناعي واحدًا",
      "لا وسيلة بعد لقياس الجودة عبر تذاكر كثيرة أو مقارنته بأدوات harness أخرى"
     ],
     "gaps": [
-     "وضع تشغيل بلا واجهة لتستطيع بيئة الاختبار تشغيله على مهام القياس وقراءة النتيجة",
+     "وضع تشغيل بلا واجهة لتستطيع بيئة الاختبار تشغيله على مهام القياس وقراءة النتيجة (مسار «يُبنى وحده» في 1.2 خطوة نحوه)",
      "محركات إضافية: Codex وopencode وpi (تصميم الوحدات جاهز)",
      "تنفيذ معزول لكل تذكرة (حاوية أو آلة افتراضية مصغرة)",
      "تقرير جودة عبر التذاكر يغذي مجلد rules/",

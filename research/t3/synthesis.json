@@ -1,6 +1,6 @@
 {
  "track": "t3",
- "checked": "2026-11-04",
+ "checked": "2026-11-05",
  "headline": "Don't build a harness benchmark engine: Harbor (plus Inspect for non-code tasks) already runs any harness on containerized tasks at scale. What nobody has built is the Azm layer on top: tasks mined from Azm's own repos, adapters for squad-kit and azm-harness, standards-compliance scoring, per-team YAML suites and a report people can act on.",
  "bottomLine": [
   "Prior art exists and is recent: AWS published a harness-vs-model cost/quality benchmark on your own code (MIT-0, 21 Oct 2026); Fullscript ran 36 tasks mined from its own commits (Aug 2026); GitHub published its harness evaluation protocol (Jun 2026). Azm's sandbox should combine their methods, not reinvent them.",
@@ -45,6 +45,12 @@
    "ref": "qihoo-harness-bench",
    "takes": "Harness × model matrix (7 × 10), oracle scoring with partial credit, safety gates that zero a run, cost per run, full-credit vs mean reporting.",
    "lacks": "Company SDLC tasks, standards scoring, per-team config, CI gate."
+  },
+  {
+   "name": "Better Harness (Qoder)",
+   "ref": "better-harness",
+   "takes": "A five-area model for auditing a project's agent work loop, findings tied to evidence with fixes and acceptance checks, history across reports, and a rule that missing evidence is never scored.",
+   "lacks": "Task runs, hidden tests, harness × model comparison, Azm's own standards, team or CI view."
   }
  ],
  "architecture": [
@@ -165,7 +171,8 @@
   "Noise: fixed resources, ≥3 runs, report variance; don't rank on <5 pp gaps.",
   "Saturation: refresh tasks quarterly.",
   "Licences: AGPL tools (Chorus, Trellis) and ELv2 (Phoenix) need care if embedded.",
-  "Data: managed sandboxes and hosted agents send code off Azm infrastructure; use self-host/BYOC for private repos."
+  "Data: managed sandboxes and hosted agents send code off Azm infrastructure; use self-host/BYOC for private repos.",
+  "Answer leakage from the web: block open internet in benchmark runs (71% of web-enabled runs in one 2026 study fetched the human fix)."
  ],
  "decisions": [
   "Which 1-2 Azm repos supply the pilot tasks?",
@@ -206,6 +213,10 @@
    {
     "takes": "مصفوفة harness × نموذج (7 × 10)، وتقييم بأدوات تحقق مع درجات جزئية، وبوابات أمان تصفّر التشغيل، والتكلفة لكل تشغيل، وعرض الإنجاز الكامل مقابل المتوسط.",
     "lacks": "مهام دورة تطوير الشركة، وتقييم المعايير، وإعدادات كل فريق، وبوابة CI."
+   },
+   {
+    "takes": "نموذج بخمسة مجالات لتدقيق حلقة عمل الوكلاء في المشروع، وملاحظات مرتبطة بالأدلة مع إصلاحات وفحوص قبول، وعرض تاريخي عبر التقارير، وقاعدة ألا يُقيَّم الدليل الغائب أبدًا.",
+    "lacks": "تشغيل المهام، والاختبارات المخفية، والمقارنة بين harness ونموذج، ومعايير عزم الخاصة، وعرض الفريق أو CI."
    }
   ],
   "names": [
@@ -214,7 +225,8 @@
    "تقييم GitHub لـ harness الخاص بـ Copilot",
    "Harbor / Terminal-Bench",
    "HarnessBench / WildClawBench",
-   "Harness-Bench (جامعة بكين / Qihoo 360)"
+   "Harness-Bench (جامعة بكين / Qihoo 360)",
+   "Better Harness ‏(Qoder)"
   ],
   "architecture": [
    {
@@ -325,7 +337,8 @@
    "الضوضاء: موارد ثابتة، و3 تشغيلات على الأقل، وعرض التباين؛ ولا نرتب على فروق أقل من 5 نقاط.",
    "التشبع: نجدد المهام كل ربع سنة.",
    "التراخيص: أدوات AGPL ‏(Chorus وTrellis) وELv2 ‏(Phoenix) تحتاج حذرًا إن ضُمّنت.",
-   "البيانات: بيئات العزل المُدارة والوكلاء المستضافون يرسلون الشيفرة خارج بنية عزم؛ نستخدم الاستضافة الذاتية أو حسابنا السحابي للمستودعات الخاصة."
+   "البيانات: بيئات العزل المُدارة والوكلاء المستضافون يرسلون الشيفرة خارج بنية عزم؛ نستخدم الاستضافة الذاتية أو حسابنا السحابي للمستودعات الخاصة.",
+   "تسرب الإجابة من الإنترنت: نمنع الإنترنت المفتوح في تشغيلات القياس (71% من التشغيلات المتصلة في دراسة من 2026 جلبت الإصلاح البشري)."
   ],
   "decisions": [
    "أي مستودع أو اثنين من عزم نأخذ منهما مهام التجربة الأولى؟",
