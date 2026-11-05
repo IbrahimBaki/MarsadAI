@@ -1,0 +1,488 @@
+{
+  "date": "2026-11-05",
+  "headline": "دراسة جديدة تجد أن أداة الـ harness قد تضاعف تكلفة وكيل البرمجة ثلاث مرات دون أن تزيد دقته، وOpenKruise Agents 0.6.0 يجلب بيئات عزل بواجهة E2B وقواعد شبكة إلى Kubernetes. ومن الأدوات: تدقيق لطريقة العمل مع الوكلاء، ومهارة لتحسين الواجهات المولَّدة آليًا.",
+  "headline_en": "A new study finds a coding agent's harness can triple its cost without making it more accurate, and OpenKruise Agents 0.6.0 brings sandboxes with an E2B API and network rules to Kubernetes. Among tools: an audit of how teams work with agents, and a skill that fixes AI-looking interfaces.",
+  "items": [
+    {
+      "id": "shandong-harness-cost-study",
+      "section": "llm",
+      "kind": "article",
+      "title": "دراسة: أداة الـ harness قد تضاعف تكلفة وكيل البرمجة ثلاث مرات دون أن تزيد دقته",
+      "summary": "شغّل باحثون من جامعة شاندونغ ثلاث أدوات harness هي Claude Code وOpenCode وmini-SWE-agent مع خمسة نماذج على 492 مهمة من SWE-bench Verified دون اتصال. اختلفت تكلفة المهمة حتى ثلاثة أضعاف بين الأدوات، بينما غيّر تبديل الأداة نتيجة 13% فقط من أصعب 45 مهمة، وهي النسبة نفسها عند إعادة التشغيل دون تغيير.",
+      "why": "لمن يختار وكيل برمجة لفريقه أو يقارن بين الأدوات: قِس التكلفة بجانب نسبة النجاح، وكرر التشغيل قبل أن تحكم بأن أداة أفضل من أخرى، وامنع الإنترنت في اختباراتك.",
+      "about": "قارنت الدراسة ثلاث أدوات تشغّل النموذج نفسه بطرق مختلفة: Claude Code، وOpenCode، وmini-SWE-agent وهو نحو 100 سطر Python بأداة bash واحدة ودون ضغط للسياق. واستُخدمت نماذج Qwen3.6-35B-A3B وQwen3.8-27B محليًا، وDeepSeek-V4-Flash وGLM-5.3-Flash وHY4-Preview عبر الواجهة البرمجية، داخل حاويات معزولة.\n\nأبرز النتائج: كان حجم السياق الثابت في البداية 16,581 رمزًا في Claude Code و7,025 في OpenCode و829 في mini-SWE-agent. ومع GLM-5.3-Flash كلّفت محاولة Claude Code نحو ضعف محاولة mini-SWE-agent وأكثر من ثلاثة أضعاف محاولة OpenCode. وتأخر OpenCode حتى 9 نقاط على المجموعة الكبيرة.\n\nملاحظة مهمة: 312 من 439 محاولة متصلة بالإنترنت (71%) وجدت الإصلاح البشري على GitHub، فاستُبعدت ومُنع الوصول إلى الشبكة في التقييم النهائي. وتتفق النتيجة مع دراسة HarnessTax من Arena التي وجدت فروق تكلفة تصل إلى خمسة أضعاف.",
+      "features": [
+        "مقارنة 3 أدوات harness و5 نماذج على 492 مهمة",
+        "فرق التكلفة بين الأدوات حتى 3 أضعاف",
+        "تبديل الأداة غيّر 13% من النتائج، مثل إعادة التشغيل",
+        "71% من المحاولات المتصلة وجدت الإصلاح منشورًا على الإنترنت"
+      ],
+      "links": [
+        {
+          "label": "تغطية VentureBeat",
+          "url": "https://venturebeat.com/orchestration/a-coding-agents-harness-can-triple-its-cost-without-making-it-more-accurate-study-finds"
+        },
+        {
+          "label": "الورقة على arXiv",
+          "url": "https://arxiv.org/abs/2610.04433"
+        },
+        {
+          "label": "دراسة HarnessTax",
+          "url": "https://arena.ai/blog/coding-agents-harness-tax/"
+        }
+      ],
+      "url": "https://venturebeat.com/orchestration/a-coding-agents-harness-can-triple-its-cost-without-making-it-more-accurate-study-finds",
+      "source": "venturebeat.com",
+      "importance": 3,
+      "tags": [
+        "agents",
+        "benchmark",
+        "cost",
+        "SWE-bench"
+      ],
+      "en": {
+        "title": "Study: a coding agent's harness can triple its cost without making it more accurate",
+        "summary": "Shandong University researchers ran three harnesses, Claude Code, OpenCode and mini-SWE-agent, with five models on 492 offline SWE-bench Verified tasks. Cost per task differed by up to 3x across harnesses, while switching harness flipped only 13% of the 45 hardest tasks, the same rate as rerunning an unchanged setup.",
+        "why": "For anyone choosing a coding agent for a team or comparing tools: measure cost next to success rate, repeat runs before calling one tool better, and block internet access in your tests.",
+        "about": "The study compared three harnesses that run the same model in different ways: Claude Code, OpenCode, and mini-SWE-agent, about 100 lines of Python with a single bash tool and no context compaction. Models were Qwen3.6-35B-A3B and Qwen3.8-27B served locally, and DeepSeek-V4-Flash, GLM-5.3-Flash and HY4-Preview through APIs, in isolated containers.\n\nKey results: the fixed starting context was 16,581 tokens in Claude Code, 7,025 in OpenCode and 829 in mini-SWE-agent. With GLM-5.3-Flash, a Claude Code trial cost nearly twice a mini-SWE-agent trial and over three times an OpenCode trial. OpenCode trailed by up to 9 points on the large pool.\n\nAn important note: 312 of 439 web-enabled trials (71%) had found the human-written fix on GitHub, so they were discarded and network access was blocked for the final evaluation. The result matches Arena's HarnessTax study, which found cost differences of up to fivefold.",
+        "features": [
+          "3 harnesses and 5 models compared on 492 tasks",
+          "Cost differs by up to 3x across harnesses",
+          "Switching harness flipped 13% of results, like a rerun",
+          "71% of web-enabled trials found the fix online"
+        ],
+        "links": [
+          "VentureBeat coverage",
+          "Paper on arXiv",
+          "HarnessTax study"
+        ]
+      }
+    },
+    {
+      "id": "openkruise-agents-v0-6-0",
+      "section": "devops",
+      "kind": "release",
+      "title": "OpenKruise Agents v0.6.0: بيئات عزل للوكلاء على Kubernetes بواجهة متوافقة مع E2B وقواعد للشبكة",
+      "summary": "OpenKruise Agents مشروع فرعي من OpenKruise في CNCF يدير بيئات عزل الوكلاء على Kubernetes، بواجهة Kubernetes وواجهة متوافقة مع E2B. ويضيف الإصدار 0.6.0 قواعد وصول للشبكة على مستويي L4 وL7، وحقن بيانات الاعتماد من أسرار Kubernetes، وتوسعًا تلقائيًا للمجمّعات الجاهزة، وإيقافًا واستئنافًا تلقائيين.",
+      "why": "للفرق التي تريد تشغيل وكلاء على شيفرة خاصة داخل عنقودها بدل خدمة خارجية: الشيفرة المكتوبة لـ E2B يمكن أن تعمل عليه، مع منع الوكيل من رؤية المفاتيح الحقيقية، مثل بيئة اختبار تشغّل Claude Code على مستودعات الشركة.",
+      "about": "يعمل مدير البيئات داخل العنقود ويقدّم واجهة متوافقة مع E2B، وتتحدث بيئة التشغيل داخل كل بيئة بروتوكول E2B للأوامر والملفات والمنافذ. لذلك يمكن إنشاء البيئات بموارد Kubernetes أو بحزمة E2B. ويتضمن المستودع أمثلة لتشغيل Claude Code ومفسّر الشيفرة من E2B.\n\nفي 0.6.0 ارتفع عدد المكونات من أربعة إلى ستة بإضافة طبقة تحكم في حركة الشبكة ووكيل لها، وارتفعت الموارد المخصصة من 6 إلى 12، منها PoolAutoscaler وTrafficPolicy وSecurityProfile. وأضيف وضع CheckpointRestore الذي يحفظ نظام ملفات البيئة، وإيقاف عند الخمول واستيقاظ مجدول أو عند وصول طلب. ويضم الإصدار 283 طلب دمج و27 مساهمًا جديدًا منذ 0.3.0.\n\nالقيود: المشروع ما زال في الإصدار 0.x، ويحتاج فريقًا يدير Kubernetes. وهو متوافق مع واجهة agent-sandbox من مجموعة SIG في Kubernetes عند تثبيتها. الترخيص Apache-2.0.",
+      "features": [
+        "واجهة Kubernetes وواجهة متوافقة مع E2B",
+        "قواعد شبكة L4 وL7 وحقن الأسرار",
+        "توسع تلقائي للمجمّعات الجاهزة",
+        "إيقاف واستئناف تلقائيان وحفظ نقاط واستعادتها"
+      ],
+      "requirements": [
+        "عنقود Kubernetes"
+      ],
+      "repo": "openkruise/agents",
+      "pricing": {
+        "model": "oss"
+      },
+      "links": [
+        {
+          "label": "إعلان CNCF",
+          "url": "https://www.cncf.io/blog/2026/11/03/openkruise-agents-v0-6-0-leaping-ahead-in-agent-sandbox-security-and-automation/"
+        },
+        {
+          "label": "المستودع",
+          "url": "https://github.com/openkruise/agents"
+        },
+        {
+          "label": "التوثيق",
+          "url": "https://openkruise.io/kruiseagents/introduction"
+        }
+      ],
+      "url": "https://www.cncf.io/blog/2026/11/03/openkruise-agents-v0-6-0-leaping-ahead-in-agent-sandbox-security-and-automation/",
+      "source": "cncf.io",
+      "importance": 2,
+      "tags": [
+        "kubernetes",
+        "sandbox",
+        "agents",
+        "E2B"
+      ],
+      "en": {
+        "title": "OpenKruise Agents v0.6.0: agent sandboxes on Kubernetes with an E2B-compatible API and network rules",
+        "summary": "OpenKruise Agents is a CNCF sub-project of OpenKruise that manages agent sandboxes on Kubernetes, with a Kubernetes API and an E2B-compatible API. Version 0.6.0 adds L4 and L7 network access rules, credential injection from Kubernetes Secrets, warm-pool autoscaling, and automatic pause and resume.",
+        "why": "For teams that want to run agents on private code inside their own cluster instead of an outside service: code written for E2B can run on it, and the agent never sees the real keys, e.g. a test environment that runs Claude Code on company repos.",
+        "about": "The sandbox manager runs inside the cluster and exposes an E2B-compatible API, and the runtime in each sandbox speaks E2B's command, file and port protocol. So sandboxes can be created with Kubernetes resources or with the E2B SDK. The repo includes examples for running Claude Code and E2B's code interpreter.\n\nIn 0.6.0 the components go from four to six with a traffic control plane and proxy, and the CRDs go from 6 to 12, including PoolAutoscaler, TrafficPolicy and SecurityProfile. A CheckpointRestore mode keeps the sandbox file system, and sandboxes can pause when idle and wake on a schedule or on traffic. The release brings 283 merged pull requests and 27 new contributors since 0.3.0.\n\nLimits: the project is still at 0.x and needs a team that runs Kubernetes. It stays compatible with the Kubernetes SIG agent-sandbox API when installed. The license is Apache-2.0.",
+        "features": [
+          "Kubernetes API and E2B-compatible API",
+          "L4 and L7 network rules and secret injection",
+          "Warm-pool autoscaling",
+          "Automatic pause and resume, checkpoint and restore"
+        ],
+        "requirements": [
+          "A Kubernetes cluster"
+        ],
+        "links": [
+          "CNCF announcement",
+          "Repository",
+          "Docs"
+        ]
+      }
+    },
+    {
+      "id": "better-harness-qoder",
+      "section": "agents",
+      "kind": "plugin",
+      "title": "Better Harness: تدقيق مفتوح المصدر لطريقة عمل فريقك مع وكلاء البرمجة",
+      "summary": "Better Harness إضافة بترخيص MIT تعمل داخل Claude Code وCodex وCursor وCopilot CLI وغيرها. تقرأ إعداد المشروع (AGENTS.md والمهارات والخطافات والاختبارات وCI) والجلسات السابقة حين يتاح ذلك، ثم تقيّم خمسة مجالات من فهم المهمة إلى حفظ الدروس، وتقترح إصلاحات مرتبة مع فحوص قبول.",
+      "why": "لمن يعمل مع وكلاء برمجة ويريد أن يعرف أين يضعف الإعداد حولهم: مثلًا مشروع بلا اختبارات تثبت أن التغيير يعمل، أو قواعد لا يقرؤها الوكيل، فتحصل على قائمة إصلاحات محددة بدل انطباع عام.",
+      "about": "تعمل الأداة بنموذج «حلقة عمل الوكيل» من خمسة مجالات: فهم المهمة، والتنفيذ المنضبط، والتحقق من التغيير، والتسليم الموثوق، وحفظ الدروس. يجمع وكلاء منفصلون الأدلة من المشروع والجلسات، ثم يحللها وكيل رئيسي، وتأتي كل ملاحظة مع دليلها وأثرها وإصلاح محدد النطاق وفحوص قبول.\n\nفي Claude Code يكون الناتج ملف report.html مستقلًا مع report.md وfindings.json داخل ‎.claude/better-harness في المستودع. ومع تكرار التقارير يظهر عرض تاريخي للمجالات الخمسة. وتلتزم الأداة بقاعدة واضحة: الدليل الغائب يُعرض غائبًا ولا يتحول إلى درجة.\n\nالقيود: تدقق إعداد مشروع واحد ولا تشغّل مهام قياس ولا تقارن النماذج، وملاحظاتها من حَكَم ذكاء اصطناعي. أحدث إصدار مستقر على npm هو 0.6.6، و0.7.0 في مرحلة alpha.",
+      "features": [
+        "تقييم خمسة مجالات لحلقة عمل الوكيل",
+        "ملاحظات مرتبطة بالأدلة مع إصلاح وفحوص قبول",
+        "تقارير HTML وMarkdown وعرض تاريخي",
+        "تعمل مع Claude Code وCodex وCursor وCopilot CLI وغيرها"
+      ],
+      "install": [
+        {
+          "label": "إضافة السوق في Claude Code",
+          "cmd": "/plugin marketplace add QoderAI/better-harness"
+        },
+        {
+          "label": "تثبيت الإضافة",
+          "cmd": "/plugin install better-harness@better-harness"
+        }
+      ],
+      "usage": [
+        "/better-harness analyze this project's AI coding workflow and generate an evidence-backed report"
+      ],
+      "repo": "QoderAI/better-harness",
+      "pricing": {
+        "model": "oss"
+      },
+      "links": [
+        {
+          "label": "المستودع",
+          "url": "https://github.com/QoderAI/better-harness"
+        },
+        {
+          "label": "الموقع والتوثيق",
+          "url": "https://qoderai.github.io/better-harness/"
+        }
+      ],
+      "url": "https://github.com/QoderAI/better-harness",
+      "source": "github.com",
+      "importance": 2,
+      "tags": [
+        "agents",
+        "harness",
+        "audit",
+        "Claude Code"
+      ],
+      "en": {
+        "title": "Better Harness: an open-source audit of how your team works with coding agents",
+        "summary": "Better Harness is an MIT plugin that runs inside Claude Code, Codex, Cursor, Copilot CLI and others. It reads the project's setup (AGENTS.md, skills, hooks, tests, CI) and past sessions where available, then scores five areas from task understanding to learning capture and proposes prioritized fixes with acceptance checks.",
+        "why": "For anyone working with coding agents who wants to know where the setup around them is weak, e.g. a project with no tests that prove a change works, or rules the agent never reads, so you get a specific list of fixes instead of a general impression.",
+        "about": "The tool uses an 'Agent Work Loop' model with five areas: Task Understanding, Controlled Execution, Change Validation, Reliable Delivery and Learning Capture. Separate agents gather evidence from the project and sessions, a lead agent analyzes it, and each finding comes with its evidence, impact, a scoped fix and acceptance checks.\n\nIn Claude Code the output is a self-contained report.html with report.md and findings.json under .claude/better-harness in the repo. Repeated reports form a history view of the five areas. The tool keeps one clear rule: missing evidence is shown as missing and never turned into a score.\n\nLimits: it audits one project's setup, does not run benchmark tasks or compare models, and its findings come from an AI judge. The latest stable npm release is 0.6.6, with 0.7.0 in alpha.",
+        "features": [
+          "Scores five areas of the agent work loop",
+          "Evidence-backed findings with a fix and acceptance checks",
+          "HTML and Markdown reports with a history view",
+          "Works with Claude Code, Codex, Cursor, Copilot CLI and more"
+        ],
+        "install": [
+          "Add the marketplace in Claude Code",
+          "Install the plugin"
+        ],
+        "usage": [
+          "/better-harness analyze this project's AI coding workflow and generate an evidence-backed report"
+        ],
+        "links": [
+          "Repository",
+          "Website and docs"
+        ]
+      }
+    },
+    {
+      "id": "unslop-skill",
+      "section": "design",
+      "kind": "skill",
+      "title": "unslop: مهارة تحوّل الواجهات ذات المظهر المولَّد آليًا إلى تصميم له شخصية",
+      "summary": "unslop مهارة لـ Claude Code وCodex تبدأ بتدقيق الشاشة لتحديد علامات المظهر الآلي، مثل التدرجات البنفسجية والتوهج والرموز التعبيرية في التسميات والمسافات غير المتساوية، ثم تقترح اتجاهًا مأخوذًا من المنتج، وتصلح الشاشة على مراحل كما في مراجعة مصمم.",
+      "why": "لمن بنى لوحة تحكم أو صفحة هبوط بمساعدة وكيل ويبدو التصميم عامًا ومكررًا: تحصل على قائمة بالمشكلات واتجاه واضح قبل أي تعديل، ثم تحسينات للمسافات والألوان والخطوط والنصوص.",
+      "about": "تعمل المهارة مع Next.js وReact وVue وSvelte وTailwind وHTML وCSS العادية، على لوحات التحكم والتطبيقات وصفحات الهبوط، وحتى على موقع منشور عبر رابطه فقط. وتقترح الاتجاه قبل أن تعدّل شيئًا، وإذا كانت الشاشة جيدة أصلًا تقول ذلك وتكتفي بتحسينات صغيرة.\n\nتمر المراحل بالترتيب: المسافات، ثم الألوان، ثم الأيقونات، ثم النصوص، ثم الخطوط، ثم التخطيط، ثم التفاصيل، ثم المرئيات والحركة. وعند الحاجة إلى صورة يمكنها توليدها عبر خدمة صور متصلة، وتعرض الوصف وتطلب الإذن قبل كل توليد مدفوع. ويمكنها أيضًا إنتاج فيديو مربع أقل من 10 ثوانٍ يُظهر التحول.\n\nالترخيص CC BY 4.0، أي يجوز الاستخدام التجاري مع نسبة العمل إلى صاحبه. ويحتاج التقاط المواقع الحية والفيديو إلى Playwright، والفيديو إلى ffmpeg أيضًا.",
+      "features": [
+        "تدقيق يحدد علامات المظهر الآلي ومكانها",
+        "اتجاه تصميم مأخوذ من المنتج قبل أي تعديل",
+        "تحسين على مراحل من المسافات إلى الحركة",
+        "فيديو قصير يُظهر التحول قبل وبعد"
+      ],
+      "install": [
+        {
+          "label": "التثبيت في Claude Code",
+          "cmd": "git clone https://github.com/heydamir/unslop\nmkdir -p ~/.claude/skills && cp -r unslop/skills/unslop ~/.claude/skills/"
+        },
+        {
+          "label": "لالتقاط المواقع والفيديو",
+          "cmd": "npm install -D playwright\nnpx playwright install chromium"
+        }
+      ],
+      "usage": [
+        "/unslop this dashboard",
+        "/unslop the hero of https://example.com"
+      ],
+      "requirements": [
+        "Playwright وffmpeg للمواقع الحية والفيديو فقط"
+      ],
+      "repo": "heydamir/unslop",
+      "pricing": {
+        "model": "oss",
+        "note": "ترخيص CC BY 4.0"
+      },
+      "links": [
+        {
+          "label": "المستودع",
+          "url": "https://github.com/heydamir/unslop"
+        }
+      ],
+      "url": "https://github.com/heydamir/unslop",
+      "source": "github.com",
+      "importance": 2,
+      "tags": [
+        "design",
+        "UI",
+        "skill",
+        "Claude Code",
+        "Codex"
+      ],
+      "en": {
+        "title": "unslop: a skill that turns AI-looking interfaces into a design with its own character",
+        "summary": "unslop is a skill for Claude Code and Codex that first audits the screen for signs of AI-generated UI, such as purple gradients, glows, emoji labels and uneven spacing, then proposes a direction taken from the product and fixes the screen pass by pass, like a designer's redline review.",
+        "why": "For anyone who built a dashboard or landing page with an agent and finds the design generic: you get a list of problems and a clear direction before any edit, then improvements to spacing, color, type and copy.",
+        "about": "The skill works with Next.js, React, Vue, Svelte, Tailwind and plain HTML and CSS, on dashboards, apps and landing pages, and even on a live site from just a link. It proposes the direction before editing anything, and if the screen is already good it says so and suggests only small refinements.\n\nThe passes run in order: spacing, color, icons, copy, type, layout, details, then visuals and motion. When a hero needs an image it can generate one through a connected image service, showing the prompt and asking before every paid generation. It can also make a square video under 10 seconds that shows the change.\n\nThe license is CC BY 4.0, so commercial use is allowed with credit to the author. Live-site snapshots and videos need Playwright, and videos also need ffmpeg.",
+        "features": [
+          "Audit that lists AI-look signs and where they are",
+          "A design direction from the product before any edit",
+          "Pass-by-pass fixes from spacing to motion",
+          "A short before-and-after video"
+        ],
+        "install": [
+          "Install in Claude Code",
+          "For live sites and videos"
+        ],
+        "usage": [
+          "/unslop this dashboard",
+          "/unslop the hero of https://example.com"
+        ],
+        "requirements": [
+          "Playwright and ffmpeg, only for live sites and videos"
+        ],
+        "links": [
+          "Repository"
+        ],
+        "pricingNote": "CC BY 4.0 license"
+      }
+    },
+    {
+      "id": "token-optimizer-plugin",
+      "section": "skills",
+      "kind": "plugin",
+      "title": "Token Optimizer: إضافة تقلل الرموز المهدرة في وكلاء البرمجة وتحفظ العمل عبر الضغط والجلسات",
+      "summary": "Token Optimizer إضافة لـ Claude Code وCodex وOpenCode وCopilot وCursor وغيرها، تعمل عبر الخطافات في الخلفية: تحفظ نقطة قبل الضغط التلقائي وتستعيدها بعده، وتضغط مخرجات الأوامر والبحث، وتعطي الجلسة درجة جودة، وتعرض لوحة توضح أين ذهبت الرموز والتكلفة.",
+      "why": "لمن تطول جلساته مع الوكيل أو ترتفع فاتورته: ترى ما يستهلك السياق، مثل مهارات غير مستخدمة أو إعدادات متضخمة، وتحصل على إصلاحات موجهة، وتقل خسارة العمل عند ضغط المحادثة.",
+      "about": "بعد التثبيت يكفي تشغيل ‎/token-optimizer‎ مرة واحدة لإعداد الخطافات، ثم تعمل الميزات تلقائيًا: نقاط حفظ عند الضغط، وتلميحات بين الجلسات، وضغط نشط بتسع ميزات، ودرجة جودة بسبع إشارات، وقاعدة بيانات SQLite محلية للجلسات دون اتصال بالشبكة.\n\nوعند الطلب تتوفر أوامر مثل ‎/token-coach‎ لتحليل اتجاه 30 يومًا، وroute لاقتراح النموذج ومستوى الجهد المناسبين للمهمة، وsavings لتقرير التوفير بالدولار. وفي تطبيق Claude لسطح المكتب تضيف شريط حالة يعرض درجة الجلسة وامتلاء السياق وحدود الاستخدام.\n\nانتبه للترخيص: الأداة بترخيص PolyForm Noncommercial 1.0.0، مع إذن إضافي للمؤسسات التي يقل عدد أفرادها عن 5 ودخلها عن 20 ألف دولار شهريًا. أي أن استخدامها في الشركات الأكبر يحتاج إلى ترخيص تجاري من المؤلف.",
+      "features": [
+        "حفظ نقطة قبل الضغط التلقائي واستعادتها بعده",
+        "ضغط مخرجات الأوامر والبحث وكشف الحلقات",
+        "درجة جودة للجلسة ولوحة للتكلفة",
+        "تدقيق كامل مع إصلاحات موجهة وتحليل 30 يومًا"
+      ],
+      "install": [
+        {
+          "label": "إضافة السوق في Claude Code",
+          "cmd": "/plugin marketplace add alexgreensh/token-optimizer"
+        },
+        {
+          "label": "تثبيت الإضافة",
+          "cmd": "/plugin install token-optimizer@alexgreensh-token-optimizer"
+        }
+      ],
+      "usage": [
+        "/token-optimizer"
+      ],
+      "repo": "alexgreensh/token-optimizer",
+      "pricing": {
+        "model": "free",
+        "note": "مجانية للاستخدام غير التجاري وللمؤسسات الصغيرة جدًا فقط (PolyForm Noncommercial)"
+      },
+      "links": [
+        {
+          "label": "المستودع",
+          "url": "https://github.com/alexgreensh/token-optimizer"
+        }
+      ],
+      "url": "https://github.com/alexgreensh/token-optimizer",
+      "source": "github.com",
+      "importance": 2,
+      "tags": [
+        "tokens",
+        "cost",
+        "Claude Code",
+        "plugin",
+        "hooks"
+      ],
+      "en": {
+        "title": "Token Optimizer: a plugin that cuts wasted tokens in coding agents and keeps work across compaction and sessions",
+        "summary": "Token Optimizer is a plugin for Claude Code, Codex, OpenCode, Copilot, Cursor and others that works through hooks in the background: it checkpoints before auto-compaction and restores after, compresses command and search output, grades the session, and shows a dashboard of where tokens and money went.",
+        "why": "For anyone with long agent sessions or a rising bill: you see what fills the context, such as unused skills or bloated configs, get guided fixes, and lose less work when the conversation is compacted.",
+        "about": "After installing, run /token-optimizer once to set up the hooks; then the features run automatically: checkpoints around compaction, cross-session hints, nine active-compression features, a seven-signal quality score, and a local SQLite session database with no network use.\n\nOn demand there are commands such as /token-coach for a 30-day trend analysis, route to suggest the model and effort a task needs, and savings for a dollar savings report. In the Claude desktop app it adds a status bar with the session grade, context fill and usage limits.\n\nMind the license: it is under the PolyForm Noncommercial License 1.0.0, with an extra permission for organizations with fewer than 5 people and under US$20,000 monthly revenue. Use in larger companies needs a commercial license from the author.",
+        "features": [
+          "Checkpoint before auto-compaction and restore after",
+          "Compresses command and search output, detects loops",
+          "Session quality grade and a cost dashboard",
+          "Full audit with guided fixes and 30-day analysis"
+        ],
+        "install": [
+          "Add the marketplace in Claude Code",
+          "Install the plugin"
+        ],
+        "usage": [
+          "/token-optimizer"
+        ],
+        "links": [
+          "Repository"
+        ],
+        "pricingNote": "Free only for noncommercial use and very small organizations (PolyForm Noncommercial)"
+      }
+    },
+    {
+      "id": "beacon-agent-memory",
+      "section": "agents",
+      "kind": "tool",
+      "title": "Beacon: ذاكرة مشتركة مفتوحة المصدر لوكلاء البرمجة عبر أكثر من 20 أداة",
+      "summary": "Beacon طبقة ذاكرة بترخيص MIT تجمع سجل الجلسات من Claude Code وCursor وCodex وOpenCode وCline وأكثر من 20 أداة أخرى في مكان واحد، ثم تحوّل طرق العمل والتصحيحات وأنماط إصلاح الأخطاء المفيدة إلى معرفة يستعيدها الوكلاء لاحقًا عبر MCP أو المهارات.",
+      "why": "لمن يستخدم أكثر من وكيل برمجة: ما تعلّمه وكيل في جلسة، مثل طريقة تشغيل اختبارات مشروع معين أو تصحيح تكرر، لا يضيع عند انتهاء الجلسة ولا يُعاد تعلّمه في أداة أخرى.",
+      "about": "تلتقط Beacon الجلسة كاملة: التعليمات والردود والأدوات والأوامر والتعديلات والموافقات ونشاط MCP والرموز، ويمكن إعادة عرضها كما حدثت. ثم تستخرج المعرفة المفيدة، ويُراجع ما سيُشارك قبل أن يستعيده وكلاء آخرون عبر MCP أو Agent Skills.\n\nالأداة محلية أولًا وتحفظ البيانات بصيغة JSONL دائمة. لكن انتبه: الإعداد التفاعلي يسجّل الدخول عبر beacon.sh ويختار Beacon Cloud افتراضيًا، مع خيار صريح للعمل محليًا. أما التثبيت عبر الحزم أو MDM أو CI فلا يحتاج إلى حساب.\n\nالتثبيت متاح على macOS عبر Homebrew، وعلى Linux بحزم deb وrpm مع التحقق من checksums.txt، وعلى Windows.",
+      "features": [
+        "سجل جلسات موحد لأكثر من 20 أداة وكيل",
+        "استخراج طرق العمل والتصحيحات إلى معرفة قابلة لإعادة الاستخدام",
+        "استعادة المعرفة عبر MCP أو المهارات",
+        "إعادة عرض الجلسة كاملة بما فيها الأوامر والرموز"
+      ],
+      "install": [
+        {
+          "label": "التثبيت على macOS",
+          "cmd": "brew tap asymptote-labs/tap\nbrew install beacon\nbeacon endpoint install"
+        }
+      ],
+      "repo": "Asymptote-Labs/agent-beacon",
+      "pricing": {
+        "model": "oss",
+        "note": "مفتوحة المصدر، مع خدمة Beacon Cloud اختيارية"
+      },
+      "links": [
+        {
+          "label": "المستودع",
+          "url": "https://github.com/Asymptote-Labs/agent-beacon"
+        }
+      ],
+      "url": "https://github.com/Asymptote-Labs/agent-beacon",
+      "source": "github.com",
+      "importance": 1,
+      "tags": [
+        "memory",
+        "agents",
+        "MCP",
+        "sessions"
+      ],
+      "en": {
+        "title": "Beacon: open-source shared memory for coding agents across 20+ tools",
+        "summary": "Beacon is an MIT memory layer that collects session history from Claude Code, Cursor, Codex, OpenCode, Cline and 20+ other tools in one place, then turns useful workflows, corrections and debugging patterns into knowledge that agents retrieve later through MCP or skills.",
+        "why": "For anyone using more than one coding agent: what one agent learned in a session, such as how to run a project's tests or a correction that keeps coming up, is not lost when the session ends or relearned in another tool.",
+        "about": "Beacon captures the whole session: prompts, responses, tools, commands, edits, approvals, MCP activity and tokens, and can replay it exactly. It then extracts useful knowledge, and what will be shared is reviewed before other agents retrieve it through MCP or Agent Skills.\n\nThe tool is local-first and stores data as durable JSONL. Note, though: interactive setup signs in through beacon.sh and preselects Beacon Cloud, with an explicit Local opt-out. Package, MDM and CI installs need no account.\n\nIt installs on macOS with Homebrew, on Linux with deb and rpm packages verified against checksums.txt, and on Windows.",
+        "features": [
+          "One session history for 20+ agent tools",
+          "Turns workflows and corrections into reusable knowledge",
+          "Retrieval through MCP or skills",
+          "Exact session replay including commands and tokens"
+        ],
+        "install": [
+          "Install on macOS"
+        ],
+        "links": [
+          "Repository"
+        ],
+        "pricingNote": "Open source, with an optional Beacon Cloud service"
+      }
+    },
+    {
+      "id": "whatsmyagentdoing",
+      "section": "devtools",
+      "kind": "skill",
+      "title": "whatsmyagentdoing: لوحة محلية تعرض ما يفعله كل وكيل برمجة على جهازك الآن",
+      "summary": "whatsmyagentdoing مهارة لـ Claude Code وCodex بترخيص MIT: تكتب ‎/myoffice‎ فتفتح في المتصفح مكتبًا ثنائي أو ثلاثي الأبعاد يعرض حالة كل جلسة من Claude Code وCodex وGemini CLI وCopilot CLI وOpenCode وغيرها، مع قائمة «يحتاجك» و«يعمل» و«انتهى».",
+      "why": "لمن يشغّل عدة وكلاء في وقت واحد: ترى فورًا أي وكيل ينتظر موافقتك أو توقف عن التقدم، بدل التنقل بين نوافذ الطرفية، مع تنبيه في المتصفح.",
+      "about": "لا تحتاج الأداة إلى خطافات أو إعدادات أو مفاتيح: تقرأ ملفات JSONL التي تكتبها أدوات الوكلاء محليًا أثناء العمل. وتعرض لكل جلسة حالتها (يفكر، أو يشغّل أداة مع اسمها، أو يكتب الرد، أو ينتظرك، أو انتهى)، ومؤقتًا للدور الحالي، وأمر الاستئناف جاهزًا للنسخ.\n\nتنبّه الأداة عندما يحتاجك وكيل، وتعلّم أي أداة تعمل أكثر من 10 دقائق أو تفكير يصمت 8 دقائق بأنه «بلا تقدم». ولوحة «اليوم» تجمع الأدوار والرموز حسب الوكيل والمشروع لـ Claude Code وCodex. والخيار ‎--private‎ يخفي التعليمات والردود عند مشاركة الشاشة.\n\nتحتاج إلى Node.js 18 أو أحدث، ولا يلزم npm install. تطبيق Antigravity لسطح المكتب غير مدعوم بعد، لكن أداة سطر الأوامر الخاصة به مدعومة.",
+      "features": [
+        "حالة حية لكل جلسة وكيل على الجهاز",
+        "تنبيهات عند انتظار الموافقة أو توقف التقدم",
+        "ملخص يومي للرموز حسب الوكيل والمشروع",
+        "وضع خاص يخفي المحادثات عند مشاركة الشاشة"
+      ],
+      "install": [
+        {
+          "label": "التثبيت في Claude Code",
+          "cmd": "git clone --depth 1 https://github.com/Charonyuu/whatsmyagentdoing ~/.claude/skills/myoffice"
+        }
+      ],
+      "usage": [
+        "/myoffice"
+      ],
+      "requirements": [
+        "Node.js 18 أو أحدث"
+      ],
+      "repo": "Charonyuu/whatsmyagentdoing",
+      "pricing": {
+        "model": "oss"
+      },
+      "links": [
+        {
+          "label": "المستودع",
+          "url": "https://github.com/Charonyuu/whatsmyagentdoing"
+        },
+        {
+          "label": "الموقع",
+          "url": "https://charonyuu.github.io/whatsmyagentdoing/"
+        }
+      ],
+      "url": "https://github.com/Charonyuu/whatsmyagentdoing",
+      "source": "github.com",
+      "importance": 1,
+      "tags": [
+        "dashboard",
+        "agents",
+        "Claude Code",
+        "Codex"
+      ],
+      "en": {
+        "title": "whatsmyagentdoing: a local dashboard of what every coding agent on your machine is doing right now",
+        "summary": "whatsmyagentdoing is an MIT skill for Claude Code and Codex: type /myoffice and a 2D or 3D office opens in the browser showing every session from Claude Code, Codex, Gemini CLI, Copilot CLI, OpenCode and others, with Needs you, Working and Finished lists.",
+        "why": "For anyone running several agents at once: you see right away which agent is waiting for your approval or has stopped making progress, instead of switching between terminal windows, with a browser alert.",
+        "about": "The tool needs no hooks, config or keys: it reads the JSONL files agent tools already write locally as they work. For each session it shows the status (thinking, running a named tool, writing a reply, waiting for you, done), a timer for the current turn, and the resume command ready to copy.\n\nIt alerts you when an agent needs you, and flags a tool running over 10 minutes or thinking silent for 8 as No progress. The Today panel adds up turns and tokens by agent and project for Claude Code and Codex. The --private option hides prompts and replies when sharing a screen.\n\nIt needs Node.js 18 or newer and no npm install. The Antigravity desktop app is not supported yet, but its CLI is.",
+        "features": [
+          "Live status of every agent session on the machine",
+          "Alerts on pending approvals or stalled progress",
+          "Daily token summary by agent and project",
+          "Private mode that hides conversations for screen sharing"
+        ],
+        "install": [
+          "Install in Claude Code"
+        ],
+        "usage": [
+          "/myoffice"
+        ],
+        "requirements": [
+          "Node.js 18 or newer"
+        ],
+        "links": [
+          "Repository",
+          "Website"
+        ]
+      }
+    }
+  ]
+}
