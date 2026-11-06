@@ -1,6 +1,6 @@
 {
  "track": "t3",
- "checked": "2026-11-05",
+ "checked": "2026-11-06",
  "goal": {
   "en": "Build one place where Azm can run any harness (squad-kit, azm-harness, Claude Code, others) on the same real Azm tasks, in isolation, and get a clear answer: which harness, with which model, gives the best quality for the cost, and does it follow our standards?",
   "ar": "بناء مكان واحد تشغّل فيه عزم أي harness (مثل squad-kit وazm-harness وClaude Code وغيرها) على المهام الحقيقية نفسها من مشاريع عزم، في بيئة معزولة، لتحصل على إجابة واضحة: أي harness، مع أي نموذج، يعطي أفضل جودة مقابل التكلفة، وهل يلتزم بمعاييرنا؟"
@@ -94,8 +94,8 @@
    },
    "decision": "build",
    "plan": {
-    "en": "Build Azm's own task set with the SWE-bench recipe: take a closed ticket, pin the repo before the fix, write the brief from the ticket, and keep hidden tests that fail before and pass after. Start with 10 tasks from one repo, grow to 20-50 per team. Keep a small slice of Terminal-Bench 2.0 as a public sanity check.",
-    "ar": "نبني مجموعة مهام خاصة بعزم على طريقة SWE-bench: نأخذ تذكرة مغلقة، ونثبّت المستودع على حالته قبل الإصلاح، ونكتب وصف المهمة من التذكرة، ونحتفظ باختبارات مخفية تفشل قبل الإصلاح وتنجح بعده. نبدأ بعشر مهام من مستودع واحد، ثم نصل إلى 20-50 مهمة لكل فريق. ونُبقي جزءًا صغيرًا من Terminal-Bench 2.0 للتحقق العام."
+    "en": "Build Azm's own task set with the SWE-bench recipe: take a closed ticket, pin the repo before the fix, write the brief from the ticket, and keep hidden tests that fail before and pass after. Start with 10 tasks from one repo, grow to 20-50 per team. Keep a small slice of Terminal-Bench as a public sanity check, pinned to one version (2.0 matches most published harness studies; 4.x is the current leaderboard), because scores do not carry across versions.",
+    "ar": "نبني مجموعة مهام خاصة بعزم على طريقة SWE-bench: نأخذ تذكرة مغلقة، ونثبّت المستودع على حالته قبل الإصلاح، ونكتب وصف المهمة من التذكرة، ونحتفظ باختبارات مخفية تفشل قبل الإصلاح وتنجح بعده. نبدأ بعشر مهام من مستودع واحد، ثم نصل إلى 20-50 مهمة لكل فريق. ونُبقي جزءًا صغيرًا من Terminal-Bench للتحقق العام، مثبّتًا على إصدار واحد (2.0 يطابق معظم دراسات الـ harness المنشورة، و4.x هو لوحة النتائج الحالية)، لأن الدرجات لا تنتقل بين الإصدارات."
    },
    "pick": [
     "swe-bench"
@@ -173,8 +173,8 @@
         "ar": "من 500 (Verified) إلى أكثر من 1,800 (Pro)"
        },
        {
-        "en": "89 tasks",
-        "ar": "89 مهمة"
+        "en": "89 (2.0) · 66 (4.0)",
+        "ar": "89 (2.0) · 66 (4.0)"
        },
        {
         "en": "87 tasks",
@@ -881,8 +881,8 @@
    },
    "decision": "adopt",
    "plan": {
-    "en": "Three ways to provide it, used together: (1) on each developer's machine, Docker or microsandbox, so anyone can run a small benchmark or let squad-kit build safely; (2) on Azm servers, a self-hosted sandbox (Kubernetes agent-sandbox, or E2B self-hosted) for team-wide and scheduled runs on private code; (3) a paid managed service only for large bursts or public benchmarks, never for private repos without a data agreement. Two 2026 studies are a warning for this block: in the Shandong study, 71% of web-enabled runs found the human-written fix online, so benchmark sandboxes must block open internet by default. OpenKruise Agents (v0.6.0) is a second self-hosted option that brings E2B's API, network rules and secret injection to our own cluster.",
-    "ar": "ثلاث طرق لتوفيره تُستخدم معًا: (1) على جهاز كل مطور عبر Docker أو microsandbox، ليستطيع أي شخص تشغيل اختبار صغير أو ليعمل squad-kit بأمان؛ (2) على خوادم عزم عبر بيئة عزل مستضافة لدينا (Kubernetes agent-sandbox أو E2B المستضاف ذاتيًا) للتشغيلات الجماعية والمجدولة على الشيفرة الخاصة؛ (3) خدمة مدفوعة مُدارة فقط للأحمال الكبيرة المؤقتة أو المقاييس العامة، وليس للمستودعات الخاصة دون اتفاقية بيانات. ودراستان من 2026 تحذّران في هذا الجانب: في دراسة جامعة شاندونغ وجد 71% من التشغيلات المتصلة بالإنترنت الإصلاحَ البشري منشورًا على الشبكة، لذا يجب أن تمنع بيئات القياس الإنترنت المفتوح افتراضيًا. وOpenKruise Agents ‏(v0.6.0) خيار ثانٍ مستضاف لدينا يجلب واجهة E2B وقواعد الشبكة وحقن الأسرار إلى عنقودنا."
+    "en": "Three ways to provide it, used together: (1) on each developer's machine, Docker or microsandbox, so anyone can run a small benchmark or let squad-kit build safely; (2) on Azm servers, a self-hosted sandbox (Kubernetes agent-sandbox, or E2B self-hosted) for team-wide and scheduled runs on private code; (3) a paid managed service only for large bursts or public benchmarks, never for private repos without a data agreement. Two 2026 studies are a warning for this block: in the Shandong study, 71% of web-enabled runs found the human-written fix online, so benchmark sandboxes must block open internet by default. OpenKruise Agents (v0.6.0) is a second self-hosted option that brings E2B's API, network rules and secret injection to our own cluster. New in November 2026: the Kubernetes agent-sandbox project published a worked example that runs Terminal-Bench through Harbor with one sandbox per trial, so our planned runner + sandbox pair is already wired (its Harbor integration package was not yet merged on 6 Nov). Google's Agent Substrate 1.0, now a CNCF project, is a second in-house option with gVisor or microVM isolation and no secrets inside the sandbox; it is built for long, mostly idle sessions rather than short benchmark trials.",
+    "ar": "ثلاث طرق لتوفيره تُستخدم معًا: (1) على جهاز كل مطور عبر Docker أو microsandbox، ليستطيع أي شخص تشغيل اختبار صغير أو ليعمل squad-kit بأمان؛ (2) على خوادم عزم عبر بيئة عزل مستضافة لدينا (Kubernetes agent-sandbox أو E2B المستضاف ذاتيًا) للتشغيلات الجماعية والمجدولة على الشيفرة الخاصة؛ (3) خدمة مدفوعة مُدارة فقط للأحمال الكبيرة المؤقتة أو المقاييس العامة، وليس للمستودعات الخاصة دون اتفاقية بيانات. ودراستان من 2026 تحذّران في هذا الجانب: في دراسة جامعة شاندونغ وجد 71% من التشغيلات المتصلة بالإنترنت الإصلاحَ البشري منشورًا على الشبكة، لذا يجب أن تمنع بيئات القياس الإنترنت المفتوح افتراضيًا. وOpenKruise Agents ‏(v0.6.0) خيار ثانٍ مستضاف لدينا يجلب واجهة E2B وقواعد الشبكة وحقن الأسرار إلى عنقودنا. جديد في نوفمبر 2026: نشر مشروع Kubernetes agent-sandbox مثالًا عمليًا يشغّل Terminal-Bench عبر Harbor مع بيئة عزل لكل محاولة، فالجمع الذي نخطط له بين المشغّل وبيئة العزل مربوط بالفعل (لم تكن حزمة التكامل مع Harbor قد دُمجت بعد في 6 نوفمبر). وAgent Substrate 1.0 من Google، وهو الآن مشروع في CNCF، خيار ثانٍ مستضاف لدينا بعزل gVisor أو آلات افتراضية مصغّرة وبلا أسرار داخل بيئة العزل؛ لكنه مصمم للجلسات الطويلة الخاملة معظم الوقت لا لمحاولات القياس القصيرة."
    },
    "pick": [
     "k8s-agent-sandbox",
@@ -900,7 +900,8 @@
     "daytona",
     "strands-box",
     "akamai-agent-sandbox",
-    "openkruise-agents"
+    "openkruise-agents",
+    "agent-substrate"
    ],
    "modes": [
     {
@@ -969,7 +970,8 @@
       "e2b",
       "opensandbox",
       "cubesandbox",
-      "openshell"
+      "openshell",
+      "agent-substrate"
      ],
      "pros": [
       {
@@ -1067,7 +1069,8 @@
      "microsandbox",
      "modal",
      "vercel-sandbox",
-     "openkruise-agents"
+     "openkruise-agents",
+     "agent-substrate"
     ],
     "rows": [
      {
@@ -1099,6 +1102,10 @@
        {
         "en": "Their cloud",
         "ar": "سحابتهم"
+       },
+       {
+        "en": "Our Kubernetes",
+        "ar": "Kubernetes لدينا"
        },
        {
         "en": "Our Kubernetes",
@@ -1139,6 +1146,10 @@
        {
         "en": "Depends on the cluster runtime",
         "ar": "تعتمد على بيئة التشغيل في العنقود"
+       },
+       {
+        "en": "gVisor or Cloud Hypervisor microVM (always)",
+        "ar": "gVisor أو آلة افتراضية مصغّرة من Cloud Hypervisor (دائمًا)"
        }
       ]
      },
@@ -1175,6 +1186,10 @@
        {
         "en": "Free (our servers)",
         "ar": "مجاني (خوادمنا)"
+       },
+       {
+        "en": "Free (our servers)",
+        "ar": "مجاني (على خوادمنا)"
        }
       ]
      },
@@ -1211,6 +1226,10 @@
        {
         "en": "High (cluster team)",
         "ar": "مرتفع (فريق Kubernetes)"
+       },
+       {
+        "en": "High (cluster team)",
+        "ar": "مرتفع (فريق العنقود)"
        }
       ]
      },
@@ -1221,8 +1240,8 @@
       },
       "values": [
        {
-        "en": "Custom environment",
-        "ar": "عبر بيئة مخصصة"
+        "en": "Official worked example (integration package pending)",
+        "ar": "مثال عملي رسمي (حزمة التكامل قيد الدمج)"
        },
        {
         "en": "Via adapters",
@@ -1247,6 +1266,10 @@
        {
         "en": "Custom environment, or its E2B-compatible API (untested)",
         "ar": "عبر بيئة مخصصة، أو واجهته المتوافقة مع E2B (لم تُجرَّب)"
+       },
+       {
+        "en": "No integration found; we would write one",
+        "ar": "لم نجد تكاملًا؛ سنكتبه بأنفسنا"
        }
       ]
      },
@@ -1283,6 +1306,10 @@
        {
         "en": "Trial next to agent-sandbox if we want E2B's API in-house",
         "ar": "نجرّبه بجانب agent-sandbox إن أردنا واجهة E2B لدينا"
+       },
+       {
+        "en": "Watch; trial if we host long squad sessions for many people",
+        "ar": "نتابعه؛ ونجرّبه إن استضفنا جلسات squad طويلة لكثير من الناس"
        }
       ]
      }
@@ -1669,14 +1696,16 @@
    ],
    "alternatives": [
     "ahe",
-    "skillopt"
+    "skillopt",
+    "harnessflow"
    ],
    "compare": {
     "tools": [
      "meta-harness",
      "auto-harness",
      "ahe",
-     "skillopt"
+     "skillopt",
+     "harnessflow"
     ],
     "rows": [
      {
@@ -1700,6 +1729,10 @@
        {
         "en": "Skills",
         "ar": "المهارات"
+       },
+       {
+        "en": "Whole harness code, chosen by tree search",
+        "ar": "شيفرة الـ harness كاملة، باختيار عبر شجرة بحث"
        }
       ]
      },
@@ -1724,6 +1757,10 @@
        {
         "en": "Early (v0.2)",
         "ar": "مبكر (v0.2)"
+       },
+       {
+        "en": "Six benchmarks: 69.48%, +3.95 over Meta-Harness",
+        "ar": "ستة مقاييس: 69.48%، بزيادة 3.95 على Meta-Harness"
        }
       ]
      },
@@ -1748,6 +1785,10 @@
        {
         "en": "Early",
         "ar": "مبكر"
+       },
+       {
+        "en": "Paper only (Nov 2026), no code yet",
+        "ar": "ورقة فقط (نوفمبر 2026)، بلا شيفرة بعد"
        }
       ]
      }

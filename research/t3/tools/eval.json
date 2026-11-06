@@ -1,6 +1,6 @@
 {
  "category": "eval",
- "checked": "2026-11-05",
+ "checked": "2026-11-06",
  "tools": [
   {
    "id": "harbor",
@@ -415,10 +415,10 @@
    "pricing": "Free",
    "status": "active",
    "tier": "deep",
-   "summary": "89 hand-validated, containerized terminal tasks that test whether an agent can finish real command-line work end to end. Its leaderboard lists the harness used for each entry, which makes it the main public place to compare harnesses.",
+   "summary": "Hand-validated, containerized terminal tasks that test whether an agent can finish real command-line work end to end. Since mid-2026 it is a continuous benchmark with tagged releases (3.0 in July, 4.0 in August, 4.1 on 3 Nov 2026); 4.0 has 66 new tasks, about three quarters outside classic software engineering. Its leaderboards list the harness for each entry, which makes it the main public place to compare harnesses.",
    "how": "Each task ships a container, an instruction and a hidden test script; Harbor runs agents against them. The ICLR 2026 paper and the leaderboard disclose model + harness pairs and verified trajectories.",
    "features": [
-    "89 validated tasks across many terminal domains",
+    "Versioned task sets: 2.0/2.1 (89 tasks), 3.0, 4.0 (66 tasks), 4.1",
     "Leaderboard shows the harness for every entry",
     "Run with Harbor locally or in cloud sandboxes",
     "ICLR 2026 paper with task validation process",
@@ -430,15 +430,16 @@
     "Tasks are hand-validated and containerized, so runs are reproducible"
    ],
    "weaknesses": [
-    "Generic terminal tasks, not product development",
-    "Scores sensitive to sandbox resources (Anthropic measured ~6 pp spread)"
+    "Mostly generic terminal and science tasks, not product development (4.0 moved further away from software engineering)",
+    "Scores sensitive to sandbox resources (Anthropic measured ~6 pp spread)",
+    "Scores are not comparable across versions; pin one version for any internal comparison"
    ],
    "gaps": [
     "Doesn't test multi-step SDLC with human approvals"
    ],
    "fit": {
     "verdict": "adopt-part",
-    "role": "Public sanity-check suite in the sandbox; results comparable with published numbers when resources are matched."
+    "role": "Public sanity-check suite in the sandbox; pin one version (2.0 for comparison with most published harness studies, 4.x for current leaderboards) and match resources."
    },
    "scores": {
     "fit": 3,
@@ -461,13 +462,15 @@
    ],
    "sources": [
     "https://huggingface.co/datasets/harborframework/terminal-bench-2.0/blob/main/README.md",
-    "https://www.zenml.io/llmops-database/infrastructure-noise-in-agentic-coding-evaluations"
+    "https://www.zenml.io/llmops-database/infrastructure-noise-in-agentic-coding-evaluations",
+    "https://github.com/harbor-framework/terminal-bench",
+    "https://www.vals.ai/benchmarks/terminal-bench-4"
    ],
    "ar": {
-    "summary": "89 مهمة طرفية داخل حاويات، راجعها بشر يدويًا، تختبر قدرة الوكيل على إنجاز عمل حقيقي في سطر الأوامر من البداية إلى النهاية. ولوحة نتائجه تذكر الـ harness المستخدم في كل مشاركة، فهي المكان العام الأساسي لمقارنة أدوات الـ harness.",
+    "summary": "مهام طرفية داخل حاويات، راجعها بشر يدويًا، تختبر قدرة الوكيل على إنجاز عمل حقيقي في سطر الأوامر من البداية إلى النهاية. ومنذ منتصف 2026 أصبح مقياسًا مستمرًا بإصدارات موسومة (3.0 في يوليو، و4.0 في أغسطس، و4.1 في 3 نوفمبر 2026)؛ ويضم الإصدار 4.0 ستًا وستين مهمة جديدة، نحو ثلاثة أرباعها خارج هندسة البرمجيات التقليدية. ولوحات نتائجه تذكر الـ harness المستخدم في كل مشاركة، فهي المكان العام الأساسي لمقارنة أدوات الـ harness.",
     "how": "لكل مهمة حاوية وتعليمات وسكربت اختبار مخفي، ويشغّل Harbor الوكلاء عليها. وتكشف ورقة ICLR 2026 ولوحة النتائج أزواج النموذج والـ harness ومسارات تنفيذ موثّقة.",
     "features": [
-     "89 مهمة موثّقة في مجالات طرفية كثيرة",
+     "مجموعات مهام بإصدارات: 2.0/2.1 (89 مهمة)، و3.0، و4.0 (66 مهمة)، و4.1",
      "لوحة النتائج تعرض الـ harness لكل مشاركة",
      "يُشغَّل بـ Harbor محليًا أو في بيئات عزل سحابية",
      "ورقة ICLR 2026 تشرح طريقة توثيق المهام",
@@ -479,15 +482,17 @@
      "المهام موثّقة يدويًا وداخل حاويات، فالتشغيل قابل للتكرار"
     ],
     "weaknesses": [
-     "مهام طرفية عامة، لا تطوير منتجات",
-     "الدرجات حساسة لموارد بيئة العزل (قاست Anthropic فرقًا يقارب 6 نقاط مئوية)"
+     "مهام طرفية وعلمية عامة في الغالب، لا تطوير منتجات (وابتعد الإصدار 4.0 أكثر عن هندسة البرمجيات)",
+     "الدرجات حساسة لموارد بيئة العزل (قاست Anthropic فرقًا يقارب 6 نقاط مئوية)",
+     "الدرجات غير قابلة للمقارنة بين الإصدارات؛ لذا يجب تثبيت إصدار واحد في أي مقارنة داخلية"
     ],
     "gaps": [
      "لا يختبر دورة تطوير متعددة الخطوات بموافقات بشرية"
     ],
-    "role": "مجموعة تحقق عامة في بيئة الاختبار؛ نتائجها قابلة للمقارنة مع الأرقام المنشورة عند تماثل الموارد.",
+    "role": "مجموعة تحقق عامة في بيئة الاختبار؛ نثبّت إصدارًا واحدًا (2.0 للمقارنة مع معظم دراسات الـ harness المنشورة، و4.x للمقارنة مع لوحات النتائج الحالية) ونطابق الموارد.",
     "pricing": "مجاني"
-   }
+   },
+   "version": "v4.1.0 (3 Nov 2026)"
   },
   {
    "id": "skillsbench",
@@ -1438,6 +1443,75 @@
     ],
     "role": "سابقة لمقيّم الالتزام بالمعايير ولبطاقة الـ Harness: نستعير نموذج المجالات الخمسة وقواعد الأدلة؛ ويمكن تشغيلها بجانب مشاريع squad-kit كتدقيق رخيص.",
     "pricing": "مجانية؛ تعمل داخل وكيل البرمجة الذي تستخدمه"
+   }
+  },
+  {
+   "id": "harnessflow",
+   "name": "HarnessFlow",
+   "category": "eval",
+   "kind": "open-source",
+   "vendor": "Research paper (arXiv, Nov 2026)",
+   "repo": null,
+   "url": "https://arxiv.org/abs/2611.06254",
+   "license": "Paper CC BY 4.0; no code release found",
+   "pricing": "Free (paper)",
+   "status": "active",
+   "tier": "brief",
+   "summary": "A research method that improves a whole agent harness automatically. It keeps every candidate harness and its scores in a tree and uses Monte Carlo tree search to choose which one a coding agent should refine next, within a fixed evaluation budget.",
+   "how": "The model and tasks stay fixed. Candidates and their results form a refinement tree; an MCTS policy balances trying promising branches and exploring new ones; a coding agent edits the chosen harness using past code, run feedback and a library of reusable harness mechanisms.",
+   "features": [
+    "Search tree over full executable harnesses with a fixed budget (15 refinement attempts per benchmark)",
+    "Library of reusable harness mechanisms the refining agent can draw on"
+   ],
+   "strengths": [
+    "Reports 69.48% average across six benchmarks, 10.89 points above the starting harnesses and 3.95 above Meta-Harness, at lower cost per task"
+   ],
+   "weaknesses": [
+    "Paper only: no code repository found on 6 Nov 2026; results not yet reproduced"
+   ],
+   "gaps": [
+    "Optimizes against public benchmarks, not a company's own tasks and standards"
+   ],
+   "fit": {
+    "verdict": "inspire",
+    "role": "Read for the 'improve harnesses automatically' phase: its search-tree budget idea could make a later Meta-Harness-style run on Azm tasks cheaper."
+   },
+   "scores": {
+    "fit": 2,
+    "maturity": 1,
+    "openness": 2,
+    "agnostic": 4,
+    "config": 1,
+    "measure": 3,
+    "safety": 1
+   },
+   "links": [
+    [
+     "arXiv",
+     "https://arxiv.org/abs/2611.06254"
+    ]
+   ],
+   "sources": [
+    "https://arxiv.org/abs/2611.06254"
+   ],
+   "ar": {
+    "summary": "طريقة بحثية تحسّن الـ harness كاملًا تلقائيًا. تحتفظ بكل نسخة مرشحة ودرجاتها في شجرة، وتستخدم بحث شجرة مونت كارلو (MCTS) لتختار النسخة التي يحسّنها وكيل برمجة بعد ذلك، ضمن ميزانية تقييم محددة.",
+    "how": "يبقى النموذج والمهام ثابتين. تشكّل النسخ المرشحة ونتائجها شجرة تحسين؛ وتوازن سياسة MCTS بين متابعة الفروع الواعدة واستكشاف فروع جديدة؛ ويعدّل وكيل برمجة النسخة المختارة مستعينًا بالشيفرة السابقة ونتائج التشغيل ومكتبة من آليات الـ harness القابلة لإعادة الاستخدام.",
+    "features": [
+     "شجرة بحث على أدوات harness قابلة للتنفيذ بميزانية ثابتة (15 محاولة تحسين لكل مقياس)",
+     "مكتبة آليات harness قابلة لإعادة الاستخدام يستعين بها وكيل التحسين"
+    ],
+    "strengths": [
+     "تذكر متوسط 69.48% على ستة مقاييس، بزيادة 10.89 نقطة على النسخ الأولى و3.95 نقطة على Meta-Harness، وبتكلفة أقل لكل مهمة"
+    ],
+    "weaknesses": [
+     "ورقة فقط: لم نجد مستودع شيفرة في 6 نوفمبر 2026، ولم تُكرَّر النتائج بعد"
+    ],
+    "gaps": [
+     "تحسّن الأداء على مقاييس عامة، لا على مهام الشركة ومعاييرها"
+    ],
+    "role": "نقرؤها لمرحلة «تحسين الـ harness تلقائيًا»: فكرة ميزانية شجرة البحث قد تجعل تشغيلًا لاحقًا بأسلوب Meta-Harness على مهام عزم أقل تكلفة.",
+    "pricing": "مجانية (ورقة بحثية)"
    }
   }
  ]

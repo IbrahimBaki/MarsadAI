@@ -1,6 +1,6 @@
 {
  "category": "sandbox",
- "checked": "2026-11-05",
+ "checked": "2026-11-06",
  "tools": [
   {
    "id": "e2b",
@@ -107,23 +107,26 @@
     "gVisor or Kata runtime isolation",
     "Python SDK",
     "Stable network identity and persistent volume per sandbox",
-    "Pause/resume (scale to zero) of idle sandboxes"
+    "Pause/resume (scale to zero) of idle sandboxes",
+    "Worked example (Nov 2026): Terminal-Bench 2.0 run through Harbor with every trial in its own SandboxClaim"
    ],
    "strengths": [
     "Runs on any Kubernetes Azm already operates",
     "Vendor-neutral standard backed by SIG Apps",
-    "Isolation runtime is pluggable (gVisor, Kata)"
+    "Isolation runtime is pluggable (gVisor, Kata)",
+    "The project itself now documents a Harbor + Terminal-Bench run on it: 10 sample tasks, zero infrastructure errors, 6.6 s median setup on GKE"
    ],
    "weaknesses": [
     "Needs a Kubernetes team; early-stage API",
-    "Requires cluster operators for gVisor/Kata"
+    "Requires cluster operators for gVisor/Kata",
+    "The Harbor integration package that example uses (k8s-agent-sandbox-harbor) was not yet in the main branch on 6 Nov 2026"
    ],
    "gaps": [
     "Agent-specific tooling (file APIs) is thinner than E2B"
    ],
    "fit": {
     "verdict": "adopt",
-    "role": "Main self-hosted sandbox if Azm runs Kubernetes: team-wide and scheduled runs on private code; Inspect's k8s sandbox and Harbor custom environments can target it."
+    "role": "Main self-hosted sandbox if Azm runs Kubernetes: team-wide and scheduled runs on private code. The project now ships a worked Harbor + Terminal-Bench example on it, so this is the path of least glue for the runner block."
    },
    "scores": {
     "fit": 4,
@@ -138,11 +141,16 @@
     [
      "GitHub",
      "https://github.com/kubernetes-sigs/agent-sandbox"
+    ],
+    [
+     "Harbor + Terminal-Bench example",
+     "https://github.com/kubernetes-sigs/agent-sandbox/tree/main/examples/harbor-terminal-bench"
     ]
    ],
    "sources": [
     "https://github.com/kubernetes-sigs/agent-sandbox",
-    "https://agent-sandbox.sigs.k8s.io"
+    "https://agent-sandbox.sigs.k8s.io",
+    "https://github.com/kubernetes-sigs/agent-sandbox/tree/main/examples/harbor-terminal-bench"
    ],
    "status": "active",
    "category": "sandbox",
@@ -154,24 +162,27 @@
      "عزل عبر gVisor أو Kata",
      "حزمة Python",
      "هوية شبكة ثابتة وتخزين دائم لكل بيئة",
-     "إيقاف واستئناف (التوسع إلى الصفر) للبيئات الخاملة"
+     "إيقاف واستئناف (التوسع إلى الصفر) للبيئات الخاملة",
+     "مثال عملي (نوفمبر 2026): تشغيل Terminal-Bench 2.0 عبر Harbor مع بيئة SandboxClaim مستقلة لكل محاولة"
     ],
     "strengths": [
      "يعمل على أي Kubernetes تشغّله عزم بالفعل",
      "معيار محايد تدعمه مجموعة SIG Apps",
-     "بيئة العزل قابلة للتبديل (gVisor أو Kata)"
+     "بيئة العزل قابلة للتبديل (gVisor أو Kata)",
+     "المشروع نفسه يوثّق الآن تشغيل Harbor وTerminal-Bench عليه: 10 مهام تجريبية بلا أي خطأ في البنية التحتية، ومتوسط تجهيز 6.6 ثانية على GKE"
     ],
     "weaknesses": [
      "يحتاج فريق Kubernetes؛ والواجهة في مرحلة مبكرة",
-     "يتطلب مشغلي عناقيد لإعداد gVisor أو Kata"
+     "يتطلب مشغلي عناقيد لإعداد gVisor أو Kata",
+     "حزمة التكامل مع Harbor التي يستخدمها ذلك المثال (k8s-agent-sandbox-harbor) لم تكن قد دخلت الفرع الرئيسي بعد في 6 نوفمبر 2026"
     ],
     "gaps": [
      "أدوات الوكلاء (واجهات الملفات) أقل من E2B"
     ],
-    "role": "بيئة العزل الأساسية المستضافة لدينا إن كانت عزم تشغّل Kubernetes: للتشغيلات الجماعية والمجدولة على الشيفرة الخاصة، ويمكن أن يستهدفها عزل Inspect على k8s وبيئات Harbor المخصصة.",
+    "role": "بيئة العزل الأساسية المستضافة لدينا إن كانت عزم تشغّل Kubernetes: للتشغيلات الجماعية والمجدولة على الشيفرة الخاصة. ويقدّم المشروع الآن مثالًا عمليًا لتشغيل Harbor وTerminal-Bench عليه، فهو الطريق الأقل حاجة إلى شيفرة ربط لجزء المشغّل.",
     "pricing": "مجاني (على عنقودك)"
    },
-   "version": "v1.0.9"
+   "version": "v1.0.10"
   },
   {
    "id": "opensandbox",
@@ -1647,6 +1658,101 @@
     ],
     "role": "خيار ثانٍ لبيئة العزل «على خوادم عزم»، بجانب Kubernetes agent-sandbox: نجرّبه إن أردنا واجهة E2B وقواعد الشبكة على عنقودنا.",
     "pricing": "مجاني (على عنقودك)"
+   }
+  },
+  {
+   "id": "agent-substrate",
+   "name": "Agent Substrate",
+   "category": "sandbox",
+   "kind": "open-source",
+   "vendor": "Google (donated to CNCF, Sandbox stage, Nov 2026)",
+   "repo": "agent-substrate/substrate",
+   "url": "https://ate.dev",
+   "license": "Apache-2.0",
+   "pricing": "Free (your Kubernetes cluster)",
+   "status": "active",
+   "version": "v1.0.0",
+   "tier": "deep",
+   "summary": "A Kubernetes runtime that runs very large numbers of mostly-idle agents safely. Each agent session (an 'actor') always runs inside gVisor or a Cloud Hypervisor microVM; when it is idle, its memory and files are saved and its slot is given to another agent. Google released 1.0 and donated it, with gVisor, to the CNCF on 5 Nov 2026.",
+   "how": "Actors (agent sessions with their own files, memory and network rules) are mapped onto a small pool of pre-warmed worker pods. A router holds incoming calls while the controller places a suspended actor on a free worker and restores its memory and disk from storage; when the turn ends, the actor is snapshotted and the slot freed. An egress gateway adds credentials to approved outbound requests outside the sandbox, so the agent never holds keys.",
+   "features": [
+    "Every actor in gVisor or a Cloud Hypervisor microVM; plain containers are not supported",
+    "Suspend and resume with full memory and disk state; resume stated under 500 ms",
+    "Per-agent short-lived SPIFFE identity; credentials injected by the egress gateway, never inside the sandbox",
+    "Default-deny networking with a replaceable policy point for your own authorization or scanning",
+    "Runs on standard Kubernetes; harness-agnostic (Claude Code, Codex, LangChain, ADK, MCP servers named)"
+   ],
+   "strengths": [
+    "Strongest built-in isolation and secret handling found so far: VM-grade boundaries and no keys inside the sandbox",
+    "Vendor-neutral home: CNCF project, Apache-2.0, 1.0 with a stable-API promise",
+    "Packs many stateful agents onto few pods (10x-30x oversubscription shown in its demo), which cuts cost for long interactive sessions"
+   ],
+   "weaknesses": [
+    "Built for long-lived, mostly-idle agents; benchmark trials are short and busy, so its main advantage matters less for us",
+    "Brand new as an open project (public 1.0 in Nov 2026); performance claims come from the vendor, with no independent benchmark yet",
+    "Needs a Kubernetes team plus gVisor or microVM nodes"
+   ],
+   "gaps": [
+    "No Harbor or Inspect integration found; Azm would have to write the environment adapter",
+    "No result, scoring or comparison features: it is infrastructure only"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Second self-hosted option next to Kubernetes agent-sandbox. Worth a trial if Azm later hosts long-running squad sessions for many developers on shared servers; for benchmark runs agent-sandbox already has a Harbor path."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 2,
+    "openness": 5,
+    "agnostic": 5,
+    "config": 4,
+    "measure": 1,
+    "safety": 5
+   },
+   "links": [
+    [
+     "Docs",
+     "https://ate.dev"
+    ],
+    [
+     "GitHub",
+     "https://github.com/agent-substrate/substrate"
+    ],
+    [
+     "Google announcement",
+     "https://opensource.googleblog.com/2026/11/sandboxing-untrusted-ai-agents-at-scale.html"
+    ]
+   ],
+   "sources": [
+    "https://github.com/agent-substrate/substrate",
+    "https://opensource.googleblog.com/2026/11/sandboxing-untrusted-ai-agents-at-scale.html"
+   ],
+   "ar": {
+    "summary": "بيئة تشغيل على Kubernetes تشغّل أعدادًا كبيرة جدًا من الوكلاء الخاملين معظم الوقت بأمان. كل جلسة وكيل (تُسمّى «actor») تعمل دائمًا داخل gVisor أو آلة افتراضية مصغّرة من Cloud Hypervisor؛ وحين تخمل تُحفظ ذاكرتها وملفاتها ويُعطى مكانها لوكيل آخر. أصدرت Google النسخة 1.0 وتبرعت بها مع gVisor لمؤسسة CNCF في 5 نوفمبر 2026.",
+    "how": "تُوزَّع الجلسات (جلسات وكلاء لكل منها ملفاتها وذاكرتها وقواعد شبكتها) على مجموعة صغيرة من حاويات العمل الجاهزة مسبقًا. يحتجز موجّهٌ الطلبات الواردة بينما يضع المتحكم الجلسة الموقوفة على عامل متاح ويستعيد ذاكرتها وقرصها من التخزين؛ وعند انتهاء الدور تُلتقط لقطة للجلسة ويُحرَّر المكان. وتضيف بوابة الخروج بيانات الاعتماد إلى الطلبات الخارجية المسموح بها من خارج بيئة العزل، فلا يحمل الوكيل أي مفاتيح.",
+    "features": [
+     "كل جلسة داخل gVisor أو آلة افتراضية مصغّرة من Cloud Hypervisor؛ والحاويات العادية غير مدعومة",
+     "إيقاف واستئناف مع حفظ كامل للذاكرة والقرص؛ والاستئناف المعلن أقل من 500 ملّي ثانية",
+     "هوية SPIFFE قصيرة العمر لكل وكيل؛ وتحقن بوابة الخروج بيانات الاعتماد، فلا تكون أبدًا داخل بيئة العزل",
+     "شبكة مغلقة افتراضيًا مع نقطة سياسات قابلة للاستبدال لأنظمة التفويض أو الفحص الخاصة بك",
+     "يعمل على Kubernetes القياسي؛ ومحايد تجاه الـ harness (يذكر Claude Code وCodex وLangChain وADK وخوادم MCP)"
+    ],
+    "strengths": [
+     "أقوى عزل مدمج وإدارة أسرار وجدناهما حتى الآن: حدود بمستوى الآلات الافتراضية ولا مفاتيح داخل بيئة العزل",
+     "مرجعية محايدة: مشروع في CNCF بترخيص Apache-2.0، والإصدار 1.0 مع التزام بثبات الواجهة",
+     "يضع وكلاء كثيرين ذوي حالة على حاويات قليلة (من 10 إلى 30 ضعفًا في العرض التوضيحي)، ما يخفض تكلفة الجلسات التفاعلية الطويلة"
+    ],
+    "weaknesses": [
+     "مصمم للوكلاء طويلي العمر الخاملين معظم الوقت؛ ومحاولات القياس قصيرة ومشغولة، فميزته الأساسية أقل أهمية لنا",
+     "جديد كمشروع مفتوح (الإصدار العام 1.0 في نوفمبر 2026)؛ وأرقام الأداء من المزوّد دون قياس مستقل بعد",
+     "يحتاج فريق Kubernetes وعُقدًا تدعم gVisor أو الآلات الافتراضية المصغّرة"
+    ],
+    "gaps": [
+     "لم نجد تكاملًا مع Harbor أو Inspect؛ وستحتاج عزم إلى كتابة محوّل البيئة",
+     "لا نتائج ولا تقييم ولا مقارنة: إنه بنية تحتية فقط"
+    ],
+    "role": "خيار ثانٍ مستضاف لدينا بجانب Kubernetes agent-sandbox. يستحق التجربة إن استضافت عزم لاحقًا جلسات squad طويلة لمطورين كثيرين على خوادم مشتركة؛ أما تشغيلات القياس فلدى agent-sandbox طريق جاهز مع Harbor.",
+    "pricing": "مجاني (على عنقود Kubernetes لديك)"
    }
   }
  ]

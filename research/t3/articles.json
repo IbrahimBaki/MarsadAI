@@ -1,6 +1,6 @@
 {
  "track": "t3",
- "checked": "2026-11-05",
+ "checked": "2026-11-06",
  "articles": [
   {
    "id": "fullscript-bench",
@@ -960,6 +960,100 @@
    "summary": "OpenKruise Agents, a CNCF project for agent sandboxes on Kubernetes with an E2B-compatible API, adds L4/L7 network rules, credential injection from Kubernetes Secrets, warm-pool autoscaling, checkpoint and restore, and automatic pause and resume.",
    "ar": {
     "summary": "يضيف OpenKruise Agents، مشروع CNCF لبيئات عزل الوكلاء على Kubernetes بواجهة متوافقة مع E2B، قواعد شبكة على مستويي L4 وL7، وحقن بيانات الاعتماد من أسرار Kubernetes، والتوسع التلقائي للمجمّعات الجاهزة، وحفظ النقاط واستعادتها، والإيقاف والاستئناف التلقائيين."
+   }
+  },
+  {
+   "id": "google-agent-substrate-cncf",
+   "title": "Sandboxing Untrusted AI Agents at Scale: Google Donates Agent Substrate and gVisor to the CNCF",
+   "source": "Google Open Source Blog",
+   "date": "2026-11-05",
+   "url": "https://opensource.googleblog.com/2026/11/sandboxing-untrusted-ai-agents-at-scale.html",
+   "type": "reading",
+   "tags": [
+    "sandbox",
+    "kubernetes",
+    "gvisor",
+    "cncf"
+   ],
+   "priority": "read",
+   "summary": "Google releases Agent Substrate 1.0, a Kubernetes runtime that suspends idle agents and resumes them in under 500 ms onto a warm pool, and donates it and gVisor to the CNCF at Sandbox stage.",
+   "why": "Adds a second vendor-neutral, self-hosted sandbox option with stronger isolation and no secrets inside the sandbox.",
+   "ar": {
+    "summary": "تطلق Google الإصدار 1.0 من Agent Substrate، وهو بيئة تشغيل على Kubernetes توقف الوكلاء الخاملين وتستأنفهم في أقل من 500 ملّي ثانية على مجموعة عمال جاهزة، وتتبرع به مع gVisor لمؤسسة CNCF في مرحلة Sandbox.",
+    "why": "يضيف خيارًا ثانيًا محايدًا ومستضافًا لدينا لبيئة العزل، بعزل أقوى وبلا أسرار داخل بيئة العزل."
+   }
+  },
+  {
+   "id": "k8s-agent-sandbox-harbor-tb2",
+   "title": "Terminal-Bench on Agent Sandbox with Harbor",
+   "source": "kubernetes-sigs/agent-sandbox (GitHub)",
+   "date": "2026-11-03",
+   "url": "https://github.com/kubernetes-sigs/agent-sandbox/tree/main/examples/harbor-terminal-bench",
+   "type": "tutorial",
+   "tags": [
+    "sandbox",
+    "harbor",
+    "terminal-bench",
+    "kubernetes"
+   ],
+   "priority": "must",
+   "summary": "An official example that runs Terminal-Bench 2.0 through Harbor with every trial in its own Agent Sandbox claim, on kind and on GKE, with recorded runs (10 sample tasks, no infrastructure errors) and a report script.",
+   "why": "It is our planned runner + sandbox pairing, already wired and documented by the project; copy it for the pilot instead of writing the glue.",
+   "ar": {
+    "summary": "مثال رسمي يشغّل Terminal-Bench 2.0 عبر Harbor مع بيئة Agent Sandbox مستقلة لكل محاولة، على kind وعلى GKE، مع تشغيلات مسجّلة (10 مهام تجريبية بلا أخطاء في البنية التحتية) وسكربت للتقارير.",
+    "why": "إنه الجمع الذي نخطط له بين المشغّل وبيئة العزل، وقد ربطه المشروع ووثّقه بالفعل؛ ننسخه في التجربة الأولى بدل كتابة شيفرة الربط."
+   }
+  },
+  {
+   "id": "vals-terminal-bench-4",
+   "title": "Terminal-Bench 4.0 Leaderboard and Methodology",
+   "source": "Vals AI",
+   "date": "2026-11-05",
+   "url": "https://www.vals.ai/benchmarks/terminal-bench-4",
+   "type": "comparison",
+   "tags": [
+    "benchmark",
+    "terminal-bench",
+    "leaderboard"
+   ],
+   "priority": "reference",
+   "summary": "Independent leaderboard for Terminal-Bench 4.0: 66 new tasks across seven domains, run with mini-swe-agent as the fixed harness, three runs per model, with cost per task.",
+   "ar": {
+    "summary": "لوحة نتائج مستقلة لـ Terminal-Bench 4.0: ست وستون مهمة جديدة في سبعة مجالات، تُشغَّل بـ mini-swe-agent بوصفه harness ثابتًا، وثلاثة تشغيلات لكل نموذج، مع تكلفة كل مهمة."
+   }
+  },
+  {
+   "id": "harnessflow-paper",
+   "title": "HarnessFlow: MCTS-Guided Harness Optimization for LLM Agents",
+   "source": "arXiv 2611.06254",
+   "date": "2026-11-04",
+   "url": "https://arxiv.org/abs/2611.06254",
+   "type": "paper",
+   "tags": [
+    "harness-optimization",
+    "research"
+   ],
+   "priority": "read",
+   "summary": "Searches over whole agent harnesses with Monte Carlo tree search under a fixed budget; reports 69.48% average on six benchmarks, 3.95 points above Meta-Harness, at lower cost per task.",
+   "ar": {
+    "summary": "تبحث في أدوات harness كاملة باستخدام بحث شجرة مونت كارلو ضمن ميزانية ثابتة، وتذكر متوسط 69.48% على ستة مقاييس، بزيادة 3.95 نقطة على Meta-Harness، وبتكلفة أقل لكل مهمة."
+   }
+  },
+  {
+   "id": "meta-acquires-conductor",
+   "title": "Meta acquires AI coding startup Conductor",
+   "source": "TechCrunch",
+   "date": "2026-11-04",
+   "url": "https://techcrunch.com/2026/11/04/meta-acquires-ai-coding-startup-conductor/",
+   "type": "reading",
+   "tags": [
+    "acquisition",
+    "parallel-agents"
+   ],
+   "priority": "reference",
+   "summary": "Meta bought Conductor, a product for running several coding agents in parallel workspaces; its cloud service shuts down on 20 Nov 2026.",
+   "ar": {
+    "summary": "اشترت Meta شركة Conductor، صاحبة منتج لتشغيل عدة وكلاء برمجة في مساحات عمل متوازية، وتُغلق خدمتها السحابية في 20 نوفمبر 2026."
    }
   }
  ]

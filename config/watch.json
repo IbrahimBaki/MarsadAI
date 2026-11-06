@@ -242,6 +242,11 @@
       "track": "t3"
     },
     {
+      "repo": "agent-substrate/substrate",
+      "section": "agents",
+      "track": "t3"
+    },
+    {
       "repo": "multica-ai/multica",
       "section": "agents",
       "track": "t3"

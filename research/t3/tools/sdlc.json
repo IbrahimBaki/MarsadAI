@@ -1,6 +1,6 @@
 {
  "category": "sdlc",
- "checked": "2026-11-05",
+ "checked": "2026-11-06",
  "tools": [
   {
    "id": "squad-kit",
@@ -12,9 +12,9 @@
    "url": "https://squad-kit.com",
    "license": "MIT",
    "pricing": "Free; runs on the user's own Claude Code subscription",
-   "version": "v1.2.0 (2026-11-05)",
+   "version": "v1.2.2 (2026-11-05)",
    "tier": "deep",
-   "summary": "Azm's own agent harness for the whole software cycle. Since 1.0 (2 Nov 2026) it is no longer a planning CLI: a local app runs a squad of role agents (Analyst, Architect, Builder, Tester, Reviewer, plus Triage for bugs) that takes a ticket from a plain-language ask to a tagged release. People approve at four points (answers, spec, design, proof) and press Release; the squad does the rest. Version 1.2 (5 Nov 2026) adds a path from a whole requirements document (BRD) to built stories, its own browser for proof screenshots, and a guard around the project's commands.",
+   "summary": "Azm's own agent harness for the whole software cycle. Since 1.0 (2 Nov 2026) it is no longer a planning CLI: a local app runs a squad of role agents (Analyst, Architect, Builder, Tester, Reviewer, plus Triage for bugs) that takes a ticket from a plain-language ask to a tagged release. People approve at four points (answers, spec, design, proof) and press Release; the squad does the rest. Version 1.2 (5 Nov 2026) adds a path from a whole requirements document (BRD) to built stories, its own browser for proof screenshots, and a guard around the project's commands. Patches 1.2.1 and 1.2.2 (5 Nov 2026) keep typed text across reloads, close Docker's socket to the project's commands, run commit hooks on a throwaway copy of git, and state plainly in SECURITY.md what the guard does and does not stop.",
    "how": "`squad` opens one local app (127.0.0.1:4571) for all projects, each with its own board. A ticket goes through questions, spec, design, build, checks, review, proof and release, on a Full track or an Express track for small fixes. squad-kit itself is the boss: it runs the tests, lint and build, starts a fresh Reviewer session, and does all git and tracker work; agents never merge, push or grade their own work. The Builder works in its own copy of the code. Changes after approval go through 'Propose a change' (old and new wording side by side, rated small or big, and only the affected parts are rebuilt). Project memory lives in .squad/ as readable Markdown and YAML (tickets, linked decisions, releases, rules per role, knowledge) and travels with the code; chats, screenshots, sign-ins and cost stay in ~/.squad-kit/. The model level is set per role and step (strongest, balanced, fast) and cost per ticket and role is shown at API prices. AI tools and trackers plug in as modules: Claude Code and Azure DevOps today.",
    "features": [
     "Six role agents: Analyst, Architect, Builder, Tester, Reviewer and Triage",
@@ -44,7 +44,7 @@
    "weaknesses": [
     "Runs on Claude Code only today; Codex is detected but cannot run yet",
     "A local, single-machine app: no shared server or team-wide queue",
-    "Still not a sandbox: since 1.2 the project's own commands run in a guard on Mac and Linux that blocks keys, sign-ins and .env files, but work stays on the same machine and network, and Windows has no guard yet",
+    "Still not a sandbox: the guard (Mac and Linux) blocks keys, sign-ins, .env files and, since 1.2.2, Docker's socket, but its own SECURITY.md says it stops accidents, not code built on purpose to break out; work stays on the same machine and network, and Windows has no guard yet",
     "Azure DevOps is the only tracker in 1.x",
     "Two to five tickets at a time, because all projects share one AI account",
     "No way yet to measure quality across many tickets or against other harnesses"
@@ -90,11 +90,12 @@
    "sources": [
     "https://squad-kit.com",
     "https://github.com/AzmSquad/Squad-Kit",
-    "https://github.com/AzmSquad/Squad-Kit/blob/main/CHANGELOG.md"
+    "https://github.com/AzmSquad/Squad-Kit/blob/main/CHANGELOG.md",
+    "https://github.com/AzmSquad/squad-kit/releases/tag/v1.2.2"
    ],
    "status": "active",
    "ar": {
-    "summary": "أداة الـ harness الخاصة بعزم لدورة البرمجيات كاملة. منذ الإصدار 1.0 (2 نوفمبر 2026) لم تعد أداة تخطيط في سطر الأوامر: تطبيق محلي يشغّل فريقًا من الوكلاء بأدوار (المحلل والمعماري والباني والمختبِر والمراجع، إضافة إلى الفرز للأخطاء) ينقل التذكرة من طلب مكتوب بلغة عادية إلى إصدار موسوم. يوافق البشر في أربع نقاط (الإجابات والمواصفات والتصميم والإثبات) ثم يضغطون «إصدار»، ويتولى الفريق الباقي. ويضيف الإصدار 1.2 (5 نوفمبر 2026) مسارًا من وثيقة متطلبات كاملة (BRD) إلى قصص مبنية، ومتصفحًا خاصًا لالتقاط لقطات الإثبات، وحماية حول أوامر المشروع.",
+    "summary": "أداة الـ harness الخاصة بعزم لدورة البرمجيات كاملة. منذ الإصدار 1.0 (2 نوفمبر 2026) لم تعد أداة تخطيط في سطر الأوامر: تطبيق محلي يشغّل فريقًا من الوكلاء بأدوار (المحلل والمعماري والباني والمختبِر والمراجع، إضافة إلى الفرز للأخطاء) ينقل التذكرة من طلب مكتوب بلغة عادية إلى إصدار موسوم. يوافق البشر في أربع نقاط (الإجابات والمواصفات والتصميم والإثبات) ثم يضغطون «إصدار»، ويتولى الفريق الباقي. ويضيف الإصدار 1.2 (5 نوفمبر 2026) مسارًا من وثيقة متطلبات كاملة (BRD) إلى قصص مبنية، ومتصفحًا خاصًا لالتقاط لقطات الإثبات، وحماية حول أوامر المشروع. وفي الإصدارين التصحيحيين 1.2.1 و1.2.2 (5 نوفمبر 2026) يُحفظ النص المكتوب عند إعادة التحميل، ويُغلق مقبس Docker أمام أوامر المشروع، وتعمل خطافات الإيداع (commit hooks) على نسخة مؤقتة من git، ويوضّح ملف SECURITY.md بصراحة ما تمنعه الحماية وما لا تمنعه.",
     "how": "يفتح الأمر `squad` تطبيقًا محليًا واحدًا (127.0.0.1:4571) لكل المشاريع، ولكل مشروع لوحته. تمر التذكرة بالأسئلة ثم المواصفات ثم التصميم ثم البناء ثم الفحوص ثم المراجعة ثم الإثبات ثم الإصدار، في مسار كامل أو مسار سريع للإصلاحات الصغيرة. وsquad-kit نفسه هو المتحكم: يشغّل الاختبارات وفحص الأسلوب والبناء، ويبدأ جلسة مراجعة جديدة، ويتولى كل عمل git وأداة التذاكر؛ فالوكلاء لا يدمجون ولا يدفعون ولا يقيّمون عملهم أبدًا. ويعمل الباني في نسخة خاصة من الشيفرة. وتمر التغييرات بعد الموافقة عبر «اقتراح تغيير» (الصياغة القديمة والجديدة جنبًا إلى جنب، مع تصنيفه صغيرًا أو كبيرًا، ولا يُعاد بناء إلا ما تأثر). وتُحفظ ذاكرة المشروع في ‎.squad/‎ كملفات Markdown وYAML مقروءة (التذاكر والقرارات المرتبطة والإصدارات وقواعد كل دور والمعرفة) وتنتقل مع الشيفرة؛ أما المحادثات واللقطات وبيانات الدخول والتكلفة فتبقى في ‎~/.squad-kit/‎. ويُضبط مستوى النموذج لكل دور وخطوة (الأقوى أو المتوازن أو السريع)، وتظهر تكلفة كل تذكرة ودور بأسعار الواجهة البرمجية. وتُضاف أدوات الذكاء الاصطناعي وأدوات التذاكر كوحدات: Claude Code وAzure DevOps حاليًا.",
     "features": [
      "ستة وكلاء بأدوار: المحلل والمعماري والباني والمختبِر والمراجع والفرز",
@@ -124,7 +125,7 @@
     "weaknesses": [
      "يعمل على Claude Code فقط حاليًا؛ يكتشف Codex لكنه لا يستطيع تشغيله بعد",
      "تطبيق محلي على جهاز واحد: لا خادم مشترك ولا قائمة انتظار للفريق",
-     "ما زال ليس بيئة عزل: منذ 1.2 تعمل أوامر المشروع داخل حماية على Mac وLinux تمنع قراءة المفاتيح وبيانات الدخول وملفات ‎.env‎، لكن العمل يبقى على الجهاز والشبكة نفسيهما، ولا حماية على Windows بعد",
+     "ما زال ليس بيئة عزل: الحماية (على Mac وLinux) تمنع المفاتيح وبيانات الدخول وملفات ‎.env‎، ومنذ 1.2.2 تمنع الوصول إلى مقبس Docker، لكن ملف SECURITY.md نفسه يقول إنها توقف الحوادث لا الشيفرة المصممة عمدًا للإفلات؛ ويبقى العمل على الجهاز والشبكة نفسيهما، ولا حماية على Windows بعد",
      "Azure DevOps هو أداة التذاكر الوحيدة في الإصدار 1.x",
      "من تذكرتين إلى خمس في الوقت نفسه، لأن كل المشاريع تتشارك حساب ذكاء اصطناعي واحدًا",
      "لا وسيلة بعد لقياس الجودة عبر تذاكر كثيرة أو مقارنته بأدوات harness أخرى"
@@ -320,7 +321,7 @@
    "url": "https://doc.chorus-ai.dev",
    "license": "AGPL-3.0",
    "pricing": "Free self-hosted; hosted options",
-   "version": "v0.23.0",
+   "version": "v0.24.0",
    "tier": "deep",
    "summary": "'The harness one level up': a pipeline where a team of coding agents plus humans move ideas to delivered software (Idea → Proposal → Document + task DAG → Execute → Verify → Done), inspired by AI-DLC. Handles session lifecycle, task state, sub-agent orchestration, observability and failure recovery.",
    "how": "Each stage needs a permission (idea:write, proposal:write, task:write, *:admin) that can be granted to a human, an agent or both, a 5 × 3 permission matrix instead of fixed roles. Agents propose, humans verify. Plugins connect coding agents such as Claude Code.",
@@ -328,7 +329,8 @@
     "AI-DLC pipeline with task DAGs",
     "Fine-grained per-agent permissions",
     "Session lifecycle, recovery and observability",
-    "Multi-agent, human-in-the-loop"
+    "Multi-agent, human-in-the-loop",
+    "Agent Teams (v0.24, Nov 2026): private team templates with fixed roles, review routing and structured review requests"
    ],
    "strengths": [
     "Permission model is more flexible than fixed roles",
@@ -367,7 +369,8 @@
    ],
    "sources": [
     "https://github.com/Chorus-AIDLC/Chorus",
-    "https://doc.chorus-ai.dev"
+    "https://doc.chorus-ai.dev",
+    "https://github.com/Chorus-AIDLC/Chorus/releases/tag/v0.24.0"
    ],
    "status": "active",
    "ar": {
@@ -377,7 +380,8 @@
      "خط عمل AI-DLC مع رسوم مهام",
      "صلاحيات دقيقة لكل وكيل",
      "دورة الجلسات والتعافي والمراقبة",
-     "وكلاء متعددون مع إنسان في الحلقة"
+     "وكلاء متعددون مع إنسان في الحلقة",
+     "فرق الوكلاء (الإصدار 0.24، نوفمبر 2026): قوالب فرق خاصة بأدوار ثابتة، وتوجيه للمراجعة، وطلبات مراجعة منظّمة"
     ],
     "strengths": [
      "نموذج الصلاحيات أمرن من الأدوار الثابتة",
@@ -711,7 +715,7 @@
    "url": "https://github.com/github/spec-kit",
    "license": "MIT",
    "pricing": "Free",
-   "version": "v1.3.0",
+   "version": "v1.3.1",
    "tier": "deep",
    "summary": "GitHub's toolkit for spec-driven development: a CLI (`specify`) and slash commands that take you from constitution and spec to plan, tasks and implementation, across many coding agents.",
    "how": "`specify init` scaffolds templates and commands for the chosen agent; commands /constitution, /specify, /plan, /tasks, /implement produce Markdown artifacts that guide the agent step by step.",
@@ -1928,6 +1932,77 @@
     ],
     "role": "مرجع فقط.",
     "pricing": "مجاني"
+   }
+  },
+  {
+   "id": "conductor",
+   "name": "Conductor",
+   "category": "sdlc",
+   "kind": "commercial",
+   "vendor": "Conductor (acquired by Meta, Nov 2026)",
+   "repo": null,
+   "url": "https://www.conductor.build",
+   "license": "Proprietary",
+   "pricing": "Cloud service shuts down on 20 Nov 2026 (Nov 2026)",
+   "status": "sunsetting",
+   "tier": "brief",
+   "summary": "A product for running several coding agents (from labs such as Anthropic and OpenAI) at once, each in its own parallel workspace, locally, in the cloud or from a phone. Meta acquired it on 4 Nov 2026.",
+   "how": "Each task gets its own workspace and agent; a person watches and merges the results. After the acquisition the cloud service closes on 20 Nov 2026 and cloud data is then deleted; the local app keeps working until early 2027.",
+   "features": [
+    "Several coding agents in parallel, each in an isolated workspace"
+   ],
+   "strengths": [
+    "Showed demand for running many agents side by side with one person reviewing"
+   ],
+   "weaknesses": [
+    "Being wound down after the Meta acquisition; future product unknown"
+   ],
+   "gaps": [
+    "No measurement or comparison of agents; vendor product, not something Azm can host"
+   ],
+   "fit": {
+    "verdict": "avoid",
+    "role": "Do not adopt: the cloud service is closing. Kept here so the team knows it existed and why it is not an option."
+   },
+   "scores": {
+    "fit": 1,
+    "maturity": 2,
+    "openness": 1,
+    "agnostic": 3,
+    "config": 1,
+    "measure": 1,
+    "safety": 2
+   },
+   "links": [
+    [
+     "TechCrunch",
+     "https://techcrunch.com/2026/11/04/meta-acquires-ai-coding-startup-conductor/"
+    ],
+    [
+     "Announcement",
+     "https://www.conductor.build/announcement"
+    ]
+   ],
+   "sources": [
+    "https://techcrunch.com/2026/11/04/meta-acquires-ai-coding-startup-conductor/"
+   ],
+   "ar": {
+    "summary": "منتج لتشغيل عدة وكلاء برمجة (من مختبرات مثل Anthropic وOpenAI) في الوقت نفسه، كل منهم في مساحة عمل متوازية خاصة به، محليًا أو في السحابة أو من الهاتف. استحوذت عليه Meta في 4 نوفمبر 2026.",
+    "how": "تحصل كل مهمة على مساحة عمل ووكيل خاصين بها، ويتابع شخص النتائج ويدمجها. وبعد الاستحواذ تُغلق الخدمة السحابية في 20 نوفمبر 2026 ثم تُحذف بيانات السحابة، ويستمر التطبيق المحلي في العمل حتى أوائل 2027.",
+    "features": [
+     "عدة وكلاء برمجة بالتوازي، كل منهم في مساحة عمل معزولة"
+    ],
+    "strengths": [
+     "أثبت وجود طلب على تشغيل وكلاء كثيرين جنبًا إلى جنب مع مراجعة شخص واحد"
+    ],
+    "weaknesses": [
+     "يجري إيقافه تدريجيًا بعد استحواذ Meta، ومستقبل المنتج غير معروف"
+    ],
+    "gaps": [
+     "لا قياس ولا مقارنة بين الوكلاء؛ منتج تجاري لا تستطيع عزم استضافته"
+    ],
+    "role": "لا نعتمده: الخدمة السحابية تُغلق. أبقيناه هنا ليعرف الفريق أنه كان موجودًا ولماذا ليس خيارًا.",
+    "pricing": "الخدمة السحابية تُغلق في 20 نوفمبر 2026 (نوفمبر 2026)"
    }
   }
  ]

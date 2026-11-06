@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05",
+ "updated": "2026-11-06",
  "sources": [
   {
    "name": "Picrew/awesome-agent-harness",
@@ -7707,6 +7707,59 @@
    "ar": {
     "summary": "تدقق حلقة العمل حول وكلاء البرمجة في خمسة مجالات انطلاقًا من أدلة المشروع والجلسات، مع إصلاحات مرتبة ومدعومة بالأدلة.",
     "group": "أدوات التقييم والمقاييس"
+   }
+  },
+  {
+   "name": "Agent Substrate",
+   "repo": "agent-substrate/substrate",
+   "url": "https://github.com/agent-substrate/substrate",
+   "category": "sandbox",
+   "group": "Execution Substrates & Sandboxing",
+   "stars": null,
+   "tags": [
+    "found-by-search"
+   ],
+   "summary": "Kubernetes runtime that suspends idle agents to storage and resumes them on a warm pool inside gVisor or microVMs; CNCF Sandbox project.",
+   "lists": [],
+   "ar": {
+    "summary": "بيئة تشغيل على Kubernetes توقف الوكلاء الخاملين وتحفظهم ثم تستأنفهم على مجموعة عمال جاهزة داخل gVisor أو آلات افتراضية مصغّرة؛ مشروع في مرحلة Sandbox لدى CNCF.",
+    "group": "بيئات التنفيذ والعزل"
+   }
+  },
+  {
+   "name": "HarnessFlow",
+   "repo": null,
+   "url": "https://arxiv.org/abs/2611.06254",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": null,
+   "tags": [
+    "found-by-search",
+    "paper"
+   ],
+   "summary": "MCTS-guided search that refines whole agent harnesses under a fixed evaluation budget.",
+   "lists": [],
+   "ar": {
+    "summary": "بحث موجّه بشجرة مونت كارلو يحسّن أدوات harness كاملة ضمن ميزانية تقييم ثابتة.",
+    "group": "أدوات التقييم والمقاييس"
+   }
+  },
+  {
+   "name": "Conductor",
+   "repo": null,
+   "url": "https://www.conductor.build",
+   "category": "sdlc",
+   "group": "Agent Orchestrators",
+   "stars": null,
+   "tags": [
+    "found-by-search",
+    "acquired"
+   ],
+   "summary": "Runs several coding agents in parallel workspaces; acquired by Meta in Nov 2026, cloud service closing.",
+   "lists": [],
+   "ar": {
+    "summary": "يشغّل عدة وكلاء برمجة في مساحات عمل متوازية؛ استحوذت عليه Meta في نوفمبر 2026، وخدمته السحابية تُغلق.",
+    "group": "منسقو الوكلاء"
    }
   }
  ],
