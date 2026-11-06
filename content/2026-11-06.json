@@ -1,0 +1,249 @@
+{
+ "date": "2026-11-06",
+ "headline": "Playwright 1.65 يشغّل الاختبارات تحت Bun ويضيف تقارير الإخفاقات فقط مع تغييرات كاسرة يجب مراجعتها، وGoogle تتبرع بـ Agent Substrate وgVisor لمؤسسة CNCF لعزل الوكلاء على Kubernetes، وMeta تستحوذ على Conductor وتغلق خدمته السحابية في 20 نوفمبر.",
+ "headline_en": "Playwright 1.65 runs tests under Bun and adds failures-only reports, with breaking changes to review; Google donates Agent Substrate and gVisor to the CNCF for isolating agents on Kubernetes; and Meta acquires Conductor, whose cloud service closes on 20 November.",
+ "items": [
+  {
+   "id": "playwright-1-65",
+   "section": "testing",
+   "kind": "release",
+   "title": "Playwright 1.65: تشغيل الاختبارات تحت Bun وتقارير بالإخفاقات فقط",
+   "summary": "يمكن الآن تشغيل مشغّل اختبارات Playwright تحت Bun بالعلم ‎--bun‎، ويضيف الإصدار مُبلّغًا جديدًا باسم failures وخيار onlyFailures لتقارير HTML وJSON وJUnit، وقفلًا حصريًا لاختبار لا يعمل إلا وحده. ويتوقف الاختبار على Node.js 20، ويحمل الإصدار تغييرات كاسرة في الكوكيز والعناصر الخاملة (inert) وحقول الأصناف في TypeScript.",
+   "why": "لفرق الواجهات وCI: تقارير أصغر تحتوي الإخفاقات فقط في خطوط التكامل الطويلة، وإمكانية تجربة Bun لتسريع التشغيل، مع ضرورة مراجعة التغييرات الكاسرة قبل الترقية، مثل كائن صفحة يقرأ this.page في مُهيّئ حقل.",
+   "about": "أبرز الجديد أن مشغّل الاختبارات يعمل تحت Bun، الذي يحوّل ملفات TypeScript بنفسه بدل Babel. ويجب تمرير العلم ‎--bun‎، وإلا فسيعمل الأمر على Node.js. وتختبر Playwright ذلك على Bun 1.4.3 في Linux، مع قيود: لا وضع مراقبة، ولا أثر لخيار ‎--tsconfig‎، ولا تظهر مخرجات الطرفية في الأثر (trace).\n\nويضيف الإصدار مُبلّغ failures الذي يطبع الإخفاقات والمحاولات الناجحة بعد الإعادة فور حدوثها، وخيار onlyFailures الذي يُبقي في التقارير الاختبارات غير المتوقعة والمتقلبة والمقطوعة فقط. ويوجد قفل مدمج باسم ‎-exclusive-‎ لتشغيل اختبار واحد بينما تتوقف بقية الاختبارات، كاختبار يعيد تشغيل الخادم.\n\nالتغييرات الكاسرة كثيرة: حقول الأصناف تتبع useDefineForClassFields من tsconfig، فيفشل مُهيّئ حقل يقرأ معاملًا من المُنشئ؛ والأفعال مثل click وfill تنتظر حتى لا يكون العنصر خاملًا؛ ومطابقة الكوكيز تتبع RFC 6265؛ وبيانات اعتماد الوكيل (proxy) لم تعد تُرسل إلى المواقع؛ والتشغيل المجزّأ يفشل إن لم يجد أي اختبار. كما توقفت Playwright عن الاختبار على Node.js 20، وصارت صور Docker تتضمن Node.js 26.",
+   "features": [
+    "تشغيل الاختبارات تحت Bun بالأمر bunx --bun playwright test",
+    "مُبلّغ failures وخيار onlyFailures للتقارير",
+    "قفل ‎-exclusive-‎ لاختبار يعمل وحده",
+    "Chromium 158 وFirefox 159 وWebKit 27.2",
+    "تغييرات كاسرة: الكوكيز والعناصر الخاملة وحقول الأصناف وNode.js 20"
+   ],
+   "usage": [
+    "bunx --bun playwright test",
+    "reporter: [['failures'], ['html', { onlyFailures: true }]]"
+   ],
+   "requirements": [
+    "Node.js 22 أو 24 أو 26 (أو Bun مع العلم ‎--bun‎)"
+   ],
+   "repo": "microsoft/playwright",
+   "alternatives": ["ess-playwright", "ess-playwright-cli"],
+   "links": [
+    {"label": "ملاحظات الإصدار", "url": "https://playwright.dev/docs/release-notes"},
+    {"label": "الإصدار على GitHub", "url": "https://github.com/microsoft/playwright/releases/tag/v1.65.0"}
+   ],
+   "url": "https://github.com/microsoft/playwright/releases/tag/v1.65.0",
+   "source": "github.com",
+   "importance": 3,
+   "tags": ["testing", "e2e", "bun", "ci"],
+   "en": {
+    "title": "Playwright 1.65: run tests under Bun and failures-only reports",
+    "summary": "The Playwright test runner can now run under Bun with the --bun flag, and the release adds a new failures reporter, an onlyFailures option for the HTML, JSON and JUnit reporters, and an exclusive lock for a test that must run alone. Testing on Node.js 20 stops, and there are breaking changes to cookies, inert elements and TypeScript class fields.",
+    "why": "For front-end and CI teams: smaller reports that hold only failures in long pipelines, and a way to try Bun for faster runs. Review the breaking changes before upgrading, for example a page object that reads this.page in a field initializer.",
+    "about": "The main change is that the test runner works under Bun, which transpiles TypeScript itself instead of Babel. You must pass --bun, otherwise the command runs on Node.js. Playwright tests this on Bun 1.4.3 on Linux, with limits: no watch mode, --tsconfig has no effect, and console output does not reach the trace.\n\nThe release adds a failures reporter that prints failures and successful retries as they happen, and an onlyFailures option that keeps only unexpected, flaky and interrupted tests in reports. A built-in -exclusive- lock runs one test while all others wait, such as a test that restarts the server.\n\nThere are many breaking changes: class fields follow useDefineForClassFields from tsconfig, so a field initializer that reads a constructor parameter fails; actions such as click and fill wait until the element is not inert; cookie matching follows RFC 6265; proxy credentials are no longer sent to websites; and a sharded run fails if it finds no tests. Playwright no longer tests on Node.js 20, and Docker images now include Node.js 26.",
+    "features": [
+     "Run tests under Bun with bunx --bun playwright test",
+     "failures reporter and onlyFailures option for reports",
+     "-exclusive- lock for a test that runs alone",
+     "Chromium 158, Firefox 159 and WebKit 27.2",
+     "Breaking changes: cookies, inert elements, class fields, Node.js 20"
+    ],
+    "usage": [
+     "bunx --bun playwright test",
+     "reporter: [['failures'], ['html', { onlyFailures: true }]]"
+    ],
+    "requirements": ["Node.js 22, 24 or 26 (or Bun with --bun)"],
+    "links": ["Release notes", "Release on GitHub"]
+   }
+  },
+  {
+   "id": "agent-substrate-cncf",
+   "section": "devops",
+   "kind": "repo",
+   "title": "Agent Substrate: بيئة مفتوحة المصدر لعزل الوكلاء على Kubernetes تنضم إلى CNCF",
+   "summary": "أصدرت Google النسخة 1.0 من Agent Substrate وتبرعت بها مع gVisor لمؤسسة CNCF في مرحلة Sandbox في 5 نوفمبر 2026. يشغّل كل جلسة وكيل داخل gVisor أو آلة افتراضية مصغّرة، ويوقف الجلسات الخاملة ويحفظ حالتها ثم يستأنفها في أقل من 500 ملّي ثانية وفق المشروع.",
+   "why": "لفرق المنصات التي تستضيف وكلاء برمجة أو أدوات MCP لكثير من المستخدمين على خوادمها: عزل بمستوى الآلات الافتراضية، ولا مفاتيح داخل بيئة العزل، وعدد أقل من الحاويات لأن الوكلاء الخاملين لا يشغلون موارد.",
+   "about": "يقوم المشروع على فكرة أن الوكيل ينتظر معظم وقته ردّ النموذج أو الأدوات أو الإنسان. لذلك يوزّع عددًا كبيرًا من الجلسات (actors) على مجموعة صغيرة من الحاويات الجاهزة (workers). وعند انتهاء دور الوكيل تُحفظ ذاكرته وملفاته ويُحرَّر مكانه، وعند وصول طلب جديد يُستعاد على أي عامل متاح.\n\nالأمان مبني في التصميم: كل جلسة داخل gVisor أو آلة Cloud Hypervisor المصغّرة، ولا تُدعم الحاويات العادية. لكل وكيل هوية SPIFFE قصيرة العمر، والشبكة مغلقة افتراضيًا، وتضيف بوابة الخروج بيانات الاعتماد إلى الطلبات المسموح بها من خارج بيئة العزل، فلا يجد وكيل مخترَق ما يسرقه.\n\nالمشروع بترخيص Apache-2.0 ويعمل على Kubernetes القياسي، ويذكر توافقه مع Claude Code وCodex وLangChain وADK وخوادم MCP. أرقام الأداء (أقل من 500 ملّي ثانية للاستئناف، وكثافة أعلى بعشرة أضعاف من الحاويات العادية) صادرة عن المشروع نفسه ولم تُقَس بشكل مستقل بعد. ويناسب الجلسات الطويلة الخاملة أكثر من المهام القصيرة المتواصلة.",
+   "features": [
+    "عزل دائم عبر gVisor أو آلات Cloud Hypervisor المصغّرة",
+    "إيقاف الجلسات الخاملة واستئنافها مع حفظ الذاكرة والقرص",
+    "هوية لكل وكيل وحقن بيانات الاعتماد خارج بيئة العزل",
+    "شبكة مغلقة افتراضيًا مع نقطة سياسات قابلة للاستبدال",
+    "مشروع في CNCF بترخيص Apache-2.0"
+   ],
+   "usage": [
+    "hack/create-kind-cluster.sh"
+   ],
+   "requirements": [
+    "Go وkubectl وDocker لتجربته محليًا على kind"
+   ],
+   "repo": "agent-substrate/substrate",
+   "pricing": {"model": "oss"},
+   "links": [
+    {"label": "إعلان Google", "url": "https://opensource.googleblog.com/2026/11/sandboxing-untrusted-ai-agents-at-scale.html"},
+    {"label": "المستودع", "url": "https://github.com/agent-substrate/substrate"},
+    {"label": "التوثيق", "url": "https://ate.dev"}
+   ],
+   "url": "https://opensource.googleblog.com/2026/11/sandboxing-untrusted-ai-agents-at-scale.html",
+   "source": "opensource.googleblog.com",
+   "importance": 3,
+   "tags": ["sandbox", "kubernetes", "agents", "security", "cncf"],
+   "en": {
+    "title": "Agent Substrate: an open-source Kubernetes runtime for isolating agents joins the CNCF",
+    "summary": "Google released Agent Substrate 1.0 and donated it, together with gVisor, to the CNCF at Sandbox stage on 5 November 2026. It runs every agent session inside gVisor or a microVM, suspends idle sessions and saves their state, then resumes them in under 500 ms according to the project.",
+    "why": "For platform teams that host coding agents or MCP tools for many users on their own servers: VM-grade isolation, no keys inside the sandbox, and fewer pods because idle agents do not hold resources.",
+    "about": "The project starts from the idea that an agent spends most of its time waiting for the model, tools or a person. So it maps a large number of sessions (actors) onto a small pool of ready pods (workers). When an agent's turn ends, its memory and files are saved and its slot is freed; when a new request arrives, it is restored onto any free worker.\n\nSecurity is part of the design: every session runs inside gVisor or a Cloud Hypervisor microVM, and plain containers are not supported. Each agent gets a short-lived SPIFFE identity, networking is closed by default, and an egress gateway adds credentials to approved requests from outside the sandbox, so a compromised agent has nothing to steal.\n\nThe project is Apache-2.0 and runs on standard Kubernetes, and it lists support for Claude Code, Codex, LangChain, ADK and MCP servers. The performance figures (under 500 ms to resume, ten times the density of plain containers) come from the project itself and have not been measured independently yet. It suits long, mostly idle sessions more than short, busy tasks.",
+    "features": [
+     "Always isolated with gVisor or Cloud Hypervisor microVMs",
+     "Suspend and resume idle sessions with memory and disk saved",
+     "Per-agent identity and credential injection outside the sandbox",
+     "Default-deny networking with a replaceable policy point",
+     "CNCF project under Apache-2.0"
+    ],
+    "usage": ["hack/create-kind-cluster.sh"],
+    "requirements": ["Go, kubectl and Docker to try it locally on kind"],
+    "links": ["Google announcement", "Repository", "Documentation"]
+   }
+  },
+  {
+   "id": "meta-acquires-conductor",
+   "section": "agents",
+   "kind": "article",
+   "title": "Meta تستحوذ على Conductor لتشغيل وكلاء البرمجة بالتوازي، والخدمة السحابية تُغلق في 20 نوفمبر",
+   "summary": "استحوذت Meta في 4 نوفمبر 2026 على Conductor، وهو منتج يشغّل عدة وكلاء برمجة من مختبرات مثل Anthropic وOpenAI في مساحات عمل متوازية. تُغلق الخدمة السحابية في 20 نوفمبر ثم تُحذف بياناتها، ويستمر التطبيق المحلي حتى أوائل العام القادم.",
+   "why": "لمن يعتمد على Conductor Cloud: صدّر عملك وانقل مساحات العمل قبل 20 نوفمبر. ولغيرهم: الخبر علامة على أن تشغيل عدة وكلاء بالتوازي مع مراجعة بشرية أصبح نمطًا تتنافس عليه الشركات الكبرى.",
+   "about": "يتيح Conductor نشر عدة وكلاء برمجة، كل منهم في مساحة عمل مستقلة، محليًا أو في السحابة أو من الهاتف، ثم مراجعة النتائج ودمجها. تأسست الشركة في 2024 وأطلقت منتجها الأساسي في صيف 2025.\n\nأكدت Meta الاستحواذ دون ذكر السعر أو تفاصيل أخرى. وقال الرئيس التنفيذي للشركة إن الميزات الأساسية ستعمل كما هي حتى أوائل العام القادم، باستثناء الخدمة السحابية التي تُغلق في 20 نوفمبر 2026، وبعدها تبدأ الشركة حذف بيانات المستخدمين السحابية. وذكرت تقارير أخرى أن الخدمة تصبح للقراءة فقط في 13 نوفمبر.\n\nلم يُعلن عن نشر الشيفرة مفتوحة المصدر، ووُعد العملاء بمنتج جديد في أوائل العام القادم دون تفاصيل.",
+   "features": [
+    "تاريخ الاستحواذ: 4 نوفمبر 2026",
+    "إغلاق الخدمة السحابية: 20 نوفمبر 2026 ثم حذف البيانات",
+    "التطبيق المحلي يستمر حتى أوائل العام القادم"
+   ],
+   "links": [
+    {"label": "تغطية TechCrunch", "url": "https://techcrunch.com/2026/11/04/meta-acquires-ai-coding-startup-conductor/"},
+    {"label": "إعلان Conductor", "url": "https://www.conductor.build/announcement"}
+   ],
+   "url": "https://techcrunch.com/2026/11/04/meta-acquires-ai-coding-startup-conductor/",
+   "source": "techcrunch.com",
+   "importance": 2,
+   "tags": ["agents", "acquisition", "parallel-agents"],
+   "en": {
+    "title": "Meta acquires Conductor, the parallel coding-agent app; its cloud service closes on 20 November",
+    "summary": "On 4 November 2026 Meta acquired Conductor, a product that runs several coding agents from labs such as Anthropic and OpenAI in parallel workspaces. The cloud service closes on 20 November and its data is then deleted; the local app keeps working until early next year.",
+    "why": "If you rely on Conductor Cloud: export your work and move your workspaces before 20 November. For everyone else: running several agents in parallel with human review is now a pattern large companies compete for.",
+    "about": "Conductor lets you deploy several coding agents, each in its own workspace, locally, in the cloud or from a phone, then review and merge the results. The company was founded in 2024 and launched its core product in summer 2025.\n\nMeta confirmed the acquisition without giving a price or other details. The company's CEO said core features will keep working as before until early next year, except the cloud service, which closes on 20 November 2026, after which the company starts deleting users' cloud data. Other reports say the service becomes read-only on 13 November.\n\nNo open-source release was announced, and customers were promised something new in early next year without details.",
+    "features": [
+     "Acquisition date: 4 November 2026",
+     "Cloud service closes: 20 November 2026, then data is deleted",
+     "Local app continues until early next year"
+    ],
+    "links": ["TechCrunch coverage", "Conductor announcement"]
+   }
+  },
+  {
+   "id": "terminal-bench-4-leaderboard",
+   "section": "llm",
+   "kind": "article",
+   "title": "Terminal-Bench 4.0: ست وستون مهمة جديدة ولوحة نتائج مستقلة بتكلفة كل مهمة",
+   "summary": "أصبح Terminal-Bench مقياسًا مستمرًا بإصدارات موسومة، آخرها 4.1 في 3 نوفمبر 2026. ونشرت Vals AI لوحة نتائج الإصدار 4.0 بست وستين مهمة جديدة في سبعة مجالات، مع harness ثابت هو mini-swe-agent ومتوسط ثلاثة تشغيلات وتكلفة كل مهمة. والدرجات غير قابلة للمقارنة بين الإصدارات.",
+   "why": "لمن يختار نموذجًا لوكلاء البرمجة: تعرض اللوحة الدقة والتكلفة معًا مع ثبات أداة التشغيل، فتفرّق بين النماذج الأغلى والأوفر. وانتبه إلى رقم الإصدار عند قراءة أي مقارنة.",
+   "about": "يقيس Terminal-Bench قدرة الوكيل على إنجاز عمل حقيقي في سطر الأوامر داخل حاويات، ويُشغَّل عبر إطار Harbor. ومنذ منتصف 2026 صار مقياسًا مستمرًا: الإصدار 3.0 في يوليو، و4.0 في أغسطس، و4.1 في 3 نوفمبر.\n\nوفق Vals AI، يضم الإصدار 4.0 ست وستين مهمة جديدة لا تتداخل مع مهام 2.1 البالغة 89 مهمة، نحو ثلاثة أرباعها خارج هندسة البرمجيات التقليدية (علوم وتعلم آلي وعتاد وأمن)، ومهلة كل مهمة ثماني ساعات. وتُشغَّل كل النماذج بـ mini-swe-agent وتُحسب الدرجة متوسط ثلاثة تشغيلات.\n\nفي لقطة 5 نوفمبر تتقارب النماذج الأولى بين 60% و65%، لكن تكلفة المهمة تتفاوت من نحو 4.6 دولارات إلى أكثر من 16 دولارًا. ولأن المهام تغيرت، لا تُقارن هذه الدرجات بدرجات الإصدار 2.0 المنشورة في كثير من الدراسات.",
+   "features": [
+    "66 مهمة جديدة في سبعة مجالات",
+    "harness ثابت (mini-swe-agent) ومتوسط ثلاثة تشغيلات",
+    "تكلفة كل مهمة بجانب الدقة",
+    "إصدارات موسومة: 3.0 و4.0 و4.1"
+   ],
+   "links": [
+    {"label": "لوحة Vals AI", "url": "https://www.vals.ai/benchmarks/terminal-bench-4"},
+    {"label": "مستودع Terminal-Bench", "url": "https://github.com/harbor-framework/terminal-bench"}
+   ],
+   "repo": "harbor-framework/terminal-bench",
+   "url": "https://www.vals.ai/benchmarks/terminal-bench-4",
+   "source": "vals.ai",
+   "importance": 2,
+   "tags": ["benchmark", "agents", "llm", "cost"],
+   "en": {
+    "title": "Terminal-Bench 4.0: 66 new tasks and an independent leaderboard with cost per task",
+    "summary": "Terminal-Bench is now a continuous benchmark with tagged releases, the latest being 4.1 on 3 November 2026. Vals AI published a 4.0 leaderboard with 66 new tasks across seven domains, a fixed harness (mini-swe-agent), the average of three runs and the cost of each task. Scores are not comparable across versions.",
+    "why": "If you are choosing a model for coding agents: the board shows accuracy and cost together with the harness held fixed, so it separates expensive models from efficient ones. Check the version number when you read any comparison.",
+    "about": "Terminal-Bench measures whether an agent can finish real command-line work inside containers, and it runs through the Harbor framework. Since mid-2026 it is a continuous benchmark: 3.0 in July, 4.0 in August and 4.1 on 3 November.\n\nAccording to Vals AI, 4.0 has 66 new tasks with no overlap with 2.1's 89 tasks, about three quarters of them outside classic software engineering (science, machine learning, hardware, security), with an eight-hour limit per task. Every model runs with mini-swe-agent, and the score is the average of three runs.\n\nIn the 5 November snapshot the top models sit between 60% and 65%, but cost per task ranges from about $4.6 to more than $16. Because the tasks changed, these scores cannot be compared with the 2.0 scores used in many studies.",
+    "features": [
+     "66 new tasks across seven domains",
+     "Fixed harness (mini-swe-agent), average of three runs",
+     "Cost per task next to accuracy",
+     "Tagged releases: 3.0, 4.0 and 4.1"
+    ],
+    "links": ["Vals AI leaderboard", "Terminal-Bench repository"]
+   }
+  },
+  {
+   "id": "k8s-agent-sandbox-harbor-example",
+   "section": "devops",
+   "kind": "release",
+   "title": "Kubernetes Agent Sandbox v1.0.10 مع مثال لتشغيل Terminal-Bench عبر Harbor",
+   "summary": "يضيف مشروع agent-sandbox التابع لـ Kubernetes مثالًا رسميًا يشغّل Terminal-Bench 2.0 عبر إطار Harbor، مع بيئة عزل مستقلة لكل محاولة على kind أو GKE. ويضيف الإصدار v1.0.10 أوامر mkdir وmove وcopy في حزمتي Python وGo، وحدودًا لتنفيذ الأوامر.",
+   "why": "لفرق المنصات التي تريد قياس وكلاء البرمجة على عنقودها الخاص: المثال يقدّم الإعداد والشبكة والتقارير جاهزة بدل كتابة شيفرة الربط بين المشغّل وبيئة العزل.",
+   "about": "يحوّل المثال كل محاولة في Harbor إلى طلب SandboxClaim على Kubernetes، مع قالب ومجمّع جاهز لكل صورة مهمة، ثم يحذف البيئة بعد انتهاء المحاولة. ويشرح ضبط الشبكة: السياسة الافتراضية تمنع DNS داخل العنقود، فيضيف القالب قاعدة خروج خاصة لكي تعمل اختبارات المهام.\n\nسجّل المشروع تشغيلين بالحل المرجعي على 10 مهام تجريبية: 7 من 10 على GKE وعلى kind، بلا أي خطأ في البنية التحتية، ومتوسط تجهيز 6.6 ثانية على GKE. والمهام الثلاث الفاشلة سببها المهام نفسها لا العنقود.\n\nملاحظة: حزمة التكامل التي يشير إليها المثال (k8s-agent-sandbox-harbor) لم تكن موجودة بعد في الفرع الرئيسي للمستودع في 6 نوفمبر 2026.",
+   "features": [
+    "بيئة عزل مستقلة لكل محاولة عبر SandboxClaim",
+    "تشغيل على kind محليًا أو على GKE",
+    "سكربت تقارير يحوّل النتائج إلى جدول",
+    "حزم Python وGo تضيف mkdir وmove وcopy"
+   ],
+   "repo": "kubernetes-sigs/agent-sandbox",
+   "links": [
+    {"label": "المثال على GitHub", "url": "https://github.com/kubernetes-sigs/agent-sandbox/tree/main/examples/harbor-terminal-bench"},
+    {"label": "الإصدار v1.0.10", "url": "https://github.com/kubernetes-sigs/agent-sandbox/releases/tag/v1.0.10"}
+   ],
+   "url": "https://github.com/kubernetes-sigs/agent-sandbox/tree/main/examples/harbor-terminal-bench",
+   "source": "github.com",
+   "importance": 1,
+   "tags": ["kubernetes", "sandbox", "benchmark", "agents"],
+   "en": {
+    "title": "Kubernetes Agent Sandbox v1.0.10, with an example that runs Terminal-Bench through Harbor",
+    "summary": "The Kubernetes agent-sandbox project adds an official example that runs Terminal-Bench 2.0 through the Harbor framework, with a separate sandbox for each trial on kind or GKE. Release v1.0.10 adds mkdir, move and copy to the Python and Go SDKs, and limits for command execution.",
+    "why": "For platform teams that want to measure coding agents on their own cluster: the example gives the setup, networking and reporting ready-made instead of writing the glue between the runner and the sandbox.",
+    "about": "The example turns each Harbor trial into a SandboxClaim on Kubernetes, with a template and warm pool per task image, and deletes the sandbox when the trial ends. It explains the network setup: the default policy blocks cluster DNS, so the template adds its own egress rule so that task tests can run.\n\nThe project recorded two runs with the reference solution on 10 sample tasks: 7 of 10 on both GKE and kind, with no infrastructure errors and a 6.6-second median setup on GKE. The three failures come from the tasks themselves, not the cluster.\n\nNote: the integration package the example points to (k8s-agent-sandbox-harbor) was not yet in the repository's main branch on 6 November 2026.",
+    "features": [
+     "A separate sandbox per trial through SandboxClaim",
+     "Runs on kind locally or on GKE",
+     "Report script that turns results into a table",
+     "Python and Go SDKs add mkdir, move and copy"
+    ],
+    "links": ["Example on GitHub", "Release v1.0.10"]
+   }
+  },
+  {
+   "id": "harnessflow-paper",
+   "section": "agents",
+   "kind": "article",
+   "title": "HarnessFlow: بحث شجري لتحسين أدوات الـ harness الخاصة بالوكلاء تلقائيًا",
+   "summary": "ورقة على arXiv (4 نوفمبر 2026) تحسّن الشيفرة المحيطة بالنموذج، أي الـ harness، تلقائيًا: تحتفظ بالنسخ المرشحة ودرجاتها في شجرة، وتختار عبر بحث شجرة مونت كارلو النسخة التي يعدّلها وكيل برمجة بعد ذلك. وتذكر متوسط 69.48% على ستة مقاييس، بزيادة 3.95 نقطة على Meta-Harness.",
+   "why": "لمن يبني وكلاء ويضبط تعليماتهم وأدواتهم يدويًا: الفكرة أن ميزانية تقييم صغيرة (15 محاولة لكل مقياس) قد تكفي لتحسين الأداء وخفض التكلفة. لكنها ورقة بلا شيفرة منشورة بعد.",
+   "about": "يقصد بالـ harness كل ما حول النموذج: التعليمات والأدوات وطريقة التعامل مع البيئة. تُبقي الطريقة النموذج والمهام ثابتين، وتبني شجرة من النسخ المرشحة ونتائجها، وتوازن سياسة البحث بين متابعة الفروع الواعدة واستكشاف فروع جديدة، ويعدّل وكيل برمجة النسخة المختارة مستعينًا بالشيفرة السابقة ونتائج التشغيل ومكتبة من الآليات القابلة لإعادة الاستخدام.\n\nتذكر الورقة أن النسخ المحسّنة بلغت متوسط 69.48% على ستة مقاييس في مهام الوكلاء والبرمجة والويب، بزيادة 10.89 نقطة على النسخ الأولى، مع تكلفة أقل لكل مهمة من النسخ المكتوبة يدويًا.\n\nحدود: لم نجد مستودع شيفرة منشورًا، والنتائج لم تُكرَّر بشكل مستقل بعد.",
+   "features": [
+    "تحسين الـ harness كاملًا لا التعليمات فقط",
+    "بحث شجرة مونت كارلو بميزانية 15 محاولة",
+    "69.48% متوسطًا على ستة مقاييس"
+   ],
+   "links": [
+    {"label": "الورقة على arXiv", "url": "https://arxiv.org/abs/2611.06254"}
+   ],
+   "url": "https://arxiv.org/abs/2611.06254",
+   "source": "arxiv.org",
+   "importance": 1,
+   "tags": ["agents", "research", "harness"],
+   "en": {
+    "title": "HarnessFlow: tree search to improve agent harnesses automatically",
+    "summary": "An arXiv paper (4 November 2026) that improves the code around a model, the harness, automatically: it keeps candidate versions and their scores in a tree and uses Monte Carlo tree search to pick which one a coding agent refines next. It reports a 69.48% average across six benchmarks, 3.95 points above Meta-Harness.",
+    "why": "For people who build agents and tune their prompts and tools by hand: the idea is that a small evaluation budget (15 attempts per benchmark) may be enough to raise scores and cut cost. It is a paper with no published code yet.",
+    "about": "The harness is everything around the model: instructions, tools and how it deals with the environment. The method keeps the model and tasks fixed, builds a tree of candidate versions and their results, balances following promising branches with exploring new ones, and has a coding agent edit the chosen version using earlier code, run feedback and a library of reusable mechanisms.\n\nThe paper reports that the improved versions reach a 69.48% average on six benchmarks covering agent, coding and web tasks, 10.89 points above the starting versions, with lower cost per task than hand-written ones.\n\nLimits: we found no published code repository, and the results have not been reproduced independently yet.",
+    "features": [
+     "Optimizes the whole harness, not only prompts",
+     "Monte Carlo tree search with a 15-attempt budget",
+     "69.48% average across six benchmarks"
+    ],
+    "links": ["Paper on arXiv"]
+   }
+  }
+ ]
+}
