@@ -1,64 +1,64 @@
 {
   "awesome": {
     "hesreallyhim/awesome-claude-code": {
-      "sha": "1c88da78767b4ae664e76861b7afc17a2754d4d4",
-      "date": "2026-11-05T12:26:54.334Z"
+      "sha": "cf4d966ebc182260ad7f760331984e67cbc85d6d",
+      "date": "2026-11-06T05:43:17.047Z"
     },
     "jqueryscript/awesome-claude-code": {
-      "sha": "4d0db41e85da437e354a8efcac6e8201d3b187d0",
-      "date": "2026-11-05T12:26:54.993Z"
+      "sha": "bf32b78bae807323db5ae0ed933f77633bdd8301",
+      "date": "2026-11-06T05:43:18.536Z"
     },
     "ComposioHQ/awesome-claude-skills": {
       "sha": "be2a406907dbc61b73e6827ded415c96139d13a2",
-      "date": "2026-11-05T12:26:55.218Z"
+      "date": "2026-11-06T05:43:19.442Z"
     },
     "travisvn/awesome-claude-skills": {
       "sha": "1da55aa810f206d3fe2005e7e3989b15a275d942",
-      "date": "2026-11-05T12:26:55.450Z"
+      "date": "2026-11-06T05:43:20.311Z"
     },
     "VoltAgent/awesome-agent-skills": {
-      "sha": "a6f9992ceaef05841a9b92e6849d90004a61710c",
-      "date": "2026-11-05T12:26:55.767Z"
+      "sha": "6d483e29da745a010d88974ef6d0e50d15755e9a",
+      "date": "2026-11-06T05:43:21.800Z"
     },
     "VoltAgent/awesome-claude-code-subagents": {
-      "sha": "408d3c9eee2d0c75c12a3abb5de29e53c2ca6b9e",
-      "date": "2026-11-05T12:26:56.036Z"
+      "sha": "ed74d115b7fb7026a22a4f816a8e3250f425e3b4",
+      "date": "2026-11-06T05:43:23.944Z"
     },
     "punkpeye/awesome-mcp-servers": {
-      "sha": "f225f117f92626e6b7d5d2912746d9269e3d037b",
-      "date": "2026-11-05T12:26:56.338Z"
+      "sha": "29f2d490cc02468e7c9d87b0cf68d40d3041e7ef",
+      "date": "2026-11-06T05:43:26.547Z"
     },
     "wong2/awesome-mcp-servers": {
       "sha": "39eb1d76d76e562657f3c657266a504cea159e23",
-      "date": "2026-11-05T12:26:56.552Z"
+      "date": "2026-11-06T05:43:27.428Z"
     },
     "appcypher/awesome-mcp-servers": {
       "sha": "280218b4bba97a49facf929f8012dec5e30384b6",
-      "date": "2026-11-05T12:26:56.759Z"
+      "date": "2026-11-06T05:43:28.309Z"
     },
     "e2b-dev/awesome-ai-agents": {
       "sha": "9596ab1e69fbbb6c95291141c8dab5c181083216",
-      "date": "2026-11-05T12:26:57.266Z"
+      "date": "2026-11-06T05:43:30.595Z"
     },
     "Shubhamsaboo/awesome-llm-apps": {
-      "sha": "6c16b23f1bacd0fdf240bb5141ef45e59e82c306",
-      "date": "2026-11-05T12:26:57.459Z"
+      "sha": "7aab134864933379a691e13a32904daa935a3ff9",
+      "date": "2026-11-06T05:43:31.817Z"
     },
     "github/awesome-copilot": {
-      "sha": "5269f7ea2d6c3a9bfda5ed878b6726cf509121fd",
-      "date": "2026-11-05T12:26:57.735Z"
+      "sha": "60dcb901abbd87609d93d6281f1916c22b8bbd8c",
+      "date": "2026-11-06T05:43:33.348Z"
     },
     "VoltAgent/official-mcp-servers": {
-      "sha": "3964a7030860613df3550c6c58974ea10615498f",
-      "date": "2026-11-05T12:26:57.024Z"
+      "sha": "5a41f1c6f9a4dafec50f42cb5c59c99d15c9497e",
+      "date": "2026-11-06T05:43:29.684Z"
     },
     "Picrew/awesome-agent-harness": {
-      "sha": "1ae44c112978de3fdaaad5d199cb3ce8580e44f3",
-      "date": "2026-11-05T12:26:58.398Z"
+      "sha": "e7e8f8d268f7ac5311b778832327e4be2f555507",
+      "date": "2026-11-06T05:43:34.557Z"
     },
     "AutoJunjie/awesome-agent-harness": {
       "sha": "1e3f26371ec1a765efe0268b1e63374bee2aaa04",
-      "date": "2026-11-05T12:26:58.622Z"
+      "date": "2026-11-06T05:43:35.447Z"
     }
   },
   "releases": {
@@ -66,7 +66,7 @@
     "anthropics/claude-agent-sdk-python": "v0.2.178",
     "anthropics/claude-agent-sdk-typescript": "v0.3.318",
     "obra/superpowers": "v7.0.2",
-    "openai/codex": "rust-v0.166.0",
+    "openai/codex": "rust-v0.167.0",
     "google-gemini/gemini-cli": "v0.67.0",
     "anomalyco/opencode": "v2.2.5",
     "cline/cline": "v4.1.26",
@@ -82,26 +82,26 @@
     "prism-php/prism": "v0.102.0",
     "vercel/next.js": "v16.4.5",
     "tailwindlabs/tailwindcss": "v4.3.4",
-    "microsoft/playwright": "v1.64.1",
-    "github/spec-kit": "v1.3.0",
+    "microsoft/playwright": "v1.65.0",
+    "github/spec-kit": "v1.3.1",
     "n8n-io/n8n": "n8n@3.1.0",
-    "ollama/ollama": "v0.40.14",
+    "ollama/ollama": "v0.40.15",
     "vercel/ai": "ai@7.0.163",
     "docker/compose": "v5.7.0",
     "coollabsio/coolify": "v4.6.0",
-    "AzmSquad/squad-kit": "v1.2.0",
+    "AzmSquad/squad-kit": "v1.2.2",
     "harbor-framework/harbor": "v0.25.0",
     "coleam00/Archon": "v0.13.2",
-    "Chorus-AIDLC/Chorus": "v0.23.0",
+    "Chorus-AIDLC/Chorus": "v0.24.0",
     "awslabs/aidlc-workflows": "v2.11.3",
     "UKGovernmentBEIS/inspect_ai": "0.3.287",
-    "OpenHands/OpenHands": "v1.35.0",
+    "OpenHands/OpenHands": "v1.36.0",
     "e2b-dev/E2B": "v0.1.4",
-    "kubernetes-sigs/agent-sandbox": "v1.0.9",
+    "kubernetes-sigs/agent-sandbox": "v1.0.10",
     "multica-ai/multica": "v0.8.0",
     "paperclipai/paperclip": "v2026.1023.0",
     "bmad-code-org/BMAD-METHOD": "v6.12.4",
-    "langfuse/langfuse": "v4.75.0",
+    "langfuse/langfuse": "v4.76.0",
     "TencentCloud/CubeSandbox": "v0.7.3",
     "superradcompany/microsandbox": "v0.7.13",
     "NVIDIA/OpenShell": "v0.1.7",
