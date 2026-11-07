@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-06",
+ "updated": "2026-11-07",
  "sources": [
   {
    "name": "Picrew/awesome-agent-harness",
@@ -7760,6 +7760,74 @@
    "ar": {
     "summary": "يشغّل عدة وكلاء برمجة في مساحات عمل متوازية؛ استحوذت عليه Meta في نوفمبر 2026، وخدمته السحابية تُغلق.",
     "group": "منسقو الوكلاء"
+   }
+  },
+  {
+   "name": "Exgentic",
+   "repo": "Exgentic/exgentic",
+   "url": "https://github.com/Exgentic/exgentic",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": null,
+   "tags": [
+    "found-by-search"
+   ],
+   "summary": "General agent evaluation framework: any agent (incl. Claude Code, Codex CLI, Gemini CLI) on any benchmark through one CLI.",
+   "lists": [],
+   "ar": {
+    "summary": "إطار عام لتقييم الوكلاء: أي وكيل (ومنها Claude Code وCodex CLI وGemini CLI) على أي مقياس عبر سطر أوامر واحد.",
+    "group": "أدوات التقييم والمقاييس"
+   }
+  },
+  {
+   "name": "TrueForge",
+   "repo": "truefoundry/trueforge",
+   "url": "https://github.com/truefoundry/trueforge",
+   "category": "runtime",
+   "group": "Agent Runtimes",
+   "stars": null,
+   "tags": [
+    "found-by-search"
+   ],
+   "summary": "Open-source (MIT) server-side agent harness from TrueFoundry with approvals, subagents, API and UI SDKs.",
+   "lists": [],
+   "ar": {
+    "summary": "أداة harness مفتوحة المصدر (MIT) على الخادم من TrueFoundry، مع موافقات ووكلاء فرعيين وحزم للواجهة البرمجية والواجهة.",
+    "group": "بيئات تشغيل الوكلاء"
+   }
+  },
+  {
+   "name": "Agensh",
+   "repo": "microsoft/Agensh",
+   "url": "https://github.com/microsoft/Agensh",
+   "category": "sdlc",
+   "group": "Agent Orchestrators",
+   "stars": null,
+   "tags": [
+    "found-by-search"
+   ],
+   "summary": "Microsoft Research harness where up to 1,024 coding agents self-organize via Gitea and Mattermost, no central orchestrator.",
+   "lists": [],
+   "ar": {
+    "summary": "أداة harness من Microsoft Research ينظّم فيها حتى 1,024 وكيل برمجة أنفسهم عبر Gitea وMattermost دون منسّق مركزي.",
+    "group": "منسقو الوكلاء"
+   }
+  },
+  {
+   "name": "Render Sandboxes",
+   "repo": null,
+   "url": "https://render.com/sandboxes",
+   "category": "sandbox",
+   "group": "Execution Substrates & Sandboxing",
+   "stars": null,
+   "tags": [
+    "found-by-search"
+   ],
+   "summary": "Render's Firecracker microVM sandboxes for agents with snapshots and idle suspension; public beta since Nov 2026.",
+   "lists": [],
+   "ar": {
+    "summary": "بيئات عزل من Render بآلات افتراضية مصغّرة Firecracker للوكلاء، مع لقطات وإيقاف عند الخمول؛ تجريبية عامة منذ نوفمبر 2026.",
+    "group": "بيئات التنفيذ والعزل"
    }
   }
  ],

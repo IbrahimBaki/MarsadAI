@@ -1,6 +1,6 @@
 {
  "track": "t3",
- "checked": "2026-11-06",
+ "checked": "2026-11-07",
  "goal": {
   "en": "Build one place where Azm can run any harness (squad-kit, azm-harness, Claude Code, others) on the same real Azm tasks, in isolation, and get a clear answer: which harness, with which model, gives the best quality for the cost, and does it follow our standards?",
   "ar": "بناء مكان واحد تشغّل فيه عزم أي harness (مثل squad-kit وazm-harness وClaude Code وغيرها) على المهام الحقيقية نفسها من مشاريع عزم، في بيئة معزولة، لتحصل على إجابة واضحة: أي harness، مع أي نموذج، يعطي أفضل جودة مقابل التكلفة، وهل يلتزم بمعاييرنا؟"
@@ -94,8 +94,8 @@
    },
    "decision": "build",
    "plan": {
-    "en": "Build Azm's own task set with the SWE-bench recipe: take a closed ticket, pin the repo before the fix, write the brief from the ticket, and keep hidden tests that fail before and pass after. Start with 10 tasks from one repo, grow to 20-50 per team. Keep a small slice of Terminal-Bench as a public sanity check, pinned to one version (2.0 matches most published harness studies; 4.x is the current leaderboard), because scores do not carry across versions.",
-    "ar": "نبني مجموعة مهام خاصة بعزم على طريقة SWE-bench: نأخذ تذكرة مغلقة، ونثبّت المستودع على حالته قبل الإصلاح، ونكتب وصف المهمة من التذكرة، ونحتفظ باختبارات مخفية تفشل قبل الإصلاح وتنجح بعده. نبدأ بعشر مهام من مستودع واحد، ثم نصل إلى 20-50 مهمة لكل فريق. ونُبقي جزءًا صغيرًا من Terminal-Bench للتحقق العام، مثبّتًا على إصدار واحد (2.0 يطابق معظم دراسات الـ harness المنشورة، و4.x هو لوحة النتائج الحالية)، لأن الدرجات لا تنتقل بين الإصدارات."
+    "en": "Build Azm's own task set with the SWE-bench recipe: take a closed ticket, pin the repo before the fix, write the brief from the ticket, and keep hidden tests that fail before and pass after. Start with 10 tasks from one repo, grow to 20-50 per team. Keep a small slice of Terminal-Bench as a public sanity check, pinned to one version (2.0 matches most published harness studies; 4.x is the current leaderboard), because scores do not carry across versions. New in Scale's SWE-Bench Pro V2 (Sept 2026), a protocol to copy for our own tasks: during the run the agent can reach only the model endpoint (web tools off, because agents were fetching the fixing commits), and every answer is re-graded on a clean image, which caught a model forging a Go checksum. Invalid tasks were dropped (731 to 642) and a task only ships if it passes with the reference fix and fails with an empty one.",
+    "ar": "نبني مجموعة مهام خاصة بعزم على طريقة SWE-bench: نأخذ تذكرة مغلقة، ونثبّت المستودع على حالته قبل الإصلاح، ونكتب وصف المهمة من التذكرة، ونحتفظ باختبارات مخفية تفشل قبل الإصلاح وتنجح بعده. نبدأ بعشر مهام من مستودع واحد، ثم نصل إلى 20-50 مهمة لكل فريق. ونُبقي جزءًا صغيرًا من Terminal-Bench للتحقق العام، مثبّتًا على إصدار واحد (2.0 يطابق معظم دراسات الـ harness المنشورة، و4.x هو لوحة النتائج الحالية)، لأن الدرجات لا تنتقل بين الإصدارات. جديد في SWE-Bench Pro V2 من Scale ‏(سبتمبر 2026)، وهو بروتوكول ننسخه لمهامنا: أثناء التشغيل لا يصل الوكيل إلا إلى خادم النموذج (أدوات الويب معطلة لأن وكلاء كانوا يجلبون الـ commits التي تحتوي الإصلاح)، وتُعاد درجة كل إجابة على صورة نظيفة، وقد كشف ذلك نموذجًا زوّر بصمة تحقق في Go. وحُذفت المهام غير الصالحة (من 731 إلى 642)، ولا تُعتمد مهمة إلا إذا نجحت مع الإصلاح المرجعي وفشلت مع إصلاح فارغ."
    },
    "pick": [
     "swe-bench"
@@ -254,8 +254,8 @@
    },
    "decision": "benchmark",
    "plan": {
-    "en": "Test squad-kit and azm-harness against the strongest alternatives on the same tasks: Archon and AI-DLC for the full cycle, Superpowers as a light baseline. Under them, compare Claude Code, Codex CLI, opencode and pi, with mini-swe-agent as the control group (how much does a harness add over a 100-line agent?).",
-    "ar": "نختبر squad-kit وazm-harness أمام أقوى البدائل على المهام نفسها: Archon وAI-DLC للدورة الكاملة، وSuperpowers كخط أساس خفيف. وتحتها نقارن Claude Code وCodex CLI وopencode وpi، مع mini-swe-agent كمجموعة ضابطة (كم يضيف الـ harness فوق وكيل من 100 سطر؟)."
+    "en": "Test squad-kit and azm-harness against the strongest alternatives on the same tasks: Archon and AI-DLC for the full cycle, Superpowers as a light baseline. Under them, compare Claude Code, Codex CLI, opencode and pi, with mini-swe-agent as the control group (how much does a harness add over a 100-line agent?). Two newer reference points: TrueForge (TrueFoundry, MIT) is a self-hostable server-side harness pitched against Claude Managed Agents, and Microsoft's Agensh coordinates up to 1,024 Copilot agents without a central orchestrator. A September 2026 study of 176 harness settings found context management matters a lot with small context windows and little at 128k, and that strong models do better with bash alone than with predefined tools, so test harness choices per model.",
+    "ar": "نختبر squad-kit وazm-harness أمام أقوى البدائل على المهام نفسها: Archon وAI-DLC للدورة الكاملة، وSuperpowers كخط أساس خفيف. وتحتها نقارن Claude Code وCodex CLI وopencode وpi، مع mini-swe-agent كمجموعة ضابطة (كم يضيف الـ harness فوق وكيل من 100 سطر؟). مرجعان أحدث: TrueForge ‏(TrueFoundry، رخصة MIT) أداة harness على الخادم يمكن استضافتها لدينا وتُطرح منافسًا لـ Claude Managed Agents، وAgensh من Microsoft ينسّق حتى 1,024 وكيلًا من Copilot دون منسّق مركزي. ووجدت دراسة من سبتمبر 2026 شملت 176 إعدادًا للـ harness أن إدارة السياق مهمة جدًا مع نوافذ السياق الصغيرة وقليلة الأثر عند 128 ألف رمز، وأن النماذج القوية تؤدي أفضل بأداة bash وحدها منها بأدوات معرّفة مسبقًا، لذا تُختبر خيارات الـ harness لكل نموذج على حدة."
    },
    "pick": [
     "squad-kit",
@@ -268,7 +268,9 @@
     "spec-kit",
     "chorus",
     "multica",
-    "qm"
+    "qm",
+    "trueforge",
+    "agensh"
    ],
    "compare": {
     "tools": [
@@ -698,8 +700,8 @@
    },
    "decision": "adopt",
    "plan": {
-    "en": "Use Harbor. It already runs Claude Code, Codex CLI, OpenHands and others in containers, locally or in cloud sandboxes, and accepts our own tasks. We write one adapter per Azm harness. Use Inspect AI only for non-code tasks (spec quality, reviews).",
-    "ar": "نستخدم Harbor؛ فهو يشغّل بالفعل Claude Code وCodex CLI وOpenHands وغيرها داخل حاويات، محليًا أو في بيئات سحابية، ويقبل مهامنا الخاصة. نكتب موصّلًا واحدًا لكل harness من عزم. ونستخدم Inspect AI للمهام غير البرمجية فقط (جودة المواصفات والمراجعات)."
+    "en": "Use Harbor. It already runs Claude Code, Codex CLI, OpenHands and others in containers, locally or in cloud sandboxes, and accepts our own tasks. We write one adapter per Azm harness. Use Inspect AI only for non-code tasks (spec quality, reviews). Exgentic is a smaller 'any agent on any benchmark' framework that already runs Claude Code, Codex CLI and Gemini CLI; keep it as a cross-check, not a replacement.",
+    "ar": "نستخدم Harbor؛ فهو يشغّل بالفعل Claude Code وCodex CLI وOpenHands وغيرها داخل حاويات، محليًا أو في بيئات سحابية، ويقبل مهامنا الخاصة. نكتب موصّلًا واحدًا لكل harness من عزم. ونستخدم Inspect AI للمهام غير البرمجية فقط (جودة المواصفات والمراجعات). وExgentic إطار أصغر من نوع «أي وكيل على أي مقياس» يشغّل فعلًا Claude Code وCodex CLI وGemini CLI؛ نبقيه للتحقق المتقاطع لا بديلًا."
    },
    "pick": [
     "harbor"
@@ -708,7 +710,8 @@
     "inspect-ai",
     "aws-harness-benchmarks",
     "runloop-benchmarks",
-    "openhands-benchmarks"
+    "openhands-benchmarks",
+    "exgentic"
    ],
    "compare": {
     "tools": [
@@ -901,7 +904,8 @@
     "strands-box",
     "akamai-agent-sandbox",
     "openkruise-agents",
-    "agent-substrate"
+    "agent-substrate",
+    "render-sandboxes"
    ],
    "modes": [
     {
@@ -1332,8 +1336,8 @@
    },
    "decision": "adopt",
    "plan": {
-    "en": "LiteLLM as the model gateway (one API, per-team keys and budgets). OpenTelemetry from each harness into Langfuse for traces and cost. Both are open source and self-hosted.",
-    "ar": "نستخدم LiteLLM بوابةً للنماذج (واجهة واحدة، ومفاتيح وميزانيات لكل فريق)، ونرسل بيانات OpenTelemetry من كل harness إلى Langfuse للتتبّع والتكلفة. كلاهما مفتوح المصدر ومستضاف لدينا."
+    "en": "LiteLLM as the model gateway (one API, per-team keys and budgets). OpenTelemetry from each harness into Langfuse for traces and cost. Both are open source and self-hosted. Count cache tokens once: a September 2026 harness-vs-model study had to withdraw its first cost ratios because cached tokens were double-counted. Also record runs that hit the time limit, since 22 of 81 such runs in that study had already produced a passing patch.",
+    "ar": "نستخدم LiteLLM بوابةً للنماذج (واجهة واحدة، ومفاتيح وميزانيات لكل فريق)، ونرسل بيانات OpenTelemetry من كل harness إلى Langfuse للتتبّع والتكلفة. كلاهما مفتوح المصدر ومستضاف لدينا. احسب رموز الذاكرة المؤقتة (cache) مرة واحدة: اضطرت دراسة في سبتمبر 2026 تقارن الـ harness بالنموذج إلى سحب نسب التكلفة الأولى لأنها حسبت هذه الرموز مرتين. وسجّل التشغيلات التي بلغت الحد الزمني، إذ كانت 22 من 81 تشغيلًا كهذا في تلك الدراسة قد أنتجت إصلاحًا ناجحًا بالفعل."
    },
    "pick": [
     "litellm",

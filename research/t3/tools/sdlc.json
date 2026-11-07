@@ -1,6 +1,6 @@
 {
  "category": "sdlc",
- "checked": "2026-11-06",
+ "checked": "2026-11-07",
  "tools": [
   {
    "id": "squad-kit",
@@ -494,7 +494,7 @@
    "url": "https://paperclip.ing",
    "license": "MIT",
    "pricing": "Free",
-   "version": "v2026.1023.0",
+   "version": "v2026.1106.0",
    "summary": "Open-source orchestration for teams of AI agents organised as a company: org charts, goals, budgets, governance and cost tracking over any agent and harness.",
    "how": "Node.js server and React UI; you define a goal, 'hire' agents (any provider/harness) into roles, set budgets and approve strategy; adapters connect custom processes and HTTP endpoints.",
    "features": [
@@ -715,7 +715,7 @@
    "url": "https://github.com/github/spec-kit",
    "license": "MIT",
    "pricing": "Free",
-   "version": "v1.3.1",
+   "version": "v1.3.2",
    "tier": "deep",
    "summary": "GitHub's toolkit for spec-driven development: a CLI (`specify`) and slash commands that take you from constitution and spec to plan, tasks and implementation, across many coding agents.",
    "how": "`specify init` scaffolds templates and commands for the chosen agent; commands /constitution, /specify, /plan, /tasks, /implement produce Markdown artifacts that guide the agent step by step.",
@@ -2003,6 +2003,85 @@
     ],
     "role": "لا نعتمده: الخدمة السحابية تُغلق. أبقيناه هنا ليعرف الفريق أنه كان موجودًا ولماذا ليس خيارًا.",
     "pricing": "الخدمة السحابية تُغلق في 20 نوفمبر 2026 (نوفمبر 2026)"
+   }
+  },
+  {
+   "id": "agensh",
+   "name": "Agensh",
+   "category": "sdlc",
+   "kind": "open-source",
+   "vendor": "Microsoft Research",
+   "repo": "microsoft/Agensh",
+   "url": "https://github.com/microsoft/Agensh",
+   "license": "MIT",
+   "pricing": "Free",
+   "status": "active",
+   "version": "No tagged release (code published Oct 2026)",
+   "tier": "brief",
+   "summary": "A multi-agent 'organization' harness from Microsoft Research that lets hundreds of coding agents work on one project without a central orchestrator. It sits above a single-agent harness (Copilot in the paper) and adds the shared workspace, messaging and shared notes.",
+   "how": "Every worker gets the same prompt and loops: gather context, claim a sub-task, act, verify, merge. Work is shared through a Gitea server (branches, issues, pull requests), messages through Mattermost, and findings through an append-only shared log. Workers run in containers spread over many nodes.",
+   "features": [
+    "No central orchestrator: agents claim their own sub-tasks",
+    "Gitea for code, Mattermost for messages, shared typed notes",
+    "Adapters for underlying harnesses (Copilot used in experiments)",
+    "Scales to 1,024 agents in the paper"
+   ],
+   "strengths": [
+    "Reported gains with scale on ProgramBench (6-hour budget): mean test-pass rate across five hard tasks rose from 19.31% with 1 agent to 28.78% with 128; on Pandoc from 33.89% (1) to 55.06% (1,024)"
+   ],
+   "weaknesses": [
+    "One model, one harness and one budget; the 1,024-agent result covers one task; no repeat-run variance reported"
+   ],
+   "gaps": [
+    "Research system: no SDLC gates, human approvals, cost controls or standards checks"
+   ],
+   "fit": {
+    "verdict": "inspire",
+    "role": "Shows that agent count and cost per point must be axes in our reports, not only pass rate. A reference if Azm later tests many-agent setups."
+   },
+   "scores": {
+    "fit": 2,
+    "maturity": 1,
+    "openness": 5,
+    "agnostic": 3,
+    "config": 2,
+    "measure": 2,
+    "safety": 2
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/microsoft/Agensh"
+    ],
+    [
+     "Paper",
+     "https://arxiv.org/abs/2609.26781"
+    ]
+   ],
+   "sources": [
+    "https://www.alphaxiv.org/abs/2609.26781",
+    "https://github.com/microsoft/Agensh"
+   ],
+   "ar": {
+    "summary": "أداة harness «تنظيمية» متعددة الوكلاء من Microsoft Research، تتيح لمئات من وكلاء البرمجة العمل على مشروع واحد دون منسّق مركزي. تعمل فوق harness لوكيل واحد (Copilot في الورقة) وتضيف مساحة العمل المشتركة والمراسلة والملاحظات المشتركة.",
+    "how": "يتلقى كل عامل التعليمات نفسها ويكرر حلقة: جمع السياق، ثم حجز مهمة فرعية، ثم التنفيذ، ثم التحقق، ثم الدمج. تُشارَك الشيفرة عبر خادم Gitea (فروع وتذاكر وطلبات دمج)، والرسائل عبر Mattermost، والنتائج عبر سجل مشترك لا يُحذف منه. ويعمل العمال في حاويات موزعة على عقد كثيرة.",
+    "features": [
+     "بلا منسّق مركزي: الوكلاء يحجزون مهامهم الفرعية بأنفسهم",
+     "Gitea للشيفرة وMattermost للرسائل وملاحظات مشتركة مصنّفة",
+     "موائمات لأدوات الـ harness الأساسية (استُخدم Copilot في التجارب)",
+     "يتسع إلى 1,024 وكيلًا في الورقة"
+    ],
+    "strengths": [
+     "مكاسب مُعلنة مع زيادة العدد على ProgramBench (ميزانية 6 ساعات): ارتفع متوسط نسبة نجاح الاختبارات في خمس مهام صعبة من 19.31% بوكيل واحد إلى 28.78% بـ 128 وكيلًا؛ وفي Pandoc من 33.89% (وكيل واحد) إلى 55.06% (1,024 وكيلًا)"
+    ],
+    "weaknesses": [
+     "نموذج واحد وharness واحد وميزانية واحدة؛ ونتيجة 1,024 وكيلًا تخص مهمة واحدة؛ ولا تذكر تباين التشغيلات المتكررة"
+    ],
+    "gaps": [
+     "نظام بحثي: بلا بوابات لدورة التطوير، ولا موافقات بشرية، ولا ضبط للتكلفة، ولا فحص للمعايير"
+    ],
+    "role": "يبيّن أن عدد الوكلاء وتكلفة كل نقطة تحسّن يجب أن يكونا محورين في تقاريرنا، لا نسبة النجاح وحدها. مرجع إن اختبرت عزم لاحقًا إعدادات بوكلاء كثيرين.",
+    "pricing": "مجاني"
    }
   }
  ]

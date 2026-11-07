@@ -1,6 +1,6 @@
 {
  "category": "sandbox",
- "checked": "2026-11-06",
+ "checked": "2026-11-07",
  "tools": [
   {
    "id": "e2b",
@@ -1753,6 +1753,84 @@
     ],
     "role": "خيار ثانٍ مستضاف لدينا بجانب Kubernetes agent-sandbox. يستحق التجربة إن استضافت عزم لاحقًا جلسات squad طويلة لمطورين كثيرين على خوادم مشتركة؛ أما تشغيلات القياس فلدى agent-sandbox طريق جاهز مع Harbor.",
     "pricing": "مجاني (على عنقود Kubernetes لديك)"
+   }
+  },
+  {
+   "id": "render-sandboxes",
+   "name": "Render Sandboxes",
+   "category": "sandbox",
+   "kind": "commercial",
+   "vendor": "Render",
+   "repo": null,
+   "url": "https://render.com/sandboxes",
+   "license": "Proprietary",
+   "pricing": "Billed on active CPU use and allocated memory (Nov 2026); rates not in the source we read",
+   "status": "beta",
+   "version": "Public beta (4 Nov 2026)",
+   "tier": "brief",
+   "summary": "Isolated Linux sandboxes for agents on the Render cloud, in public beta since 4 November 2026. Agents can install packages, edit files and run code, inside the same Render workspace, billing and API keys as a team's existing apps.",
+   "how": "Firecracker microVMs with snapshots and automatic suspension when idle; billed for active CPU rather than wall-clock time.",
+   "features": [
+    "Firecracker microVM isolation",
+    "Snapshots",
+    "Idle suspension",
+    "Same workspace and API keys as Render apps"
+   ],
+   "strengths": [
+    "Snapshots plus idle suspension fit 'prepare a repo once, fan out many runs'"
+   ],
+   "weaknesses": [
+    "Public beta; limits and prices not verified from Render's own docs"
+   ],
+   "gaps": [
+    "Managed only; no self-hosting for private code"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Another managed Firecracker option for burst capacity, next to E2B, Modal and Vercel. Not for private repos without a data agreement."
+   },
+   "scores": {
+    "fit": 2,
+    "maturity": 2,
+    "openness": 1,
+    "agnostic": 4,
+    "config": 3,
+    "measure": 1,
+    "safety": 4
+   },
+   "links": [
+    [
+     "Website",
+     "https://render.com/sandboxes"
+    ],
+    [
+     "News (RuntimeWire)",
+     "https://runtimewire.com/article/render-launches-sandboxes-public-beta-agents"
+    ]
+   ],
+   "sources": [
+    "https://runtimewire.com/article/render-launches-sandboxes-public-beta-agents"
+   ],
+   "ar": {
+    "summary": "بيئات Linux معزولة للوكلاء على سحابة Render، في مرحلة تجريبية عامة منذ 4 نوفمبر 2026. يستطيع الوكلاء فيها تثبيت الحزم وتعديل الملفات وتشغيل الشيفرة، داخل مساحة العمل نفسها في Render وبالفوترة ومفاتيح الواجهة نفسها لتطبيقات الفريق الحالية.",
+    "how": "آلات افتراضية مصغّرة من Firecracker مع لقطات (snapshots) وإيقاف تلقائي عند الخمول؛ والفوترة على وقت استخدام المعالج الفعلي لا على الوقت الكلي.",
+    "features": [
+     "عزل بآلات افتراضية مصغّرة من Firecracker",
+     "لقطات",
+     "إيقاف عند الخمول",
+     "مساحة العمل ومفاتيح الواجهة نفسها لتطبيقات Render"
+    ],
+    "strengths": [
+     "اللقطات مع الإيقاف عند الخمول تناسب «تجهيز المستودع مرة واحدة ثم تشغيل محاولات كثيرة منه»"
+    ],
+    "weaknesses": [
+     "مرحلة تجريبية عامة؛ ولم نتحقق من الحدود والأسعار من وثائق Render نفسها"
+    ],
+    "gaps": [
+     "خدمة مُدارة فقط؛ لا استضافة ذاتية للشيفرة الخاصة"
+    ],
+    "role": "خيار مُدار آخر بتقنية Firecracker للسعة المؤقتة، بجانب E2B وModal وVercel. لا يصلح للمستودعات الخاصة دون اتفاقية بيانات.",
+    "pricing": "الفوترة على استخدام المعالج الفعلي والذاكرة المخصصة (نوفمبر 2026)؛ والأسعار غير مذكورة في المصدر الذي قرأناه"
    }
   }
  ]

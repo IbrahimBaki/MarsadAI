@@ -1,6 +1,6 @@
 {
  "category": "eval",
- "checked": "2026-11-06",
+ "checked": "2026-11-07",
  "tools": [
   {
    "id": "harbor",
@@ -205,7 +205,7 @@
     "role": "بديل أو مكمّل لـ Harbor في المهام غير البرمجية (أسئلة المستودع، مراجعة التصميم، أسئلة المعايير) وللعزل الصارم عبر إضافاته.",
     "pricing": "مجاني"
    },
-   "version": "0.3.287"
+   "version": "0.3.288"
   },
   {
    "id": "aws-harness-benchmarks",
@@ -1512,6 +1512,89 @@
     ],
     "role": "نقرؤها لمرحلة «تحسين الـ harness تلقائيًا»: فكرة ميزانية شجرة البحث قد تجعل تشغيلًا لاحقًا بأسلوب Meta-Harness على مهام عزم أقل تكلفة.",
     "pricing": "مجانية (ورقة بحثية)"
+   }
+  },
+  {
+   "id": "exgentic",
+   "name": "Exgentic",
+   "category": "eval",
+   "kind": "open-source",
+   "vendor": "Exgentic team (research project, arXiv 2602.22953)",
+   "repo": "Exgentic/exgentic",
+   "url": "https://github.com/Exgentic/exgentic",
+   "license": "Apache-2.0 per the GitHub README (the PyPI page says MIT)",
+   "pricing": "Free",
+   "status": "active",
+   "version": "0.3.5 (PyPI, Apr 2026)",
+   "tier": "brief",
+   "summary": "A general agent evaluation framework: one command line that runs any supported agent on any supported benchmark with the same interface. Its agents already include Claude Code, Codex CLI and Gemini CLI, and it feeds a public 'general agent' leaderboard.",
+   "how": "You install it with uv or pip, list benchmarks and agents, then run `exgentic evaluate --benchmark … --agent … --model …`. Benchmarks install on first run; a Docker runner isolates each benchmark in containers. A dashboard and batch mode compare runs.",
+   "features": [
+    "Same interface for every agent × benchmark pair",
+    "Agents: Claude Code, Codex CLI, Gemini CLI, SmolAgents, OpenAI MCP, plain tool calling",
+    "Benchmarks include SWE-bench, tau2, AppWorld, BFCL",
+    "Docker runner, batch runs and a results dashboard"
+   ],
+   "strengths": [
+    "Already runs CLI harnesses side by side, the same shape as our harness × model matrix"
+   ],
+   "weaknesses": [
+    "Small project (under 100 stars); few coding benchmarks; license is stated differently on GitHub and PyPI"
+   ],
+   "gaps": [
+    "No private task mining, standards scoring or team reports; Harbor covers the coding runner role better today"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "A second 'any agent on any benchmark' runner to keep next to Harbor; useful as a cross-check if Harbor results look odd."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 2,
+    "openness": 4,
+    "agnostic": 4,
+    "config": 3,
+    "measure": 3,
+    "safety": 3
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/Exgentic/exgentic"
+    ],
+    [
+     "PyPI",
+     "https://pypi.org/project/exgentic"
+    ],
+    [
+     "Paper",
+     "https://arxiv.org/abs/2602.22953"
+    ]
+   ],
+   "sources": [
+    "https://github.com/Exgentic/exgentic",
+    "https://pypi.org/project/exgentic"
+   ],
+   "ar": {
+    "summary": "إطار عام لتقييم الوكلاء: سطر أوامر واحد يشغّل أي وكيل مدعوم على أي مقياس مدعوم بالواجهة نفسها. ومن وكلائه فعلًا Claude Code وCodex CLI وGemini CLI، ويغذّي لوحة صدارة عامة «للوكلاء العامين».",
+    "how": "تثبّته عبر uv أو pip، وتعرض المقاييس والوكلاء، ثم تشغّل الأمر `exgentic evaluate --benchmark … --agent … --model …`. تُثبَّت المقاييس عند أول تشغيل، ويعزل مشغّل Docker كل مقياس داخل حاويات، وتتيح لوحة عرض ووضع الدفعات مقارنة التشغيلات.",
+    "features": [
+     "واجهة واحدة لكل زوج من الوكيل والمقياس",
+     "الوكلاء: Claude Code وCodex CLI وGemini CLI وSmolAgents وOpenAI MCP واستدعاء الأدوات البسيط",
+     "من المقاييس SWE-bench وtau2 وAppWorld وBFCL",
+     "مشغّل Docker وتشغيل بالدفعات ولوحة لعرض النتائج"
+    ],
+    "strengths": [
+     "يشغّل أدوات الـ harness السطرية جنبًا إلى جنب فعلًا، بالشكل نفسه لمصفوفة الـ harness × النموذج التي نخطط لها"
+    ],
+    "weaknesses": [
+     "مشروع صغير (أقل من 100 نجمة)، ومقاييس البرمجة فيه قليلة، والترخيص مذكور بشكل مختلف في GitHub وPyPI"
+    ],
+    "gaps": [
+     "لا يستخرج مهامّ خاصة، ولا يقيس الالتزام بالمعايير، ولا يقدّم تقارير للفرق؛ وHarbor يغطي دور مشغّل مهام البرمجة أفضل حاليًا"
+    ],
+    "role": "مشغّل ثانٍ من نوع «أي وكيل على أي مقياس» نبقيه بجانب Harbor؛ مفيد للتحقق المتقاطع إذا بدت نتائج Harbor غريبة.",
+    "pricing": "مجاني"
    }
   }
  ]

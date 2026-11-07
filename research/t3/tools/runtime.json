@@ -1,6 +1,6 @@
 {
  "category": "runtime",
- "checked": "2026-11-06",
+ "checked": "2026-11-07",
  "tools": [
   {
    "id": "claude-code",
@@ -237,7 +237,8 @@
     ],
     "role": "خط أساس مفتوح محايد تجاه النماذج (يتيح لبيئة الاختبار تجربة النماذج المفتوحة الأوزان).",
     "pricing": "مجاني؛ استخدم أي نموذج"
-   }
+   },
+   "version": "v2.2.6"
   },
   {
    "id": "pi",
@@ -333,7 +334,7 @@
    "url": "https://openhands.dev",
    "license": "MIT",
    "pricing": "Free; OpenHands Cloud paid",
-   "version": "v1.36.0",
+   "version": "v1.37.0",
    "tier": "deep",
    "summary": "A leading open-source software agent platform with a Docker/remote runtime, web UI, CLI and a composable Software Agent SDK, plus its own benchmarks repo.",
    "how": "Agents act through a sandboxed runtime (Docker or remote); the SDK composes tools, context condensers and security analysers.",
@@ -1033,6 +1034,85 @@
     ],
     "role": "مرشح لإضافته harness آخر في مصفوفة المقارنة، ومصدر أفكار (وضع الهدف وتغذية LSP) لـ azm-harness.",
     "pricing": "مجاني"
+   }
+  },
+  {
+   "id": "trueforge",
+   "name": "TrueForge",
+   "category": "runtime",
+   "kind": "open-source",
+   "vendor": "TrueFoundry",
+   "repo": "truefoundry/trueforge",
+   "url": "https://github.com/truefoundry/trueforge",
+   "license": "MIT",
+   "pricing": "Free with your own model keys; a hosted usage-priced version announced (Aug 2026, no rates published)",
+   "status": "active",
+   "version": "No tagged release",
+   "tier": "brief",
+   "summary": "An open-source agent harness from TrueFoundry, launched in August 2026 as a vendor-neutral alternative to Claude Managed Agents. It runs the agent loop on a server and exposes it through a chat UI, an HTTP API with a TypeScript SDK, and an embeddable UI SDK.",
+   "how": "A core server runs the loop (plan, call tools, feed results back), streams each step, pauses for human approval on sensitive actions, keeps context small with subagents and compaction, and stores sessions. Models, MCP servers and the sandbox are bring-your-own; the sandbox is treated as a tool and started only when code must run (Daytona is the launch partner). Runs locally with npx, or for teams with Docker Compose or Helm.",
+   "features": [
+    "Server-side agent loop with approvals, subagents and compaction",
+    "Any model and MCP server through OpenAI-compatible interfaces",
+    "HTTP API, TypeScript SDK and embeddable chat UI",
+    "Sandbox started on demand (Daytona at launch)"
+   ],
+   "strengths": [
+    "Open, self-hostable counterpart to a managed agent service, with a published cost comparison against Claude Managed Agents"
+   ],
+   "weaknesses": [
+    "Vendor benchmark only: the blog claims ~75% lower cost with an open model and 30% with the same model, the press release says 50%; not independently reproduced"
+   ],
+   "gaps": [
+    "A general agent runtime, not a coding SDLC harness; no evaluation or standards scoring of its own"
+   ],
+   "fit": {
+    "verdict": "benchmark",
+    "role": "A self-hosted 'managed agents' option to put on the test grid next to Claude Managed Agents, and a reference if Azm ever needs a server-side harness with an API."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 2,
+    "openness": 5,
+    "agnostic": 5,
+    "config": 3,
+    "measure": 2,
+    "safety": 3
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/truefoundry/trueforge"
+    ],
+    [
+     "Launch post",
+     "https://www.truefoundry.com/blog/engineering/trueforge-open-source-agent-harness/"
+    ]
+   ],
+   "sources": [
+    "https://www.truefoundry.com/blog/engineering/trueforge-open-source-agent-harness/",
+    "https://www.hpcwire.com/aiwire/2026/08/19/truefoundry-debuts-trueforge-for-building-and-managing-ai-agents/"
+   ],
+   "ar": {
+    "summary": "أداة harness مفتوحة المصدر من TrueFoundry، أُطلقت في أغسطس 2026 بديلًا محايدًا لـ Claude Managed Agents. تشغّل حلقة الوكيل على خادم، وتتيحها عبر واجهة محادثة، وواجهة HTTP مع حزمة TypeScript، وحزمة واجهة يمكن تضمينها.",
+    "how": "يشغّل خادم أساسي الحلقة (التخطيط واستدعاء الأدوات وإعادة النتائج)، ويبث كل خطوة، ويتوقف لطلب موافقة بشرية على الإجراءات الحساسة، ويُبقي السياق صغيرًا بالوكلاء الفرعيين والضغط، ويحفظ الجلسات. يختار المستخدم النماذج وخوادم MCP وبيئة العزل بنفسه؛ وتُعامَل بيئة العزل كأداة لا تُشغَّل إلا عند الحاجة لتنفيذ شيفرة (Daytona شريك الإطلاق). يعمل محليًا عبر npx، أو للفرق عبر Docker Compose أو Helm.",
+    "features": [
+     "حلقة وكيل على الخادم مع موافقات ووكلاء فرعيين وضغط للسياق",
+     "أي نموذج وأي خادم MCP عبر واجهات متوافقة مع OpenAI",
+     "واجهة HTTP وحزمة TypeScript وواجهة محادثة قابلة للتضمين",
+     "بيئة عزل تُشغَّل عند الطلب (Daytona عند الإطلاق)"
+    ],
+    "strengths": [
+     "نظير مفتوح يمكن استضافته لدينا لخدمة الوكلاء المُدارة، مع مقارنة تكلفة منشورة أمام Claude Managed Agents"
+    ],
+    "weaknesses": [
+     "القياس من البائع فقط: تذكر المدونة تكلفة أقل بنحو 75% مع نموذج مفتوح و30% مع النموذج نفسه، ويذكر البيان الصحفي 50%؛ ولم تُكرَّر النتائج بشكل مستقل"
+    ],
+    "gaps": [
+     "محرك وكلاء عام، لا harness لدورة تطوير البرمجيات؛ ولا يقيّم الجودة أو الالتزام بالمعايير بنفسه"
+    ],
+    "role": "خيار «وكلاء مُدارين» مستضاف لدينا نضعه في شبكة الاختبار بجانب Claude Managed Agents، ومرجع إن احتاجت عزم يومًا إلى harness على الخادم بواجهة برمجية.",
+    "pricing": "مجاني مع مفاتيح النماذج الخاصة بك؛ وأُعلن عن نسخة مستضافة بالدفع حسب الاستخدام (أغسطس 2026، دون أسعار منشورة)"
    }
   }
  ]

@@ -1,6 +1,6 @@
 {
  "track": "t3",
- "checked": "2026-11-06",
+ "checked": "2026-11-07",
  "articles": [
   {
    "id": "fullscript-bench",
@@ -1054,6 +1054,100 @@
    "summary": "Meta bought Conductor, a product for running several coding agents in parallel workspaces; its cloud service shuts down on 20 Nov 2026.",
    "ar": {
     "summary": "اشترت Meta شركة Conductor، صاحبة منتج لتشغيل عدة وكلاء برمجة في مساحات عمل متوازية، وتُغلق خدمتها السحابية في 20 نوفمبر 2026."
+   }
+  },
+  {
+   "id": "swe-bench-pro-v2",
+   "title": "SWE-Bench Pro V2",
+   "source": "Scale Labs (with Reflection)",
+   "date": "2026-09-22",
+   "url": "https://labs.scale.com/leaderboard/swe_bench_pro_public_v2",
+   "type": "method",
+   "tags": [
+    "eval",
+    "anti-cheating",
+    "benchmark"
+   ],
+   "priority": "must",
+   "summary": "Scale reworked SWE-Bench Pro: 642 tasks across 11 repos (89 invalid tasks dropped), 69 contradictory instructions fixed, the agent can reach only the model endpoint during the run, and every diff is re-graded on a pristine image with both grades published. Re-grading caught a model forging a Go checksum and another editing the module cache. The top public score is 98, so the set is near saturation.",
+   "why": "The anti-cheating protocol to copy for Azm's own tasks: lock network egress, re-grade on a clean image, and gate each task on 'passes with the reference fix, fails with an empty patch'.",
+   "ar": {
+    "summary": "أعادت Scale بناء SWE-Bench Pro: ‏642 مهمة من 11 مستودعًا (حُذفت 89 مهمة غير صالحة)، وصُحّحت 69 تعليمة متناقضة مع الاختبارات، ولا يصل الوكيل أثناء التشغيل إلا إلى خادم النموذج، وتُعاد درجة كل تعديل على صورة نظيفة وتُنشر الدرجتان. وكشفت إعادة التقييم نموذجًا زوّر بصمة تحقق في Go وآخر عدّل ذاكرة الوحدات. وأعلى درجة عامة 98، فالمجموعة قريبة من التشبع.",
+    "why": "بروتوكول مكافحة الغش الذي ننسخه لمهام عزم: إغلاق الوصول إلى الشبكة، وإعادة التقييم على صورة نظيفة، وقبول المهمة فقط إذا نجحت مع الإصلاح المرجعي وفشلت مع تعديل فارغ."
+   }
+  },
+  {
+   "id": "harness-design-empirical-study",
+   "title": "An Empirical Study of Harness Design for Coding Agents",
+   "source": "arXiv 2609.20804",
+   "date": "2026-09-17",
+   "url": "https://arxiv.org/abs/2609.20804",
+   "type": "paper",
+   "tags": [
+    "harness-design",
+    "context",
+    "eval"
+   ],
+   "priority": "read",
+   "summary": "176 matched settings (five context-management strategies, four context-window sizes, four models) on SWE-Bench Verified and Terminal-Bench 2.1. The gain from context management on SWE-Bench shrinks from 35.7 points at the smallest window to 2.7 points at 128k; planning helped a smaller open model by 11.6 points.",
+   "why": "Harness features pay off differently per model and context size, so Azm's matrix should vary them per model instead of picking one 'best' harness.",
+   "ar": {
+    "summary": "‏176 إعدادًا متطابقًا (خمس استراتيجيات لإدارة السياق، وأربعة أحجام لنافذة السياق، وأربعة نماذج) على SWE-Bench Verified وTerminal-Bench 2.1. يتقلص مكسب إدارة السياق على SWE-Bench من 35.7 نقطة في أصغر نافذة إلى 2.7 نقطة عند 128 ألف رمز، وأضاف التخطيط 11.6 نقطة لنموذج مفتوح أصغر.",
+    "why": "مزايا الـ harness تختلف فائدتها بحسب النموذج وحجم السياق، لذا ينبغي أن تغيّرها مصفوفة عزم لكل نموذج بدل اختيار harness واحد «أفضل»."
+   }
+  },
+  {
+   "id": "harness-or-model",
+   "title": "Harness or Model? Isolating the Harness Effect in Agentic Coding with a Contamination-Controlled Private Suite",
+   "source": "arXiv 2609.11987",
+   "date": "2026-09-08",
+   "url": "https://arxiv.org/abs/2609.11987",
+   "type": "paper",
+   "tags": [
+    "harness-vs-model",
+    "cost",
+    "private-tasks"
+   ],
+   "priority": "must",
+   "summary": "Holding the model fixed, vendor-native harnesses and a neutral harness showed no resolved average difference on a private suite (792 graded runs in Docker), but the neutral harness cost 1.2-1.6 times as much per solved task. Native Opus trailed on repository tasks and led on contest tasks. 22 of 81 runs cancelled at the time limit had already produced a passing patch, and an earlier version's cost ratios were corrected after cached tokens were double-counted.",
+   "why": "A close match to Azm's plan (private tasks, Docker grading, same model across harnesses), with two traps to avoid: count cache tokens once, and grade runs that hit the time limit.",
+   "ar": {
+    "summary": "مع تثبيت النموذج، لم يظهر فرق متوسط محسوم بين أدوات الـ harness الأصلية من البائعين وأداة محايدة على مجموعة مهام خاصة (792 تشغيلًا قُيّمت داخل Docker)، لكن الأداة المحايدة كلّفت 1.2 إلى 1.6 ضعف لكل مهمة محلولة. وتأخر Opus بأداته الأصلية في مهام المستودعات وتقدّم في مهام المسابقات. وكانت 22 من 81 تشغيلًا أُلغيت عند الحد الزمني قد أنتجت إصلاحًا ناجحًا، وصُحّحت نسب التكلفة في نسخة سابقة بعد اكتشاف حساب رموز الذاكرة المؤقتة مرتين.",
+    "why": "قريبة جدًا من خطة عزم (مهام خاصة، وتقييم داخل Docker، والنموذج نفسه عبر أدوات الـ harness)، مع فخّين يجب تجنبهما: حساب رموز الذاكرة المؤقتة مرة واحدة، وتقييم التشغيلات التي بلغت الحد الزمني."
+   }
+  },
+  {
+   "id": "agensh-paper",
+   "title": "Agensh: Scaling Organizational Intelligence to 1,024 Agents",
+   "source": "Microsoft Research (arXiv 2609.26781)",
+   "date": "2026-09-22",
+   "url": "https://arxiv.org/abs/2609.26781",
+   "type": "paper",
+   "tags": [
+    "multi-agent",
+    "scaling"
+   ],
+   "priority": "read",
+   "summary": "A harness that lets many Copilot agents self-organize through Gitea, Mattermost and a shared log, with no central orchestrator. On ProgramBench with a 6-hour budget, mean test-pass rate rose from 19.31% (1 agent) to 28.78% (128 agents); on Pandoc it reached 55.06% with 1,024 agents. Code was published in October 2026.",
+   "ar": {
+    "summary": "أداة harness تتيح لوكلاء Copilot كثيرين تنظيم أنفسهم عبر Gitea وMattermost وسجل مشترك، دون منسّق مركزي. على ProgramBench بميزانية 6 ساعات ارتفع متوسط نسبة نجاح الاختبارات من 19.31% (وكيل واحد) إلى 28.78% (‏128 وكيلًا)، وبلغ 55.06% في Pandoc مع 1,024 وكيلًا. ونُشرت الشيفرة في أكتوبر 2026."
+   }
+  },
+  {
+   "id": "trueforge-launch",
+   "title": "Introducing TrueForge: the open-source agent harness we run in production",
+   "source": "TrueFoundry",
+   "date": "2026-08-18",
+   "url": "https://www.truefoundry.com/blog/engineering/trueforge-open-source-agent-harness/",
+   "type": "reading",
+   "tags": [
+    "harness",
+    "managed-agents"
+   ],
+   "priority": "reference",
+   "summary": "TrueFoundry open-sourced its MIT-licensed agent harness (server loop, approvals, subagents, compaction, API and UI SDKs) and claims an open model matched Opus at about 75% lower cost than Claude Managed Agents, and 30% lower with the same model. Vendor numbers, not independently checked.",
+   "ar": {
+    "summary": "أتاحت TrueFoundry أداة الـ harness الخاصة بها مفتوحة المصدر برخصة MIT (حلقة على الخادم وموافقات ووكلاء فرعيون وضغط للسياق وحزم للواجهة البرمجية والواجهة)، وتقول إن نموذجًا مفتوحًا جارى Opus بتكلفة أقل بنحو 75% من Claude Managed Agents، وأقل بـ 30% مع النموذج نفسه. أرقام البائع ولم يتحقق منها طرف مستقل."
    }
   }
  ]
