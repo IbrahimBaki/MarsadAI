@@ -1,0 +1,711 @@
+{
+ "date": "2026-11-07",
+ "headline": "Claude Code 2.1.319 ينقل مهام MCP إلى الخلفية ويضيف إعدادًا لرفض الأذونات بدل السؤال مع إصلاحات أمنية، وثغرة SSHole في OpenSSH تُستغل على Alpine خلال ساعات، وثغرة حرجة في Active Storage في Rails تستدعي التحديث فورًا.",
+ "headline_en": "Claude Code 2.1.319 moves MCP tasks to the background and adds a deny-instead-of-prompting setting with security fixes; the OpenSSH 'SSHole' flaw is being exploited on Alpine within hours; and a critical Rails Active Storage flaw calls for an immediate update.",
+ "items": [
+  {
+   "id": "claude-code-2-1-319",
+   "section": "claude",
+   "kind": "release",
+   "title": "Claude Code 2.1.319: مهام MCP في الخلفية وإعداد لرفض الأذونات بدل السؤال",
+   "summary": "يدعم الإصدار مهام MCP: عندما ينفّذ خادم MCP استدعاء أداة كمهمة، ينقلها Claude Code إلى الخلفية فورًا ويُبلغ Claude بالنتيجة عند انتهائها. ويضيف إعداد permissions.denyInsteadOfPrompting الذي يرفض أي استدعاء ينتظر موافقة بدل التوقف، ويغيّر سلوك الوضع التلقائي خلف بوابات النماذج، ويصلح عدة ثغرات في الأذونات وبيئة العزل.",
+   "why": "لمن يشغّل Claude Code دون مراقبة، مثل خطوط CI أو الوكلاء الفرعيين: الإعداد الجديد يمنع توقف الجلسة عند طلب إذن، ومهام MCP الطويلة لم تعد تعطّل المحادثة. ويستحق الإصدار الترقية بسبب إصلاحات الأمان.",
+   "about": "أبرز الجديد دعم مهام MCP في الطرفية. فعندما يشغّل خادم MCP استدعاء أداة كمهمة، ينقلها Claude Code إلى الخلفية مباشرة ويُخطر Claude بالنتيجة عند اكتمالها. ويمكن جعله ينتظر بالمتغير CLAUDE_CODE_DISABLE_MCP_TASK_BACKGROUND، أو إيقاف مهام MCP كليًا بالمتغير CLAUDE_CODE_DISABLE_MCP_TASKS=1.\n\nويضيف الإصدار الإعداد permissions.denyInsteadOfPrompting، الذي يرفض أي استدعاء أداة كان سينتظر موافقة، ويُكمل الدور بدل التوقف. ويسري ذلك على جلسات الطرفية والوكلاء الفرعيين وزملاء الفريق. ويضيف أيضًا الأمر ‎/claude-api latency-optimize‎ الذي يبحث عن مواضع الانتظار في شيفرة تستدعي واجهة Claude ويجرّب إعدادات أسرع، والمتغير CLAUDE_CODE_DISABLE_FEATURE_FLAGS.\n\nتغيّر الوضع التلقائي خلف بوابات النماذج أو عند إيقاف القياس عن بُعد: الاستدعاءات التي لا يستطيع الخادم فحصها صارت تُعرض للسؤال أو تُرفض. ويعيد CLAUDE_CODE_AUTO_MODE_SERVER=0 السلوك القديم، ولم يتغير شيء في Bedrock وVertex وFoundry.\n\nويصلح الإصدار تجاوزًا لأذونات Bash عبر بادئة متغيرات بيئة مصممة، وهروبًا من بيئة العزل عند إنشاء worktree، وتخطي أمر sed لفحص الأذونات. وانتبه لتغييرات قد تؤثر في إعداداتك: قاعدة سؤال مطابقة تغطيها قاعدة رفض أوسع صارت تُرفض، وأصبح ‎/loop‎ الذاتي ينتهي إذا لم يُعِد جدولة نفسه (يعيد CLAUDE_CODE_LOOP_KEEPALIVE=1 السلوك القديم).",
+   "features": [
+    "مهام MCP تعمل في الخلفية مع إخطار عند الانتهاء",
+    "إعداد permissions.denyInsteadOfPrompting للتشغيل دون مراقبة",
+    "الأمر ‎/claude-api latency-optimize‎ لتقليل زمن الاستجابة",
+    "إصلاحات أمان في أذونات Bash وبيئة العزل",
+    "تغييرات في الوضع التلقائي وفي ‎/loop‎ وقواعد الأذونات"
+   ],
+   "repo": "anthropics/claude-code",
+   "alternatives": [
+    "ess-claude-code-docs",
+    "ess-claude-code-hooks"
+   ],
+   "links": [
+    {
+     "label": "الإصدار على GitHub",
+     "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.319"
+    },
+    {
+     "label": "سجل التغييرات",
+     "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+    }
+   ],
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.319",
+   "source": "github.com",
+   "importance": 3,
+   "tags": [
+    "claude-code",
+    "mcp",
+    "permissions",
+    "security"
+   ],
+   "en": {
+    "title": "Claude Code 2.1.319: background MCP tasks and a setting to deny instead of prompting",
+    "summary": "Adds support for MCP tasks: when an MCP server runs a tool call as a task, Claude Code moves it to the background right away and tells Claude the result when it finishes. A new permissions.denyInsteadOfPrompting setting denies any call that would wait for approval instead of stopping. Auto mode behind LLM gateways changes, and several permission and sandbox flaws are fixed.",
+    "why": "For anyone running Claude Code unattended, such as in CI or as subagents: the new setting stops a session from hanging on a permission prompt, and long MCP tasks no longer block the conversation. The security fixes make this worth upgrading to.",
+    "about": "The main addition is MCP task support in the terminal. When an MCP server runs a tool call as a task, Claude Code moves it to the background immediately and notifies Claude when it completes. CLAUDE_CODE_DISABLE_MCP_TASK_BACKGROUND makes it wait instead, and CLAUDE_CODE_DISABLE_MCP_TASKS=1 turns MCP tasks off.\n\nThe release adds the permissions.denyInsteadOfPrompting setting, which denies any tool call that would have waited for approval and lets the turn continue. It applies to terminal sessions, subagents and teammates. It also adds /claude-api latency-optimize, which finds where code calling the Claude API makes people wait and tries faster settings, and the CLAUDE_CODE_DISABLE_FEATURE_FLAGS variable.\n\nAuto mode changes behind LLM gateways or with telemetry off: calls the server cannot check are now asked about or denied. CLAUDE_CODE_AUTO_MODE_SERVER=0 restores the old behavior, and Bedrock, Vertex and Foundry are unchanged.\n\nFixes include a Bash permission bypass through a crafted environment-variable prefix, a sandbox escape when creating a worktree, and a sed command skipping the permission check. Watch for changes that may affect your setup: an exact ask rule covered by a broader deny rule is now refused, and a self-paced /loop now ends if it does not reschedule itself (CLAUDE_CODE_LOOP_KEEPALIVE=1 restores the old behavior).",
+    "features": [
+     "MCP tasks run in the background with a notice when done",
+     "permissions.denyInsteadOfPrompting for unattended runs",
+     "/claude-api latency-optimize to cut response latency",
+     "Security fixes in Bash permissions and the sandbox",
+     "Changes to auto mode, /loop and permission rules"
+    ],
+    "links": [
+     "Release on GitHub",
+     "Changelog"
+    ]
+   }
+  },
+  {
+   "id": "openssh-sshole-cve-2026-123158",
+   "section": "security",
+   "kind": "article",
+   "title": "ثغرة SSHole في OpenSSH تُستغل خلال ساعات على Alpine",
+   "summary": "تسمح الثغرة CVE-2026-123158 (درجة 8.1) بتسجيل الدخول دون مصادقة إلى OpenSSH المبني على مكتبة musl مع تعطيل PAM، وهو الإعداد الافتراضي في Alpine Linux، عبر كلمة مرور طويلة جدًا. ورُصدت أول محاولة استغلال بعد أقل من تسع ساعات من النشر، وتأكد الحصول على صلاحيات root في نظام فخّ.",
+   "why": "لكل من يشغّل خادم SSH على Alpine، ومنها الحاويات التي تكشف SSH: حدّث إلى OpenSSH 10.6p2 أو الحزمة المرقّعة من توزيعتك فورًا، وراجع السجلات بحثًا عن دخول بكلمة مرور لحسابات لا يُفترض أن تملكها.",
+   "about": "تصيب الثغرة OpenSSH عندما يُبنى على مكتبة musl ويكون PAM معطلًا، وهذا هو إعداد خادم OpenSSH الافتراضي في Alpine Linux. يرسل المهاجم كلمة مرور طولها بين 257 و1,024 بايت، فتفشل عملية التجزئة وتعيد الرمز «*»، وهو يطابق قيمة كلمة المرور المعطلة في أي حساب تجزئته «*»، فينجح الدخول. ويحتاج الاستغلال إلى حساب واحد على الأقل بهذه الحالة.\n\nرصدت جهة بحثية أول محاولة استغلال بعد أقل من تسع ساعات من نشر الثغرة، وأكدت الحصول على صلاحيات root في نظام فخّ يعمل بـ Alpine. ولا تتأثر Dropbear ولا التوزيعات المبنية على glibc ولا الأنظمة غير Linux ولا الأنظمة التي تتحقق من كلمات المرور عبر PAM.\n\nالإصلاح في OpenSSH 10.6p2 أو في الحزمة المرقّعة من التوزيعة، مع إعادة تشغيل sshd بعد التحديث. وراجع /var/log/messages بحثًا عن «Accepted password for» لحسابات لا يُفترض أن تدخل بكلمة مرور، وراجع المستخدمين الجدد وملفات authorized_keys. وإن تعذر استبعاد دخول ناجح، فتعامل مع الجهاز على أنه مخترق.",
+   "features": [
+    "دخول دون مصادقة بكلمة مرور طولها 257 إلى 1,024 بايت",
+    "يصيب OpenSSH على musl مع تعطيل PAM، كإعداد Alpine الافتراضي",
+    "استغلال فعلي بعد أقل من تسع ساعات من النشر",
+    "الإصلاح في OpenSSH 10.6p2 أو حزمة التوزيعة المرقّعة"
+   ],
+   "alternatives": [
+    "ess-trivy"
+   ],
+   "links": [
+    {
+     "label": "الخبر في The Hacker News",
+     "url": "https://thehackernews.com/2026/11/hackers-exploited-openssh-sshole-flaw.html"
+    }
+   ],
+   "url": "https://thehackernews.com/2026/11/hackers-exploited-openssh-sshole-flaw.html",
+   "source": "thehackernews.com",
+   "importance": 3,
+   "tags": [
+    "security",
+    "openssh",
+    "alpine",
+    "cve"
+   ],
+   "en": {
+    "title": "OpenSSH 'SSHole' flaw exploited within hours on Alpine",
+    "summary": "CVE-2026-123158 (CVSS 8.1) allows unauthenticated login to OpenSSH built on musl with PAM disabled, the default on Alpine Linux, using an oversized password. The first exploitation attempt was seen less than nine hours after publication, and root access was confirmed on a honeypot.",
+    "why": "For anyone running an SSH server on Alpine, including containers that expose SSH: update to OpenSSH 10.6p2 or your distribution's patched package now, and check the logs for password logins on accounts that should not have one.",
+    "about": "The flaw affects OpenSSH built on the musl C library with PAM disabled, which is Alpine Linux's default OpenSSH server setup. An attacker sends a password of 257 to 1,024 bytes; the hash operation fails and returns \"*\", which matches the disabled-password value of any account whose hash is \"*\", so the login succeeds. Exploitation needs at least one such account.\n\nResearchers saw the first exploitation attempt less than nine hours after the CVE was published and confirmed root access on an Alpine honeypot. Dropbear, glibc-based distributions, non-Linux systems and systems that check passwords through PAM are not affected.\n\nThe fix is OpenSSH 10.6p2 or your distribution's patched package; restart sshd after updating. Search /var/log/messages for \"Accepted password for\" on accounts that should not log in with a password, and review new users and authorized_keys files. If a successful login cannot be ruled out, treat the machine as compromised.",
+    "features": [
+     "Unauthenticated login with a 257 to 1,024-byte password",
+     "Affects OpenSSH on musl with PAM disabled, Alpine's default",
+     "Exploited in the wild less than nine hours after publication",
+     "Fixed in OpenSSH 10.6p2 or the patched distribution package"
+    ],
+    "links": [
+     "The Hacker News report"
+    ]
+   }
+  },
+  {
+   "id": "rails-active-storage-mini-magick-flaw",
+   "section": "backend",
+   "kind": "article",
+   "title": "ثغرة حرجة في Active Storage في Rails عند استخدام mini_magick",
+   "summary": "أصلحت Rails ثغرة GHSA-f3w6-w445-fwh9 بدرجة 9.8 تسمح بكتابة ملفات على الخادم عبر رفع صور مصممة لـ ImageMagick، عندما يستخدم التطبيق المعالج ‎:mini_magick‎، وثغرة ثانية بدرجة 8.8 في الإصدارات نفسها. والإصلاح في 8.1.4.1 و8.0.5.2، وينتهي دعم الأمان لـ Rails 8.0 في 7 نوفمبر 2026.",
+   "why": "لفرق Rails التي تقبل رفع الصور، مثل متجر إلكتروني أو تطبيق SaaS بصور شخصية: حدّث إلى 8.1.4.1 أو 8.0.5.2 الآن، وخطط للانتقال من 8.0 لأن دعمه الأمني ينتهي.",
+   "about": "تخص الثغرة GHSA-f3w6-w445-fwh9 مكوّن Active Storage، وتسمح بكتابة ملفات على الخادم عبر رفع صور مصممة تعالجها ImageMagick، عندما يكون التطبيق مضبوطًا على المعالج ‎:mini_magick‎. ودرجتها 9.8، ولم يُخصص لها رقم CVE بعد وقت النشر.\n\nوأُصلحت معها ثغرة ثانية هي GHSA-v924-7rp8-4mxh بدرجة 8.8. والإصلاحان في الإصدارين 8.1.4.1 و8.0.5.2.\n\nوينتهي دعم الأمان لسلسلة Rails 8.0 في 7 نوفمبر 2026، لذا فالتطبيقات التي ما زالت عليها تحتاج إلى خطة ترقية إلى 8.1 بعد تطبيق هذا الإصلاح.",
+   "features": [
+    "ثغرة بدرجة 9.8 في Active Storage مع ‎:mini_magick‎",
+    "ثغرة ثانية بدرجة 8.8 في الإصدارات نفسها",
+    "الإصلاح في Rails 8.1.4.1 و8.0.5.2",
+    "نهاية دعم الأمان لـ Rails 8.0 في 7 نوفمبر 2026"
+   ],
+   "links": [
+    {
+     "label": "الخبر في The Hacker News",
+     "url": "https://thehackernews.com/2026/11/critical-rails-flaw-lets-attackers.html"
+    }
+   ],
+   "url": "https://thehackernews.com/2026/11/critical-rails-flaw-lets-attackers.html",
+   "source": "thehackernews.com",
+   "importance": 3,
+   "tags": [
+    "security",
+    "rails",
+    "ruby",
+    "uploads"
+   ],
+   "en": {
+    "title": "Critical Rails Active Storage flaw when using mini_magick",
+    "summary": "Rails fixed GHSA-f3w6-w445-fwh9 (CVSS 9.8), which allows writing files on the server through crafted image uploads processed by ImageMagick when the app uses the :mini_magick processor, plus a second flaw (CVSS 8.8) in the same releases. Fixes are in 8.1.4.1 and 8.0.5.2; Rails 8.0 security support ends on 7 November 2026.",
+    "why": "For Rails teams that accept image uploads, such as an online store or a SaaS with profile pictures: update to 8.1.4.1 or 8.0.5.2 now, and plan the move off 8.0 because its security support is ending.",
+    "about": "GHSA-f3w6-w445-fwh9 affects Active Storage and allows writing files on the server through crafted image uploads processed by ImageMagick, when the app is configured with the :mini_magick processor. It is rated CVSS 9.8 and had no CVE number at the time of publication.\n\nA second flaw, GHSA-v924-7rp8-4mxh (CVSS 8.8), is fixed alongside it. Both fixes ship in Rails 8.1.4.1 and 8.0.5.2.\n\nSecurity support for the Rails 8.0 series ends on 7 November 2026, so apps still on it need an upgrade plan to 8.1 after applying this fix.",
+    "features": [
+     "CVSS 9.8 flaw in Active Storage with :mini_magick",
+     "A second CVSS 8.8 flaw in the same releases",
+     "Fixed in Rails 8.1.4.1 and 8.0.5.2",
+     "Rails 8.0 security support ends 7 November 2026"
+    ],
+    "links": [
+     "The Hacker News report"
+    ]
+   }
+  },
+  {
+   "id": "render-sandboxes-beta",
+   "section": "devops",
+   "kind": "tool",
+   "title": "Render Sandboxes: بيئات عزل للوكلاء في مرحلة تجريبية عامة",
+   "summary": "أطلقت Render بيئات Linux معزولة يستطيع فيها الوكلاء تثبيت الحزم وتعديل الملفات وتشغيل الشيفرة، كل منها في آلة افتراضية مصغّرة Firecracker وتجهز عادة في أقل من ثانية. وتدعم اللقطات والإيقاف عند الخمول وقواعد شبكة لكل بيئة، والفوترة على المعالج المستخدم فعلًا والذاكرة المخصصة.",
+   "why": "لمن يبني وكيلًا يشغّل شيفرة غير موثوقة، مثل مساعد يصلح الاختبارات أو يحلل البيانات: بيئة معزولة بواجهة SDK دون إدارة خوادم، مع منع الاتصال الخارجي عند الحاجة.",
+   "about": "Render Sandboxes بيئات Linux معزولة للوكلاء، تعمل كل منها في آلة افتراضية مصغّرة Firecracker خاصة بها، وتكون جاهزة عادة لأول أمر في أقل من ثانية، وأسرع عند الاستعادة من لقطة. والمهلة الافتراضية للخمول 15 دقيقة، ومهلة التشغيل الافتراضية 24 ساعة قابلة للضبط من 60 ثانية إلى 30 يومًا.\n\nتدعم البيئات لقطات لنظام الملفات وللحالة الكاملة (الذاكرة والعمليات)، وقواعد شبكة لكل بيئة: السماح بالكل، أو بقائمة نطاقات، أو منع الاتصال الخارجي. ويعمل Docker وDocker Compose داخلها، وتتوفر حزم TypeScript وPython وأوامر Render CLI، وتعمل مع أي وكيل أو نموذج.\n\nالفوترة على المعالج المستخدم فعلًا لا المخصص، مع الذاكرة المخصصة، والبيئات الموقوفة تدفع تخزين اللقطات فقط، دون أسعار بالدولار في الإعلان. والقيود الحالية: منطقة Oregon فقط، ولا شبكة خاصة ولا SSH ولا روابط عامة بعد، وقد تتغير الواجهات والحدود خلال المرحلة التجريبية.",
+   "features": [
+    "آلة افتراضية مصغّرة Firecracker لكل بيئة",
+    "لقطات للملفات وللحالة الكاملة وإيقاف عند الخمول",
+    "قواعد شبكة لكل بيئة، ومنها منع الاتصال الخارجي",
+    "حزم TypeScript وPython وأوامر Render CLI",
+    "Docker وDocker Compose داخل البيئة"
+   ],
+   "install": [
+    {
+     "label": "حزمة TypeScript",
+     "cmd": "npm install @renderinc/sdk"
+    },
+    {
+     "label": "حزمة Python",
+     "cmd": "pip install render"
+    }
+   ],
+   "usage": [
+    "render sandboxes create --timeout=300 --wait"
+   ],
+   "requirements": [
+    "متغيرا البيئة RENDER_API_KEY وRENDER_WORKSPACE_ID"
+   ],
+   "pricing": {
+    "model": "paid",
+    "note": "حسب الاستخدام: المعالج المستخدم فعلًا والذاكرة المخصصة؛ متاحة في كل الخطط"
+   },
+   "links": [
+    {
+     "label": "إعلان Render",
+     "url": "https://render.com/blog/introducing-render-sandboxes"
+    },
+    {
+     "label": "التوثيق",
+     "url": "https://render.com/docs/sandboxes"
+    }
+   ],
+   "url": "https://render.com/blog/introducing-render-sandboxes",
+   "source": "render.com",
+   "importance": 2,
+   "tags": [
+    "sandbox",
+    "agents",
+    "firecracker",
+    "cloud"
+   ],
+   "en": {
+    "title": "Render Sandboxes: isolated environments for agents in public beta",
+    "summary": "Render launched isolated Linux environments where agents can install packages, edit files and run code, each in its own Firecracker microVM and typically ready in under a second. They support snapshots, idle suspension and per-sandbox network rules, and are billed on actively used CPU plus allocated memory.",
+    "why": "For anyone building an agent that runs untrusted code, such as an assistant that fixes tests or analyzes data: an isolated environment behind an SDK with no servers to manage, and outbound traffic can be blocked when needed.",
+    "about": "Render Sandboxes are isolated Linux environments for agents, each in its own Firecracker microVM, usually ready for the first command in under a second and faster when restored from a snapshot. The default idle timeout is 15 minutes, and the default runtime timeout is 24 hours, configurable from 60 seconds to 30 days.\n\nSandboxes support filesystem snapshots and full runtime snapshots (memory and processes), plus per-sandbox network rules: allow all, allow a list of domains, or block outbound traffic. Docker and Docker Compose work inside, there are TypeScript and Python SDKs and Render CLI commands, and they work with any agent or model.\n\nBilling covers actively used CPU rather than provisioned CPU, plus allocated memory; suspended sandboxes pay only for snapshot storage. The announcement gives no dollar rates. Current limits: Oregon region only, no private networking, SSH or public URLs yet, and APIs and limits may change during the beta.",
+    "features": [
+     "One Firecracker microVM per sandbox",
+     "Filesystem and full runtime snapshots, idle suspension",
+     "Per-sandbox network rules, including blocking outbound traffic",
+     "TypeScript and Python SDKs and Render CLI commands",
+     "Docker and Docker Compose inside the sandbox"
+    ],
+    "install": [
+     "TypeScript SDK",
+     "Python SDK"
+    ],
+    "usage": [
+     "render sandboxes create --timeout=300 --wait"
+    ],
+    "requirements": [
+     "RENDER_API_KEY and RENDER_WORKSPACE_ID environment variables"
+    ],
+    "links": [
+     "Render announcement",
+     "Documentation"
+    ],
+    "pricingNote": "Usage-based: actively used CPU plus allocated memory; available on all plans"
+   }
+  },
+  {
+   "id": "claude-console-ip-allowlist",
+   "section": "claude",
+   "kind": "article",
+   "title": "قائمة عناوين IP المسموح بها في Claude Console (تجريبية)",
+   "summary": "أصبح بإمكان المؤسسات ضبط قائمة عناوين IP مسموح بها في Claude Console، فتُرفض الطلبات من عناوين خارجها، وهذا يحدّ من استخدام مفتاح واجهة برمجية مسرّب. وتقبل القائمة عناوين IPv4 وIPv6 ونطاقات CIDR حتى 1,000 مدخل لكل مؤسسة، مع قدرة تجريبية في Admin API لتسجيل خروج عضو من كل مكان.",
+   "why": "لفرق تستخدم واجهة Claude البرمجية من خوادم ثابتة، مثل خدمة خلفية أو خط CI: إن تسرّب مفتاح، فلن يعمل من خارج عناوينكم.",
+   "about": "أضافت Anthropic في Claude Console ميزة تجريبية لقائمة عناوين IP المسموح بها على مستوى المؤسسة. وتُرفض الطلبات إلى الخدمات المشمولة إذا جاءت من عنوان غير موجود في القائمة، فيصبح المفتاح المسرّب عديم الفائدة خارج شبكتكم.\n\nتقبل القائمة عناوين IPv4 وIPv6 ونطاقات CIDR، حتى 1,000 مدخل لكل مؤسسة. ويضيف الإعلان نفسه قدرة تجريبية في Admin API لتسجيل خروج عضو في Claude Enterprise من كل الأجهزة، مع بقائه في المؤسسة وقدرته على الدخول مجددًا.\n\nالميزتان تجريبيتان، وتحتاج قدرة Admin API إلى ترويسة تجريبية موضحة في التوثيق.",
+   "features": [
+    "رفض الطلبات من خارج القائمة",
+    "IPv4 وIPv6 ونطاقات CIDR",
+    "حتى 1,000 مدخل لكل مؤسسة",
+    "تسجيل خروج عضو من كل مكان عبر Admin API (تجريبي)"
+   ],
+   "alternatives": [
+    "ess-claude-code-docs"
+   ],
+   "links": [
+    {
+     "label": "ملاحظات إصدار المنصة",
+     "url": "https://platform.claude.com/docs/en/release-notes/overview"
+    }
+   ],
+   "url": "https://platform.claude.com/docs/en/release-notes/overview#november-5-2026",
+   "source": "platform.claude.com",
+   "importance": 2,
+   "tags": [
+    "claude-api",
+    "security",
+    "admin"
+   ],
+   "en": {
+    "title": "IP allowlisting in the Claude Console (beta)",
+    "summary": "Organizations can now set an IP allowlist in the Claude Console; requests from addresses outside it are refused, which limits what a leaked API key can do. The list accepts IPv4, IPv6 and CIDR ranges, up to 1,000 entries per organization, alongside a beta Admin API capability to sign a member out everywhere.",
+    "why": "For teams calling the Claude API from fixed servers, such as a backend service or a CI pipeline: if a key leaks, it will not work from outside your addresses.",
+    "about": "Anthropic added an organization-level IP allowlist to the Claude Console, in beta. Requests to covered services from an address not on the list are refused, so a leaked key is useless outside your network.\n\nThe list accepts IPv4 and IPv6 addresses and CIDR ranges, up to 1,000 entries per organization. The same release note adds a beta Admin API capability that signs a Claude Enterprise member out on every device; the member stays in the organization and can sign in again.\n\nBoth features are in beta, and the Admin API capability needs a beta header described in the docs.",
+    "features": [
+     "Refuses requests from outside the list",
+     "IPv4, IPv6 and CIDR ranges",
+     "Up to 1,000 entries per organization",
+     "Sign a member out everywhere via the Admin API (beta)"
+    ],
+    "links": [
+     "Platform release notes"
+    ]
+   }
+  },
+  {
+   "id": "codex-cli-0-167",
+   "section": "agents",
+   "kind": "release",
+   "title": "Codex CLI 0.167: علامات لغير المقروء في مركز الوكلاء والتبديل بين الخلفيات",
+   "summary": "يمكن الآن تشغيل مركز إدارة الوكلاء بالأمر codex agents --no-daemon، ويُظهر المركز ومنتقي الجلسات النتائج غير المقروءة. ويتيح منتقي الجلسات التبديل بين الخلفيات المتصلة مع الاحتفاظ بالمسودات، ويضيف معالجًا لإعداد Vertex AI ومعاينة الصور المحلية.",
+   "why": "لمن يشغّل عدة جلسات Codex بالتوازي: يعرف فورًا أي جلسة انتهت وتنتظر المراجعة، ويستطيع الانتقال بين حساب OpenAI وسحابة Google من الطرفية نفسها.",
+   "about": "يركز هذا الإصدار على إدارة عدة وكلاء من الطرفية. فمركز الوكلاء يعمل الآن دون خدمة خلفية بالأمر codex agents --no-daemon، ويضع هو ومنتقي الجلسات علامة على النتائج غير المقروءة.\n\nويتيح منتقي الجلسات التبديل بين الخلفيات المتصلة مع حفظ المسودات، وتبقى المحادثات المحفوظة ظاهرة بعد تغيير مزوّد النموذج. وانتقلت خيارات الدخول بمفتاح واجهة برمجية أو بمزوّد سحابي إلى «Sign in another way»، ويضبط العلم gcp_setup_wizard الاتصال بـ Vertex AI.\n\nومن التحسينات الأخرى معاينة الصور المحلية أثناء الكتابة في الطرفيات المدعومة، وأن Ctrl+L يمسح الشاشة مع الاحتفاظ بالسجل الذي يعرضه Ctrl+T، وأن الضغط التلقائي للسياق يحسب المخرجات المحفوظة من الاستجابات الفاشلة.",
+   "features": [
+    "codex agents --no-daemon",
+    "علامات لغير المقروء في مركز الوكلاء ومنتقي الجلسات",
+    "التبديل بين الخلفيات مع حفظ المسودات",
+    "معالج إعداد Vertex AI",
+    "معاينة الصور المحلية أثناء الكتابة"
+   ],
+   "usage": [
+    "codex agents --no-daemon"
+   ],
+   "repo": "openai/codex",
+   "alternatives": [
+    "ess-openai-codex-cli"
+   ],
+   "links": [
+    {
+     "label": "الإصدار على GitHub",
+     "url": "https://github.com/openai/codex/releases/tag/rust-v0.167.0"
+    }
+   ],
+   "url": "https://github.com/openai/codex/releases/tag/rust-v0.167.0",
+   "source": "github.com",
+   "importance": 2,
+   "tags": [
+    "codex",
+    "cli",
+    "agents"
+   ],
+   "en": {
+    "title": "Codex CLI 0.167: unread markers in the agents center and backend switching",
+    "summary": "The agents command center can now run with codex agents --no-daemon, and it and the session picker flag unread results. The session picker switches between connected backends while keeping drafts, and the release adds a Vertex AI setup wizard and local image previews.",
+    "why": "For anyone running several Codex sessions in parallel: you can see at once which session finished and needs review, and move between an OpenAI account and Google Cloud from the same terminal.",
+    "about": "This release focuses on managing several agents from the terminal. The agents command center now runs without a background service via codex agents --no-daemon, and both it and the session picker mark unread results.\n\nThe session picker switches between connected backends and keeps drafts, and saved chats stay visible after you change model provider. API-key and cloud-provider sign-in moved under \"Sign in another way\", and the gcp_setup_wizard flag sets up Vertex AI.\n\nOther improvements: local images can be previewed while composing on supported terminals, Ctrl+L clears the screen but keeps history (shown with Ctrl+T), and automatic compaction now counts output kept from failed responses.",
+    "features": [
+     "codex agents --no-daemon",
+     "Unread markers in the agents center and session picker",
+     "Backend switching that keeps drafts",
+     "Vertex AI setup wizard",
+     "Local image previews while composing"
+    ],
+    "usage": [
+     "codex agents --no-daemon"
+    ],
+    "links": [
+     "Release on GitHub"
+    ]
+   }
+  },
+  {
+   "id": "opencode-2-2-6",
+   "section": "agents",
+   "kind": "release",
+   "title": "OpenCode 2.2.6: مشاركة اتصالات MCP وتشغيل نصي في worktree",
+   "summary": "يمكن الآن تفعيل مشاركة اتصال خادم MCP بين المشاريع ذات الإعداد نفسه، فتقل العمليات ويتسارع البدء. ويبدأ الأمر opencode run -w جلسة نصية في git worktree جديد، ويُبعد --archived جلسات CI عن القوائم. ويضم الإصدار 14 تحسينًا و33 إصلاحًا، منها تقوية أمنية للخادم.",
+   "why": "لمن يشغّل OpenCode في السكربتات أو CI: كل مهمة تعمل في worktree منفصل دون أن تمس فرعك الحالي، وتبقى قائمة الجلسات نظيفة.",
+   "about": "أبرز الجديد خيار لمشاركة اتصال خادم MCP، بحيث يُستخدم اتصال واحد للمشاريع التي تحمل الإعداد نفسه، فتقل العمليات ويصبح البدء أسرع.\n\nويبدأ opencode run -w جلسة نصية في git worktree جديد، ويسمّيه --worktree=<name>، ويُبقي --archived جلسات السكربتات وCI خارج صندوق الوارد وقوائم الجلسات. وصار opencode run ينتظر المهام الخلفية التي بدأها، ويخرج بالرمز 143 عند SIGTERM.\n\nوفي الأمان: صارت قراءة الملفات على الخادم داخل بيئة معزولة، وتُرفض الطلبات عبر المواقع إلى /api/*، وتُرفض الروابط التي تحمل بيانات اعتماد. ويضيف الإصدار دعم Azure Messages لنماذج Claude في Foundry، ووضع Code Mode تجريبيًا معطلًا افتراضيًا.",
+   "features": [
+    "مشاركة اتصال MCP بين المشاريع",
+    "opencode run -w و--worktree=<name>",
+    "--archived لجلسات السكربتات وCI",
+    "تقوية أمنية لخادم OpenCode",
+    "دعم Azure Messages لنماذج Claude في Foundry"
+   ],
+   "repo": "anomalyco/opencode",
+   "alternatives": [
+    "ess-opencode"
+   ],
+   "links": [
+    {
+     "label": "سجل التغييرات",
+     "url": "https://dev.opencode.ai/changelog/v2.2.6"
+    },
+    {
+     "label": "الإصدار على GitHub",
+     "url": "https://github.com/anomalyco/opencode/releases/tag/v2.2.6"
+    }
+   ],
+   "url": "https://dev.opencode.ai/changelog/v2.2.6",
+   "source": "dev.opencode.ai",
+   "importance": 2,
+   "tags": [
+    "opencode",
+    "mcp",
+    "worktree",
+    "ci"
+   ],
+   "en": {
+    "title": "OpenCode 2.2.6: shared MCP connections and scripted runs in a worktree",
+    "summary": "MCP server connections can now be pooled across projects with the same setup, which means fewer processes and faster starts. opencode run -w starts a scripted session in a new git worktree, and --archived keeps CI sessions out of the lists. The release has 14 improvements and 33 fixes, including server security hardening.",
+    "why": "For anyone running OpenCode in scripts or CI: each job works in its own worktree without touching your current branch, and the session list stays clean.",
+    "about": "The main addition is an option to pool an MCP server connection, so one connection serves all projects with the same configuration, reducing processes and speeding up start.\n\nopencode run -w starts a scripted session in a new git worktree, --worktree=<name> names it, and --archived keeps scripted and CI sessions out of the inbox and session lists. opencode run now waits for background jobs it started and exits with code 143 on SIGTERM.\n\nOn security, server file reads are now sandboxed, cross-site requests to /api/* are refused, and URLs carrying credentials are rejected. The release also adds Azure Messages support for Claude models on Foundry and an experimental Code Mode, off by default.",
+    "features": [
+     "MCP connection pooling across projects",
+     "opencode run -w and --worktree=<name>",
+     "--archived for scripted and CI sessions",
+     "Security hardening of the OpenCode server",
+     "Azure Messages support for Claude models on Foundry"
+    ],
+    "links": [
+     "Changelog",
+     "Release on GitHub"
+    ]
+   }
+  },
+  {
+   "id": "laravel-herd-2",
+   "section": "laravel",
+   "kind": "tool",
+   "title": "Laravel Herd 2.0: لوحة Herd Studio مع وكيل ومساحات عمل لكل فرع",
+   "summary": "يضيف Herd 2.0 لنظامي macOS وWindows لوحة Herd Studio بجانب مواقعك المحلية، فيها معاينة حية ومحادثة مع وكيل وتعديل للشيفرة وعرض لتغييرات الوكيل وطرفية وسجلات. وتعمل المحادثة عبر opencode بمزوّدك أو بنماذجه المجانية، ويضيف مساحات عمل معزولة لكل فرع بنطاق فرعي خاص.",
+   "why": "لمطوري Laravel: جرّب ميزة على فرع منفصل بعنوان مستقل مثل feature-auth.shop.test، واطلب من وكيل تعديلها مع رؤية الفرق فورًا، دون إعداد بيئة إضافية.",
+   "about": "Herd Studio لوحة في المتصفح تفتح بجانب مواقع ‎.test‎ المحلية، وتضم معاينة حية ومحادثة مع وكيل (محادثات متعددة وموافقة على الخطة وإرفاق صور) وتعديل الشيفرة وعرضًا للفروق في تعديلات الوكيل ولوحات للطرفية والسجلات والطوابير. ولا يضم Herd وكيلًا خاصًا به، فالمحادثة تعمل عبر opencode، ويمكنك ربط مزوّدك أو استخدام النماذج المجانية في opencode.\n\nمساحات العمل نسخ معزولة من الموقع على فرع git خاص ونطاق فرعي خاص، مثل feature-auth.shop.test. وقاعدة بيانات كل مساحة يمكن أن تكون مشتركة (الافتراضي) أو منسوخة أو فارغة. ويبدأ خادم التطوير تلقائيًا عند فتح الموقع، ويشغّل php artisan dev في Laravel 13.25 فما بعده.\n\nالخطة المجانية تشمل Studio وأداة تحليل أداء PHP. وHerd Pro بسعر 99 دولارًا للسنة الأولى ثم 79 دولارًا سنويًا، وHerd for Teams بسعر 299 دولارًا للسنة الأولى ثم 240 دولارًا سنويًا لعشر رخص. ويُنتظر Herd 2.1 قريبًا بإعدادات تشغيل وإيقاف منفصلة لكل ميزة ذكاء اصطناعي.",
+   "features": [
+    "Herd Studio: معاينة ومحادثة مع وكيل وعرض للفروق",
+    "مساحات عمل معزولة لكل فرع بنطاق فرعي",
+    "خادم تطوير يبدأ تلقائيًا",
+    "إنشاء تطبيقات من وصف",
+    "زر النشر إلى Laravel Cloud"
+   ],
+   "usage": [
+    "herd studio"
+   ],
+   "pricing": {
+    "model": "freemium",
+    "note": "Studio مجاني؛ Herd Pro بـ 99 دولارًا للسنة الأولى ثم 79 سنويًا"
+   },
+   "alternatives": [
+    "ess-laravel-boost"
+   ],
+   "links": [
+    {
+     "label": "المقال في Laravel News",
+     "url": "https://laravel-news.com/laravel-herd-2"
+    }
+   ],
+   "url": "https://laravel-news.com/laravel-herd-2",
+   "source": "laravel-news.com",
+   "importance": 2,
+   "tags": [
+    "laravel",
+    "php",
+    "herd",
+    "agents"
+   ],
+   "en": {
+    "title": "Laravel Herd 2.0: Herd Studio with an agent and per-branch workspaces",
+    "summary": "Herd 2.0 for macOS and Windows adds Herd Studio, a panel next to your local sites with a live preview, agent chat, code editing, a diff view of agent edits, a terminal and logs. Chat runs on opencode with your own provider or its free models, and isolated per-branch workspaces get their own subdomain.",
+    "why": "For Laravel developers: try a feature on a separate branch at its own address, such as feature-auth.shop.test, ask an agent to change it and see the diff right away, with no extra environment to set up.",
+    "about": "Herd Studio is a browser panel that opens next to your local .test sites, with a live preview, agent chat (multiple conversations, plan approval and image attachments), code editing, a diff view of agent edits, and terminal, logs and queue panels. Herd does not ship its own agent: chat runs on opencode, and you can connect your own provider or use opencode's free models.\n\nWorkspaces are isolated copies of a site on their own git branch and subdomain, such as feature-auth.shop.test. Each workspace's database can be shared (the default), cloned or empty. The dev server starts automatically when you open a site and runs php artisan dev on Laravel 13.25 and later.\n\nThe free tier includes Studio and the PHP profiler. Herd Pro costs $99 for the first year, then $79 a year; Herd for Teams costs $299 for the first year, then $240 a year for 10 licenses. Herd 2.1, with separate on/off settings for each AI feature, is due shortly.",
+    "features": [
+     "Herd Studio: preview, agent chat and diff view",
+     "Isolated per-branch workspaces with a subdomain",
+     "Dev server that starts automatically",
+     "Create apps from a prompt",
+     "Deploy to Laravel Cloud button"
+    ],
+    "usage": [
+     "herd studio"
+    ],
+    "links": [
+     "Laravel News article"
+    ],
+    "pricingNote": "Studio is free; Herd Pro is $99 for the first year, then $79 a year"
+   }
+  },
+  {
+   "id": "phpstorm-2026-3",
+   "section": "laravel",
+   "kind": "tool",
+   "title": "PhpStorm 2026.3: مساحة الوكلاء Air ودعم PHP 8.6",
+   "summary": "يضيف PhpStorm 2026.3 مساحة Air التي تعمل مع الوكلاء المتوافقين مع ACP، مثل Claude Agent وCodex وGemini وGitHub Copilot وJunie وOpenCode، باشتراكاتك ومفاتيحك الحالية. ويدعم PHP 8.6 المنتظر هذا الشهر بفحوص للترحيل، ويتيح خادم MCP للوكلاء تشغيل فحوص المحرر وتطبيق إصلاحاتها.",
+   "why": "لمطوري PHP وLaravel الذين يستخدمون أكثر من وكيل: إدارتها من المحرر نفسه دون اشتراك JetBrains AI، مع تجهيز المشاريع لـ PHP 8.6 قبل صدوره.",
+   "about": "Air طبقة للوكلاء في محررات JetBrains تعمل مع أي وكيل متوافق مع بروتوكول ACP، ومنها Claude Agent وCodex وGemini وGitHub Copilot وJunie وOpenCode. وتكتشف الوكلاء المثبتة، وتعمل بالاشتراكات ومفاتيح الواجهة البرمجية وعناوين الخوادم المخصصة الموجودة لديك، دون حاجة إلى اشتراك JetBrains AI.\n\nويدعم الإصدار PHP 8.6 المنتظر لاحقًا في نوفمبر، فينبّه إلى الصيغ والدوال الجديدة مثل clamp()‎ في المشاريع الأقدم ويضيف فحوصًا للترحيل. ويتيح خادم MCP في المحرر للوكلاء تشغيل الفحوص وتطبيق الإصلاحات، وتوجّه مهارة php-runtime-tools المرفقة الوكلاء إلى مفسّر PHP الخاص بالمشروع.\n\nومن الجديد أيضًا ثلاثة فحوص جديدة لـ Laravel، وتحسينات في git worktree منها فتح طلبات الدمج في worktree منفصل، وطرفية مبنية على libghostty. وصارت تقارير الأخطاء والتجمّد تُرسل تلقائيًا إلى JetBrains، ويمكن إيقاف ذلك من إعدادات مشاركة البيانات.",
+   "features": [
+    "مساحة Air للوكلاء المتوافقين مع ACP",
+    "دعم PHP 8.6 وفحوص الترحيل",
+    "خادم MCP لتشغيل الفحوص وتطبيق الإصلاحات",
+    "فحوص جديدة لـ Laravel وتحسينات git worktree",
+    "طرفية مبنية على libghostty"
+   ],
+   "pricing": {
+    "model": "paid",
+    "note": "اشتراك JetBrains؛ إعداد Junie Lite مجاني"
+   },
+   "alternatives": [
+    "ess-laravel-boost",
+    "ess-larastan"
+   ],
+   "links": [
+    {
+     "label": "المقال في Laravel News",
+     "url": "https://laravel-news.com/phpstorm-2026-3"
+    }
+   ],
+   "url": "https://laravel-news.com/phpstorm-2026-3",
+   "source": "laravel-news.com",
+   "importance": 2,
+   "tags": [
+    "php",
+    "phpstorm",
+    "acp",
+    "agents"
+   ],
+   "en": {
+    "title": "PhpStorm 2026.3: the Air agent workspace and PHP 8.6 support",
+    "summary": "PhpStorm 2026.3 adds Air, which works with ACP-compatible agents such as Claude Agent, Codex, Gemini, GitHub Copilot, Junie and OpenCode, using your existing subscriptions and keys. It supports PHP 8.6, due this month, with migration inspections, and its MCP server lets agents run IDE inspections and apply fixes.",
+    "why": "For PHP and Laravel developers using more than one agent: manage them from the same IDE without a JetBrains AI subscription, and get projects ready for PHP 8.6 before it ships.",
+    "about": "Air is an agent layer for JetBrains IDEs that works with any agent compatible with the Agent Client Protocol (ACP), including Claude Agent, Codex, Gemini, GitHub Copilot, Junie and OpenCode. It detects installed agents and uses your existing subscriptions, API keys and custom base URLs, with no JetBrains AI subscription required.\n\nThe release supports PHP 8.6, due later in November: it flags new syntax and functions such as clamp() in older projects and adds migration inspections. The IDE's MCP server lets agents run inspections and apply fixes, and a bundled php-runtime-tools skill points agents at the project's PHP interpreter.\n\nAlso new: three Laravel inspections, git worktree improvements including opening pull requests in a separate worktree, and a terminal rebuilt on libghostty. Error and freeze reports are now sent to JetBrains automatically; you can turn this off in the Data Sharing settings.",
+    "features": [
+     "Air workspace for ACP-compatible agents",
+     "PHP 8.6 support and migration inspections",
+     "MCP server to run inspections and apply fixes",
+     "New Laravel inspections and git worktree improvements",
+     "Terminal built on libghostty"
+    ],
+    "links": [
+     "Laravel News article"
+    ],
+    "pricingNote": "JetBrains subscription; the Junie Lite setup is free"
+   }
+  },
+  {
+   "id": "gemini-omni-1-2-flash-ga",
+   "section": "video",
+   "kind": "model",
+   "title": "Gemini Omni 1.2 Flash متاح للجميع: مقاطع حتى 15 ثانية وسعر أقل بـ 30%",
+   "summary": "أصبح نموذج Google لتوليد الفيديو وتعديله متاحًا للاستخدام العام. وبالمقارنة مع 1.1 Flash، صارت المقاطع حتى 15 ثانية بدل 10 والسعر أقل بـ 30%، بسعر 0.07 دولار لكل ثانية بدقة 720p. ويلتزم أكثر بمراجع الصور والفيديو، ويحسّن الكلام وتزامن الشفاه، ويتيح التعديل على مقطع موجود بالمحادثة.",
+   "why": "لصناع المحتوى والفرق التي تولّد فيديو عبر الواجهة البرمجية، مثل إعلانات منتجات قصيرة: مقاطع أطول بتكلفة أقل، مع مسودات منخفضة الدقة ثم رفعها إلى 1080p أو 4K.",
+   "about": "Gemini Omni 1.2 Flash نموذج من Google لتوليد الفيديو وتعديله، وأصبح الآن متاحًا للاستخدام العام. وبالمقارنة مع Omni 1.1 Flash، تصل المقاطع إلى 15 ثانية بدل 10، والسعر أقل بـ 30%: ‏0.07 دولار لكل ثانية بدقة 720p.\n\nيلتزم النموذج بمراجع الصور والفيديو بدقة أكبر، وينتج كلامًا أكثر طبيعية مع تزامن أوضح للشفاه، ويدعم عدة متحدثين. ويمكن إنشاء مسودة بدقة 360p أو 720p ثم رفعها إلى 1080p أو 4K، وتعديل مقطع موجود بالمحادثة، مثل تبديل منتج أو تغيير الإضاءة أو زاوية الكاميرا.\n\nيتوفر عبر Gemini API وAI Studio وGoogle Cloud وFlow وGoogle Vids، وفي تطبيق Gemini لمشتركي AI Ultra. وتحمل المخرجات علامة SynthID المائية، وتحتاج مراجع الصوت إلى إذن خاص.",
+   "features": [
+    "مقاطع حتى 15 ثانية",
+    "0.07 دولار لكل ثانية بدقة 720p (أقل بـ 30%)",
+    "مسودات 360p أو 720p ورفع إلى 1080p أو 4K",
+    "تعديل المقاطع بالمحادثة",
+    "تزامن أفضل للشفاه وعدة متحدثين"
+   ],
+   "pricing": {
+    "model": "paid",
+    "note": "0.07 دولار لكل ثانية فيديو بدقة 720p"
+   },
+   "alternatives": [
+    "ess-google-flow",
+    "ess-kling",
+    "ess-runway"
+   ],
+   "links": [
+    {
+     "label": "إعلان Google Cloud",
+     "url": "https://cloud.google.com/blog/products/ai-machine-learning/gemini-omni-1-2-flash-generally-available"
+    }
+   ],
+   "url": "https://cloud.google.com/blog/products/ai-machine-learning/gemini-omni-1-2-flash-generally-available",
+   "source": "cloud.google.com",
+   "importance": 2,
+   "tags": [
+    "video",
+    "gemini",
+    "google",
+    "generation"
+   ],
+   "en": {
+    "title": "Gemini Omni 1.2 Flash is generally available: clips up to 15 seconds, 30% cheaper",
+    "summary": "Google's video generation and editing model is now generally available. Compared with 1.1 Flash, clips go up to 15 seconds instead of 10 and the price is 30% lower, at $0.07 per second of 720p video. It follows image and video references more closely, improves speech and lip-sync, and can edit an existing clip through conversation.",
+    "why": "For creators and teams generating video through the API, such as short product ads: longer clips for less, with low-resolution drafts that can be upscaled to 1080p or 4K.",
+    "about": "Gemini Omni 1.2 Flash is Google's model for generating and editing video, now generally available. Compared with Omni 1.1 Flash, clips reach 15 seconds instead of 10, and the price is 30% lower: $0.07 per second at 720p.\n\nThe model follows image and video references more closely, produces more natural speech with clearer lip-sync, and supports multiple speakers. You can draft at 360p or 720p and upscale to 1080p or 4K, and edit an existing clip by conversation, for example swapping a product or changing the lighting or camera angle.\n\nIt is available through the Gemini API, AI Studio, Google Cloud, Flow and Google Vids, and in the Gemini app for AI Ultra subscribers. Outputs carry a SynthID watermark, and audio references require allowlisting.",
+    "features": [
+     "Clips up to 15 seconds",
+     "$0.07 per second at 720p (30% lower)",
+     "360p or 720p drafts, upscaling to 1080p or 4K",
+     "Conversational clip editing",
+     "Better lip-sync and multiple speakers"
+    ],
+    "links": [
+     "Google Cloud announcement"
+    ],
+    "pricingNote": "$0.07 per second of 720p video"
+   }
+  },
+  {
+   "id": "vercel-schedules-beta",
+   "section": "devops",
+   "kind": "tool",
+   "title": "Vercel Schedules: جدولة المهام خلفًا لـ Cron Jobs (تجريبي عام)",
+   "summary": "تشغّل Vercel Schedules مهام على جدول cron متكرر أو مرة واحدة في وقت محدد، في بيئة الإنتاج أو المعاينة أو بيئات مخصصة، ومتاحة في كل الخطط. ويمكن أن تستهدف دالة Vercel خاصة أو مسار HTTP أو موضوعًا في Vercel Queues، مع تفعيلها أو إيقافها أو تشغيلها يدويًا دون إعادة نشر.",
+   "why": "لفرق تطبيقات Vercel: مهام مثل إرسال تقرير يومي أو تذكير بعد 24 ساعة من التسجيل تُنشأ الآن من الشيفرة وقت التشغيل، لا من ملف الإعداد فقط.",
+   "about": "Vercel Schedules خدمة لتشغيل المهام على جدول cron متكرر أو مرة واحدة في وقت محدد، في الإنتاج أو المعاينة أو بيئات مخصصة، وهي متاحة في كل الخطط.\n\nالجداول الثابتة في vercel.json يمكن أن تستهدف دالة Vercel خاصة أو مسار HTTP أو موضوعًا في Vercel Queues. أما الجداول التي تُنشأ وقت التشغيل عبر Schedules.create()‎ من الحزمة ‎@vercel/schedules‎ فتستهدف موضوعًا في Queues. ويمكن تفعيل أي جدول أو إيقافه أو تشغيله فورًا دون إعادة نشر، وتدعم المناطق الزمنية.\n\nالسعر في خطتي Pro وEnterprise هو 5 دولارات لكل مليون تشغيل و10 دولارات لكل مليون إنشاء، وتشمل خطة Hobby ‏500 إنشاء و5,000 تشغيل شهريًا. وتستمر Cron Jobs الحالية في العمل، والخدمة في مرحلة تجريبية عامة.",
+   "features": [
+    "جداول cron متكررة أو تشغيل لمرة واحدة",
+    "أهداف: دالة أو مسار HTTP أو موضوع في Queues",
+    "إنشاء الجداول من الشيفرة عبر ‎@vercel/schedules‎",
+    "تفعيل وإيقاف وتشغيل فوري دون إعادة نشر",
+    "دعم المناطق الزمنية"
+   ],
+   "pricing": {
+    "model": "freemium",
+    "note": "Hobby: ‏500 إنشاء و5,000 تشغيل شهريًا؛ Pro: ‏5 دولارات لكل مليون تشغيل"
+   },
+   "links": [
+    {
+     "label": "إعلان Vercel",
+     "url": "https://vercel.com/changelog/vercel-schedules-is-now-in-public-beta"
+    }
+   ],
+   "url": "https://vercel.com/changelog/vercel-schedules-is-now-in-public-beta",
+   "source": "vercel.com",
+   "importance": 2,
+   "tags": [
+    "vercel",
+    "cron",
+    "scheduling",
+    "serverless"
+   ],
+   "en": {
+    "title": "Vercel Schedules: task scheduling to succeed Cron Jobs (public beta)",
+    "summary": "Vercel Schedules runs tasks on a recurring cron schedule or once at a set time, in production, preview or custom environments, on all plans. A schedule can target a private Vercel Function, an HTTP path or a Vercel Queues topic, and can be enabled, disabled or run on demand without redeploying.",
+    "why": "For teams on Vercel: jobs such as a daily report or a reminder 24 hours after sign-up can now be created from code at runtime, not only from the config file.",
+    "about": "Vercel Schedules runs tasks on a recurring cron schedule or once at a set time, in production, preview or custom environments, and is available on all plans.\n\nStatic schedules in vercel.json can target a private Vercel Function, an HTTP path or a Vercel Queues topic. Runtime schedules created with Schedules.create() from the @vercel/schedules package target a Queues topic. Any schedule can be enabled, disabled or run immediately without a redeploy, and time zones are supported.\n\nPro and Enterprise pricing is $5 per million runs and $10 per million creations; Hobby includes 500 creations and 5,000 runs a month. Existing Cron Jobs keep working, and the service is in public beta.",
+    "features": [
+     "Recurring cron or one-off schedules",
+     "Targets: function, HTTP path or Queues topic",
+     "Create schedules from code with @vercel/schedules",
+     "Enable, disable or run now without redeploying",
+     "Time zone support"
+    ],
+    "links": [
+     "Vercel announcement"
+    ],
+    "pricingNote": "Hobby: 500 creations and 5,000 runs a month; Pro: $5 per million runs"
+   }
+  },
+  {
+   "id": "agent-desktop-1-2",
+   "section": "devtools",
+   "kind": "repo",
+   "title": "agent-desktop 1.2: استخدام الحاسوب للوكلاء عبر شجرة إمكانية الوصول، مع خادم MCP",
+   "summary": "أداة سطر أوامر ومكتبة بلغة Rust من Vercel Labs تمنح الوكلاء القدرة على استخدام تطبيقات macOS وWindows وLinux بقراءة شجرة إمكانية الوصول بدل لقطات الشاشة. ويضيف الإصدار 1.2.0 خادم MCP يعرض كل أمر كأداة، وقراءة النصوص السرية من stdin.",
+   "why": "لمن يبني وكيلًا يتعامل مع تطبيقات سطح المكتب، مثل تعبئة نموذج في تطبيق محاسبة أو اختبار واجهة: نقرات دقيقة على عناصر مرقّمة دون نماذج رؤية، وبتكلفة رموز أقل من لقطات الشاشة.",
+   "about": "agent-desktop أداة سطر أوامر ومكتبة C مكتوبة بلغة Rust، تقرأ شجرة إمكانية الوصول في نظام التشغيل بدل لقطات الشاشة. فتعيد اللقطة واجهة التطبيق بصيغة JSON مع مرجع لكل عنصر يمكن التفاعل معه، ثم ينقر الوكيل أو يكتب على المرجع، ويأخذ لقطة جديدة للتحقق. ولا يوجد نموذج داخل الأداة، والإجراءات تعمل دون واجهة افتراضيًا.\n\nيضيف الإصدار 1.2.0 الأمر agent-desktop mcp الذي يشغّل خادم MCP عبر stdio ويعرض كل أمر كأداة. وصارت الأوامر type وset-value وclipboard-set تقبل ‎--stdin‎، فلا تظهر النصوص السرية في وسائط العمليات.\n\nانتبه إلى أن اللقطات وقراءة الحافظة ولقطات الشاشة قد تحتوي محتوى خاصًا من سطح المكتب، وأن الإصدار 1.1.0 غيّر واجهة C الثنائية.",
+   "features": [
+    "لقطات من شجرة إمكانية الوصول مع مراجع للعناصر",
+    "خادم MCP عبر الأمر agent-desktop mcp",
+    "يعمل على macOS وWindows وLinux",
+    "مهارة مدمجة للوكلاء",
+    "مكتبة C للربط من لغات أخرى"
+   ],
+   "install": [
+    {
+     "label": "التثبيت عبر npm",
+     "cmd": "npm install -g agent-desktop"
+    },
+    {
+     "label": "التثبيت عبر Homebrew",
+     "cmd": "brew install agent-desktop"
+    },
+    {
+     "label": "إضافة المهارة",
+     "cmd": "npx skills add https://github.com/vercel-labs/agent-desktop --skill agent-desktop"
+    }
+   ],
+   "usage": [
+    "agent-desktop mcp"
+   ],
+   "requirements": [
+    "macOS 13 أو أحدث، أو Windows 10 1809 أو أحدث، أو Ubuntu 24.04 أو أحدث"
+   ],
+   "repo": "vercel-labs/agent-desktop",
+   "pricing": {
+    "model": "oss"
+   },
+   "alternatives": [
+    "ess-playwright-cli",
+    "ess-browser-use"
+   ],
+   "links": [
+    {
+     "label": "المستودع",
+     "url": "https://github.com/vercel-labs/agent-desktop"
+    }
+   ],
+   "url": "https://github.com/vercel-labs/agent-desktop",
+   "source": "github.com",
+   "importance": 2,
+   "tags": [
+    "computer-use",
+    "mcp",
+    "rust",
+    "agents"
+   ],
+   "en": {
+    "title": "agent-desktop 1.2: computer use for agents through the accessibility tree, now with an MCP server",
+    "summary": "A Rust CLI and library from Vercel Labs that lets agents use macOS, Windows and Linux apps by reading the accessibility tree instead of screenshots. Version 1.2.0 adds an MCP server that exposes each command as a tool, and reading secret text from stdin.",
+    "why": "For anyone building an agent that works with desktop apps, such as filling a form in an accounting app or testing a UI: precise clicks on numbered elements without vision models, and fewer tokens than screenshots.",
+    "about": "agent-desktop is a CLI and C library written in Rust that reads the operating system's accessibility tree instead of screenshots. A snapshot returns the app's UI as JSON with a ref for every element the agent can act on; the agent clicks or types on a ref, then takes a new snapshot to check. There is no model inside, and actions are headless by default.\n\nVersion 1.2.0 adds agent-desktop mcp, which runs an MCP server over stdio and exposes each command as a tool. The type, set-value and clipboard-set commands now accept --stdin, which keeps secret text out of process arguments.\n\nNote that snapshots, clipboard reads and screenshots can contain private desktop content, and version 1.1.0 changed the C ABI.",
+    "features": [
+     "Accessibility-tree snapshots with element refs",
+     "MCP server via agent-desktop mcp",
+     "Runs on macOS, Windows and Linux",
+     "Built-in skill for agents",
+     "C library for bindings from other languages"
+    ],
+    "install": [
+     "Install with npm",
+     "Install with Homebrew",
+     "Add the skill"
+    ],
+    "usage": [
+     "agent-desktop mcp"
+    ],
+    "requirements": [
+     "macOS 13+, Windows 10 1809+, or Ubuntu 24.04+"
+    ],
+    "links": [
+     "Repository"
+    ]
+   }
+  }
+ ]
+}
