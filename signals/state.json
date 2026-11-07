@@ -1,78 +1,78 @@
 {
   "awesome": {
     "hesreallyhim/awesome-claude-code": {
-      "sha": "1c88da78767b4ae664e76861b7afc17a2754d4d4",
-      "date": "2026-11-06T12:10:59.700Z"
+      "sha": "3cb5db8603fe17c5ecda921739ff90ebe088d60b",
+      "date": "2026-11-07T05:43:59.524Z"
     },
     "jqueryscript/awesome-claude-code": {
-      "sha": "4d0db41e85da437e354a8efcac6e8201d3b187d0",
-      "date": "2026-11-06T12:10:59.979Z"
+      "sha": "bf32b78bae807323db5ae0ed933f77633bdd8301",
+      "date": "2026-11-07T05:44:01.131Z"
     },
     "ComposioHQ/awesome-claude-skills": {
       "sha": "be2a406907dbc61b73e6827ded415c96139d13a2",
-      "date": "2026-11-06T12:11:00.207Z"
+      "date": "2026-11-07T05:44:02.526Z"
     },
     "travisvn/awesome-claude-skills": {
       "sha": "1da55aa810f206d3fe2005e7e3989b15a275d942",
-      "date": "2026-11-06T12:11:00.465Z"
+      "date": "2026-11-07T05:44:03.552Z"
     },
     "VoltAgent/awesome-agent-skills": {
-      "sha": "a6f9992ceaef05841a9b92e6849d90004a61710c",
-      "date": "2026-11-06T12:11:01.030Z"
+      "sha": "6d483e29da745a010d88974ef6d0e50d15755e9a",
+      "date": "2026-11-07T05:44:05.205Z"
     },
     "VoltAgent/awesome-claude-code-subagents": {
-      "sha": "408d3c9eee2d0c75c12a3abb5de29e53c2ca6b9e",
-      "date": "2026-11-06T12:11:01.408Z"
+      "sha": "ed74d115b7fb7026a22a4f816a8e3250f425e3b4",
+      "date": "2026-11-07T05:44:07.404Z"
     },
     "punkpeye/awesome-mcp-servers": {
-      "sha": "f225f117f92626e6b7d5d2912746d9269e3d037b",
-      "date": "2026-11-06T12:11:01.716Z"
+      "sha": "f431a5cd95cebf038e587715635b9d1a0a4d0c02",
+      "date": "2026-11-07T05:44:09.560Z"
     },
     "wong2/awesome-mcp-servers": {
       "sha": "39eb1d76d76e562657f3c657266a504cea159e23",
-      "date": "2026-11-06T12:11:01.955Z"
+      "date": "2026-11-07T05:44:10.501Z"
     },
     "appcypher/awesome-mcp-servers": {
       "sha": "280218b4bba97a49facf929f8012dec5e30384b6",
-      "date": "2026-11-06T12:11:02.199Z"
+      "date": "2026-11-07T05:44:11.447Z"
     },
     "e2b-dev/awesome-ai-agents": {
       "sha": "9596ab1e69fbbb6c95291141c8dab5c181083216",
-      "date": "2026-11-06T12:11:02.967Z"
+      "date": "2026-11-07T05:44:14.132Z"
     },
     "Shubhamsaboo/awesome-llm-apps": {
-      "sha": "6c16b23f1bacd0fdf240bb5141ef45e59e82c306",
-      "date": "2026-11-06T12:11:03.438Z"
+      "sha": "c129f31036f5ba0bba42cbb63937a66946fdf2c0",
+      "date": "2026-11-07T05:44:15.368Z"
     },
     "github/awesome-copilot": {
-      "sha": "5269f7ea2d6c3a9bfda5ed878b6726cf509121fd",
-      "date": "2026-11-06T12:11:03.699Z"
+      "sha": "797337f33f73e35d08d82f840e21c4b8c4932d88",
+      "date": "2026-11-07T05:44:16.782Z"
     },
     "VoltAgent/official-mcp-servers": {
-      "sha": "3964a7030860613df3550c6c58974ea10615498f",
-      "date": "2026-11-06T12:11:02.711Z"
+      "sha": "5a41f1c6f9a4dafec50f42cb5c59c99d15c9497e",
+      "date": "2026-11-07T05:44:13.203Z"
     },
     "Picrew/awesome-agent-harness": {
-      "sha": "1ae44c112978de3fdaaad5d199cb3ce8580e44f3",
-      "date": "2026-11-06T12:11:03.965Z"
+      "sha": "e7e8f8d268f7ac5311b778832327e4be2f555507",
+      "date": "2026-11-07T05:44:17.894Z"
     },
     "AutoJunjie/awesome-agent-harness": {
       "sha": "1e3f26371ec1a765efe0268b1e63374bee2aaa04",
-      "date": "2026-11-06T12:11:04.217Z"
+      "date": "2026-11-07T05:44:18.825Z"
     }
   },
   "releases": {
-    "anthropics/claude-code": "v2.1.318",
-    "anthropics/claude-agent-sdk-python": "v0.2.178",
-    "anthropics/claude-agent-sdk-typescript": "v0.3.318",
+    "anthropics/claude-code": "v2.1.319",
+    "anthropics/claude-agent-sdk-python": "v0.2.179",
+    "anthropics/claude-agent-sdk-typescript": "v0.3.319",
     "obra/superpowers": "v7.0.2",
     "openai/codex": "rust-v0.167.0",
     "google-gemini/gemini-cli": "v0.67.0",
-    "anomalyco/opencode": "v2.2.5",
+    "anomalyco/opencode": "v2.2.6",
     "cline/cline": "v4.1.26",
     "microsoft/playwright-mcp": "v0.0.84",
     "github/github-mcp-server": "v2.1.0",
-    "upstash/context7": "@upstash/context7-mcp@4.5.0",
+    "upstash/context7": "@upstash/context7-mcp@4.5.1",
     "laravel/framework": "v13.40.0",
     "laravel/boost": "v2.10.4",
     "laravel/ai": "v1.3.0",
@@ -81,12 +81,12 @@
     "livewire/livewire": "v4.4.8",
     "prism-php/prism": "v0.102.0",
     "vercel/next.js": "v16.4.5",
-    "tailwindlabs/tailwindcss": "v4.3.4",
+    "tailwindlabs/tailwindcss": "v4.3.5",
     "microsoft/playwright": "v1.65.0",
-    "github/spec-kit": "v1.3.1",
+    "github/spec-kit": "v1.3.2",
     "n8n-io/n8n": "n8n@3.1.0",
     "ollama/ollama": "v0.40.15",
-    "vercel/ai": "ai@7.0.163",
+    "vercel/ai": "ai@7.0.164",
     "docker/compose": "v5.7.0",
     "coollabsio/coolify": "v4.6.0",
     "AzmSquad/squad-kit": "v1.2.2",
@@ -94,12 +94,12 @@
     "coleam00/Archon": "v0.13.2",
     "Chorus-AIDLC/Chorus": "v0.24.0",
     "awslabs/aidlc-workflows": "v2.11.3",
-    "UKGovernmentBEIS/inspect_ai": "0.3.287",
-    "OpenHands/OpenHands": "v1.36.0",
+    "UKGovernmentBEIS/inspect_ai": "0.3.288",
+    "OpenHands/OpenHands": "v1.37.0",
     "e2b-dev/E2B": "v0.1.4",
     "kubernetes-sigs/agent-sandbox": "v1.0.10",
     "multica-ai/multica": "v0.8.1",
-    "paperclipai/paperclip": "v2026.1023.0",
+    "paperclipai/paperclip": "v2026.1106.0",
     "bmad-code-org/BMAD-METHOD": "v6.12.4",
     "langfuse/langfuse": "v4.76.0",
     "TencentCloud/CubeSandbox": "v0.7.3",
