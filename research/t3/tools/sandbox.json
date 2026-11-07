@@ -1762,25 +1762,25 @@
    "kind": "commercial",
    "vendor": "Render",
    "repo": null,
-   "url": "https://render.com/sandboxes",
+   "url": "https://render.com/blog/introducing-render-sandboxes",
    "license": "Proprietary",
-   "pricing": "Billed on active CPU use and allocated memory (Nov 2026); rates not in the source we read",
+   "pricing": "Billed on active CPU use and allocated memory; suspended sandboxes pay only snapshot storage (Nov 2026, no rates published)",
    "status": "beta",
    "version": "Public beta (4 Nov 2026)",
    "tier": "brief",
    "summary": "Isolated Linux sandboxes for agents on the Render cloud, in public beta since 4 November 2026. Agents can install packages, edit files and run code, inside the same Render workspace, billing and API keys as a team's existing apps.",
-   "how": "Firecracker microVMs with snapshots and automatic suspension when idle; billed for active CPU rather than wall-clock time.",
+   "how": "Each sandbox is its own Firecracker microVM, usually ready for a first command in under a second. Filesystem or full runtime snapshots (memory and processes), a 15-minute default idle timeout, and a runtime limit of 24 h by default (60 s to 30 days). Per-sandbox network policy: allow all, allow a domain list, or block outbound traffic. TypeScript and Python SDKs and the Render CLI; Docker works inside.",
    "features": [
-    "Firecracker microVM isolation",
-    "Snapshots",
-    "Idle suspension",
-    "Same workspace and API keys as Render apps"
+    "Firecracker microVM per sandbox",
+    "Filesystem and runtime snapshots, idle suspension",
+    "Per-sandbox egress policy (allow all, domain list, or none)",
+    "TypeScript and Python SDKs and Render CLI; Docker inside"
    ],
    "strengths": [
     "Snapshots plus idle suspension fit 'prepare a repo once, fan out many runs'"
    ],
    "weaknesses": [
-    "Public beta; limits and prices not verified from Render's own docs"
+    "Public beta in one region (Oregon); no private networking, SSH or public URLs yet; no dollar rates published"
    ],
    "gaps": [
     "Managed only; no self-hosting for private code"
@@ -1800,37 +1800,39 @@
    },
    "links": [
     [
-     "Website",
-     "https://render.com/sandboxes"
+     "Announcement",
+     "https://render.com/blog/introducing-render-sandboxes"
     ],
     [
-     "News (RuntimeWire)",
-     "https://runtimewire.com/article/render-launches-sandboxes-public-beta-agents"
+     "Docs",
+     "https://render.com/docs/sandboxes"
     ]
    ],
    "sources": [
+    "https://render.com/blog/introducing-render-sandboxes",
+    "https://render.com/docs/sandboxes",
     "https://runtimewire.com/article/render-launches-sandboxes-public-beta-agents"
    ],
    "ar": {
     "summary": "بيئات Linux معزولة للوكلاء على سحابة Render، في مرحلة تجريبية عامة منذ 4 نوفمبر 2026. يستطيع الوكلاء فيها تثبيت الحزم وتعديل الملفات وتشغيل الشيفرة، داخل مساحة العمل نفسها في Render وبالفوترة ومفاتيح الواجهة نفسها لتطبيقات الفريق الحالية.",
-    "how": "آلات افتراضية مصغّرة من Firecracker مع لقطات (snapshots) وإيقاف تلقائي عند الخمول؛ والفوترة على وقت استخدام المعالج الفعلي لا على الوقت الكلي.",
+    "how": "كل بيئة آلة افتراضية مصغّرة Firecracker خاصة بها، وتجهز عادة لأول أمر في أقل من ثانية. لقطات لنظام الملفات أو للحالة الكاملة (الذاكرة والعمليات)، ومهلة خمول افتراضية 15 دقيقة، وحد تشغيل افتراضي 24 ساعة (من 60 ثانية إلى 30 يومًا). وقاعدة شبكة لكل بيئة: السماح بالكل، أو بقائمة نطاقات، أو منع الاتصال الخارجي. مع حزم TypeScript وPython وأوامر Render CLI، ويعمل Docker داخلها.",
     "features": [
-     "عزل بآلات افتراضية مصغّرة من Firecracker",
-     "لقطات",
-     "إيقاف عند الخمول",
-     "مساحة العمل ومفاتيح الواجهة نفسها لتطبيقات Render"
+     "آلة افتراضية مصغّرة Firecracker لكل بيئة",
+     "لقطات للملفات وللحالة الكاملة وإيقاف عند الخمول",
+     "قاعدة اتصال خارجي لكل بيئة (الكل، أو قائمة نطاقات، أو لا شيء)",
+     "حزم TypeScript وPython وأوامر Render CLI، ويعمل Docker داخلها"
     ],
     "strengths": [
      "اللقطات مع الإيقاف عند الخمول تناسب «تجهيز المستودع مرة واحدة ثم تشغيل محاولات كثيرة منه»"
     ],
     "weaknesses": [
-     "مرحلة تجريبية عامة؛ ولم نتحقق من الحدود والأسعار من وثائق Render نفسها"
+     "مرحلة تجريبية عامة في منطقة واحدة (Oregon)؛ ولا شبكة خاصة ولا SSH ولا روابط عامة بعد؛ ولا أسعار منشورة بالدولار"
     ],
     "gaps": [
      "خدمة مُدارة فقط؛ لا استضافة ذاتية للشيفرة الخاصة"
     ],
     "role": "خيار مُدار آخر بتقنية Firecracker للسعة المؤقتة، بجانب E2B وModal وVercel. لا يصلح للمستودعات الخاصة دون اتفاقية بيانات.",
-    "pricing": "الفوترة على استخدام المعالج الفعلي والذاكرة المخصصة (نوفمبر 2026)؛ والأسعار غير مذكورة في المصدر الذي قرأناه"
+    "pricing": "الفوترة على استخدام المعالج الفعلي والذاكرة المخصصة؛ والبيئات الموقوفة تدفع تخزين اللقطات فقط (نوفمبر 2026، دون أسعار منشورة)"
    }
   }
  ]
