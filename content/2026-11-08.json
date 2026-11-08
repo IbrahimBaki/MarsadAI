@@ -1,0 +1,469 @@
+{
+ "date": "2026-11-08",
+ "headline": "Gemini CLI 0.67 يضيف اكتشاف النماذج ويربط المحرر داخل بيئات العزل، وإطار AgentCompass المفتوح يقارن وكلاء البرمجة على المقاييس نفسها ويكشف التحايل على الاختبارات، وAVA 4 يمنح الوكلاء تحليل بيانات يمكن التحقق منه.",
+ "headline_en": "Gemini CLI 0.67 adds model discovery and brings the editor bridge into sandboxes; the open AgentCompass framework compares coding agents on the same benchmarks and flags test gaming; and AVA 4 gives agents data analysis you can verify.",
+ "items": [
+  {
+   "id": "gemini-cli-0-67",
+   "section": "agents",
+   "kind": "release",
+   "title": "Gemini CLI 0.67: أمر لاكتشاف النماذج وربط إضافة المحرر داخل بيئات العزل",
+   "summary": "صدر Gemini CLI 0.67.0 في 4 نوفمبر 2026. يضيف الأمر models والخيار ‎--list-models‎ لعرض النماذج المتاحة من سطر الأوامر، ويوصل إضافة المحرر المرافقة إلى بيئات العزل في الحاويات، ويحسّن التعامل مع الإلغاء وإشارات الإنهاء، ويشدد حماية الكتابة على الملفات.",
+   "why": "لمن يشغّل Gemini CLI داخل حاوية معزولة أو في سكربتات دون تفاعل: تكامل المحرر صار يعمل داخل الحاوية، والإلغاء يوقف تنفيذ الأدوات التالية فعلًا بدل أن يستمر في الخلفية.",
+   "about": "Gemini CLI هو وكيل البرمجة مفتوح المصدر من Google الذي يعمل في الطرفية. الإصدار المستقر 0.67.0 صدر في 4 نوفمبر 2026.\n\nأبرز الجديد أمر models والخيار ‎--list-models‎ لاكتشاف النماذج المتاحة مباشرة من سطر الأوامر. وصار من الممكن ربط إضافة المحرر المرافقة (IDE companion) ببيئة العزل في الحاوية عبر قناة الإدخال والإخراج، فيعمل التكامل مع المحرر عندما يعمل الوكيل داخل حاوية.\n\nوتحسّن التعامل مع الإلغاء وإشارات الإنهاء: تتوقف معالجة البث المستمر، وتتوقف التذكيرات التلقائية، ولا تُنفَّذ أدوات أخرى في الوضع غير التفاعلي بعد الإلغاء. وفي جانب الأمان، صارت الكتابة الذرية للملفات تحترم الملفات للقراءة فقط والروابط الصلبة، وتُحلّ المسارات النسبية من جذر مساحة العمل في المحرر، وتتضمن طلبات الإذن بيانات خادم MCP والأداة المطلوبة.",
+   "features": [
+    "الأمر models والخيار ‎--list-models‎ لاكتشاف النماذج",
+    "ربط إضافة المحرر المرافقة ببيئات العزل في الحاويات",
+    "إلغاء أدق يوقف تنفيذ الأدوات التالية في الوضع غير التفاعلي",
+    "كتابة ملفات تحترم الملفات للقراءة فقط والروابط الصلبة",
+    "بيانات خادم MCP والأداة في طلبات الإذن"
+   ],
+   "install": [
+    {
+     "label": "تثبيت أحدث إصدار مستقر",
+     "cmd": "npm install -g @google/gemini-cli"
+    }
+   ],
+   "repo": "google-gemini/gemini-cli",
+   "links": [
+    {
+     "label": "ملاحظات الإصدار",
+     "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/changelogs/latest.md"
+    },
+    {
+     "label": "الإصدار على GitHub",
+     "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.67.0"
+    }
+   ],
+   "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.67.0",
+   "source": "github.com",
+   "importance": 2,
+   "tags": [
+    "gemini-cli",
+    "coding-agents",
+    "sandbox",
+    "mcp"
+   ],
+   "en": {
+    "title": "Gemini CLI 0.67: a model discovery command and the IDE companion inside sandboxes",
+    "summary": "Gemini CLI 0.67.0 shipped on 4 November 2026. It adds a models command and a --list-models flag to list available models from the CLI, bridges the IDE companion into container sandboxes, improves cancellation and termination-signal handling, and hardens file writes.",
+    "why": "For anyone running Gemini CLI in an isolated container or in non-interactive scripts: the editor integration now works inside the container, and cancelling really stops further tool execution instead of carrying on in the background.",
+    "about": "Gemini CLI is Google's open-source coding agent for the terminal. Stable release 0.67.0 shipped on 4 November 2026.\n\nThe main addition is a models command and a --list-models flag for discovering available models straight from the CLI. The IDE companion can now be bridged into a container sandbox over exec stdio, so editor integration works when the agent runs inside a container.\n\nCancellation and termination signals are handled better: continuation stream processing stops, auto-nudges halt, and no further tools run in non-interactive mode after a cancel. On the safety side, atomic file writes now respect read-only files and hard links, relative paths resolve against the active IDE workspace root, and permission requests include the MCP server and tool metadata.",
+    "features": [
+     "models command and --list-models flag for model discovery",
+     "IDE companion bridged into container sandboxes",
+     "Cleaner cancellation that stops further tool runs in non-interactive mode",
+     "File writes that respect read-only files and hard links",
+     "MCP server and tool metadata in permission requests"
+    ],
+    "install": [
+     "Install the latest stable release"
+    ],
+    "links": [
+     "Release notes",
+     "Release on GitHub"
+    ]
+   }
+  },
+  {
+   "id": "agentcompass-agent-eval",
+   "section": "llm",
+   "kind": "library",
+   "title": "AgentCompass 1.1: إطار مفتوح لتقييم أي وكيل على أي مقياس داخل أي بيئة عزل",
+   "summary": "AgentCompass من فريق OpenCompass في مختبر شنغهاي للذكاء الاصطناعي إطار تقييم مفتوح المصدر (Apache-2.0) يفصل النموذج والمقياس والوكيل والبيئة. يشغّل Claude Code وCodex وOpenHands وmini-swe-agent على أكثر من 30 مقياسًا، منها SWE-bench وTerminal-Bench، في Docker أو Daytona أو Modal، وصدر الإصدار 1.1.0 في 2 نوفمبر 2026.",
+   "why": "لفريق يريد مقارنة وكلاء البرمجة على مهامه بدل الاعتماد على لوحات الصدارة: مثلًا تشغيل Claude Code وCodex على المهام نفسها ومقارنة النجاح والتكلفة، مع أداة تكشف محاولات الوكيل التحايل على الاختبارات.",
+   "about": "AgentCompass إطار لتقييم الوكلاء يقسم كل تجربة إلى أربعة أجزاء قابلة للتبديل: النموذج، والمقياس، والوكيل (harness)، والبيئة التي يعمل فيها. فيمكن تشغيل أي وكيل مدعوم على أي مقياس مدعوم بأمر واحد.\n\nمن الوكلاء المدعومين Claude Code وCodex وOpenHands وmini-swe-agent، ومن البيئات التشغيل المحلي وDocker وDaytona وModal وOpenSandbox. وتعمل التشغيلات بالتوازي مع حفظ تدريجي وإعادة محاولة واستئناف، ويُسجَّل كل مسار عمل واستدعاء أداة واستهلاك رموز. ويستطيع تشغيل مهام مكتوبة بصيغة Harbor وتقييمها بأداة التحقق الخاصة بـ Harbor.\n\nوبعد كل مهمة تعمل أدوات تحليل قابلة للإضافة، منها كاشف للتحايل على التقييم على خطوتين: قواعد تبحث عن أنماط مثل تعديل ملفات الاختبار أو إضعاف التحققات، ثم فحص بنموذج لغوي للخطوات المشبوهة فقط. ونشر الفريق أيضًا SWE-Bench Pro Verified، وهي نسخة منقّحة من SWE-Bench Pro تمنع الوكلاء من قراءة ملفات الإجابة.\n\nالمشروع موجّه للبحث: لا يقدّم تقارير للفرق أو إعدادات لكل مشروع، وأول إصدار له على PyPI كان في 30 سبتمبر 2026.",
+   "features": [
+    "فصل النموذج والمقياس والوكيل والبيئة خلف واجهات ثابتة",
+    "وكلاء مدعومون منهم Claude Code وCodex وOpenHands",
+    "بيئات Docker وDaytona وModal وOpenSandbox",
+    "تشغيلات متوازية قابلة للاستئناف مع تسجيل كامل للمسار والتكلفة",
+    "كاشف للتحايل على التقييم يمكن تشغيله على نتائج منتهية"
+   ],
+   "install": [
+    {
+     "label": "التثبيت من المصدر",
+     "cmd": "git clone https://github.com/open-compass/AgentCompass.git && cd AgentCompass"
+    },
+    {
+     "label": "إنشاء بيئة Python 3.12",
+     "cmd": "uv venv --python 3.12"
+    },
+    {
+     "label": "تثبيت الحزمة",
+     "cmd": "uv pip install -e ."
+    }
+   ],
+   "usage": [
+    "python examples/run_swebench_verified.py"
+   ],
+   "requirements": [
+    "Python 3.12 أو أحدث"
+   ],
+   "repo": "open-compass/AgentCompass",
+   "pricing": {
+    "model": "oss"
+   },
+   "links": [
+    {
+     "label": "المستودع",
+     "url": "https://github.com/open-compass/AgentCompass"
+    },
+    {
+     "label": "التوثيق",
+     "url": "https://agent-compass.mintlify.app/en/"
+    },
+    {
+     "label": "ورقة SWE-Bench Pro Verified",
+     "url": "https://arxiv.org/abs/2609.08149"
+    }
+   ],
+   "url": "https://github.com/open-compass/AgentCompass",
+   "source": "github.com",
+   "importance": 2,
+   "tags": [
+    "evals",
+    "coding-agents",
+    "benchmarks",
+    "open-source"
+   ],
+   "en": {
+    "title": "AgentCompass 1.1: an open framework to evaluate any agent on any benchmark in any sandbox",
+    "summary": "AgentCompass, from the OpenCompass team at Shanghai AI Laboratory, is an open-source (Apache-2.0) evaluation framework that separates model, benchmark, agent and environment. It runs Claude Code, Codex, OpenHands and mini-swe-agent on more than 30 benchmarks, including SWE-bench and Terminal-Bench, in Docker, Daytona or Modal. Version 1.1.0 shipped on 2 November 2026.",
+    "why": "For a team that wants to compare coding agents on its own tasks instead of trusting leaderboards: for example, run Claude Code and Codex on the same tasks and compare success and cost, with a tool that flags attempts to game the tests.",
+    "about": "AgentCompass is an agent evaluation framework that splits each experiment into four swappable parts: the model, the benchmark, the agent (harness) and the environment it runs in. Any supported agent can run on any supported benchmark with one command.\n\nSupported agents include Claude Code, Codex, OpenHands and mini-swe-agent; environments include local execution, Docker, Daytona, Modal and OpenSandbox. Runs are concurrent, saved incrementally, retried and resumable, and every trajectory, tool call and token count is recorded. It can run tasks written in Harbor's format and score them with Harbor's own verifier.\n\nAfter each task, pluggable analyzers run, including a two-step reward-hacking detector: rules look for patterns such as edited test files or weakened assertions, then a language model checks only the suspicious steps. The team also published SWE-Bench Pro Verified, a cleaned-up version of SWE-Bench Pro that stops agents from reading the answer files.\n\nThe project is research-oriented: it has no team reports or per-project settings, and its first PyPI release was on 30 September 2026.",
+    "features": [
+     "Model, benchmark, agent and environment separated behind stable interfaces",
+     "Supported agents include Claude Code, Codex and OpenHands",
+     "Docker, Daytona, Modal and OpenSandbox environments",
+     "Concurrent, resumable runs with full trajectory and cost logging",
+     "A reward-hacking detector that can run on finished results"
+    ],
+    "install": [
+     "Install from source",
+     "Create a Python 3.12 environment",
+     "Install the package"
+    ],
+    "usage": [
+     "python examples/run_swebench_verified.py"
+    ],
+    "requirements": [
+     "Python 3.12 or later"
+    ],
+    "links": [
+     "Repository",
+     "Documentation",
+     "SWE-Bench Pro Verified paper"
+    ]
+   }
+  },
+  {
+   "id": "ava-4-data-agent-skill",
+   "section": "data",
+   "kind": "library",
+   "title": "AVA 4 من AntV: تحليل البيانات والرسوم البيانية لوكلاء الذكاء الاصطناعي مع مهارة جاهزة",
+   "summary": "AVA إطار مفتوح المصدر (MIT) من AntV لتحليل البيانات وعرضها في تطبيقات JavaScript ووكلاء الذكاء الاصطناعي. يصل الإصدار 4 إلى ملفات CSV وExcel وJSON وParquet وقواعد البيانات من واجهة واحدة، وينفّذ الاستعلامات ويقترح الرسوم، ويأتي بمهارة وأداة سطر أوامر يستخدمها الوكيل دون مفتاح نموذج إضافي.",
+   "why": "لمن يريد أن يجيب وكيله عن أسئلة الأعمال من بيانات حقيقية: مثلًا «لماذا انخفضت المبيعات هذا الشهر؟» مع عرض الاستعلام الذي بُنيت عليه الإجابة وتعريف المقياس المستخدم، بدل أرقام لا يمكن التحقق منها.",
+   "about": "AVA إطار لتحليل البيانات المرئي من AntV، ويصف نفسه بأنه نظير PandasAI في عالم JavaScript. الإصدار 4 يمد قدراته السابقة في الرؤى التلقائية واقتراح الرسوم إلى وكلاء الذكاء الاصطناعي.\n\nيوفر واجهة واحدة للوصول إلى الملفات وقواعد البيانات، ويعرض الاستعلامات والنتائج التي بُنيت عليها كل إجابة، ويقترح الرسم المناسب للسؤال والبيانات، ويتيح اختيار مكان تنفيذ التحليل ونقطة النموذج المستخدمة. ويعرّف نموذج بيانات موحدًا يجمع البنية والملف الإحصائي للبيانات والتعريفات التجارية للمقاييس، لكي يعيد الوكيل استخدامها.\n\nوفي المهارة المرفقة يتولى الوكيل التفكير والشرح، بينما يحمّل AVA البيانات وينفذ الحسابات ويرسم الرسوم التفاعلية بصيغة HTML، ولا يحتاج هذا المسار إلى مفتاح واجهة نموذج إضافي. ويتطلب Node.js 22.13 أو أحدث.",
+   "features": [
+    "وصول موحد إلى CSV وExcel وJSON وParquet وقواعد البيانات",
+    "عرض الاستعلامات والنتائج وراء كل إجابة",
+    "تعريفات تجارية قابلة لإعادة الاستخدام للمقاييس والفترات",
+    "اقتراح الرسوم ورسوم HTML تفاعلية",
+    "مهارة وأداة سطر أوامر للوكلاء دون مفتاح نموذج إضافي"
+   ],
+   "install": [
+    {
+     "label": "تثبيت المكتبة",
+     "cmd": "npm install @antv/ava@4"
+    },
+    {
+     "label": "تثبيت المهارة للوكلاء",
+     "cmd": "npx skills add antvis/AVA"
+    }
+   ],
+   "requirements": [
+    "Node.js 22.13 أو أحدث"
+   ],
+   "repo": "antvis/AVA",
+   "pricing": {
+    "model": "oss"
+   },
+   "links": [
+    {
+     "label": "المستودع",
+     "url": "https://github.com/antvis/AVA"
+    },
+    {
+     "label": "التوثيق",
+     "url": "https://ava.antv.vision/documentation/"
+    },
+    {
+     "label": "دمج الوكلاء",
+     "url": "https://ava.antv.vision/documentation/agent-skill/"
+    }
+   ],
+   "url": "https://github.com/antvis/AVA",
+   "source": "github.com",
+   "importance": 2,
+   "tags": [
+    "data-analysis",
+    "charts",
+    "agent-skills",
+    "javascript"
+   ],
+   "en": {
+    "title": "AVA 4 from AntV: data analysis and charts for AI agents, with a ready-made skill",
+    "summary": "AVA is AntV's open-source (MIT) framework for data analysis and visualization in JavaScript apps and AI agents. Version 4 reaches CSV, Excel, JSON and Parquet files and databases through one interface, runs queries, recommends charts, and ships a skill and CLI that an agent can use with no extra model key.",
+    "why": "For anyone who wants an agent to answer business questions from real data: for example, 'why did sales drop this month?' with the query behind the answer and the metric definition used, instead of numbers that cannot be checked.",
+    "about": "AVA is AntV's visual analytics framework, and it describes itself as PandasAI for JavaScript. Version 4 extends its earlier automated insights and chart recommendations to AI agents.\n\nIt offers one interface to files and databases, shows the queries and results behind each answer, recommends a chart for the question and the data, and lets you choose where analysis runs and which model endpoint it uses. It defines a unified data model that combines schema, data profile and business definitions of metrics, so the agent can reuse them.\n\nIn the bundled skill the agent reasons and explains, while AVA loads data, runs the calculations and renders interactive HTML charts; this path needs no extra model API key. It requires Node.js 22.13 or later.",
+    "features": [
+     "One interface to CSV, Excel, JSON, Parquet and databases",
+     "Queries and results shown behind every answer",
+     "Reusable business definitions for metrics and periods",
+     "Chart recommendations and interactive HTML charts",
+     "A skill and CLI for agents with no extra model key"
+    ],
+    "install": [
+     "Install the library",
+     "Install the skill for agents"
+    ],
+    "requirements": [
+     "Node.js 22.13 or later"
+    ],
+    "links": [
+     "Repository",
+     "Documentation",
+     "Agent integration"
+    ]
+   }
+  },
+  {
+   "id": "stack-diagram-skill",
+   "section": "architecture",
+   "kind": "skill",
+   "title": "stack-diagram: مهارة ترسم مخطط معمار النظام بالشعارات الرسمية من جملة واحدة",
+   "summary": "مهارة مفتوحة المصدر (MIT) لوكلاء البرمجة: تصف مكونات نظامك في جملة، فيرسم الوكيل مخطط معمار بالشعارات الرسمية لكل تقنية، بما فيها أيقونات AWS وGoogle Cloud وAzure الخاصة بكل مزود. الناتج ملف HTML مستقل بنسختين فاتحة وداكنة، أو صورة PNG أو مكوّن React.",
+   "why": "لمن يحتاج مخططًا واضحًا للتوثيق أو لعرض تقني دون فتح أداة رسم: مثلًا «Next.js على Vercel مع واجهة Hono وقاعدة Postgres وStripe للدفع» تتحول إلى مخطط جاهز للإضافة إلى الويكي أو ملف README.",
+   "about": "stack-diagram مهارة تعمل مع Claude Code وCodex وCursor وغيرها من الوكلاء التي تدعم المهارات. تكتب وصفًا قصيرًا للنظام، فيجلب الوكيل الشعارات الرسمية من مصادر مثل svgl وdevicon، ويأخذ أيقونات AWS وGoogle Cloud وAzure من الحزم الرسمية لكل مزود.\n\nتُوجَّه الخطوط حول التسميات فلا تمر الأسهم فوق النص، ويرسم الوكيل المخطط ويتحقق منه قبل تسليمه. والناتج الافتراضي ملف HTML واحد مضمّنة فيه الخطوط والشعارات فيعمل دون اتصال، ويمكن أيضًا تصديره PNG أو مكوّن React.\n\nتحتاج المهارة إلى Python 3.9 أو أحدث واتصال بالشبكة لجلب الشعارات، ويستخدم تصدير PNG أداة Playwright مع Chromium. وبعد الرسم يعرض الوكيل مرة واحدة نشر المخطط في معرض عام، ولا ينشر إلا بعد موافقة صريحة مرتين.",
+   "features": [
+    "مخطط معمار من وصف بلغة طبيعية",
+    "شعارات رسمية وأيقونات AWS وGoogle Cloud وAzure",
+    "نسختان فاتحة وداكنة لكل مخطط",
+    "تصدير HTML مستقل أو PNG أو مكوّن React"
+   ],
+   "install": [
+    {
+     "label": "تثبيت المهارة",
+     "cmd": "npx skills add caru-ini/stack-diagram"
+    }
+   ],
+   "usage": [
+    "ارسم معمار نظامنا: Next.js وواجهة Hono على Vercel، وPostgres على Neon، والمصادقة عبر Clerk، والدفع عبر Stripe، والنشر عبر GitHub Actions."
+   ],
+   "requirements": [
+    "Python 3.9 أو أحدث",
+    "Playwright مع Chromium لتصدير PNG"
+   ],
+   "repo": "caru-ini/stack-diagram",
+   "pricing": {
+    "model": "oss"
+   },
+   "links": [
+    {
+     "label": "المستودع",
+     "url": "https://github.com/caru-ini/stack-diagram"
+    }
+   ],
+   "url": "https://github.com/caru-ini/stack-diagram",
+   "source": "github.com",
+   "importance": 1,
+   "tags": [
+    "architecture",
+    "diagrams",
+    "agent-skills",
+    "documentation"
+   ],
+   "en": {
+    "title": "stack-diagram: a skill that draws an architecture diagram with official logos from one sentence",
+    "summary": "An open-source (MIT) skill for coding agents: describe your system's parts in a sentence and the agent draws an architecture diagram with each technology's official logo, including AWS, Google Cloud and Azure's own icons. The output is a self-contained HTML file in light and dark versions, or a PNG or a React component.",
+    "why": "For anyone who needs a clear diagram for docs or a tech talk without opening a drawing tool: for example, 'Next.js on Vercel with a Hono API, Postgres and Stripe for payments' becomes a diagram ready for a wiki or a README.",
+    "about": "stack-diagram is a skill that works with Claude Code, Codex, Cursor and other agents that support skills. You write a short description of the system, and the agent fetches official logos from sources such as svgl and devicon, and takes AWS, Google Cloud and Azure icons from each vendor's own package.\n\nLines are routed around labels so arrows never cross text, and the agent renders the diagram and checks it before handing it over. The default output is a single HTML file with fonts and logos inlined so it works offline; it can also export a PNG or a React component.\n\nThe skill needs Python 3.9 or later and network access to fetch logos, and PNG export uses Playwright with Chromium. After drawing, the agent offers once to post the diagram to a public gallery, and posts only after you say yes twice.",
+    "features": [
+     "Architecture diagram from a plain-language description",
+     "Official logos and AWS, Google Cloud and Azure icons",
+     "Light and dark versions of every diagram",
+     "Export as standalone HTML, PNG or a React component"
+    ],
+    "install": [
+     "Install the skill"
+    ],
+    "usage": [
+     "Diagram our stack: Next.js and a Hono API on Vercel, Postgres on Neon, auth with Clerk, payments with Stripe. GitHub Actions deploys."
+    ],
+    "requirements": [
+     "Python 3.9 or later",
+     "Playwright with Chromium for PNG export"
+    ],
+    "links": [
+     "Repository"
+    ]
+   }
+  },
+  {
+   "id": "excalidraw-cli-agents",
+   "section": "devtools",
+   "kind": "tool",
+   "title": "excalidraw-cli: مخططات Excalidraw من نص أو JSON أو DOT، مع مهارة وإضافة للوكلاء",
+   "summary": "أداة سطر أوامر مفتوحة المصدر (MIT) تحوّل لغة نصية بسيطة أو JSON أو Graphviz DOT إلى مخطط Excalidraw قابل للتعديل، مع ترتيب تلقائي للعناصر وتصدير PNG وSVG. وتأتي بمهارة لـ Claude Code وCodex وCursor، وإضافة لـ Claude Code، وامتداد لـ Gemini CLI.",
+   "why": "لمن يريد أن يرسم الوكيل مخطط تدفق أو معمار يمكن فتحه وتعديله يدويًا لاحقًا في Excalidraw: مثلًا تحويل خطوات تسجيل الدخول إلى مخطط قرار داخل ملف .excalidraw في المستودع.",
+   "about": "excalidraw-cli أداة مبنية للوكلاء والسكربتات. تقبل لغة نصية قصيرة تمثّل فيها الأقواس المربعة خطوة والأقواس المعقوفة قرارًا والأقواس العادية بداية أو نهاية، وتقبل أيضًا JSON أو Graphviz DOT، ثم ترتّب العناصر تلقائيًا بمحرك ELK في أي اتجاه.\n\nتصدّر الملف إلى PNG أو SVG مع وضع داكن وخلفيات مخصصة وتكبير وهوامش. وأضاف الإصدار 1.4 تنسيق العناصر داخل النص وأنواعًا جديدة من الأسهم (عكسية ومتقطعة وثنائية الاتجاه)، ويضيف الفرع الحالي ملف إضافة لـ Claude Code وامتدادًا لـ Gemini CLI.\n\nتتطلب Node.js 20.19 أو أحدث، ولم يعد Node.js 18 مدعومًا. وتُسطَّح الرسوم الفرعية في DOT.",
+   "features": [
+    "مخططات من لغة نصية أو JSON أو Graphviz DOT",
+    "ترتيب تلقائي بمحرك ELK في أربعة اتجاهات",
+    "تصدير PNG وSVG مع وضع داكن",
+    "مهارة للوكلاء وإضافة لـ Claude Code وامتداد لـ Gemini CLI"
+   ],
+   "install": [
+    {
+     "label": "التثبيت عبر npm",
+     "cmd": "npm install -g @swiftlysingh/excalidraw-cli"
+    },
+    {
+     "label": "تثبيت المهارة للوكلاء",
+     "cmd": "npx skills add swiftlysingh/excalidraw-cli"
+    }
+   ],
+   "usage": [
+    "excalidraw-cli create --inline \"(Start) -> [Process] -> {Decision?}\" -o flow.excalidraw",
+    "excalidraw-cli convert diagram.excalidraw --format png --scale 2 --dark"
+   ],
+   "requirements": [
+    "Node.js 20.19 أو أحدث"
+   ],
+   "repo": "swiftlysingh/excalidraw-cli",
+   "pricing": {
+    "model": "oss"
+   },
+   "links": [
+    {
+     "label": "المستودع",
+     "url": "https://github.com/swiftlysingh/excalidraw-cli"
+    },
+    {
+     "label": "الحزمة على npm",
+     "url": "https://www.npmjs.com/package/@swiftlysingh/excalidraw-cli"
+    }
+   ],
+   "url": "https://github.com/swiftlysingh/excalidraw-cli",
+   "source": "github.com",
+   "importance": 1,
+   "tags": [
+    "diagrams",
+    "excalidraw",
+    "cli",
+    "agent-skills"
+   ],
+   "en": {
+    "title": "excalidraw-cli: Excalidraw diagrams from text, JSON or DOT, with a skill and plugin for agents",
+    "summary": "An open-source (MIT) command-line tool that turns a simple text DSL, JSON or Graphviz DOT into an editable Excalidraw diagram, with automatic layout and PNG and SVG export. It ships a skill for Claude Code, Codex and Cursor, a Claude Code plugin and a Gemini CLI extension.",
+    "why": "For anyone who wants an agent to draw a flow or architecture diagram that can be opened and edited by hand later in Excalidraw: for example, turning login steps into a decision diagram saved as an .excalidraw file in the repo.",
+    "about": "excalidraw-cli is built for agents and scripts. It accepts a short text language where square brackets are a step, curly braces a decision and parentheses a start or end, and also accepts JSON or Graphviz DOT, then lays out the elements automatically with the ELK engine in any direction.\n\nIt exports to PNG or SVG with dark mode, custom backgrounds, scale and padding. Version 1.4 added inline node styling and new arrow types (reverse, dashed and bidirectional), and the current branch adds a Claude Code plugin file and a Gemini CLI extension.\n\nIt requires Node.js 20.19 or later; Node.js 18 is no longer supported. DOT subgraphs are flattened.",
+    "features": [
+     "Diagrams from a text DSL, JSON or Graphviz DOT",
+     "Automatic ELK layout in four directions",
+     "PNG and SVG export with dark mode",
+     "Agent skill, Claude Code plugin and Gemini CLI extension"
+    ],
+    "install": [
+     "Install with npm",
+     "Install the skill for agents"
+    ],
+    "usage": [
+     "excalidraw-cli create --inline \"(Start) -> [Process] -> {Decision?}\" -o flow.excalidraw",
+     "excalidraw-cli convert diagram.excalidraw --format png --scale 2 --dark"
+    ],
+    "requirements": [
+     "Node.js 20.19 or later"
+    ],
+    "links": [
+     "Repository",
+     "npm package"
+    ]
+   }
+  },
+  {
+   "id": "arcmira-youtube-transcript-mcp",
+   "section": "mcp",
+   "kind": "mcp",
+   "title": "Arcmira MCP: بحث في نصوص YouTube والبودكاست مع اقتباسات بتوقيتها",
+   "summary": "خادم MCP بعيد يتيح للوكيل البحث في نصوص فيديوهات YouTube والبودكاست، وقراءة النص الكامل لأي فيديو من رابطه، والحصول على الاقتباس الدقيق مع رابط يفتح عند الثانية المطلوبة، وغالبًا اسم المتحدث. ويضيف الإصدار 0.10.8 خمس مهارات جاهزة منها البحث عن مقطع ومتابعة ذكر علامة تجارية.",
+   "why": "لمن يبحث أو يكتب محتوى ويحتاج إلى ما قيل فعلًا في فيديو أو حلقة: مثلًا تلخيص محاضرة من رابطها، أو جمع آراء المتحدثين في موضوع خلال الشهرين الماضيين مع روابط تفتح عند كل اقتباس.",
+   "about": "Arcmira خدمة تفهرس نصوص YouTube والبودكاست، وتقدّم خادم MCP بعيدًا على العنوان https://mcp.arcmira.com/mcp. يتصل به الوكيل ويسجّل الدخول عبر المضيف، ثم يكتب برامج قصيرة تستدعي دوال مثل البحث، وقراءة النص، وتتبّع ذكر شخص أو منتج، وإحصاء الرعاة، وإنشاء مراقبات ترسل تنبيهات بالبريد أو Slack أو webhook.\n\nيضيف الإصدار 0.10.8 خمس مهارات للمهام: البحث في نصوص YouTube، والبحث في البودكاست، ومراقبة ذكر العلامة التجارية، و«ماذا قالوا»، والبحث عن مقطع. وتعطي مهارة المقاطع رابطًا يبدأ عند الثانية المطلوبة، وتذكّر بأن تنزيل الفيديو أو إعادة استخدامه يحتاج إلى حقوقه.\n\nالخدمة تعمل بالرصيد: بعض القراءات مجانية في حدود الخطة، والبحث يستهلك رصيدًا لكل مقطع بعد أول خمسة، والنص عالي الجودة (Premium) يستهلك رصيدًا أكبر، وبعض الميزات مثل تصنيف الإعلانات تتطلب خطة أعلى. والخادم والإضافة والمهارات برخصة Apache-2.0.",
+   "features": [
+    "بحث في نصوص YouTube والبودكاست مع الاقتباس والتاريخ والرابط",
+    "النص الكامل لأي فيديو من رابطه",
+    "تتبّع ذكر الأشخاص والمنتجات والرعاة",
+    "مراقبات بتنبيهات عبر البريد أو Slack أو webhook",
+    "خمس مهارات جاهزة في الإصدار 0.10.8"
+   ],
+   "install": [
+    {
+     "label": "الإضافة إلى Claude Code ثم تسجيل الدخول عبر ‎/mcp",
+     "cmd": "claude mcp add --transport http --scope user arcmira https://mcp.arcmira.com/mcp"
+    }
+   ],
+   "usage": [
+    "ابحث في نصوص YouTube والبودكاست عن تمويل وحدات معالجة الرسوميات خلال آخر 60 يومًا، وأعد الاقتباسات مع المتحدثين وتواريخ النشر وروابط بتوقيتها."
+   ],
+   "repo": "arcmira/mcp",
+   "pricing": {
+    "model": "freemium",
+    "note": "قراءات محدودة ضمن الخطة، ثم رصيد حسب الاستخدام؛ وبعض الميزات تتطلب خطة مدفوعة"
+   },
+   "links": [
+    {
+     "label": "المستودع",
+     "url": "https://github.com/arcmira/mcp"
+    },
+    {
+     "label": "إعداد خادم MCP",
+     "url": "https://arcmira.com/docs/mcp-server"
+    }
+   ],
+   "url": "https://github.com/arcmira/mcp",
+   "source": "github.com",
+   "importance": 1,
+   "tags": [
+    "mcp",
+    "youtube",
+    "transcripts",
+    "research"
+   ],
+   "en": {
+    "title": "Arcmira MCP: search YouTube and podcast transcripts with timestamped quotes",
+    "summary": "A remote MCP server that lets an agent search YouTube and podcast transcripts, read any video's full transcript from its link, and get the exact quote with a link that opens at the right second, often with the speaker's name. Version 0.10.8 adds five ready-made skills, including a clip finder and brand-mention monitoring.",
+    "why": "For anyone researching or writing who needs what was actually said in a video or episode: for example, summarising a talk from its link, or collecting speakers' views on a topic over the last two months with links that open at each quote.",
+    "about": "Arcmira is a service that indexes YouTube and podcast transcripts and offers a remote MCP server at https://mcp.arcmira.com/mcp. The agent connects and signs in through its host, then writes short programs that call functions such as search, transcript reading, tracking mentions of a person or product, counting sponsors, and creating monitors that alert by email, Slack or webhook.\n\nVersion 0.10.8 adds five task skills: YouTube transcript search, podcast transcript search, brand-mention monitoring, 'what did they say' and a clip finder. The clip skill gives a link that starts at the right second and reminds you that downloading or reusing a video needs the rights to it.\n\nThe service runs on credits: some reads are included in the plan, a search uses credits for each passage past the first five, Premium transcripts cost more, and some features such as ad-read classification need a higher plan. The server, plugin and skills are Apache-2.0.",
+    "features": [
+     "Search YouTube and podcast transcripts with quote, date and link",
+     "Full transcript of any video from its link",
+     "Track mentions of people, products and sponsors",
+     "Monitors that alert by email, Slack or webhook",
+     "Five ready-made skills in version 0.10.8"
+    ],
+    "install": [
+     "Add to Claude Code, then sign in with /mcp"
+    ],
+    "usage": [
+     "Search YouTube and podcast transcripts for GPU financing over the last 60 days. Return the quotes with speakers, publication dates and timestamped links."
+    ],
+    "links": [
+     "Repository",
+     "MCP server setup"
+    ],
+    "pricingNote": "Limited reads included in the plan, then usage-based credits; some features need a paid plan"
+   }
+  }
+ ]
+}
