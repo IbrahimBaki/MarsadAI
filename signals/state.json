@@ -1,64 +1,64 @@
 {
   "awesome": {
     "hesreallyhim/awesome-claude-code": {
-      "sha": "1c88da78767b4ae664e76861b7afc17a2754d4d4",
-      "date": "2026-11-07T11:07:38.940Z"
+      "sha": "acebb7c63c83d009883652ab81573bce585a4e54",
+      "date": "2026-11-08T05:43:13.290Z"
     },
     "jqueryscript/awesome-claude-code": {
-      "sha": "4d0db41e85da437e354a8efcac6e8201d3b187d0",
-      "date": "2026-11-07T11:07:39.297Z"
+      "sha": "bf32b78bae807323db5ae0ed933f77633bdd8301",
+      "date": "2026-11-08T05:43:14.870Z"
     },
     "ComposioHQ/awesome-claude-skills": {
       "sha": "be2a406907dbc61b73e6827ded415c96139d13a2",
-      "date": "2026-11-07T11:07:39.550Z"
+      "date": "2026-11-08T05:43:15.843Z"
     },
     "travisvn/awesome-claude-skills": {
       "sha": "1da55aa810f206d3fe2005e7e3989b15a275d942",
-      "date": "2026-11-07T11:07:39.784Z"
+      "date": "2026-11-08T05:43:16.859Z"
     },
     "VoltAgent/awesome-agent-skills": {
-      "sha": "a6f9992ceaef05841a9b92e6849d90004a61710c",
-      "date": "2026-11-07T11:07:40.151Z"
+      "sha": "6d483e29da745a010d88974ef6d0e50d15755e9a",
+      "date": "2026-11-08T05:43:18.670Z"
     },
     "VoltAgent/awesome-claude-code-subagents": {
-      "sha": "408d3c9eee2d0c75c12a3abb5de29e53c2ca6b9e",
-      "date": "2026-11-07T11:07:40.434Z"
+      "sha": "ed74d115b7fb7026a22a4f816a8e3250f425e3b4",
+      "date": "2026-11-08T05:43:20.748Z"
     },
     "punkpeye/awesome-mcp-servers": {
-      "sha": "f225f117f92626e6b7d5d2912746d9269e3d037b",
-      "date": "2026-11-07T11:07:41.188Z"
+      "sha": "f431a5cd95cebf038e587715635b9d1a0a4d0c02",
+      "date": "2026-11-08T05:43:22.957Z"
     },
     "wong2/awesome-mcp-servers": {
       "sha": "39eb1d76d76e562657f3c657266a504cea159e23",
-      "date": "2026-11-07T11:07:41.440Z"
+      "date": "2026-11-08T05:43:24.031Z"
     },
     "appcypher/awesome-mcp-servers": {
       "sha": "280218b4bba97a49facf929f8012dec5e30384b6",
-      "date": "2026-11-07T11:07:41.702Z"
+      "date": "2026-11-08T05:43:25.015Z"
     },
     "e2b-dev/awesome-ai-agents": {
       "sha": "9596ab1e69fbbb6c95291141c8dab5c181083216",
-      "date": "2026-11-07T11:07:42.290Z"
+      "date": "2026-11-08T05:43:27.510Z"
     },
     "Shubhamsaboo/awesome-llm-apps": {
-      "sha": "6c16b23f1bacd0fdf240bb5141ef45e59e82c306",
-      "date": "2026-11-07T11:07:42.588Z"
+      "sha": "c129f31036f5ba0bba42cbb63937a66946fdf2c0",
+      "date": "2026-11-08T05:43:28.777Z"
     },
     "github/awesome-copilot": {
-      "sha": "5269f7ea2d6c3a9bfda5ed878b6726cf509121fd",
-      "date": "2026-11-07T11:07:42.857Z"
+      "sha": "797337f33f73e35d08d82f840e21c4b8c4932d88",
+      "date": "2026-11-08T05:43:30.338Z"
     },
     "VoltAgent/official-mcp-servers": {
-      "sha": "3964a7030860613df3550c6c58974ea10615498f",
-      "date": "2026-11-07T11:07:42.021Z"
+      "sha": "5a41f1c6f9a4dafec50f42cb5c59c99d15c9497e",
+      "date": "2026-11-08T05:43:26.549Z"
     },
     "Picrew/awesome-agent-harness": {
-      "sha": "1ae44c112978de3fdaaad5d199cb3ce8580e44f3",
-      "date": "2026-11-07T11:07:43.145Z"
+      "sha": "e7e8f8d268f7ac5311b778832327e4be2f555507",
+      "date": "2026-11-08T05:43:32.033Z"
     },
     "AutoJunjie/awesome-agent-harness": {
       "sha": "1e3f26371ec1a765efe0268b1e63374bee2aaa04",
-      "date": "2026-11-07T11:07:43.394Z"
+      "date": "2026-11-08T05:43:33.012Z"
     }
   },
   "releases": {
@@ -77,19 +77,19 @@
     "laravel/boost": "v2.10.4",
     "laravel/ai": "v1.3.0",
     "laravel/mcp": "v1.1.2",
-    "filamentphp/filament": "v5.11.1",
+    "filamentphp/filament": "v5.11.2",
     "livewire/livewire": "v4.4.8",
-    "prism-php/prism": "v0.102.0",
+    "prism-php/prism": "v0.103.0",
     "vercel/next.js": "v16.4.5",
     "tailwindlabs/tailwindcss": "v4.3.5",
     "microsoft/playwright": "v1.65.0",
     "github/spec-kit": "v1.3.2",
     "n8n-io/n8n": "n8n@3.1.0",
     "ollama/ollama": "v0.40.15",
-    "vercel/ai": "ai@7.0.164",
+    "vercel/ai": "ai@7.0.165",
     "docker/compose": "v5.7.0",
     "coollabsio/coolify": "v4.6.0",
-    "AzmSquad/squad-kit": "v1.2.2",
+    "AzmSquad/squad-kit": "v1.3.0",
     "harbor-framework/harbor": "v0.25.0",
     "coleam00/Archon": "v0.14.0",
     "Chorus-AIDLC/Chorus": "v0.24.0",
