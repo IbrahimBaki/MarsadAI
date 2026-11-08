@@ -1,12 +1,12 @@
 {
  "track": "t3",
- "checked": "2026-11-07",
+ "checked": "2026-11-08",
  "headline": "Don't build a harness benchmark engine: Harbor (plus Inspect for non-code tasks) already runs any harness on containerized tasks at scale. What nobody has built is the Azm layer on top: tasks mined from Azm's own repos, adapters for squad-kit and azm-harness, standards-compliance scoring, per-team YAML suites and a report people can act on.",
  "bottomLine": [
   "Prior art exists and is recent: AWS published a harness-vs-model cost/quality benchmark on your own code (MIT-0, 21 Oct 2026); Fullscript ran 36 tasks mined from its own commits (Aug 2026); GitHub published its harness evaluation protocol (Jun 2026). Azm's sandbox should combine their methods, not reinvent them.",
   "The harness matters more than the model: harness variance was 7.8x model variance in a 3x3 study, and the same model moved ~10 points on SWE-bench Pro between harnesses. Harness-Bench (2026, 7 harnesses × 10 models) found no harness best on every model, and choosing the harness per model gained 2.5-2.7 points. That justifies the track.",
   "Execution and isolation are solved problems: Harbor (Apache-2.0) for running agents on tasks; Docker locally, then E2B (self-host/BYOC) or Kubernetes agent-sandbox / OpenSandbox on Azm infrastructure.",
-  "squad-kit (1.1, now a full harness) has no direct equivalent that covers idea → tagged release with human gates and readable project memory; Archon (YAML workflows, MIT) and AI-DLC (one core, seven tools) are the closest peers to test it against. Its main gaps for the sandbox: a headless mode, more engines than Claude Code, and isolation.",
+  "squad-kit (1.3, now a full harness) has no direct equivalent that covers idea → tagged release with human gates and readable project memory; Archon (YAML workflows, MIT) and AI-DLC (one core, seven tools) are the closest peers to test it against. Its main gaps for the sandbox: a headless mode, more engines than Claude Code, and isolation.",
   "The real gap, unclaimed by any tool found: measuring harnesses on a company's own SDLC work, including standards compliance and non-code steps, with per-team configuration."
  ],
  "priorArt": [
@@ -51,6 +51,12 @@
    "ref": "better-harness",
    "takes": "A five-area model for auditing a project's agent work loop, findings tied to evidence with fixes and acceptance checks, history across reports, and a rule that missing evidence is never scored.",
    "lacks": "Task runs, hidden tests, harness × model comparison, Azm's own standards, team or CI view."
+  },
+  {
+   "name": "AgentCompass (Shanghai AI Lab)",
+   "ref": "agentcompass",
+   "takes": "Model × benchmark × harness × sandbox as swappable parts, Claude Code and Codex adapters, Harbor-format tasks with Harbor's verifier, resumable runs, and a two-step reward-hacking analyzer for the scoring layer.",
+   "lacks": "Private task mining, standards scoring, squad-kit/azm-harness adapters, per-team YAML, team reports and a CI gate."
   }
  ],
  "architecture": [
@@ -186,7 +192,7 @@
    "الأعمال السابقة موجودة وحديثة: نشرت AWS في 21 أكتوبر 2026 مقياسًا للتكلفة والجودة يقارن أدوات الـ harness والنماذج على شيفرتك (MIT-0)؛ وشغّلت Fullscript ‏36 مهمة من الـ commits الخاصة بها (أغسطس 2026)؛ ونشرت GitHub بروتوكول تقييم الـ harness لديها (يونيو 2026). على بيئة عزم أن تجمع طرقهم لا أن تعيد اختراعها.",
    "الـ harness أهم من النموذج: كان تباين الـ harness أكبر 7.8 مرات من تباين النموذج في دراسة 3×3، وتحرك النموذج نفسه نحو 10 نقاط على SWE-bench Pro بين أداة وأخرى. ووجد Harness-Bench ‏(2026، سبع أدوات × عشرة نماذج) أنه لا توجد أداة هي الأفضل مع كل النماذج، وأن اختيار الـ harness لكل نموذج أضاف 2.5 إلى 2.7 نقطة. وهذا يبرر المسار.",
    "التشغيل والعزل مشكلتان محلولتان: Harbor ‏(Apache-2.0) لتشغيل الوكلاء على المهام؛ وDocker محليًا، ثم E2B (مستضافًا لدينا أو داخل حسابنا) أو Kubernetes agent-sandbox أو OpenSandbox على بنية عزم.",
-   "لا يوجد مقابل مباشر لـ squad-kit (الإصدار 1.1، وأصبح harness كاملًا) يغطي الفكرة ← الإصدار الموسوم مع بوابات بشرية وذاكرة مشروع مقروءة؛ وأقرب النظراء لاختباره أمامهم Archon (سير عمل YAML، ترخيص MIT) وAI-DLC (نواة واحدة لسبع أدوات). وأبرز نواقصه لبيئة الاختبار: وضع تشغيل بلا واجهة، ومحركات غير Claude Code، والعزل.",
+   "لا يوجد مقابل مباشر لـ squad-kit (الإصدار 1.3، وأصبح harness كاملًا) يغطي الفكرة ← الإصدار الموسوم مع بوابات بشرية وذاكرة مشروع مقروءة؛ وأقرب النظراء لاختباره أمامهم Archon (سير عمل YAML، ترخيص MIT) وAI-DLC (نواة واحدة لسبع أدوات). وأبرز نواقصه لبيئة الاختبار: وضع تشغيل بلا واجهة، ومحركات غير Claude Code، والعزل.",
    "الفجوة الحقيقية التي لم تتبنها أي أداة وجدناها: قياس أدوات الـ harness على عمل دورة التطوير الخاص بالشركة، بما في ذلك الالتزام بالمعايير والخطوات غير البرمجية، مع إعدادات لكل فريق."
   ],
   "priorArt": [
@@ -217,6 +223,10 @@
    {
     "takes": "نموذج بخمسة مجالات لتدقيق حلقة عمل الوكلاء في المشروع، وملاحظات مرتبطة بالأدلة مع إصلاحات وفحوص قبول، وعرض تاريخي عبر التقارير، وقاعدة ألا يُقيَّم الدليل الغائب أبدًا.",
     "lacks": "تشغيل المهام، والاختبارات المخفية، والمقارنة بين harness ونموذج، ومعايير عزم الخاصة، وعرض الفريق أو CI."
+   },
+   {
+    "takes": "النموذج × المقياس × الـ harness × بيئة العزل كأجزاء قابلة للتبديل، وموصّلات Claude Code وCodex، ومهام بصيغة Harbor مع أداة التحقق الخاصة به، وتشغيلات قابلة للاستئناف، وأداة على خطوتين لكشف التحايل على التقييم لطبقة التقييم.",
+    "lacks": "استخراج المهام الخاصة، وقياس الالتزام بالمعايير، وموصّلات squad-kit وazm-harness، وملف YAML لكل فريق، وتقارير الفرق، وبوابة CI."
    }
   ],
   "names": [
@@ -226,7 +236,8 @@
    "Harbor / Terminal-Bench",
    "HarnessBench / WildClawBench",
    "Harness-Bench (جامعة بكين / Qihoo 360)",
-   "Better Harness ‏(Qoder)"
+   "Better Harness ‏(Qoder)",
+   "AgentCompass ‏(مختبر شنغهاي للذكاء الاصطناعي)"
   ],
   "architecture": [
    {

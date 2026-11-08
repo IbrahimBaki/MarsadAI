@@ -1,6 +1,6 @@
 {
  "track": "t3",
- "checked": "2026-11-07",
+ "checked": "2026-11-08",
  "goal": {
   "en": "Build one place where Azm can run any harness (squad-kit, azm-harness, Claude Code, others) on the same real Azm tasks, in isolation, and get a clear answer: which harness, with which model, gives the best quality for the cost, and does it follow our standards?",
   "ar": "بناء مكان واحد تشغّل فيه عزم أي harness (مثل squad-kit وazm-harness وClaude Code وغيرها) على المهام الحقيقية نفسها من مشاريع عزم، في بيئة معزولة، لتحصل على إجابة واضحة: أي harness، مع أي نموذج، يعطي أفضل جودة مقابل التكلفة، وهل يلتزم بمعاييرنا؟"
@@ -94,8 +94,8 @@
    },
    "decision": "build",
    "plan": {
-    "en": "Build Azm's own task set with the SWE-bench recipe: take a closed ticket, pin the repo before the fix, write the brief from the ticket, and keep hidden tests that fail before and pass after. Start with 10 tasks from one repo, grow to 20-50 per team. Keep a small slice of Terminal-Bench as a public sanity check, pinned to one version (2.0 matches most published harness studies; 4.x is the current leaderboard), because scores do not carry across versions. New in Scale's SWE-Bench Pro V2 (Sept 2026), a protocol to copy for our own tasks: during the run the agent can reach only the model endpoint (web tools off, because agents were fetching the fixing commits), and every answer is re-graded on a clean image, which caught a model forging a Go checksum. Invalid tasks were dropped (731 to 642) and a task only ships if it passes with the reference fix and fails with an empty one.",
-    "ar": "نبني مجموعة مهام خاصة بعزم على طريقة SWE-bench: نأخذ تذكرة مغلقة، ونثبّت المستودع على حالته قبل الإصلاح، ونكتب وصف المهمة من التذكرة، ونحتفظ باختبارات مخفية تفشل قبل الإصلاح وتنجح بعده. نبدأ بعشر مهام من مستودع واحد، ثم نصل إلى 20-50 مهمة لكل فريق. ونُبقي جزءًا صغيرًا من Terminal-Bench للتحقق العام، مثبّتًا على إصدار واحد (2.0 يطابق معظم دراسات الـ harness المنشورة، و4.x هو لوحة النتائج الحالية)، لأن الدرجات لا تنتقل بين الإصدارات. جديد في SWE-Bench Pro V2 من Scale ‏(سبتمبر 2026)، وهو بروتوكول ننسخه لمهامنا: أثناء التشغيل لا يصل الوكيل إلا إلى خادم النموذج (أدوات الويب معطلة لأن وكلاء كانوا يجلبون الـ commits التي تحتوي الإصلاح)، وتُعاد درجة كل إجابة على صورة نظيفة، وقد كشف ذلك نموذجًا زوّر بصمة تحقق في Go. وحُذفت المهام غير الصالحة (من 731 إلى 642)، ولا تُعتمد مهمة إلا إذا نجحت مع الإصلاح المرجعي وفشلت مع إصلاح فارغ."
+    "en": "Build Azm's own task set with the SWE-bench recipe: take a closed ticket, pin the repo before the fix, write the brief from the ticket, and keep hidden tests that fail before and pass after. Start with 10 tasks from one repo, grow to 20-50 per team. Keep a small slice of Terminal-Bench as a public sanity check, pinned to one version (2.0 matches most published harness studies; 4.x is the current leaderboard), because scores do not carry across versions. New in Scale's SWE-Bench Pro V2 (Sept 2026), a protocol to copy for our own tasks: during the run the agent can reach only the model endpoint (web tools off, because agents were fetching the fixing commits), and every answer is re-graded on a clean image, which caught a model forging a Go checksum. Invalid tasks were dropped (731 to 642) and a task only ships if it passes with the reference fix and fails with an empty one. A second warning from Shanghai AI Lab's SWE-Bench Pro Verified (Sept 2026): agents could read the answer files in 103 tasks locally and 49 over the network, and one model's score fell from 78.8% to 57.3% once that was blocked. So our task images must not contain the fix, the answer key or the hidden tests until grading starts.",
+    "ar": "نبني مجموعة مهام خاصة بعزم على طريقة SWE-bench: نأخذ تذكرة مغلقة، ونثبّت المستودع على حالته قبل الإصلاح، ونكتب وصف المهمة من التذكرة، ونحتفظ باختبارات مخفية تفشل قبل الإصلاح وتنجح بعده. نبدأ بعشر مهام من مستودع واحد، ثم نصل إلى 20-50 مهمة لكل فريق. ونُبقي جزءًا صغيرًا من Terminal-Bench للتحقق العام، مثبّتًا على إصدار واحد (2.0 يطابق معظم دراسات الـ harness المنشورة، و4.x هو لوحة النتائج الحالية)، لأن الدرجات لا تنتقل بين الإصدارات. جديد في SWE-Bench Pro V2 من Scale ‏(سبتمبر 2026)، وهو بروتوكول ننسخه لمهامنا: أثناء التشغيل لا يصل الوكيل إلا إلى خادم النموذج (أدوات الويب معطلة لأن وكلاء كانوا يجلبون الـ commits التي تحتوي الإصلاح)، وتُعاد درجة كل إجابة على صورة نظيفة، وقد كشف ذلك نموذجًا زوّر بصمة تحقق في Go. وحُذفت المهام غير الصالحة (من 731 إلى 642)، ولا تُعتمد مهمة إلا إذا نجحت مع الإصلاح المرجعي وفشلت مع إصلاح فارغ. وتحذير ثانٍ من SWE-Bench Pro Verified الصادر عن مختبر شنغهاي للذكاء الاصطناعي (سبتمبر 2026): استطاع الوكلاء قراءة ملفات الإجابة في 103 مهام محليًا و49 عبر الشبكة، وهبطت نتيجة أحد النماذج من 78.8% إلى 57.3% بعد سد هذه الثغرة. لذلك يجب ألا تحتوي صور مهامنا على الإصلاح أو مفتاح الإجابة أو الاختبارات المخفية قبل بدء التقييم."
    },
    "pick": [
     "swe-bench"
@@ -254,8 +254,8 @@
    },
    "decision": "benchmark",
    "plan": {
-    "en": "Test squad-kit and azm-harness against the strongest alternatives on the same tasks: Archon and AI-DLC for the full cycle, Superpowers as a light baseline. Under them, compare Claude Code, Codex CLI, opencode and pi, with mini-swe-agent as the control group (how much does a harness add over a 100-line agent?). Two newer reference points: TrueForge (TrueFoundry, MIT) is a self-hostable server-side harness pitched against Claude Managed Agents, and Microsoft's Agensh coordinates up to 1,024 Copilot agents without a central orchestrator. A September 2026 study of 176 harness settings found context management matters a lot with small context windows and little at 128k, and that strong models do better with bash alone than with predefined tools, so test harness choices per model.",
-    "ar": "نختبر squad-kit وazm-harness أمام أقوى البدائل على المهام نفسها: Archon وAI-DLC للدورة الكاملة، وSuperpowers كخط أساس خفيف. وتحتها نقارن Claude Code وCodex CLI وopencode وpi، مع mini-swe-agent كمجموعة ضابطة (كم يضيف الـ harness فوق وكيل من 100 سطر؟). مرجعان أحدث: TrueForge ‏(TrueFoundry، رخصة MIT) أداة harness على الخادم يمكن استضافتها لدينا وتُطرح منافسًا لـ Claude Managed Agents، وAgensh من Microsoft ينسّق حتى 1,024 وكيلًا من Copilot دون منسّق مركزي. ووجدت دراسة من سبتمبر 2026 شملت 176 إعدادًا للـ harness أن إدارة السياق مهمة جدًا مع نوافذ السياق الصغيرة وقليلة الأثر عند 128 ألف رمز، وأن النماذج القوية تؤدي أفضل بأداة bash وحدها منها بأدوات معرّفة مسبقًا، لذا تُختبر خيارات الـ harness لكل نموذج على حدة."
+    "en": "Test squad-kit and azm-harness against the strongest alternatives on the same tasks: Archon and AI-DLC for the full cycle, Superpowers as a light baseline. Under them, compare Claude Code, Codex CLI, opencode and pi, with mini-swe-agent as the control group (how much does a harness add over a 100-line agent?). Two newer reference points: TrueForge (TrueFoundry, MIT) is a self-hostable server-side harness pitched against Claude Managed Agents, and Microsoft's Agensh coordinates up to 1,024 Copilot agents without a central orchestrator. A September 2026 study of 176 harness settings found context management matters a lot with small context windows and little at 128k, and that strong models do better with bash alone than with predefined tools, so test harness choices per model. squad-kit 1.3 (8 Nov 2026) adds per-project team gates in .squad/harness.yaml, which is the same YAML-per-team idea the sandbox needs; it still has no headless mode, so the Harbor adapter remains our work.",
+    "ar": "نختبر squad-kit وazm-harness أمام أقوى البدائل على المهام نفسها: Archon وAI-DLC للدورة الكاملة، وSuperpowers كخط أساس خفيف. وتحتها نقارن Claude Code وCodex CLI وopencode وpi، مع mini-swe-agent كمجموعة ضابطة (كم يضيف الـ harness فوق وكيل من 100 سطر؟). مرجعان أحدث: TrueForge ‏(TrueFoundry، رخصة MIT) أداة harness على الخادم يمكن استضافتها لدينا وتُطرح منافسًا لـ Claude Managed Agents، وAgensh من Microsoft ينسّق حتى 1,024 وكيلًا من Copilot دون منسّق مركزي. ووجدت دراسة من سبتمبر 2026 شملت 176 إعدادًا للـ harness أن إدارة السياق مهمة جدًا مع نوافذ السياق الصغيرة وقليلة الأثر عند 128 ألف رمز، وأن النماذج القوية تؤدي أفضل بأداة bash وحدها منها بأدوات معرّفة مسبقًا، لذا تُختبر خيارات الـ harness لكل نموذج على حدة. ويضيف squad-kit 1.3 ‏(8 نوفمبر 2026) بوابات للفريق لكل مشروع في ‎.squad/harness.yaml، وهي فكرة ملف YAML لكل فريق نفسها التي تحتاجها بيئة الاختبار؛ لكنه ما زال بلا وضع يعمل دون واجهة، فيبقى موصّل Harbor من عملنا."
    },
    "pick": [
     "squad-kit",
@@ -372,8 +372,8 @@
       },
       "values": [
        {
-        "en": "Claude Code only (Codex later)",
-        "ar": "Claude Code فقط (Codex لاحقًا)"
+        "en": "Claude Code built in (Codex later); from 1.3 a story can be continued by hand in any AI tool and re-checked",
+        "ar": "Claude Code مدمج (وCodex لاحقًا)؛ ومنذ 1.3 يمكن إكمال القصة يدويًا في أي أداة ذكاء اصطناعي ثم إعادة فحصها"
        },
        {
         "en": "Several CLIs",
@@ -400,8 +400,8 @@
       },
       "values": [
        {
-        "en": ".squad/ files: config, rules per role",
-        "ar": "ملفات .squad/: الإعدادات وقواعد كل دور"
+        "en": ".squad/ files: config, rules per role; team rules, checklists and gates in .squad/harness.yaml (1.3)",
+        "ar": "ملفات ‎.squad/‎: الإعدادات والقواعد لكل دور؛ وقواعد الفريق وقوائم التحقق والبوابات في ‎.squad/harness.yaml ‏(1.3)"
        },
        {
         "en": "YAML workflows per repo",
@@ -700,8 +700,8 @@
    },
    "decision": "adopt",
    "plan": {
-    "en": "Use Harbor. It already runs Claude Code, Codex CLI, OpenHands and others in containers, locally or in cloud sandboxes, and accepts our own tasks. We write one adapter per Azm harness. Use Inspect AI only for non-code tasks (spec quality, reviews). Exgentic is a smaller 'any agent on any benchmark' framework that already runs Claude Code, Codex CLI and Gemini CLI; keep it as a cross-check, not a replacement.",
-    "ar": "نستخدم Harbor؛ فهو يشغّل بالفعل Claude Code وCodex CLI وOpenHands وغيرها داخل حاويات، محليًا أو في بيئات سحابية، ويقبل مهامنا الخاصة. نكتب موصّلًا واحدًا لكل harness من عزم. ونستخدم Inspect AI للمهام غير البرمجية فقط (جودة المواصفات والمراجعات). وExgentic إطار أصغر من نوع «أي وكيل على أي مقياس» يشغّل فعلًا Claude Code وCodex CLI وGemini CLI؛ نبقيه للتحقق المتقاطع لا بديلًا."
+    "en": "Use Harbor. It already runs Claude Code, Codex CLI, OpenHands and others in containers, locally or in cloud sandboxes, and accepts our own tasks. We write one adapter per Azm harness. Use Inspect AI only for non-code tasks (spec quality, reviews). Exgentic is a smaller 'any agent on any benchmark' framework that already runs Claude Code, Codex CLI and Gemini CLI; keep it as a cross-check, not a replacement. New serious alternative: AgentCompass (Shanghai AI Lab, Apache-2.0, v1.1 Nov 2026) separates model, benchmark, harness and sandbox, already runs Claude Code and Codex, and loads Harbor-format tasks, so our tasks stay portable; we will run a few through both to check the scores agree.",
+    "ar": "نستخدم Harbor؛ فهو يشغّل بالفعل Claude Code وCodex CLI وOpenHands وغيرها داخل حاويات، محليًا أو في بيئات سحابية، ويقبل مهامنا الخاصة. نكتب موصّلًا واحدًا لكل harness من عزم. ونستخدم Inspect AI للمهام غير البرمجية فقط (جودة المواصفات والمراجعات). وExgentic إطار أصغر من نوع «أي وكيل على أي مقياس» يشغّل فعلًا Claude Code وCodex CLI وGemini CLI؛ نبقيه للتحقق المتقاطع لا بديلًا. بديل جادّ جديد: AgentCompass ‏(مختبر شنغهاي للذكاء الاصطناعي، Apache-2.0، الإصدار 1.1 في نوفمبر 2026) يفصل النموذج والمقياس والـ harness وبيئة العزل، ويشغّل فعلًا Claude Code وCodex، ويحمّل المهام بصيغة Harbor، فتبقى مهامنا قابلة للنقل؛ وسنشغّل بعضها عبر الاثنين للتأكد من تطابق النتائج."
    },
    "pick": [
     "harbor"
@@ -711,14 +711,16 @@
     "aws-harness-benchmarks",
     "runloop-benchmarks",
     "openhands-benchmarks",
-    "exgentic"
+    "exgentic",
+    "agentcompass"
    ],
    "compare": {
     "tools": [
      "harbor",
      "inspect-ai",
      "aws-harness-benchmarks",
-     "runloop-benchmarks"
+     "runloop-benchmarks",
+     "agentcompass"
     ],
     "rows": [
      {
@@ -742,6 +744,10 @@
        {
         "en": "Paid service",
         "ar": "خدمة مدفوعة"
+       },
+       {
+        "en": "Open source (Apache-2.0)",
+        "ar": "مفتوح المصدر (Apache-2.0)"
        }
       ]
      },
@@ -766,6 +772,10 @@
        {
         "en": "Yes, in devboxes",
         "ar": "نعم، في أجهزة افتراضية"
+       },
+       {
+        "en": "Yes: Claude Code, Codex, OpenHands and more",
+        "ar": "نعم: Claude Code وCodex وOpenHands وغيرها"
        }
       ]
      },
@@ -790,6 +800,10 @@
        {
         "en": "VMs",
         "ar": "أجهزة افتراضية"
+       },
+       {
+        "en": "Docker, Daytona, Modal, OpenSandbox",
+        "ar": "Docker وDaytona وModal وOpenSandbox"
        }
       ]
      },
@@ -814,6 +828,10 @@
        {
         "en": "Tests and custom scorers",
         "ar": "اختبارات ومقيّمات مخصصة"
+       },
+       {
+        "en": "Benchmark graders, Harbor verifier, reward-hacking analyzer",
+        "ar": "مقيّمات المقاييس، وأداة تحقق Harbor، وكاشف التحايل"
        }
       ]
      },
@@ -838,6 +856,10 @@
        {
         "en": "Usage-based",
         "ar": "حسب الاستخدام"
+       },
+       {
+        "en": "Free",
+        "ar": "مجاني"
        }
       ]
      },
@@ -862,6 +884,10 @@
        {
         "en": "If we don't want to run infrastructure",
         "ar": "إن لم نرد تشغيل البنية بأنفسنا"
+       },
+       {
+        "en": "Cross-checking Harbor; borrowing its cheat detector",
+        "ar": "التحقق المتقاطع من Harbor واستعارة كاشف التحايل"
        }
       ]
      }
@@ -1453,8 +1479,8 @@
    },
    "decision": "build",
    "plan": {
-    "en": "Build this layer. Score each run: resolved (hidden tests), a developer-value score 0-100, standards compliance from Track 1 checks, and zero for any safety violation; repeat 3-5 times and report variance. Report a harness × model × team matrix and a cost/quality chart, borrowing AWS's frontier chart and the Harness Card. Add a CI gate so no harness or standard change ships if it scores worse. Report full-credit rate and cost next to the mean score: Harness-Bench (2026) found they rank harnesses differently, and that the best harness depends on the model. Cost must be a first-class result: HarnessTax (Arena, Sep 2026) found the same model reaching similar success at up to 5x the cost across harnesses, and the Shandong study (Oct 2026) found that switching harness flipped 13% of hard tasks, the same rate as simply rerunning. So repeat runs are required before calling any harness better. For the standards score, borrow Better Harness's rule that missing evidence is reported as missing, never scored.",
-    "ar": "نبني هذه الطبقة. نقيّم كل تشغيل: هل حُلّت المهمة (اختبارات مخفية)، ودرجة قيمة للمطور من 0 إلى 100، والالتزام بالمعايير من فحوص المسار 1، وصفر لأي مخالفة أمان؛ ونكرر 3-5 مرات ونعرض التباين. نعرض مصفوفة harness × نموذج × فريق ورسمًا للجودة مقابل التكلفة، مستفيدين من رسم AWS وبطاقة الـ Harness. ونضيف بوابة في CI تمنع أي تغيير في الـ harness أو المعايير إن قلّل الدرجة. ونعرض نسبة الإنجاز الكامل والتكلفة بجانب متوسط الدرجة؛ فقد وجد Harness-Bench ‏(2026) أنها ترتّب أدوات الـ harness ترتيبًا مختلفًا، وأن أفضل harness يتوقف على النموذج. ويجب أن تكون التكلفة نتيجة أساسية: وجدت HarnessTax ‏(Arena، سبتمبر 2026) أن النموذج نفسه يحقق نجاحًا متقاربًا بتكلفة تصل إلى خمسة أضعاف بين أدوات الـ harness، ووجدت دراسة جامعة شاندونغ (أكتوبر 2026) أن تبديل الـ harness غيّر نتيجة 13% من المهام الصعبة، وهي النسبة نفسها عند مجرد إعادة التشغيل. لذا يلزم تكرار التشغيل قبل الحكم بأن harness أفضل من غيره. ولدرجة المعايير نستعير قاعدة Better Harness: الدليل الغائب يُعرض غائبًا ولا يُقيَّم."
+    "en": "Build this layer. Score each run: resolved (hidden tests), a developer-value score 0-100, standards compliance from Track 1 checks, and zero for any safety violation; repeat 3-5 times and report variance. Report a harness × model × team matrix and a cost/quality chart, borrowing AWS's frontier chart and the Harness Card. Add a CI gate so no harness or standard change ships if it scores worse. Report full-credit rate and cost next to the mean score: Harness-Bench (2026) found they rank harnesses differently, and that the best harness depends on the model. Cost must be a first-class result: HarnessTax (Arena, Sep 2026) found the same model reaching similar success at up to 5x the cost across harnesses, and the Shandong study (Oct 2026) found that switching harness flipped 13% of hard tasks, the same rate as simply rerunning. So repeat runs are required before calling any harness better. For the standards score, borrow Better Harness's rule that missing evidence is reported as missing, never scored. Do not build cheat detection from scratch: AgentCompass ships a two-step reward-hacking analyzer (pattern rules for edited tests, weakened asserts or hard-coded outputs, then an LLM check of only the suspicious steps) that we can run on our trajectories and tune for our stacks.",
+    "ar": "نبني هذه الطبقة. نقيّم كل تشغيل: هل حُلّت المهمة (اختبارات مخفية)، ودرجة قيمة للمطور من 0 إلى 100، والالتزام بالمعايير من فحوص المسار 1، وصفر لأي مخالفة أمان؛ ونكرر 3-5 مرات ونعرض التباين. نعرض مصفوفة harness × نموذج × فريق ورسمًا للجودة مقابل التكلفة، مستفيدين من رسم AWS وبطاقة الـ Harness. ونضيف بوابة في CI تمنع أي تغيير في الـ harness أو المعايير إن قلّل الدرجة. ونعرض نسبة الإنجاز الكامل والتكلفة بجانب متوسط الدرجة؛ فقد وجد Harness-Bench ‏(2026) أنها ترتّب أدوات الـ harness ترتيبًا مختلفًا، وأن أفضل harness يتوقف على النموذج. ويجب أن تكون التكلفة نتيجة أساسية: وجدت HarnessTax ‏(Arena، سبتمبر 2026) أن النموذج نفسه يحقق نجاحًا متقاربًا بتكلفة تصل إلى خمسة أضعاف بين أدوات الـ harness، ووجدت دراسة جامعة شاندونغ (أكتوبر 2026) أن تبديل الـ harness غيّر نتيجة 13% من المهام الصعبة، وهي النسبة نفسها عند مجرد إعادة التشغيل. لذا يلزم تكرار التشغيل قبل الحكم بأن harness أفضل من غيره. ولدرجة المعايير نستعير قاعدة Better Harness: الدليل الغائب يُعرض غائبًا ولا يُقيَّم. لا نبني كشف التحايل من الصفر: يأتي AgentCompass بأداة على خطوتين لكشف التحايل على التقييم (قواعد أنماط لتعديل الاختبارات أو إضعاف التحققات أو تثبيت المخرجات، ثم فحص بنموذج لغوي للخطوات المشبوهة فقط) يمكن تشغيلها على مسارات عمل وكلائنا وضبطها لتقنياتنا."
    },
    "pick": [
     "aws-harness-benchmarks",
@@ -1464,7 +1490,8 @@
     "qihoo-harness-bench",
     "deepeval",
     "skillsbench",
-    "better-harness"
+    "better-harness",
+    "agentcompass"
    ],
    "compare": {
     "tools": [

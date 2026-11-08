@@ -1,6 +1,6 @@
 {
  "category": "eval",
- "checked": "2026-11-07",
+ "checked": "2026-11-08",
  "tools": [
   {
    "id": "harbor",
@@ -1594,6 +1594,110 @@
      "لا يستخرج مهامّ خاصة، ولا يقيس الالتزام بالمعايير، ولا يقدّم تقارير للفرق؛ وHarbor يغطي دور مشغّل مهام البرمجة أفضل حاليًا"
     ],
     "role": "مشغّل ثانٍ من نوع «أي وكيل على أي مقياس» نبقيه بجانب Harbor؛ مفيد للتحقق المتقاطع إذا بدت نتائج Harbor غريبة.",
+    "pricing": "مجاني"
+   }
+  },
+  {
+   "id": "agentcompass",
+   "name": "AgentCompass",
+   "category": "eval",
+   "kind": "open-source",
+   "vendor": "OpenCompass team, Shanghai AI Laboratory",
+   "repo": "open-compass/AgentCompass",
+   "url": "https://github.com/open-compass/AgentCompass",
+   "license": "Apache-2.0",
+   "pricing": "Free",
+   "status": "active",
+   "version": "v1.1.0 (2 Nov 2026)",
+   "tier": "deep",
+   "summary": "An open-source evaluation framework that treats model, benchmark, harness and environment as four separate, swappable parts, so any harness can be run on any benchmark in any sandbox with one command. It already includes Claude Code, Codex, OpenHands and mini-swe-agent, more than 30 benchmarks, and can run tasks written in Harbor's format. Its team also published SWE-Bench Pro Verified, a cleaned-up coding benchmark that blocks agents from finding the answers.",
+   "how": "You install it with pip or uv and run `agentcompass run --benchmark … --harness … --model … --env …`. The environment can be the local machine, Docker (with an egress proxy), Daytona, Modal, OpenSandbox or a remote sandbox. Runs are concurrent, saved as they go, retried on failure and resumable. Every trajectory, tool call, token use and latency is recorded, and pluggable analyzers run after each task, including a two-step reward-hacking detector (pattern rules such as editing tests or weakening asserts, then an LLM check of the suspicious steps). Its Harbor benchmark loads Harbor task folders and scores them with Harbor's own verifier.",
+   "features": [
+    "Model, benchmark, harness and environment are separate parts behind stable interfaces",
+    "Harnesses include Claude Code, Codex, OpenHands, mini-swe-agent, Terminus 2 and OpenClaw",
+    "Environments: local, Docker with egress proxy, Daytona, Modal, OpenSandbox and remote sandboxes",
+    "Benchmarks include SWE-bench Verified, Pro, Pro Verified and Multilingual, Terminal-Bench 2 and 4, SkillsBench and WildClawBench",
+    "Runs Harbor-format task folders and scores them with Harbor's verifier",
+    "Concurrent, resumable runs with retries; full trajectories, cost and latency recorded",
+    "Pluggable analyzers, including reward-hacking detection, re-runnable on finished results"
+   ],
+   "strengths": [
+    "Same 'any harness on any task in any sandbox' shape as our sandbox, with Claude Code and Codex already wired in",
+    "Reads Harbor tasks, so tasks we write for Harbor are not locked to one runner",
+    "Ships a reward-hacking detector, something we would otherwise have to build for scoring",
+    "Active academic team with a peer-reviewed paper (EMNLP 2026 demo) and frequent releases"
+   ],
+   "weaknesses": [
+    "Research-oriented: no team reports, regression gate or per-team configuration",
+    "Young: first PyPI release was 30 Sep 2026",
+    "Reward-hacking rules are heuristics tuned for Python test suites; they need checking on our stacks"
+   ],
+   "gaps": [
+    "No private task mining from our repos, no standards-compliance score, no squad-kit or azm-harness adapter"
+   ],
+   "fit": {
+    "verdict": "benchmark",
+    "role": "The strongest alternative to Harbor as the run engine. Run a few of our Harbor tasks through it to check that scores agree, and borrow its reward-hacking analyzer for our scoring layer."
+   },
+   "scores": {
+    "fit": 4,
+    "maturity": 3,
+    "openness": 5,
+    "agnostic": 5,
+    "config": 3,
+    "measure": 4,
+    "safety": 4
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/open-compass/AgentCompass"
+    ],
+    [
+     "Docs",
+     "https://agent-compass.mintlify.app/en/"
+    ],
+    [
+     "Paper",
+     "https://arxiv.org/abs/2607.13705"
+    ],
+    [
+     "SWE-Bench Pro Verified",
+     "https://arxiv.org/abs/2609.08149"
+    ]
+   ],
+   "sources": [
+    "https://github.com/open-compass/AgentCompass",
+    "https://agent-compass.mintlify.app/en/",
+    "https://arxiv.org/abs/2609.08149"
+   ],
+   "ar": {
+    "summary": "إطار تقييم مفتوح المصدر يتعامل مع النموذج والمقياس والـ harness والبيئة كأربعة أجزاء منفصلة قابلة للتبديل، فيمكن تشغيل أي harness على أي مقياس داخل أي بيئة عزل بأمر واحد. ويضم فعلًا Claude Code وCodex وOpenHands وmini-swe-agent وأكثر من 30 مقياسًا، ويستطيع تشغيل المهام المكتوبة بصيغة Harbor. ونشر فريقه أيضًا SWE-Bench Pro Verified، وهو مقياس برمجة منقّح يمنع الوكلاء من الوصول إلى الإجابات.",
+    "how": "تثبّته عبر pip أو uv وتشغّل الأمر `agentcompass run --benchmark … --harness … --model … --env …`. ويمكن أن تكون البيئة الجهاز المحلي، أو Docker (مع وسيط يتحكم في الاتصال الخارجي)، أو Daytona أو Modal أو OpenSandbox أو بيئة عزل بعيدة. تعمل التشغيلات بالتوازي، وتُحفظ أولًا بأول، وتُعاد عند الفشل، ويمكن استئنافها. ويُسجَّل كل مسار عمل واستدعاء أداة واستهلاك رموز وزمن استجابة، وتعمل بعد كل مهمة أدوات تحليل قابلة للإضافة، منها كاشف للتحايل على التقييم على خطوتين (قواعد أنماط مثل تعديل الاختبارات أو إضعاف التحققات، ثم فحص الخطوات المشبوهة بنموذج لغوي). ويحمّل مقياس Harbor فيه مجلدات مهام Harbor ويقيّمها بأداة التحقق الخاصة بـ Harbor نفسها.",
+    "features": [
+     "النموذج والمقياس والـ harness والبيئة أجزاء منفصلة خلف واجهات ثابتة",
+     "من أدوات الـ harness فيه Claude Code وCodex وOpenHands وmini-swe-agent وTerminus 2 وOpenClaw",
+     "البيئات: محلية، وDocker مع وسيط للاتصال الخارجي، وDaytona وModal وOpenSandbox وبيئات عزل بعيدة",
+     "من المقاييس SWE-bench Verified وPro وPro Verified وMultilingual، وTerminal-Bench 2 و4، وSkillsBench وWildClawBench",
+     "يشغّل مجلدات المهام بصيغة Harbor ويقيّمها بأداة التحقق الخاصة بـ Harbor",
+     "تشغيلات متوازية قابلة للاستئناف مع إعادة المحاولة، وتسجيل كامل لمسارات العمل والتكلفة وزمن الاستجابة",
+     "أدوات تحليل قابلة للإضافة، منها كشف التحايل على التقييم، ويمكن إعادة تشغيلها على نتائج منتهية"
+    ],
+    "strengths": [
+     "الشكل نفسه لبيئة الاختبار عندنا: «أي harness على أي مهمة في أي بيئة عزل»، مع ربط جاهز لـ Claude Code وCodex",
+     "يقرأ مهام Harbor، فلا تبقى المهام التي نكتبها لـ Harbor مقيدة بمشغّل واحد",
+     "يأتي بكاشف للتحايل على التقييم، وهو شيء كنا سنضطر إلى بنائه في طبقة التقييم",
+     "فريق أكاديمي نشط وله ورقة محكّمة (عرض توضيحي في EMNLP 2026) وإصدارات متكررة"
+    ],
+    "weaknesses": [
+     "موجّه للبحث: لا تقارير للفرق، ولا بوابة لمنع التراجع، ولا إعدادات لكل فريق",
+     "حديث: أول إصدار على PyPI كان في 30 سبتمبر 2026",
+     "قواعد كشف التحايل تقديرية ومضبوطة لاختبارات Python؛ ويجب التحقق منها على تقنياتنا"
+    ],
+    "gaps": [
+     "لا يستخرج مهامّ خاصة من مستودعاتنا، ولا يقيس الالتزام بالمعايير، ولا يملك موصّلًا لـ squad-kit أو azm-harness"
+    ],
+    "role": "أقوى بديل لـ Harbor بوصفه محرك التشغيل. نشغّل بعض مهامنا المكتوبة لـ Harbor عبره للتأكد من تطابق النتائج، ونستعير منه أداة كشف التحايل لطبقة التقييم.",
     "pricing": "مجاني"
    }
   }

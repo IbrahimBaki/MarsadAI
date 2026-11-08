@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07",
+ "updated": "2026-11-08",
  "sources": [
   {
    "name": "Picrew/awesome-agent-harness",
@@ -7828,6 +7828,57 @@
    "ar": {
     "summary": "بيئات عزل من Render بآلات افتراضية مصغّرة Firecracker للوكلاء، مع لقطات وإيقاف عند الخمول؛ تجريبية عامة منذ نوفمبر 2026.",
     "group": "بيئات التنفيذ والعزل"
+   }
+  },
+  {
+   "name": "AgentCompass",
+   "repo": "open-compass/AgentCompass",
+   "url": "https://github.com/open-compass/AgentCompass",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": null,
+   "tags": [
+    "found-by-search"
+   ],
+   "summary": "Apache-2.0 evaluation framework that swaps model, benchmark, harness and sandbox; runs Claude Code, Codex and Harbor tasks.",
+   "lists": [],
+   "ar": {
+    "summary": "إطار تقييم برخصة Apache-2.0 يبدّل النموذج والمقياس والـ harness وبيئة العزل؛ ويشغّل Claude Code وCodex ومهام Harbor.",
+    "group": "أدوات التقييم والمقاييس"
+   }
+  },
+  {
+   "name": "Yuj",
+   "repo": "sydches/yuj",
+   "url": "https://github.com/sydches/yuj",
+   "category": "runtime",
+   "group": "Reference Harness Implementations",
+   "stars": null,
+   "tags": [
+    "found-by-search"
+   ],
+   "summary": "MIT research coding harness behind the 'Same Model, Different Harness' study, tuned for small context windows.",
+   "lists": [],
+   "ar": {
+    "summary": "harness بحثي للبرمجة برخصة MIT يقف وراء دراسة «نموذج واحد وharness مختلف»، ومضبوط لنوافذ السياق الصغيرة.",
+    "group": "تطبيقات مرجعية للـ harness"
+   }
+  },
+  {
+   "name": "onlycodes",
+   "repo": "hyang0129/onlycodes",
+   "url": "https://github.com/hyang0129/onlycodes",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": null,
+   "tags": [
+    "found-by-search"
+   ],
+   "summary": "Benchmark harness and tasks comparing Claude Code and Codex with only an execute_code tool against their normal tools.",
+   "lists": [],
+   "ar": {
+    "summary": "أداة قياس ومهام تقارن Claude Code وCodex بأداة واحدة لتشغيل الشيفرة مقابل أدواتهما المعتادة.",
+    "group": "أدوات التقييم والمقاييس"
    }
   }
  ],

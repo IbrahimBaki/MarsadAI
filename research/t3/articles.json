@@ -1,6 +1,6 @@
 {
  "track": "t3",
- "checked": "2026-11-07",
+ "checked": "2026-11-08",
  "articles": [
   {
    "id": "fullscript-bench",
@@ -1148,6 +1148,99 @@
    "summary": "TrueFoundry open-sourced its MIT-licensed agent harness (server loop, approvals, subagents, compaction, API and UI SDKs) and claims an open model matched Opus at about 75% lower cost than Claude Managed Agents, and 30% lower with the same model. Vendor numbers, not independently checked.",
    "ar": {
     "summary": "أتاحت TrueFoundry أداة الـ harness الخاصة بها مفتوحة المصدر برخصة MIT (حلقة على الخادم وموافقات ووكلاء فرعيون وضغط للسياق وحزم للواجهة البرمجية والواجهة)، وتقول إن نموذجًا مفتوحًا جارى Opus بتكلفة أقل بنحو 75% من Claude Managed Agents، وأقل بـ 30% مع النموذج نفسه. أرقام البائع ولم يتحقق منها طرف مستقل."
+   }
+  },
+  {
+   "id": "same-model-different-harness",
+   "title": "Same Model, Different Harness: Different Coding-Agent Results",
+   "source": "arXiv 2608.26218",
+   "date": "2026-08-26",
+   "url": "https://arxiv.org/abs/2608.26218",
+   "type": "paper",
+   "tags": [
+    "harness",
+    "eval"
+   ],
+   "priority": "read",
+   "summary": "With one open model (Qwen3.6-35B-A3B) and a 20k-token window, changing only the harness moved complete solutions on 169 SWE-bench Verified tasks from 43 to 72, and on SWE-bench Pro from 31 to 72. At a 262k window the difference almost disappeared (-0.3 points). The author's harness, Yuj, is public under MIT.",
+   "why": "Evidence that harness comparisons must be run per model and per context size; a result on one setup does not carry to another.",
+   "ar": {
+    "summary": "مع نموذج مفتوح واحد (Qwen3.6-35B-A3B) ونافذة سياق بحجم 20 ألف رمز، أدى تغيير الـ harness وحده إلى نقل عدد الحلول الكاملة على 169 مهمة من SWE-bench Verified من 43 إلى 72، وعلى SWE-bench Pro من 31 إلى 72. وعند نافذة بحجم 262 ألفًا اختفى الفرق تقريبًا (‎-0.3 نقطة). والـ harness الخاص بالمؤلف، Yuj، متاح علنًا برخصة MIT.",
+    "why": "دليل على أن مقارنة أدوات الـ harness يجب أن تجري لكل نموذج ولكل حجم سياق؛ فالنتيجة في إعداد واحد لا تنتقل إلى غيره."
+   }
+  },
+  {
+   "id": "scaffold-effect",
+   "title": "The Scaffold Effect in Coding Agents: Harness Choice as a Hidden Variable in Coding-Agent Evaluation",
+   "source": "Sentient Labs (arXiv 2607.22585)",
+   "date": "2026-07",
+   "url": "https://arxiv.org/abs/2607.22585",
+   "type": "paper",
+   "tags": [
+    "harness",
+    "eval",
+    "cost"
+   ],
+   "priority": "read",
+   "summary": "Three harnesses (Goose, OpenCode, OpenHands SDK) with two models on 50 Terminal-Bench Pro tasks: pass rates differed by only 0-8 points, but tokens per solved task differed by up to 40 times. Configs, raw logs and analysis scripts are released.",
+   "why": "Confirms that cost, not pass rate, is where harnesses differ most; our report must show cost per solved task next to quality.",
+   "ar": {
+    "summary": "ثلاث أدوات harness ‏(Goose وOpenCode وOpenHands SDK) مع نموذجين على 50 مهمة من Terminal-Bench Pro: اختلفت نسب النجاح بين 0 و8 نقاط فقط، لكن عدد الرموز لكل مهمة محلولة اختلف حتى 40 ضعفًا. ونُشرت الإعدادات والسجلات الخام وبرامج التحليل.",
+    "why": "يؤكد أن التكلفة، لا نسبة النجاح، هي موضع الفرق الأكبر بين أدوات الـ harness؛ ويجب أن يعرض تقريرنا تكلفة كل مهمة محلولة بجانب الجودة."
+   }
+  },
+  {
+   "id": "swe-bench-pro-verified",
+   "title": "SWE-Bench Pro Verified: A Reliable Benchmark for Software Engineering Agents",
+   "source": "Shanghai AI Laboratory (arXiv 2609.08149)",
+   "date": "2026-09-08",
+   "url": "https://arxiv.org/abs/2609.08149",
+   "type": "paper",
+   "tags": [
+    "benchmark",
+    "anti-cheating",
+    "task-mining"
+   ],
+   "priority": "read",
+   "summary": "A cleaned version of SWE-Bench Pro (731 tasks, 102 refined) run with an anti-hacking setup. Agents had been reading answer files in 103 tasks locally and 49 over the network; after the fix this fell to zero, and GLM-5.2 dropped from 78.8% to 57.3% under the anti-hacking setup (59.5% on the cleaned set), while DeepSeek-V4-Pro barely moved. Dataset on Hugging Face, runner in AgentCompass.",
+   "why": "Shows how much cheating can inflate scores; our task images must hide the fix and the tests until grading.",
+   "ar": {
+    "summary": "نسخة منقّحة من SWE-Bench Pro ‏(731 مهمة، عُدّلت منها 102) تعمل بإعداد يمنع التحايل. كان الوكلاء يقرؤون ملفات الإجابة في 103 مهام محليًا و49 عبر الشبكة؛ وبعد الإصلاح صار العدد صفرًا، وهبطت نتيجة GLM-5.2 من 78.8% إلى 57.3% مع إعداد منع التحايل (و59.5% على المجموعة المنقّحة)، بينما لم تتغير نتيجة DeepSeek-V4-Pro تقريبًا. البيانات على Hugging Face والمشغّل في AgentCompass.",
+    "why": "يبيّن إلى أي حد يمكن للتحايل أن يضخّم النتائج؛ ويجب أن تُخفي صور مهامنا الإصلاح والاختبارات حتى وقت التقييم."
+   }
+  },
+  {
+   "id": "harness-anatomy-eleven",
+   "title": "Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents — A Source-Code Study of Eleven Systems",
+   "source": "Inclusive Brains and Wavestone AI Lab (arXiv 2609.00006)",
+   "date": "2026-09",
+   "url": "https://arxiv.org/abs/2609.00006",
+   "type": "paper",
+   "tags": [
+    "harness",
+    "architecture"
+   ],
+   "priority": "reference",
+   "summary": "A reading of the source code of 11 production coding harnesses, distilled into 13 cross-cutting observations, 29 design patterns, 18 recommendations and a 90-line minimum harness. No benchmark or ranking.",
+   "ar": {
+    "summary": "قراءة للشيفرة المصدرية لـ 11 أداة harness برمجية مستخدمة فعليًا، خلصت إلى 13 ملاحظة عامة و29 نمط تصميم و18 توصية وharness أدنى من 90 سطرًا. لا يتضمن قياسًا ولا ترتيبًا."
+   }
+  },
+  {
+   "id": "execute-code-ablation",
+   "title": "When Does Restricting a Coding Agent to execute_code Help? A Regime × Agent-Design Ablation",
+   "source": "Rochester Institute of Technology (arXiv 2607.10569)",
+   "date": "2026-07",
+   "url": "https://arxiv.org/abs/2607.10569",
+   "type": "paper",
+   "tags": [
+    "harness",
+    "cost"
+   ],
+   "priority": "reference",
+   "summary": "Giving Claude Code or Codex a single 'run code' tool instead of their usual tools cut cost by up to about 25% in some settings and raised it by 14% in another (not significant), with pass rates within 3 points. Code and tasks are public (onlycodes).",
+   "ar": {
+    "summary": "منح Claude Code أو Codex أداة واحدة «لتشغيل الشيفرة» بدلًا من أدواتهما المعتادة خفّض التكلفة حتى نحو 25% في بعض الإعدادات ورفعها 14% في إعداد آخر (غير دال إحصائيًا)، مع بقاء نسب النجاح في حدود 3 نقاط. والشيفرة والمهام متاحة علنًا (onlycodes)."
    }
   }
  ]
