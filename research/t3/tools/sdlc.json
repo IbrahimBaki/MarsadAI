@@ -1,6 +1,6 @@
 {
  "category": "sdlc",
- "checked": "2026-11-08",
+ "checked": "2026-11-09",
  "tools": [
   {
    "id": "squad-kit",
@@ -12,7 +12,7 @@
    "url": "https://squad-kit.com",
    "license": "MIT",
    "pricing": "Free; runs on the user's own Claude Code subscription",
-   "version": "v1.3.0 (2026-11-08)",
+   "version": "v1.3.4 (Nov 2026)",
    "tier": "deep",
    "summary": "Azm's own agent harness for the whole software cycle. Since 1.0 (2 Nov 2026) it is no longer a planning CLI: a local app runs a squad of role agents (Analyst, Architect, Builder, Tester, Reviewer, plus Triage for bugs) that takes a ticket from a plain-language ask to a tagged release. People approve at four points (answers, spec, design, proof) and press Release; the squad does the rest. Version 1.2 (5 Nov 2026) adds a path from a whole requirements document (BRD) to built stories, its own browser for proof screenshots, and a guard around the project's commands. Patches 1.2.1 and 1.2.2 (5 Nov 2026) keep typed text across reloads, close Docker's socket to the project's commands, run commit hooks on a throwaway copy of git, and state plainly in SECURITY.md what the guard does and does not stop. Version 1.3 (8 Nov 2026) writes a story's questions, spec and proof in the language it was asked in, lets a team add its own rules, checklists and gates in .squad/harness.yaml (they can only make it stricter), runs one story across several repos of a product, and lets a person continue a story in another AI tool and then re-run squad-kit's own checks on it.",
    "how": "`squad` opens one local app (127.0.0.1:4571) for all projects, each with its own board. A ticket goes through questions, spec, design, build, checks, review, proof and release, on a Full track or an Express track for small fixes. squad-kit itself is the boss: it runs the tests, lint and build, starts a fresh Reviewer session, and does all git and tracker work; agents never merge, push or grade their own work. The Builder works in its own copy of the code. Changes after approval go through 'Propose a change' (old and new wording side by side, rated small or big, and only the affected parts are rebuilt). Project memory lives in .squad/ as readable Markdown and YAML (tickets, linked decisions, releases, rules per role, knowledge) and travels with the code; chats, screenshots, sign-ins and cost stay in ~/.squad-kit/. The model level is set per role and step (strongest, balanced, fast) and cost per ticket and role is shown at API prices. AI tools and trackers plug in as modules: Claude Code and Azure DevOps today.",
@@ -93,8 +93,8 @@
      "https://github.com/AzmSquad/Squad-Kit/blob/main/CHANGELOG.md"
     ],
     [
-     "Release 1.3.0",
-     "https://github.com/AzmSquad/squad-kit/releases/tag/v1.3.0"
+     "Release 1.3.4",
+     "https://github.com/AzmSquad/squad-kit/releases/tag/v1.3.4"
     ]
    ],
    "sources": [

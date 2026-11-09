@@ -1,6 +1,6 @@
 {
  "category": "sandbox",
- "checked": "2026-11-07",
+ "checked": "2026-11-09",
  "tools": [
   {
    "id": "e2b",
@@ -347,7 +347,7 @@
    "url": "https://github.com/superradcompany/microsandbox",
    "license": "Apache-2.0",
    "pricing": "Free",
-   "version": "v0.7.13",
+   "version": "v0.7.14",
    "summary": "Self-hosted microVM sandboxes (libkrun) that start in under 200 ms, run OCI images, and expose an MCP server for agents.",
    "how": "A local server runs microVMs from container images; SDKs and MCP let agents run code.",
    "features": [
@@ -1833,6 +1833,89 @@
     ],
     "role": "خيار مُدار آخر بتقنية Firecracker للسعة المؤقتة، بجانب E2B وModal وVercel. لا يصلح للمستودعات الخاصة دون اتفاقية بيانات.",
     "pricing": "الفوترة على استخدام المعالج الفعلي والذاكرة المخصصة؛ والبيئات الموقوفة تدفع تخزين اللقطات فقط (نوفمبر 2026، دون أسعار منشورة)"
+   }
+  },
+  {
+   "id": "devvm",
+   "name": "devvm",
+   "category": "sandbox",
+   "kind": "open-source",
+   "vendor": "devvm (devvmhq)",
+   "repo": "devvmhq/devvm",
+   "url": "https://devvm.dev/",
+   "license": "MIT",
+   "pricing": "Free",
+   "status": "beta",
+   "version": "No tagged release seen (code public Nov 2026)",
+   "tier": "brief",
+   "summary": "A new open-source tool that gives each project folder its own local Linux virtual machine with the project's toolchain, ready for a developer or a coding agent (Claude Code, Codex or opencode) to start work. Shown publicly in early November 2026.",
+   "how": "It runs its VMs on Lima (macOS 13+ or Linux, arm64 or x86_64, Lima 2.2+). Each VM mounts only the project folder, at the same path as on the host; toolchains are detected from project files (for example package.json brings Node) and shared read-only between VMs; each VM is a copy of a base image. New VMs start on an allow-list network tier, and a --clone mode gives the VM its own copy of the repo instead of the shared folder. Installed with Homebrew or a signed install script.",
+   "features": [
+    "One VM per project folder, built on Lima",
+    "Only the project folder is mounted; toolchains detected and shared read-only",
+    "Allow-list network tier by default for new VMs",
+    "Ready-made setups for Claude Code, Codex and opencode; --clone mode"
+   ],
+   "strengths": [
+    "A real VM boundary on a laptop with no cloud account, with outbound network limited by default"
+   ],
+   "weaknesses": [
+    "Very new (17 stars, no tagged release seen on 9 Nov 2026); not yet tested on Intel Macs; the project folder is mounted read-write by default"
+   ],
+   "gaps": [
+    "One machine only: no API for fanning out many benchmark trials and no Harbor integration"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "A candidate for mode 1 (on each developer's machine) next to microsandbox, for safe day-to-day agent work; not a benchmark backend."
+   },
+   "scores": {
+    "fit": 2,
+    "maturity": 1,
+    "openness": 5,
+    "agnostic": 4,
+    "config": 3,
+    "measure": 1,
+    "safety": 4
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/devvmhq/devvm"
+    ],
+    [
+     "Website",
+     "https://devvm.dev/"
+    ],
+    [
+     "Safety notes",
+     "https://devvm.dev/docs/safety/"
+    ]
+   ],
+   "sources": [
+    "https://github.com/devvmhq/devvm",
+    "https://runtimewire.com/article/devvm-local-vm-coding-agents-cj-reynolds"
+   ],
+   "ar": {
+    "summary": "أداة جديدة مفتوحة المصدر تمنح كل مجلد مشروع آلة Linux افتراضية محلية خاصة به مع أدوات المشروع، جاهزة ليبدأ فيها المطور أو وكيل البرمجة (Claude Code أو Codex أو opencode) العمل. عُرضت علنًا في أوائل نوفمبر 2026.",
+    "how": "تشغّل آلاتها الافتراضية عبر Lima ‏(macOS 13 أو أحدث، أو Linux، على arm64 أو x86_64، مع Lima 2.2 أو أحدث). كل آلة تربط مجلد المشروع فقط، وبالمسار نفسه الموجود على الجهاز؛ وتُكتشف أدوات المشروع من ملفاته (مثلًا package.json يجلب Node) وتُشارَك بين الآلات للقراءة فقط؛ وكل آلة نسخة من صورة أساسية. تبدأ الآلات الجديدة بمستوى شبكة يسمح بقائمة محددة فقط، ووضع ‎--clone‎ يعطي الآلة نسختها الخاصة من المستودع بدل المجلد المشترك. تُثبَّت عبر Homebrew أو سكربت تثبيت موقَّع.",
+    "features": [
+     "آلة افتراضية لكل مجلد مشروع، مبنية على Lima",
+     "لا يُربط إلا مجلد المشروع؛ وتُكتشف الأدوات وتُشارَك للقراءة فقط",
+     "مستوى شبكة بقائمة سماح افتراضيًا للآلات الجديدة",
+     "إعدادات جاهزة لـ Claude Code وCodex وopencode؛ ووضع ‎--clone‎"
+    ],
+    "strengths": [
+     "حدّ عزل حقيقي بآلة افتراضية على الحاسوب المحمول دون حساب سحابي، مع تقييد الاتصال الخارجي افتراضيًا"
+    ],
+    "weaknesses": [
+     "جديدة جدًا (17 نجمة، ولا إصدار موسوم حتى 9 نوفمبر 2026)؛ ولم تُختبر بعد على أجهزة Mac بمعالجات Intel؛ ومجلد المشروع مربوط للقراءة والكتابة افتراضيًا"
+    ],
+    "gaps": [
+     "جهاز واحد فقط: لا واجهة لتوزيع محاولات قياس كثيرة ولا تكامل مع Harbor"
+    ],
+    "role": "مرشحة للطريقة الأولى (على جهاز كل مطور) بجانب microsandbox، للعمل اليومي الآمن مع الوكلاء؛ وليست أساسًا لتشغيل المقاييس.",
+    "pricing": "مجانية"
    }
   }
  ]

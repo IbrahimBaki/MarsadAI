@@ -1,6 +1,6 @@
 {
  "category": "eval",
- "checked": "2026-11-08",
+ "checked": "2026-11-09",
  "tools": [
   {
    "id": "harbor",
@@ -1698,6 +1698,161 @@
      "لا يستخرج مهامّ خاصة من مستودعاتنا، ولا يقيس الالتزام بالمعايير، ولا يملك موصّلًا لـ squad-kit أو azm-harness"
     ],
     "role": "أقوى بديل لـ Harbor بوصفه محرك التشغيل. نشغّل بعض مهامنا المكتوبة لـ Harbor عبره للتأكد من تطابق النتائج، ونستعير منه أداة كشف التحايل لطبقة التقييم.",
+    "pricing": "مجاني"
+   }
+  },
+  {
+   "id": "harness-leaderboard",
+   "name": "Harness Leaderboard (Hugging Face Space)",
+   "category": "eval",
+   "kind": "open-source",
+   "vendor": "Joel Niklaus (community Space on Hugging Face)",
+   "repo": null,
+   "url": "https://huggingface.co/spaces/joelniklaus/harness-leaderboard",
+   "license": "Not stated on the Space page",
+   "pricing": "Free to view",
+   "status": "active",
+   "version": "Reliability metric added (6 Nov 2026)",
+   "tier": "brief",
+   "summary": "A public leaderboard that ranks coding-agent harnesses while the model stays the same: pick a model and reasoning effort and see a table of harnesses, an accuracy-versus-cost chart and reliability over three attempts. In early November 2026 it added a 'solved every time' column.",
+   "how": "Each harness runs the same tasks with the same open model three times. Per a news report of 7 Nov 2026 (secondary source), the data covers 28,849 trials across nine harnesses; mini-swe-agent solved 51.4% of tasks per attempt, 68.6% at least once in three tries, and only 33.0% every time; cost per solved task ranged from $0.29 for Pi to $3.35 for OpenCode. The benchmark used and the scoring code are not described on the Space page itself.",
+   "features": [
+    "Model and reasoning effort held fixed; harness is the only variable",
+    "Accuracy-versus-cost chart",
+    "Reliability over three attempts (solved every time vs at least once)",
+    "Cost per solved task"
+   ],
+   "strengths": [
+    "Shows in public the two numbers Azm's report must lead with: cost per solved task and 'solved every time'"
+   ],
+   "weaknesses": [
+    "Public tasks and open models only; the method and benchmark are not documented on the Space, and the figures above come from a secondary report"
+   ],
+   "gaps": [
+    "No private tasks, no SDLC harnesses (squad-kit, azm-harness), no standards score, no per-team view"
+   ],
+   "fit": {
+    "verdict": "inspire",
+    "role": "A ready-made model for Azm's report screen (cost-versus-quality chart and a 'solved every time' column), and an outside check on how runtimes such as Pi, opencode and mini-swe-agent rank."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 2,
+    "openness": 3,
+    "agnostic": 4,
+    "config": 1,
+    "measure": 4,
+    "safety": 1
+   },
+   "links": [
+    [
+     "Leaderboard",
+     "https://huggingface.co/spaces/joelniklaus/harness-leaderboard"
+    ],
+    [
+     "News on the reliability update",
+     "https://huggingnews.com/ai/hermes-agent-leads-reliability-ranking-on-updated-ai-coding-harness-lead-9dfa3ba5"
+    ]
+   ],
+   "sources": [
+    "https://huggingface.co/spaces/joelniklaus/harness-leaderboard",
+    "https://huggingnews.com/ai/hermes-agent-leads-reliability-ranking-on-updated-ai-coding-harness-lead-9dfa3ba5"
+   ],
+   "ar": {
+    "summary": "لوحة ترتيب عامة تقارن أدوات الـ harness لوكلاء البرمجة مع تثبيت النموذج: تختار نموذجًا ومستوى تفكير فترى جدولًا لأدوات الـ harness، ورسمًا للدقة مقابل التكلفة، والموثوقية عبر ثلاث محاولات. وفي أوائل نوفمبر 2026 أضافت عمود «حُلّت في كل مرة».",
+    "how": "تشغّل كل أداة harness المهامَ نفسها بالنموذج المفتوح نفسه ثلاث مرات. وبحسب تقرير إخباري في 7 نوفمبر 2026 (مصدر ثانوي) تغطي البيانات 28,849 محاولة عبر تسع أدوات harness؛ حلّ mini-swe-agent ‏51.4% من المهام في المحاولة الواحدة، و68.6% مرة واحدة على الأقل في ثلاث محاولات، و33.0% فقط في كل مرة؛ وتراوحت تكلفة المهمة المحلولة بين 0.29 دولار لـ Pi و3.35 دولار لـ OpenCode. ولا تصف صفحة اللوحة نفسها المقياس المستخدم ولا شيفرة التقييم.",
+    "features": [
+     "النموذج ومستوى التفكير ثابتان؛ والـ harness هو المتغير الوحيد",
+     "رسم للدقة مقابل التكلفة",
+     "الموثوقية عبر ثلاث محاولات (حُلّت في كل مرة مقابل مرة على الأقل)",
+     "تكلفة المهمة المحلولة"
+    ],
+    "strengths": [
+     "تعرض علنًا الرقمين اللذين يجب أن يبدأ بهما تقرير عزم: تكلفة المهمة المحلولة و«حُلّت في كل مرة»"
+    ],
+    "weaknesses": [
+     "مهام عامة ونماذج مفتوحة فقط؛ والطريقة والمقياس غير موثّقين في الصفحة، والأرقام أعلاه من تقرير ثانوي"
+    ],
+    "gaps": [
+     "لا مهام خاصة، ولا أدوات دورة تطوير (squad-kit وazm-harness)، ولا درجة للمعايير، ولا عرض لكل فريق"
+    ],
+    "role": "نموذج جاهز لشاشة التقارير في عزم (رسم الجودة مقابل التكلفة وعمود «حُلّت في كل مرة»)، ومرجع خارجي لترتيب المحركات مثل Pi وopencode وmini-swe-agent.",
+    "pricing": "العرض مجاني"
+   }
+  },
+  {
+   "id": "starharness",
+   "name": "StarHarness",
+   "category": "eval",
+   "kind": "open-source",
+   "vendor": "ServiceNow (research)",
+   "repo": "ServiceNow/StarHarness",
+   "url": "https://arxiv.org/abs/2608.24804",
+   "license": "Not verified",
+   "pricing": "Free",
+   "status": "beta",
+   "version": "Paper (arXiv 2608.24804, Aug 2026)",
+   "tier": "brief",
+   "summary": "A ServiceNow research system that improves an agent's harness automatically, using a 'stratified' search that looks at groups of tasks separately. On three enterprise-operations benchmarks it reports gains of 20 to 35 points over the default harness, with lower cost per task.",
+   "how": "Starting from the plain Stirrup agent framework, it evolves the harness and keeps the changes that help across task groups. With GPT-5.4: ITBench SRE 40.0% to 75.0%, EnterpriseOps-Gym 23.3% to 43.7%, AutomationBench Finance 57.1% to 83.2%; cost per task fell 17%, 53% and 29%. The frozen harness also helped other GPT and Qwen models (Qwen3.5-27B on ITBench: 25.6% to 70.0%).",
+   "features": [
+    "Automatic harness evolution with search over task groups",
+    "Reports both success and cost per task",
+    "Improved harness transfers to other models"
+   ],
+   "strengths": [
+    "Large, measured gains with lower cost, and the tuned harness carries over to other models"
+   ],
+   "weaknesses": [
+    "The baseline is a plain framework, not a tuned coding harness; tasks are IT operations, not coding; the paper cannot say which individual changes helped"
+   ],
+   "gaps": [
+    "Not tested on coding or SDLC harnesses such as squad-kit"
+   ],
+   "fit": {
+    "verdict": "inspire",
+    "role": "Another option for the later 'improve harnesses automatically' phase; its search over task groups is a guard against tuning a harness to one kind of task."
+   },
+   "scores": {
+    "fit": 2,
+    "maturity": 1,
+    "openness": 3,
+    "agnostic": 3,
+    "config": 1,
+    "measure": 3,
+    "safety": 1
+   },
+   "links": [
+    [
+     "Paper",
+     "https://arxiv.org/abs/2608.24804"
+    ],
+    [
+     "Code (from the paper)",
+     "https://github.com/ServiceNow/StarHarness"
+    ]
+   ],
+   "sources": [
+    "https://arxiv.org/abs/2608.24804"
+   ],
+   "ar": {
+    "summary": "نظام بحثي من ServiceNow يحسّن الـ harness الخاص بالوكيل تلقائيًا، باستخدام بحث «طبقي» ينظر في مجموعات المهام كلًّا على حدة. ويذكر على ثلاثة مقاييس لعمليات المؤسسات تحسنًا بين 20 و35 نقطة مقارنة بالـ harness الافتراضي، مع تكلفة أقل للمهمة.",
+    "how": "يبدأ من إطار الوكلاء Stirrup بلا تعديل، ثم يطوّر الـ harness ويحتفظ بالتغييرات المفيدة عبر مجموعات المهام. مع GPT-5.4: ‏ITBench SRE من 40.0% إلى 75.0%، وEnterpriseOps-Gym من 23.3% إلى 43.7%، وAutomationBench Finance من 57.1% إلى 83.2%؛ وانخفضت تكلفة المهمة 17% و53% و29%. كما أفاد الـ harness المجمَّد نماذج GPT وQwen أخرى (Qwen3.5-27B على ITBench: من 25.6% إلى 70.0%).",
+    "features": [
+     "تطوير تلقائي للـ harness مع بحث عبر مجموعات المهام",
+     "يعرض النجاح وتكلفة المهمة معًا",
+     "الـ harness المحسَّن ينتقل إلى نماذج أخرى"
+    ],
+    "strengths": [
+     "مكاسب كبيرة مقيسة مع تكلفة أقل، والـ harness المضبوط يصلح لنماذج أخرى"
+    ],
+    "weaknesses": [
+     "نقطة المقارنة إطار عام بلا ضبط وليست harness برمجة مضبوطًا؛ والمهام عمليات تقنية لا برمجة؛ ولا تستطيع الورقة تحديد أي التغييرات أفاد"
+    ],
+    "gaps": [
+     "لم يُختبر على أدوات harness للبرمجة أو لدورة التطوير مثل squad-kit"
+    ],
+    "role": "خيار آخر لمرحلة «تحسين أدوات الـ harness تلقائيًا» اللاحقة؛ وبحثه عبر مجموعات المهام يحمي من ضبط الـ harness على نوع واحد من المهام.",
     "pricing": "مجاني"
    }
   }

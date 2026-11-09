@@ -1,6 +1,6 @@
 {
  "track": "t3",
- "checked": "2026-11-08",
+ "checked": "2026-11-09",
  "goal": {
   "en": "Build one place where Azm can run any harness (squad-kit, azm-harness, Claude Code, others) on the same real Azm tasks, in isolation, and get a clear answer: which harness, with which model, gives the best quality for the cost, and does it follow our standards?",
   "ar": "بناء مكان واحد تشغّل فيه عزم أي harness (مثل squad-kit وazm-harness وClaude Code وغيرها) على المهام الحقيقية نفسها من مشاريع عزم، في بيئة معزولة، لتحصل على إجابة واضحة: أي harness، مع أي نموذج، يعطي أفضل جودة مقابل التكلفة، وهل يلتزم بمعاييرنا؟"
@@ -910,8 +910,8 @@
    },
    "decision": "adopt",
    "plan": {
-    "en": "Three ways to provide it, used together: (1) on each developer's machine, Docker or microsandbox, so anyone can run a small benchmark or let squad-kit build safely; (2) on Azm servers, a self-hosted sandbox (Kubernetes agent-sandbox, or E2B self-hosted) for team-wide and scheduled runs on private code; (3) a paid managed service only for large bursts or public benchmarks, never for private repos without a data agreement. Two 2026 studies are a warning for this block: in the Shandong study, 71% of web-enabled runs found the human-written fix online, so benchmark sandboxes must block open internet by default. OpenKruise Agents (v0.6.0) is a second self-hosted option that brings E2B's API, network rules and secret injection to our own cluster. New in November 2026: the Kubernetes agent-sandbox project published a worked example that runs Terminal-Bench through Harbor with one sandbox per trial, so our planned runner + sandbox pair is already wired (its Harbor integration package was not yet merged on 6 Nov). Google's Agent Substrate 1.0, now a CNCF project, is a second in-house option with gVisor or microVM isolation and no secrets inside the sandbox; it is built for long, mostly idle sessions rather than short benchmark trials.",
-    "ar": "ثلاث طرق لتوفيره تُستخدم معًا: (1) على جهاز كل مطور عبر Docker أو microsandbox، ليستطيع أي شخص تشغيل اختبار صغير أو ليعمل squad-kit بأمان؛ (2) على خوادم عزم عبر بيئة عزل مستضافة لدينا (Kubernetes agent-sandbox أو E2B المستضاف ذاتيًا) للتشغيلات الجماعية والمجدولة على الشيفرة الخاصة؛ (3) خدمة مدفوعة مُدارة فقط للأحمال الكبيرة المؤقتة أو المقاييس العامة، وليس للمستودعات الخاصة دون اتفاقية بيانات. ودراستان من 2026 تحذّران في هذا الجانب: في دراسة جامعة شاندونغ وجد 71% من التشغيلات المتصلة بالإنترنت الإصلاحَ البشري منشورًا على الشبكة، لذا يجب أن تمنع بيئات القياس الإنترنت المفتوح افتراضيًا. وOpenKruise Agents ‏(v0.6.0) خيار ثانٍ مستضاف لدينا يجلب واجهة E2B وقواعد الشبكة وحقن الأسرار إلى عنقودنا. جديد في نوفمبر 2026: نشر مشروع Kubernetes agent-sandbox مثالًا عمليًا يشغّل Terminal-Bench عبر Harbor مع بيئة عزل لكل محاولة، فالجمع الذي نخطط له بين المشغّل وبيئة العزل مربوط بالفعل (لم تكن حزمة التكامل مع Harbor قد دُمجت بعد في 6 نوفمبر). وAgent Substrate 1.0 من Google، وهو الآن مشروع في CNCF، خيار ثانٍ مستضاف لدينا بعزل gVisor أو آلات افتراضية مصغّرة وبلا أسرار داخل بيئة العزل؛ لكنه مصمم للجلسات الطويلة الخاملة معظم الوقت لا لمحاولات القياس القصيرة."
+    "en": "Three ways to provide it, used together: (1) on each developer's machine, Docker or microsandbox, so anyone can run a small benchmark or let squad-kit build safely; (2) on Azm servers, a self-hosted sandbox (Kubernetes agent-sandbox, or E2B self-hosted) for team-wide and scheduled runs on private code; (3) a paid managed service only for large bursts or public benchmarks, never for private repos without a data agreement. Two 2026 studies are a warning for this block: in the Shandong study, 71% of web-enabled runs found the human-written fix online, so benchmark sandboxes must block open internet by default. OpenKruise Agents (v0.6.0) is a second self-hosted option that brings E2B's API, network rules and secret injection to our own cluster. New in November 2026: the Kubernetes agent-sandbox project published a worked example that runs Terminal-Bench through Harbor with one sandbox per trial, so our planned runner + sandbox pair is already wired (its Harbor integration package was not yet merged on 6 Nov). Google's Agent Substrate 1.0, now a CNCF project, is a second in-house option with gVisor or microVM isolation and no secrets inside the sandbox; it is built for long, mostly idle sessions rather than short benchmark trials. Two warnings from October and November 2026: PWN Research published a working escape from a Firecracker microVM (v1.16.1, run without Firecracker's jailer) to root on the host, so if we self-host E2B or any Firecracker setup we must run the jailer, patch host kernels quickly and still block the network by default; and NCC Group found that breakouts depend almost entirely on how the sandbox is built, recommending OS-level isolation, one fresh container per session and no API keys inside. For developers' machines, devvm (new, MIT) gives each project its own local VM with an allow-list network.",
+    "ar": "ثلاث طرق لتوفيره تُستخدم معًا: (1) على جهاز كل مطور عبر Docker أو microsandbox، ليستطيع أي شخص تشغيل اختبار صغير أو ليعمل squad-kit بأمان؛ (2) على خوادم عزم عبر بيئة عزل مستضافة لدينا (Kubernetes agent-sandbox أو E2B المستضاف ذاتيًا) للتشغيلات الجماعية والمجدولة على الشيفرة الخاصة؛ (3) خدمة مدفوعة مُدارة فقط للأحمال الكبيرة المؤقتة أو المقاييس العامة، وليس للمستودعات الخاصة دون اتفاقية بيانات. ودراستان من 2026 تحذّران في هذا الجانب: في دراسة جامعة شاندونغ وجد 71% من التشغيلات المتصلة بالإنترنت الإصلاحَ البشري منشورًا على الشبكة، لذا يجب أن تمنع بيئات القياس الإنترنت المفتوح افتراضيًا. وOpenKruise Agents ‏(v0.6.0) خيار ثانٍ مستضاف لدينا يجلب واجهة E2B وقواعد الشبكة وحقن الأسرار إلى عنقودنا. جديد في نوفمبر 2026: نشر مشروع Kubernetes agent-sandbox مثالًا عمليًا يشغّل Terminal-Bench عبر Harbor مع بيئة عزل لكل محاولة، فالجمع الذي نخطط له بين المشغّل وبيئة العزل مربوط بالفعل (لم تكن حزمة التكامل مع Harbor قد دُمجت بعد في 6 نوفمبر). وAgent Substrate 1.0 من Google، وهو الآن مشروع في CNCF، خيار ثانٍ مستضاف لدينا بعزل gVisor أو آلات افتراضية مصغّرة وبلا أسرار داخل بيئة العزل؛ لكنه مصمم للجلسات الطويلة الخاملة معظم الوقت لا لمحاولات القياس القصيرة. تحذيران من أكتوبر ونوفمبر 2026: نشرت PWN Research طريقة عاملة للخروج من آلة Firecracker الافتراضية المصغّرة (الإصدار 1.16.1، مُشغَّلة دون أداة العزل jailer) إلى صلاحيات root على الجهاز المضيف؛ لذا إن استضفنا E2B أو أي إعداد Firecracker بأنفسنا فيجب تشغيل jailer وتحديث أنوية الخوادم سريعًا ومع ذلك منع الشبكة افتراضيًا. ووجدت NCC Group أن نجاح الخروج من العزل يتوقف كليًا تقريبًا على طريقة بناء بيئة العزل، وأوصت بعزل على مستوى نظام التشغيل، وحاوية جديدة لكل جلسة، وعدم وضع مفاتيح الواجهات داخلها. ولأجهزة المطورين، تمنح devvm (جديدة، MIT) كل مشروع آلة افتراضية محلية خاصة به مع شبكة بقائمة سماح."
    },
    "pick": [
     "k8s-agent-sandbox",
@@ -931,7 +931,8 @@
     "akamai-agent-sandbox",
     "openkruise-agents",
     "agent-substrate",
-    "render-sandboxes"
+    "render-sandboxes",
+    "devvm"
    ],
    "modes": [
     {
@@ -950,7 +951,8 @@
       "container-use",
       "sandcastle",
       "aio-sandbox",
-      "nono"
+      "nono",
+      "devvm"
      ],
      "pros": [
       {
@@ -1479,8 +1481,8 @@
    },
    "decision": "build",
    "plan": {
-    "en": "Build this layer. Score each run: resolved (hidden tests), a developer-value score 0-100, standards compliance from Track 1 checks, and zero for any safety violation; repeat 3-5 times and report variance. Report a harness × model × team matrix and a cost/quality chart, borrowing AWS's frontier chart and the Harness Card. Add a CI gate so no harness or standard change ships if it scores worse. Report full-credit rate and cost next to the mean score: Harness-Bench (2026) found they rank harnesses differently, and that the best harness depends on the model. Cost must be a first-class result: HarnessTax (Arena, Sep 2026) found the same model reaching similar success at up to 5x the cost across harnesses, and the Shandong study (Oct 2026) found that switching harness flipped 13% of hard tasks, the same rate as simply rerunning. So repeat runs are required before calling any harness better. For the standards score, borrow Better Harness's rule that missing evidence is reported as missing, never scored. Do not build cheat detection from scratch: AgentCompass ships a two-step reward-hacking analyzer (pattern rules for edited tests, weakened asserts or hard-coded outputs, then an LLM check of only the suspicious steps) that we can run on our trajectories and tune for our stacks.",
-    "ar": "نبني هذه الطبقة. نقيّم كل تشغيل: هل حُلّت المهمة (اختبارات مخفية)، ودرجة قيمة للمطور من 0 إلى 100، والالتزام بالمعايير من فحوص المسار 1، وصفر لأي مخالفة أمان؛ ونكرر 3-5 مرات ونعرض التباين. نعرض مصفوفة harness × نموذج × فريق ورسمًا للجودة مقابل التكلفة، مستفيدين من رسم AWS وبطاقة الـ Harness. ونضيف بوابة في CI تمنع أي تغيير في الـ harness أو المعايير إن قلّل الدرجة. ونعرض نسبة الإنجاز الكامل والتكلفة بجانب متوسط الدرجة؛ فقد وجد Harness-Bench ‏(2026) أنها ترتّب أدوات الـ harness ترتيبًا مختلفًا، وأن أفضل harness يتوقف على النموذج. ويجب أن تكون التكلفة نتيجة أساسية: وجدت HarnessTax ‏(Arena، سبتمبر 2026) أن النموذج نفسه يحقق نجاحًا متقاربًا بتكلفة تصل إلى خمسة أضعاف بين أدوات الـ harness، ووجدت دراسة جامعة شاندونغ (أكتوبر 2026) أن تبديل الـ harness غيّر نتيجة 13% من المهام الصعبة، وهي النسبة نفسها عند مجرد إعادة التشغيل. لذا يلزم تكرار التشغيل قبل الحكم بأن harness أفضل من غيره. ولدرجة المعايير نستعير قاعدة Better Harness: الدليل الغائب يُعرض غائبًا ولا يُقيَّم. لا نبني كشف التحايل من الصفر: يأتي AgentCompass بأداة على خطوتين لكشف التحايل على التقييم (قواعد أنماط لتعديل الاختبارات أو إضعاف التحققات أو تثبيت المخرجات، ثم فحص بنموذج لغوي للخطوات المشبوهة فقط) يمكن تشغيلها على مسارات عمل وكلائنا وضبطها لتقنياتنا."
+    "en": "Build this layer. Score each run: resolved (hidden tests), a developer-value score 0-100, standards compliance from Track 1 checks, and zero for any safety violation; repeat 3-5 times and report variance. Report a harness × model × team matrix and a cost/quality chart, borrowing AWS's frontier chart and the Harness Card. Add a CI gate so no harness or standard change ships if it scores worse. Report full-credit rate and cost next to the mean score: Harness-Bench (2026) found they rank harnesses differently, and that the best harness depends on the model. Cost must be a first-class result: HarnessTax (Arena, Sep 2026) found the same model reaching similar success at up to 5x the cost across harnesses, and the Shandong study (Oct 2026) found that switching harness flipped 13% of hard tasks, the same rate as simply rerunning. So repeat runs are required before calling any harness better. For the standards score, borrow Better Harness's rule that missing evidence is reported as missing, never scored. Do not build cheat detection from scratch: AgentCompass ships a two-step reward-hacking analyzer (pattern rules for edited tests, weakened asserts or hard-coded outputs, then an LLM check of only the suspicious steps) that we can run on our trajectories and tune for our stacks. Prior art for the report screen: the public Harness Leaderboard on Hugging Face already shows harnesses side by side with the model fixed, an accuracy-versus-cost chart and a 'solved every time over three attempts' column (in one reported case 51.4% per attempt but only 33.0% every time). We copy that layout and those two columns; what stays ours is private tasks, SDLC harnesses, standards scores and the per-team view.",
+    "ar": "نبني هذه الطبقة. نقيّم كل تشغيل: هل حُلّت المهمة (اختبارات مخفية)، ودرجة قيمة للمطور من 0 إلى 100، والالتزام بالمعايير من فحوص المسار 1، وصفر لأي مخالفة أمان؛ ونكرر 3-5 مرات ونعرض التباين. نعرض مصفوفة harness × نموذج × فريق ورسمًا للجودة مقابل التكلفة، مستفيدين من رسم AWS وبطاقة الـ Harness. ونضيف بوابة في CI تمنع أي تغيير في الـ harness أو المعايير إن قلّل الدرجة. ونعرض نسبة الإنجاز الكامل والتكلفة بجانب متوسط الدرجة؛ فقد وجد Harness-Bench ‏(2026) أنها ترتّب أدوات الـ harness ترتيبًا مختلفًا، وأن أفضل harness يتوقف على النموذج. ويجب أن تكون التكلفة نتيجة أساسية: وجدت HarnessTax ‏(Arena، سبتمبر 2026) أن النموذج نفسه يحقق نجاحًا متقاربًا بتكلفة تصل إلى خمسة أضعاف بين أدوات الـ harness، ووجدت دراسة جامعة شاندونغ (أكتوبر 2026) أن تبديل الـ harness غيّر نتيجة 13% من المهام الصعبة، وهي النسبة نفسها عند مجرد إعادة التشغيل. لذا يلزم تكرار التشغيل قبل الحكم بأن harness أفضل من غيره. ولدرجة المعايير نستعير قاعدة Better Harness: الدليل الغائب يُعرض غائبًا ولا يُقيَّم. لا نبني كشف التحايل من الصفر: يأتي AgentCompass بأداة على خطوتين لكشف التحايل على التقييم (قواعد أنماط لتعديل الاختبارات أو إضعاف التحققات أو تثبيت المخرجات، ثم فحص بنموذج لغوي للخطوات المشبوهة فقط) يمكن تشغيلها على مسارات عمل وكلائنا وضبطها لتقنياتنا. عمل سابق لشاشة التقارير: تعرض لوحة Harness Leaderboard العامة على Hugging Face أدوات الـ harness جنبًا إلى جنب مع تثبيت النموذج، ورسمًا للدقة مقابل التكلفة، وعمود «حُلّت في كل مرة عبر ثلاث محاولات» (في حالة منشورة: 51.4% في المحاولة الواحدة و33.0% فقط في كل مرة). ننسخ هذا التخطيط وهذين العمودين؛ ويبقى لنا المهام الخاصة وأدوات دورة التطوير ودرجات المعايير والعرض لكل فريق."
    },
    "pick": [
     "aws-harness-benchmarks",
@@ -1491,7 +1493,8 @@
     "deepeval",
     "skillsbench",
     "better-harness",
-    "agentcompass"
+    "agentcompass",
+    "harness-leaderboard"
    ],
    "compare": {
     "tools": [
@@ -1606,8 +1609,8 @@
    },
    "decision": "adopt",
    "plan": {
-    "en": "Scan every skill package with SkillSpector and every agent setup with Snyk Agent Scan before it enters the sandbox. Keep secrets out of sandboxes (a credential proxy such as Agent Vault). Use OpenShell-style YAML policies for network and file access.",
-    "ar": "نفحص كل حزمة مهارات بـ SkillSpector وكل إعداد وكيل بـ Snyk Agent Scan قبل دخوله بيئة الاختبار، ونُبقي الأسرار خارج بيئات العزل (عبر وسيط للاعتمادات مثل Agent Vault)، ونستخدم سياسات YAML على طريقة OpenShell للتحكم في الشبكة والملفات."
+    "en": "Scan every skill package with SkillSpector and every agent setup with Snyk Agent Scan before it enters the sandbox. Keep secrets out of sandboxes (a credential proxy such as Agent Vault). Use OpenShell-style YAML policies for network and file access. NCC Group's October 2026 review adds three rules we adopt: restate guardrails in every subagent definition (subagents do not always inherit them), make the agent's own configuration (hooks, skills) read-only to the agent, and keep model API keys out of the execution container.",
+    "ar": "نفحص كل حزمة مهارات بـ SkillSpector وكل إعداد وكيل بـ Snyk Agent Scan قبل دخوله بيئة الاختبار، ونُبقي الأسرار خارج بيئات العزل (عبر وسيط للاعتمادات مثل Agent Vault)، ونستخدم سياسات YAML على طريقة OpenShell للتحكم في الشبكة والملفات. وتضيف مراجعة NCC Group في أكتوبر 2026 ثلاث قواعد نعتمدها: نعيد كتابة الحمايات في تعريف كل وكيل فرعي (فالوكلاء الفرعيون لا يرثونها دائمًا)، ونجعل إعدادات الوكيل نفسه (الخطافات والمهارات) للقراءة فقط بالنسبة إليه، ونُبقي مفاتيح واجهات النماذج خارج حاوية التنفيذ."
    },
    "pick": [
     "skillspector",
@@ -1728,7 +1731,8 @@
    "alternatives": [
     "ahe",
     "skillopt",
-    "harnessflow"
+    "harnessflow",
+    "starharness"
    ],
    "compare": {
     "tools": [
@@ -1736,7 +1740,8 @@
      "auto-harness",
      "ahe",
      "skillopt",
-     "harnessflow"
+     "harnessflow",
+     "starharness"
     ],
     "rows": [
      {
@@ -1764,6 +1769,10 @@
        {
         "en": "Whole harness code, chosen by tree search",
         "ar": "شيفرة الـ harness كاملة، باختيار عبر شجرة بحث"
+       },
+       {
+        "en": "Harness, by search across task groups",
+        "ar": "الـ harness، ببحث عبر مجموعات المهام"
        }
       ]
      },
@@ -1792,6 +1801,10 @@
        {
         "en": "Six benchmarks: 69.48%, +3.95 over Meta-Harness",
         "ar": "ستة مقاييس: 69.48%، بزيادة 3.95 على Meta-Harness"
+       },
+       {
+        "en": "ITBench: 40.0% → 75.0% (GPT-5.4), lower cost",
+        "ar": "ITBench: من 40.0% إلى 75.0% ‏(GPT-5.4)، بتكلفة أقل"
        }
       ]
      },
@@ -1820,6 +1833,10 @@
        {
         "en": "Paper only (Nov 2026), no code yet",
         "ar": "ورقة فقط (نوفمبر 2026)، بلا شيفرة بعد"
+       },
+       {
+        "en": "Paper with code link (ServiceNow, Aug 2026)",
+        "ar": "ورقة مع رابط للشيفرة (ServiceNow، أغسطس 2026)"
        }
       ]
      }

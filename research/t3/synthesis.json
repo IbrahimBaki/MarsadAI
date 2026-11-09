@@ -1,6 +1,6 @@
 {
  "track": "t3",
- "checked": "2026-11-08",
+ "checked": "2026-11-09",
  "headline": "Don't build a harness benchmark engine: Harbor (plus Inspect for non-code tasks) already runs any harness on containerized tasks at scale. What nobody has built is the Azm layer on top: tasks mined from Azm's own repos, adapters for squad-kit and azm-harness, standards-compliance scoring, per-team YAML suites and a report people can act on.",
  "bottomLine": [
   "Prior art exists and is recent: AWS published a harness-vs-model cost/quality benchmark on your own code (MIT-0, 21 Oct 2026); Fullscript ran 36 tasks mined from its own commits (Aug 2026); GitHub published its harness evaluation protocol (Jun 2026). Azm's sandbox should combine their methods, not reinvent them.",
@@ -57,6 +57,12 @@
    "ref": "agentcompass",
    "takes": "Model × benchmark × harness × sandbox as swappable parts, Claude Code and Codex adapters, Harbor-format tasks with Harbor's verifier, resumable runs, and a two-step reward-hacking analyzer for the scoring layer.",
    "lacks": "Private task mining, standards scoring, squad-kit/azm-harness adapters, per-team YAML, team reports and a CI gate."
+  },
+  {
+   "name": "Harness Leaderboard (Hugging Face)",
+   "ref": "harness-leaderboard",
+   "takes": "The report layout: harnesses side by side with the model fixed, an accuracy-versus-cost chart, cost per solved task, and reliability as 'solved every time over three attempts'.",
+   "lacks": "Private tasks, SDLC harnesses (squad-kit, azm-harness), standards scores, per-team views and a CI gate; its method and benchmark are not documented on the page."
   }
  ],
  "architecture": [
@@ -227,6 +233,10 @@
    {
     "takes": "النموذج × المقياس × الـ harness × بيئة العزل كأجزاء قابلة للتبديل، وموصّلات Claude Code وCodex، ومهام بصيغة Harbor مع أداة التحقق الخاصة به، وتشغيلات قابلة للاستئناف، وأداة على خطوتين لكشف التحايل على التقييم لطبقة التقييم.",
     "lacks": "استخراج المهام الخاصة، وقياس الالتزام بالمعايير، وموصّلات squad-kit وazm-harness، وملف YAML لكل فريق، وتقارير الفرق، وبوابة CI."
+   },
+   {
+    "takes": "تخطيط التقرير: أدوات الـ harness جنبًا إلى جنب مع تثبيت النموذج، ورسم للدقة مقابل التكلفة، وتكلفة المهمة المحلولة، والموثوقية بصيغة «حُلّت في كل مرة عبر ثلاث محاولات».",
+    "lacks": "المهام الخاصة، وأدوات دورة التطوير (squad-kit وazm-harness)، ودرجات المعايير، والعرض لكل فريق، وبوابة CI؛ كما أن طريقتها ومقياسها غير موثّقين في الصفحة."
    }
   ],
   "names": [

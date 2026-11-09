@@ -1,6 +1,6 @@
 {
  "track": "t3",
- "checked": "2026-11-08",
+ "checked": "2026-11-09",
  "articles": [
   {
    "id": "fullscript-bench",
@@ -1241,6 +1241,121 @@
    "summary": "Giving Claude Code or Codex a single 'run code' tool instead of their usual tools cut cost by up to about 25% in some settings and raised it by 14% in another (not significant), with pass rates within 3 points. Code and tasks are public (onlycodes).",
    "ar": {
     "summary": "منح Claude Code أو Codex أداة واحدة «لتشغيل الشيفرة» بدلًا من أدواتهما المعتادة خفّض التكلفة حتى نحو 25% في بعض الإعدادات ورفعها 14% في إعداد آخر (غير دال إحصائيًا)، مع بقاء نسب النجاح في حدود 3 نقاط. والشيفرة والمهام متاحة علنًا (onlycodes)."
+   }
+  },
+  {
+   "id": "harness-leaderboard-reliability",
+   "title": "Hermes Agent leads reliability ranking on updated AI coding Harness Leaderboard",
+   "source": "HuggingNews (on the Harness Leaderboard Space)",
+   "date": "2026-11-07",
+   "url": "https://huggingnews.com/ai/hermes-agent-leads-reliability-ranking-on-updated-ai-coding-harness-lead-9dfa3ba5",
+   "type": "comparison",
+   "tags": [
+    "leaderboard",
+    "reliability",
+    "harness-vs-model",
+    "cost"
+   ],
+   "priority": "read",
+   "summary": "The public Harness Leaderboard added a consistency column: tasks solved on all three attempts. Across 28,849 trials and nine harnesses on open models, mini-swe-agent solved 51.4% per attempt, 68.6% at least once and only 33.0% every time; cost per solved task ranged from $0.29 (Pi) to $3.35 (OpenCode). A secondary news report built largely from social posts.",
+   "why": "Confirms that Azm's report must show 'solved every time' and cost per solved task, not a single pass rate.",
+   "ar": {
+    "summary": "أضافت لوحة Harness Leaderboard العامة عمودًا للثبات: المهام المحلولة في المحاولات الثلاث كلها. عبر 28,849 محاولة وتسع أدوات harness على نماذج مفتوحة، حلّ mini-swe-agent ‏51.4% في المحاولة الواحدة، و68.6% مرة على الأقل، و33.0% فقط في كل مرة؛ وتراوحت تكلفة المهمة المحلولة بين 0.29 دولار (Pi) و3.35 دولار (OpenCode). تقرير إخباري ثانوي مبني في معظمه على منشورات في وسائل التواصل.",
+    "why": "يؤكد أن تقرير عزم يجب أن يعرض «حُلّت في كل مرة» وتكلفة المهمة المحلولة، لا نسبة نجاح واحدة."
+   }
+  },
+  {
+   "id": "pwnescape-firecracker",
+   "title": "Firecracker VM Escape: PwnEscape Part 2",
+   "source": "PWN Research",
+   "date": "2026-11",
+   "url": "https://pwn.ai/blog/firecracker-escape",
+   "type": "case-study",
+   "tags": [
+    "sandbox",
+    "containment",
+    "security"
+   ],
+   "priority": "read",
+   "summary": "Researchers show code execution as root on the host from inside a Firecracker microVM (Firecracker v1.16.1 on x86-64, launched without the jailer), building on host-memory access from part 1 of their work. Proof-of-concept code is published; no fix status is stated.",
+   "why": "Several sandbox options (E2B, Vercel, Render) use Firecracker. If we self-host one, run the jailer, patch hosts quickly and keep network and secrets locked down, because the VM boundary alone is not enough.",
+   "ar": {
+    "summary": "يعرض باحثون تنفيذ شيفرة بصلاحيات root على الجهاز المضيف من داخل آلة Firecracker افتراضية مصغّرة (Firecracker 1.16.1 على x86-64، مُشغَّلة دون jailer)، بناءً على وصول إلى ذاكرة المضيف من الجزء الأول من عملهم. الشيفرة التجريبية منشورة، ولا يُذكر وضع الإصلاح.",
+    "why": "عدة خيارات عزل (E2B وVercel وRender) تستخدم Firecracker. إن استضفنا أحدها بأنفسنا فيجب تشغيل jailer وتحديث الخوادم سريعًا وإبقاء الشبكة والأسرار مقيّدة، لأن حدّ الآلة الافتراضية وحده لا يكفي."
+   }
+  },
+  {
+   "id": "ncc-agent-sandbox-breakout",
+   "title": "How Hard Is It Really to Break an AI Agent Out of Its Sandbox?",
+   "source": "NCC Group",
+   "date": "2026-10-06",
+   "url": "https://www.nccgroup.com/research/how-hard-is-it-really-to-break-an-ai-agent-out-of-its-sandbox/",
+   "type": "reading",
+   "tags": [
+    "sandbox",
+    "governance",
+    "secrets",
+    "permissions"
+   ],
+   "priority": "read",
+   "summary": "A security firm's view after 12 to 18 months of testing agent breakouts: reduced Python interpreters are easy to escape, properly built containers hold up, and 'it depends completely on how the sandbox and container are built'. Ten practices: OS-level isolation (gVisor, nsjail or a microVM), one fresh container per session, default-deny network, guardrails restated in every subagent, agent configuration read-only to the agent, and no API keys in the execution container.",
+   "why": "A ready checklist for the sandbox and safety blocks; the subagent and read-only-config points apply directly to squad-kit's role agents.",
+   "ar": {
+    "summary": "رأي شركة أمن بعد 12 إلى 18 شهرًا من اختبار خروج الوكلاء من العزل: مفسّرات Python المقيّدة سهلة الاختراق، والحاويات المبنية جيدًا تصمد، و«الأمر يتوقف كليًا على طريقة بناء بيئة العزل والحاوية». وعشر ممارسات: عزل على مستوى نظام التشغيل (gVisor أو nsjail أو آلة افتراضية مصغّرة)، وحاوية جديدة لكل جلسة، ومنع الشبكة افتراضيًا، وإعادة كتابة الحمايات في كل وكيل فرعي، وجعل إعدادات الوكيل للقراءة فقط بالنسبة إليه، وعدم وضع مفاتيح الواجهات في حاوية التنفيذ.",
+    "why": "قائمة تحقق جاهزة لكتلتي العزل والأمان؛ ونقطتا الوكلاء الفرعيين والإعدادات للقراءة فقط تنطبقان مباشرة على وكلاء الأدوار في squad-kit."
+   }
+  },
+  {
+   "id": "starharness-paper",
+   "title": "StarHarness: Evolving Harnesses with Stratified Search for Enterprise Environments",
+   "source": "ServiceNow (arXiv 2608.24804)",
+   "date": "2026-08",
+   "url": "https://arxiv.org/abs/2608.24804",
+   "type": "paper",
+   "tags": [
+    "harness-optimization",
+    "cost"
+   ],
+   "priority": "reference",
+   "summary": "Automatic harness evolution with a search over task groups lifts GPT-5.4 by 20 to 35 points on three enterprise-operations benchmarks (ITBench 40.0% to 75.0%) and cuts cost per task by 17-53%; the frozen harness also helps other models. The baseline is a plain framework, and the paper cannot isolate which changes helped.",
+   "ar": {
+    "summary": "تطوير تلقائي للـ harness مع بحث عبر مجموعات المهام يرفع GPT-5.4 بين 20 و35 نقطة على ثلاثة مقاييس لعمليات المؤسسات (ITBench من 40.0% إلى 75.0%) ويخفض تكلفة المهمة بين 17% و53%؛ كما يفيد الـ harness المجمَّد نماذج أخرى. نقطة المقارنة إطار عام بلا ضبط، ولا تستطيع الورقة تحديد أي التغييرات أفاد."
+   }
+  },
+  {
+   "id": "cisco-project-quarry",
+   "title": "Cisco open-sources Quarry to catch AI agent attacks hidden in harmless steps",
+   "source": "SecurityWeek",
+   "date": "2026-10-29",
+   "url": "https://www.securityweek.com/cisco-open-sources-quarry-to-catch-ai-agent-attacks-hidden-in-harmless-steps/",
+   "type": "reading",
+   "tags": [
+    "governance",
+    "claude-code",
+    "mcp"
+   ],
+   "priority": "reference",
+   "summary": "Cisco's Project Quarry is an open rule language for spotting risky agent behaviour that only shows up across a sequence of harmless-looking steps, mixing ML or LLM judgments with rule checks. It covers conversations, tool use and MCP calls, ships a CLI scanner and Python SDK, and has a plugin for Claude Code and Codex that writes rules from plain English.",
+   "ar": {
+    "summary": "مشروع Quarry من Cisco لغة قواعد مفتوحة لاكتشاف سلوك الوكلاء الخطِر الذي لا يظهر إلا عبر سلسلة من خطوات تبدو بريئة، وتجمع أحكام نماذج التعلم الآلي أو النماذج اللغوية مع فحوص القواعد. يغطي المحادثات واستخدام الأدوات واستدعاءات MCP، ومعه أداة فحص سطرية وحزمة Python، وإضافة لـ Claude Code وCodex تكتب القواعد من وصف بلغة عادية."
+   }
+  },
+  {
+   "id": "eigenform-model-held-fixed",
+   "title": "Benchmarking an Agent Harness With the Model Held Fixed",
+   "source": "Eigenform",
+   "date": "2026-09-20",
+   "url": "https://www.eigenform.ai/insights/benchmarking-an-agent-harness-with-the-model-held-fixed/",
+   "type": "method",
+   "tags": [
+    "harness-vs-model",
+    "variance",
+    "methodology"
+   ],
+   "priority": "reference",
+   "summary": "A small, transparent example of separating model from harness on a 150-question domain benchmark (not coding): eight models in one harness, then many harnesses with one pinned model, scored by an LLM judge. It publishes a noise floor (the smallest gap that counts, 0.27-0.45 points on a 10-point scale) before declaring winners.",
+   "ar": {
+    "summary": "مثال صغير وواضح على فصل النموذج عن الـ harness في مقياس متخصص من 150 سؤالًا (ليس برمجة): ثمانية نماذج في harness واحد، ثم أدوات harness كثيرة مع نموذج واحد مثبت، بتقييم نموذج لغوي حَكَم. وينشر حدّ الضوضاء (أصغر فرق يُعتد به، من 0.27 إلى 0.45 نقطة على مقياس من 10) قبل إعلان أي فائز."
    }
   }
  ]

@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08",
+ "updated": "2026-11-09",
  "sources": [
   {
    "name": "Picrew/awesome-agent-harness",
@@ -7879,6 +7879,108 @@
    "ar": {
     "summary": "أداة قياس ومهام تقارن Claude Code وCodex بأداة واحدة لتشغيل الشيفرة مقابل أدواتهما المعتادة.",
     "group": "أدوات التقييم والمقاييس"
+   }
+  },
+  {
+   "name": "devvm",
+   "repo": "devvmhq/devvm",
+   "url": "https://github.com/devvmhq/devvm",
+   "category": "sandbox",
+   "group": "Execution Substrates & Sandboxing",
+   "stars": null,
+   "tags": [
+    "found-by-search"
+   ],
+   "summary": "One local Lima VM per project folder for Claude Code, Codex or opencode, with an allow-list network.",
+   "lists": [],
+   "ar": {
+    "summary": "آلة افتراضية محلية عبر Lima لكل مجلد مشروع لـ Claude Code أو Codex أو opencode، مع شبكة بقائمة سماح.",
+    "group": "بيئات التنفيذ والعزل"
+   }
+  },
+  {
+   "name": "Harness Leaderboard",
+   "repo": null,
+   "url": "https://huggingface.co/spaces/joelniklaus/harness-leaderboard",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": null,
+   "tags": [
+    "found-by-search"
+   ],
+   "summary": "Public leaderboard of coding-agent harnesses with the model fixed: accuracy, cost and three-attempt reliability.",
+   "lists": [],
+   "ar": {
+    "summary": "لوحة ترتيب عامة لأدوات الـ harness مع تثبيت النموذج: الدقة والتكلفة والموثوقية عبر ثلاث محاولات.",
+    "group": "أدوات التقييم والمقاييس"
+   }
+  },
+  {
+   "name": "StarHarness",
+   "repo": "ServiceNow/StarHarness",
+   "url": "https://github.com/ServiceNow/StarHarness",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": null,
+   "tags": [
+    "found-by-search"
+   ],
+   "summary": "ServiceNow research code for evolving agent harnesses with a search over task groups.",
+   "lists": [],
+   "ar": {
+    "summary": "شيفرة بحثية من ServiceNow لتطوير أدوات الـ harness للوكلاء ببحث عبر مجموعات المهام.",
+    "group": "أدوات التقييم والمقاييس"
+   }
+  },
+  {
+   "name": "harness-evals",
+   "repo": "harness/harness-evals",
+   "url": "https://github.com/harness/harness-evals",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": null,
+   "tags": [
+    "found-by-search"
+   ],
+   "summary": "Apache-2.0 evaluation framework for LLM agents, prompts and structured outputs: correctness, groundedness, safety, trajectory and performance scores, pytest asserts, Langfuse and OTEL import.",
+   "lists": [],
+   "ar": {
+    "summary": "إطار تقييم برخصة Apache-2.0 للوكلاء والتعليمات والمخرجات المنظمة: درجات للصحة والاستناد والأمان ومسار العمل والأداء، مع تحققات pytest واستيراد من Langfuse وOTEL.",
+    "group": "أدوات التقييم والمقاييس"
+   }
+  },
+  {
+   "name": "eval-harness (nano-step)",
+   "repo": "nano-step/eval-harness",
+   "url": "https://github.com/nano-step/eval-harness",
+   "category": "eval",
+   "group": "Evaluation Harnesses & Benchmarks",
+   "stars": null,
+   "tags": [
+    "found-by-search"
+   ],
+   "summary": "MIT evaluation tool for OpenCode skills and agents: capability and regression checks, pass@k and pass^k, budget tracking, JUnit and SARIF reports.",
+   "lists": [],
+   "ar": {
+    "summary": "أداة تقييم برخصة MIT لمهارات OpenCode والوكلاء: فحوص القدرة والتراجع، وpass@k وpass^k، وتتبع الميزانية، وتقارير JUnit وSARIF.",
+    "group": "أدوات التقييم والمقاييس"
+   }
+  },
+  {
+   "name": "Project Quarry (Cisco)",
+   "repo": null,
+   "url": "https://blogs.cisco.com/ai/project-quarry-agent-security-detections",
+   "category": "ops",
+   "group": "Guardrails, Security & Governance",
+   "stars": null,
+   "tags": [
+    "found-by-search"
+   ],
+   "summary": "Open rule language from Cisco for detecting risky multi-step agent behaviour, with a Claude Code and Codex plugin.",
+   "lists": [],
+   "ar": {
+    "summary": "لغة قواعد مفتوحة من Cisco لاكتشاف سلوك الوكلاء الخطِر عبر خطوات متعددة، مع إضافة لـ Claude Code وCodex.",
+    "group": "الحمايات والأمان والحوكمة"
    }
   }
  ],
