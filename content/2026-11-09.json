@@ -1,0 +1,428 @@
+{
+ "date": "2026-11-09",
+ "headline": "ثغرة Brotli في Node.js دخلت قائمة CISA للثغرات المستغلة ومهلتها 10 نوفمبر فحدّث إلى 22.23.4 أو 24.22.1 أو 26.12.1، وباحثون يخرجون من آلة Firecracker الافتراضية إلى root على الخادم، وdevvm تمنح كل مشروع آلة افتراضية محلية لتشغيل وكلاء البرمجة بعزل.",
+ "headline_en": "The Node.js Brotli flaw is on CISA's exploited list with a 10 November deadline, so upgrade to 22.23.4, 24.22.1 or 26.12.1; researchers escape a Firecracker VM to root on the host; and devvm gives each project a local VM for running coding agents in isolation.",
+ "items": [
+  {
+   "id": "nodejs-brotli-cve-2026-111497-kev",
+   "section": "security",
+   "kind": "article",
+   "title": "ثغرة Brotli في Node.js ‏(CVE-2026-111497): أُضيفت إلى قائمة CISA للثغرات المستغلة، والمهلة 10 نوفمبر",
+   "summary": "ثغرة كتابة خارج الحدود في مفكك ضغط Brotli المضمَّن في Node.js قد تسمح بتنفيذ شيفرة عن بُعد. أُصلحت في 21 أكتوبر 2026 بالإصدارات 22.23.4 و24.22.1 و26.12.1، وأضافتها CISA إلى قائمة الثغرات المستغلة فعليًا في 27 أكتوبر، مع مهلة تنتهي في 10 نوفمبر 2026 للجهات الفيدرالية الأمريكية.",
+   "why": "كل تطبيق Node.js يفك بيانات Brotli من مصدر غير موثوق معرَّض، وهذا يشمل fetch()‎ على استجابة مضغوطة من خادم آخر. لا يوجد حل مؤقت؛ الترقية هي الإصلاح، والإصدارات 20 وما قبلها لن تُصلح.",
+   "about": "الثغرة في شيفرة فك ضغط Brotli التي يضمّها Node.js. تُستدعى هذه الشيفرة عند فك بيانات Brotli عبر node:zlib مباشرة، أو تلقائيًا عند استدعاء fetch()‎ على استجابة مرسلة بضغط Brotli. لذلك يكون التطبيق معرّضًا حيث يفك بيانات يتحكم فيها مهاجم، مثل جسم طلب أو استجابة من خادم آخر. وصف المشروع الأثر بتنفيذ شيفرة عن بُعد وصنّفه عالي الخطورة.\n\nصدرت الإصلاحات في 21 أكتوبر 2026: ‏Node.js 22.23.4 و24.22.1 و26.12.1، ضمن دفعة أمنية أصلحت عشر ثغرات. ولا يوجد حل مؤقت معلن، والإصدارات المنتهية الدعم (20 وما قبلها) لن تحصل على إصلاح. وصدر الإصلاح نفسه في Brotli 1.2.1 و1.1.1 و1.0.10، لذا قد تحتاج برمجيات أخرى تضمّ Brotli إلى تحديث، مثل Bun وPython وEnvoy.\n\nالجديد هذا الأسبوع: أضافت CISA الثغرة إلى قائمة الثغرات المستغلة فعليًا (KEV) في 27 أكتوبر، وألزمت الجهات المدنية الفيدرالية الأمريكية بالإصلاح قبل 10 نوفمبر 2026. وذكرت شركة أمنية رصد محاولة استغلال ضد Node.js 24.22.0، دون تسمية ضحايا، ولم تشرح CISA الدليل الذي اعتمدته.",
+   "features": [
+    "الإصدارات المصلحة: 22.23.4 و24.22.1 و26.12.1",
+    "المسار المعرّض: node:zlib وfetch()‎ على استجابات Brotli",
+    "لا حل مؤقت؛ والإصدار 20 وما قبله دون إصلاح",
+    "الإصلاح نفسه في Brotli 1.2.1 و1.1.1 و1.0.10"
+   ],
+   "usage": [
+    "node --version"
+   ],
+   "links": [
+    {
+     "label": "إعلان Node.js الأمني",
+     "url": "https://nodejs.org/en/blog/vulnerability/october-2026-security-releases"
+    },
+    {
+     "label": "تقرير The Hacker News",
+     "url": "https://thehackernews.com/2026/10/nodejs-brotli-decoder-bug-could-allow.html"
+    },
+    {
+     "label": "مهلة CISA ‏(GCN)",
+     "url": "https://gcn.com/node-js-flaw-cisa-sets-november/23046/"
+    }
+   ],
+   "url": "https://gcn.com/node-js-flaw-cisa-sets-november/23046/",
+   "source": "gcn.com",
+   "importance": 3,
+   "tags": [
+    "nodejs",
+    "cve",
+    "brotli",
+    "patch"
+   ],
+   "alternatives": [
+    "ess-trivy"
+   ],
+   "en": {
+    "title": "Node.js Brotli flaw (CVE-2026-111497) added to CISA's exploited list, deadline 10 November",
+    "summary": "An out-of-bounds write in the Brotli decoder bundled with Node.js can allow remote code execution. It was fixed on 21 October 2026 in 22.23.4, 24.22.1 and 26.12.1, and CISA added it to its Known Exploited Vulnerabilities list on 27 October, with a 10 November 2026 deadline for US federal agencies.",
+    "why": "Any Node.js app that decompresses Brotli data from an untrusted source is exposed, including fetch() on a compressed response from another server. There is no workaround; upgrading is the fix, and Node.js 20 and older will not be fixed.",
+    "about": "The flaw is in the Brotli decompression code bundled with Node.js. That code runs when Brotli data is decompressed through node:zlib directly, or automatically when fetch() is called on a response sent with Brotli compression. An app is exposed wherever it decompresses data an attacker controls, such as a request body or a response from another server. The project describes the impact as remote code execution and rates it high severity.\n\nFixes shipped on 21 October 2026: Node.js 22.23.4, 24.22.1 and 26.12.1, in a security batch that fixed ten vulnerabilities. No workaround is published, and end-of-life lines (20 and older) get no fix. The same fix shipped in Brotli 1.2.1, 1.1.1 and 1.0.10, so other software that bundles Brotli, such as Bun, Python and Envoy, may also need updating.\n\nNew this week: CISA added the flaw to its Known Exploited Vulnerabilities (KEV) catalog on 27 October and required US federal civilian agencies to patch by 10 November 2026. A security firm reported an exploitation attempt against Node.js 24.22.0, without naming victims, and CISA has not said what evidence it relied on.",
+    "features": [
+     "Fixed versions: 22.23.4, 24.22.1 and 26.12.1",
+     "Exposed paths: node:zlib and fetch() on Brotli responses",
+     "No workaround; Node.js 20 and older get no fix",
+     "Same fix in Brotli 1.2.1, 1.1.1 and 1.0.10"
+    ],
+    "usage": [
+     "node --version"
+    ],
+    "links": [
+     "Node.js security advisory",
+     "The Hacker News report",
+     "CISA deadline (GCN)"
+    ]
+   }
+  },
+  {
+   "id": "pwnescape-firecracker-escape",
+   "section": "security",
+   "kind": "article",
+   "title": "PwnEscape: باحثون يخرجون من آلة Firecracker الافتراضية إلى صلاحيات root على الخادم",
+   "summary": "نشرت PWN Research الجزء الثاني من بحث PwnEscape: خروج من آلة Firecracker الافتراضية المصغّرة (الإصدار 1.16.1 على x86-64، مشغَّلة دون jailer) وتنفيذ شيفرة بصلاحيات root على الجهاز المضيف، مع شيفرة تجريبية منشورة.",
+   "why": "يهم كل من يشغّل شيفرة غير موثوقة أو وكلاء ذكاء اصطناعي داخل Firecracker على خوادمه: شغّل jailer دائمًا، وحدّث أنوية الخوادم بسرعة، ولا تعتمد على حدّ الآلة الافتراضية وحده (امنع الشبكة وأبعد الأسرار).",
+   "about": "Firecracker هي تقنية الآلات الافتراضية المصغّرة التي تقوم عليها خدمات كثيرة لتشغيل الشيفرة في عزل، ومنها منصات بيئات العزل لوكلاء الذكاء الاصطناعي. ويعرض بحث PwnEscape الجزء الثاني خروجًا من داخل الآلة إلى تنفيذ شيفرة بصلاحيات root على الجهاز المضيف.\n\nالإعداد المختبَر: ‏Firecracker 1.16.1 على x86-64، مع نواة مضيف 7.0.0-1011-aws ونواة ضيف 6.18.44، ودون أداة الاحتواء jailer؛ إذ شُغّل Firecracker مباشرة بصلاحيات root. ويبني الهجوم على وصول إلى ذاكرة المضيف حققه الجزء الأول من البحث، ثم يحوّل مسار خيط المعالج الافتراضي. ويقول الباحثون إن تقييم الإعداد مع jailer يحتاج دراسة منفصلة.\n\nحدود الخبر: لا تذكر المقالة حالة الإصلاح ولا إصدارًا مصلحًا، ولا تقول إن خدمة تجارية بعينها متأثرة. لكنه تذكير بأن طبقات الحماية الأخرى (jailer، والتحديث، ومنع الشبكة، وإبعاد الأسرار) ضرورية.",
+   "features": [
+    "Firecracker 1.16.1 على x86-64 دون jailer",
+    "تنفيذ شيفرة بصلاحيات root على المضيف",
+    "يبني على وصول لذاكرة المضيف من الجزء الأول",
+    "شيفرة تجريبية منشورة، ولا حالة إصلاح معلنة"
+   ],
+   "links": [
+    {
+     "label": "البحث",
+     "url": "https://pwn.ai/blog/firecracker-escape"
+    }
+   ],
+   "url": "https://pwn.ai/blog/firecracker-escape",
+   "source": "pwn.ai",
+   "importance": 2,
+   "tags": [
+    "firecracker",
+    "sandbox",
+    "vm-escape",
+    "agents"
+   ],
+   "en": {
+    "title": "PwnEscape: researchers escape a Firecracker VM to root on the host",
+    "summary": "PWN Research published part 2 of its PwnEscape work: an escape from a Firecracker microVM (v1.16.1 on x86-64, run without the jailer) to code execution as root on the host, with proof-of-concept code.",
+    "why": "For anyone running untrusted code or AI agents inside Firecracker on their own servers: always run the jailer, patch host kernels quickly, and don't rely on the VM boundary alone (block the network and keep secrets out).",
+    "about": "Firecracker is the microVM technology behind many services that run code in isolation, including sandbox platforms for AI agents. Part 2 of PwnEscape shows an escape from inside the VM to code execution as root on the host.\n\nThe tested setup: Firecracker 1.16.1 on x86-64, host kernel 7.0.0-1011-aws and guest kernel 6.18.44, without the jailer; Firecracker was launched directly as root. The attack builds on host-memory access achieved in part 1 and then redirects a virtual CPU thread. The researchers say a setup with the jailer needs a separate assessment.\n\nLimits: the write-up states no fix status or patched version, and does not say any specific commercial service is affected. It is a reminder that the other layers (the jailer, patching, blocking the network, keeping secrets out) are needed.",
+    "features": [
+     "Firecracker 1.16.1 on x86-64 without the jailer",
+     "Code execution as root on the host",
+     "Builds on host-memory access from part 1",
+     "Proof-of-concept published; no fix status stated"
+    ],
+    "links": [
+     "The research"
+    ]
+   }
+  },
+  {
+   "id": "devvm-local-vm-per-project",
+   "section": "agents",
+   "kind": "tool",
+   "title": "devvm: آلة افتراضية محلية لكل مشروع لتشغيل Claude Code وCodex وopencode بعزل",
+   "summary": "أداة جديدة مفتوحة المصدر (MIT) تمنح كل مجلد مشروع آلة Linux افتراضية محلية عبر Lima مع أدوات المشروع، جاهزة للمطور أو لوكيل البرمجة. تربط مجلد المشروع فقط، وتبدأ الآلات الجديدة بشبكة تسمح بقائمة محددة.",
+   "why": "لمن يريد أن يترك وكيل البرمجة يعمل بحرية دون أن يصل إلى ملفات الجهاز الأخرى أو مفاتيحه أو الشبكة كلها، دون حساب سحابي: مثلًا تشغيل وكيل على مستودع غير موثوق.",
+   "about": "devvm تنشئ آلة افتراضية محلية لكل مجلد مشروع، وتعمل فوق Lima على macOS 13 أو أحدث أو على Linux ‏(arm64 أو x86_64، مع Lima 2.2 أو أحدث). تربط الآلة مجلد المشروع فقط وبالمسار نفسه الموجود على الجهاز، وتكتشف أدوات المشروع من ملفاته (مثلًا package.json يجلب Node) وتشاركها بين الآلات للقراءة فقط، وكل آلة نسخة من صورة أساسية تُبنى مرة واحدة في دقائق.\n\nتأتي بإعدادات جاهزة لـ Claude Code وCodex وopencode، وبطبقات مدمجة لـ docker وnix وسطح المكتب. وتبدأ الآلات الجديدة بمستوى شبكة يسمح بقائمة محددة، ويعطي وضع ‎--clone‎ الآلة نسختها الخاصة من المستودع بدل المجلد المشترك.\n\nحدود: المشروع جديد جدًا (نحو 17 نجمة، ولا إصدار موسوم ظاهر حتى 9 نوفمبر 2026)، ولم يُختبر بعد على أجهزة Mac بمعالجات Intel، ومجلد المشروع مربوط للقراءة والكتابة افتراضيًا. ويقرّ الملف التعريفي بأن «لا بيئة عزل تسد كل الثغرات» ويحيل إلى صفحة نصائح الأمان.",
+   "features": [
+    "آلة افتراضية لكل مجلد مشروع فوق Lima",
+    "ربط مجلد المشروع فقط، وأدوات مشتركة للقراءة فقط",
+    "شبكة بقائمة سماح افتراضيًا",
+    "إعدادات جاهزة لـ Claude Code وCodex وopencode، ووضع ‎--clone‎"
+   ],
+   "install": [
+    {
+     "label": "التثبيت على macOS عبر Homebrew (يثبّت Lima أيضًا)",
+     "cmd": "brew install devvmhq/tap/devvm"
+    }
+   ],
+   "requirements": [
+    "macOS 13+ أو Linux على arm64 أو x86_64",
+    "Lima 2.2 أو أحدث"
+   ],
+   "repo": "devvmhq/devvm",
+   "pricing": {
+    "model": "oss"
+   },
+   "alternatives": [
+    "ess-opencode",
+    "ess-openai-codex-cli"
+   ],
+   "links": [
+    {
+     "label": "الموقع",
+     "url": "https://devvm.dev/"
+    },
+    {
+     "label": "المستودع",
+     "url": "https://github.com/devvmhq/devvm"
+    },
+    {
+     "label": "نصائح الأمان",
+     "url": "https://devvm.dev/docs/safety/"
+    }
+   ],
+   "url": "https://github.com/devvmhq/devvm",
+   "source": "github.com",
+   "importance": 2,
+   "tags": [
+    "sandbox",
+    "coding-agents",
+    "lima",
+    "vm"
+   ],
+   "en": {
+    "title": "devvm: a local VM per project for running Claude Code, Codex and opencode in isolation",
+    "summary": "A new open-source tool (MIT) that gives each project folder its own local Linux VM via Lima with the project's toolchain, ready for a developer or a coding agent. It mounts only the project folder, and new VMs start on an allow-list network.",
+    "why": "For anyone who wants to let a coding agent work freely without reaching the rest of the machine's files, keys or the whole network, with no cloud account: for example running an agent on an untrusted repository.",
+    "about": "devvm creates a local VM for each project folder, running on Lima on macOS 13 or newer or on Linux (arm64 or x86_64, Lima 2.2 or newer). The VM mounts only the project folder, at the same path as on the host; it detects the toolchain from project files (for example package.json brings Node) and shares it read-only between VMs; each VM is a copy of a base image built once in a few minutes.\n\nIt ships ready-made setups for Claude Code, Codex and opencode, plus built-in layers for docker, nix and desktop. New VMs start on an allow-list network tier, and a --clone mode gives the VM its own copy of the repository instead of the shared folder.\n\nLimits: the project is very new (about 17 stars, no tagged release visible as of 9 November 2026), not yet tested on Intel Macs, and the project folder is mounted read-write by default. The README itself says no sandbox closes every gap and points to a safety page.",
+    "features": [
+     "One VM per project folder on Lima",
+     "Only the project folder is mounted; toolchains shared read-only",
+     "Allow-list network by default",
+     "Ready setups for Claude Code, Codex and opencode; --clone mode"
+    ],
+    "install": [
+     "Install on macOS with Homebrew (also installs Lima)"
+    ],
+    "requirements": [
+     "macOS 13+ or Linux on arm64 or x86_64",
+     "Lima 2.2 or newer"
+    ],
+    "links": [
+     "Website",
+     "Repository",
+     "Safety notes"
+    ]
+   }
+  },
+  {
+   "id": "harness-leaderboard-reliability",
+   "section": "agents",
+   "kind": "tool",
+   "title": "Harness Leaderboard: مقارنة أدوات تشغيل وكلاء البرمجة بالنموذج نفسه، مع عمود «حُلّت في كل مرة»",
+   "summary": "لوحة ترتيب عامة على Hugging Face تقارن أدوات تشغيل وكلاء البرمجة (harness) مع تثبيت النموذج، وتعرض الدقة مقابل التكلفة. وأضافت في 6 نوفمبر 2026 مقياسًا للثبات: نسبة المهام المحلولة في المحاولات الثلاث كلها.",
+   "why": "يساعد على اختيار أداة الوكيل بأرقام لا بانطباعات: الأداة نفسها قد تحل المهمة مرة وتفشل في المرة التالية، والتكلفة لكل مهمة محلولة تختلف أضعافًا بين الأدوات.",
+   "about": "الفكرة: تثبيت النموذج ومستوى التفكير، ثم تشغيل أدوات مختلفة (مثل mini-swe-agent وPi وOpenCode) على المهام نفسها، فيكون الفرق في النتيجة أثر الأداة وحدها. تعرض اللوحة جداول تفاعلية، ورسمًا للدقة مقابل التكلفة، والموثوقية عبر ثلاث محاولات.\n\nبحسب تقرير إخباري عن التحديث (7 نوفمبر 2026)، تغطي البيانات 28,849 محاولة عبر تسع أدوات على نماذج مفتوحة. حلّ mini-swe-agent ‏51.4% من المهام في المحاولة الواحدة، و68.6% مرة على الأقل في ثلاث محاولات، و33.0% فقط في كل مرة. وتراوحت تكلفة المهمة المحلولة بين 0.29 دولار لـ Pi و3.35 دولار لـ OpenCode.\n\nحدود: صفحة اللوحة لا تشرح المقياس المستخدم ولا طريقة التقييم، والأرقام أعلاه من تقرير ثانوي. والنتائج على نماذج مفتوحة ومهام عامة، فقد تختلف على مشروعك.",
+   "features": [
+    "النموذج ثابت والأداة هي المتغير الوحيد",
+    "رسم للدقة مقابل التكلفة",
+    "مقياس جديد: حُلّت في المحاولات الثلاث كلها",
+    "تكلفة المهمة المحلولة لكل أداة"
+   ],
+   "pricing": {
+    "model": "free"
+   },
+   "alternatives": [
+    "ess-opencode"
+   ],
+   "links": [
+    {
+     "label": "اللوحة على Hugging Face",
+     "url": "https://huggingface.co/spaces/joelniklaus/harness-leaderboard"
+    },
+    {
+     "label": "تقرير عن التحديث",
+     "url": "https://huggingnews.com/ai/hermes-agent-leads-reliability-ranking-on-updated-ai-coding-harness-lead-9dfa3ba5"
+    }
+   ],
+   "url": "https://huggingface.co/spaces/joelniklaus/harness-leaderboard",
+   "source": "huggingface.co",
+   "importance": 2,
+   "tags": [
+    "coding-agents",
+    "benchmark",
+    "leaderboard",
+    "reliability"
+   ],
+   "en": {
+    "title": "Harness Leaderboard: compare coding-agent harnesses on the same model, now with 'solved every time'",
+    "summary": "A public leaderboard on Hugging Face that compares coding-agent harnesses with the model held fixed and shows accuracy against cost. On 6 November 2026 it added a consistency metric: the share of tasks solved on all three attempts.",
+    "why": "It helps you choose an agent tool on numbers rather than impressions: the same tool can solve a task once and fail the next time, and cost per solved task differs several-fold between tools.",
+    "about": "The idea: fix the model and reasoning effort, then run different tools (such as mini-swe-agent, Pi and OpenCode) on the same tasks, so the difference in results comes from the tool alone. The leaderboard shows interactive tables, an accuracy-versus-cost chart and reliability over three attempts.\n\nAccording to a news report on the update (7 November 2026), the data covers 28,849 trials across nine tools on open models. mini-swe-agent solved 51.4% of tasks per attempt, 68.6% at least once in three tries, and only 33.0% every time. Cost per solved task ranged from $0.29 for Pi to $3.35 for OpenCode.\n\nLimits: the leaderboard page does not describe the benchmark or the scoring method, and the figures above come from a secondary report. Results are on open models and public tasks, so they may differ on your project.",
+    "features": [
+     "Model fixed; the tool is the only variable",
+     "Accuracy-versus-cost chart",
+     "New metric: solved on all three attempts",
+     "Cost per solved task for each tool"
+    ],
+    "links": [
+     "Leaderboard on Hugging Face",
+     "Report on the update"
+    ]
+   }
+  },
+  {
+   "id": "laravel-storage-dedupler",
+   "section": "laravel",
+   "kind": "library",
+   "title": "Laravel Storage Dedupler: تخزين الملف المكرر مرة واحدة وربطه بأكثر من نموذج",
+   "summary": "حزمة Laravel تحسب بصمة SHA-1 لكل ملف قبل حفظه، فإذا وُجد ملف بالمحتوى نفسه أعادت سجله بدل حفظ نسخة جديدة، حتى لو اختلف الاسم. تعمل مع Laravel من 10 إلى 13 وPHP 8.2 فأحدث، برخصة MIT.",
+   "why": "يوفّر المساحة في التطبيقات التي يرفع فيها المستخدمون الملفات نفسها مرارًا، مثل المرفقات في نظام تذاكر أو صور المنتجات في متجر، ويحذف الملف تلقائيًا عندما لا يبقى أي نموذج مرتبطًا به.",
+   "about": "توفّر الحزمة واجهة Dedupler بدوال storeFromUploadedFile وstoreFromPath وstoreFromContent. تحسب الحزمة بصمة المحتوى وتبحث عن سجل UniqueFile موجود قبل الكتابة؛ والبصمة هي المفتاح الأساسي للسجل.\n\nتضيف السمة Deduplable إلى النماذج دوال مثل storeUploadedFile وattachUniqueFile وdetachUniqueFile. وعند فصل آخر ارتباط بالملف يُحذف الملف وسجله افتراضيًا، أما الملف المرتبط بنموذج آخر فيبقى. القرص الافتراضي خاص ومحلي في storage/app/deduplicated.\n\nحدود: تثبيت الحزمة لا يغيّر استدعاءات التخزين الحالية ولا يزيل التكرار الموجود على القرص. والأمر dedupler:analyse-legacy يفحص مجلدًا قديمًا ويقدّر التوفير الممكن دون نقل الملفات أو حذفها. وقد تُرجع دوال التخزين null، فتعامل مع ذلك في الشيفرة.",
+   "features": [
+    "تخزين حسب بصمة SHA-1 للمحتوى",
+    "ربط ملف واحد بأكثر من نموذج عبر السمة Deduplable",
+    "حذف الملف تلقائيًا عند فصل آخر ارتباط",
+    "أمر لتحليل التكرار في التخزين القديم دون تعديله"
+   ],
+   "install": [
+    {
+     "label": "تثبيت الحزمة",
+     "cmd": "composer require maxkhim/laravel-storage-dedupler"
+    },
+    {
+     "label": "تشغيل أمر الإعداد",
+     "cmd": "php artisan dedupler:install"
+    }
+   ],
+   "requirements": [
+    "PHP 8.2 أو أحدث",
+    "Laravel 10 أو 11 أو 12 أو 13"
+   ],
+   "repo": "maxkhim/laravel-storage-dedupler",
+   "pricing": {
+    "model": "oss"
+   },
+   "links": [
+    {
+     "label": "شرح Laravel News",
+     "url": "https://laravel-news.com/laravel-storage-dedupler"
+    },
+    {
+     "label": "المستودع",
+     "url": "https://github.com/maxkhim/laravel-storage-dedupler"
+    }
+   ],
+   "url": "https://laravel-news.com/laravel-storage-dedupler",
+   "source": "laravel-news.com",
+   "importance": 1,
+   "tags": [
+    "laravel",
+    "storage",
+    "uploads",
+    "package"
+   ],
+   "en": {
+    "title": "Laravel Storage Dedupler: store a duplicate file once and attach it to many models",
+    "summary": "A Laravel package that computes a SHA-1 hash of each file before saving; if a file with the same content exists it returns that record instead of storing a new copy, even if the name differs. Works with Laravel 10 to 13 and PHP 8.2+, MIT licensed.",
+    "why": "It saves space in apps where users upload the same files again and again, such as attachments in a ticketing system or product images in an online store, and deletes a file automatically once no model is attached to it.",
+    "about": "The package provides a Dedupler facade with storeFromUploadedFile, storeFromPath and storeFromContent. It hashes the content and looks for an existing UniqueFile record before writing; the hash is the record's primary key.\n\nThe Deduplable trait adds methods such as storeUploadedFile, attachUniqueFile and detachUniqueFile to models. When the last attachment is removed, the file and its record are deleted by default, while a file still attached to another model is kept. The default disk is a private local disk at storage/app/deduplicated.\n\nLimits: installing the package does not change existing storage calls or remove duplicates already on disk. The dedupler:analyse-legacy command scans an old directory and estimates savings without moving or deleting files. Storage methods can return null, so handle that in code.",
+    "features": [
+     "Storage keyed by the content's SHA-1 hash",
+     "One file attached to many models via the Deduplable trait",
+     "Automatic deletion when the last attachment is removed",
+     "A command to analyse duplicates in legacy storage without changing it"
+    ],
+    "install": [
+     "Install the package",
+     "Run the install command"
+    ],
+    "requirements": [
+     "PHP 8.2 or newer",
+     "Laravel 10, 11, 12 or 13"
+    ],
+    "links": [
+     "Laravel News walkthrough",
+     "Repository"
+    ]
+   }
+  },
+  {
+   "id": "cisco-project-quarry",
+   "section": "security",
+   "kind": "tool",
+   "title": "Project Quarry من Cisco: لغة قواعد مفتوحة لاكتشاف هجمات الوكلاء المخفية في خطوات تبدو بريئة",
+   "summary": "أتاحت Cisco مشروع Quarry مفتوح المصدر في 29 أكتوبر 2026: لغة قواعد تكشف سلوك الوكلاء الخطِر الذي لا يظهر إلا عبر سلسلة من الخطوات، وتجمع أحكام نماذج التعلم الآلي مع فحوص القواعد. ومعه إضافة لـ Claude Code وCodex تكتب القواعد من وصف بلغة عادية.",
+   "why": "لفرق الأمان التي تراقب وكلاء البرمجة: خطوة واحدة مثل قراءة ملف إعدادات قد تكون عادية، لكن قراءة ملف أسرار ثم إرسال طلب شبكة إلى نطاق جديد نمط يستحق التنبيه، وهذا ما تصفه القواعد.",
+   "about": "Quarry لغة قواعد «عصبية رمزية»: كل قاعدة تجمع أدلة من مصنّفات التعلم الآلي أو من نموذج لغوي حَكَم، مع فحوص رمزية مثل الشروط والتسلسلات ومطابقة النصوص والعلاقات بين الأدوات. تغطي المحادثات ذات الدور الواحد والمتعددة، والوكلاء، واستخدام الأدوات، وتفاعلات MCP، والمدخلات متعددة الوسائط.\n\nتأتي الحزمة الأولى بلغة قواعد مقروءة، وبيئة تقييم بحدود أمان وموارد، وأداة فحص سطرية، وحزمة Python، وأمثلة وطريقة للتحقق من القواعد. ويمكن استخدامها حماية وقت التشغيل، أو تحليلًا لاحقًا للسجلات، أو في الاستجابة للحوادث. وتريد Cisco أن تصبح معيارًا مفتوحًا مشتركًا.\n\nحدود: المقال الذي اعتمدنا عليه لا يذكر الرخصة، والمشروع في بدايته.",
+   "features": [
+    "قواعد تجمع أحكام التعلم الآلي مع فحوص التسلسل والشروط",
+    "تغطي استخدام الأدوات وتفاعلات MCP",
+    "أداة فحص سطرية وحزمة Python",
+    "إضافة لـ Claude Code وCodex لكتابة القواعد من وصف عادي"
+   ],
+   "pricing": {
+    "model": "oss"
+   },
+   "alternatives": [
+    "ess-snyk-agent-scan"
+   ],
+   "links": [
+    {
+     "label": "تقرير SecurityWeek",
+     "url": "https://www.securityweek.com/cisco-open-sources-quarry-to-catch-ai-agent-attacks-hidden-in-harmless-steps/"
+    },
+    {
+     "label": "إعلان Cisco",
+     "url": "https://blogs.cisco.com/ai/project-quarry-agent-security-detections"
+    }
+   ],
+   "url": "https://www.securityweek.com/cisco-open-sources-quarry-to-catch-ai-agent-attacks-hidden-in-harmless-steps/",
+   "source": "securityweek.com",
+   "importance": 1,
+   "tags": [
+    "agents",
+    "detection",
+    "mcp",
+    "open-source"
+   ],
+   "en": {
+    "title": "Cisco Project Quarry: an open rule language for catching agent attacks hidden in harmless-looking steps",
+    "summary": "Cisco open-sourced Project Quarry on 29 October 2026: a rule language that detects risky agent behaviour that only shows up across a sequence of steps, combining machine-learning judgments with rule checks. It comes with a Claude Code and Codex plugin that writes rules from a plain-English description.",
+    "why": "For security teams watching coding agents: a single step like reading a config file may be normal, but reading a secrets file and then calling a new domain is a pattern worth an alert, and that is what the rules describe.",
+    "about": "Quarry is a 'neurosymbolic' rule language: each rule combines evidence from ML classifiers or an LLM judge with symbolic checks such as conditions, sequences, string matches and tool relationships. It covers single-turn and multi-turn conversations, agents, tool use, MCP interactions and multimodal inputs.\n\nThe starter release includes a readable rule language, an evaluation runtime with safety and resource limits, a CLI scanner, a Python SDK, examples and a rule validation workflow. It can be used for runtime guardrails, after-the-fact log analysis or incident response. Cisco wants it to become a common open standard.\n\nLimits: the article we relied on does not state the license, and the project is early.",
+    "features": [
+     "Rules that combine ML judgments with sequence and condition checks",
+     "Covers tool use and MCP interactions",
+     "CLI scanner and Python SDK",
+     "Claude Code and Codex plugin to write rules from plain English"
+    ],
+    "links": [
+     "SecurityWeek report",
+     "Cisco announcement"
+    ]
+   }
+  },
+  {
+   "id": "ncc-agent-sandbox-breakout",
+   "section": "security",
+   "kind": "article",
+   "title": "NCC Group: ما مدى صعوبة إخراج وكيل ذكاء اصطناعي من بيئة العزل؟ عشر ممارسات عملية",
+   "summary": "مقال من NCC Group بعد 12 إلى 18 شهرًا من اختبار خروج الوكلاء من العزل: مفسّرات Python المقيّدة سهلة الاختراق، والحاويات المبنية جيدًا تصمد، والنتيجة «تتوقف كليًا على طريقة بناء بيئة العزل». ويختم بعشر ممارسات.",
+   "why": "قائمة تحقق جاهزة لأي فريق يشغّل وكلاء يكتبون الشيفرة وينفذونها: مثلًا وكيل يحلل بيانات في خدمة داخلية، أو وكيل برمجة في خط CI.",
+   "about": "يناقش المقال نوعين من العزل: عزل برمجي فقط (مثل مفسّر Python بدوال مقيّدة) وهو سهل الاختراق، وحاوية مبنية جيدًا وهي صمدت أمام طرق الخروج المعروفة. ويشير إلى أن رفض النموذج لطلب خطِر ليس ثابتًا، وأن الوكلاء الفرعيين لا يرثون الحمايات دائمًا، وأن «إعداداتك هي شيفرة»: فالخطافات والمهارات التي يستطيع الوكيل تعديلها يمكن استغلالها.\n\nأبرز الممارسات العشر: عزل على مستوى نظام التشغيل (gVisor أو nsjail أو آلة افتراضية مصغّرة)، وحاوية جديدة لكل جلسة، ومنع الاتصال الخارجي افتراضيًا، والتحقق من الإجراءات التي تغيّر الحالة على الخادم، وإعادة كتابة الحمايات في تعريف كل وكيل فرعي، وجعل إعدادات الوكيل للقراءة فقط بالنسبة إليه، وإبقاء مفاتيح واجهات النماذج خارج حاوية التنفيذ، وتسجيل إجراءات الوكيل والتنبيه عليها.\n\nنُشر المقال في 6 أكتوبر 2026، ويستعيد أيضًا حوادث معلنة في مختبرات الذكاء الاصطناعي خلال صيف 2026.",
+   "features": [
+    "العزل البرمجي وحده سهل الاختراق",
+    "الوكلاء الفرعيون لا يرثون الحمايات دائمًا",
+    "إعدادات الوكيل يجب أن تكون للقراءة فقط بالنسبة إليه",
+    "لا مفاتيح واجهات داخل حاوية التنفيذ"
+   ],
+   "links": [
+    {
+     "label": "المقال",
+     "url": "https://www.nccgroup.com/research/how-hard-is-it-really-to-break-an-ai-agent-out-of-its-sandbox/"
+    }
+   ],
+   "url": "https://www.nccgroup.com/research/how-hard-is-it-really-to-break-an-ai-agent-out-of-its-sandbox/",
+   "source": "nccgroup.com",
+   "importance": 1,
+   "tags": [
+    "agents",
+    "sandbox",
+    "best-practices"
+   ],
+   "en": {
+    "title": "NCC Group: how hard is it to break an AI agent out of its sandbox? Ten practical rules",
+    "summary": "An NCC Group article after 12 to 18 months of testing agent breakouts: restricted Python interpreters are easy to escape, well-built containers hold up, and the outcome 'depends completely on how the sandbox and container are built'. It ends with ten practices.",
+    "why": "A ready checklist for any team running agents that write and execute code: for example an agent analysing data in an internal service, or a coding agent in a CI pipeline.",
+    "about": "The article contrasts two kinds of isolation: software-only (such as a Python interpreter with restricted built-ins), which is easy to escape, and a properly built container, which resisted known escape methods. It notes that a model's refusal of a risky request is not reliable, that subagents do not always inherit guardrails, and that 'your configuration is code': hooks and skills the agent can edit can be abused.\n\nKey practices among the ten: OS-level isolation (gVisor, nsjail or a microVM), a fresh container per session, outbound network denied by default, server-side checks on state-changing actions, guardrails restated in every subagent definition, agent configuration read-only to the agent, model API keys kept out of the execution container, and logging and alerting on agent actions.\n\nThe article was published on 6 October 2026 and also recounts publicly reported incidents at AI labs during summer 2026.",
+    "features": [
+     "Software-only isolation is easy to escape",
+     "Subagents do not always inherit guardrails",
+     "Agent configuration should be read-only to the agent",
+     "No API keys inside the execution container"
+    ],
+    "links": [
+     "The article"
+    ]
+   }
+  }
+ ]
+}
