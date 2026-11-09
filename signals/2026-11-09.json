@@ -1,0 +1,480 @@
+{
+  "date": "2026-11-09",
+  "generated": "2026-11-09T05:42:58.701Z",
+  "awesome": [
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "unslop",
+      "url": "https://github.com/heydamir/unslop",
+      "desc": "unslop - (8,097 ) - Claude Code and Codex skill for auditing and redesigning generic AI-generated interfaces through focused passes on typography, spacing, color, layout, copy, and motion.",
+      "heading": "Agent Skills"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "pixelfx",
+      "url": "https://github.com/patch-gg/pixelfx",
+      "desc": "pixelfx - (4,511 ) - Code-based pixel art effects library with sprite-sheet exports and a Claude Code skill for creating and refining custom effects through visual review.",
+      "heading": "Agent Skills"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "Token Optimizer",
+      "url": "https://github.com/alexgreensh/token-optimizer",
+      "desc": "Token Optimizer - (2,867 ) - Claude Code skill with hooks for auditing context usage, reducing wasted tokens, preserving work across compaction, and tracking tokens, costs, and context quality in a live dashboard.",
+      "heading": "Agent Skills"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "ex-USSR Kinship Research",
+      "url": "https://github.com/DenisSergeevitch/ex-ussr-kinship-research",
+      "desc": "ex-USSR Kinship Research - (1,835 ) - Genealogy research skill for Claude Code, Codex, and compatible agents, with archival search, historical jurisdiction checks, traceable evidence, and research logs for former Soviet territories.",
+      "heading": "Agent Skills"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "teardown",
+      "url": "https://github.com/elvarofficial/teardown",
+      "desc": "teardown - (1,814 ) - Claude Code skill for building interactive 3D machine simulators as self-contained offline HTML pages, with explorable parts, live readouts, and optional video capture.",
+      "heading": "Agent Skills"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "stack-diagram",
+      "url": "https://github.com/caru-ini/stack-diagram",
+      "desc": "stack-diagram - (1,707 ) - Agent skill for drawing architecture diagrams from plain-language stack descriptions, with official technology logos and support for Claude Code, Codex, and Cursor.",
+      "heading": "Agent Skills"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "MotionSites Web Builder",
+      "url": "https://github.com/Motionsites-AI/claude-skill",
+      "desc": "MotionSites Web Builder - (1,615 ) - Claude skill for building landing pages with design references, cinematic media, animation recipes, detailed build specifications, and screenshot-based quality checks.",
+      "heading": "Agent Skills"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "Claude Animated Shorts",
+      "url": "https://github.com/mromidev/claude-animated-shorts",
+      "desc": "Claude Animated Shorts - (1,397 ) - Claude skill for creating vertical animated story shorts with 2D characters in 3D scenes, local Three.js and Remotion rendering, and procedural music and sound effects.",
+      "heading": "Agent Skills"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "reanimate",
+      "url": "https://github.com/NiazMorshed2007/reanimate",
+      "desc": "reanimate - (1,138 ) - Claude Code skill for recreating animations from websites, videos, or GIFs through frame-by-frame analysis, implementation, and timing and visual comparisons.",
+      "heading": "Agent Skills"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "Claude Animation Skills",
+      "url": "https://github.com/artemnovitckii/claude-animation-skills",
+      "desc": "Claude Animation Skills - (351 ) - Six Claude Code skills for animated explainers, stick figures, line art, map routes, exploded views, and line graphs, with local rendering and review sheets.",
+      "heading": "Agent Skills"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "video-director",
+      "url": "https://github.com/win4r/video-director",
+      "desc": "video-director - (313 ) - Claude Code skill for planning, coding, rendering, and checking short videos built with HTML, Canvas, SVG, Three.js, GSAP, or Remotion.",
+      "heading": "Agent Skills"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "Remake",
+      "url": "https://github.com/rubenhassid1/remake",
+      "desc": "Remake - (218 ) - Claude Code skill for recreating websites from a URL, comparing screenshots and motion, and identifying text, media, fonts, and logos to replace.",
+      "heading": "Agent Skills"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "Floorplan",
+      "url": "https://github.com/haydenschmitty/floorplan",
+      "desc": "Floorplan - (2,755 ) - Claude Code and Codex plugin for generating interactive codebase maps with plain-English labels for components, files, web requests, and their connections.",
+      "heading": "Claude Plugins"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "Beacon",
+      "url": "https://github.com/Asymptote-Labs/agent-beacon",
+      "desc": "Beacon - (3,264 ) - Shared memory layer for coding agents that captures session history and preserves workflows, corrections, and debugging knowledge across Claude Code, Codex, Cursor, and other tools.",
+      "heading": "Tools & Utilities"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "KIKUmap",
+      "url": "https://github.com/tang1693/KIKUmap",
+      "desc": "KIKUmap - (383 ) - Native macOS menu-bar app for organizing Claude and ChatGPT chats into an interactive mind map, with activity status, desktop widgets, and Claude Code session support.",
+      "heading": "Clients & GUIs"
+    },
+    {
+      "list": "jqueryscript/awesome-claude-code",
+      "section": "skills",
+      "name": "whatsmyagentdoing",
+      "url": "https://github.com/Charonyuu/whatsmyagentdoing",
+      "desc": "whatsmyagentdoing - (375 ) - Local activity dashboard for Claude Code, Codex, and other coding agents, with live session states, approval alerts, resume commands, and animated 2D or 3D office views.",
+      "heading": "Usage & Observability"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "firecrawl/firecrawl-alexandria",
+      "url": "https://github.com/firecrawl/cli/tree/main/skills/firecrawl-alexandria",
+      "desc": "firecrawl/firecrawl-alexandria - Find and run Firecrawl Alexandria tools for structured data",
+      "heading": "Official Skills by"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "zilliztech/milvus-skill",
+      "url": "https://github.com/zilliztech/milvus-skill",
+      "desc": "zilliztech/milvus-skill - Manage Milvus collections, indexes, vector searches, and RAG workflows",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "appeeky/aso-skills",
+      "url": "https://github.com/appeeky/aso-skills",
+      "desc": "appeeky/aso-skills - 30+ App Store Optimization skills for keyword research, metadata optimization, competitor analysis, creative optimization, and mobile growth strategies via Appeeky API",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "heygen-com/hyperframes",
+      "url": "https://github.com/heygen-com/hyperframes",
+      "desc": "heygen-com/hyperframes - Write videos as HTML and render them to MP4: launch films, explainers, captions, charts and 450+ ready-made blocks, by HeyGen",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "arcmira/find-quotes",
+      "url": "https://github.com/arcmira/mcp/tree/master/plugins/arcmira/skills/find-quotes",
+      "desc": "arcmira/find-quotes - Find timestamped quotes and clips in YouTube and podcast transcripts",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "Aboudjem/humanizer-skill",
+      "url": "https://github.com/Aboudjem/humanizer-skill",
+      "desc": "Aboudjem/humanizer-skill - Rewrites AI-sounding text, flagging 55 writing patterns",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "zhuyansen/new-term-radar",
+      "url": "https://github.com/zhuyansen/new-term-radar",
+      "desc": "zhuyansen/new-term-radar - Daily radar of new AI names and their search demand",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "JimmySadek/video-fetcher-to-markdown",
+      "url": "https://github.com/JimmySadek/video-fetcher-to-markdown",
+      "desc": "JimmySadek/video-fetcher-to-markdown - Create Obsidian-ready Markdown notes from YouTube videos",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "bablobanov/hermes-agent-telegram-checklist",
+      "url": "https://github.com/bablobanov/hermes-agent-telegram-checklist",
+      "desc": "bablobanov/hermes-agent-telegram-checklist - Create and manage native Telegram checklists with verified writes",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "MetcalfSolutions/Satori",
+      "url": "https://github.com/MetcalfSolutions/Satori",
+      "desc": "MetcalfSolutions/Satori - Open-source wisdom companion skill (Apache 2.0) for coding agents and web chat, built to be outgrown: one lens per turn, a local SQLite memory vault, and trigger discipline that stays silent during pure coding work.",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "pachca/pachca",
+      "url": "https://github.com/pachca/openapi/tree/main/plugins/pachca/skills/pachca",
+      "desc": "pachca/pachca - Connect agents to Pachca and troubleshoot MCP authentication and permissions",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "QingYunA/answer-me-with-html",
+      "url": "https://github.com/QingYunA/answer-me-with-html/tree/main/skills/answer-me-with-html",
+      "desc": "QingYunA/answer-me-with-html - Answers hard questions as readable, self-contained HTML pages",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "Koloyaaa/foreign-academic-translator",
+      "url": "https://github.com/Koloyaaa/foreign-academic-translator-skill/tree/main/skills/foreign-academic-translator",
+      "desc": "Koloyaaa/foreign-academic-translator - Translate foreign academic handouts into Chinese with subject glossaries",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "duyunzhoudyz/dyz-gongwen-skills",
+      "url": "https://github.com/duyunzhoudyz/dyz-gongwen-skills",
+      "desc": "duyunzhoudyz/dyz-gongwen-skills - Chinese official document drafting, review and GB/T 9704 formatting",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "salemalem/npmscan-mcp-plugin",
+      "url": "https://github.com/salemalem/npmscan-mcp-plugin",
+      "desc": "salemalem/npmscan-mcp-plugin - Audit npm packages for malware and trust vulnerabilities",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "krisyangdev/motionboard",
+      "url": "https://github.com/krisyangdev/motionboard/tree/main/skills/motionboard",
+      "desc": "krisyangdev/motionboard - Make product launch films from 38 Apple/Linear-style shot recipes.",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "GAURAV-1313/codecall",
+      "url": "https://github.com/GAURAV-1313/codecall/tree/main/plugins/codecall/skills/codecall",
+      "desc": "GAURAV-1313/codecall - Quizzes you on agent-written code, traces flows, runs debugging drills",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "9929y/mesh-gradient-generation",
+      "url": "https://github.com/9929y/mesh-gradient-generation",
+      "desc": "9929y/mesh-gradient-generation - Create editable mesh gradients with Figma and SVG workflows",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "mobbin/redesign-screen",
+      "url": "https://github.com/mobbin/skills/tree/main/skills/redesign-screen",
+      "desc": "mobbin/redesign-screen - Redesign screens using patterns from real shipped apps",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "mobbin/search",
+      "url": "https://github.com/mobbin/skills/tree/main/skills/search",
+      "desc": "mobbin/search - Search 600k+ real app screens, flows and sections",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "celo-org/celopedia",
+      "url": "https://github.com/celo-org/celopedia-skills/tree/main/skills/celopedia-skill",
+      "desc": "celo-org/celopedia - Verified Celo contracts, protocols, MiniPay, grants, and agent tooling",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "ScrapingBee/scrapingbee-cli",
+      "url": "https://github.com/ScrapingBee/scrapingbee-cli/tree/main/.agents/skills/scrapingbee-cli",
+      "desc": "ScrapingBee/scrapingbee-cli - Scrape any page, search the web, crawl sites, extract data",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "0design/unslop-skill",
+      "url": "https://github.com/0design/unslop-skill",
+      "desc": "0design/unslop-skill - Audit plugin for Claude Code and Codex",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "swiftlysingh/excalidraw-cli",
+      "url": "https://github.com/swiftlysingh/excalidraw-cli/tree/main/skills/excalidraw-cli",
+      "desc": "swiftlysingh/excalidraw-cli - Turn text, JSON, or Graphviz DOT into editable Excalidraw diagrams",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "awrshift/agent-memory-kit",
+      "url": "https://github.com/awrshift/agent-memory-kit",
+      "desc": "awrshift/agent-memory-kit - Persistent memory with hooks, wiki, and daily synthesis for multi-project workflows",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "tinqiao-oss/engramory",
+      "url": "https://github.com/tinqiao-oss/engramory",
+      "desc": "tinqiao-oss/engramory - Curated plain-Markdown long-term memory with a size-capped index",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "federicodeponte/autonomous-research",
+      "url": "https://github.com/federicodeponte/opendraft/tree/master/skills/autonomous-research",
+      "desc": "federicodeponte/autonomous-research - One topic line to a cited paper, every DOI checked",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "antvis/ava",
+      "url": "https://github.com/antvis/AVA/tree/ai/skills/ava",
+      "desc": "antvis/ava - Analyze files and databases, reuse definitions, render interactive charts",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "kinprove/genealogy-research-recipes",
+      "url": "https://github.com/Kinprove/genealogy-research-recipes",
+      "desc": "kinprove/genealogy-research-recipes - Fact-checked recipes for DNA evidence and genealogy record searches",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "ChatCut-Inc/talking-head-guide",
+      "url": "https://github.com/ChatCut-Inc/agent-plugin/tree/main/codex/skills/talking-head-guide",
+      "desc": "ChatCut-Inc/talking-head-guide - Edit talking-head videos: remove fillers, pauses, retakes; add captions, B-roll",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "ChatCut-Inc/create-motion-graphics",
+      "url": "https://github.com/ChatCut-Inc/agent-plugin/tree/main/codex/skills/create-motion-graphics",
+      "desc": "ChatCut-Inc/create-motion-graphics - Create editable motion graphics for video: titles, lower thirds, overlays",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "punkpeye/awesome-mcp-servers",
+      "section": "mcp",
+      "name": "Arkz-Deepak/neurocode",
+      "url": "https://github.com/Arkz-Deepak/neurocode",
+      "desc": "Arkz-Deepak/neurocode - In-memory Code Property Graph context slicer for local models (Ollama, Cursor, Claude Desktop): extracts sub-1,200 token reachability closures for autonomous repository bug repair on consumer edge hardware (4GB–8GB VRAM) without cloud API dependency.",
+      "heading": "Coding Agents"
+    },
+    {
+      "list": "punkpeye/awesome-mcp-servers",
+      "section": "mcp",
+      "name": "jackjin1997/markindex",
+      "url": "https://github.com/jackjin1997/markindex",
+      "desc": "jackjin1997/markindex - Vectorless, structure-first retrieval over large Markdown libraries: walk library, folder, document and section trees, read original text with line numbers for citations, and fall back to mixed Chinese/English BM25 search. Five read-only tools, no embeddings, no API key.",
+      "heading": "Knowledge & Memory"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "Sociality.io",
+      "url": "https://github.com/socialityio/sociality-mcp",
+      "desc": "Sociality.io - Social media analytics, post insights and competitor benchmarking",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "BestPrice",
+      "url": "https://github.com/TheBestCo/bestprice-mcp",
+      "desc": "BestPrice - Greek price comparison: products, live shop offers and price history",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "npmscan",
+      "url": "https://github.com/salemalem/npmscan-mcp-plugin",
+      "desc": "npmscan - Audit npm packages for malware before agents install them",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "Keenable",
+      "url": "https://github.com/keenableai/keenable-mcp",
+      "desc": "Keenable - Keyless web search and page fetching with Keenable",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "Datacircle",
+      "url": "https://datacircle.dev/docs/mcp",
+      "desc": "Datacircle - Find the best GTM APIs.",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "looot",
+      "url": "https://looot.ai/mcp",
+      "desc": "looot - Remote MCP server to search and call 300+ data providers",
+      "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/official-mcp-servers",
+      "section": "mcp",
+      "name": "Arcmira",
+      "url": "https://github.com/arcmira/mcp",
+      "desc": "Arcmira - Search YouTube and podcast transcripts for timestamped quotes and mentions",
+      "heading": "Table of Contents"
+    }
+  ],
+  "releases": [
+    {
+      "repo": "vercel/ai",
+      "section": "llm",
+      "tag": "ai@7.0.166",
+      "previous": "ai@7.0.165",
+      "url": "https://github.com/vercel/ai/releases/tag/ai%407.0.166"
+    },
+    {
+      "repo": "AzmSquad/squad-kit",
+      "section": "agents",
+      "track": "t3",
+      "tag": "v1.3.4",
+      "previous": "v1.3.0",
+      "url": "https://github.com/AzmSquad/squad-kit/releases/tag/v1.3.4"
+    },
+    {
+      "repo": "superradcompany/microsandbox",
+      "section": "agents",
+      "track": "t3",
+      "tag": "v0.7.14",
+      "previous": "v0.7.13",
+      "url": "https://github.com/superradcompany/microsandbox/releases/tag/v0.7.14"
+    }
+  ],
+  "trending": []
+}

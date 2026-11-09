@@ -1,64 +1,64 @@
 {
   "awesome": {
     "hesreallyhim/awesome-claude-code": {
-      "sha": "1c88da78767b4ae664e76861b7afc17a2754d4d4",
-      "date": "2026-11-08T11:20:03.103Z"
+      "sha": "4932d7bd0ff118f8bcf406ff4cf77948fe5ee435",
+      "date": "2026-11-09T05:43:00.730Z"
     },
     "jqueryscript/awesome-claude-code": {
-      "sha": "4d0db41e85da437e354a8efcac6e8201d3b187d0",
-      "date": "2026-11-08T11:20:03.277Z"
+      "sha": "bf32b78bae807323db5ae0ed933f77633bdd8301",
+      "date": "2026-11-09T05:43:02.834Z"
     },
     "ComposioHQ/awesome-claude-skills": {
       "sha": "be2a406907dbc61b73e6827ded415c96139d13a2",
-      "date": "2026-11-08T11:20:03.435Z"
+      "date": "2026-11-09T05:43:03.870Z"
     },
     "travisvn/awesome-claude-skills": {
       "sha": "1da55aa810f206d3fe2005e7e3989b15a275d942",
-      "date": "2026-11-08T11:20:03.579Z"
+      "date": "2026-11-09T05:43:04.858Z"
     },
     "VoltAgent/awesome-agent-skills": {
-      "sha": "a6f9992ceaef05841a9b92e6849d90004a61710c",
-      "date": "2026-11-08T11:20:03.770Z"
+      "sha": "6d483e29da745a010d88974ef6d0e50d15755e9a",
+      "date": "2026-11-09T05:43:07.745Z"
     },
     "VoltAgent/awesome-claude-code-subagents": {
-      "sha": "408d3c9eee2d0c75c12a3abb5de29e53c2ca6b9e",
-      "date": "2026-11-08T11:20:03.933Z"
+      "sha": "ed74d115b7fb7026a22a4f816a8e3250f425e3b4",
+      "date": "2026-11-09T05:43:10.128Z"
     },
     "punkpeye/awesome-mcp-servers": {
-      "sha": "f225f117f92626e6b7d5d2912746d9269e3d037b",
-      "date": "2026-11-08T11:20:04.211Z"
+      "sha": "f431a5cd95cebf038e587715635b9d1a0a4d0c02",
+      "date": "2026-11-09T05:43:12.783Z"
     },
     "wong2/awesome-mcp-servers": {
       "sha": "39eb1d76d76e562657f3c657266a504cea159e23",
-      "date": "2026-11-08T11:20:04.384Z"
+      "date": "2026-11-09T05:43:13.879Z"
     },
     "appcypher/awesome-mcp-servers": {
       "sha": "280218b4bba97a49facf929f8012dec5e30384b6",
-      "date": "2026-11-08T11:20:04.528Z"
+      "date": "2026-11-09T05:43:14.875Z"
     },
     "e2b-dev/awesome-ai-agents": {
       "sha": "9596ab1e69fbbb6c95291141c8dab5c181083216",
-      "date": "2026-11-08T11:20:04.898Z"
+      "date": "2026-11-09T05:43:17.447Z"
     },
     "Shubhamsaboo/awesome-llm-apps": {
-      "sha": "6c16b23f1bacd0fdf240bb5141ef45e59e82c306",
-      "date": "2026-11-08T11:20:05.064Z"
+      "sha": "c46144eb61c18cd1a495445c79ec47145722053e",
+      "date": "2026-11-09T05:43:18.778Z"
     },
     "github/awesome-copilot": {
-      "sha": "5269f7ea2d6c3a9bfda5ed878b6726cf509121fd",
-      "date": "2026-11-08T11:20:05.227Z"
+      "sha": "b13e55f85ffdf451d40d09839cb1e337bf3eda98",
+      "date": "2026-11-09T05:43:20.358Z"
     },
     "VoltAgent/official-mcp-servers": {
-      "sha": "3964a7030860613df3550c6c58974ea10615498f",
-      "date": "2026-11-08T11:20:04.725Z"
+      "sha": "5a41f1c6f9a4dafec50f42cb5c59c99d15c9497e",
+      "date": "2026-11-09T05:43:16.417Z"
     },
     "Picrew/awesome-agent-harness": {
-      "sha": "1ae44c112978de3fdaaad5d199cb3ce8580e44f3",
-      "date": "2026-11-08T11:20:05.400Z"
+      "sha": "e7e8f8d268f7ac5311b778832327e4be2f555507",
+      "date": "2026-11-09T05:43:22.365Z"
     },
     "AutoJunjie/awesome-agent-harness": {
       "sha": "1e3f26371ec1a765efe0268b1e63374bee2aaa04",
-      "date": "2026-11-08T11:20:05.567Z"
+      "date": "2026-11-09T05:43:23.430Z"
     }
   },
   "releases": {
@@ -86,10 +86,10 @@
     "github/spec-kit": "v1.3.2",
     "n8n-io/n8n": "n8n@3.1.0",
     "ollama/ollama": "v0.40.15",
-    "vercel/ai": "ai@7.0.165",
+    "vercel/ai": "ai@7.0.166",
     "docker/compose": "v5.7.0",
     "coollabsio/coolify": "v4.6.0",
-    "AzmSquad/squad-kit": "v1.3.0",
+    "AzmSquad/squad-kit": "v1.3.4",
     "harbor-framework/harbor": "v0.25.0",
     "coleam00/Archon": "v0.14.0",
     "Chorus-AIDLC/Chorus": "v0.24.0",
@@ -103,7 +103,7 @@
     "bmad-code-org/BMAD-METHOD": "v6.12.4",
     "langfuse/langfuse": "v4.76.0",
     "TencentCloud/CubeSandbox": "v0.7.3",
-    "superradcompany/microsandbox": "v0.7.13",
+    "superradcompany/microsandbox": "v0.7.14",
     "NVIDIA/OpenShell": "v0.1.7",
     "earendil-works/pi": "v1.5.0",
     "agent-substrate/substrate": "v1.0.0"
