@@ -1,0 +1,497 @@
+{
+  "date": "2026-11-10",
+  "headline": "مهارة codecall تشرح لك الشيفرة التي كتبها الوكيل وتختبر فهمك لها؛ وPerplexity تتيح بيئة العزل SPACE مفتوحة المصدر بآلة Firecracker لكل مهمة؛ وMarkIndex تقدم استرجاعًا من وثائق Markdown دون قاعدة متجهات.",
+  "headline_en": "The codecall skill explains the code your agent wrote and checks you understood it; Perplexity open-sources its SPACE sandbox with a Firecracker microVM per task; and MarkIndex offers retrieval over Markdown docs without a vector database.",
+  "items": [
+    {
+      "id": "codecall-learn-agent-code",
+      "section": "skills",
+      "kind": "skill",
+      "title": "codecall: مهارة تشرح لك الشيفرة التي كتبها الوكيل ثم تختبر فهمك لها",
+      "summary": "مهارة مفتوحة المصدر (MIT) لوكلاء البرمجة: بعد أن يبني الوكيل تغييرًا، تشرح لك الأفكار التي يقوم عليها مستخدمةً شيفرتك أنت، وتطرح سؤالين لكل فكرة، ثم تعطيك إيصالًا من صفحة واحدة بنتيجتك. وفيها أيضًا تتبّع مسار طلب واحد، وجولة تدريب تزرع خطأً لتبحث عنه.",
+      "why": "لمن يعتمد على وكيل البرمجة ويخشى أن يفقد فهم مشروعه: مثلًا بعد أن يضيف الوكيل تسجيل الدخول، تتأكد في أربع دقائق من أنك تفهم طبقة التحقق الجديدة قبل دمجها.",
+      "about": "codecall مهارة تعمل في Claude Code وCodex وCursor وGemini CLI وOpenCode وKiro وCopilot، دون مفتاح API أو حساب، ولا ترفع شيئًا. وضع Learn يحدد من 2 إلى 4 أفكار وراء آخر تغيير، ويشرحها من شيفرتك، ويطرح سؤالين لكل فكرة، ثم يكتب إيصالًا بصيغة HTML.\n\nوضع Trace يتبع طلبًا واحدًا (مثل POST /login) من نقطة الدخول إلى الاستجابة سطرًا بسطر، ثم يسأل عن الخطوات الأرجح لإخفاء خطأ. ووضع Drill يزرع خطأً واحدًا في مشروعك ويعطيك العَرَض فقط، ثم يعيد شيفرتك بواسطة Git بعد الانتهاء. وتحتوي المهارة على خريطة لنحو 80 مفهومًا في الواجهة الخلفية تربط كل درس بفيديو مجاني ووثائق رسمية.\n\nتسألك دائمًا «ابدأ التعلم / تخطَّ» قبل أي جلسة. إضافة Claude Code وحدها هي التي تقترح الجلسات تلقائيًا، عبر خطاف محلي صغير.",
+      "features": [
+        "وضع Learn: شرح من 2 إلى 4 أفكار مع سؤالين لكل فكرة وإيصال بالنتيجة",
+        "وضع Trace: تتبّع طلب من البداية إلى الاستجابة سطرًا بسطر",
+        "وضع Drill: خطأ مزروع في مشروعك مع استعادة الشيفرة عبر Git",
+        "يعمل دون مفتاح API أو حساب، ولا يرفع شيئًا"
+      ],
+      "install": [
+        {
+          "label": "عبر Skills CLI لأي وكيل مدعوم",
+          "cmd": "npx skills add GAURAV-1313/codecall"
+        },
+        {
+          "label": "عبر npm لـ Claude Code وCodex معًا",
+          "cmd": "npm install -g codecall"
+        }
+      ],
+      "usage": [
+        "/codecall",
+        "/codecall trace POST /login",
+        "/codecall drill src/orders medium"
+      ],
+      "repo": "GAURAV-1313/codecall",
+      "pricing": {
+        "model": "oss"
+      },
+      "alternatives": [
+        "ess-skills-sh"
+      ],
+      "links": [
+        {
+          "label": "المستودع",
+          "url": "https://github.com/GAURAV-1313/codecall"
+        }
+      ],
+      "url": "https://github.com/GAURAV-1313/codecall",
+      "source": "github.com",
+      "importance": 2,
+      "tags": [
+        "skill",
+        "learning",
+        "code-review",
+        "claude-code",
+        "codex"
+      ],
+      "en": {
+        "title": "codecall: a skill that explains the code your agent wrote, then checks you understood it",
+        "summary": "An open-source skill (MIT) for coding agents: after the agent builds a change, it teaches the ideas behind it using your own code, asks two checks per idea, and gives you a one-page receipt with your score. It can also trace one request end to end, or plant a bug for you to find.",
+        "why": "For anyone who relies on a coding agent and worries about losing track of their own project: for example, after the agent adds login, spend four minutes making sure you understand the new auth layer before merging.",
+        "about": "codecall is a skill that works in Claude Code, Codex, Cursor, Gemini CLI, OpenCode, Kiro and Copilot, with no API key or account, and nothing uploaded. Learn mode picks the 2 to 4 ideas behind the latest change, explains them from your code, asks two checks per idea, then writes an HTML receipt.\n\nTrace mode follows one request (such as POST /login) from entry point to response, line by line, then asks about the steps most likely to hide a bug. Drill mode plants one bug in your project, gives you only the symptom, and restores your code with Git afterwards. The skill also carries a map of about 80 backend concepts that points each lesson to a free video chapter and official docs.\n\nIt always asks Start Learning / Skip before a session. Only the Claude Code plugin offers sessions by itself, through a small local hook.",
+        "features": [
+          "Learn mode: 2 to 4 ideas, two checks each, and a score receipt",
+          "Trace mode: one request followed line by line to the response",
+          "Drill mode: a planted bug in your project, code restored with Git",
+          "No API key or account, nothing uploaded"
+        ],
+        "usage": [
+          "/codecall",
+          "/codecall trace POST /login",
+          "/codecall drill src/orders medium"
+        ],
+        "install": [
+          "Via the Skills CLI for any supported agent",
+          "Via npm for Claude Code and Codex together"
+        ],
+        "links": [
+          "Repository"
+        ]
+      }
+    },
+    {
+      "id": "video-director-skill",
+      "section": "video",
+      "kind": "skill",
+      "title": "video-director: مهارة لـ Claude Code تصنع فيديوهات قصيرة بالشيفرة وتفحص جودتها بالأرقام",
+      "summary": "مهارة مفتوحة المصدر (MIT) توجّه Claude Code لصنع فيديوهات قصيرة بالشيفرة (HTML أو Canvas أو SVG أو Three.js أو GSAP أو Remotion) تُرسم إطارًا بإطار إلى MP4. تخطط الفيلم بالأرقام، ثم تقيس ما لا يستطيع النموذج مشاهدته: حجم النص وتباينه والقطعات والتجمّد.",
+      "why": "لمن يريد فيديو إطلاق أو شرحًا قصيرًا لمنتج دون برنامج مونتاج: مثلًا فيديو متكرر مدته 15 ثانية لأداة سطر أوامر من ملف README الخاص بها.",
+      "about": "video-director مهارة تعليمات وفحص جودة، وليست نموذجًا لتوليد الفيديو ولا خدمة مستضافة. يضع ملف SKILL.md المبادئ وعقد البناء وتعريف «الانتهاء»، وتضم المجلدات قوالب للخطة والجدول الزمني ومعايير الحرفة والصوت.\n\nسكربت check_timeline.py يتحقق من الخطة قبل كتابة أي شيفرة، وسكربت qa_video.py يقيس الفيديو بعد الرسم: حجم نص الافتتاح وتباينه، والإطار الأول، والومضات، والقطعات، والتجمّد، ونقطة الالتقاء في الفيديو المتكرر. وتضم ثلاثة موجزات اختبار مع مُقيّمات.\n\nبُنيت أساسًا لـ Claude Opus 5.5 في Claude Code. تحتاج السكربتات إلى ffmpeg وffprobe وPython 3 مع numpy وPillow، ويحتاج رسم أفلام HTML إلى Node مع Playwright وChromium (أو Remotion).",
+      "features": [
+        "فيديو بالشيفرة يُرسم إطارًا بإطار إلى MP4",
+        "فحص الخطة قبل الشيفرة عبر check_timeline.py",
+        "قياس الفيديو بعد الرسم عبر qa_video.py",
+        "ثلاثة موجزات اختبار مع مُقيّمات"
+      ],
+      "install": [
+        {
+          "label": "استنساخ المستودع",
+          "cmd": "git clone https://github.com/win4r/video-director.git"
+        },
+        {
+          "label": "نسخ المهارة إلى مهاراتك الشخصية",
+          "cmd": "cp -R video-director/video-director ~/.claude/skills/"
+        }
+      ],
+      "usage": [
+        "اصنع فيديو إطلاق متكررًا مدته 15 ثانية لأداة سطر الأوامر الخاصة بنا؛ كل ما تحتاجه في ملف README.",
+        "أحتاج إلى فيديو شرح بصوت راوٍ مدته نحو 30 ثانية عن طريقة عمل bloom filter، بنسبة 16:9."
+      ],
+      "requirements": [
+        "ffmpeg وffprobe",
+        "Python 3 مع numpy وPillow",
+        "Node مع Playwright وChromium لأفلام HTML"
+      ],
+      "repo": "win4r/video-director",
+      "pricing": {
+        "model": "oss"
+      },
+      "links": [
+        {
+          "label": "المستودع",
+          "url": "https://github.com/win4r/video-director"
+        }
+      ],
+      "url": "https://github.com/win4r/video-director",
+      "source": "github.com",
+      "importance": 2,
+      "tags": [
+        "video",
+        "skill",
+        "remotion",
+        "claude-code"
+      ],
+      "en": {
+        "title": "video-director: a Claude Code skill that makes short videos as code and checks their quality with numbers",
+        "summary": "An open-source skill (MIT) that guides Claude Code to make short videos as code (HTML, Canvas, SVG, Three.js, GSAP or Remotion), rendered frame by frame to MP4. It plans the film in numbers, then measures what the model cannot watch: text size and contrast, cuts and freezes.",
+        "why": "For anyone who wants a launch video or short explainer for a product without an editing app: for example a 15-second looping video for a CLI tool, built from its README.",
+        "about": "video-director is an instruction-and-QA skill, not a video-generation model or hosted service. SKILL.md sets the principles, the build contract and the definition of done; the folders hold templates for the treatment and timeline, craft numbers and sound.\n\ncheck_timeline.py validates the plan before any code, and qa_video.py measures the render: hook text size and contrast, frame 0, flashes, cuts, freezes and the loop seam. Three test briefs with graders are included.\n\nIt is built primarily for Claude Opus 5.5 in Claude Code. The scripts need ffmpeg/ffprobe and Python 3 with numpy and Pillow; rendering HTML films needs Node with Playwright and Chromium (or Remotion).",
+        "features": [
+          "Video as code, rendered frame by frame to MP4",
+          "Plan check before code with check_timeline.py",
+          "Render measurement with qa_video.py",
+          "Three test briefs with graders"
+        ],
+        "usage": [
+          "Make a 15 second looping launch video for our CLI. Everything you need is in the README.",
+          "I need a ~30 second narrated explainer on how a bloom filter works, 16:9."
+        ],
+        "requirements": [
+          "ffmpeg and ffprobe",
+          "Python 3 with numpy and Pillow",
+          "Node with Playwright and Chromium for HTML films"
+        ],
+        "install": [
+          "Clone the repository",
+          "Copy the skill into your personal skills"
+        ],
+        "links": [
+          "Repository"
+        ]
+      }
+    },
+    {
+      "id": "chatcut-agent-plugin",
+      "section": "video",
+      "kind": "plugin",
+      "title": "ChatCut: إضافة تجعل وكيل البرمجة يحرّر فيديوهاتك على خط زمني قابل للتعديل",
+      "summary": "ChatCut محرر فيديو بالذكاء الاصطناعي يعمل عبر خادم MCP وإضافات لـ Claude Code وCodex وCursor وGemini CLI وغيرها. يستورد الوكيل لقطاتك، ويعدّل الخط الزمني، ويضيف رسومًا متحركة وترجمات، ويصدّر الفيديو. الإضافات مفتوحة المصدر (Apache-2.0)، أما التوليد فيستهلك رصيد ChatCut.",
+      "why": "لصنّاع المحتوى الذين يريدون مونتاجًا بالأوامر النصية مع بقاء النتيجة قابلة للتعديل يدويًا: مثلًا قصّ مقابلة طويلة وإضافة ترجمات ثم ضبط القطعات بنفسك.",
+      "about": "تربط إضافات ChatCut وكلاء مثل Codex وClaude Code وCursor وGemini CLI وGoogle Antigravity بمحرر ChatCut. وتحت الغطاء تستورد الإضافات الوسائط، وتعدّل خط زمن المشروع، وتنشئ رسومًا متحركة، وتولّد عناصر، وتفرّغ الصوت نصًا، وتضيف الترجمات، وتصدّر الفيديو، وتتحقق من أن التعديلات ظاهرة في المحرر.\n\nهناك طريقتان: ChatCut Desktop (الموصى بها، على macOS 13 أو أحدث وWindows 10 أو أحدث) أو إضافة الويب المستضافة. ويحتاج تسجيل الدخول في Claude Code عبر claude mcp login إلى الإصدار 2.1.210 أو أحدث.\n\nحدود: الإضافات مفتوحة المصدر، لكن الخدمة نفسها تجارية؛ فالتوليد يستهلك رصيد ChatCut ويطلب الوكيل الموافقة قبل إنفاقه، وبعض المزايا تحتاج إلى نسخة Desktop.",
+      "features": [
+        "تحرير لقطاتك على خط زمني قابل للتعديل",
+        "رسوم متحركة وترجمات وتفريغ صوتي",
+        "يعمل مع Claude Code وCodex وCursor وGemini CLI وغيرها",
+        "يطلب الموافقة قبل إنفاق رصيد التوليد"
+      ],
+      "install": [
+        {
+          "label": "إضافة سوق الإضافات في Claude Code",
+          "cmd": "claude plugin marketplace add https://github.com/ChatCut-Inc/agent-plugin.git#main"
+        },
+        {
+          "label": "تثبيت الإضافة",
+          "cmd": "claude plugin install chatcut@chatcut-inc"
+        },
+        {
+          "label": "تسجيل الدخول",
+          "cmd": "claude mcp login plugin:chatcut:chatcut"
+        }
+      ],
+      "requirements": [
+        "Claude Code 2.1.210 أو أحدث لتسجيل الدخول",
+        "حساب ChatCut"
+      ],
+      "repo": "ChatCut-Inc/agent-plugin",
+      "pricing": {
+        "model": "freemium",
+        "note": "الإضافات مفتوحة المصدر، والتوليد يستهلك رصيد ChatCut"
+      },
+      "links": [
+        {
+          "label": "المستودع",
+          "url": "https://github.com/ChatCut-Inc/agent-plugin"
+        },
+        {
+          "label": "الأسعار",
+          "url": "https://chatcut.io/pricing"
+        }
+      ],
+      "url": "https://github.com/ChatCut-Inc/agent-plugin",
+      "source": "github.com",
+      "importance": 2,
+      "tags": [
+        "video",
+        "mcp",
+        "plugin",
+        "editing"
+      ],
+      "en": {
+        "title": "ChatCut: a plugin that lets your coding agent edit your videos on an editable timeline",
+        "summary": "ChatCut is an AI video editor that works through an MCP server and plugins for Claude Code, Codex, Cursor, Gemini CLI and others. The agent imports your footage, edits the timeline, adds motion graphics and captions, and exports. The plugins are open source (Apache-2.0); generation uses ChatCut credits.",
+        "why": "For creators who want editing by text commands while keeping the result editable by hand: for example cutting a long interview and adding captions, then adjusting the cuts yourself.",
+        "about": "The ChatCut plugins connect agents such as Codex, Claude Code, Cursor, Gemini CLI and Google Antigravity to the ChatCut editor. Under the hood they import media, change a project timeline, create motion graphics, generate assets, transcribe audio, add captions, export videos, and verify that edits are visible in the editor.\n\nThere are two paths: ChatCut Desktop (recommended; macOS 13 or newer and Windows 10 or newer) or the hosted Web plugin. Signing in from Claude Code with claude mcp login needs version 2.1.210 or newer.\n\nLimits: the plugins are open source, but the service is commercial; generation uses ChatCut credits and the agent asks before spending them, and some features need Desktop.",
+        "features": [
+          "Edits your footage on an editable timeline",
+          "Motion graphics, captions and transcription",
+          "Works with Claude Code, Codex, Cursor, Gemini CLI and more",
+          "Asks before spending generation credits"
+        ],
+        "requirements": [
+          "Claude Code 2.1.210 or newer for sign-in",
+          "A ChatCut account"
+        ],
+        "install": [
+          "Add the plugin marketplace in Claude Code",
+          "Install the plugin",
+          "Sign in"
+        ],
+        "links": [
+          "Repository",
+          "Pricing"
+        ],
+        "pricingNote": "Plugins are open source; generation uses ChatCut credits"
+      }
+    },
+    {
+      "id": "markindex-vectorless-markdown",
+      "section": "llm",
+      "kind": "library",
+      "title": "MarkIndex: استرجاع دون متجهات من مكتبات Markdown الكبيرة عبر بنية المستند نفسها",
+      "summary": "مكتبة وأداة سطر أوامر مفتوحة المصدر (MIT) تحوّل كل ملف Markdown إلى شجرة من أقسامه، وتحفظها مع النص الأصلي وفهرس BM25 في ملف SQLite واحد، وتعطي الوكيل خمس أدوات للقراءة فقط عبر MCP للتنقل من المكتبة إلى القسم مع الاستشهاد بأرقام الأسطر.",
+      "why": "لمن يبني مساعدًا يجيب من وثائق طويلة منظمة (أدلة، لوائح، كتيبات) ويريد إجابات قابلة للاستشهاد دون قاعدة متجهات: مثلًا مساعد داخلي يجيب من دليل سياسات الشركة مع ذكر القسم والأسطر.",
+      "about": "MarkIndex تعتمد على البنية بدل التقطيع: تحلل كل ملف Markdown إلى شجرة أقسام، وتخزن الأشجار والأسطر الأصلية وفهرس BM25 للنصوص المختلطة بالصينية والإنجليزية في ملف SQLite واحد. ثم يتنقل الوكيل «مكتبة ← مجلد ← مستند ← قسم» ويقرأ النص الأصلي، ويمكن ردّ كل دليل إلى المستند والأسطر.\n\nالفهرسة حتمية ولا تستدعي نموذجًا لغويًا؛ النماذج اختيارية للملخصات ولحلقة retrieve() المدمجة. وتبقى ردود الأدوات تحت حد 95 ألف حرف مع ترقيم الصفحات. ويمكن تقديم المكتبة للوكلاء عبر MCP، أو استخدامها مع Vercel AI SDK.\n\nالمشروع مستوحى من PageIndex لكنه تطبيق مستقل غير رسمي بلغة TypeScript، ويحتاج إلى Node.js 22.12 أو أحدث.",
+      "features": [
+        "شجرة أقسام لكل ملف Markdown دون تضمينات أو قاعدة متجهات",
+        "استشهاد بالمستند وأرقام الأسطر",
+        "خادم MCP للقراءة فقط بخمس أدوات",
+        "فهرسة حتمية دون نموذج لغوي، وبحث BM25 احتياطي"
+      ],
+      "install": [
+        {
+          "label": "تثبيت المكتبة وأداة سطر الأوامر",
+          "cmd": "npm install markindex"
+        },
+        {
+          "label": "تقديم مجلد الوثائق للوكلاء عبر MCP",
+          "cmd": "markindex mcp ./docs"
+        }
+      ],
+      "requirements": [
+        "Node.js 22.12 أو أحدث"
+      ],
+      "repo": "jackjin1997/markindex",
+      "pricing": {
+        "model": "oss"
+      },
+      "links": [
+        {
+          "label": "المستودع",
+          "url": "https://github.com/jackjin1997/markindex"
+        }
+      ],
+      "url": "https://github.com/jackjin1997/markindex",
+      "source": "github.com",
+      "importance": 2,
+      "tags": [
+        "rag",
+        "mcp",
+        "markdown",
+        "retrieval"
+      ],
+      "en": {
+        "title": "MarkIndex: vectorless retrieval over large Markdown libraries using each document's own structure",
+        "summary": "An open-source library and CLI (MIT) that turns every Markdown file into a tree of its sections, stores it with the original text and a BM25 index in one SQLite file, and gives agents five read-only MCP tools to walk from library to section and cite line numbers.",
+        "why": "For anyone building an assistant that answers from long, structured documents (manuals, regulations, handbooks) and wants citable answers without a vector database: for example an internal assistant that answers from a policy handbook with section and line references.",
+        "about": "MarkIndex is structure-first rather than chunk-first: it parses every Markdown file into a tree of sections and stores the trees, original lines and a mixed Chinese/English BM25 index in one SQLite file. The agent then walks library → folder → document → section and reads the original text, and every piece of evidence can be cited back to the document and lines.\n\nIndexing is deterministic and never calls a model; LLMs are optional, for summaries and the built-in retrieve() loop. Tool responses stay under a 95,000-character budget with pagination. The library can be served to agents over MCP or used with the Vercel AI SDK.\n\nIt is inspired by PageIndex but is an independent, unofficial TypeScript implementation, and needs Node.js 22.12 or newer.",
+        "features": [
+          "A section tree per Markdown file, no embeddings or vector DB",
+          "Citations to document and line numbers",
+          "Read-only MCP server with five tools",
+          "Deterministic LLM-free indexing with BM25 fallback"
+        ],
+        "requirements": [
+          "Node.js 22.12 or newer"
+        ],
+        "install": [
+          "Install the library and CLI",
+          "Serve a docs folder to agents over MCP"
+        ],
+        "links": [
+          "Repository"
+        ]
+      }
+    },
+    {
+      "id": "pixelfx-pixel-art-effects",
+      "section": "design",
+      "kind": "library",
+      "title": "pixelfx: مكتبة من 244 تأثيرًا لفن البكسل بالشيفرة، مع مهارة لـ Claude Code لصنع المزيد",
+      "summary": "مكتبة مفتوحة المصدر (MIT) تضم 244 تأثيرًا وحركة بأسلوب فن البكسل (نار، انفجارات، طقس، واجهات، التقاط عناصر)، كل منها ملف شيفرة صغير. يمكن تشغيلها مباشرة وإعادة تلوينها وتصديرها كأوراق sprite لأي محرك ألعاب، ومعها مهارة لـ Claude Code تصنع تأثيرات جديدة.",
+      "why": "لمطوري الألعاب الصغيرة ومصممي الواجهات المرحة الذين يحتاجون إلى تأثيرات جاهزة بسرعة: مثلًا تأثير جمع العملات أو احتفال عند إكمال مهمة في لعبة متصفح.",
+      "about": "كل تأثير في pixelfx ملف داخل src/fx/<الفئة>/<الاسم>.js، موزعة على فئات مثل النار والانفجارات والماء والجليد والبرق والخيال العلمي والواجهات والانتقالات. والتأثيرات التي تتضمن شخصية «مُمثَّلة»: تحضير ثم إطلاق ثم توقف عند الاصطدام ثم تعافٍ، و12 حركة كاملة تربط التأثيرات في هجمات.\n\nتعلّم مهارة pixelfx أداة Claude Code كيف تجد التأثيرات وتستخدمها وتصدّرها وتصنع جديدة بأسلوب «مسودة، رسم، نظر، تحسين». ويمكن تثبيتها كإضافة أو نسخها إلى مجلد المهارات.\n\nالطريقة مستمدة من مقال منشور عن صنع تأثيرات فن البكسل مع Claude، وبعض الملفات تقتبس شيفرة مفتوحة المصدر من Sprite Fusion كما تذكر في أعلاها.",
+      "features": [
+        "244 تأثيرًا في أكثر من 20 فئة",
+        "إعادة التلوين والقلب وتصدير أوراق sprite",
+        "12 حركة كاملة تربط التأثيرات في هجمات",
+        "مهارة لـ Claude Code لصنع تأثيرات جديدة"
+      ],
+      "install": [
+        {
+          "label": "إضافة سوق الإضافات",
+          "cmd": "/plugin marketplace add patch-gg/pixelfx"
+        },
+        {
+          "label": "تثبيت المهارة",
+          "cmd": "/plugin install pixelfx@pixelfx"
+        }
+      ],
+      "usage": [
+        "أضف تأثير frost nova إلى الضربة النهائية لشخصية الساحر.",
+        "اصنع خمس نسخ من بريق التقاط عملة واعرض لي أفضل اثنتين."
+      ],
+      "repo": "patch-gg/pixelfx",
+      "pricing": {
+        "model": "oss"
+      },
+      "links": [
+        {
+          "label": "المستودع",
+          "url": "https://github.com/patch-gg/pixelfx"
+        },
+        {
+          "label": "معرض التأثيرات",
+          "url": "https://patch-gg.github.io/pixelfx/"
+        }
+      ],
+      "url": "https://github.com/patch-gg/pixelfx",
+      "source": "github.com",
+      "importance": 1,
+      "tags": [
+        "pixel-art",
+        "game-dev",
+        "skill",
+        "animation"
+      ],
+      "en": {
+        "title": "pixelfx: a library of 244 pixel-art effects as code, with a Claude Code skill to make more",
+        "summary": "An open-source library (MIT) of 244 pixel-art effects and animations (fire, explosions, weather, UI, pickups), each a small piece of code. Play them live, recolor them and export sprite sheets for any game engine, plus a Claude Code skill that makes new ones.",
+        "why": "For small-game developers and designers of playful UIs who need ready-made effects fast: for example a coin-collect effect or a celebration when a task is completed in a browser game.",
+        "about": "Every pixelfx effect is a file in src/fx/<category>/<name>.js, across categories such as fire, explosions, water, ice, lightning, sci-fi, UI and transitions. Effects that involve a character are acted out: wind-up, release, freeze on contact and recovery, and twelve whole moves chain the effects into attacks.\n\nThe pixelfx skill teaches Claude Code to find, use, export and make effects in a draft, render, look, refine loop. It installs as a plugin or can be copied into the skills folder.\n\nThe method comes from a published article on making pixel-art effects with Claude, and some files adapt open-source code from Sprite Fusion, as noted at their top.",
+        "features": [
+          "244 effects in more than 20 categories",
+          "Recolor, mirror and export sprite sheets",
+          "12 whole moves that chain effects into attacks",
+          "A Claude Code skill for making new effects"
+        ],
+        "usage": [
+          "Add a frost nova to my mage's ultimate.",
+          "Make five takes on a coin pickup sparkle and show me the best two."
+        ],
+        "install": [
+          "Add the plugin marketplace",
+          "Install the skill"
+        ],
+        "links": [
+          "Repository",
+          "Effects gallery"
+        ]
+      }
+    },
+    {
+      "id": "perplexity-space-open-source-sandbox",
+      "section": "devops",
+      "kind": "tool",
+      "title": "Perplexity تتيح SPACE مفتوحة المصدر: بيئة عزل لكل مهمة وكيل في آلة Firecracker مصغرة",
+      "summary": "أتاحت Perplexity في أكتوبر 2026 منصة SPACE (منصة معزولة لتنفيذ شيفرة الوكلاء) مفتوحة المصدر، وهي المنصة التي تشغّل كل المهام في منتجها Perplexity Computer. تحصل كل مهمة وكيل على آلة افتراضية مصغرة خاصة بها من Firecracker.",
+      "why": "للفرق التي تشغّل وكلاء ينفذون شيفرة وتريد عزلًا قويًا على خوادمها بدل خدمة مُدارة: SPACE خيار جديد مُجرَّب في الإنتاج يستحق المقارنة مع البدائل المستضافة ذاتيًا.",
+      "about": "SPACE هي منصة العزل الداخلية التي تعمل عليها مهام Perplexity Computer، وقد نُشرت شيفرتها مفتوحة المصدر في 16 أكتوبر 2026 تقريبًا وفق التغطية الصحفية. فكرتها الأساسية آلة افتراضية مصغرة مستقلة من Firecracker لكل مهمة وكيل، فلا تتشارك المهام النواة ولا الملفات.\n\nتذكر التغطية الصحفية أن الترخيص Apache-2.0 وأن اختبارات الهجوم لم تسجل خروجًا من الآلة الافتراضية، لكننا لم نتحقق من ذلك من المستودع مباشرة. لذا اقرأ المستودع ووثائق التشغيل قبل أي اعتماد.\n\nملاحظة: نُشر مؤخرًا بحث عن خروج من آلة Firecracker إلى الخادم، فالعزل بالآلات المصغرة قوي لكنه ليس ضمانًا مطلقًا ويحتاج إلى تحديثات مستمرة.",
+      "features": [
+        "آلة Firecracker مصغرة لكل مهمة وكيل",
+        "مستخدمة في الإنتاج داخل Perplexity Computer",
+        "استضافة ذاتية على خوادمك"
+      ],
+      "pricing": {
+        "model": "oss"
+      },
+      "links": [
+        {
+          "label": "خبر MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/10/16/perplexity-open-sources-space-firecracker-microvm-sandbox-ai-agents/"
+        },
+        {
+          "label": "خبر Unite.AI",
+          "url": "https://www.unite.ai/perplexity-open-sources-space-its-in-house-agent-sandbox-platform/"
+        }
+      ],
+      "url": "https://www.marktechpost.com/2026/10/16/perplexity-open-sources-space-firecracker-microvm-sandbox-ai-agents/",
+      "source": "marktechpost.com",
+      "importance": 2,
+      "tags": [
+        "sandbox",
+        "firecracker",
+        "agents",
+        "self-hosted"
+      ],
+      "en": {
+        "title": "Perplexity open-sources SPACE: a sandbox that gives each agent task its own Firecracker microVM",
+        "summary": "In October 2026 Perplexity open-sourced SPACE (Sandboxed Platform for Agentic Code Execution), the platform that runs every task in its Perplexity Computer product. Each agent task gets its own Firecracker microVM.",
+        "why": "For teams running agents that execute code and wanting strong isolation on their own servers instead of a managed service: SPACE is a new, production-proven option worth comparing with other self-hosted sandboxes.",
+        "about": "SPACE is the in-house sandbox platform behind Perplexity Computer tasks; press coverage reports its source was published around 16 October 2026. Its core idea is a separate Firecracker microVM per agent task, so tasks share neither a kernel nor files.\n\nCoverage reports an Apache-2.0 license and zero VM escapes in attack testing, but we have not verified these from the repository directly. Read the repository and its operating docs before adopting it.\n\nNote: research on escaping a Firecracker VM to the host was published recently, so microVM isolation is strong but not an absolute guarantee and needs ongoing patching.",
+        "features": [
+          "One Firecracker microVM per agent task",
+          "Used in production inside Perplexity Computer",
+          "Self-hosted on your servers"
+        ],
+        "links": [
+          "MarkTechPost report",
+          "Unite.AI report"
+        ]
+      }
+    },
+    {
+      "id": "google-agent-compute-engine-preview",
+      "section": "devops",
+      "kind": "tool",
+      "title": "Agent Compute Engine من Google Cloud: آلة افتراضية مصغرة معزولة لكل وكيل، كنسخة تجريبية",
+      "summary": "أعلنت Google Cloud في 22 أكتوبر 2026 خدمة Agent Compute Engine كنسخة تجريبية، وهي تمنح كل وكيل ذكاء اصطناعي آلة افتراضية مصغرة معزولة على مستوى العتاد، وتفتح للعملاء الآلات نفسها التي تشغّل وكلاء Gemini.",
+      "why": "للفرق العاملة على Google Cloud التي تشغّل وكلاء ينفذون شيفرة وتريد عزلًا قويًا دون إدارة خوادم بنفسها؛ تستحق المتابعة حتى تُنشر الأسعار والحدود.",
+      "about": "Agent Compute Engine خدمة مُدارة تضع كل وكيل في آلة افتراضية مصغرة خاصة به معزولة على مستوى العتاد، وتتولى Google تشغيل الخوادم. وتصفها التغطية الصحفية بأنها فتح للبنية التي تشغّل وكلاء Gemini أمام عملاء Google Cloud.\n\nالخدمة في مرحلة تجريبية، ولم تتضح بعد الأسعار والحدود وحزمة التطوير. ولمن يريد مسار Google للاستضافة الذاتية على Kubernetes، هناك Agent Substrate الذي تبرعت به Google لمؤسسة CNCF هذا الشهر.",
+      "features": [
+        "آلة افتراضية مصغرة معزولة على مستوى العتاد لكل وكيل",
+        "خدمة مُدارة من Google Cloud",
+        "مرحلة تجريبية منذ 22 أكتوبر 2026"
+      ],
+      "pricing": {
+        "model": "paid",
+        "note": "الأسعار لم تُنشر بعد"
+      },
+      "links": [
+        {
+          "label": "خبر MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/10/22/google-cloud-agent-compute-engine-microvm-ai-agents/"
+        },
+        {
+          "label": "خبر Techzine",
+          "url": "https://www.techzine.eu/news/security/145226/google-agent-compute-engine-provides-each-ai-agent-with-its-own-microvm/"
+        }
+      ],
+      "url": "https://www.techzine.eu/news/security/145226/google-agent-compute-engine-provides-each-ai-agent-with-its-own-microvm/",
+      "source": "techzine.eu",
+      "importance": 1,
+      "tags": [
+        "sandbox",
+        "google-cloud",
+        "microvm",
+        "agents"
+      ],
+      "en": {
+        "title": "Google Cloud Agent Compute Engine: a hardware-isolated microVM per agent, in preview",
+        "summary": "On 22 October 2026 Google Cloud announced Agent Compute Engine in preview. It gives each AI agent its own hardware-isolated microVM and opens to customers the same microVMs that run Gemini's agents.",
+        "why": "For teams on Google Cloud running agents that execute code and wanting strong isolation without managing servers; worth following until pricing and limits are published.",
+        "about": "Agent Compute Engine is a managed service that puts each agent in its own hardware-isolated microVM, with Google operating the hosts. Press coverage describes it as opening the infrastructure behind Gemini's agents to Google Cloud customers.\n\nThe service is in preview, and pricing, limits and the SDK are not yet clear. For Google's self-hosted path on Kubernetes, there is Agent Substrate, which Google donated to the CNCF this month.",
+        "features": [
+          "A hardware-isolated microVM per agent",
+          "Managed by Google Cloud",
+          "In preview since 22 October 2026"
+        ],
+        "links": [
+          "MarkTechPost report",
+          "Techzine report"
+        ],
+        "pricingNote": "Pricing not yet published"
+      }
+    }
+  ]
+}
