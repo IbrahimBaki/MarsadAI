@@ -1,24 +1,24 @@
 {
-  "updated": "2026-11-09T12:57:30.967Z",
+  "updated": "2026-11-10T12:43:35.877Z",
   "repos": {
     "aaif-goose/goose": {
-      "stars": 56390,
+      "stars": 56423,
       "forks": 6573,
       "language": "Rust",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-09T06:55:06Z",
+      "pushedAt": "2026-11-10T12:22:22Z",
       "archived": false,
       "release": {
-        "tag": "v1.57.0",
-        "date": "2026-10-28T19:26:10Z"
+        "tag": "v1.58.1",
+        "date": "2026-11-10T04:09:22Z"
       }
     },
     "activepieces/activepieces": {
-      "stars": 25444,
-      "forks": 4445,
+      "stars": 25462,
+      "forks": 4449,
       "language": "TypeScript",
       "license": null,
-      "pushedAt": "2026-11-09T12:57:25Z",
+      "pushedAt": "2026-11-10T12:40:44Z",
       "archived": false,
       "release": {
         "tag": "0.93.0",
@@ -26,8 +26,8 @@
       }
     },
     "agent-substrate/substrate": {
-      "stars": 6268,
-      "forks": 707,
+      "stars": 6340,
+      "forks": 712,
       "language": "Go",
       "license": "Apache-2.0",
       "pushedAt": "2026-11-05T23:04:30Z",
@@ -38,8 +38,8 @@
       }
     },
     "Aider-AI/aider": {
-      "stars": 50032,
-      "forks": 5145,
+      "stars": 50047,
+      "forks": 5152,
       "language": "Python",
       "license": "Apache-2.0",
       "pushedAt": "2026-05-22T14:02:20Z",
@@ -50,8 +50,8 @@
       }
     },
     "ajeetdsouza/zoxide": {
-      "stars": 40527,
-      "forks": 941,
+      "stars": 40538,
+      "forks": 942,
       "language": "Rust",
       "license": "MIT",
       "pushedAt": "2026-11-08T02:51:28Z",
@@ -62,19 +62,19 @@
       }
     },
     "alexgreensh/token-optimizer": {
-      "stars": 2940,
-      "forks": 231,
+      "stars": 2950,
+      "forks": 232,
       "language": "Python",
       "license": null,
-      "pushedAt": "2026-11-07T20:54:02Z",
+      "pushedAt": "2026-11-09T16:44:15Z",
       "archived": false,
       "release": {
-        "tag": "v5.13.68",
-        "date": "2026-11-07T20:54:09Z"
+        "tag": "v5.13.69",
+        "date": "2026-11-09T16:44:17Z"
       }
     },
     "alpinejs/alpine": {
-      "stars": 32013,
+      "stars": 32012,
       "forks": 1393,
       "language": "HTML",
       "license": "MIT",
@@ -86,11 +86,11 @@
       }
     },
     "anomalyco/opencode": {
-      "stars": 225663,
-      "forks": 30482,
+      "stars": 225793,
+      "forks": 30487,
       "language": "TypeScript",
       "license": "MIT",
-      "pushedAt": "2026-11-09T12:48:42Z",
+      "pushedAt": "2026-11-10T12:39:31Z",
       "archived": false,
       "release": {
         "tag": "v1.19.5",
@@ -98,15 +98,15 @@
       }
     },
     "anthropics/claude-agent-sdk-python": {
-      "stars": 8502,
-      "forks": 1403,
+      "stars": 8516,
+      "forks": 1404,
       "language": "Python",
       "license": "MIT",
-      "pushedAt": "2026-11-06T17:57:32Z",
+      "pushedAt": "2026-11-10T02:30:39Z",
       "archived": false,
       "release": {
-        "tag": "v0.2.179",
-        "date": "2026-11-06T17:57:35Z"
+        "tag": "v0.2.180",
+        "date": "2026-11-09T20:09:14Z"
       }
     },
     "anthropics/claude-agent-sdk-typescript": {
@@ -114,31 +114,31 @@
       "forks": 244,
       "language": "Shell",
       "license": null,
-      "pushedAt": "2026-11-06T17:03:49Z",
+      "pushedAt": "2026-11-10T02:29:42Z",
       "archived": false,
       "release": {
-        "tag": "v0.3.319",
-        "date": "2026-11-06T17:03:50Z"
+        "tag": "v0.3.322",
+        "date": "2026-11-10T02:29:43Z"
       }
     },
     "anthropics/claude-code": {
-      "stars": 155071,
-      "forks": 25345,
+      "stars": 155163,
+      "forks": 24894,
       "language": "TypeScript",
       "license": null,
-      "pushedAt": "2026-11-06T17:04:01Z",
+      "pushedAt": "2026-11-10T08:39:26Z",
       "archived": false,
       "release": {
-        "tag": "v2.1.319",
-        "date": "2026-11-06T17:04:01Z"
+        "tag": "v2.1.322",
+        "date": "2026-11-10T02:29:43Z"
       }
     },
     "anthropics/claude-code-action": {
-      "stars": 9860,
-      "forks": 2264,
+      "stars": 9873,
+      "forks": 2266,
       "language": "TypeScript",
       "license": "MIT",
-      "pushedAt": "2026-11-06T19:21:23Z",
+      "pushedAt": "2026-11-10T02:33:13Z",
       "archived": false,
       "release": {
         "tag": "v1",
@@ -146,8 +146,8 @@
       }
     },
     "anthropics/claude-code-security-review": {
-      "stars": 6814,
-      "forks": 766,
+      "stars": 6825,
+      "forks": 765,
       "language": "Python",
       "license": "MIT",
       "pushedAt": "2026-02-11T18:01:23Z",
@@ -155,8 +155,8 @@
       "release": null
     },
     "anthropics/claude-cookbooks": {
-      "stars": 54459,
-      "forks": 6607,
+      "stars": 54484,
+      "forks": 6617,
       "language": "Jupyter Notebook",
       "license": "MIT",
       "pushedAt": "2026-11-04T19:23:29Z",
@@ -164,17 +164,17 @@
       "release": null
     },
     "anthropics/claude-plugins-official": {
-      "stars": 46542,
-      "forks": 4851,
+      "stars": 46704,
+      "forks": 4861,
       "language": "Python",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-08T07:28:26Z",
+      "pushedAt": "2026-11-10T07:29:08Z",
       "archived": false,
       "release": null
     },
     "anthropics/skills": {
-      "stars": 190215,
-      "forks": 22393,
+      "stars": 191796,
+      "forks": 22532,
       "language": "Python",
       "license": null,
       "pushedAt": "2026-11-06T22:32:32Z",
@@ -182,7 +182,7 @@
       "release": null
     },
     "antvis/AVA": {
-      "stars": 1614,
+      "stars": 1616,
       "forks": 169,
       "language": "TypeScript",
       "license": "MIT",
@@ -194,11 +194,11 @@
       }
     },
     "aquasecurity/trivy": {
-      "stars": 39154,
-      "forks": 840,
+      "stars": 39194,
+      "forks": 846,
       "language": "Go",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-09T10:22:26Z",
+      "pushedAt": "2026-11-10T08:29:37Z",
       "archived": false,
       "release": {
         "tag": "v0.76.2",
@@ -218,11 +218,11 @@
       }
     },
     "Asymptote-Labs/agent-beacon": {
-      "stars": 3400,
-      "forks": 297,
+      "stars": 3413,
+      "forks": 302,
       "language": "Go",
       "license": "MIT",
-      "pushedAt": "2026-11-09T10:07:30Z",
+      "pushedAt": "2026-11-09T21:11:22Z",
       "archived": false,
       "release": {
         "tag": "v1.3.59",
@@ -230,23 +230,23 @@
       }
     },
     "atuinsh/atuin": {
-      "stars": 32243,
+      "stars": 32249,
       "forks": 1026,
       "language": "Rust",
       "license": "MIT",
-      "pushedAt": "2026-11-09T06:55:17Z",
+      "pushedAt": "2026-11-10T06:38:52Z",
       "archived": false,
       "release": {
-        "tag": "v18.24.5",
-        "date": "2026-11-04T02:37:00Z"
+        "tag": "v18.24.6",
+        "date": "2026-11-10T02:35:33Z"
       }
     },
     "awslabs/aidlc-workflows": {
-      "stars": 5970,
-      "forks": 1062,
+      "stars": 5992,
+      "forks": 1068,
       "language": "TypeScript",
       "license": "MIT-0",
-      "pushedAt": "2026-11-09T12:46:33Z",
+      "pushedAt": "2026-11-10T12:36:56Z",
       "archived": false,
       "release": {
         "tag": "v2.11.3",
@@ -254,23 +254,23 @@
       }
     },
     "awslabs/mcp": {
-      "stars": 9895,
-      "forks": 1863,
+      "stars": 9899,
+      "forks": 1868,
       "language": "Python",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-09T09:40:28Z",
+      "pushedAt": "2026-11-10T07:15:12Z",
       "archived": false,
       "release": {
-        "tag": "2026.10.20261030201955",
-        "date": "2026-10-30T21:18:01Z"
+        "tag": "2026.11.20261109200750",
+        "date": "2026-11-09T23:42:08Z"
       }
     },
     "axllent/mailpit": {
-      "stars": 10878,
-      "forks": 375,
+      "stars": 10891,
+      "forks": 377,
       "language": "Go",
       "license": "MIT",
-      "pushedAt": "2026-11-09T03:35:40Z",
+      "pushedAt": "2026-11-10T04:21:35Z",
       "archived": false,
       "release": {
         "tag": "v1.33.1",
@@ -282,31 +282,31 @@
       "forks": 4,
       "language": "TypeScript",
       "license": "MIT",
-      "pushedAt": "2026-11-09T11:28:45Z",
+      "pushedAt": "2026-11-09T17:41:19Z",
       "archived": false,
       "release": {
-        "tag": "v1.3.6",
-        "date": "2026-11-09T11:28:45Z"
+        "tag": "v1.3.8",
+        "date": "2026-11-09T17:41:19Z"
       }
     },
     "better-auth/better-auth": {
-      "stars": 30660,
-      "forks": 3066,
+      "stars": 30683,
+      "forks": 3064,
       "language": "TypeScript",
       "license": "MIT",
-      "pushedAt": "2026-11-09T05:06:16Z",
+      "pushedAt": "2026-11-10T12:28:46Z",
       "archived": false,
       "release": {
-        "tag": "v1.7.18",
-        "date": "2026-11-05T14:56:33Z"
+        "tag": "v1.7.19",
+        "date": "2026-11-10T00:22:59Z"
       }
     },
     "bigskysoftware/htmx": {
-      "stars": 49620,
+      "stars": 49622,
       "forks": 1814,
       "language": "JavaScript",
       "license": null,
-      "pushedAt": "2026-11-06T19:23:26Z",
+      "pushedAt": "2026-11-10T10:19:57Z",
       "archived": false,
       "release": {
         "tag": "v4.0.1",
@@ -314,8 +314,8 @@
       }
     },
     "bmad-code-org/BMAD-METHOD": {
-      "stars": 55159,
-      "forks": 6149,
+      "stars": 55206,
+      "forks": 6156,
       "language": "Python",
       "license": null,
       "pushedAt": "2026-11-08T03:41:31Z",
@@ -326,23 +326,23 @@
       }
     },
     "browser-use/browser-use": {
-      "stars": 120405,
-      "forks": 13450,
+      "stars": 120528,
+      "forks": 13464,
       "language": "Python",
       "license": "MIT",
-      "pushedAt": "2026-11-09T09:48:24Z",
+      "pushedAt": "2026-11-10T09:29:07Z",
       "archived": false,
       "release": {
-        "tag": "0.13.14",
-        "date": "2026-10-26T22:00:34Z"
+        "tag": "1.0.1",
+        "date": "2026-11-10T09:27:28Z"
       }
     },
     "browserbase/stagehand": {
-      "stars": 25990,
-      "forks": 1812,
+      "stars": 25991,
+      "forks": 1814,
       "language": "TypeScript",
       "license": "MIT",
-      "pushedAt": "2026-11-09T12:53:06Z",
+      "pushedAt": "2026-11-10T04:29:05Z",
       "archived": false,
       "release": {
         "tag": "stagehand-server-v3/v3.7.7",
@@ -350,11 +350,11 @@
       }
     },
     "BurntSushi/ripgrep": {
-      "stars": 69928,
-      "forks": 3934,
+      "stars": 69958,
+      "forks": 3480,
       "language": "Rust",
       "license": "Unlicense",
-      "pushedAt": "2026-10-27T18:31:31Z",
+      "pushedAt": "2026-11-09T20:53:12Z",
       "archived": false,
       "release": {
         "tag": "15.2.0",
@@ -362,11 +362,11 @@
       }
     },
     "caddyserver/caddy": {
-      "stars": 78915,
-      "forks": 5250,
+      "stars": 78947,
+      "forks": 5251,
       "language": "Go",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-09T05:19:44Z",
+      "pushedAt": "2026-11-10T09:09:18Z",
       "archived": false,
       "release": {
         "tag": "v2.11.9",
@@ -374,8 +374,8 @@
       }
     },
     "caru-ini/stack-diagram": {
-      "stars": 2178,
-      "forks": 110,
+      "stars": 2230,
+      "forks": 112,
       "language": "TypeScript",
       "license": "MIT",
       "pushedAt": "2026-11-09T06:00:33Z",
@@ -386,11 +386,11 @@
       }
     },
     "charmbracelet/crush": {
-      "stars": 29015,
-      "forks": 2360,
+      "stars": 29031,
+      "forks": 2364,
       "language": "Go",
       "license": null,
-      "pushedAt": "2026-11-09T12:16:05Z",
+      "pushedAt": "2026-11-10T12:04:14Z",
       "archived": false,
       "release": {
         "tag": "v0.100.0",
@@ -398,8 +398,8 @@
       }
     },
     "Charonyuu/whatsmyagentdoing": {
-      "stars": 389,
-      "forks": 58,
+      "stars": 396,
+      "forks": 62,
       "language": "JavaScript",
       "license": "MIT",
       "pushedAt": "2026-11-07T12:36:59Z",
@@ -409,8 +409,20 @@
         "date": "2026-11-07T12:42:28Z"
       }
     },
+    "ChatCut-Inc/agent-plugin": {
+      "stars": 1025,
+      "forks": 84,
+      "language": "JavaScript",
+      "license": "Apache-2.0",
+      "pushedAt": "2026-11-10T12:41:54Z",
+      "archived": false,
+      "release": {
+        "tag": "v1.11.1",
+        "date": "2026-11-05T07:17:27Z"
+      }
+    },
     "Chorus-AIDLC/Chorus": {
-      "stars": 1224,
+      "stars": 1225,
       "forks": 112,
       "language": "TypeScript",
       "license": "AGPL-3.0",
@@ -422,11 +434,11 @@
       }
     },
     "ChromeDevTools/chrome-devtools-mcp": {
-      "stars": 55009,
-      "forks": 4999,
+      "stars": 55055,
+      "forks": 4579,
       "language": "TypeScript",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-09T12:13:50Z",
+      "pushedAt": "2026-11-10T10:53:53Z",
       "archived": false,
       "release": {
         "tag": "chrome-devtools-mcp-v1.12.0",
@@ -434,11 +446,11 @@
       }
     },
     "cli/cli": {
-      "stars": 46933,
-      "forks": 9268,
+      "stars": 46948,
+      "forks": 9270,
       "language": "Go",
       "license": "MIT",
-      "pushedAt": "2026-11-07T01:48:49Z",
+      "pushedAt": "2026-11-10T10:13:05Z",
       "archived": false,
       "release": {
         "tag": "v2.103.3",
@@ -446,11 +458,11 @@
       }
     },
     "cline/cline": {
-      "stars": 71487,
-      "forks": 7897,
+      "stars": 71492,
+      "forks": 7904,
       "language": "TypeScript",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-09T09:54:06Z",
+      "pushedAt": "2026-11-10T12:01:23Z",
       "archived": false,
       "release": {
         "tag": "v4.1.26",
@@ -458,11 +470,11 @@
       }
     },
     "coleam00/Archon": {
-      "stars": 23866,
+      "stars": 23880,
       "forks": 3526,
       "language": "TypeScript",
       "license": "MIT",
-      "pushedAt": "2026-11-09T12:56:03Z",
+      "pushedAt": "2026-11-10T12:23:59Z",
       "archived": false,
       "release": {
         "tag": "v0.14.0",
@@ -470,11 +482,11 @@
       }
     },
     "comfyanonymous/ComfyUI": {
-      "stars": 145905,
-      "forks": 17382,
+      "stars": 146095,
+      "forks": 17401,
       "language": "Python",
       "license": "GPL-3.0",
-      "pushedAt": "2026-11-09T12:01:54Z",
+      "pushedAt": "2026-11-10T11:22:45Z",
       "archived": false,
       "release": {
         "tag": "v0.44.0",
@@ -482,23 +494,23 @@
       }
     },
     "coollabsio/coolify": {
-      "stars": 65826,
-      "forks": 5950,
+      "stars": 65877,
+      "forks": 5956,
       "language": "PHP",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-09T12:12:42Z",
+      "pushedAt": "2026-11-10T12:26:10Z",
       "archived": false,
       "release": {
-        "tag": "v4.7.0",
-        "date": "2026-11-09T11:38:47Z"
+        "tag": "v4.7.4",
+        "date": "2026-11-10T12:19:36Z"
       }
     },
     "crewAIInc/crewAI": {
-      "stars": 60685,
-      "forks": 9118,
+      "stars": 60724,
+      "forks": 9135,
       "language": "Python",
       "license": "MIT",
-      "pushedAt": "2026-11-09T10:14:16Z",
+      "pushedAt": "2026-11-10T00:05:12Z",
       "archived": false,
       "release": {
         "tag": "1.15.39",
@@ -506,11 +518,11 @@
       }
     },
     "davila7/claude-code-templates": {
-      "stars": 33226,
-      "forks": 3897,
+      "stars": 33254,
+      "forks": 3903,
       "language": "Python",
       "license": "MIT",
-      "pushedAt": "2026-11-09T04:20:42Z",
+      "pushedAt": "2026-11-10T03:57:09Z",
       "archived": false,
       "release": {
         "tag": "v1.29.7",
@@ -518,11 +530,11 @@
       }
     },
     "dbeaver/dbeaver": {
-      "stars": 52365,
+      "stars": 52382,
       "forks": 4454,
       "language": "Java",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-09T12:43:57Z",
+      "pushedAt": "2026-11-10T12:30:00Z",
       "archived": false,
       "release": {
         "tag": "26.2.4",
@@ -530,8 +542,8 @@
       }
     },
     "deepseek-ai/dsh-superagent-prototype": {
-      "stars": 21599,
-      "forks": 2585,
+      "stars": 22048,
+      "forks": 2651,
       "language": "TypeScript",
       "license": "MIT",
       "pushedAt": "2026-11-03T09:29:14Z",
@@ -539,11 +551,11 @@
       "release": null
     },
     "devvmhq/devvm": {
-      "stars": 437,
-      "forks": 18,
+      "stars": 515,
+      "forks": 22,
       "language": "Go",
       "license": "MIT",
-      "pushedAt": "2026-11-09T04:42:56Z",
+      "pushedAt": "2026-11-09T19:35:18Z",
       "archived": false,
       "release": {
         "tag": "v0.1.0",
@@ -551,11 +563,11 @@
       }
     },
     "docker/compose": {
-      "stars": 38659,
-      "forks": 5900,
+      "stars": 38677,
+      "forks": 5902,
       "language": "Go",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-06T09:02:49Z",
+      "pushedAt": "2026-11-10T11:06:34Z",
       "archived": false,
       "release": {
         "tag": "v5.7.0",
@@ -563,11 +575,11 @@
       }
     },
     "dokploy/dokploy": {
-      "stars": 38309,
-      "forks": 3164,
+      "stars": 38374,
+      "forks": 3168,
       "language": "TypeScript",
       "license": null,
-      "pushedAt": "2026-11-07T12:58:29Z",
+      "pushedAt": "2026-11-09T18:27:41Z",
       "archived": false,
       "release": {
         "tag": "v0.31.0",
@@ -575,8 +587,8 @@
       }
     },
     "donnemartin/system-design-primer": {
-      "stars": 377403,
-      "forks": 59243,
+      "stars": 377527,
+      "forks": 59256,
       "language": "Python",
       "license": null,
       "pushedAt": "2026-09-15T01:10:09Z",
@@ -584,11 +596,11 @@
       "release": null
     },
     "drizzle-team/drizzle-orm": {
-      "stars": 36238,
+      "stars": 36249,
       "forks": 1768,
       "language": "TypeScript",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-09T11:25:13Z",
+      "pushedAt": "2026-11-10T12:19:54Z",
       "archived": false,
       "release": {
         "tag": "0.45.4",
@@ -596,11 +608,11 @@
       }
     },
     "duckdb/duckdb": {
-      "stars": 42933,
-      "forks": 4178,
+      "stars": 42957,
+      "forks": 4184,
       "language": "C++",
       "license": "MIT",
-      "pushedAt": "2026-11-09T12:44:05Z",
+      "pushedAt": "2026-11-10T12:40:42Z",
       "archived": false,
       "release": {
         "tag": "v2.0.0",
@@ -608,11 +620,11 @@
       }
     },
     "e2b-dev/E2B": {
-      "stars": 14778,
-      "forks": 1157,
+      "stars": 14795,
+      "forks": 1163,
       "language": "Python",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-09T07:11:03Z",
+      "pushedAt": "2026-11-09T17:48:57Z",
       "archived": false,
       "release": {
         "tag": "@e2b/python-sdk@2.63.0",
@@ -620,23 +632,23 @@
       }
     },
     "earendil-works/pi": {
-      "stars": 121003,
-      "forks": 15583,
+      "stars": 121197,
+      "forks": 15618,
       "language": "TypeScript",
       "license": "MIT",
-      "pushedAt": "2026-11-09T11:12:49Z",
+      "pushedAt": "2026-11-10T12:25:56Z",
       "archived": false,
       "release": {
-        "tag": "v1.5.0",
-        "date": "2026-11-02T11:05:31Z"
+        "tag": "v1.5.2",
+        "date": "2026-11-10T12:25:43Z"
       }
     },
     "emanuele-em/kanzo": {
-      "stars": 1128,
-      "forks": 83,
+      "stars": 1142,
+      "forks": 86,
       "language": "Rust",
       "license": "AGPL-3.0",
-      "pushedAt": "2026-11-09T08:28:02Z",
+      "pushedAt": "2026-11-09T23:39:49Z",
       "archived": false,
       "release": {
         "tag": "v0.4.1",
@@ -644,11 +656,11 @@
       }
     },
     "excalidraw/excalidraw": {
-      "stars": 135382,
-      "forks": 16074,
+      "stars": 135433,
+      "forks": 16091,
       "language": "TypeScript",
       "license": "MIT",
-      "pushedAt": "2026-11-08T08:18:35Z",
+      "pushedAt": "2026-11-09T17:32:03Z",
       "archived": false,
       "release": {
         "tag": "v0.18.1",
@@ -656,11 +668,11 @@
       }
     },
     "fastapi/fastapi": {
-      "stars": 104591,
-      "forks": 10205,
+      "stars": 104608,
+      "forks": 10208,
       "language": "Python",
       "license": "MIT",
-      "pushedAt": "2026-11-08T18:01:45Z",
+      "pushedAt": "2026-11-10T09:08:15Z",
       "archived": false,
       "release": {
         "tag": "0.162.2",
@@ -668,11 +680,11 @@
       }
     },
     "filamentphp/filament": {
-      "stars": 32457,
+      "stars": 32467,
       "forks": 4238,
       "language": "PHP",
       "license": "MIT",
-      "pushedAt": "2026-11-09T08:47:57Z",
+      "pushedAt": "2026-11-10T12:23:12Z",
       "archived": false,
       "release": {
         "tag": "v5.11.2",
@@ -680,11 +692,11 @@
       }
     },
     "firecrawl/firecrawl": {
-      "stars": 199972,
-      "forks": 10519,
+      "stars": 200349,
+      "forks": 10540,
       "language": "TypeScript",
       "license": "AGPL-3.0",
-      "pushedAt": "2026-11-09T07:08:31Z",
+      "pushedAt": "2026-11-10T12:37:13Z",
       "archived": false,
       "release": {
         "tag": "v2.11.0",
@@ -692,23 +704,35 @@
       }
     },
     "firecrawl/firecrawl-mcp-server": {
-      "stars": 7786,
-      "forks": 927,
+      "stars": 7792,
+      "forks": 928,
       "language": "JavaScript",
       "license": "MIT",
-      "pushedAt": "2026-11-09T11:35:33Z",
+      "pushedAt": "2026-11-10T09:09:24Z",
       "archived": false,
       "release": {
         "tag": "v3.36.1",
         "date": "2026-11-03T19:15:58Z"
       }
     },
+    "GAURAV-1313/codecall": {
+      "stars": 16,
+      "forks": 2,
+      "language": "TypeScript",
+      "license": "MIT",
+      "pushedAt": "2026-10-29T08:08:27Z",
+      "archived": false,
+      "release": {
+        "tag": "v1.3.0",
+        "date": "2026-10-07T23:34:10Z"
+      }
+    },
     "getsentry/sentry": {
-      "stars": 45738,
-      "forks": 4973,
+      "stars": 45742,
+      "forks": 4974,
       "language": "Python",
       "license": null,
-      "pushedAt": "2026-11-09T12:50:18Z",
+      "pushedAt": "2026-11-10T12:39:40Z",
       "archived": false,
       "release": {
         "tag": "26.10.1",
@@ -716,20 +740,20 @@
       }
     },
     "ghostty-org/ghostty": {
-      "stars": 63916,
-      "forks": 3876,
+      "stars": 63956,
+      "forks": 3888,
       "language": "Zig",
       "license": "MIT",
-      "pushedAt": "2026-11-09T12:44:09Z",
+      "pushedAt": "2026-11-10T12:43:15Z",
       "archived": false,
       "release": null
     },
     "github/github-mcp-server": {
-      "stars": 34346,
-      "forks": 5312,
+      "stars": 34362,
+      "forks": 5322,
       "language": "Go",
       "license": "MIT",
-      "pushedAt": "2026-11-09T11:33:58Z",
+      "pushedAt": "2026-11-09T18:56:03Z",
       "archived": false,
       "release": {
         "tag": "v2.1.0",
@@ -737,11 +761,11 @@
       }
     },
     "github/replica": {
-      "stars": 237,
-      "forks": 25,
+      "stars": 246,
+      "forks": 29,
       "language": "TypeScript",
       "license": "MIT",
-      "pushedAt": "2026-11-09T05:29:06Z",
+      "pushedAt": "2026-11-10T02:19:07Z",
       "archived": false,
       "release": {
         "tag": "hub-v1.0.0",
@@ -749,20 +773,20 @@
       }
     },
     "github/spec-kit": {
-      "stars": 148884,
-      "forks": 13370,
+      "stars": 149126,
+      "forks": 13391,
       "language": "Python",
       "license": "MIT",
-      "pushedAt": "2026-11-07T04:09:22Z",
+      "pushedAt": "2026-11-10T01:57:19Z",
       "archived": false,
       "release": {
-        "tag": "v1.3.2",
-        "date": "2026-11-06T17:24:25Z"
+        "tag": "v1.3.3",
+        "date": "2026-11-09T20:40:19Z"
       }
     },
     "gitleaks/gitleaks": {
-      "stars": 30824,
-      "forks": 2354,
+      "stars": 30859,
+      "forks": 2358,
       "language": "Go",
       "license": "MIT",
       "pushedAt": "2026-10-28T04:14:29Z",
@@ -773,11 +797,11 @@
       }
     },
     "google-gemini/gemini-api-cli": {
-      "stars": 487,
-      "forks": 75,
+      "stars": 491,
+      "forks": 76,
       "language": "Go",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-08T23:59:10Z",
+      "pushedAt": "2026-11-10T12:34:58Z",
       "archived": false,
       "release": {
         "tag": "v0.4.5",
@@ -785,11 +809,11 @@
       }
     },
     "google-gemini/gemini-cli": {
-      "stars": 108801,
-      "forks": 14930,
+      "stars": 108753,
+      "forks": 14928,
       "language": "TypeScript",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-09T01:05:59Z",
+      "pushedAt": "2026-11-10T01:10:56Z",
       "archived": false,
       "release": {
         "tag": "v0.67.0",
@@ -797,11 +821,11 @@
       }
     },
     "google/elephant-goldfish-model": {
-      "stars": 15915,
-      "forks": 1160,
+      "stars": 16909,
+      "forks": 1251,
       "language": "Python",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-09T02:35:53Z",
+      "pushedAt": "2026-11-10T05:14:43Z",
       "archived": false,
       "release": {
         "tag": "v0.1.1",
@@ -809,11 +833,11 @@
       }
     },
     "grafana/grafana": {
-      "stars": 77783,
-      "forks": 14949,
+      "stars": 77811,
+      "forks": 14953,
       "language": "TypeScript",
       "license": "AGPL-3.0",
-      "pushedAt": "2026-11-09T12:38:08Z",
+      "pushedAt": "2026-11-10T12:37:53Z",
       "archived": false,
       "release": {
         "tag": "v13.3.0",
@@ -821,11 +845,11 @@
       }
     },
     "grafana/k6": {
-      "stars": 32223,
+      "stars": 32244,
       "forks": 1717,
       "language": "Go",
       "license": "AGPL-3.0",
-      "pushedAt": "2026-11-09T10:10:58Z",
+      "pushedAt": "2026-11-10T10:18:12Z",
       "archived": false,
       "release": {
         "tag": "v2.3.0",
@@ -833,23 +857,23 @@
       }
     },
     "Graphify-Labs/graphify": {
-      "stars": 144793,
-      "forks": 13854,
+      "stars": 145347,
+      "forks": 13915,
       "language": "Python",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-08T00:52:14Z",
+      "pushedAt": "2026-11-09T17:04:04Z",
       "archived": false,
       "release": {
-        "tag": "v0.9.104",
-        "date": "2026-11-08T00:42:55Z"
+        "tag": "v0.9.105",
+        "date": "2026-11-09T17:04:20Z"
       }
     },
     "harbor-framework/harbor": {
-      "stars": 6906,
-      "forks": 2167,
+      "stars": 6932,
+      "forks": 2180,
       "language": "Python",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-08T05:18:22Z",
+      "pushedAt": "2026-11-10T05:38:30Z",
       "archived": false,
       "release": {
         "tag": "v0.25.0",
@@ -857,11 +881,11 @@
       }
     },
     "harbor-framework/terminal-bench": {
-      "stars": 1025,
-      "forks": 630,
+      "stars": 1030,
+      "forks": 631,
       "language": "Python",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-06T21:08:48Z",
+      "pushedAt": "2026-11-10T01:06:06Z",
       "archived": false,
       "release": {
         "tag": "v4.1.0",
@@ -869,11 +893,11 @@
       }
     },
     "haydenschmitty/floorplan": {
-      "stars": 3299,
-      "forks": 258,
+      "stars": 3405,
+      "forks": 270,
       "language": "JavaScript",
       "license": "MIT",
-      "pushedAt": "2026-11-02T20:06:48Z",
+      "pushedAt": "2026-11-10T06:42:48Z",
       "archived": false,
       "release": {
         "tag": "floorplan--v0.6.3",
@@ -881,17 +905,17 @@
       }
     },
     "hesreallyhim/awesome-claude-code": {
-      "stars": 57584,
-      "forks": 4928,
+      "stars": 57670,
+      "forks": 4939,
       "language": "Python",
       "license": null,
-      "pushedAt": "2026-11-09T12:10:05Z",
+      "pushedAt": "2026-11-10T12:09:02Z",
       "archived": false,
       "release": null
     },
     "heydamir/unslop": {
-      "stars": 12408,
-      "forks": 700,
+      "stars": 13234,
+      "forks": 743,
       "language": "JavaScript",
       "license": "CC-BY-4.0",
       "pushedAt": "2026-11-08T21:18:33Z",
@@ -899,19 +923,19 @@
       "release": null
     },
     "heygen-com/hyperframes": {
-      "stars": 81394,
-      "forks": 7516,
+      "stars": 82024,
+      "forks": 7580,
       "language": "TypeScript",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-09T12:08:23Z",
+      "pushedAt": "2026-11-10T12:43:11Z",
       "archived": false,
       "release": {
-        "tag": "v0.9.26",
-        "date": "2026-11-09T00:05:05Z"
+        "tag": "v0.9.29",
+        "date": "2026-11-10T09:11:28Z"
       }
     },
     "Heyosseus/sloppy": {
-      "stars": 229,
+      "stars": 230,
       "forks": 3,
       "language": "PHP",
       "license": "MIT",
@@ -923,7 +947,7 @@
       }
     },
     "honojs/hono": {
-      "stars": 32875,
+      "stars": 32893,
       "forks": 1469,
       "language": "TypeScript",
       "license": "MIT",
@@ -935,11 +959,11 @@
       }
     },
     "invariantlabs-ai/mcp-scan": {
-      "stars": 3228,
-      "forks": 297,
+      "stars": 3230,
+      "forks": 296,
       "language": "Python",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-09T12:13:28Z",
+      "pushedAt": "2026-11-10T10:59:32Z",
       "archived": false,
       "release": {
         "tag": "v0.6.11",
@@ -947,19 +971,31 @@
       }
     },
     "ivankovic/omnidiff": {
-      "stars": 1291,
-      "forks": 34,
+      "stars": 1309,
+      "forks": 35,
       "language": "Rust",
       "license": null,
-      "pushedAt": "2026-11-09T12:30:27Z",
+      "pushedAt": "2026-11-09T19:25:03Z",
       "archived": false,
       "release": {
         "tag": "v0.4.0",
         "date": "2026-11-08T18:38:43Z"
       }
     },
+    "jackjin1997/markindex": {
+      "stars": 1,
+      "forks": 0,
+      "language": "TypeScript",
+      "license": "MIT",
+      "pushedAt": "2026-11-09T09:49:59Z",
+      "archived": false,
+      "release": {
+        "tag": "v0.1.2",
+        "date": "2026-11-09T06:34:39Z"
+      }
+    },
     "jesseduffield/lazydocker": {
-      "stars": 53302,
+      "stars": 53308,
       "forks": 1707,
       "language": "Go",
       "license": "MIT",
@@ -971,11 +1007,11 @@
       }
     },
     "jesseduffield/lazygit": {
-      "stars": 83752,
-      "forks": 3251,
+      "stars": 83789,
+      "forks": 3252,
       "language": "Go",
       "license": "MIT",
-      "pushedAt": "2026-11-09T10:49:01Z",
+      "pushedAt": "2026-11-10T12:19:29Z",
       "archived": false,
       "release": {
         "tag": "v0.66.3",
@@ -983,7 +1019,7 @@
       }
     },
     "jmanico/grim-prompter": {
-      "stars": 402,
+      "stars": 408,
       "forks": 33,
       "language": null,
       "license": "MIT",
@@ -995,7 +1031,7 @@
       }
     },
     "joelparkerhenderson/architecture-decision-record": {
-      "stars": 17432,
+      "stars": 17441,
       "forks": 2821,
       "language": "CSS",
       "license": null,
@@ -1004,8 +1040,8 @@
       "release": null
     },
     "junegunn/fzf": {
-      "stars": 84095,
-      "forks": 3847,
+      "stars": 84118,
+      "forks": 3430,
       "language": "Go",
       "license": "MIT",
       "pushedAt": "2026-11-07T12:06:19Z",
@@ -1016,8 +1052,8 @@
       }
     },
     "kanaworksai-hue/audio-studio-mcp": {
-      "stars": 610,
-      "forks": 48,
+      "stars": 639,
+      "forks": 51,
       "language": "Python",
       "license": "MIT",
       "pushedAt": "2026-10-24T03:47:37Z",
@@ -1032,7 +1068,7 @@
       "forks": 2,
       "language": "JavaScript",
       "license": "MIT",
-      "pushedAt": "2026-11-08T07:03:25Z",
+      "pushedAt": "2026-11-10T12:41:52Z",
       "archived": false,
       "release": {
         "tag": "v0.1.0",
@@ -1040,11 +1076,11 @@
       }
     },
     "Kilo-Org/kilocode": {
-      "stars": 27914,
-      "forks": 3350,
+      "stars": 27928,
+      "forks": 3352,
       "language": "TypeScript",
       "license": "MIT",
-      "pushedAt": "2026-11-09T12:39:48Z",
+      "pushedAt": "2026-11-10T12:38:18Z",
       "archived": false,
       "release": {
         "tag": "v7.8.27",
@@ -1052,11 +1088,11 @@
       }
     },
     "kubernetes-sigs/agent-sandbox": {
-      "stars": 4555,
-      "forks": 606,
+      "stars": 4566,
+      "forks": 607,
       "language": "Go",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-08T19:10:17Z",
+      "pushedAt": "2026-11-10T01:45:42Z",
       "archived": false,
       "release": {
         "tag": "v1.0.10",
@@ -1064,11 +1100,11 @@
       }
     },
     "langchain-ai/langgraph": {
-      "stars": 44688,
-      "forks": 7699,
+      "stars": 44745,
+      "forks": 7710,
       "language": "Python",
       "license": "MIT",
-      "pushedAt": "2026-11-08T00:33:40Z",
+      "pushedAt": "2026-11-10T05:42:48Z",
       "archived": false,
       "release": {
         "tag": "sdk==0.4.14",
@@ -1076,11 +1112,11 @@
       }
     },
     "langfuse/langfuse": {
-      "stars": 37191,
-      "forks": 4186,
+      "stars": 37256,
+      "forks": 4195,
       "language": "TypeScript",
       "license": null,
-      "pushedAt": "2026-11-09T12:54:43Z",
+      "pushedAt": "2026-11-10T12:42:53Z",
       "archived": false,
       "release": {
         "tag": "v4.77.0",
@@ -1092,7 +1128,7 @@
       "forks": 528,
       "language": "PHP",
       "license": "MIT",
-      "pushedAt": "2026-11-07T13:29:27Z",
+      "pushedAt": "2026-11-09T22:54:08Z",
       "archived": false,
       "release": {
         "tag": "v3.14.0",
@@ -1101,10 +1137,10 @@
     },
     "laravel/ai": {
       "stars": 1266,
-      "forks": 376,
+      "forks": 378,
       "language": "PHP",
       "license": "MIT",
-      "pushedAt": "2026-11-06T05:19:34Z",
+      "pushedAt": "2026-11-09T14:32:30Z",
       "archived": false,
       "release": {
         "tag": "v1.3.0",
@@ -1125,10 +1161,10 @@
     },
     "laravel/framework": {
       "stars": 34995,
-      "forks": 12029,
+      "forks": 12030,
       "language": "PHP",
       "license": "MIT",
-      "pushedAt": "2026-11-08T14:43:35Z",
+      "pushedAt": "2026-11-10T09:28:44Z",
       "archived": false,
       "release": {
         "tag": "v13.40.0",
@@ -1140,7 +1176,7 @@
       "forks": 132,
       "language": "PHP",
       "license": "MIT",
-      "pushedAt": "2026-11-06T21:17:56Z",
+      "pushedAt": "2026-11-09T19:33:55Z",
       "archived": false,
       "release": {
         "tag": "v1.1.2",
@@ -1148,7 +1184,7 @@
       }
     },
     "livewire/livewire": {
-      "stars": 23591,
+      "stars": 23589,
       "forks": 1759,
       "language": "PHP",
       "license": "MIT",
@@ -1160,11 +1196,11 @@
       }
     },
     "louislam/uptime-kuma": {
-      "stars": 93406,
-      "forks": 8684,
+      "stars": 93445,
+      "forks": 8688,
       "language": "JavaScript",
       "license": "MIT",
-      "pushedAt": "2026-11-09T00:05:19Z",
+      "pushedAt": "2026-11-10T04:49:53Z",
       "archived": false,
       "release": {
         "tag": "2.5.9",
@@ -1172,11 +1208,11 @@
       }
     },
     "mastra-ai/mastra": {
-      "stars": 29428,
-      "forks": 3086,
+      "stars": 29445,
+      "forks": 3087,
       "language": "TypeScript",
       "license": null,
-      "pushedAt": "2026-11-09T12:56:35Z",
+      "pushedAt": "2026-11-10T12:43:29Z",
       "archived": false,
       "release": {
         "tag": "@mastra/core@1.82.0",
@@ -1196,7 +1232,7 @@
       }
     },
     "mehdihadeli/awesome-software-architecture": {
-      "stars": 11775,
+      "stars": 11777,
       "forks": 1040,
       "language": "TypeScript",
       "license": "CC0-1.0",
@@ -1208,11 +1244,11 @@
       }
     },
     "meilisearch/meilisearch": {
-      "stars": 59818,
-      "forks": 2784,
+      "stars": 59825,
+      "forks": 2786,
       "language": "Rust",
       "license": null,
-      "pushedAt": "2026-11-09T12:48:27Z",
+      "pushedAt": "2026-11-10T12:36:28Z",
       "archived": false,
       "release": {
         "tag": "v1.56.2",
@@ -1220,11 +1256,11 @@
       }
     },
     "mermaid-js/mermaid": {
-      "stars": 91051,
-      "forks": 9472,
+      "stars": 91061,
+      "forks": 9473,
       "language": "TypeScript",
       "license": "MIT",
-      "pushedAt": "2026-11-09T12:50:23Z",
+      "pushedAt": "2026-11-10T09:20:00Z",
       "archived": false,
       "release": {
         "tag": "@mermaid-js/tiny@12.3.0",
@@ -1232,8 +1268,8 @@
       }
     },
     "microsoft/markitdown": {
-      "stars": 194536,
-      "forks": 14658,
+      "stars": 194713,
+      "forks": 14681,
       "language": "Python",
       "license": "MIT",
       "pushedAt": "2026-11-07T00:14:01Z",
@@ -1244,11 +1280,11 @@
       }
     },
     "microsoft/playwright": {
-      "stars": 99662,
-      "forks": 6828,
+      "stars": 99745,
+      "forks": 6835,
       "language": "TypeScript",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-08T17:10:30Z",
+      "pushedAt": "2026-11-10T05:40:00Z",
       "archived": false,
       "release": {
         "tag": "v1.65.0",
@@ -1256,40 +1292,40 @@
       }
     },
     "microsoft/playwright-cli": {
-      "stars": 15064,
-      "forks": 905,
+      "stars": 15092,
+      "forks": 909,
       "language": "TypeScript",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-05T23:09:34Z",
+      "pushedAt": "2026-11-10T01:38:10Z",
       "archived": false,
       "release": {
-        "tag": "v0.1.23",
-        "date": "2026-10-31T15:21:49Z"
+        "tag": "v0.1.24",
+        "date": "2026-11-10T01:16:05Z"
       }
     },
     "microsoft/playwright-mcp": {
-      "stars": 39370,
-      "forks": 3408,
+      "stars": 39407,
+      "forks": 3413,
       "language": "TypeScript",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-06T22:49:45Z",
+      "pushedAt": "2026-11-10T01:37:49Z",
       "archived": false,
       "release": {
-        "tag": "v0.0.84",
-        "date": "2026-10-31T15:20:06Z"
+        "tag": "v0.0.85",
+        "date": "2026-11-09T18:28:53Z"
       }
     },
     "MiniMax-AI/mcode-stack": {
-      "stars": 578,
-      "forks": 42,
-      "language": "Python",
+      "stars": 649,
+      "forks": 43,
+      "language": "HTML",
       "license": "MIT",
-      "pushedAt": "2026-11-06T02:12:58Z",
+      "pushedAt": "2026-11-10T09:52:48Z",
       "archived": false,
       "release": null
     },
     "mobbin/skills": {
-      "stars": 66,
+      "stars": 67,
       "forks": 3,
       "language": "HTML",
       "license": "MIT",
@@ -1298,11 +1334,11 @@
       "release": null
     },
     "modelcontextprotocol/modelcontextprotocol": {
-      "stars": 9652,
-      "forks": 1902,
+      "stars": 9655,
+      "forks": 1906,
       "language": "TypeScript",
       "license": null,
-      "pushedAt": "2026-11-09T11:48:43Z",
+      "pushedAt": "2026-11-10T00:13:08Z",
       "archived": false,
       "release": {
         "tag": "2026-07-28",
@@ -1310,11 +1346,11 @@
       }
     },
     "modelcontextprotocol/servers": {
-      "stars": 91886,
-      "forks": 11931,
+      "stars": 91903,
+      "forks": 11930,
       "language": "TypeScript",
       "license": null,
-      "pushedAt": "2026-11-05T06:26:00Z",
+      "pushedAt": "2026-11-10T05:11:54Z",
       "archived": false,
       "release": {
         "tag": "v2.3.0",
@@ -1322,7 +1358,7 @@
       }
     },
     "morganlinton/BeautifulRust": {
-      "stars": 1769,
+      "stars": 1777,
       "forks": 92,
       "language": "Python",
       "license": "MIT",
@@ -1334,29 +1370,29 @@
       }
     },
     "motiondivision/motion": {
-      "stars": 35015,
-      "forks": 1523,
+      "stars": 35046,
+      "forks": 1526,
       "language": "TypeScript",
       "license": "MIT",
-      "pushedAt": "2026-11-09T12:41:52Z",
+      "pushedAt": "2026-11-10T12:27:46Z",
       "archived": false,
       "release": null
     },
     "multica-ai/multica": {
-      "stars": 55396,
-      "forks": 7305,
+      "stars": 55522,
+      "forks": 7332,
       "language": "Go",
       "license": null,
-      "pushedAt": "2026-11-09T12:50:27Z",
+      "pushedAt": "2026-11-10T12:41:08Z",
       "archived": false,
       "release": {
-        "tag": "v0.8.1",
-        "date": "2026-11-06T10:15:19Z"
+        "tag": "v0.8.2",
+        "date": "2026-11-10T10:17:24Z"
       }
     },
     "musistudio/claude-code-router": {
-      "stars": 38063,
-      "forks": 3200,
+      "stars": 38077,
+      "forks": 3202,
       "language": "TypeScript",
       "license": "MIT",
       "pushedAt": "2026-10-10T03:35:10Z",
@@ -1367,20 +1403,20 @@
       }
     },
     "n8n-io/n8n": {
-      "stars": 209895,
-      "forks": 61417,
+      "stars": 209991,
+      "forks": 61432,
       "language": "TypeScript",
       "license": null,
-      "pushedAt": "2026-11-09T12:54:35Z",
+      "pushedAt": "2026-11-10T12:42:58Z",
       "archived": false,
       "release": {
-        "tag": "n8n@2.46.7",
-        "date": "2026-11-09T08:25:28Z"
+        "tag": "n8n@2.47.3",
+        "date": "2026-11-09T08:21:35Z"
       }
     },
     "nektos/act": {
-      "stars": 72605,
-      "forks": 2116,
+      "stars": 72627,
+      "forks": 2119,
       "language": "Go",
       "license": "MIT",
       "pushedAt": "2026-11-04T16:29:16Z",
@@ -1391,11 +1427,11 @@
       }
     },
     "nestjs/nest": {
-      "stars": 76992,
+      "stars": 76994,
       "forks": 8688,
       "language": "TypeScript",
       "license": "MIT",
-      "pushedAt": "2026-11-09T12:16:06Z",
+      "pushedAt": "2026-11-10T07:54:08Z",
       "archived": false,
       "release": {
         "tag": "v12.4.1",
@@ -1415,11 +1451,11 @@
       }
     },
     "nextlevelbuilder/ui-ux-pro-max-skill": {
-      "stars": 147175,
-      "forks": 15575,
+      "stars": 147609,
+      "forks": 15618,
       "language": "Python",
       "license": "MIT",
-      "pushedAt": "2026-11-07T19:05:11Z",
+      "pushedAt": "2026-11-10T10:03:54Z",
       "archived": false,
       "release": {
         "tag": "v2.15.0",
@@ -1427,8 +1463,8 @@
       }
     },
     "NiazMorshed2007/reanimate": {
-      "stars": 1466,
-      "forks": 127,
+      "stars": 1517,
+      "forks": 134,
       "language": "JavaScript",
       "license": "MIT",
       "pushedAt": "2026-10-31T12:49:35Z",
@@ -1436,11 +1472,11 @@
       "release": null
     },
     "nodejs/node": {
-      "stars": 123436,
-      "forks": 38481,
+      "stars": 123454,
+      "forks": 38008,
       "language": "JavaScript",
       "license": null,
-      "pushedAt": "2026-11-09T12:05:44Z",
+      "pushedAt": "2026-11-10T12:35:14Z",
       "archived": false,
       "release": {
         "tag": "v26.13.0",
@@ -1448,11 +1484,11 @@
       }
     },
     "NVIDIA/OpenShell": {
-      "stars": 21306,
-      "forks": 2085,
+      "stars": 21344,
+      "forks": 2089,
       "language": "Rust",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-09T12:08:20Z",
+      "pushedAt": "2026-11-10T11:14:50Z",
       "archived": false,
       "release": {
         "tag": "v0.1.7",
@@ -1460,8 +1496,8 @@
       }
     },
     "obra/superpowers": {
-      "stars": 314847,
-      "forks": 28009,
+      "stars": 315430,
+      "forks": 28055,
       "language": "Shell",
       "license": "MIT",
       "pushedAt": "2026-11-03T23:24:58Z",
@@ -1472,23 +1508,23 @@
       }
     },
     "ollama/ollama": {
-      "stars": 186435,
-      "forks": 18976,
+      "stars": 186515,
+      "forks": 18992,
       "language": "Go",
       "license": "MIT",
-      "pushedAt": "2026-11-08T00:36:55Z",
+      "pushedAt": "2026-11-10T01:49:34Z",
       "archived": false,
       "release": {
-        "tag": "v0.40.15",
-        "date": "2026-11-03T22:52:31Z"
+        "tag": "v0.40.16",
+        "date": "2026-11-09T18:21:19Z"
       }
     },
     "open-compass/AgentCompass": {
-      "stars": 189,
+      "stars": 191,
       "forks": 42,
       "language": "Python",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-09T11:50:01Z",
+      "pushedAt": "2026-11-10T12:41:23Z",
       "archived": false,
       "release": {
         "tag": "v1.1.0",
@@ -1508,11 +1544,11 @@
       }
     },
     "openai/codex": {
-      "stars": 134200,
-      "forks": 21251,
+      "stars": 134676,
+      "forks": 21320,
       "language": "Rust",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-09T12:55:22Z",
+      "pushedAt": "2026-11-10T11:46:17Z",
       "archived": false,
       "release": {
         "tag": "rust-v0.167.0",
@@ -1520,11 +1556,11 @@
       }
     },
     "openai/openai-agents-python": {
-      "stars": 30572,
-      "forks": 5021,
+      "stars": 30600,
+      "forks": 5026,
       "language": "Python",
       "license": "MIT",
-      "pushedAt": "2026-11-09T12:52:42Z",
+      "pushedAt": "2026-11-10T12:43:01Z",
       "archived": false,
       "release": {
         "tag": "v0.24.0",
@@ -1532,20 +1568,20 @@
       }
     },
     "openai/openai-python": {
-      "stars": 32091,
-      "forks": 6361,
+      "stars": 32103,
+      "forks": 5888,
       "language": "Python",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-09T12:54:44Z",
+      "pushedAt": "2026-11-10T08:01:21Z",
       "archived": false,
       "release": {
-        "tag": "v3.47.0",
-        "date": "2026-11-05T18:04:10Z"
+        "tag": "v3.49.0",
+        "date": "2026-11-10T06:47:04Z"
       }
     },
     "openai/whisper": {
-      "stars": 112282,
-      "forks": 13591,
+      "stars": 112338,
+      "forks": 13602,
       "language": "Python",
       "license": "MIT",
       "pushedAt": "2026-08-31T17:19:19Z",
@@ -1556,23 +1592,23 @@
       }
     },
     "OpenHands/OpenHands": {
-      "stars": 93027,
-      "forks": 12428,
+      "stars": 93111,
+      "forks": 12440,
       "language": "TypeScript",
       "license": "MIT",
-      "pushedAt": "2026-11-09T12:35:54Z",
+      "pushedAt": "2026-11-10T12:41:23Z",
       "archived": false,
       "release": {
-        "tag": "v1.37.0",
-        "date": "2026-11-06T12:54:14Z"
+        "tag": "v1.38.0",
+        "date": "2026-11-10T04:59:49Z"
       }
     },
     "openJiuwen-ai/jiuwenswarm": {
-      "stars": 8571,
-      "forks": 1160,
+      "stars": 8572,
+      "forks": 1163,
       "language": "Python",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-09T12:55:09Z",
+      "pushedAt": "2026-11-10T12:34:27Z",
       "archived": false,
       "release": {
         "tag": "v0.2.7",
@@ -1581,7 +1617,7 @@
     },
     "openkruise/agents": {
       "stars": 316,
-      "forks": 158,
+      "forks": 159,
       "language": "Go",
       "license": "Apache-2.0",
       "pushedAt": "2026-11-08T15:55:56Z",
@@ -1592,11 +1628,11 @@
       }
     },
     "opensandbox-group/OpenSandbox": {
-      "stars": 16755,
-      "forks": 1580,
+      "stars": 17081,
+      "forks": 1619,
       "language": "Python",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-09T10:14:41Z",
+      "pushedAt": "2026-11-10T09:36:23Z",
       "archived": false,
       "release": {
         "tag": "release-1.2.0",
@@ -1604,11 +1640,11 @@
       }
     },
     "oraios/serena": {
-      "stars": 31228,
-      "forks": 2135,
+      "stars": 31261,
+      "forks": 2136,
       "language": "Python",
       "license": null,
-      "pushedAt": "2026-10-28T10:45:55Z",
+      "pushedAt": "2026-11-09T17:39:00Z",
       "archived": false,
       "release": {
         "tag": "v2.1.0",
@@ -1616,11 +1652,11 @@
       }
     },
     "oven-sh/bun": {
-      "stars": 96728,
-      "forks": 5274,
+      "stars": 96742,
+      "forks": 5277,
       "language": "Rust",
       "license": null,
-      "pushedAt": "2026-11-09T12:56:30Z",
+      "pushedAt": "2026-11-10T12:42:43Z",
       "archived": false,
       "release": {
         "tag": "bun-v1.4.4",
@@ -1628,43 +1664,52 @@
       }
     },
     "paperclipai/paperclip": {
-      "stars": 112494,
-      "forks": 18656,
+      "stars": 112786,
+      "forks": 18715,
       "language": "TypeScript",
       "license": "MIT",
-      "pushedAt": "2026-11-09T12:56:55Z",
+      "pushedAt": "2026-11-10T12:41:01Z",
       "archived": false,
       "release": {
         "tag": "v2026.1106.0",
         "date": "2026-11-06T22:31:53Z"
       }
     },
+    "patch-gg/pixelfx": {
+      "stars": 6555,
+      "forks": 861,
+      "language": "JavaScript",
+      "license": "MIT",
+      "pushedAt": "2026-11-09T09:51:43Z",
+      "archived": false,
+      "release": null
+    },
     "pbakaus/impeccable": {
-      "stars": 106554,
-      "forks": 6333,
+      "stars": 107241,
+      "forks": 6369,
       "language": "Rust",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-09T12:47:27Z",
+      "pushedAt": "2026-11-10T12:41:35Z",
       "archived": false,
       "release": {
-        "tag": "engine-v0.1.21",
-        "date": "2026-11-09T03:44:52Z"
+        "tag": "engine-v0.1.22",
+        "date": "2026-11-09T22:38:56Z"
       }
     },
     "penpot/penpot": {
-      "stars": 62207,
-      "forks": 4386,
+      "stars": 62247,
+      "forks": 4393,
       "language": "Clojure",
       "license": "MPL-2.0",
-      "pushedAt": "2026-11-09T12:49:29Z",
+      "pushedAt": "2026-11-10T12:42:06Z",
       "archived": false,
       "release": {
-        "tag": "2.18.7",
-        "date": "2026-11-09T09:45:43Z"
+        "tag": "2.19.0",
+        "date": "2026-11-09T14:03:36Z"
       }
     },
     "pestphp/pest": {
-      "stars": 11760,
+      "stars": 11766,
       "forks": 559,
       "language": "PHP",
       "license": "MIT",
@@ -1676,8 +1721,8 @@
       }
     },
     "pgvector/pgvector": {
-      "stars": 23626,
-      "forks": 1384,
+      "stars": 23643,
+      "forks": 1386,
       "language": "C",
       "license": null,
       "pushedAt": "2026-11-09T10:02:56Z",
@@ -1689,7 +1734,7 @@
       "forks": 2,
       "language": "PHP",
       "license": "MIT",
-      "pushedAt": "2026-11-06T20:55:26Z",
+      "pushedAt": "2026-11-10T12:03:47Z",
       "archived": false,
       "release": {
         "tag": "v13.40.2",
@@ -1697,11 +1742,11 @@
       }
     },
     "portainer/portainer": {
-      "stars": 38799,
-      "forks": 2935,
+      "stars": 38807,
+      "forks": 2936,
       "language": "TypeScript",
       "license": "Zlib",
-      "pushedAt": "2026-11-06T00:57:54Z",
+      "pushedAt": "2026-11-09T23:56:40Z",
       "archived": false,
       "release": {
         "tag": "2.45.3",
@@ -1710,7 +1755,7 @@
     },
     "prism-php/prism": {
       "stars": 2430,
-      "forks": 315,
+      "forks": 316,
       "language": "PHP",
       "license": "MIT",
       "pushedAt": "2026-11-07T23:33:26Z",
@@ -1721,11 +1766,11 @@
       }
     },
     "prisma/prisma": {
-      "stars": 47659,
-      "forks": 2610,
+      "stars": 47660,
+      "forks": 2608,
       "language": "TypeScript",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-09T07:11:10Z",
+      "pushedAt": "2026-11-10T12:31:48Z",
       "archived": false,
       "release": {
         "tag": "7.10.1",
@@ -1733,8 +1778,8 @@
       }
     },
     "punkpeye/awesome-mcp-servers": {
-      "stars": 97514,
-      "forks": 19533,
+      "stars": 97557,
+      "forks": 19621,
       "language": null,
       "license": "MIT",
       "pushedAt": "2026-11-06T17:59:03Z",
@@ -1742,11 +1787,11 @@
       "release": null
     },
     "pydantic/pydantic-ai": {
-      "stars": 21101,
-      "forks": 3137,
+      "stars": 21121,
+      "forks": 3142,
       "language": "Python",
       "license": "MIT",
-      "pushedAt": "2026-11-09T12:53:30Z",
+      "pushedAt": "2026-11-10T12:29:46Z",
       "archived": false,
       "release": {
         "tag": "v2.66.0",
@@ -1754,11 +1799,11 @@
       }
     },
     "qdrant/qdrant": {
-      "stars": 35478,
+      "stars": 35500,
       "forks": 2805,
       "language": "Rust",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-09T12:38:20Z",
+      "pushedAt": "2026-11-10T12:40:13Z",
       "archived": false,
       "release": {
         "tag": "v1.20.0",
@@ -1766,7 +1811,7 @@
       }
     },
     "Qihoo360/harness-bench": {
-      "stars": 136,
+      "stars": 137,
       "forks": 17,
       "language": "Python",
       "license": null,
@@ -1775,8 +1820,8 @@
       "release": null
     },
     "QoderAI/better-harness": {
-      "stars": 2442,
-      "forks": 203,
+      "stars": 2445,
+      "forks": 204,
       "language": "JavaScript",
       "license": "MIT",
       "pushedAt": "2026-11-07T08:40:23Z",
@@ -1787,11 +1832,11 @@
       }
     },
     "redis/redis": {
-      "stars": 77317,
-      "forks": 25009,
+      "stars": 77341,
+      "forks": 25013,
       "language": "C",
       "license": null,
-      "pushedAt": "2026-11-08T17:19:24Z",
+      "pushedAt": "2026-11-10T10:25:53Z",
       "archived": false,
       "release": {
         "tag": "8.10.3",
@@ -1799,8 +1844,8 @@
       }
     },
     "remotion-dev/skills": {
-      "stars": 6653,
-      "forks": 725,
+      "stars": 6769,
+      "forks": 732,
       "language": "TypeScript",
       "license": null,
       "pushedAt": "2026-11-09T09:11:07Z",
@@ -1832,15 +1877,15 @@
       }
     },
     "ruvnet/claude-flow": {
-      "stars": 81323,
-      "forks": 9567,
+      "stars": 81398,
+      "forks": 9582,
       "language": "TypeScript",
       "license": "MIT",
-      "pushedAt": "2026-11-09T09:20:19Z",
+      "pushedAt": "2026-11-10T06:27:57Z",
       "archived": false,
       "release": {
-        "tag": "v3.74.1",
-        "date": "2026-11-09T06:55:59Z"
+        "tag": "v3.75.0",
+        "date": "2026-11-10T01:50:36Z"
       }
     },
     "salemalem/npmscan-mcp-plugin": {
@@ -1853,23 +1898,23 @@
       "release": null
     },
     "semgrep/semgrep": {
-      "stars": 17565,
-      "forks": 1159,
+      "stars": 17586,
+      "forks": 1163,
       "language": "C",
       "license": "LGPL-2.1",
-      "pushedAt": "2026-11-09T00:06:50Z",
+      "pushedAt": "2026-11-10T09:32:16Z",
       "archived": false,
       "release": {
-        "tag": "v1.184.0",
-        "date": "2026-11-05T19:17:04Z"
+        "tag": "v1.185.0",
+        "date": "2026-11-10T09:32:54Z"
       }
     },
     "shadcn-ui/ui": {
-      "stars": 127695,
-      "forks": 11760,
+      "stars": 127805,
+      "forks": 11332,
       "language": "TypeScript",
       "license": "MIT",
-      "pushedAt": "2026-11-09T10:36:48Z",
+      "pushedAt": "2026-11-10T06:02:51Z",
       "archived": false,
       "release": {
         "tag": "shadcn@4.23.0",
@@ -1877,11 +1922,11 @@
       }
     },
     "starship/starship": {
-      "stars": 60663,
-      "forks": 2842,
+      "stars": 60676,
+      "forks": 2844,
       "language": "Rust",
       "license": "ISC",
-      "pushedAt": "2026-11-09T07:13:18Z",
+      "pushedAt": "2026-11-10T01:54:37Z",
       "archived": false,
       "release": {
         "tag": "v1.27.0",
@@ -1889,23 +1934,23 @@
       }
     },
     "strands-agents/box": {
-      "stars": 504,
-      "forks": 43,
+      "stars": 518,
+      "forks": 45,
       "language": "Rust",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-08T17:30:53Z",
+      "pushedAt": "2026-11-10T10:37:00Z",
       "archived": false,
       "release": {
-        "tag": "v0.2.1",
-        "date": "2026-11-06T01:51:39Z"
+        "tag": "v0.2.2",
+        "date": "2026-11-10T07:05:43Z"
       }
     },
     "supabase-community/supabase-mcp": {
-      "stars": 3002,
+      "stars": 3003,
       "forks": 428,
       "language": "TypeScript",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-09T10:37:16Z",
+      "pushedAt": "2026-11-10T06:14:29Z",
       "archived": false,
       "release": {
         "tag": "mcp-server-supabase-v0.16.1",
@@ -1913,11 +1958,11 @@
       }
     },
     "supabase/supabase": {
-      "stars": 114701,
-      "forks": 15518,
+      "stars": 114741,
+      "forks": 15066,
       "language": "TypeScript",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-09T12:56:48Z",
+      "pushedAt": "2026-11-10T12:33:28Z",
       "archived": false,
       "release": {
         "tag": "v1.26.08",
@@ -1925,8 +1970,8 @@
       }
     },
     "SuperClaude-Org/SuperClaude_Framework": {
-      "stars": 23929,
-      "forks": 1985,
+      "stars": 23930,
+      "forks": 1983,
       "language": "Python",
       "license": "MIT",
       "pushedAt": "2026-09-27T12:50:32Z",
@@ -1937,11 +1982,11 @@
       }
     },
     "superradcompany/microsandbox": {
-      "stars": 9003,
-      "forks": 515,
+      "stars": 9016,
+      "forks": 516,
       "language": "Rust",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-09T11:46:56Z",
+      "pushedAt": "2026-11-10T01:17:45Z",
       "archived": false,
       "release": {
         "tag": "v0.7.14",
@@ -1949,11 +1994,11 @@
       }
     },
     "swiftlysingh/excalidraw-cli": {
-      "stars": 316,
+      "stars": 318,
       "forks": 17,
       "language": "TypeScript",
       "license": "MIT",
-      "pushedAt": "2026-11-06T23:27:38Z",
+      "pushedAt": "2026-11-09T23:24:27Z",
       "archived": false,
       "release": {
         "tag": "v1.5.0",
@@ -1961,8 +2006,8 @@
       }
     },
     "t3dotgg/tstack": {
-      "stars": 3306,
-      "forks": 249,
+      "stars": 3430,
+      "forks": 258,
       "language": "Python",
       "license": "MIT",
       "pushedAt": "2026-10-28T02:38:03Z",
@@ -1970,11 +2015,11 @@
       "release": null
     },
     "tailwindlabs/tailwindcss": {
-      "stars": 98655,
-      "forks": 6861,
+      "stars": 98670,
+      "forks": 6399,
       "language": "TypeScript",
       "license": "MIT",
-      "pushedAt": "2026-11-08T16:12:06Z",
+      "pushedAt": "2026-11-10T00:16:21Z",
       "archived": false,
       "release": {
         "tag": "v4.3.5",
@@ -1982,8 +2027,8 @@
       }
     },
     "TanStack/query": {
-      "stars": 50544,
-      "forks": 4228,
+      "stars": 50550,
+      "forks": 4226,
       "language": "TypeScript",
       "license": "MIT",
       "pushedAt": "2026-11-09T01:34:18Z",
@@ -1994,23 +2039,23 @@
       }
     },
     "taskforcesh/bullmq": {
-      "stars": 9581,
+      "stars": 9583,
       "forks": 751,
       "language": "TypeScript",
       "license": "MIT",
-      "pushedAt": "2026-11-09T01:01:32Z",
+      "pushedAt": "2026-11-10T09:57:45Z",
       "archived": false,
       "release": {
-        "tag": "v6.7.2",
-        "date": "2026-11-07T12:04:41Z"
+        "tag": "v6.7.3",
+        "date": "2026-11-10T05:08:37Z"
       }
     },
     "temporalio/temporal": {
-      "stars": 24275,
-      "forks": 2075,
+      "stars": 24298,
+      "forks": 2078,
       "language": "Go",
       "license": "MIT",
-      "pushedAt": "2026-11-09T09:03:25Z",
+      "pushedAt": "2026-11-10T08:47:37Z",
       "archived": false,
       "release": {
         "tag": "v1.32.2",
@@ -2018,11 +2063,11 @@
       }
     },
     "TencentCloud/CubeSandbox": {
-      "stars": 13201,
-      "forks": 1205,
+      "stars": 13214,
+      "forks": 1210,
       "language": "Go",
       "license": null,
-      "pushedAt": "2026-11-09T11:05:49Z",
+      "pushedAt": "2026-11-10T11:14:40Z",
       "archived": false,
       "release": {
         "tag": "v0.7.3",
@@ -2030,35 +2075,35 @@
       }
     },
     "thedotmack/claude-mem": {
-      "stars": 115188,
-      "forks": 10008,
+      "stars": 115628,
+      "forks": 10039,
       "language": "TypeScript",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-09T11:26:08Z",
+      "pushedAt": "2026-11-10T10:44:40Z",
       "archived": false,
       "release": {
-        "tag": "v15.13.0",
-        "date": "2026-11-09T10:06:27Z"
+        "tag": "v15.15.1",
+        "date": "2026-11-10T07:06:39Z"
       }
     },
     "traefik/traefik": {
-      "stars": 65500,
-      "forks": 6311,
+      "stars": 65506,
+      "forks": 6312,
       "language": "Go",
       "license": "MIT",
-      "pushedAt": "2026-11-09T10:24:06Z",
+      "pushedAt": "2026-11-10T08:12:49Z",
       "archived": false,
       "release": {
-        "tag": "v3.7.17",
-        "date": "2026-10-30T08:32:41Z"
+        "tag": "v3.7.18",
+        "date": "2026-11-10T08:23:37Z"
       }
     },
     "trufflesecurity/trufflehog": {
-      "stars": 29043,
-      "forks": 2708,
+      "stars": 29144,
+      "forks": 2715,
       "language": "Go",
       "license": "AGPL-3.0",
-      "pushedAt": "2026-11-09T07:12:18Z",
+      "pushedAt": "2026-11-10T06:11:44Z",
       "archived": false,
       "release": {
         "tag": "v3.99.8",
@@ -2066,11 +2111,11 @@
       }
     },
     "UKGovernmentBEIS/inspect_ai": {
-      "stars": 3208,
-      "forks": 915,
+      "stars": 3216,
+      "forks": 917,
       "language": "Python",
       "license": "MIT",
-      "pushedAt": "2026-11-09T12:52:15Z",
+      "pushedAt": "2026-11-10T12:26:27Z",
       "archived": false,
       "release": {
         "tag": "0.3.288",
@@ -2078,11 +2123,11 @@
       }
     },
     "unclecode/crawl4ai": {
-      "stars": 87134,
-      "forks": 9081,
+      "stars": 87177,
+      "forks": 9085,
       "language": "Python",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-04T12:20:01Z",
+      "pushedAt": "2026-11-10T12:30:15Z",
       "archived": false,
       "release": {
         "tag": "v0.9.5",
@@ -2090,23 +2135,23 @@
       }
     },
     "upstash/context7": {
-      "stars": 64409,
-      "forks": 3228,
+      "stars": 64451,
+      "forks": 3231,
       "language": "TypeScript",
       "license": "MIT",
-      "pushedAt": "2026-11-09T12:08:46Z",
+      "pushedAt": "2026-11-10T12:19:37Z",
       "archived": false,
       "release": {
-        "tag": "@upstash/context7-mcp@4.5.1",
-        "date": "2026-11-06T12:16:19Z"
+        "tag": "@upstash/context7-mcp@4.6.0",
+        "date": "2026-11-09T13:13:22Z"
       }
     },
     "vercel-labs/agent-desktop": {
-      "stars": 20043,
-      "forks": 1486,
+      "stars": 21040,
+      "forks": 1561,
       "language": "Rust",
       "license": "Apache-2.0",
-      "pushedAt": "2026-11-08T20:44:28Z",
+      "pushedAt": "2026-11-10T10:47:38Z",
       "archived": false,
       "release": {
         "tag": "v1.2.0",
@@ -2114,8 +2159,8 @@
       }
     },
     "vercel-labs/agent-skills": {
-      "stars": 33752,
-      "forks": 2950,
+      "stars": 33821,
+      "forks": 2957,
       "language": "JavaScript",
       "license": null,
       "pushedAt": "2026-10-28T19:17:28Z",
@@ -2126,35 +2171,35 @@
       }
     },
     "vercel/ai": {
-      "stars": 27829,
-      "forks": 5561,
+      "stars": 27856,
+      "forks": 5568,
       "language": "TypeScript",
       "license": null,
-      "pushedAt": "2026-11-09T02:57:28Z",
+      "pushedAt": "2026-11-10T12:26:33Z",
       "archived": false,
       "release": {
-        "tag": "@ai-sdk/vue@3.0.326",
-        "date": "2026-11-09T02:57:49Z"
+        "tag": "@ai-sdk/vue@2.0.287",
+        "date": "2026-11-09T19:47:32Z"
       }
     },
     "vercel/next.js": {
-      "stars": 143433,
-      "forks": 33291,
+      "stars": 143447,
+      "forks": 32794,
       "language": "JavaScript",
       "license": "MIT",
-      "pushedAt": "2026-11-09T12:55:16Z",
+      "pushedAt": "2026-11-10T12:20:15Z",
       "archived": false,
       "release": {
-        "tag": "v16.4.5",
-        "date": "2026-11-03T18:38:39Z"
+        "tag": "v16.4.6",
+        "date": "2026-11-09T20:27:17Z"
       }
     },
     "vitejs/vite": {
-      "stars": 83883,
-      "forks": 9547,
+      "stars": 83910,
+      "forks": 9617,
       "language": "TypeScript",
       "license": "MIT",
-      "pushedAt": "2026-11-09T11:39:13Z",
+      "pushedAt": "2026-11-10T11:23:27Z",
       "archived": false,
       "release": {
         "tag": "v8.3.7",
@@ -2163,10 +2208,10 @@
     },
     "vitest-dev/vitest": {
       "stars": 17354,
-      "forks": 2146,
+      "forks": 2147,
       "language": "TypeScript",
       "license": "MIT",
-      "pushedAt": "2026-11-09T11:01:44Z",
+      "pushedAt": "2026-11-10T12:06:18Z",
       "archived": false,
       "release": {
         "tag": "v5.1.0",
@@ -2174,8 +2219,8 @@
       }
     },
     "VoltAgent/awesome-agent-skills": {
-      "stars": 36991,
-      "forks": 4098,
+      "stars": 37032,
+      "forks": 4103,
       "language": null,
       "license": "MIT",
       "pushedAt": "2026-11-05T10:43:36Z",
@@ -2183,8 +2228,8 @@
       "release": null
     },
     "VoltAgent/awesome-claude-code-subagents": {
-      "stars": 26439,
-      "forks": 3023,
+      "stars": 26460,
+      "forks": 3028,
       "language": "Shell",
       "license": "MIT",
       "pushedAt": "2026-11-02T06:50:02Z",
@@ -2192,8 +2237,8 @@
       "release": null
     },
     "VoltAgent/official-mcp-servers": {
-      "stars": 414,
-      "forks": 114,
+      "stars": 416,
+      "forks": 116,
       "language": null,
       "license": "MIT",
       "pushedAt": "2026-11-05T12:31:18Z",
@@ -2201,32 +2246,41 @@
       "release": null
     },
     "warpdotdev/Warp": {
-      "stars": 65935,
-      "forks": 5773,
+      "stars": 65959,
+      "forks": 5771,
       "language": "Rust",
       "license": "AGPL-3.0",
-      "pushedAt": "2026-11-08T20:23:49Z",
+      "pushedAt": "2026-11-10T06:33:49Z",
       "archived": false,
       "release": {
         "tag": "v0.2026.06.03.09.49.stable_00",
         "date": "2026-06-03T09:49:25Z"
       }
     },
+    "win4r/video-director": {
+      "stars": 430,
+      "forks": 38,
+      "language": "Python",
+      "license": "MIT",
+      "pushedAt": "2026-11-07T13:08:51Z",
+      "archived": false,
+      "release": null
+    },
     "windmill-labs/windmill": {
-      "stars": 18473,
-      "forks": 1145,
+      "stars": 18485,
+      "forks": 1146,
       "language": "Rust",
       "license": null,
-      "pushedAt": "2026-11-09T12:31:05Z",
+      "pushedAt": "2026-11-10T11:50:32Z",
       "archived": false,
       "release": {
-        "tag": "v1.864.1",
-        "date": "2026-11-06T17:27:35Z"
+        "tag": "v1.866.0",
+        "date": "2026-11-10T09:54:19Z"
       }
     },
     "wshobson/agents": {
-      "stars": 42347,
-      "forks": 4474,
+      "stars": 42383,
+      "forks": 4476,
       "language": "Python",
       "license": "MIT",
       "pushedAt": "2026-11-09T01:08:33Z",
@@ -2234,8 +2288,8 @@
       "release": null
     },
     "yamadashy/repomix": {
-      "stars": 29199,
-      "forks": 1632,
+      "stars": 29211,
+      "forks": 1630,
       "language": "TypeScript",
       "license": "MIT",
       "pushedAt": "2026-11-08T08:56:26Z",
@@ -2246,8 +2300,8 @@
       }
     },
     "YOLOW92/pagesift": {
-      "stars": 256,
-      "forks": 32,
+      "stars": 261,
+      "forks": 33,
       "language": "Rust",
       "license": "AGPL-3.0",
       "pushedAt": "2026-11-09T10:10:05Z",
