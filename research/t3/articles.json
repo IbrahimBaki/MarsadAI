@@ -1,6 +1,6 @@
 {
  "track": "t3",
- "checked": "2026-11-09",
+ "checked": "2026-11-10",
  "articles": [
   {
    "id": "fullscript-bench",
@@ -1356,6 +1356,76 @@
    "summary": "A small, transparent example of separating model from harness on a 150-question domain benchmark (not coding): eight models in one harness, then many harnesses with one pinned model, scored by an LLM judge. It publishes a noise floor (the smallest gap that counts, 0.27-0.45 points on a 10-point scale) before declaring winners.",
    "ar": {
     "summary": "مثال صغير وواضح على فصل النموذج عن الـ harness في مقياس متخصص من 150 سؤالًا (ليس برمجة): ثمانية نماذج في harness واحد، ثم أدوات harness كثيرة مع نموذج واحد مثبت، بتقييم نموذج لغوي حَكَم. وينشر حدّ الضوضاء (أصغر فرق يُعتد به، من 0.27 إلى 0.45 نقطة على مقياس من 10) قبل إعلان أي فائز."
+   }
+  },
+  {
+   "id": "harnessopt-bench",
+   "title": "HarnessOpt-Bench: Evaluating LLMs at Harness Optimization",
+   "source": "Scale Labs (arXiv 2608.06301)",
+   "date": "2026-08",
+   "url": "https://arxiv.org/abs/2608.06301",
+   "type": "paper",
+   "tags": [
+    "harness-optimization",
+    "benchmark"
+   ],
+   "priority": "read",
+   "summary": "A benchmark from Scale Labs that measures how well a language model can improve a harness (the setup around the model) on its own. Coverage of the paper reports that the choice of optimizer model mattered more than the starting harness.",
+   "why": "Relevant to the 'optimize' block: before we automate harness tuning, this shows which models are good at it and how to measure the gain.",
+   "ar": {
+    "summary": "مقياس من Scale Labs يقيس قدرة النموذج اللغوي على تحسين الـ harness (الإطار المحيط بالنموذج) بنفسه. وتذكر التغطية الصحفية للورقة أن اختيار النموذج المُحسِّن كان أهم من الـ harness الذي بدأنا به.",
+    "why": "مفيد لكتلة «التحسين»: قبل أتمتة ضبط الـ harness، يبيّن أي النماذج تجيد ذلك وكيف نقيس المكسب."
+   }
+  },
+  {
+   "id": "surge-benchmarking-harnesses",
+   "title": "We Benchmarked Coding Agent Harnesses. Thinking Harder Beat All of Them.",
+   "source": "Surge AI",
+   "url": "https://surgehq.ai/blog/benchmarking-coding-agent-harnesses",
+   "type": "case-study",
+   "tags": [
+    "harness-vs-model",
+    "reasoning-effort"
+   ],
+   "priority": "read",
+   "summary": "A data-labelling company's comparison of coding-agent harnesses. Its headline finding, as stated in the title: giving the model more thinking (reasoning effort) improved results more than switching harness.",
+   "why": "Reminds us to fix reasoning effort as a controlled setting in every harness run, otherwise harness rankings can be misleading.",
+   "ar": {
+    "summary": "مقارنة أجرتها شركة متخصصة في تجهيز بيانات التدريب بين أدوات harness لوكلاء البرمجة. والنتيجة الرئيسية كما يذكرها العنوان: منح النموذج تفكيرًا أعمق (جهد استدلال أعلى) حسّن النتائج أكثر من تغيير الـ harness.",
+    "why": "يذكّرنا بتثبيت جهد الاستدلال كإعداد مضبوط في كل تشغيل، وإلا قد تكون ترتيبات أدوات الـ harness مضللة."
+   }
+  },
+  {
+   "id": "perplexity-space-news",
+   "title": "Perplexity Open-Sources SPACE, a Firecracker MicroVM Sandbox for AI Agents",
+   "source": "MarkTechPost",
+   "date": "2026-10-16",
+   "url": "https://www.marktechpost.com/2026/10/16/perplexity-open-sources-space-firecracker-microvm-sandbox-ai-agents/",
+   "type": "reading",
+   "tags": [
+    "sandbox",
+    "microvm"
+   ],
+   "priority": "reference",
+   "summary": "News on Perplexity releasing SPACE, the Firecracker microVM sandbox that runs every task in Perplexity Computer, as open source.",
+   "ar": {
+    "summary": "خبر عن إتاحة Perplexity منصة SPACE مفتوحة المصدر، وهي بيئة عزل بآلات Firecracker المصغرة تشغّل كل المهام في Perplexity Computer."
+   }
+  },
+  {
+   "id": "baseten-acquires-blaxel",
+   "title": "Blaxel is joining Baseten to build the future of agentic infrastructure",
+   "source": "Baseten",
+   "url": "https://www.baseten.co/blog/blaxel-is-joining-baseten-to-build-the-future-of-agentic-cloud/",
+   "type": "reading",
+   "tags": [
+    "sandbox",
+    "acquisition"
+   ],
+   "priority": "reference",
+   "summary": "Baseten, a model-inference company, is acquiring the agent-sandbox provider Blaxel. Another sign that sandbox vendors are being bought by larger platforms; check vendor stability before choosing a managed sandbox.",
+   "ar": {
+    "summary": "تستحوذ Baseten، وهي شركة لتشغيل النماذج، على مزوّد بيئات عزل الوكلاء Blaxel. علامة أخرى على أن مزوّدي بيئات العزل تشتريهم منصات أكبر؛ لذا نتحقق من استقرار المزوّد قبل اختيار خدمة عزل مُدارة."
    }
   }
  ]

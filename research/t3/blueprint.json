@@ -1,6 +1,6 @@
 {
  "track": "t3",
- "checked": "2026-11-09",
+ "checked": "2026-11-10",
  "goal": {
   "en": "Build one place where Azm can run any harness (squad-kit, azm-harness, Claude Code, others) on the same real Azm tasks, in isolation, and get a clear answer: which harness, with which model, gives the best quality for the cost, and does it follow our standards?",
   "ar": "بناء مكان واحد تشغّل فيه عزم أي harness (مثل squad-kit وazm-harness وClaude Code وغيرها) على المهام الحقيقية نفسها من مشاريع عزم، في بيئة معزولة، لتحصل على إجابة واضحة: أي harness، مع أي نموذج، يعطي أفضل جودة مقابل التكلفة، وهل يلتزم بمعاييرنا؟"
@@ -932,7 +932,9 @@
     "openkruise-agents",
     "agent-substrate",
     "render-sandboxes",
-    "devvm"
+    "devvm",
+    "perplexity-space",
+    "google-agent-compute-engine"
    ],
    "modes": [
     {
@@ -1003,7 +1005,8 @@
       "opensandbox",
       "cubesandbox",
       "openshell",
-      "agent-substrate"
+      "agent-substrate",
+      "perplexity-space"
      ],
      "pros": [
       {
@@ -1057,7 +1060,8 @@
       "daytona",
       "blaxel",
       "tensorlake",
-      "cloudflare-sandbox"
+      "cloudflare-sandbox",
+      "google-agent-compute-engine"
      ],
      "pros": [
       {

@@ -1,6 +1,6 @@
 {
  "category": "sandbox",
- "checked": "2026-11-09",
+ "checked": "2026-11-10",
  "tools": [
   {
    "id": "e2b",
@@ -1335,12 +1335,12 @@
    "id": "blaxel",
    "name": "Blaxel",
    "kind": "commercial",
-   "vendor": "Blaxel",
+   "vendor": "Blaxel (being acquired by Baseten)",
    "repo": null,
    "url": "https://blaxel.ai",
    "license": "Proprietary",
    "pricing": "Usage-based",
-   "summary": "Persistent microVM sandboxes that resume in ~25 ms; a Harbor backend.",
+   "summary": "Persistent microVM sandboxes that resume in ~25 ms; a Harbor backend. Baseten (a model-inference company) has announced it is acquiring Blaxel to put agent sandboxes next to its inference platform.",
    "how": "SDK; sandboxes hibernate and resume.",
    "features": [
     "Fast resume",
@@ -1350,7 +1350,8 @@
     "Long-lived dev boxes"
    ],
    "weaknesses": [
-    "Managed only"
+    "Managed only",
+    "Ownership change (acquired by Baseten): check the roadmap and pricing under the new owner before committing"
    ],
    "gaps": [
     "Self-hosting"
@@ -1372,16 +1373,22 @@
     [
      "Website",
      "https://blaxel.ai"
+    ],
+    [
+     "Baseten announcement",
+     "https://www.baseten.co/blog/blaxel-is-joining-baseten-to-build-the-future-of-agentic-cloud/"
     ]
    ],
    "sources": [
-    "https://upstash.com/blog/ai-agent-sandbox-providers-compared-2026"
+    "https://upstash.com/blog/ai-agent-sandbox-providers-compared-2026",
+    "https://www.baseten.co/blog/blaxel-is-joining-baseten-to-build-the-future-of-agentic-cloud/",
+    "https://thenextweb.com/news/baseten-acquires-blaxel-ai-agent-sandboxes"
    ],
    "tier": "brief",
    "status": "active",
    "category": "sandbox",
    "ar": {
-    "summary": "بيئات عزل دائمة بآلات افتراضية مصغرة تُستأنف خلال نحو 25 جزءًا من الثانية؛ وخلفية لـ Harbor.",
+    "summary": "بيئات عزل دائمة بآلات افتراضية مصغرة تُستأنف خلال نحو 25 جزءًا من الثانية؛ وخلفية لـ Harbor. وقد أعلنت Baseten (شركة لتشغيل النماذج) استحواذها على Blaxel لتضع بيئات عزل الوكلاء بجانب منصة تشغيل النماذج لديها.",
     "how": "حزمة برمجية؛ وتسبت البيئات ثم تُستأنف.",
     "features": [
      "استئناف سريع",
@@ -1391,7 +1398,8 @@
      "أجهزة تطوير طويلة العمر"
     ],
     "weaknesses": [
-     "مُدار فقط"
+     "مُدار فقط",
+     "تغيّر الملكية (استحوذت عليها Baseten): يجب التحقق من خطة المنتج وأسعاره لدى المالك الجديد قبل الالتزام"
     ],
     "gaps": [
      "الاستضافة الذاتية"
@@ -1916,6 +1924,158 @@
     ],
     "role": "مرشحة للطريقة الأولى (على جهاز كل مطور) بجانب microsandbox، للعمل اليومي الآمن مع الوكلاء؛ وليست أساسًا لتشغيل المقاييس.",
     "pricing": "مجانية"
+   }
+  },
+  {
+   "id": "perplexity-space",
+   "name": "SPACE (Perplexity)",
+   "category": "sandbox",
+   "kind": "open-source",
+   "vendor": "Perplexity",
+   "repo": null,
+   "url": "https://www.marktechpost.com/2026/10/16/perplexity-open-sources-space-firecracker-microvm-sandbox-ai-agents/",
+   "license": "Apache-2.0 (as reported; confirm in the repo)",
+   "pricing": "Free (self-hosted)",
+   "status": "active",
+   "version": "Open-sourced Oct 2026",
+   "tier": "brief",
+   "summary": "SPACE (Sandboxed Platform for Agentic Code Execution) is the sandbox platform behind Perplexity Computer, open-sourced in October 2026. Each agent task gets its own Firecracker microVM.",
+   "how": "A self-hosted platform that starts one Firecracker microVM per agent task, so each task runs isolated from the host and from other tasks.",
+   "features": [
+    "One Firecracker microVM per agent task",
+    "Runs every task in Perplexity Computer (production use)"
+   ],
+   "strengths": [
+    "Proven at production scale inside a large consumer AI product",
+    "Self-hostable, so private code can stay on our servers"
+   ],
+   "weaknesses": [
+    "New as open source; community, docs and Harbor support still unknown"
+   ],
+   "gaps": [
+    "No Harbor integration or scoring; we would have to write the adapter and check the operating effort"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "A candidate for the 'on Azm servers' sandbox mode next to OpenSandbox and Agent Substrate; read the repo and try it before any decision."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 2,
+    "openness": 4,
+    "agnostic": 4,
+    "config": 3,
+    "measure": 1,
+    "safety": 4
+   },
+   "links": [
+    [
+     "MarkTechPost",
+     "https://www.marktechpost.com/2026/10/16/perplexity-open-sources-space-firecracker-microvm-sandbox-ai-agents/"
+    ],
+    [
+     "Unite.AI",
+     "https://www.unite.ai/perplexity-open-sources-space-its-in-house-agent-sandbox-platform/"
+    ]
+   ],
+   "sources": [
+    "https://www.marktechpost.com/2026/10/16/perplexity-open-sources-space-firecracker-microvm-sandbox-ai-agents/",
+    "https://www.unite.ai/perplexity-open-sources-space-its-in-house-agent-sandbox-platform/"
+   ],
+   "ar": {
+    "summary": "SPACE (منصة معزولة لتنفيذ شيفرة الوكلاء) هي منصة العزل التي يعمل عليها Perplexity Computer، وقد أُتيحت مفتوحة المصدر في أكتوبر 2026. تحصل كل مهمة وكيل على آلة افتراضية مصغرة خاصة بها من Firecracker.",
+    "how": "منصة نستضيفها بأنفسنا تشغّل آلة افتراضية مصغرة من Firecracker لكل مهمة وكيل، فتعمل كل مهمة معزولة عن الخادم وعن المهام الأخرى.",
+    "features": [
+     "آلة افتراضية مصغرة من Firecracker لكل مهمة وكيل",
+     "تشغّل كل المهام في Perplexity Computer (استخدام فعلي في الإنتاج)"
+    ],
+    "strengths": [
+     "مُجرَّبة على نطاق إنتاجي داخل منتج ذكاء اصطناعي واسع الانتشار",
+     "يمكن استضافتها ذاتيًا، فتبقى الشيفرة الخاصة على خوادمنا"
+    ],
+    "weaknesses": [
+     "جديدة كمشروع مفتوح المصدر؛ ولا يزال مجتمعها ووثائقها ودعمها لـ Harbor غير معروفة"
+    ],
+    "gaps": [
+     "لا تكامل مع Harbor ولا تقييم؛ سنحتاج إلى كتابة الموصّل وتقدير جهد التشغيل"
+    ],
+    "role": "مرشّح لنمط «على خوادم عزم» إلى جانب OpenSandbox وAgent Substrate؛ نقرأ المستودع ونجرّبه قبل أي قرار.",
+    "pricing": "مجانية (استضافة ذاتية)"
+   }
+  },
+  {
+   "id": "google-agent-compute-engine",
+   "name": "Agent Compute Engine (Google Cloud)",
+   "category": "sandbox",
+   "kind": "commercial",
+   "vendor": "Google Cloud",
+   "repo": null,
+   "url": "https://www.marktechpost.com/2026/10/22/google-cloud-agent-compute-engine-microvm-ai-agents/",
+   "license": "Proprietary (managed service)",
+   "pricing": "Not published yet (preview, Nov 2026)",
+   "status": "beta",
+   "version": "Preview (announced 22 Oct 2026)",
+   "tier": "brief",
+   "summary": "A Google Cloud service, announced in preview on 22 October 2026, that gives each AI agent its own hardware-isolated microVM. It opens to customers the microVMs that run Google's own Gemini agents.",
+   "how": "Managed by Google Cloud: each agent runs in its own microVM; Google operates the hosts.",
+   "features": [
+    "One hardware-isolated microVM per agent",
+    "Managed by Google Cloud"
+   ],
+   "strengths": [
+    "Strong isolation from a major cloud, without running our own hosts"
+   ],
+   "weaknesses": [
+    "Preview only; pricing, limits and SDK not yet clear"
+   ],
+   "gaps": [
+    "No Harbor integration found; code leaves our servers"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "Managed-service option for teams already on Google Cloud; Agent Substrate is Google's self-hosted path."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 2,
+    "openness": 1,
+    "agnostic": 4,
+    "config": 3,
+    "measure": 1,
+    "safety": 4
+   },
+   "links": [
+    [
+     "MarkTechPost",
+     "https://www.marktechpost.com/2026/10/22/google-cloud-agent-compute-engine-microvm-ai-agents/"
+    ],
+    [
+     "Techzine",
+     "https://www.techzine.eu/news/security/145226/google-agent-compute-engine-provides-each-ai-agent-with-its-own-microvm/"
+    ]
+   ],
+   "sources": [
+    "https://www.marktechpost.com/2026/10/22/google-cloud-agent-compute-engine-microvm-ai-agents/",
+    "https://www.techzine.eu/news/security/145226/google-agent-compute-engine-provides-each-ai-agent-with-its-own-microvm/"
+   ],
+   "ar": {
+    "summary": "خدمة من Google Cloud أُعلنت كنسخة تجريبية في 22 أكتوبر 2026، تمنح كل وكيل ذكاء اصطناعي آلة افتراضية مصغرة خاصة به معزولة على مستوى العتاد. وهي تفتح للعملاء الآلات المصغرة نفسها التي تشغّل وكلاء Gemini لدى Google.",
+    "how": "تديرها Google Cloud: يعمل كل وكيل في آلته الافتراضية المصغرة، وتتولى Google تشغيل الخوادم.",
+    "features": [
+     "آلة افتراضية مصغرة معزولة على مستوى العتاد لكل وكيل",
+     "تديرها Google Cloud"
+    ],
+    "strengths": [
+     "عزل قوي من مزوّد سحابي كبير دون أن نشغّل خوادمنا"
+    ],
+    "weaknesses": [
+     "نسخة تجريبية فقط؛ الأسعار والحدود وحزمة التطوير غير واضحة بعد"
+    ],
+    "gaps": [
+     "لم نجد تكاملًا مع Harbor؛ والشيفرة تغادر خوادمنا"
+    ],
+    "role": "خيار خدمة مُدارة للفرق التي تعمل أصلًا على Google Cloud؛ أما Agent Substrate فهو مسار Google للاستضافة الذاتية.",
+    "pricing": "لم تُنشر بعد (نسخة تجريبية، نوفمبر 2026)"
    }
   }
  ]

@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09",
+ "updated": "2026-11-10",
  "sources": [
   {
    "name": "Picrew/awesome-agent-harness",
@@ -7981,6 +7981,25 @@
    "ar": {
     "summary": "لغة قواعد مفتوحة من Cisco لاكتشاف سلوك الوكلاء الخطِر عبر خطوات متعددة، مع إضافة لـ Claude Code وCodex.",
     "group": "الحمايات والأمان والحوكمة"
+   }
+  },
+  {
+   "name": "whatsmyagentdoing",
+   "repo": "Charonyuu/whatsmyagentdoing",
+   "url": "https://github.com/Charonyuu/whatsmyagentdoing",
+   "category": "ops",
+   "group": "Observability & Reliability Operations",
+   "stars": null,
+   "tags": [
+    "found-on-list"
+   ],
+   "summary": "Local activity dashboard for Claude Code, Codex and other coding agents.",
+   "lists": [
+    "jqueryscript/awesome-claude-code"
+   ],
+   "ar": {
+    "summary": "لوحة محلية لمتابعة نشاط Claude Code وCodex وغيرهما من وكلاء البرمجة.",
+    "group": "المراقبة وعمليات الموثوقية"
    }
   }
  ],

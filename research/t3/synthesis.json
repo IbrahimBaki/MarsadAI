@@ -1,6 +1,6 @@
 {
  "track": "t3",
- "checked": "2026-11-09",
+ "checked": "2026-11-10",
  "headline": "Don't build a harness benchmark engine: Harbor (plus Inspect for non-code tasks) already runs any harness on containerized tasks at scale. What nobody has built is the Azm layer on top: tasks mined from Azm's own repos, adapters for squad-kit and azm-harness, standards-compliance scoring, per-team YAML suites and a report people can act on.",
  "bottomLine": [
   "Prior art exists and is recent: AWS published a harness-vs-model cost/quality benchmark on your own code (MIT-0, 21 Oct 2026); Fullscript ran 36 tasks mined from its own commits (Aug 2026); GitHub published its harness evaluation protocol (Jun 2026). Azm's sandbox should combine their methods, not reinvent them.",
