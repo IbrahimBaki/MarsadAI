@@ -1,0 +1,785 @@
+{
+  "date": "2026-11-12",
+  "headline": "أطلقت Anthropic نموذج Claude Fable 5.2 بسرعة أعلى تصل إلى 30% وسعر 8/40 دولارًا لكل مليون رمز، وصار النموذج الافتراضي لـ Fable في Claude Code 2.1.321 الذي يصلح أيضًا ثغرات في الأذونات وOAuth؛ وأصدر Node.js تحديثات أمنية لسبع ثغرات عالية الخطورة، فحدّث إلى 26.13.1 أو 24.22.3 أو 22.23.5.",
+  "headline_en": "Anthropic released Claude Fable 5.2, up to 30% faster at $8/$40 per million tokens, and it is now the default Fable model in Claude Code 2.1.321, which also fixes permission and OAuth issues; Node.js shipped security releases for seven high-severity flaws, so upgrade to 26.13.1, 24.22.3 or 22.23.5.",
+  "items": [
+    {
+      "id": "claude-fable-mythos-5-2",
+      "section": "claude",
+      "kind": "model",
+      "title": "Claude Fable 5.2 وMythos 5.2: مخرجات أسرع بنسبة تصل إلى 30% وتقدّم كبير في مقاييس البرمجة",
+      "summary": "أعلنت Anthropic في 9 نوفمبر عن Claude Fable 5.2 وClaude Mythos 5.2، وهما النموذج نفسه بضوابط مختلفة. Fable 5.2 متاح للجميع عبر الواجهة البرمجية (claude-fable-5-2) وAmazon Bedrock وVertex AI وAzure، بسعر 8 دولارات للمدخلات و40 دولارًا للمخرجات لكل مليون رمز، أما Mythos فمقصور على المؤسسات المعتمدة.",
+      "why": "لمن يحتاج نموذجًا لأصعب المهام البرمجية الطويلة: مثلًا إعادة هيكلة كبيرة في مستودع ضخم. وتقول Anthropic إن Fable 5.2 بمستوى جهد High يقارب Opus 5.5 بمستوى Max في FrontierCode 2.0 بنحو نصف التكلفة لكل مهمة.",
+      "about": "Fable 5.2 وMythos 5.2 هما النموذج الأساسي نفسه. يحمل Fable ضوابط قوية في مجالي الأمن السيبراني والأحياء، لذلك هو متاح لجميع المستخدمين، بينما يُتاح Mythos 5.2 عبر برنامجي التحقق للأمن السيبراني وعلوم الحياة فقط. وما زالت Anthropic توصي بـ Claude Opus 5.5 للعمل اليومي في البرمجة والمعرفة، وبـ Fable أو Mythos للمهام الأكثر تطلبًا.\n\nمقارنة بالإصدار 5.1: المخرجات أسرع بنسبة تصل إلى 30%، ويستهلك Fable 5.2 رموزًا أقل في مستوى الجهد Medium، وهو المستوى الافتراضي في تطبيقات Claude وClaude Code. وتقل حالات الحجب بسبب الضوابط بنحو 55% عن الإصدار 5.1. وفي الأرقام المنشورة: FrontierCode 2.0 بنسبة 49.1% مقابل 32.4% لـ Fable 5.1 و45.5% لـ Opus 5.5، وFrontierSWE v2 بنسبة 69.9% مقابل 62.3% لـ Opus 5.5.\n\nالسعر 8 دولارات للمدخلات و40 دولارًا للمخرجات لكل مليون رمز، وهناك وضع سريع اختياري يولّد الرموز أسرع بما يصل إلى 2.5 مرة بسعر 16 و80 دولارًا. ويذكر سجل تغييرات Claude Code أن النموذج يدعم سياقًا بطول مليون رمز، وأن قراءة الذاكرة المؤقتة بسعر 0.20 دولار لكل مليون رمز.\n\nتنبيه: الاستفسارات السيبرانية المحجوبة في Fable 5.2 تُحوَّل إلى Opus 4.8، والاستفسارات الحيوية المحجوبة إلى Opus 5. وجميع أرقام المقاييس منشورة من Anthropic نفسها.",
+      "features": [
+        "معرّف الواجهة البرمجية claude-fable-5-2، متاح على Bedrock وVertex AI وAzure",
+        "مخرجات أسرع بنسبة تصل إلى 30% ورموز أقل في مستوى الجهد Medium",
+        "حالات حجب أقل بنحو 55% مقارنة بالإصدار 5.1",
+        "وضع سريع اختياري بسرعة تصل إلى 2.5 مرة بسعر 16/80 دولارًا",
+        "Mythos 5.2 للمؤسسات المعتمدة في الأمن السيبراني وعلوم الحياة فقط"
+      ],
+      "usage": [
+        "claude --model claude-fable-5-2"
+      ],
+      "pricing": {
+        "model": "paid",
+        "note": "8 دولارات للمدخلات و40 دولارًا للمخرجات لكل مليون رمز، والوضع السريع 16/80 دولارًا"
+      },
+      "alternatives": [
+        "ess-claude-code-docs"
+      ],
+      "links": [
+        {
+          "label": "إعلان Anthropic",
+          "url": "https://www.anthropic.com/news/claude-fable-and-mythos-5-2"
+        }
+      ],
+      "url": "https://www.anthropic.com/news/claude-fable-and-mythos-5-2",
+      "source": "anthropic.com",
+      "importance": 3,
+      "tags": [
+        "claude",
+        "model",
+        "fable",
+        "anthropic",
+        "api"
+      ],
+      "en": {
+        "title": "Claude Fable 5.2 and Mythos 5.2: up to 30% faster output and big gains on coding benchmarks",
+        "summary": "On 9 November Anthropic announced Claude Fable 5.2 and Claude Mythos 5.2, the same model with different safeguards. Fable 5.2 is available to everyone through the API (claude-fable-5-2), Amazon Bedrock, Vertex AI and Azure at $8 input and $40 output per million tokens, while Mythos is limited to vetted organizations.",
+        "why": "For anyone who needs a model for the hardest long-running coding work, such as a large refactor in a big repository. Anthropic says Fable 5.2 at High effort roughly matches Opus 5.5 at Max effort on FrontierCode 2.0 at about half the cost per task.",
+        "about": "Fable 5.2 and Mythos 5.2 are the same underlying model. Fable carries strong cybersecurity and biology safeguards, so it is available to all users, while Mythos 5.2 is offered only through the Cyber and Life Sciences Verification Programs. Anthropic still recommends Claude Opus 5.5 as the daily driver for coding and knowledge work, with Fable or Mythos for the most demanding tasks.\n\nCompared with 5.1: output is up to 30% faster, Fable 5.2 uses fewer tokens at Medium effort (the default in the Claude apps and Claude Code), and safeguards block about 55% less often. Published numbers: FrontierCode 2.0 at 49.1% versus 32.4% for Fable 5.1 and 45.5% for Opus 5.5, and FrontierSWE v2 at 69.9% versus 62.3% for Opus 5.5.\n\nPricing is $8 input and $40 output per million tokens, with an optional fast mode that generates tokens up to 2.5x faster at $16/$80. The Claude Code changelog lists a 1M-token context window and cache reads at $0.20 per million tokens.\n\nCaveat: blocked cyber queries in Fable 5.2 are routed to Opus 4.8, and blocked biology queries to Opus 5. All benchmark figures are Anthropic's own.",
+        "features": [
+          "API model ID claude-fable-5-2, available on Bedrock, Vertex AI and Azure",
+          "Up to 30% faster output and fewer tokens at Medium effort",
+          "About 55% fewer safeguard blocks than 5.1",
+          "Optional fast mode, up to 2.5x faster, at $16/$80",
+          "Mythos 5.2 only for vetted cybersecurity and life-sciences organizations"
+        ],
+        "usage": [
+          "claude --model claude-fable-5-2"
+        ],
+        "links": [
+          "Anthropic announcement"
+        ],
+        "pricingNote": "$8 input and $40 output per million tokens; fast mode $16/$80"
+      }
+    },
+    {
+      "id": "claude-code-2-1-321",
+      "section": "claude",
+      "kind": "release",
+      "title": "Claude Code 2.1.321 و2.1.322: إصلاحات أمنية في الأذونات وOAuth، وFable 5.2 نموذجًا افتراضيًا",
+      "summary": "يجعل الإصدار 2.1.321 النموذج Claude Fable 5.2 هو الافتراضي لـ Fable، ويصلح إرسال طلبات OAuth الخاصة بخوادم MCP أسرارًا مثل رموز التحديث إلى مضيف آخر عند إعادة التوجيه، وحالات كانت تتجاوز فيها أوامر Bash طلب الإذن. وأضاف 2.1.322 الوضع السريع على Vertex في مناطق global وus وeu.",
+      "why": "لكل من يستخدم Claude Code مع خوادم MCP تتطلب تسجيل الدخول أو مع قواعد منع للملفات: التحديث يغلق ثغرات كانت تسمح بتسرّب رموز الدخول أو بالكتابة في ملفات محمية دون سؤال.",
+      "about": "صدر الإصدار 2.1.321 في 9 نوفمبر والإصدار 2.1.322 في 10 نوفمبر. أهم ما في 2.1.321 إضافة Claude Fable 5.2 (claude-fable-5-2) نموذجًا افتراضيًا لـ Fable بسياق مليون رمز، وخيار --settings <file> للأمر claude remote-control لتطبيق ملف إعدادات على كل جلسة يبدأها.\n\nالإصلاحات الأمنية: كانت طلبات OAuth لخوادم MCP ترسل أسرارًا مثل رموز التحديث إلى مضيف آخر عندما يعيد الخادم توجيهها. وكان أمر Bash للقراءة فقط يعمل أحيانًا خارج بيئة العزل دون طلب إذن، وكانت فحوص الأذونات تقيّم الكتابة من مجلد خاطئ أحيانًا. كما لم تكن قواعد المنع وتنبيهات الملفات المحمية تنطبق على الملف الذي يكتبه cp أو mv داخل مجلد.\n\nويتضمن الإصدار عشرات الإصلاحات الأخرى، منها: تشغيل أوامر Bash في المجلد الخطأ عند إرسال عدة أوامر معًا، واستهلاك ذاكرة مرتفع في الجلسات الطويلة، وفقدان ردود الوضع السريع عند تقييد الخدمة، إذ يحاول الآن السرعة العادية على النموذج نفسه أولًا.",
+      "features": [
+        "Claude Fable 5.2 نموذجًا افتراضيًا لـ Fable بسياق مليون رمز",
+        "إصلاح تسرّب أسرار OAuth لخوادم MCP عند إعادة التوجيه",
+        "إصلاح تجاوز طلب الإذن في بعض أوامر Bash ومع cp وmv",
+        "خيار --settings للأمر claude remote-control",
+        "الوضع السريع على Vertex في مناطق global وus وeu (2.1.322)"
+      ],
+      "install": [
+        {
+          "label": "التثبيت عبر npm",
+          "cmd": "npm install -g @anthropic-ai/claude-code"
+        },
+        {
+          "label": "التثبيت على macOS وLinux",
+          "cmd": "curl -fsSL https://claude.ai/install.sh | bash"
+        }
+      ],
+      "repo": "anthropics/claude-code",
+      "alternatives": [
+        "ess-claude-code-docs"
+      ],
+      "links": [
+        {
+          "label": "سجل التغييرات",
+          "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+        }
+      ],
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.321",
+      "source": "github.com",
+      "importance": 3,
+      "tags": [
+        "claude-code",
+        "release",
+        "security",
+        "mcp",
+        "oauth"
+      ],
+      "en": {
+        "title": "Claude Code 2.1.321 and 2.1.322: permission and OAuth security fixes, Fable 5.2 as default",
+        "summary": "Version 2.1.321 makes Claude Fable 5.2 the default Fable model and fixes MCP OAuth requests sending secrets such as refresh tokens to another host on redirect, plus cases where Bash commands skipped the permission prompt. Version 2.1.322 adds fast mode on Vertex in the global, us and eu regions.",
+        "why": "For anyone using Claude Code with MCP servers that need sign-in, or with file deny rules: the update closes holes that could leak sign-in tokens or write to protected files without asking.",
+        "about": "Version 2.1.321 shipped on 9 November and 2.1.322 on 10 November. The main additions in 2.1.321 are Claude Fable 5.2 (claude-fable-5-2) as the default Fable model with a 1M context window, and a --settings <file> flag for claude remote-control that applies a settings file to every session it starts.\n\nSecurity fixes: MCP OAuth requests sent secrets such as refresh tokens to another host when a server redirected them. A read-only Bash command could sometimes run outside the sandbox without a permission prompt, and permission checks sometimes judged a write from the wrong folder. Deny rules and protected-file prompts also did not apply to the file that cp or mv writes into a directory.\n\nThe release has dozens of other fixes, including Bash commands running in the wrong folder when several were sent at once, high memory use in long sessions, and fast mode losing replies when rate-limited; it now tries standard speed on the same model first.",
+        "features": [
+          "Claude Fable 5.2 as the default Fable model with 1M context",
+          "Fix for MCP OAuth secrets leaking on redirect",
+          "Fixes for skipped permission prompts in some Bash commands and with cp and mv",
+          "--settings flag for claude remote-control",
+          "Fast mode on Vertex in global, us and eu regions (2.1.322)"
+        ],
+        "install": [
+          "Install via npm",
+          "Install on macOS and Linux"
+        ],
+        "links": [
+          "Changelog"
+        ]
+      }
+    },
+    {
+      "id": "nodejs-security-release-nov-11-2026",
+      "section": "security",
+      "kind": "article",
+      "title": "تحديثات Node.js الأمنية في 11 نوفمبر: 16 ثغرة منها 7 عالية الخطورة في HTTP/2 وTLS",
+      "summary": "أصدر مشروع Node.js الإصدارات 26.13.1 و24.22.3 و22.23.5 لإصلاح 16 ثغرة، سبع منها عالية الخطورة، معظمها في HTTP/2 وTLS. أخطرها تسرّب ذاكرة الكومة (بما فيها مفاتيح TLS) إلى أجسام الاستجابات، وتجاوز مصادقة شهادة العميل عبر إعادة التفاوض في TLS 1.2، وتعطّل الخادم بطلبات غير مصادَق عليها.",
+      "why": "لكل من يشغّل خادم Node.js يقدّم HTTPS أو HTTP/2 مباشرة، مثل واجهة برمجية أو تطبيق Next.js دون خادم وسيط: التحديث يمنع تعطيل الخدمة عن بُعد وتسرّب بيانات حساسة. والإصدارات المنتهية الدعم لن تحصل على إصلاح.",
+      "about": "يقول المشروع إن جميع مستخدمي الخطوط المدعومة متأثرون. الإصدارات المصلَحة هي 26.13.1 (الإصدار LTS الحالي) و24.22.3 و22.23.5.\n\nمن الثغرات العالية: CVE-2026-123864 حيث تعيد كتابة TLS بطول صفر الدخول إلى محلل HTTP فتتسرّب ذاكرة الكومة، ومنها مفاتيح TLS، إلى أجسام الاستجابات (node:http غير المشفّر غير متأثر). وCVE-2026-123872 حيث تسمح إعادة التفاوض في TLS 1.2 للعميل بتغيير servername وتجاوز مصادقة شهادة العميل. وCVE-2026-123863 حيث يستطيع عميل غير مصادَق عليه إيقاف الخادم أثناء إنهاء جلسة HTTP/2، إلى جانب ثغرتي use-after-free في HTTP/2 وتسرّب ذاكرة وواصفات ملفات.\n\nومن الثغرات المتوسطة: إعادة استخدام https.Agent لجلسات TLS بين طلبات بسياسات CA مختلفة فيتخطى التحقق من الشهادة، وظهور بيانات اعتماد الوكيل (proxy) نصًا واضحًا في رسالة الخطأ ERR_PROXY_INVALID_CONFIG. وشمل الإصدار تحديث llhttp وundici وsqlite.\n\nتذكير: الإصدارات المنتهية الدعم تتأثر دائمًا عند صدور تحديث أمني ولا تحصل على إصلاح.",
+      "features": [
+        "16 ثغرة: 7 عالية و6 متوسطة و3 منخفضة",
+        "تسرّب ذاكرة الكومة ومفاتيح TLS إلى الاستجابات (CVE-2026-123864)",
+        "تجاوز مصادقة شهادة العميل عبر إعادة التفاوض في TLS 1.2",
+        "تعطيل الخادم عن بُعد عبر HTTP/2 دون مصادقة",
+        "الإصدارات المصلَحة: 26.13.1 و24.22.3 و22.23.5"
+      ],
+      "usage": [
+        "node --version"
+      ],
+      "repo": "nodejs/node",
+      "alternatives": [
+        "ess-trivy",
+        "ess-socket-dev"
+      ],
+      "links": [
+        {
+          "label": "إعلان Node.js الأمني",
+          "url": "https://nodejs.org/en/blog/vulnerability/november-2026-security-releases"
+        }
+      ],
+      "url": "https://nodejs.org/en/blog/vulnerability/november-2026-security-releases",
+      "source": "nodejs.org",
+      "importance": 3,
+      "tags": [
+        "nodejs",
+        "security",
+        "cve",
+        "http2",
+        "tls"
+      ],
+      "en": {
+        "title": "Node.js security releases on 11 November: 16 flaws, 7 of them high severity in HTTP/2 and TLS",
+        "summary": "The Node.js project released 26.13.1, 24.22.3 and 22.23.5 to fix 16 vulnerabilities, seven of them high severity, mostly in HTTP/2 and TLS. The worst leak heap memory (including TLS keys) into response bodies, let a client bypass client-certificate authentication through TLS 1.2 renegotiation, and let unauthenticated requests crash the server.",
+        "why": "For anyone running a Node.js server that serves HTTPS or HTTP/2 directly, such as an API or a Next.js app without a reverse proxy: the update prevents remote crashes and leaks of sensitive data. End-of-life versions get no fix.",
+        "about": "The project says all users of the active release lines are affected. The fixed versions are 26.13.1 (the current LTS), 24.22.3 and 22.23.5.\n\nHigh-severity issues include CVE-2026-123864, where a zero-length TLS write re-enters the HTTP parser and leaks heap memory, including TLS keys, into response bodies (cleartext node:http is not affected); CVE-2026-123872, where TLS 1.2 renegotiation lets a client change servername and bypass client-certificate authentication; and CVE-2026-123863, where an unauthenticated client can abort the server during HTTP/2 session teardown. There are also two HTTP/2 use-after-free bugs and a memory and file-descriptor leak.\n\nMedium-severity issues include https.Agent reusing TLS sessions across requests with different CA policies, which skips certificate validation, and proxy credentials appearing in plaintext in ERR_PROXY_INVALID_CONFIG error messages. The release also updates llhttp, undici and sqlite.\n\nReminder: end-of-life versions are always affected when a security release ships, and they receive no fix.",
+        "features": [
+          "16 flaws: 7 high, 6 medium and 3 low",
+          "Heap memory and TLS keys leaked into responses (CVE-2026-123864)",
+          "Client-certificate authentication bypass via TLS 1.2 renegotiation",
+          "Unauthenticated remote crash over HTTP/2",
+          "Fixed versions: 26.13.1, 24.22.3 and 22.23.5"
+        ],
+        "usage": [
+          "node --version"
+        ],
+        "links": [
+          "Node.js security announcement"
+        ]
+      }
+    },
+    {
+      "id": "laravel-ai-1-4-mcp-1-2",
+      "section": "laravel",
+      "kind": "release",
+      "title": "Laravel AI SDK 1.4 وLaravel MCP 1.2: تعافي الوكلاء من أخطاء الأدوات وتقوية أمان خوادم MCP",
+      "summary": "يتيح Laravel AI SDK 1.4 للوكلاء التعافي من فشل الأدوات، ويكشف استجابة HTTP الخام في التصنيف والتضمينات والنسخ الصوتي والصور وإعادة الترتيب، ويصلح تشغيل أدوات Anthropic. ويتحقق Laravel MCP 1.2 من ترويسة Origin على مسارات الويب، ويتوقف عن تتبع إعادة التوجيه، ويعيد أخطاء JSON-RPC بدل الخطأ 500.",
+      "why": "لمن يبني ميزات ذكاء اصطناعي أو خادم MCP داخل تطبيق Laravel: مثلًا وكيل يستدعي أدوات تفشل أحيانًا يستطيع الآن المتابعة بدل التوقف، وخادم MCP صار أصعب استغلالًا من مواقع خارجية.",
+      "about": "صدر Laravel AI SDK 1.4.0 في 9 نوفمبر. أبرز التغييرات: السماح للوكلاء بالتعافي من فشل الأدوات، وتمكين الوكلاء المزيفة في الاختبارات من استئناف الموافقة على الأدوات، وكشف استجابة HTTP الخام في استجابات التصنيف والتضمينات والنسخ الصوتي والصور وإعادة الترتيب. وفيه أيضًا الحفاظ على ترتيب المدخلات في التضمينات الدفعية من OpenAI، ومعالجة أخطاء نفاد الرصيد والحصة في OpenAI، وتشغيل أدوات Anthropic عندما تنتهي الرسالة بـ end_turn، وتحديث نماذج Mistral.\n\nوصدر Laravel MCP 1.2.0 في 10 نوفمبر مع تغييرات أمنية: التحقق من ترويسة Origin على مسارات MCP في الويب، وإيقاف تتبع إعادة التوجيه في عميل HTTP الخاص بالنقل، وإعادة أخطاء JSON-RPC بدل أخطاء 500 للطلبات المشوهة، مع إضافة تأكيدات JSON جديدة لاختبار المحتوى المنظم.",
+      "features": [
+        "AI SDK: تعافي الوكلاء من فشل الأدوات",
+        "AI SDK: استجابة HTTP الخام في التصنيف والتضمينات والصور والنسخ الصوتي",
+        "AI SDK: معالجة أخطاء نفاد الرصيد والحصة في OpenAI",
+        "MCP: التحقق من ترويسة Origin وإيقاف تتبع إعادة التوجيه",
+        "MCP: أخطاء JSON-RPC بدل 500 للطلبات المشوهة"
+      ],
+      "repo": "laravel/ai",
+      "alternatives": [
+        "ess-laravel-ai-sdk-docs",
+        "ess-laravel-mcp"
+      ],
+      "links": [
+        {
+          "label": "ملاحظات Laravel AI SDK 1.4.0",
+          "url": "https://github.com/laravel/ai/releases/tag/v1.4.0"
+        },
+        {
+          "label": "ملاحظات Laravel MCP 1.2.0",
+          "url": "https://github.com/laravel/mcp/releases/tag/v1.2.0"
+        },
+        {
+          "label": "توثيق Laravel AI SDK",
+          "url": "https://laravel.com/docs/ai-sdk"
+        }
+      ],
+      "url": "https://github.com/laravel/ai/releases/tag/v1.4.0",
+      "source": "github.com",
+      "importance": 2,
+      "tags": [
+        "laravel",
+        "php",
+        "ai-sdk",
+        "mcp",
+        "release"
+      ],
+      "en": {
+        "title": "Laravel AI SDK 1.4 and Laravel MCP 1.2: agents recover from tool failures, MCP servers hardened",
+        "summary": "Laravel AI SDK 1.4 lets agents recover from tool failures, exposes the raw HTTP response on classification, embeddings, transcription, image and reranking responses, and fixes Anthropic tool calls. Laravel MCP 1.2 validates the Origin header on web routes, stops following redirects, and returns JSON-RPC errors instead of 500s.",
+        "why": "For anyone building AI features or an MCP server inside a Laravel app: for example, an agent whose tools sometimes fail can now carry on instead of stopping, and the MCP server is harder to abuse from other sites.",
+        "about": "Laravel AI SDK 1.4.0 shipped on 9 November. Highlights: agents can recover from tool failures, agent fakes in tests can resume tool approvals, and the raw HTTP response is exposed on classification, embeddings, transcription, image and reranking responses. It also preserves input order for OpenAI batch embeddings, handles OpenAI insufficient-credit and quota errors, runs Anthropic tool calls when the message ends with end_turn, and updates the Mistral models.\n\nLaravel MCP 1.2.0 shipped on 10 November with security changes: it validates the Origin header on MCP web routes, stops following redirects in the HTTP client transport, and returns JSON-RPC errors instead of 500s for malformed requests, plus new JSON assertions for testing structured content.",
+        "features": [
+          "AI SDK: agents recover from tool failures",
+          "AI SDK: raw HTTP response on classification, embeddings, image and transcription",
+          "AI SDK: handling of OpenAI credit and quota errors",
+          "MCP: Origin header validation and no redirect following",
+          "MCP: JSON-RPC errors instead of 500s for malformed requests"
+        ],
+        "links": [
+          "Laravel AI SDK 1.4.0 notes",
+          "Laravel MCP 1.2.0 notes",
+          "Laravel AI SDK docs"
+        ]
+      }
+    },
+    {
+      "id": "meta-muse-ember",
+      "section": "llm",
+      "kind": "model",
+      "title": "Muse Ember من Meta: نموذج صغير ورخيص للأجزاء المتكررة من عمل الوكيل، بسياق مليون رمز",
+      "summary": "أطلقت Meta في 9 نوفمبر Muse Ember، أصغر نماذج Muse وأكثرها كفاءة، وهو نموذج استدلال مخصص للمهام المتكررة داخل تشغيل الوكيل: استدعاء الأدوات والمهام البرمجية الفرعية والتوجيه والاستخراج وتحليل المستندات الطويلة. سياقه مليون رمز، وسعره 0.10 دولار للمدخلات و0.50 دولار للمخرجات لكل مليون رمز.",
+      "why": "لمن يدير وكلاء بحجم كبير ويريد خفض التكلفة: مثلًا يبقى نموذج قوي للتخطيط، ويتولى Muse Ember استخراج الحقول من آلاف الفواتير أو توجيه الطلبات بسعر منخفض جدًا.",
+      "about": "Muse Ember نموذج استدلال خفيف من Meta يستهدف المهام المحددة والمتكررة في عمل الوكلاء. يقبل النصوص والصور والفيديو، ويدعم استدعاء الأدوات مع مستوى جهد استدلال قابل للضبط من minimal إلى max، وتذكر OpenRouter أنه يقبل أيضًا الصوت وملفات PDF.\n\nالنموذج متاح عبر Meta Model API، وعلى Vercel AI Gateway باسم meta/muse-ember، وعلى OpenRouter. ويمكن استخدامه عبر AI SDK أو واجهات Chat Completions وResponses وAnthropic Messages، أو من داخل وكلاء البرمجة مثل Claude Code وCodex بعد ربطها بـ AI Gateway.\n\nالسعر على OpenRouter 0.10 دولار للمدخلات و0.50 دولار للمخرجات لكل مليون رمز. ولم نتحقق من أرقام مقاييس الأداء من مصدر أساسي، لذلك جرّبه على مهامك قبل الاعتماد عليه.",
+      "features": [
+        "سياق بطول مليون رمز",
+        "0.10 دولار للمدخلات و0.50 دولار للمخرجات لكل مليون رمز",
+        "استدعاء الأدوات ومستوى جهد من minimal إلى max",
+        "مدخلات نصية وصور وفيديو",
+        "متاح عبر Meta Model API وVercel AI Gateway وOpenRouter"
+      ],
+      "install": [
+        {
+          "label": "ربط وكيل برمجة بـ Vercel AI Gateway ثم اختيار meta/muse-ember",
+          "cmd": "npx vercel ai-gateway setup"
+        }
+      ],
+      "pricing": {
+        "model": "paid",
+        "note": "0.10 دولار للمدخلات و0.50 دولار للمخرجات لكل مليون رمز"
+      },
+      "alternatives": [
+        "ess-openrouter",
+        "ess-vercel-ai-sdk"
+      ],
+      "links": [
+        {
+          "label": "إعلان Vercel AI Gateway",
+          "url": "https://vercel.com/changelog/muse-ember-now-available-on-ai-gateway"
+        },
+        {
+          "label": "صفحة النموذج على OpenRouter",
+          "url": "https://openrouter.ai/meta/muse-ember"
+        }
+      ],
+      "url": "https://vercel.com/changelog/muse-ember-now-available-on-ai-gateway",
+      "source": "vercel.com",
+      "importance": 2,
+      "tags": [
+        "llm",
+        "meta",
+        "agents",
+        "api",
+        "cheap"
+      ],
+      "en": {
+        "title": "Meta Muse Ember: a small, cheap model for the repetitive parts of an agent run, with 1M context",
+        "summary": "On 9 November Meta launched Muse Ember, the smallest and most efficient Muse model, a reasoning model for the repeated tasks inside an agent run: tool calls, coding sub-tasks, routing, extraction and long-document parsing. It has a 1M-token context window and costs $0.10 input and $0.50 output per million tokens.",
+        "why": "For anyone running agents at volume who wants to cut costs: for example, keep a strong model for planning and let Muse Ember extract fields from thousands of invoices or route requests at a very low price.",
+        "about": "Muse Ember is a lightweight reasoning model from Meta aimed at bounded, repeated agent tasks. It accepts text, images and video, and supports tool calling with adjustable reasoning effort from minimal to max; OpenRouter also lists audio and PDF input.\n\nIt is available through the Meta Model API, on Vercel AI Gateway as meta/muse-ember, and on OpenRouter. You can call it through the AI SDK or the Chat Completions, Responses and Anthropic Messages APIs, or from coding agents such as Claude Code and Codex once they are connected to AI Gateway.\n\nOpenRouter lists $0.10 input and $0.50 output per million tokens. We could not verify benchmark figures from a primary source, so test it on your own tasks before relying on it.",
+        "features": [
+          "1M-token context window",
+          "$0.10 input and $0.50 output per million tokens",
+          "Tool calling and reasoning effort from minimal to max",
+          "Text, image and video input",
+          "Available via Meta Model API, Vercel AI Gateway and OpenRouter"
+        ],
+        "install": [
+          "Connect a coding agent to Vercel AI Gateway, then pick meta/muse-ember"
+        ],
+        "links": [
+          "Vercel AI Gateway announcement",
+          "Model page on OpenRouter"
+        ],
+        "pricingNote": "$0.10 input and $0.50 output per million tokens"
+      }
+    },
+    {
+      "id": "gemini-4-carbon-github-copilot",
+      "section": "agents",
+      "kind": "model",
+      "title": "Gemini 4 Carbon متاح في GitHub Copilot لخطط Pro+ وMax وBusiness وEnterprise",
+      "summary": "أعلنت GitHub في 10 نوفمبر إتاحة Gemini 4 Carbon، أقوى نماذج Google، للجميع في Copilot لخطط Pro+ وMax وBusiness وEnterprise. يظهر في قائمة اختيار النموذج في VS Code وVisual Studio وCopilot CLI ووكيل Copilot للبرمجة وJetBrains وXcode وEclipse وgithub.com، ويُحتسب بسعر المزوّد ضمن الفوترة حسب الاستخدام.",
+      "why": "لمن يعمل في Copilot ويريد تجربة نموذج Google الأقوى دون مفتاح منفصل: مثلًا مقارنة نتائجه مع نموذجك المعتاد على مهمة إعادة هيكلة في وكيل Copilot قبل اعتماده.",
+      "about": "صار Gemini 4 Carbon متاحًا للجميع (GA) في GitHub Copilot، مع طرح تدريجي قد يؤخر ظهوره لبعض المستخدمين. الخطط المؤهلة: Copilot Pro+ وMax وBusiness وEnterprise.\n\nيمكن اختياره من قائمة النموذج في Visual Studio Code وVisual Studio وCopilot CLI ووكيل Copilot للبرمجة وتطبيق GitHub Copilot وgithub.com وGitHub Mobile وبيئات JetBrains وXcode وEclipse.\n\nفي خطط Business وEnterprise يدير المسؤولون الوصول عبر سياسة النماذج في إعدادات Copilot، والنماذج الجديدة مفعّلة افتراضيًا ما لم يُطفئ المسؤول الإعداد العام أو يعطّل هذا النموذج. ويُحتسب الاستخدام بسعر المزوّد المعلن ضمن الفوترة حسب الاستخدام.",
+      "features": [
+        "متاح للجميع (GA) مع طرح تدريجي",
+        "الخطط: Pro+ وMax وBusiness وEnterprise",
+        "في VS Code وJetBrains وXcode وEclipse وCopilot CLI ووكيل Copilot",
+        "مفعّل افتراضيًا ما لم يعطّله المسؤول",
+        "سعر المزوّد المعلن ضمن الفوترة حسب الاستخدام"
+      ],
+      "pricing": {
+        "model": "paid",
+        "note": "لخطط Copilot Pro+ وMax وBusiness وEnterprise، بسعر المزوّد ضمن الفوترة حسب الاستخدام"
+      },
+      "alternatives": [
+        "ess-github-copilot",
+        "ess-antigravity-cli"
+      ],
+      "links": [
+        {
+          "label": "إعلان GitHub",
+          "url": "https://github.blog/changelog/2026-11-10-gemini-4-carbon-in-github-copilot/"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-11-10-gemini-4-carbon-in-github-copilot/",
+      "source": "github.blog",
+      "importance": 2,
+      "tags": [
+        "copilot",
+        "gemini",
+        "model",
+        "github"
+      ],
+      "en": {
+        "title": "Gemini 4 Carbon is available in GitHub Copilot on Pro+, Max, Business and Enterprise",
+        "summary": "On 10 November GitHub made Gemini 4 Carbon, Google's strongest model, generally available in Copilot on the Pro+, Max, Business and Enterprise plans. It appears in the model picker in VS Code, Visual Studio, Copilot CLI, the Copilot coding agent, JetBrains, Xcode, Eclipse and github.com, and is billed at provider list pricing under usage-based billing.",
+        "why": "For anyone working in Copilot who wants to try Google's strongest model without a separate key: for example, compare it with your usual model on a refactoring task in the Copilot coding agent before switching.",
+        "about": "Gemini 4 Carbon is now generally available in GitHub Copilot, with a gradual rollout that may delay it for some users. Eligible plans are Copilot Pro+, Max, Business and Enterprise.\n\nYou can pick it in the model picker in Visual Studio Code, Visual Studio, Copilot CLI, the Copilot coding agent, the GitHub Copilot app, github.com, GitHub Mobile, JetBrains IDEs, Xcode and Eclipse.\n\nOn Business and Enterprise, administrators manage access through the model policy in Copilot settings; new models are on by default unless an admin turns off the global default or disables this model. Usage is billed at provider list pricing under usage-based billing.",
+        "features": [
+          "Generally available, with a gradual rollout",
+          "Plans: Pro+, Max, Business and Enterprise",
+          "In VS Code, JetBrains, Xcode, Eclipse, Copilot CLI and the coding agent",
+          "On by default unless an admin disables it",
+          "Provider list pricing under usage-based billing"
+        ],
+        "links": [
+          "GitHub announcement"
+        ],
+        "pricingNote": "For Copilot Pro+, Max, Business and Enterprise, at provider list pricing under usage-based billing"
+      }
+    },
+    {
+      "id": "expo-exact-agent-native-runtime",
+      "section": "frontend",
+      "kind": "library",
+      "title": "Exact من Expo: اكتب التطبيق مرة واحدة ليعمل أصليًا على الويب وmacOS وiOS وLinux، ويختبره الوكيل بنفسه",
+      "summary": "Exact بيئة تشغيل مفتوحة المصدر (MIT) من Expo: تصف الواجهة بلغة تصريحية صغيرة اسمها Contract، وتكتب منطق البيانات بـ TypeScript أو Rust. على الويب تعمل فوق DOM الحقيقي بوقت تشغيل نحو 20 KB، وعلى macOS وiOS ترسم بـ AppKit وUIKit دون webview. وهي مصممة ليبني الوكيل التطبيق ويشغّله ويراه ويختبره بعشر عمليات موحدة.",
+      "why": "لمن يجرّب بناء تطبيقات متعددة المنصات بوكلاء البرمجة: مثلًا قائمة مهام يكتبها الوكيل ثم يشغّل اختبارها نفسه على الويب وmacOS ومحاكي iOS دون انتظار الرسوم المتحركة. لكنها قبل الإصدار 1.0 ولا تضمن ثبات الواجهة البرمجية.",
+      "about": "تحوّل Exact الواجهة المكتوبة بلغة Contract إلى «خطة» مضغوطة. على الويب تصبح الخطة وحدة ES واحدة فوق وقت تشغيل بنحو 20 KB يقود DOM وCSS الحقيقيين. وعلى macOS وiOS وLinux ينفّذها مشغّل مكتوب بـ Rust مع نواة تخطيط تتبع قواعد CSS، وترسم كل منصة بأدواتها: AppKit أو UIKit أو رسام GPU، دون webview أو جسر JavaScript في الواجهة.\n\nالمبدأ الأول أن الوكيل هو من يكتب معظم الشيفرة. لذلك هناك عشر عمليات فقط متطابقة على كل منصة (tree وscreenshot وtap وtype وstate وlayout وlogs وclock وprefer وperf) عبر سكربت واحد هو scripts/agent.mjs. والساعة يتحكم بها الوكيل، فلا شيء يتحرك بين عمليتين، مما يلغي الاختبارات المتقلبة بسبب التوقيت. وملفات الاختبار app.test.contract تعمل دون تغيير على أي منصة.\n\nتنبيه مهم: المشروع قبل الإصدار 1.0 ويتغير يوميًا، ولا يقدّم ثباتًا للواجهة البرمجية ولا توافقًا مع الإصدارات السابقة ولا دليل ترحيل، وذلك عن قصد. وبناء macOS وiOS يحتاج جهاز Mac مع Xcode 27.1 أو أحدث، بينما يعمل Linux لحلقة تطوير الويب ولمضيف Linux.",
+      "features": [
+        "واجهة واحدة بلغة Contract تعمل على الويب وmacOS وiOS وLinux",
+        "رسم أصلي بـ AppKit وUIKit دون webview",
+        "عشر عمليات موحدة للوكيل وساعة يتحكم بها الوكيل",
+        "اختبارات app.test.contract تعمل دون تغيير على كل منصة",
+        "وقت تشغيل للويب بنحو 20 KB"
+      ],
+      "install": [
+        {
+          "label": "استنساخ المستودع",
+          "cmd": "git clone https://github.com/expo/exact.git"
+        },
+        {
+          "label": "تثبيت الأدوات المثبّتة النسخ (مرة واحدة)",
+          "cmd": "bun scripts/exact.mjs setup"
+        },
+        {
+          "label": "تشغيل تطبيق المثال في المتصفح",
+          "cmd": "bun host/web/dev.mjs"
+        }
+      ],
+      "usage": [
+        "bun scripts/exact.mjs new <path>",
+        "bun scripts/agent.mjs web tree \"tap change-station\" \"clock +60000\" state \"screenshot out.png\""
+      ],
+      "requirements": [
+        "Rust عبر rustup",
+        "Bun 1.4.2",
+        "Google Chrome",
+        "Xcode 27.1 أو أحدث لمضيفي macOS وiOS"
+      ],
+      "repo": "expo/exact",
+      "pricing": {
+        "model": "oss"
+      },
+      "alternatives": [
+        "ess-vite",
+        "ess-nextjs"
+      ],
+      "links": [
+        {
+          "label": "المستودع",
+          "url": "https://github.com/expo/exact"
+        }
+      ],
+      "url": "https://github.com/expo/exact",
+      "source": "github.com",
+      "importance": 2,
+      "tags": [
+        "cross-platform",
+        "expo",
+        "rust",
+        "typescript",
+        "agents"
+      ],
+      "en": {
+        "title": "Exact from Expo: write an app once to run natively on web, macOS, iOS and Linux, and let the agent test it",
+        "summary": "Exact is an open-source (MIT) runtime from Expo: you describe the interface in a small declarative language called Contract and write data logic in TypeScript or Rust. On the web it drives the real DOM with a ~20 KB runtime; on macOS and iOS it draws with AppKit and UIKit, with no webview. It is designed so an agent can build, run, see and test the app through ten uniform operations.",
+        "why": "For anyone trying cross-platform apps with coding agents: for example, a todo app the agent writes and then tests itself on the web, macOS and the iOS Simulator without waiting on animations. It is pre-1.0, with no API stability guarantees.",
+        "about": "Exact compiles an interface written in Contract into a compact plan. On the web the plan becomes one ES module over a ~20 KB runtime that drives the real DOM and CSS. On macOS, iOS and Linux, a Rust runner executes the same plan with a layout kernel that follows CSS rules, and each platform draws with its own tools: AppKit, UIKit or a GPU painter, with no webview or JavaScript bridge in the UI.\n\nThe first principle is that agents write most of the code. So there are only ten operations, identical on every host (tree, screenshot, tap, type, state, layout, logs, clock, prefer, perf), through one script, scripts/agent.mjs. The agent owns the clock, so nothing moves between two operations, which removes timing flakes. app.test.contract test files run unchanged on any host.\n\nImportant caveat: the project is pre-1.0 and changes daily, with no API stability, no backwards compatibility and no migration guide, by design. Building the macOS and iOS hosts needs a Mac with Xcode 27.1 or later; Linux works for the web loop and the Linux host.",
+        "features": [
+          "One Contract interface running on web, macOS, iOS and Linux",
+          "Native drawing with AppKit and UIKit, no webview",
+          "Ten uniform agent operations and an agent-owned clock",
+          "app.test.contract tests run unchanged on every host",
+          "A ~20 KB web runtime"
+        ],
+        "usage": [
+          "bun scripts/exact.mjs new <path>",
+          "bun scripts/agent.mjs web tree \"tap change-station\" \"clock +60000\" state \"screenshot out.png\""
+        ],
+        "requirements": [
+          "Rust via rustup",
+          "Bun 1.4.2",
+          "Google Chrome",
+          "Xcode 27.1 or later for the macOS and iOS hosts"
+        ],
+        "install": [
+          "Clone the repository",
+          "Install the pinned tools (once)",
+          "Run the sample app in the browser"
+        ],
+        "links": [
+          "Repository"
+        ]
+      }
+    },
+    {
+      "id": "sandbox-mcp-windows-sandbox",
+      "section": "testing",
+      "kind": "mcp",
+      "title": "sandbox-mcp: جهاز Windows 11 جديد يُستخدم مرة واحدة ليختبر فيه الوكيل تطبيقك ثم يُحذف",
+      "summary": "أداة سطر أوامر (sbx) مع خادم MCP اختياري مفتوحة المصدر (MIT)، تشغّل تطبيق Windows داخل Windows Sandbox جديد في كل مرة، وتتحكم بواجهته عبر UI Automation، وتلتقط الصور والتسجيلات وأكواد الخروج والأعطال، ثم تحذف الجهاز. وتكشف الاعتماديات الناقصة مثل VC++ redistributable. أحدث إصدار v1.2.0.",
+      "why": "لمن يطوّر تطبيقات سطح مكتب لـ Windows ويريد التأكد من أنها تعمل على جهاز عميل نظيف: مثلًا اكتشاف مكتبة تشغيل ناقصة خلال 30 ثانية قبل إصدار البرنامج، مع تقرير وصور يمكن إرفاقها بطلب الدمج.",
+      "about": "يستخدم sandbox-mcp ميزة Windows Sandbox الموجودة في Windows، وهي نسخة نظيفة من Windows تُقلع خلال ثوانٍ وتُحذف عند الإغلاق. يضيف إليها نشر التطبيق، والتحكم بالواجهة عبر UI Automation (الفحص والكتابة والنقر)، وفحص الاعتماديات على المضيف دون تشغيل شيء، وتقارير تبقى بعد حذف الجهاز.\n\nيدعم WinUI وWPF وWinForms وWin32 وتطبيقات MSIX، ويمكن تشغيل الشبكة مغلقة أو خلف جدار حماية أو مفتوحة. ولا يثبّت أي متطلبات للتطبيق إلا إذا طلبت ذلك صراحة (--provision auto). وتستغرق أمثلة الواجهات المقاسة نحو 40 إلى 50 ثانية من البداية إلى النهاية.\n\nالقيود: يعمل فقط على Windows 11 24H2 أو أحدث بإصدارات Pro أو Enterprise أو Education، وليس على Home أو Windows Server. ولا يسمح Windows Sandbox إلا بنسخة واحدة في الوقت نفسه، ولا يحتفظ بأي حالة بين التشغيلات.",
+      "features": [
+        "جهاز Windows نظيف في كل تشغيل يُحذف بعد الانتهاء",
+        "تحكم بالواجهة عبر UI Automation لتطبيقات WinUI وWPF وWinForms وWin32",
+        "فحص الاعتماديات الناقصة دون تشغيل التطبيق (sbx deps)",
+        "تقارير وصور وتسجيلات وأكواد خروج تبقى بعد الحذف",
+        "سطر أوامر يعمل وحده، وخادم MCP اختياري بالمحرك نفسه"
+      ],
+      "install": [
+        {
+          "label": "فحص الجاهزية بعد فك ضغط ملف الإصدار",
+          "cmd": ".\\sbx.cmd doctor"
+        },
+        {
+          "label": "تفعيل Windows Sandbox (PowerShell بصلاحيات المسؤول، ثم إعادة التشغيل)",
+          "cmd": "Enable-WindowsOptionalFeature -Online -FeatureName Containers-DisposableClientVM -All"
+        }
+      ],
+      "usage": [
+        ".\\sbx.cmd run C:\\Windows\\System32\\charmap.exe --open",
+        "sbx deps app.exe",
+        "sbx run app.exe --provision auto"
+      ],
+      "requirements": [
+        "Windows 11 24H2 أو أحدث بإصدار Pro أو Enterprise أو Education",
+        "Windows x64 (لا توجد حزمة ARM64 حاليًا)"
+      ],
+      "repo": "shanselman/sandbox-mcp",
+      "pricing": {
+        "model": "oss"
+      },
+      "alternatives": [
+        "ess-playwright-mcp"
+      ],
+      "links": [
+        {
+          "label": "المستودع",
+          "url": "https://github.com/shanselman/sandbox-mcp"
+        },
+        {
+          "label": "الإصدار v1.2.0",
+          "url": "https://github.com/shanselman/sandbox-mcp/releases/tag/v1.2.0"
+        }
+      ],
+      "url": "https://github.com/shanselman/sandbox-mcp",
+      "source": "github.com",
+      "importance": 2,
+      "tags": [
+        "mcp",
+        "windows",
+        "testing",
+        "sandbox",
+        "ui-automation"
+      ],
+      "en": {
+        "title": "sandbox-mcp: a fresh Windows 11 machine the agent tests your app on, then throws away",
+        "summary": "An open-source (MIT) CLI (sbx) with an optional MCP server that runs a Windows app in a fresh Windows Sandbox every time, drives its UI through UI Automation, captures screenshots, recordings, exit codes and crashes, then deletes the machine. It also catches missing dependencies such as the VC++ redistributable. The latest release is v1.2.0.",
+        "why": "For anyone building Windows desktop apps who wants to know they work on a clean customer PC: for example, catch a missing runtime in 30 seconds before shipping, with a report and screenshots you can attach to the pull request.",
+        "about": "sandbox-mcp builds on Windows Sandbox, a clean copy of Windows that boots in seconds and is deleted when it closes. It adds app deployment, UI control through UI Automation (inspect, type, click), host-side dependency checks that run nothing, and reports that survive teardown.\n\nIt supports WinUI, WPF, WinForms, Win32 and MSIX apps, with networking off, firewalled or on. It never installs app prerequisites unless you ask explicitly (--provision auto). The measured GUI samples take roughly 40 to 50 seconds end to end.\n\nLimits: it only runs on Windows 11 24H2 or later in the Pro, Enterprise or Education editions, not Home or Windows Server. Windows Sandbox allows one instance at a time and keeps no state between runs.",
+        "features": [
+          "A clean Windows machine on every run, deleted afterwards",
+          "UI control through UI Automation for WinUI, WPF, WinForms and Win32",
+          "Missing-dependency checks without running the app (sbx deps)",
+          "Reports, screenshots, recordings and exit codes kept after teardown",
+          "A standalone CLI plus an optional MCP server on the same engine"
+        ],
+        "usage": [
+          ".\\sbx.cmd run C:\\Windows\\System32\\charmap.exe --open",
+          "sbx deps app.exe",
+          "sbx run app.exe --provision auto"
+        ],
+        "requirements": [
+          "Windows 11 24H2 or later, Pro, Enterprise or Education",
+          "Windows x64 (no ARM64 package yet)"
+        ],
+        "install": [
+          "Readiness check after extracting the release ZIP",
+          "Enable Windows Sandbox (administrator PowerShell, then restart)"
+        ],
+        "links": [
+          "Repository",
+          "Release v1.2.0"
+        ]
+      }
+    },
+    {
+      "id": "elevenlabs-scribe-v3",
+      "section": "video",
+      "kind": "model",
+      "title": "ElevenLabs Scribe v3 وScribe v3 Live: أخطاء أقل بنسبة 27% في تحويل الكلام إلى نص عبر 102 لغة",
+      "summary": "أطلقت ElevenLabs في 10 نوفمبر نموذجي تحويل الكلام إلى نص Scribe v3 للتسجيلات وScribe v3 Live للبث المباشر. يرتكب Scribe v3 أخطاء كلمات أقل بنسبة 27% من Scribe v2 عبر 102 لغة، وScribe v3 Live أول نموذج Scribe يميّز المتحدثين في الوقت الحقيقي. معرّفا الواجهة البرمجية scribe_v3 وscribe_v3_live.",
+      "why": "لمن يفرّغ المقابلات والبودكاست أو يبني وكيلًا صوتيًا: مثلًا ترجمة نصية لفيديو فيه ثلاثة متحدثين بأخطاء أقل في تمييزهم، أو وكيل خدمة عملاء لا يقاطع المتصل عندما يتوقف في منتصف الجملة.",
+      "about": "Scribe v3 مخصص للصوت المسجّل، ويقلل أخطاء الكلمات بنسبة 27% مقارنة بـ Scribe v2 عبر 102 لغة، وأخطاء تمييز المتحدثين بنسبة 12% عمومًا و17% في التسجيلات التي فيها ثلاثة متحدثين أو أكثر. أما Scribe v3 Live فمخصص للوقت الحقيقي، ويرتكب أخطاء أقل بنسبة 43% من Scribe v2 Realtime وفق مقياس WER الدلالي، وهو أول نموذج Scribe يميّز المتحدثين مباشرة.\n\nالميزات الجديدة: اكتشاف أفضل لنهاية الدور في Live يستخدم سياق المحادثة إلى جانب الصوت، وتلميحات اللغة، واختيار كتابة الأرقام أرقامًا أو كلمات، وتوجيه المصطلحات لما يصل إلى 1000 مصطلح، وقواعد تنسيق بلغة إنجليزية بسيطة مثل صيغ التواريخ، ووضع متعدد اللغات للتبديل بينها في منتصف الجملة (Live).\n\nالنموذجان متاحان عبر ElevenAPI، وهما الافتراضيان في تطبيق ElevenLabs، والانتقال من Scribe v2 يحتاج تغيير معرّف النموذج فقط. ولم يذكر الإعلان الأسعار ولا دعم العربية بالتحديد، وأرقام الدقة من ElevenLabs نفسها.",
+      "features": [
+        "أخطاء كلمات أقل بنسبة 27% من Scribe v2 عبر 102 لغة",
+        "تمييز المتحدثين في الوقت الحقيقي في Scribe v3 Live",
+        "توجيه المصطلحات لما يصل إلى 1000 مصطلح",
+        "قواعد تنسيق نصية مثل صيغ التواريخ والأرقام",
+        "الانتقال من v2 بتغيير معرّف النموذج إلى scribe_v3 أو scribe_v3_live"
+      ],
+      "pricing": {
+        "model": "freemium",
+        "note": "لم يذكر الإعلان أسعار النموذجين"
+      },
+      "alternatives": [
+        "ess-elevenlabs",
+        "ess-whisper"
+      ],
+      "links": [
+        {
+          "label": "إعلان ElevenLabs",
+          "url": "https://elevenlabs.io/blog/scribe-v3"
+        }
+      ],
+      "url": "https://elevenlabs.io/blog/scribe-v3",
+      "source": "elevenlabs.io",
+      "importance": 2,
+      "tags": [
+        "speech-to-text",
+        "elevenlabs",
+        "transcription",
+        "voice-agents"
+      ],
+      "en": {
+        "title": "ElevenLabs Scribe v3 and Scribe v3 Live: 27% fewer speech-to-text errors across 102 languages",
+        "summary": "On 10 November ElevenLabs launched two speech-to-text models: Scribe v3 for recorded audio and Scribe v3 Live for real time. Scribe v3 makes 27% fewer word errors than Scribe v2 across 102 languages, and Scribe v3 Live is the first Scribe model with real-time speaker diarization. The API model IDs are scribe_v3 and scribe_v3_live.",
+        "why": "For anyone transcribing interviews and podcasts or building a voice agent: for example, subtitles for a video with three speakers that mix them up less often, or a support agent that does not cut off a caller who pauses mid-sentence.",
+        "about": "Scribe v3 is for recorded audio and makes 27% fewer word errors than Scribe v2 across 102 languages, with 12% fewer diarization errors overall and 17% fewer on recordings with three or more speakers. Scribe v3 Live is for real time and makes 43% fewer errors than Scribe v2 Realtime by semantic WER; it is the first Scribe model with live speaker diarization.\n\nNew features: better turn detection in Live that uses conversation context as well as audio, language hints, numbers as digits or words, keyterm prompting for up to 1,000 terms, plain-English formatting rules such as date formats, and a multilingual mode for switching languages mid-sentence (Live).\n\nBoth models are available through ElevenAPI and are the default in the ElevenLabs app; moving from Scribe v2 is a model ID change. The announcement does not give prices or mention Arabic specifically, and the accuracy figures are ElevenLabs' own.",
+        "features": [
+          "27% fewer word errors than Scribe v2 across 102 languages",
+          "Real-time speaker diarization in Scribe v3 Live",
+          "Keyterm prompting for up to 1,000 terms",
+          "Plain-text formatting rules such as date and number formats",
+          "Switch from v2 by changing the model ID to scribe_v3 or scribe_v3_live"
+        ],
+        "links": [
+          "ElevenLabs announcement"
+        ],
+        "pricingNote": "The announcement does not list prices for the two models"
+      }
+    },
+    {
+      "id": "rea-video-reverse-engineer",
+      "section": "video",
+      "kind": "skill",
+      "title": "rea-video: حلّل أي فيديو لقطة بلقطة: هل صُوّر أم وُلّد بالذكاء الاصطناعي أم بُني بالشيفرة، وكيف تعيد صنعه",
+      "summary": "أداة سطر أوامر مع مهارة مفتوحة المصدر (Apache 2.0) تعمل داخل Claude Code وCodex: تعطيها فيديو فتحدد لكل لقطة إن كانت مصوّرة أو مولّدة أو مبنية بالشيفرة، وتصف الكاميرا والإضاءة والقطع والصوت والنصوص، ثم تكتب خطة لإعادة الصنع. وتخرج تقريرًا للبشر وملف VIDEO.md يقرؤه الوكيل.",
+      "why": "لصنّاع المحتوى والمسوّقين: مثلًا تحليل إعلان ناجح على TikTok لمعرفة ما يجب تصويره وما يمكن توليده وما يمكن بناؤه بـ Remotion، ثم سؤال الوكيل عن أي لقطة دون إعادة مشاهدة الفيديو.",
+      "about": "صُمّمت rea-video لوكلاء الذكاء الاصطناعي: تطلب من Claude Code أو Codex تثبيتها وتحليل ملف فيديو، فيثبّت الوكيل الأداة ويتعلم سير العمل ويشغّله كاملًا. وتحتاج ffmpeg وPython 3.10 أو أحدث.\n\nكل تحليل ينتج مخرجين: تقرير report.html أو PDF يلخص طريقة صنع الفيديو في سطر واحد (مثل نسبة اللقطات المولّدة ونسبة الواجهات المبنية بالشيفرة وإيقاع الموسيقى)، مع خطة إعادة صنع لكل لقطة. وملف VIDEO.md بصيغة مفتوحة يقرؤه الوكيل طبقة بعد طبقة، فيجيب عن أسئلة مثل «أي اللقطات مولّدة؟» من نحو 2000 رمز.\n\nتغطي التحليلات أيضًا الترجمات النصية وتوقيتها (مع تصدير SRT وASS)، والقطع وتوافقه مع الإيقاع، والصوت (بشري أو مولّد) وسرعة الموسيقى. ويمكن ربط نموذج يفهم الفيديو مثل Gemini لدقة أعلى، لكنها تعمل دونه. تنبيه: الفيديوهات المضغوطة من المنصات قد تعطي نتائج أقل دقة.",
+      "features": [
+        "تصنيف كل لقطة: مصوّرة أو مولّدة أو أفاتار أو ثلاثية الأبعاد أو شيفرة أو تسجيل شاشة",
+        "خطة إعادة صنع: ما يُصوَّر وما يُولَّد وما يُبنى بالشيفرة",
+        "تقرير HTML أو PDF، وملف VIDEO.md للوكيل",
+        "تحليل الترجمات النصية والقطع والصوت والموسيقى",
+        "تعمل داخل Claude Code وCodex وأي وكيل يشغّل الأوامر"
+      ],
+      "usage": [
+        "Install https://github.com/JuneYaooo/rea-video, then break down this video: /path/to/video.mp4"
+      ],
+      "requirements": [
+        "ffmpeg",
+        "Python 3.10 أو أحدث"
+      ],
+      "repo": "JuneYaooo/rea-video",
+      "pricing": {
+        "model": "oss"
+      },
+      "alternatives": [
+        "ess-descript",
+        "ess-capcut"
+      ],
+      "links": [
+        {
+          "label": "المستودع",
+          "url": "https://github.com/JuneYaooo/rea-video"
+        }
+      ],
+      "url": "https://github.com/JuneYaooo/rea-video",
+      "source": "github.com",
+      "importance": 2,
+      "tags": [
+        "video",
+        "skill",
+        "ai-video",
+        "claude-code",
+        "codex"
+      ],
+      "en": {
+        "title": "rea-video: break down any video shot by shot: filmed, AI-generated or coded, and how to remake it",
+        "summary": "An open-source (Apache 2.0) CLI and skill that runs inside Claude Code and Codex: give it a video and it decides for each shot whether it was filmed, generated or coded, describes camera, lighting, cuts, audio and on-screen text, then writes a remake plan. It outputs a report for people and a VIDEO.md file for the agent.",
+        "why": "For creators and marketers: for example, break down a successful TikTok ad to see what to film, what to generate and what to build in Remotion, then ask the agent about any shot without rewatching the video.",
+        "about": "rea-video is built for AI agents: you ask Claude Code or Codex to install it and break down a video file, and the agent installs the CLI, learns the workflow and runs it end to end. It needs ffmpeg and Python 3.10 or later.\n\nEach breakdown has two outputs: a report.html or PDF that sums up how the video was made in one line (such as the share of AI shots, the share of code-built UI and the music tempo), with a remake plan per shot; and a VIDEO.md file in an open format that agents read layer by layer, so they can answer questions such as 'which shots are AI?' from about 2k tokens.\n\nBreakdowns also cover captions and their timing (with SRT and ASS export), cuts and whether they hit the beat, and audio (human or AI voice) and music tempo. You can connect a video-capable model such as Gemini for better accuracy, but it works without one. Caveat: videos re-compressed by platforms can give less accurate results.",
+        "features": [
+          "Classifies each shot: filmed, AI, avatar, 3D, code or screen recording",
+          "Remake plan: what to film, what to generate and what to code",
+          "An HTML or PDF report, plus a VIDEO.md file for the agent",
+          "Breaks down captions, cuts, voice and music",
+          "Runs in Claude Code, Codex and any agent that can run commands"
+        ],
+        "usage": [
+          "Install https://github.com/JuneYaooo/rea-video, then break down this video: /path/to/video.mp4"
+        ],
+        "requirements": [
+          "ffmpeg",
+          "Python 3.10 or later"
+        ],
+        "links": [
+          "Repository"
+        ]
+      }
+    },
+    {
+      "id": "scenario-agent-skills",
+      "section": "design",
+      "kind": "skill",
+      "title": "Scenario Agent Skills: مهارات رسمية لتوليد الصور والفيديو والصوت والأصول ثلاثية الأبعاد عبر خادم MCP",
+      "summary": "مجموعة مهارات رسمية مفتوحة المصدر (MIT) من Scenario تعلّم وكلاء البرمجة مثل Claude Code وCursor وCodex إنتاج الصور والفيديو والصوت والخامات والأصول ثلاثية الأبعاد عبر خادم Scenario MCP، مع مهارات لنماذج مثل Seedream وVeo وKling وElevenLabs. وفيها أدوات لبرامج مثل Blender وUnity وGodot. أحدث إصدار 0.62.0 في 11 نوفمبر.",
+      "why": "لمن يصنع أصولًا مرئية لألعاب أو حملات تسويقية من داخل وكيل البرمجة: مثلًا توليد مجموعة صور منتج متسقة مع هوية العلامة، أو رسوم متحركة لشخصية لعبة، دون الانتقال بين أدوات كثيرة.",
+      "about": "تتبع المهارات صيغة Agent Skills، وتعمل عبر خادم Scenario MCP الذي يتطلب حسابًا في Scenario (عبر OAuth) أو مفتاح API. تغطي المهارات أعمالًا مثل صور المنتجات وهوية العلامة وتحرير الصور والقصص المصورة وأصول الألعاب وتحريك الشخصيات والخامات والفيديو والإعلانات والموسيقى والصوت والنماذج ثلاثية الأبعاد وتدريب النماذج المخصصة.\n\nأما «أدوات الخبراء» فتعمل بطريقة مختلفة: مجموعات مهارات تقود برامج مثبتة على جهازك مثل ZBrush وBlender وMaya وUnreal Engine وUnity وGodot وRoblox Studio، ولا تحتاج خادم Scenario MCP بل البرنامج نفسه.\n\nيمكن تثبيت كل المهارات أو اختيار بعضها من قائمة، أو تثبيت حالة مراجَعة بتثبيت رقم commit من أحد الإصدارات. وأضاف الإصدار 0.62.0 تدريب LoRA للفيديو على MiniMax H3، وبدء الإعلانات التفاعلية من فكرة أو اسم نوع لعبة.",
+      "features": [
+        "مهارات للصور والفيديو والصوت والخامات والأصول ثلاثية الأبعاد",
+        "مهارات لنماذج مثل Seedream وVeo وKling وRunway وElevenLabs",
+        "أدوات خبراء تقود Blender وMaya وUnreal وUnity وGodot",
+        "تثبيت كل المهارات أو بعضها، أو تثبيت حالة مراجَعة برقم commit",
+        "تعمل مع Claude Code وCursor وCodex وCopilot ووكلاء آخرين"
+      ],
+      "install": [
+        {
+          "label": "اختيار المهارات من قائمة التثبيت",
+          "cmd": "npx skills add scenario-labs/skills"
+        },
+        {
+          "label": "تثبيت المهارة الأساسية فقط",
+          "cmd": "npx skills add scenario-labs/skills --skill scenario"
+        },
+        {
+          "label": "ربط خادم Scenario MCP في Claude Code",
+          "cmd": "claude mcp add --transport http scenario https://mcp.scenario.com/mcp"
+        }
+      ],
+      "requirements": [
+        "حساب Scenario أو مفتاح API لاستخدام خادم MCP"
+      ],
+      "repo": "scenario-labs/skills",
+      "pricing": {
+        "model": "oss",
+        "note": "المهارات مفتوحة المصدر، والتوليد يتم عبر حساب Scenario"
+      },
+      "alternatives": [
+        "ess-krea",
+        "ess-comfyui"
+      ],
+      "links": [
+        {
+          "label": "المستودع",
+          "url": "https://github.com/scenario-labs/skills"
+        },
+        {
+          "label": "توثيق Scenario MCP",
+          "url": "https://mcp.scenario.com/docs"
+        }
+      ],
+      "url": "https://github.com/scenario-labs/skills",
+      "source": "github.com",
+      "importance": 1,
+      "tags": [
+        "skills",
+        "mcp",
+        "image-generation",
+        "game-assets",
+        "3d"
+      ],
+      "en": {
+        "title": "Scenario Agent Skills: official skills for generating images, video, audio and 3D assets through an MCP server",
+        "summary": "An official, open-source (MIT) skill set from Scenario that teaches coding agents such as Claude Code, Cursor and Codex to produce images, video, audio, textures and 3D assets through the Scenario MCP server, with skills for models such as Seedream, Veo, Kling and ElevenLabs. It also includes expert tools for apps such as Blender, Unity and Godot. The latest release, 0.62.0, shipped on 11 November.",
+        "why": "For anyone making visual assets for games or marketing campaigns from inside a coding agent: for example, generating an on-brand set of product shots or a game character's animation without hopping between many tools.",
+        "about": "The skills follow the Agent Skills format and work through the Scenario MCP server, which needs a Scenario account (via OAuth) or an API key. They cover work such as product shots, brand kits, image editing, storyboards, game assets, sprite animation, textures, video, ads, music and audio, 3D models and custom model training.\n\nThe expert tools work differently: teams of skills that drive software installed on your machine, such as ZBrush, Blender, Maya, Unreal Engine, Unity, Godot and Roblox Studio. They need the application itself, not the Scenario MCP server.\n\nYou can install every skill, pick some from a menu, or pin a reviewed state by commit from a release. Release 0.62.0 adds MiniMax H3 video LoRA training and lets playable ads start from an idea or a genre name.",
+        "features": [
+          "Skills for images, video, audio, textures and 3D assets",
+          "Skills for models such as Seedream, Veo, Kling, Runway and ElevenLabs",
+          "Expert tools that drive Blender, Maya, Unreal, Unity and Godot",
+          "Install all or some skills, or pin a reviewed commit",
+          "Works with Claude Code, Cursor, Codex, Copilot and other agents"
+        ],
+        "requirements": [
+          "A Scenario account or API key for the MCP server"
+        ],
+        "install": [
+          "Pick skills from the installer menu",
+          "Install only the core skill",
+          "Connect the Scenario MCP server in Claude Code"
+        ],
+        "links": [
+          "Repository",
+          "Scenario MCP docs"
+        ],
+        "pricingNote": "The skills are open source; generation runs through a Scenario account"
+      }
+    }
+  ]
+}
