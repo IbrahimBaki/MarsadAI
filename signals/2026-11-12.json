@@ -1,6 +1,6 @@
 {
   "date": "2026-11-12",
-  "generated": "2026-11-12T05:43:17.730Z",
+  "generated": "2026-11-12T12:49:08.520Z",
   "awesome": [
     {
       "list": "jqueryscript/awesome-claude-code",
@@ -585,6 +585,54 @@
       "url": "https://github.com/arcmira/mcp",
       "desc": "Arcmira - Search YouTube and podcast transcripts for timestamped quotes and mentions",
       "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "Eronred/aso-skills",
+      "url": "https://github.com/Eronred/aso-skills",
+      "desc": "Eronred/aso-skills - 30+ App Store Optimization skills for keyword research, metadata optimization, competitor analysis, creative optimization, and mobile growth strategies via Appeeky API",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "JimmySadek/youtube-fetcher",
+      "url": "https://github.com/JimmySadek/youtube-fetcher-to-markdown",
+      "desc": "JimmySadek/youtube-fetcher - Create Obsidian-ready Markdown notes from YouTube videos",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "bablobanov/hermes-telegram-checklist",
+      "url": "https://github.com/bablobanov/hermes-telegram-checklist",
+      "desc": "bablobanov/hermes-telegram-checklist - Create and manage native Telegram checklists with verified writes",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "Ryan-yang125/motion-lexicon",
+      "url": "https://github.com/Ryan-yang125/motion-lexicon/tree/main/skills/motion-lexicon",
+      "desc": "Ryan-yang125/motion-lexicon - Build and review product motion with installable React components",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "half144/cutaway",
+      "url": "https://github.com/half144/cutaway",
+      "desc": "half144/cutaway - Record polished demo videos of web flows with Playwright",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "awrshift/claude-memory-kit",
+      "url": "https://github.com/awrshift/claude-memory-kit",
+      "desc": "awrshift/claude-memory-kit - Persistent memory with hooks, wiki, and daily synthesis for multi-project workflows",
+      "heading": "Community Skills"
     }
   ],
   "releases": [
@@ -625,7 +673,739 @@
       "tag": "v0.7.15",
       "previous": "v0.7.14",
       "url": "https://github.com/superradcompany/microsandbox/releases/tag/v0.7.15"
+    },
+    {
+      "repo": "upstash/context7",
+      "section": "mcp",
+      "tag": "@upstash/context7-mcp@4.7.0",
+      "previous": "@upstash/context7-mcp@4.6.0",
+      "url": "https://github.com/upstash/context7/releases/tag/%40upstash%2Fcontext7-mcp%404.7.0"
+    },
+    {
+      "repo": "AzmSquad/squad-kit",
+      "section": "agents",
+      "track": "t3",
+      "tag": "v1.3.14",
+      "previous": "v1.3.13",
+      "url": "https://github.com/AzmSquad/squad-kit/releases/tag/v1.3.14"
+    },
+    {
+      "repo": "langfuse/langfuse",
+      "section": "agents",
+      "track": "t3",
+      "tag": "v4.79.0",
+      "previous": "v4.78.0",
+      "url": "https://github.com/langfuse/langfuse/releases/tag/v4.79.0"
     }
   ],
-  "trending": []
+  "trending": [
+    {
+      "repo": "JuneYaooo/rea-video",
+      "section": "skills",
+      "topic": "claude-code",
+      "url": "https://github.com/JuneYaooo/rea-video",
+      "description": "Reverse-engineer any video, shot by shot: filmed, AI-generated or coded, and how to remake it. Breakdowns in the open VIDEO.md format. 逆向一切视频，逐个镜头看是拍的、AI 生成的还是代码做的，再告诉你怎么复刻；拆解结果按 VIDEO.md 格式输出。",
+      "stars": 7314,
+      "created": "2026-10-29T16:15:01Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "KKKKhazix/agent-autoloop",
+      "section": "skills",
+      "topic": "claude-code",
+      "url": "https://github.com/KKKKhazix/agent-autoloop",
+      "description": "让你的命令行 Agent 在后台自己接活、自己跟进到底；平时不烦你，遇到拿不准的事才发卡片找你拍板。",
+      "stars": 4615,
+      "created": "2026-11-03T08:02:11Z",
+      "language": "TypeScript",
+      "new": false
+    },
+    {
+      "repo": "caru-ini/stack-diagram",
+      "section": "skills",
+      "topic": "claude-code",
+      "url": "https://github.com/caru-ini/stack-diagram",
+      "description": "Agent skill: describe your stack in a sentence, get an architecture diagram with official logos",
+      "stars": 2439,
+      "created": "2026-11-01T05:35:12Z",
+      "language": "TypeScript",
+      "new": false
+    },
+    {
+      "repo": "N1nEmAn/sapper-v2",
+      "section": "skills",
+      "topic": "claude-code",
+      "url": "https://github.com/N1nEmAn/sapper-v2",
+      "description": "The first fruit of the Nüwa tree — an autonomous AI pentest legion (634-team champion, 8h unattended, 1B tokens beat 4.5B). Not just a tool: evolvable by design. Grow your own fruit on the Nüwa Foundation (Create/Language/History).",
+      "stars": 2012,
+      "created": "2026-10-30T15:12:35Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "NiazMorshed2007/reanimate",
+      "section": "skills",
+      "topic": "claude-code",
+      "url": "https://github.com/NiazMorshed2007/reanimate",
+      "description": "A Claude Code skill that reverse-engineers any animation frame by frame, then proves the copy moves the same.",
+      "stars": 1581,
+      "created": "2026-10-29T06:20:59Z",
+      "language": "JavaScript",
+      "new": false
+    },
+    {
+      "repo": "synchopate/llama-modchip",
+      "section": "skills",
+      "topic": "claude-code",
+      "url": "https://github.com/synchopate/llama-modchip",
+      "description": "Run 284B DeepSeek-V4-Flash (<59GiB RAM: 41.1 cold pp, 9.1 N=1 tg, up to 25.3 spec tok/s) & 30B MoEs (22.4 N=1 / 111.6 spec tok/s) on 64GB CPU (0 GPUs).",
+      "stars": 1015,
+      "created": "2026-10-29T10:17:33Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "XiaoyeCodes/code-animation-prompts",
+      "section": "skills",
+      "topic": "claude-code",
+      "url": "https://github.com/XiaoyeCodes/code-animation-prompts",
+      "description": "341 种代码动画风格提示词、196 张参考静帧与离线挑选器，封装为 Claude Code / Codex Skill，支持一键导入与 HTML 视频渲染。",
+      "stars": 995,
+      "created": "2026-10-29T10:45:47Z",
+      "language": "HTML",
+      "new": false
+    },
+    {
+      "repo": "agentes-chat/agentes-chat",
+      "section": "skills",
+      "topic": "claude-code",
+      "url": "https://github.com/agentes-chat/agentes-chat",
+      "description": "Open-source, self-hosted Slack alternative where your team and AI agents work together in channels and DMs. Agents run on Claude, ChatGPT/Codex, Gemini or Grok, with MCP tools, their own computer and browser, routines, memory and approvals. Web, desktop and phone apps. Docker Compose + Postgres. AGPL-3.0.",
+      "stars": 797,
+      "created": "2026-11-09T00:50:28Z",
+      "language": "TypeScript",
+      "new": true
+    },
+    {
+      "repo": "zhanghao123vip/ai-manju-skills",
+      "section": "skills",
+      "topic": "claude-code",
+      "url": "https://github.com/zhanghao123vip/ai-manju-skills",
+      "description": "21 个题材的 AI 漫剧全流程 Skill：一句点子生成企划案、资产图提示词、分集剧本、分镜与视频提示词。可用于 Claude Code、WorkBuddy、DeepSeek",
+      "stars": 769,
+      "created": "2026-10-31T03:22:12Z",
+      "language": null,
+      "new": false
+    },
+    {
+      "repo": "alchaincyf/huashu-bird-sticker",
+      "section": "skills",
+      "topic": "claude-code",
+      "url": "https://github.com/alchaincyf/huashu-bird-sticker",
+      "description": "花叔开源的全球鸟类贴纸库 · AI-generated stickers for 11,000+ bird species (AviList v2026), CC BY 4.0, with names in 43 languages and structured data",
+      "stars": 734,
+      "created": "2026-10-30T05:19:33Z",
+      "language": null,
+      "new": false
+    },
+    {
+      "repo": "caru-ini/stack-diagram",
+      "section": "skills",
+      "topic": "claude-skills",
+      "url": "https://github.com/caru-ini/stack-diagram",
+      "description": "Agent skill: describe your stack in a sentence, get an architecture diagram with official logos",
+      "stars": 2439,
+      "created": "2026-11-01T05:35:12Z",
+      "language": "TypeScript",
+      "new": false
+    },
+    {
+      "repo": "NiazMorshed2007/reanimate",
+      "section": "skills",
+      "topic": "claude-skills",
+      "url": "https://github.com/NiazMorshed2007/reanimate",
+      "description": "A Claude Code skill that reverse-engineers any animation frame by frame, then proves the copy moves the same.",
+      "stars": 1581,
+      "created": "2026-10-29T06:20:59Z",
+      "language": "JavaScript",
+      "new": false
+    },
+    {
+      "repo": "artemnovitckii/claude-animation-skills",
+      "section": "skills",
+      "topic": "claude-skills",
+      "url": "https://github.com/artemnovitckii/claude-animation-skills",
+      "description": "Six Claude Code skills that make animations for reels, no footage needed: 3D cartoon explainer, stick figure, minimal line art, 3D map route, exploded view, line graph.",
+      "stars": 671,
+      "created": "2026-11-01T02:53:31Z",
+      "language": "JavaScript",
+      "new": false
+    },
+    {
+      "repo": "phuryn/product-engineering",
+      "section": "skills",
+      "topic": "claude-skills",
+      "url": "https://github.com/phuryn/product-engineering",
+      "description": "44 agent skills from shipping three live products: decide what to build, build it with Claude Code or Codex, have a second model review it, release it.",
+      "stars": 538,
+      "created": "2026-10-29T11:32:54Z",
+      "language": "Python",
+      "new": true
+    },
+    {
+      "repo": "mhfed/vn-law-check",
+      "section": "skills",
+      "topic": "claude-skills",
+      "url": "https://github.com/mhfed/vn-law-check",
+      "description": "Audit pháp lý website theo luật Việt Nam (BVDLCN 91/2025, TMĐT 122/2025, ANM 116/2025, AI 134/2025) cho Claude Code, Cursor, Copilot, Windsurf, Cline",
+      "stars": 498,
+      "created": "2026-11-02T09:22:02Z",
+      "language": "Shell",
+      "new": false
+    },
+    {
+      "repo": "Dodaios/ste80-humanizer",
+      "section": "skills",
+      "topic": "claude-skills",
+      "url": "https://github.com/Dodaios/ste80-humanizer",
+      "description": "STE80 Humanizer: agent skill that removes AI tells and rewrites text 80% of the way to ASD-STE100 (Simplified Technical English), the method Andrej Karpathy shared.",
+      "stars": 436,
+      "created": "2026-11-09T17:18:59Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "threerocks/article2media",
+      "section": "skills",
+      "topic": "claude-skills",
+      "url": "https://github.com/threerocks/article2media",
+      "description": "把一篇文章或一条视频（抖音、B 站、YouTube，先转逐字稿）一键做成小红书图文、杂志长图、公众号排版和 AI 配音口播短视频的开源 Claude Code / Codex Skill。21 套主题，自动验收，零 npm 依赖。",
+      "stars": 281,
+      "created": "2026-11-08T08:07:28Z",
+      "language": "JavaScript",
+      "new": true
+    },
+    {
+      "repo": "nishant-Tiwari24/cracked",
+      "section": "skills",
+      "topic": "claude-skills",
+      "url": "https://github.com/nishant-Tiwari24/cracked",
+      "description": "Skills for getting hired. Company-wise mock interviews, OAs with hidden tests and brutal resume roasts for 470+ companies, straight from your terminal.",
+      "stars": 264,
+      "created": "2026-11-06T08:50:47Z",
+      "language": "TypeScript",
+      "new": false
+    },
+    {
+      "repo": "ScottDuncanAI/PID-to-Knowledge-Graph",
+      "section": "skills",
+      "topic": "claude-skills",
+      "url": "https://github.com/ScottDuncanAI/PID-to-Knowledge-Graph",
+      "description": "P&ID to Knowledge Graph: a Claude skill that turns P&ID PDFs (digital or scanned) into a process knowledge graph of flow, instruments and control loops.",
+      "stars": 247,
+      "created": "2026-11-08T18:58:21Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "op7418/guizang-game-skill",
+      "section": "skills",
+      "topic": "claude-skills",
+      "url": "https://github.com/op7418/guizang-game-skill",
+      "description": "歸藏 Game Skill：让 AI 从零做出能在浏览器里玩的 3D 动作游戏，附可玩演示《雾锁山门》。Agent skill for Claude Code / Codex that builds a playable browser 3D action game with AI-generated assets (three.js, single-HTML). Playable demo included.",
+      "stars": 187,
+      "created": "2026-11-11T16:28:54Z",
+      "language": "JavaScript",
+      "new": true
+    },
+    {
+      "repo": "JuneYaooo/rea-video",
+      "section": "skills",
+      "topic": "agent-skills",
+      "url": "https://github.com/JuneYaooo/rea-video",
+      "description": "Reverse-engineer any video, shot by shot: filmed, AI-generated or coded, and how to remake it. Breakdowns in the open VIDEO.md format. 逆向一切视频，逐个镜头看是拍的、AI 生成的还是代码做的，再告诉你怎么复刻；拆解结果按 VIDEO.md 格式输出。",
+      "stars": 7314,
+      "created": "2026-10-29T16:15:01Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "patch-gg/pixelfx",
+      "section": "skills",
+      "topic": "agent-skills",
+      "url": "https://github.com/patch-gg/pixelfx",
+      "description": "244 pixel art effects, every one a small piece of code. Plus a Claude Code skill to make your own.",
+      "stars": 7107,
+      "created": "2026-10-30T06:43:25Z",
+      "language": "JavaScript",
+      "new": false
+    },
+    {
+      "repo": "caru-ini/stack-diagram",
+      "section": "skills",
+      "topic": "agent-skills",
+      "url": "https://github.com/caru-ini/stack-diagram",
+      "description": "Agent skill: describe your stack in a sentence, get an architecture diagram with official logos",
+      "stars": 2439,
+      "created": "2026-11-01T05:35:12Z",
+      "language": "TypeScript",
+      "new": false
+    },
+    {
+      "repo": "NiazMorshed2007/reanimate",
+      "section": "skills",
+      "topic": "agent-skills",
+      "url": "https://github.com/NiazMorshed2007/reanimate",
+      "description": "A Claude Code skill that reverse-engineers any animation frame by frame, then proves the copy moves the same.",
+      "stars": 1581,
+      "created": "2026-10-29T06:20:59Z",
+      "language": "JavaScript",
+      "new": false
+    },
+    {
+      "repo": "XiaoyeCodes/code-animation-prompts",
+      "section": "skills",
+      "topic": "agent-skills",
+      "url": "https://github.com/XiaoyeCodes/code-animation-prompts",
+      "description": "341 种代码动画风格提示词、196 张参考静帧与离线挑选器，封装为 Claude Code / Codex Skill，支持一键导入与 HTML 视频渲染。",
+      "stars": 995,
+      "created": "2026-10-29T10:45:47Z",
+      "language": "HTML",
+      "new": false
+    },
+    {
+      "repo": "kubai087/kubai-icons",
+      "section": "skills",
+      "topic": "agent-skills",
+      "url": "https://github.com/kubai087/kubai-icons",
+      "description": "An agent skill that draws animated icons in one consistent style, for Claude Code, Codex and other coding agents. Comes with 2,600+ open-source icons for React, Vue and SVG, and a website to browse them.",
+      "stars": 770,
+      "created": "2026-11-03T09:52:39Z",
+      "language": "JavaScript",
+      "new": false
+    },
+    {
+      "repo": "dabingfy-dot/solo-to-team-skills",
+      "section": "skills",
+      "topic": "agent-skills",
+      "url": "https://github.com/dabingfy-dot/solo-to-team-skills",
+      "description": "Skills for human-led AI teams: delegate tasks, verify evidence, explain steps clearly, and learn from real cases. 一个人统筹 AI 团队：派活、核证、清楚说明、经验复用。",
+      "stars": 750,
+      "created": "2026-11-07T01:36:28Z",
+      "language": null,
+      "new": false
+    },
+    {
+      "repo": "phuryn/product-engineering",
+      "section": "skills",
+      "topic": "agent-skills",
+      "url": "https://github.com/phuryn/product-engineering",
+      "description": "44 agent skills from shipping three live products: decide what to build, build it with Claude Code or Codex, have a second model review it, release it.",
+      "stars": 538,
+      "created": "2026-10-29T11:32:54Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "Pluviobyte/saas-growth-agents",
+      "section": "skills",
+      "topic": "agent-skills",
+      "url": "https://github.com/Pluviobyte/saas-growth-agents",
+      "description": "Hand your SaaS growth chores to an agent: new-term radar, keyword-to-site discovery, competitor backlinks, directory submissions, plus a social analysis pack with a Douyin comments skill. Works with Grok Bot, Muse, Dot, Hermes, OpenClaw, Claude Code and Codex.",
+      "stars": 529,
+      "created": "2026-10-30T15:47:16Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "mhfed/vn-law-check",
+      "section": "skills",
+      "topic": "agent-skills",
+      "url": "https://github.com/mhfed/vn-law-check",
+      "description": "Audit pháp lý website theo luật Việt Nam (BVDLCN 91/2025, TMĐT 122/2025, ANM 116/2025, AI 134/2025) cho Claude Code, Cursor, Copilot, Windsurf, Cline",
+      "stars": 498,
+      "created": "2026-11-02T09:22:02Z",
+      "language": "Shell",
+      "new": false
+    },
+    {
+      "repo": "stubbi/asm",
+      "section": "mcp",
+      "topic": "mcp-server",
+      "url": "https://github.com/stubbi/asm",
+      "description": "The package registry and command-line tool for assembly projects.",
+      "stars": 585,
+      "created": "2026-10-31T23:22:41Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "shanselman/sandbox-mcp",
+      "section": "mcp",
+      "topic": "mcp-server",
+      "url": "https://github.com/shanselman/sandbox-mcp",
+      "description": "Fresh, throwaway Windows machines for testing your apps: an MCP server and CLI that automate Windows Sandbox",
+      "stars": 416,
+      "created": "2026-11-06T19:02:14Z",
+      "language": "JavaScript",
+      "new": false
+    },
+    {
+      "repo": "gogoymh/auto-ontology-mcp",
+      "section": "mcp",
+      "topic": "mcp-server",
+      "url": "https://github.com/gogoymh/auto-ontology-mcp",
+      "description": "NVIDIA Auto Ontology's semantic layer and a personal knowledge base as an MCP server for Claude, ChatGPT and other MCP clients. No LLM API key needed.",
+      "stars": 377,
+      "created": "2026-11-06T12:09:07Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "Glen-Web-App/best-agent-memory-mcp",
+      "section": "mcp",
+      "topic": "mcp-server",
+      "url": "https://github.com/Glen-Web-App/best-agent-memory-mcp",
+      "description": "Best Agent Memory MCP servers, ranked and compared: long-term memory for Claude Code, Codex, Cursor and any MCP client. Glen, Mem0, Supermemory, Zep, Hindsight, Basic Memory, claude-mem, Graphiti, Cognee, the official memory server and more, with storage, capture model, team sharing, license and live stars.",
+      "stars": 238,
+      "created": "2026-11-05T01:23:58Z",
+      "language": null,
+      "new": false
+    },
+    {
+      "repo": "wendersoon/radar-cnpj-mcp",
+      "section": "mcp",
+      "topic": "mcp-server",
+      "url": "https://github.com/wendersoon/radar-cnpj-mcp",
+      "description": "Servidor MCP e CLI para localizar empresas brasileiras por CNAE e região, utilizando dados abertos de CNPJ da Receita Federal.",
+      "stars": 133,
+      "created": "2026-11-01T23:58:28Z",
+      "language": "TypeScript",
+      "new": false
+    },
+    {
+      "repo": "NJohansen/handle-mcp",
+      "section": "mcp",
+      "topic": "mcp-server",
+      "url": "https://github.com/NJohansen/handle-mcp",
+      "description": "MCP server for nemlig.com, BilkaToGo, Rema1000: search products, add to cart and price comparisons. You always accept and pay yourself.",
+      "stars": 131,
+      "created": "2026-11-01T11:17:48Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "DevCrabs-Inc/yandex-metrika-mcp",
+      "section": "mcp",
+      "topic": "mcp-server",
+      "url": "https://github.com/DevCrabs-Inc/yandex-metrika-mcp",
+      "description": "Read-only MCP server for Yandex Metrika (Яндекс Метрика): verifiable reports, period comparisons, time series and exports for Claude, Cursor, VS Code and Codex.",
+      "stars": 130,
+      "created": "2026-11-06T12:18:59Z",
+      "language": "TypeScript",
+      "new": false
+    },
+    {
+      "repo": "claudememory/claude-memory",
+      "section": "mcp",
+      "topic": "mcp-server",
+      "url": "https://github.com/claudememory/claude-memory",
+      "description": "Claude memory: the top 10 ways to give Claude persistent, long-term memory, compared. Covers MCP memory servers, CLAUDE.md, memory plugins and tools for Claude Code, Claude Desktop and the Claude API. Setup, pros and cons, and which to pick for remembering context across sessions.",
+      "stars": 125,
+      "created": "2026-11-08T05:18:13Z",
+      "language": null,
+      "new": true
+    },
+    {
+      "repo": "glincker/awesome-selfhosted-ai",
+      "section": "mcp",
+      "topic": "mcp-server",
+      "url": "https://github.com/glincker/awesome-selfhosted-ai",
+      "description": "Curated list of self-hosted open-source AI: local LLMs, chat UIs, agents, MCP servers, RAG, speech and image generation. Health-checked weekly, dead projects removed automatically.",
+      "stars": 123,
+      "created": "2026-10-31T05:50:40Z",
+      "language": "JavaScript",
+      "new": false
+    },
+    {
+      "repo": "auscaster/silvertongue",
+      "section": "mcp",
+      "topic": "mcp-server",
+      "url": "https://github.com/auscaster/silvertongue",
+      "description": "Write like anyone famous. Famous writing voices for your agent, over MCP: studied from the source, every source linked.",
+      "stars": 111,
+      "created": "2026-10-29T07:36:08Z",
+      "language": "TypeScript",
+      "new": true
+    },
+    {
+      "repo": "devvmhq/devvm",
+      "section": "agents",
+      "topic": "coding-agent",
+      "url": "https://github.com/devvmhq/devvm",
+      "description": "One VM for every project. An isolated sandbox with your project’s toolchain, ready for you or a coding agent to start coding",
+      "stars": 586,
+      "created": "2026-11-06T07:02:30Z",
+      "language": "Go",
+      "new": false
+    },
+    {
+      "repo": "Lanqiao-Luca/ai-java-workflow",
+      "section": "agents",
+      "topic": "coding-agent",
+      "url": "https://github.com/Lanqiao-Luca/ai-java-workflow",
+      "description": "☕ 用 AI 辅助 Java / Spring Boot 研发（AI for Java / AI for Spring）｜需求、实现、测试、审查与交付｜Graph → Loop → Workflow → Agent / Skill、虚构可运行案例及 worktree / Docker 工具｜面向业务开发，非 Spring AI 框架实现",
+      "stars": 319,
+      "created": "2026-11-01T16:23:49Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "Balanov/uncut",
+      "section": "agents",
+      "topic": "coding-agent",
+      "url": "https://github.com/Balanov/uncut",
+      "description": "The lossless, headless coding agent harness. One 7 MB static binary, four tools, plain stdin/stdout, no silent cuts.",
+      "stars": 266,
+      "created": "2026-11-01T17:19:30Z",
+      "language": "Go",
+      "new": false
+    },
+    {
+      "repo": "imsai-sh/fish-pocket",
+      "section": "agents",
+      "topic": "coding-agent",
+      "url": "https://github.com/imsai-sh/fish-pocket",
+      "description": "DSH iOS 移动版：在 iPhone 和 iPad 上本机运行 DeepSeek Harness，界面完全原生，不连电脑和服务器。Run DSH (DeepSeek Harness) natively on iPhone and iPad: no computer, no server.",
+      "stars": 219,
+      "created": "2026-11-05T01:10:38Z",
+      "language": "Swift",
+      "new": false
+    },
+    {
+      "repo": "sksarvesh007/antiglaude",
+      "section": "agents",
+      "topic": "coding-agent",
+      "url": "https://github.com/sksarvesh007/antiglaude",
+      "description": "Production compatibility gateway bridge & observability platform connecting Claude Code CLI with Google Antigravity & Gemini inference models via Anthropic Messages API",
+      "stars": 167,
+      "created": "2026-11-03T19:49:06Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "bytesbay/pi-gpui",
+      "section": "agents",
+      "topic": "coding-agent",
+      "url": "https://github.com/bytesbay/pi-gpui",
+      "description": "A native GUI for the pi coding agent, built with Rust and GPUI. For macOS (Apple silicon) and Linux.",
+      "stars": 101,
+      "created": "2026-11-04T22:12:59Z",
+      "language": "Rust",
+      "new": true
+    },
+    {
+      "repo": "Bil0000/Hill-Climb",
+      "section": "agents",
+      "topic": "coding-agent",
+      "url": "https://github.com/Bil0000/Hill-Climb",
+      "description": "Make your coding agent prove \"done\". Each change is kept only if a locked test or benchmark scores it better. Claude Code and Codex skill.",
+      "stars": 82,
+      "created": "2026-11-02T20:15:32Z",
+      "language": "Python",
+      "new": true
+    },
+    {
+      "repo": "sshah03/recalc",
+      "section": "agents",
+      "topic": "coding-agent",
+      "url": "https://github.com/sshah03/recalc",
+      "description": "A spreadsheet you share with your AI agents: every cell can hold a value, a formula, a terminal command, or a Claude Code or Codex agent.",
+      "stars": 69,
+      "created": "2026-11-03T21:16:08Z",
+      "language": "Rust",
+      "new": false
+    },
+    {
+      "repo": "chiang21fcb/hygieia",
+      "section": "agents",
+      "topic": "coding-agent",
+      "url": "https://github.com/chiang21fcb/hygieia",
+      "description": "Inspect, evaluate, and stress-test an existing semantic layer. Runs fully offline.",
+      "stars": 57,
+      "created": "2026-11-06T05:01:45Z",
+      "language": "Python",
+      "new": true
+    },
+    {
+      "repo": "KKKKhazix/agent-autoloop",
+      "section": "automation",
+      "topic": "ai-agents",
+      "url": "https://github.com/KKKKhazix/agent-autoloop",
+      "description": "让你的命令行 Agent 在后台自己接活、自己跟进到底；平时不烦你，遇到拿不准的事才发卡片找你拍板。",
+      "stars": 4615,
+      "created": "2026-11-03T08:02:11Z",
+      "language": "TypeScript",
+      "new": false
+    },
+    {
+      "repo": "expo/exact",
+      "section": "automation",
+      "topic": "ai-agents",
+      "url": "https://github.com/expo/exact",
+      "description": "Write an app once. It runs natively on the web, macOS, iOS, and Linux, and an AI agent can build it, run it, see it, and test it on every one of them.",
+      "stars": 3198,
+      "created": "2026-11-02T01:29:01Z",
+      "language": "Rust",
+      "new": false
+    },
+    {
+      "repo": "N1nEmAn/sapper-v2",
+      "section": "automation",
+      "topic": "ai-agents",
+      "url": "https://github.com/N1nEmAn/sapper-v2",
+      "description": "The first fruit of the Nüwa tree — an autonomous AI pentest legion (634-team champion, 8h unattended, 1B tokens beat 4.5B). Not just a tool: evolvable by design. Grow your own fruit on the Nüwa Foundation (Create/Language/History).",
+      "stars": 2012,
+      "created": "2026-10-30T15:12:35Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "voyager-so/vork",
+      "section": "automation",
+      "topic": "ai-agents",
+      "url": "https://github.com/voyager-so/vork",
+      "description": "Headless 3D and VFX engine for agents. Research preview.",
+      "stars": 1480,
+      "created": "2026-11-05T22:37:07Z",
+      "language": "Rust",
+      "new": false
+    },
+    {
+      "repo": "synchopate/llama-modchip",
+      "section": "automation",
+      "topic": "ai-agents",
+      "url": "https://github.com/synchopate/llama-modchip",
+      "description": "Run 284B DeepSeek-V4-Flash (<59GiB RAM: 41.1 cold pp, 9.1 N=1 tg, up to 25.3 spec tok/s) & 30B MoEs (22.4 N=1 / 111.6 spec tok/s) on 64GB CPU (0 GPUs).",
+      "stars": 1015,
+      "created": "2026-10-29T10:17:33Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "JosssphZhou/poki",
+      "section": "automation",
+      "topic": "ai-agents",
+      "url": "https://github.com/JosssphZhou/poki",
+      "description": "Let AI agents operate a real iPhone. Local MCP server and agent, no jailbreak, no extra hardware.",
+      "stars": 1013,
+      "created": "2026-11-05T15:04:31Z",
+      "language": "Swift",
+      "new": false
+    },
+    {
+      "repo": "agentes-chat/agentes-chat",
+      "section": "automation",
+      "topic": "ai-agents",
+      "url": "https://github.com/agentes-chat/agentes-chat",
+      "description": "Open-source, self-hosted Slack alternative where your team and AI agents work together in channels and DMs. Agents run on Claude, ChatGPT/Codex, Gemini or Grok, with MCP tools, their own computer and browser, routines, memory and approvals. Web, desktop and phone apps. Docker Compose + Postgres. AGPL-3.0.",
+      "stars": 797,
+      "created": "2026-11-09T00:50:28Z",
+      "language": "TypeScript",
+      "new": false
+    },
+    {
+      "repo": "kubai087/kubai-icons",
+      "section": "automation",
+      "topic": "ai-agents",
+      "url": "https://github.com/kubai087/kubai-icons",
+      "description": "An agent skill that draws animated icons in one consistent style, for Claude Code, Codex and other coding agents. Comes with 2,600+ open-source icons for React, Vue and SVG, and a website to browse them.",
+      "stars": 770,
+      "created": "2026-11-03T09:52:39Z",
+      "language": "JavaScript",
+      "new": false
+    },
+    {
+      "repo": "dabingfy-dot/solo-to-team-skills",
+      "section": "automation",
+      "topic": "ai-agents",
+      "url": "https://github.com/dabingfy-dot/solo-to-team-skills",
+      "description": "Skills for human-led AI teams: delegate tasks, verify evidence, explain steps clearly, and learn from real cases. 一个人统筹 AI 团队：派活、核证、清楚说明、经验复用。",
+      "stars": 750,
+      "created": "2026-11-07T01:36:28Z",
+      "language": null,
+      "new": false
+    },
+    {
+      "repo": "phuryn/product-engineering",
+      "section": "automation",
+      "topic": "ai-agents",
+      "url": "https://github.com/phuryn/product-engineering",
+      "description": "44 agent skills from shipping three live products: decide what to build, build it with Claude Code or Codex, have a second model review it, release it.",
+      "stars": 538,
+      "created": "2026-10-29T11:32:54Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "serveroshq/panel",
+      "section": "laravel",
+      "topic": "laravel",
+      "url": "https://github.com/serveroshq/panel",
+      "description": "The open source ServerOS panel: one place to run the Linux servers you already own.",
+      "stars": 116,
+      "created": "2026-11-09T00:47:33Z",
+      "language": "PHP",
+      "new": true
+    },
+    {
+      "repo": "mdiri-ai/SoduWork",
+      "section": "agents",
+      "track": "t3",
+      "topic": "agent-harness",
+      "url": "https://github.com/mdiri-ai/SoduWork",
+      "description": "The AI-native engine for teams and their agents. Multi-harness, multi-agent, self-hosted.",
+      "stars": 404,
+      "created": "2026-10-29T02:43:14Z",
+      "language": "JavaScript",
+      "new": false
+    },
+    {
+      "repo": "Balanov/uncut",
+      "section": "agents",
+      "track": "t3",
+      "topic": "agent-harness",
+      "url": "https://github.com/Balanov/uncut",
+      "description": "The lossless, headless coding agent harness. One 7 MB static binary, four tools, plain stdin/stdout, no silent cuts.",
+      "stars": 266,
+      "created": "2026-11-01T17:19:30Z",
+      "language": "Go",
+      "new": false
+    },
+    {
+      "repo": "yc-software/minecraft-agent-harness",
+      "section": "agents",
+      "track": "t3",
+      "topic": "agent-harness",
+      "url": "https://github.com/yc-software/minecraft-agent-harness",
+      "description": "Run language-model agents in Minecraft with Mineflayer tools, persistent sessions and shell sandboxes.",
+      "stars": 211,
+      "created": "2026-10-29T05:21:45Z",
+      "language": "JavaScript",
+      "new": false
+    },
+    {
+      "repo": "sshah03/recalc",
+      "section": "agents",
+      "track": "t3",
+      "topic": "harness-engineering",
+      "url": "https://github.com/sshah03/recalc",
+      "description": "A spreadsheet you share with your AI agents: every cell can hold a value, a formula, a terminal command, or a Claude Code or Codex agent.",
+      "stars": 69,
+      "created": "2026-11-03T21:16:08Z",
+      "language": "Rust",
+      "new": false
+    }
+  ]
 }
