@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10",
+ "updated": "2026-11-12",
  "sources": [
   {
    "name": "Picrew/awesome-agent-harness",
@@ -8000,6 +8000,125 @@
    "ar": {
     "summary": "لوحة محلية لمتابعة نشاط Claude Code وCodex وغيرهما من وكلاء البرمجة.",
     "group": "المراقبة وعمليات الموثوقية"
+   }
+  },
+  {
+   "stars": null,
+   "tags": [
+    "web-search"
+   ],
+   "lists": [],
+   "name": "Coder Eval",
+   "repo": "UiPath/coder_eval",
+   "url": "https://github.com/UiPath/coder_eval",
+   "category": "eval",
+   "group": "Evaluation & Benchmarks",
+   "summary": "UiPath's open framework to run coding agents on YAML tasks in a sandbox, score them and gate CI.",
+   "ar": {
+    "summary": "إطار مفتوح من UiPath لتشغيل وكلاء البرمجة على مهام YAML داخل بيئة عزل وتقييمهم وجعلهم بوابة في CI.",
+    "group": "التقييم والمقاييس"
+   }
+  },
+  {
+   "stars": null,
+   "tags": [
+    "web-search"
+   ],
+   "lists": [],
+   "name": "harness-eval",
+   "repo": "natea/harness-eval",
+   "url": "https://github.com/natea/harness-eval",
+   "category": "eval",
+   "group": "Evaluation & Benchmarks",
+   "summary": "Ranks SDLC frameworks by building the same spec with the same harness and model in fresh sandboxes.",
+   "ar": {
+    "summary": "يرتّب أطر دورة التطوير ببناء المواصفات نفسها بالـ harness والنموذج نفسيهما في بيئات عزل جديدة.",
+    "group": "التقييم والمقاييس"
+   }
+  },
+  {
+   "stars": null,
+   "tags": [
+    "web-search"
+   ],
+   "lists": [],
+   "name": "RepoNorm",
+   "repo": "SYSUSELab/RepoNorm",
+   "url": "https://github.com/SYSUSELab/RepoNorm",
+   "category": "eval",
+   "group": "Evaluation & Benchmarks",
+   "summary": "Extracts and verifies a repository's development rules for coding agents; includes RepoNormBench.",
+   "ar": {
+    "summary": "يستخرج قواعد التطوير الخاصة بالمستودع ويتحقق منها لوكلاء البرمجة، ومعه مقياس RepoNormBench.",
+    "group": "التقييم والمقاييس"
+   }
+  },
+  {
+   "stars": null,
+   "tags": [
+    "web-search"
+   ],
+   "lists": [],
+   "name": "SessionFarmer",
+   "repo": "bytedance/SessionFarmer",
+   "url": "https://github.com/bytedance/SessionFarmer",
+   "category": "eval",
+   "group": "Evaluation & Benchmarks",
+   "summary": "Turns developer-agent session logs and commits into executable benchmark tasks (code release in progress).",
+   "ar": {
+    "summary": "يحوّل سجلات جلسات المطورين مع الوكلاء والـ commits إلى مهام قياس قابلة للتشغيل (نشر الشيفرة قيد الإكمال).",
+    "group": "التقييم والمقاييس"
+   }
+  },
+  {
+   "stars": null,
+   "tags": [
+    "web-search"
+   ],
+   "lists": [],
+   "name": "yuurei",
+   "repo": "shimpeiws/yuurei",
+   "url": "https://github.com/shimpeiws/yuurei",
+   "category": "runtime",
+   "group": "Agent Runtimes & SDKs",
+   "summary": "CLI that runs Claude Code, Codex or OpenCode with versioned config profiles in temporary environments and records a trace.",
+   "ar": {
+    "summary": "أداة سطر أوامر تشغّل Claude Code أو Codex أو OpenCode بملفات إعداد ذات إصدارات في بيئات مؤقتة وتسجّل مسار التشغيل.",
+    "group": "محركات الوكلاء وحزم التطوير"
+   }
+  },
+  {
+   "stars": null,
+   "tags": [
+    "web-search"
+   ],
+   "lists": [],
+   "name": "coding-harness-eval",
+   "repo": "qte77/coding-harness-eval",
+   "url": "https://github.com/qte77/coding-harness-eval",
+   "category": "eval",
+   "group": "Evaluation & Benchmarks",
+   "summary": "Early-stage headless comparison of several coding harnesses (runner not built yet).",
+   "ar": {
+    "summary": "مقارنة في مرحلة مبكرة لعدة أدوات harness للبرمجة دون واجهة (لم يُبنَ المشغّل بعد).",
+    "group": "التقييم والمقاييس"
+   }
+  },
+  {
+   "stars": null,
+   "tags": [
+    "web-search"
+   ],
+   "lists": [],
+   "name": "agent-sandbox (vivek1504)",
+   "repo": "vivek1504/agent-sandbox",
+   "url": "https://github.com/vivek1504/agent-sandbox",
+   "category": "sandbox",
+   "group": "Sandboxes & Execution",
+   "summary": "Small Firecracker microVM sandbox with MCP support.",
+   "ar": {
+    "summary": "بيئة عزل صغيرة بآلات Firecracker الافتراضية المصغّرة مع دعم MCP.",
+    "group": "بيئات العزل والتنفيذ"
    }
   }
  ],

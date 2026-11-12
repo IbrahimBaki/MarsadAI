@@ -1,13 +1,14 @@
 {
  "track": "t3",
- "checked": "2026-11-10",
+ "checked": "2026-11-12",
  "headline": "Don't build a harness benchmark engine: Harbor (plus Inspect for non-code tasks) already runs any harness on containerized tasks at scale. What nobody has built is the Azm layer on top: tasks mined from Azm's own repos, adapters for squad-kit and azm-harness, standards-compliance scoring, per-team YAML suites and a report people can act on.",
  "bottomLine": [
   "Prior art exists and is recent: AWS published a harness-vs-model cost/quality benchmark on your own code (MIT-0, 21 Oct 2026); Fullscript ran 36 tasks mined from its own commits (Aug 2026); GitHub published its harness evaluation protocol (Jun 2026). Azm's sandbox should combine their methods, not reinvent them.",
   "The harness matters more than the model: harness variance was 7.8x model variance in a 3x3 study, and the same model moved ~10 points on SWE-bench Pro between harnesses. Harness-Bench (2026, 7 harnesses × 10 models) found no harness best on every model, and choosing the harness per model gained 2.5-2.7 points. That justifies the track.",
   "Execution and isolation are solved problems: Harbor (Apache-2.0) for running agents on tasks; Docker locally, then E2B (self-host/BYOC) or Kubernetes agent-sandbox / OpenSandbox on Azm infrastructure.",
   "squad-kit (1.3, now a full harness) has no direct equivalent that covers idea → tagged release with human gates and readable project memory; Archon (YAML workflows, MIT) and AI-DLC (one core, seven tools) are the closest peers to test it against. Its main gaps for the sandbox: a headless mode, more engines than Claude Code, and isolation.",
-  "The real gap, unclaimed by any tool found: measuring harnesses on a company's own SDLC work, including standards compliance and non-code steps, with per-team configuration."
+  "The real gap, unclaimed by any tool found: measuring harnesses on a company's own SDLC work, including standards compliance and non-code steps, with per-team configuration.",
+  "New prior art (Nov 2026) narrows what is left to build: UiPath's Coder Eval already offers per-task YAML, harness switching, cost telemetry and a CI gate; SessionFarmer and Trace2Eval mine tasks from real sessions; SWE-CC and RepoNorm show how to score repository-rule compliance. Azm's unique part is now mainly the SDLC-harness adapters, Track 1 standards scoring and per-team reports, assembled from these pieces."
  ],
  "priorArt": [
   {
@@ -63,6 +64,30 @@
    "ref": "harness-leaderboard",
    "takes": "The report layout: harnesses side by side with the model fixed, an accuracy-versus-cost chart, cost per solved task, and reliability as 'solved every time over three attempts'.",
    "lacks": "Private tasks, SDLC harnesses (squad-kit, azm-harness), standards scores, per-team views and a CI gate; its method and benchmark are not documented on the page."
+  },
+  {
+   "name": "Coder Eval (UiPath)",
+   "ref": "coder-eval",
+   "takes": "Per-task YAML with weighted criteria, harness switch in one field (Claude Code, Codex, OpenCode, Pi, Antigravity), cost per tool call, A/B experiments, a GitHub Action CI gate and trend reports.",
+   "lacks": "Task mining, SDLC-harness adapters (squad-kit, azm-harness), standards scoring, microVM or cloud sandboxes, Harbor tasks."
+  },
+  {
+   "name": "harness-eval (natea)",
+   "ref": "natea-harness-eval",
+   "takes": "Comparing SDLC kits under a fixed harness and model: pinned candidate registry, frozen weighted test plan, evidence-based evaluator and a blind code-quality judge.",
+   "lacks": "Real-repo tasks, squad-kit and azm-harness, standards scores, a license."
+  },
+  {
+   "name": "SessionFarmer (ByteDance) and Trace2Eval",
+   "ref": "sessionfarmer",
+   "takes": "Mining executable tasks from real developer-agent sessions and commits, including private enterprise logs; test checks with broken code and a blind solver; human-calibrated rubric judges.",
+   "lacks": "Released, reusable code (SessionFarmer's is in progress; Trace2Eval has none), per-team config, standards scoring."
+  },
+  {
+   "name": "SWE-CC and RepoNorm",
+   "ref": "swe-cc-policy-compliance",
+   "takes": "Turning repository docs into checkable policies (823 across 12 repos), scoring compliance across the whole trajectory, and extracting and verifying each repo's rules automatically.",
+   "lacks": "Azm's own Track 1 standards, non-Python stacks, integration with a harness runner and team reports."
   }
  ],
  "architecture": [
@@ -199,7 +224,8 @@
    "الـ harness أهم من النموذج: كان تباين الـ harness أكبر 7.8 مرات من تباين النموذج في دراسة 3×3، وتحرك النموذج نفسه نحو 10 نقاط على SWE-bench Pro بين أداة وأخرى. ووجد Harness-Bench ‏(2026، سبع أدوات × عشرة نماذج) أنه لا توجد أداة هي الأفضل مع كل النماذج، وأن اختيار الـ harness لكل نموذج أضاف 2.5 إلى 2.7 نقطة. وهذا يبرر المسار.",
    "التشغيل والعزل مشكلتان محلولتان: Harbor ‏(Apache-2.0) لتشغيل الوكلاء على المهام؛ وDocker محليًا، ثم E2B (مستضافًا لدينا أو داخل حسابنا) أو Kubernetes agent-sandbox أو OpenSandbox على بنية عزم.",
    "لا يوجد مقابل مباشر لـ squad-kit (الإصدار 1.3، وأصبح harness كاملًا) يغطي الفكرة ← الإصدار الموسوم مع بوابات بشرية وذاكرة مشروع مقروءة؛ وأقرب النظراء لاختباره أمامهم Archon (سير عمل YAML، ترخيص MIT) وAI-DLC (نواة واحدة لسبع أدوات). وأبرز نواقصه لبيئة الاختبار: وضع تشغيل بلا واجهة، ومحركات غير Claude Code، والعزل.",
-   "الفجوة الحقيقية التي لم تتبنها أي أداة وجدناها: قياس أدوات الـ harness على عمل دورة التطوير الخاص بالشركة، بما في ذلك الالتزام بالمعايير والخطوات غير البرمجية، مع إعدادات لكل فريق."
+   "الفجوة الحقيقية التي لم تتبنها أي أداة وجدناها: قياس أدوات الـ harness على عمل دورة التطوير الخاص بالشركة، بما في ذلك الالتزام بالمعايير والخطوات غير البرمجية، مع إعدادات لكل فريق.",
+   "عمل سابق جديد (نوفمبر 2026) يضيّق ما بقي علينا بناؤه: يقدّم Coder Eval من UiPath فعلًا ملف YAML لكل مهمة، وتبديل الـ harness، وتسجيل التكلفة، وبوابة CI؛ ويستخرج SessionFarmer وTrace2Eval المهام من جلسات حقيقية؛ ويبيّن SWE-CC وRepoNorm كيف نقيّم الالتزام بقواعد المستودع. وصار الجزء الخاص بعزم أساسًا موصّلات أدوات دورة التطوير، وتقييم معايير المسار 1، وتقارير الفرق، مجمّعة من هذه القطع."
   ],
   "priorArt": [
    {
@@ -237,6 +263,22 @@
    {
     "takes": "تخطيط التقرير: أدوات الـ harness جنبًا إلى جنب مع تثبيت النموذج، ورسم للدقة مقابل التكلفة، وتكلفة المهمة المحلولة، والموثوقية بصيغة «حُلّت في كل مرة عبر ثلاث محاولات».",
     "lacks": "المهام الخاصة، وأدوات دورة التطوير (squad-kit وazm-harness)، ودرجات المعايير، والعرض لكل فريق، وبوابة CI؛ كما أن طريقتها ومقياسها غير موثّقين في الصفحة."
+   },
+   {
+    "takes": "ملف YAML لكل مهمة بمعايير موزونة، وتبديل الـ harness بحقل واحد (Claude Code وCodex وOpenCode وPi وAntigravity)، وتكلفة كل استدعاء أداة، وتجارب مقارنة، وبوابة CI عبر إجراء GitHub، وتقارير الاتجاهات.",
+    "lacks": "استخراج المهام، وموصّلات أدوات دورة التطوير (squad-kit وazm-harness)، وتقييم المعايير، وبيئات العزل بالآلات المصغّرة أو السحابية، ومهام Harbor."
+   },
+   {
+    "takes": "مقارنة أطر دورة التطوير مع تثبيت الـ harness والنموذج: سجلّ مرشحين مثبّت الإصدارات، وخطة اختبار موزونة مجمّدة، ومقيّم قائم على الأدلة، وحَكَم أعمى لجودة الشيفرة.",
+    "lacks": "مهام من مستودعات حقيقية، وsquad-kit وazm-harness، ودرجات المعايير، وترخيص."
+   },
+   {
+    "takes": "استخراج مهام قابلة للتشغيل من جلسات حقيقية بين المطورين والوكلاء ومن الـ commits، بما فيها سجلات مؤسسية خاصة؛ والتحقق من الاختبارات بشيفرة مكسورة وحلّال أعمى؛ وحكّام بمعايير معايَرة على البشر.",
+    "lacks": "شيفرة منشورة قابلة لإعادة الاستخدام (شيفرة SessionFarmer قيد النشر، ولا شيفرة لـ Trace2Eval)، وإعدادات لكل فريق، وتقييم المعايير."
+   },
+   {
+    "takes": "تحويل توثيق المستودعات إلى سياسات قابلة للفحص (823 سياسة عبر 12 مستودعًا)، وتقييم الالتزام عبر مسار العمل كله، واستخراج قواعد كل مستودع والتحقق منها آليًا.",
+    "lacks": "معايير عزم الخاصة في المسار 1، والتقنيات غير Python، والتكامل مع مشغّل الـ harness وتقارير الفرق."
    }
   ],
   "names": [
@@ -247,7 +289,12 @@
    "HarnessBench / WildClawBench",
    "Harness-Bench (جامعة بكين / Qihoo 360)",
    "Better Harness ‏(Qoder)",
-   "AgentCompass ‏(مختبر شنغهاي للذكاء الاصطناعي)"
+   "AgentCompass ‏(مختبر شنغهاي للذكاء الاصطناعي)",
+   "Harness Leaderboard ‏(Hugging Face)",
+   "Coder Eval ‏(UiPath)",
+   "harness-eval ‏(natea)",
+   "SessionFarmer ‏(ByteDance) وTrace2Eval",
+   "SWE-CC وRepoNorm"
   ],
   "architecture": [
    {

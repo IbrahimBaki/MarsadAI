@@ -1,6 +1,6 @@
 {
  "track": "t3",
- "checked": "2026-11-10",
+ "checked": "2026-11-12",
  "goal": {
   "en": "Build one place where Azm can run any harness (squad-kit, azm-harness, Claude Code, others) on the same real Azm tasks, in isolation, and get a clear answer: which harness, with which model, gives the best quality for the cost, and does it follow our standards?",
   "ar": "بناء مكان واحد تشغّل فيه عزم أي harness (مثل squad-kit وazm-harness وClaude Code وغيرها) على المهام الحقيقية نفسها من مشاريع عزم، في بيئة معزولة، لتحصل على إجابة واضحة: أي harness، مع أي نموذج، يعطي أفضل جودة مقابل التكلفة، وهل يلتزم بمعاييرنا؟"
@@ -94,8 +94,8 @@
    },
    "decision": "build",
    "plan": {
-    "en": "Build Azm's own task set with the SWE-bench recipe: take a closed ticket, pin the repo before the fix, write the brief from the ticket, and keep hidden tests that fail before and pass after. Start with 10 tasks from one repo, grow to 20-50 per team. Keep a small slice of Terminal-Bench as a public sanity check, pinned to one version (2.0 matches most published harness studies; 4.x is the current leaderboard), because scores do not carry across versions. New in Scale's SWE-Bench Pro V2 (Sept 2026), a protocol to copy for our own tasks: during the run the agent can reach only the model endpoint (web tools off, because agents were fetching the fixing commits), and every answer is re-graded on a clean image, which caught a model forging a Go checksum. Invalid tasks were dropped (731 to 642) and a task only ships if it passes with the reference fix and fails with an empty one. A second warning from Shanghai AI Lab's SWE-Bench Pro Verified (Sept 2026): agents could read the answer files in 103 tasks locally and 49 over the network, and one model's score fell from 78.8% to 57.3% once that was blocked. So our task images must not contain the fix, the answer key or the hidden tests until grading starts.",
-    "ar": "نبني مجموعة مهام خاصة بعزم على طريقة SWE-bench: نأخذ تذكرة مغلقة، ونثبّت المستودع على حالته قبل الإصلاح، ونكتب وصف المهمة من التذكرة، ونحتفظ باختبارات مخفية تفشل قبل الإصلاح وتنجح بعده. نبدأ بعشر مهام من مستودع واحد، ثم نصل إلى 20-50 مهمة لكل فريق. ونُبقي جزءًا صغيرًا من Terminal-Bench للتحقق العام، مثبّتًا على إصدار واحد (2.0 يطابق معظم دراسات الـ harness المنشورة، و4.x هو لوحة النتائج الحالية)، لأن الدرجات لا تنتقل بين الإصدارات. جديد في SWE-Bench Pro V2 من Scale ‏(سبتمبر 2026)، وهو بروتوكول ننسخه لمهامنا: أثناء التشغيل لا يصل الوكيل إلا إلى خادم النموذج (أدوات الويب معطلة لأن وكلاء كانوا يجلبون الـ commits التي تحتوي الإصلاح)، وتُعاد درجة كل إجابة على صورة نظيفة، وقد كشف ذلك نموذجًا زوّر بصمة تحقق في Go. وحُذفت المهام غير الصالحة (من 731 إلى 642)، ولا تُعتمد مهمة إلا إذا نجحت مع الإصلاح المرجعي وفشلت مع إصلاح فارغ. وتحذير ثانٍ من SWE-Bench Pro Verified الصادر عن مختبر شنغهاي للذكاء الاصطناعي (سبتمبر 2026): استطاع الوكلاء قراءة ملفات الإجابة في 103 مهام محليًا و49 عبر الشبكة، وهبطت نتيجة أحد النماذج من 78.8% إلى 57.3% بعد سد هذه الثغرة. لذلك يجب ألا تحتوي صور مهامنا على الإصلاح أو مفتاح الإجابة أو الاختبارات المخفية قبل بدء التقييم."
+    "en": "Build Azm's own task set with the SWE-bench recipe: take a closed ticket, pin the repo before the fix, write the brief from the ticket, and keep hidden tests that fail before and pass after. Start with 10 tasks from one repo, grow to 20-50 per team. Keep a small slice of Terminal-Bench as a public sanity check, pinned to one version (2.0 matches most published harness studies; 4.x is the current leaderboard), because scores do not carry across versions. New in Scale's SWE-Bench Pro V2 (Sept 2026), a protocol to copy for our own tasks: during the run the agent can reach only the model endpoint (web tools off, because agents were fetching the fixing commits), and every answer is re-graded on a clean image, which caught a model forging a Go checksum. Invalid tasks were dropped (731 to 642) and a task only ships if it passes with the reference fix and fails with an empty one. A second warning from Shanghai AI Lab's SWE-Bench Pro Verified (Sept 2026): agents could read the answer files in 103 tasks locally and 49 over the network, and one model's score fell from 78.8% to 57.3% once that was blocked. So our task images must not contain the fix, the answer key or the hidden tests until grading starts. Prior art for mining (Nov 2026): SessionFarmer (ByteDance and partners) already turns developer-and-agent sessions plus commits into executable tasks, including from private enterprise logs, and checks each task's tests against deliberately broken code and a blind solver. Trace2Eval does the same from agent traces with human-calibrated rubrics. Read both before building the miner and copy their test checks.",
+    "ar": "نبني مجموعة مهام خاصة بعزم على طريقة SWE-bench: نأخذ تذكرة مغلقة، ونثبّت المستودع على حالته قبل الإصلاح، ونكتب وصف المهمة من التذكرة، ونحتفظ باختبارات مخفية تفشل قبل الإصلاح وتنجح بعده. نبدأ بعشر مهام من مستودع واحد، ثم نصل إلى 20-50 مهمة لكل فريق. ونُبقي جزءًا صغيرًا من Terminal-Bench للتحقق العام، مثبّتًا على إصدار واحد (2.0 يطابق معظم دراسات الـ harness المنشورة، و4.x هو لوحة النتائج الحالية)، لأن الدرجات لا تنتقل بين الإصدارات. جديد في SWE-Bench Pro V2 من Scale ‏(سبتمبر 2026)، وهو بروتوكول ننسخه لمهامنا: أثناء التشغيل لا يصل الوكيل إلا إلى خادم النموذج (أدوات الويب معطلة لأن وكلاء كانوا يجلبون الـ commits التي تحتوي الإصلاح)، وتُعاد درجة كل إجابة على صورة نظيفة، وقد كشف ذلك نموذجًا زوّر بصمة تحقق في Go. وحُذفت المهام غير الصالحة (من 731 إلى 642)، ولا تُعتمد مهمة إلا إذا نجحت مع الإصلاح المرجعي وفشلت مع إصلاح فارغ. وتحذير ثانٍ من SWE-Bench Pro Verified الصادر عن مختبر شنغهاي للذكاء الاصطناعي (سبتمبر 2026): استطاع الوكلاء قراءة ملفات الإجابة في 103 مهام محليًا و49 عبر الشبكة، وهبطت نتيجة أحد النماذج من 78.8% إلى 57.3% بعد سد هذه الثغرة. لذلك يجب ألا تحتوي صور مهامنا على الإصلاح أو مفتاح الإجابة أو الاختبارات المخفية قبل بدء التقييم. عمل سابق للاستخراج (نوفمبر 2026): يحوّل SessionFarmer ‏(ByteDance وشركاؤها) فعلًا جلسات المطورين مع الوكلاء والـ commits إلى مهام قابلة للتشغيل، بما في ذلك من سجلات مؤسسية خاصة، ويتحقق من اختبارات كل مهمة بشيفرة مكسورة عمدًا وبحلّال أعمى. ويفعل Trace2Eval الشيء نفسه من مسارات عمل الوكلاء بمعايير معايَرة على البشر. نقرأ الاثنين قبل بناء أداة الاستخراج وننسخ طرق التحقق من الاختبارات."
    },
    "pick": [
     "swe-bench"
@@ -700,8 +700,8 @@
    },
    "decision": "adopt",
    "plan": {
-    "en": "Use Harbor. It already runs Claude Code, Codex CLI, OpenHands and others in containers, locally or in cloud sandboxes, and accepts our own tasks. We write one adapter per Azm harness. Use Inspect AI only for non-code tasks (spec quality, reviews). Exgentic is a smaller 'any agent on any benchmark' framework that already runs Claude Code, Codex CLI and Gemini CLI; keep it as a cross-check, not a replacement. New serious alternative: AgentCompass (Shanghai AI Lab, Apache-2.0, v1.1 Nov 2026) separates model, benchmark, harness and sandbox, already runs Claude Code and Codex, and loads Harbor-format tasks, so our tasks stay portable; we will run a few through both to check the scores agree.",
-    "ar": "نستخدم Harbor؛ فهو يشغّل بالفعل Claude Code وCodex CLI وOpenHands وغيرها داخل حاويات، محليًا أو في بيئات سحابية، ويقبل مهامنا الخاصة. نكتب موصّلًا واحدًا لكل harness من عزم. ونستخدم Inspect AI للمهام غير البرمجية فقط (جودة المواصفات والمراجعات). وExgentic إطار أصغر من نوع «أي وكيل على أي مقياس» يشغّل فعلًا Claude Code وCodex CLI وGemini CLI؛ نبقيه للتحقق المتقاطع لا بديلًا. بديل جادّ جديد: AgentCompass ‏(مختبر شنغهاي للذكاء الاصطناعي، Apache-2.0، الإصدار 1.1 في نوفمبر 2026) يفصل النموذج والمقياس والـ harness وبيئة العزل، ويشغّل فعلًا Claude Code وCodex، ويحمّل المهام بصيغة Harbor، فتبقى مهامنا قابلة للنقل؛ وسنشغّل بعضها عبر الاثنين للتأكد من تطابق النتائج."
+    "en": "Use Harbor. It already runs Claude Code, Codex CLI, OpenHands and others in containers, locally or in cloud sandboxes, and accepts our own tasks. We write one adapter per Azm harness. Use Inspect AI only for non-code tasks (spec quality, reviews). Exgentic is a smaller 'any agent on any benchmark' framework that already runs Claude Code, Codex CLI and Gemini CLI; keep it as a cross-check, not a replacement. New serious alternative: AgentCompass (Shanghai AI Lab, Apache-2.0, v1.1 Nov 2026) separates model, benchmark, harness and sandbox, already runs Claude Code and Codex, and loads Harbor-format tasks, so our tasks stay portable; we will run a few through both to check the scores agree. Prior art found (Nov 2026): UiPath's Coder Eval (Apache-2.0) already runs Claude Code, Codex, OpenCode, Pi and Antigravity on YAML tasks, records cost per tool call and ships a GitHub Action as a CI gate. It does not replace Harbor's scale or sandboxes, but it covers the per-team suite file and CI gate we planned to build, so we pilot it before writing our own.",
+    "ar": "نستخدم Harbor؛ فهو يشغّل بالفعل Claude Code وCodex CLI وOpenHands وغيرها داخل حاويات، محليًا أو في بيئات سحابية، ويقبل مهامنا الخاصة. نكتب موصّلًا واحدًا لكل harness من عزم. ونستخدم Inspect AI للمهام غير البرمجية فقط (جودة المواصفات والمراجعات). وExgentic إطار أصغر من نوع «أي وكيل على أي مقياس» يشغّل فعلًا Claude Code وCodex CLI وGemini CLI؛ نبقيه للتحقق المتقاطع لا بديلًا. بديل جادّ جديد: AgentCompass ‏(مختبر شنغهاي للذكاء الاصطناعي، Apache-2.0، الإصدار 1.1 في نوفمبر 2026) يفصل النموذج والمقياس والـ harness وبيئة العزل، ويشغّل فعلًا Claude Code وCodex، ويحمّل المهام بصيغة Harbor، فتبقى مهامنا قابلة للنقل؛ وسنشغّل بعضها عبر الاثنين للتأكد من تطابق النتائج. عمل سابق وُجد في نوفمبر 2026: يشغّل Coder Eval من UiPath ‏(Apache-2.0) فعلًا Claude Code وCodex وOpenCode وPi وAntigravity على مهام YAML، ويسجّل تكلفة كل استدعاء أداة، ويأتي بإجراء GitHub بوصفه بوابة CI. لا يحل محل Harbor في الحجم وبيئات العزل، لكنه يغطي ملف المهام لكل فريق وبوابة CI اللذين خططنا لبنائهما، فنجرّبه قبل أن نكتب نسختنا."
    },
    "pick": [
     "harbor"
@@ -712,7 +712,8 @@
     "runloop-benchmarks",
     "openhands-benchmarks",
     "exgentic",
-    "agentcompass"
+    "agentcompass",
+    "coder-eval"
    ],
    "compare": {
     "tools": [
@@ -720,7 +721,8 @@
      "inspect-ai",
      "aws-harness-benchmarks",
      "runloop-benchmarks",
-     "agentcompass"
+     "agentcompass",
+     "coder-eval"
     ],
     "rows": [
      {
@@ -744,6 +746,10 @@
        {
         "en": "Paid service",
         "ar": "خدمة مدفوعة"
+       },
+       {
+        "en": "Open source (Apache-2.0)",
+        "ar": "مفتوح المصدر (Apache-2.0)"
        },
        {
         "en": "Open source (Apache-2.0)",
@@ -776,6 +782,10 @@
        {
         "en": "Yes: Claude Code, Codex, OpenHands and more",
         "ar": "نعم: Claude Code وCodex وOpenHands وغيرها"
+       },
+       {
+        "en": "Yes: Claude Code, Codex, Antigravity, OpenCode, Pi",
+        "ar": "نعم: Claude Code وCodex وAntigravity وOpenCode وPi"
        }
       ]
      },
@@ -804,6 +814,10 @@
        {
         "en": "Docker, Daytona, Modal, OpenSandbox",
         "ar": "Docker وDaytona وModal وOpenSandbox"
+       },
+       {
+        "en": "Temp folder or Docker",
+        "ar": "مجلد مؤقت أو Docker"
        }
       ]
      },
@@ -832,6 +846,10 @@
        {
         "en": "Benchmark graders, Harbor verifier, reward-hacking analyzer",
         "ar": "مقيّمات المقاييس، وأداة تحقق Harbor، وكاشف التحايل"
+       },
+       {
+        "en": "Weighted YAML criteria, LLM rubrics, skill-used check",
+        "ar": "معايير YAML موزونة، ومعايير يقيّمها نموذج، وفحص استخدام المهارة"
        }
       ]
      },
@@ -856,6 +874,10 @@
        {
         "en": "Usage-based",
         "ar": "حسب الاستخدام"
+       },
+       {
+        "en": "Free",
+        "ar": "مجاني"
        },
        {
         "en": "Free",
@@ -888,6 +910,10 @@
        {
         "en": "Cross-checking Harbor; borrowing its cheat detector",
         "ar": "التحقق المتقاطع من Harbor واستعارة كاشف التحايل"
+       },
+       {
+        "en": "Per-team YAML suites and a CI gate",
+        "ar": "مجموعات YAML لكل فريق وبوابة CI"
        }
       ]
      }
@@ -934,7 +960,8 @@
     "render-sandboxes",
     "devvm",
     "perplexity-space",
-    "google-agent-compute-engine"
+    "google-agent-compute-engine",
+    "aws-nitro-sandboxes"
    ],
    "modes": [
     {
@@ -1006,7 +1033,8 @@
       "cubesandbox",
       "openshell",
       "agent-substrate",
-      "perplexity-space"
+      "perplexity-space",
+      "aws-nitro-sandboxes"
      ],
      "pros": [
       {
@@ -1485,8 +1513,8 @@
    },
    "decision": "build",
    "plan": {
-    "en": "Build this layer. Score each run: resolved (hidden tests), a developer-value score 0-100, standards compliance from Track 1 checks, and zero for any safety violation; repeat 3-5 times and report variance. Report a harness × model × team matrix and a cost/quality chart, borrowing AWS's frontier chart and the Harness Card. Add a CI gate so no harness or standard change ships if it scores worse. Report full-credit rate and cost next to the mean score: Harness-Bench (2026) found they rank harnesses differently, and that the best harness depends on the model. Cost must be a first-class result: HarnessTax (Arena, Sep 2026) found the same model reaching similar success at up to 5x the cost across harnesses, and the Shandong study (Oct 2026) found that switching harness flipped 13% of hard tasks, the same rate as simply rerunning. So repeat runs are required before calling any harness better. For the standards score, borrow Better Harness's rule that missing evidence is reported as missing, never scored. Do not build cheat detection from scratch: AgentCompass ships a two-step reward-hacking analyzer (pattern rules for edited tests, weakened asserts or hard-coded outputs, then an LLM check of only the suspicious steps) that we can run on our trajectories and tune for our stacks. Prior art for the report screen: the public Harness Leaderboard on Hugging Face already shows harnesses side by side with the model fixed, an accuracy-versus-cost chart and a 'solved every time over three attempts' column (in one reported case 51.4% per attempt but only 33.0% every time). We copy that layout and those two columns; what stays ours is private tasks, SDLC harnesses, standards scores and the per-team view.",
-    "ar": "نبني هذه الطبقة. نقيّم كل تشغيل: هل حُلّت المهمة (اختبارات مخفية)، ودرجة قيمة للمطور من 0 إلى 100، والالتزام بالمعايير من فحوص المسار 1، وصفر لأي مخالفة أمان؛ ونكرر 3-5 مرات ونعرض التباين. نعرض مصفوفة harness × نموذج × فريق ورسمًا للجودة مقابل التكلفة، مستفيدين من رسم AWS وبطاقة الـ Harness. ونضيف بوابة في CI تمنع أي تغيير في الـ harness أو المعايير إن قلّل الدرجة. ونعرض نسبة الإنجاز الكامل والتكلفة بجانب متوسط الدرجة؛ فقد وجد Harness-Bench ‏(2026) أنها ترتّب أدوات الـ harness ترتيبًا مختلفًا، وأن أفضل harness يتوقف على النموذج. ويجب أن تكون التكلفة نتيجة أساسية: وجدت HarnessTax ‏(Arena، سبتمبر 2026) أن النموذج نفسه يحقق نجاحًا متقاربًا بتكلفة تصل إلى خمسة أضعاف بين أدوات الـ harness، ووجدت دراسة جامعة شاندونغ (أكتوبر 2026) أن تبديل الـ harness غيّر نتيجة 13% من المهام الصعبة، وهي النسبة نفسها عند مجرد إعادة التشغيل. لذا يلزم تكرار التشغيل قبل الحكم بأن harness أفضل من غيره. ولدرجة المعايير نستعير قاعدة Better Harness: الدليل الغائب يُعرض غائبًا ولا يُقيَّم. لا نبني كشف التحايل من الصفر: يأتي AgentCompass بأداة على خطوتين لكشف التحايل على التقييم (قواعد أنماط لتعديل الاختبارات أو إضعاف التحققات أو تثبيت المخرجات، ثم فحص بنموذج لغوي للخطوات المشبوهة فقط) يمكن تشغيلها على مسارات عمل وكلائنا وضبطها لتقنياتنا. عمل سابق لشاشة التقارير: تعرض لوحة Harness Leaderboard العامة على Hugging Face أدوات الـ harness جنبًا إلى جنب مع تثبيت النموذج، ورسمًا للدقة مقابل التكلفة، وعمود «حُلّت في كل مرة عبر ثلاث محاولات» (في حالة منشورة: 51.4% في المحاولة الواحدة و33.0% فقط في كل مرة). ننسخ هذا التخطيط وهذين العمودين؛ ويبقى لنا المهام الخاصة وأدوات دورة التطوير ودرجات المعايير والعرض لكل فريق."
+    "en": "Build this layer. Score each run: resolved (hidden tests), a developer-value score 0-100, standards compliance from Track 1 checks, and zero for any safety violation; repeat 3-5 times and report variance. Report a harness × model × team matrix and a cost/quality chart, borrowing AWS's frontier chart and the Harness Card. Add a CI gate so no harness or standard change ships if it scores worse. Report full-credit rate and cost next to the mean score: Harness-Bench (2026) found they rank harnesses differently, and that the best harness depends on the model. Cost must be a first-class result: HarnessTax (Arena, Sep 2026) found the same model reaching similar success at up to 5x the cost across harnesses, and the Shandong study (Oct 2026) found that switching harness flipped 13% of hard tasks, the same rate as simply rerunning. So repeat runs are required before calling any harness better. For the standards score, borrow Better Harness's rule that missing evidence is reported as missing, never scored. Do not build cheat detection from scratch: AgentCompass ships a two-step reward-hacking analyzer (pattern rules for edited tests, weakened asserts or hard-coded outputs, then an LLM check of only the suspicious steps) that we can run on our trajectories and tune for our stacks. Prior art for the report screen: the public Harness Leaderboard on Hugging Face already shows harnesses side by side with the model fixed, an accuracy-versus-cost chart and a 'solved every time over three attempts' column (in one reported case 51.4% per attempt but only 33.0% every time). We copy that layout and those two columns; what stays ours is private tasks, SDLC harnesses, standards scores and the per-team view. New prior art for the standards score (Oct-Nov 2026): SWE-CC turned 12 repositories' docs into 823 checkable policies and found working patches still broke 43.1% of them, half during intermediate steps, so we score the trajectory and not only the diff; RepoNorm shows how to extract and verify each repository's rules automatically. For comparing SDLC kits, natea's harness-eval adds a blind code-quality judge on a copy with framework files removed; we borrow that step.",
+    "ar": "نبني هذه الطبقة. نقيّم كل تشغيل: هل حُلّت المهمة (اختبارات مخفية)، ودرجة قيمة للمطور من 0 إلى 100، والالتزام بالمعايير من فحوص المسار 1، وصفر لأي مخالفة أمان؛ ونكرر 3-5 مرات ونعرض التباين. نعرض مصفوفة harness × نموذج × فريق ورسمًا للجودة مقابل التكلفة، مستفيدين من رسم AWS وبطاقة الـ Harness. ونضيف بوابة في CI تمنع أي تغيير في الـ harness أو المعايير إن قلّل الدرجة. ونعرض نسبة الإنجاز الكامل والتكلفة بجانب متوسط الدرجة؛ فقد وجد Harness-Bench ‏(2026) أنها ترتّب أدوات الـ harness ترتيبًا مختلفًا، وأن أفضل harness يتوقف على النموذج. ويجب أن تكون التكلفة نتيجة أساسية: وجدت HarnessTax ‏(Arena، سبتمبر 2026) أن النموذج نفسه يحقق نجاحًا متقاربًا بتكلفة تصل إلى خمسة أضعاف بين أدوات الـ harness، ووجدت دراسة جامعة شاندونغ (أكتوبر 2026) أن تبديل الـ harness غيّر نتيجة 13% من المهام الصعبة، وهي النسبة نفسها عند مجرد إعادة التشغيل. لذا يلزم تكرار التشغيل قبل الحكم بأن harness أفضل من غيره. ولدرجة المعايير نستعير قاعدة Better Harness: الدليل الغائب يُعرض غائبًا ولا يُقيَّم. لا نبني كشف التحايل من الصفر: يأتي AgentCompass بأداة على خطوتين لكشف التحايل على التقييم (قواعد أنماط لتعديل الاختبارات أو إضعاف التحققات أو تثبيت المخرجات، ثم فحص بنموذج لغوي للخطوات المشبوهة فقط) يمكن تشغيلها على مسارات عمل وكلائنا وضبطها لتقنياتنا. عمل سابق لشاشة التقارير: تعرض لوحة Harness Leaderboard العامة على Hugging Face أدوات الـ harness جنبًا إلى جنب مع تثبيت النموذج، ورسمًا للدقة مقابل التكلفة، وعمود «حُلّت في كل مرة عبر ثلاث محاولات» (في حالة منشورة: 51.4% في المحاولة الواحدة و33.0% فقط في كل مرة). ننسخ هذا التخطيط وهذين العمودين؛ ويبقى لنا المهام الخاصة وأدوات دورة التطوير ودرجات المعايير والعرض لكل فريق. عمل سابق جديد لدرجة المعايير (أكتوبر-نوفمبر 2026): حوّل SWE-CC توثيق 12 مستودعًا إلى 823 سياسة قابلة للفحص، ووجد أن التعديلات العاملة خالفت مع ذلك 43.1% منها، نصفها في خطوات وسيطة؛ لذا نقيّم مسار العمل لا الفرق النهائي فقط. ويبيّن RepoNorm كيف نستخرج قواعد كل مستودع ونتحقق منها آليًا. ولمقارنة أطر دورة التطوير يضيف harness-eval ‏(natea) حَكَمًا أعمى لجودة الشيفرة على نسخة حُذفت منها ملفات الإطار؛ ونستعير هذه الخطوة."
    },
    "pick": [
     "aws-harness-benchmarks",
@@ -1498,7 +1526,10 @@
     "skillsbench",
     "better-harness",
     "agentcompass",
-    "harness-leaderboard"
+    "harness-leaderboard",
+    "natea-harness-eval",
+    "reponorm",
+    "coder-eval"
    ],
    "compare": {
     "tools": [

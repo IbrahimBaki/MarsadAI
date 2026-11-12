@@ -1,6 +1,6 @@
 {
  "track": "t3",
- "checked": "2026-11-10",
+ "checked": "2026-11-12",
  "articles": [
   {
    "id": "fullscript-bench",
@@ -1426,6 +1426,182 @@
    "summary": "Baseten, a model-inference company, is acquiring the agent-sandbox provider Blaxel. Another sign that sandbox vendors are being bought by larger platforms; check vendor stability before choosing a managed sandbox.",
    "ar": {
     "summary": "تستحوذ Baseten، وهي شركة لتشغيل النماذج، على مزوّد بيئات عزل الوكلاء Blaxel. علامة أخرى على أن مزوّدي بيئات العزل تشتريهم منصات أكبر؛ لذا نتحقق من استقرار المزوّد قبل اختيار خدمة عزل مُدارة."
+   }
+  },
+  {
+   "id": "sessionfarmer",
+   "title": "SessionFarmer: Harvesting SWE Benchmarks from Wild Vibe Coding Sessions",
+   "source": "ByteDance, ShanghaiTech, Shanghai AI Lab (arXiv 2611.02440)",
+   "date": "2026-11-02",
+   "url": "https://arxiv.org/abs/2611.02440",
+   "type": "paper",
+   "tags": [
+    "task-mining",
+    "benchmark",
+    "prior-art"
+   ],
+   "priority": "must",
+   "summary": "Turns real developer-and-agent session logs plus their commits into self-contained, executable tasks: it links sessions to code changes, builds an offline Docker environment, writes the task and quality rubrics, and checks the tests against deliberately broken versions and a blind solver. The authors built a public set (242 tasks from 61 repositories) and an enterprise set from private logs; harness choice alone moved scores by up to 8.4 points for the same model.",
+   "why": "Prior art for Azm's task-mining step, including the enterprise case. Read it before building the miner; its test-checking steps (break the code on purpose, try a blind solver) are worth copying.",
+   "ar": {
+    "summary": "يحوّل سجلات جلسات حقيقية بين المطورين والوكلاء مع الـ commits المرتبطة بها إلى مهام مستقلة قابلة للتشغيل: يربط الجلسات بتغييرات الشيفرة، ويبني بيئة Docker تعمل دون اتصال، ويكتب المهمة ومعايير الجودة، ويتحقق من الاختبارات بنسخ مكسورة عمدًا وبحلّال لا يرى الإجابة. بنى المؤلفون مجموعة عامة (242 مهمة من 61 مستودعًا) ومجموعة مؤسسية من سجلات خاصة؛ وغيّر اختيار الـ harness وحده النتائج حتى 8.4 نقاط مع النموذج نفسه.",
+    "why": "عمل سابق لخطوة استخراج المهام في عزم، بما في ذلك الحالة المؤسسية. نقرؤه قبل بناء أداة الاستخراج؛ وخطوات التحقق من الاختبارات فيه (كسر الشيفرة عمدًا وتجربة حلّال أعمى) تستحق النسخ."
+   }
+  },
+  {
+   "id": "trace2eval",
+   "title": "Trace2Eval: a continuously updated benchmark from real coding-agent traces",
+   "source": "arXiv 2611.06506",
+   "date": "2026-11-04",
+   "url": "https://arxiv.org/abs/2611.06506",
+   "type": "paper",
+   "tags": [
+    "task-mining",
+    "rubrics",
+    "llm-judge"
+   ],
+   "priority": "read",
+   "summary": "A pipeline that keeps building tasks from real coding-agent traces: it filters traces, recovers the user's original request, restores the workspace and environment, and grades with human rubrics plus judge agents calibrated to humans using code and runtime evidence. Feeding rubric feedback back to the agent raised scores by about 10 points on average across 19 model-and-harness setups.",
+   "why": "A second method for mining tasks from how developers really use agents, and a recipe for calibrating an LLM judge against people. No code is published.",
+   "ar": {
+    "summary": "مسار يواصل بناء المهام من مسارات عمل حقيقية لوكلاء البرمجة: يصفّي المسارات، ويستعيد طلب المستخدم الأصلي، ويعيد مساحة العمل والبيئة، ويقيّم بمعايير بشرية مع وكلاء حَكَم معايَرين على البشر باستخدام أدلة من الشيفرة والتشغيل. ورفعت إعادة ملاحظات المعايير إلى الوكيل الدرجات بنحو 10 نقاط في المتوسط عبر 19 إعدادًا من النماذج وأدوات الـ harness.",
+    "why": "طريقة ثانية لاستخراج المهام من الاستخدام الحقيقي للوكلاء، ووصفة لمعايرة الحَكَم الآلي على البشر. ولم تُنشر شيفرة."
+   }
+  },
+  {
+   "id": "swe-cc-policy-compliance",
+   "title": "SWE-CC: Benchmarking Repository Policy Compliance for Coding Agents",
+   "source": "arXiv 2610.06193",
+   "date": "2026-10-05",
+   "url": "https://arxiv.org/abs/2610.06193",
+   "type": "paper",
+   "tags": [
+    "standards",
+    "compliance",
+    "prior-art"
+   ],
+   "priority": "must",
+   "summary": "Turns developer documentation from 12 repositories into 823 machine-checkable policies and runs 500 tasks based on SWE-bench Verified. Patches that worked still broke 43.1% of the policies that applied, and about half of the violations happened in intermediate steps rather than in the final change.",
+   "why": "The closest published design to Azm's standards-compliance scorer, and evidence that we must score the agent's steps, not only the final diff.",
+   "ar": {
+    "summary": "يحوّل توثيق المطورين في 12 مستودعًا إلى 823 سياسة قابلة للفحص الآلي، ويشغّل 500 مهمة مبنية على SWE-bench Verified. والتعديلات التي عملت بشكل صحيح خالفت مع ذلك 43.1% من السياسات المنطبقة، ووقع نحو نصف المخالفات في خطوات وسيطة لا في التغيير النهائي.",
+    "why": "أقرب تصميم منشور لمقيّم الالتزام بالمعايير في عزم، ودليل على أن علينا تقييم خطوات الوكيل لا الفرق النهائي فقط."
+   }
+  },
+  {
+   "id": "pace-prd-enterprise",
+   "title": "PACE: Evaluating PRD-Driven Development in Mature Enterprise Repositories",
+   "source": "arXiv 2610.26394",
+   "date": "2026-10-19",
+   "url": "https://arxiv.org/abs/2610.26394",
+   "type": "paper",
+   "tags": [
+    "enterprise",
+    "prd",
+    "rubrics"
+   ],
+   "priority": "read",
+   "summary": "43 tasks in mature enterprise repositories, each driven by a product requirements document and scored against 750 expert-checked 'code points' with 95.2% agreement with experts. Across 11 model-and-scaffold setups most scores fell between 52 and 78, but the best rate of fully complete delivery was only 14%; harness changes alone raised the mean from 59.4 to 63.0.",
+   "why": "A template for writing requirement-driven company tasks and checklist scoring, and a reminder to report full completion, not only average score.",
+   "ar": {
+    "summary": "43 مهمة في مستودعات مؤسسية ناضجة، تنطلق كل منها من وثيقة متطلبات منتج وتُقيَّم على 750 «نقطة شيفرة» راجعها خبراء، بنسبة اتفاق 95.2% مع الخبراء. وعبر 11 إعدادًا من النماذج والأطر وقعت معظم الدرجات بين 52 و78، لكن أفضل نسبة تسليم مكتمل كانت 14% فقط؛ ورفعت تعديلات الـ harness وحدها المتوسط من 59.4 إلى 63.0.",
+    "why": "قالب لكتابة مهام الشركة المنطلقة من المتطلبات وللتقييم بقوائم التحقق، وتذكير بعرض نسبة الإكمال الكامل لا متوسط الدرجة فقط."
+   }
+  },
+  {
+   "id": "construct-validity-coding-benchmarks",
+   "title": "Construct Validity of Coding Benchmarks for LLM-based Agentic Coding Tools",
+   "source": "Heidelberg University, SAP, Dalhousie (arXiv 2611.05665)",
+   "date": "2026-11-03",
+   "url": "https://arxiv.org/abs/2611.05665",
+   "type": "paper",
+   "tags": [
+    "methodology",
+    "metrics"
+   ],
+   "priority": "reference",
+   "summary": "Reviews 9 coding benchmarks and finds that broad goals are measured almost only by pass rate, with task details reported inconsistently. It recommends naming what is measured, adding code-quality and static-analysis metrics, and using the ISO/IEC 25010 quality model.",
+   "why": "A checklist for what Azm's scorecard should measure beyond 'tests pass'.",
+   "ar": {
+    "summary": "يراجع 9 مقاييس للبرمجة، ويجد أن أهدافًا واسعة تُقاس تقريبًا بنسبة النجاح وحدها، وأن تفاصيل المهام تُعرض بلا اتساق. ويوصي بتحديد ما يُقاس صراحةً، وإضافة مقاييس جودة الشيفرة والتحليل الساكن، واستخدام نموذج الجودة ISO/IEC 25010.",
+    "why": "قائمة تحقق لما يجب أن تقيسه بطاقة نتائج عزم إلى جانب «نجاح الاختبارات»."
+   }
+  },
+  {
+   "id": "uvik-sdd-benchmark",
+   "title": "Spec-Driven Development Benchmark 2026",
+   "source": "Uvik Software",
+   "date": "2026-11-02",
+   "url": "https://uvik.net/spec-driven-development-benchmark/",
+   "type": "case-study",
+   "tags": [
+    "sdlc-kits",
+    "spec-kit",
+    "bmad",
+    "cost"
+   ],
+   "priority": "read",
+   "summary": "A software company ran 50 existing-code Python tickets from 5 client repositories through Spec Kit, Kiro, BMAD, OpenSpec and a no-spec control on the same model, with blind review. Merge rates ranged from 84% (OpenSpec) to 72% (control), and cost per merged ticket from $2.35 (Kiro) to $4.23 (BMAD); results within a ±10-point noise band were not ranked. First published 24 Sep 2026, updated 2 Nov 2026.",
+   "why": "A real company comparing SDLC kits on its own repositories, which is the sandbox's use case. Its metrics (merge rate, cost per merge, spec drift, review defects) are a good starting set.",
+   "ar": {
+    "summary": "شغّلت شركة برمجيات 50 تذكرة Python على شيفرة قائمة من 5 مستودعات لعملائها عبر Spec Kit وKiro وBMAD وOpenSpec ومجموعة ضابطة بلا مواصفات، بالنموذج نفسه ومع مراجعة عمياء. تراوحت نسب الدمج بين 84% ‏(OpenSpec) و72% (المجموعة الضابطة)، وتكلفة التذكرة المدمجة بين 2.35 دولار ‏(Kiro) و4.23 دولار ‏(BMAD)؛ ولم تُرتَّب النتائج الواقعة ضمن هامش تذبذب ±10 نقاط. نُشر أول مرة في 24 سبتمبر 2026 وحُدّث في 2 نوفمبر 2026.",
+    "why": "شركة حقيقية تقارن أطر دورة التطوير على مستودعاتها، وهذه حالة استخدام بيئة الاختبار نفسها. ومقاييسها (نسبة الدمج، وتكلفة الدمج، وانحراف المواصفات، وعيوب المراجعة) مجموعة بداية جيدة."
+   }
+  },
+  {
+   "id": "thoughtworks-harness-is-a-product",
+   "title": "The harness is a product (and Technology Radar Vol. 35)",
+   "source": "Thoughtworks",
+   "date": "2026-11-04",
+   "url": "https://www.thoughtworks.com/en-us/insights/blog/generative-ai/harness-is-a-product",
+   "type": "reading",
+   "tags": [
+    "harness-engineering",
+    "governance"
+   ],
+   "priority": "reference",
+   "summary": "Thoughtworks argues that a coding-agent harness needs an owner, versions, golden task sets, cost and latency tracking, sampled human review and platform governance. Its Technology Radar of the same day puts 'self-improving harness' in Trial, Pi in Trial and DeepSeek Harness in Assess.",
+   "why": "Useful framing for managers on why a harness sandbox and CI gate are needed at all.",
+   "ar": {
+    "summary": "ترى Thoughtworks أن الـ harness الخاص بوكلاء البرمجة يحتاج إلى مالك، وإصدارات، ومجموعات مهام مرجعية، وتتبّع للتكلفة وزمن الاستجابة، ومراجعة بشرية بالعينات، وحوكمة على مستوى المنصة. ويضع رادار التقنية الصادر في اليوم نفسه «الـ harness ذاتي التحسين» في مرحلة التجربة، وPi في التجربة، وDeepSeek Harness في التقييم.",
+    "why": "إطار مفيد للمديرين لشرح سبب الحاجة إلى بيئة اختبار للـ harness وبوابة CI من الأساس."
+   }
+  },
+  {
+   "id": "replit-microvm-sandbox",
+   "title": "Replit rebuilt its sandbox engine on microVMs",
+   "source": "RuntimeWire",
+   "date": "2026-11-06",
+   "url": "https://runtimewire.com/article/replit-rebuilt-sandbox-engine-microvms-agent-workloads",
+   "type": "reading",
+   "tags": [
+    "sandbox",
+    "microvm"
+   ],
+   "priority": "reference",
+   "summary": "News coverage of Replit moving its agent sandboxes from shared-kernel Docker containers to KVM microVMs with Cloud Hypervisor, each with its own minimal kernel, reported to start in about half a second.",
+   "why": "More evidence that containers alone are a weak boundary for agent runs; supports moving the sandbox pick toward microVMs for untrusted harnesses.",
+   "ar": {
+    "summary": "تغطية إخبارية لانتقال Replit ببيئات عزل الوكلاء من حاويات Docker التي تتشارك النواة إلى آلات KVM افتراضية مصغّرة عبر Cloud Hypervisor، لكل منها نواة صغيرة خاصة، ويُذكر أنها تبدأ في نحو نصف ثانية.",
+    "why": "دليل إضافي على أن الحاويات وحدها حدّ ضعيف لتشغيل الوكلاء؛ ويدعم توجيه اختيار بيئة العزل نحو الآلات الافتراضية المصغّرة لأدوات الـ harness غير الموثوقة."
+   }
+  },
+  {
+   "id": "aws-nitro-sandboxes-blog",
+   "title": "AWS Nitro Sandboxes: hardware-enforced workload isolation on Amazon EKS",
+   "source": "AWS Containers Blog",
+   "date": "2026-11-09",
+   "url": "https://aws.amazon.com/blogs/containers/aws-nitro-sandboxes-hardware-enforced-workload-isolation-on-amazon-eks/",
+   "type": "reading",
+   "tags": [
+    "sandbox",
+    "kubernetes",
+    "microvm"
+   ],
+   "priority": "reference",
+   "summary": "AWS announces a pod-level switch that runs each EKS pod, ECS task or EC2 workload in its own Nitro-isolated lightweight VM, with isolated and confidential modes and warm pools through Kubernetes agent-sandbox.",
+   "ar": {
+    "summary": "تعلن AWS خيارًا على مستوى الـ pod يشغّل كل pod في EKS أو مهمة في ECS أو عمل على EC2 في آلة افتراضية خفيفة معزولة بتقنية Nitro، مع وضع معزول ووضع سري ومجموعات آلات جاهزة عبر agent-sandbox الخاص بـ Kubernetes."
    }
   }
  ]

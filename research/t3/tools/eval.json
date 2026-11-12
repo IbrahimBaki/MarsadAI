@@ -1,6 +1,6 @@
 {
  "category": "eval",
- "checked": "2026-11-09",
+ "checked": "2026-11-12",
  "tools": [
   {
    "id": "harbor",
@@ -205,7 +205,7 @@
     "role": "بديل أو مكمّل لـ Harbor في المهام غير البرمجية (أسئلة المستودع، مراجعة التصميم، أسئلة المعايير) وللعزل الصارم عبر إضافاته.",
     "pricing": "مجاني"
    },
-   "version": "0.3.288"
+   "version": "0.3.289 (10 Nov 2026)"
   },
   {
    "id": "aws-harness-benchmarks",
@@ -1854,6 +1854,269 @@
     ],
     "role": "خيار آخر لمرحلة «تحسين أدوات الـ harness تلقائيًا» اللاحقة؛ وبحثه عبر مجموعات المهام يحمي من ضبط الـ harness على نوع واحد من المهام.",
     "pricing": "مجاني"
+   }
+  },
+  {
+   "id": "coder-eval",
+   "name": "Coder Eval",
+   "category": "eval",
+   "kind": "open-source",
+   "vendor": "UiPath",
+   "repo": "UiPath/coder_eval",
+   "url": "https://github.com/UiPath/coder_eval",
+   "license": "Apache-2.0",
+   "pricing": "Free",
+   "status": "active",
+   "version": "v0.12.18 (9 Nov 2026)",
+   "tier": "deep",
+   "summary": "An open-source framework from UiPath, described as 'Playwright for coding agents', for testing and benchmarking coding agents on your own tasks. It runs a real agent (Claude Code, Codex, Antigravity, OpenCode or Pi) in a sandbox against tasks written in YAML, scores the files and commands it produced, and can fail a CI build when quality drops. It is not a leaderboard: you bring the tasks and the scoring.",
+   "how": "Each YAML task holds the prompt, the agent settings, the sandbox and weighted success criteria scored from 0 to 1 (file checks, commands, code similarity, LLM-graded rubrics, and a check that a given skill was actually used). Switching harness is one field, `agent.type`; new harnesses plug in through an interface. Tasks run in a temporary folder (not a security boundary) or a fresh Docker container with memory, CPU and process limits. The CLI has `plan` (validate without spending tokens), `run` and `report`; an experiment layer compares agent setups side by side, every tool call, token and cost is recorded, and a GitHub Action with JUnit output turns a suite into a CI gate. Anonymous usage telemetry is on by default and is switched off with `TELEMETRY_ENABLED=false`.",
+   "features": [
+    "Declarative YAML tasks with weighted 0-1 criteria and pass thresholds",
+    "Harnesses: Claude Code, Codex, Antigravity (Gemini), OpenCode and Pi; others through a plugin interface",
+    "A/B experiment layer: model vs model, harness vs harness, prompt vs prompt",
+    "`skill_triggered` check that an agent actually used a given skill",
+    "Per-tool-call telemetry with tokens and cost; evalboard reports with scheduled trends",
+    "GitHub Action and JUnit output to gate CI on agent quality",
+    "Temp-folder or Docker sandbox with resource limits"
+   ],
+   "strengths": [
+    "Already does several things Azm planned to build: per-task YAML, harness switching in one field, cost telemetry, a CI gate and trend reports",
+    "Permissive license, a large company behind it and frequent releases (0.8 in July to 0.12.18 in November 2026)",
+    "The skill-triggered check fits Track 1's question of whether standards are actually used"
+   ],
+   "weaknesses": [
+    "Only temp-folder or Docker isolation; no microVM or cloud sandbox drivers",
+    "Not built on Harbor, so tasks are in its own format",
+    "Usage telemetry is on by default",
+    "Young (first release July 2026, before 1.0)"
+   ],
+   "gaps": [
+    "No task mining from our repos, no adapters for SDLC harnesses such as squad-kit or azm-harness, and no standards-compliance score"
+   ],
+   "fit": {
+    "verdict": "benchmark",
+    "role": "Prior art for the per-team suite file, harness adapters and CI gate. Before building our own suite.yaml loader and CI gate, run a pilot suite through it and decide whether to adopt its task format, contribute squad-kit and azm-harness adapters, or only copy its design."
+   },
+   "scores": {
+    "fit": 5,
+    "maturity": 3,
+    "openness": 4,
+    "agnostic": 4,
+    "config": 5,
+    "measure": 4,
+    "safety": 3
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/UiPath/coder_eval"
+    ],
+    [
+     "Docs",
+     "https://coder-eval.com/docs"
+    ],
+    [
+     "PyPI",
+     "https://pypi.org/project/coder-eval/"
+    ]
+   ],
+   "sources": [
+    "https://github.com/UiPath/coder_eval",
+    "https://github.com/UiPath/coder_eval/blob/main/CHANGELOG.md",
+    "https://coder-eval.com/docs"
+   ],
+   "ar": {
+    "summary": "إطار مفتوح المصدر من UiPath، يصفه أصحابه بأنه «Playwright لوكلاء البرمجة»، لاختبار وكلاء البرمجة وقياسهم على مهامك أنت. يشغّل وكيلًا حقيقيًا (Claude Code أو Codex أو Antigravity أو OpenCode أو Pi) داخل بيئة عزل على مهام مكتوبة بصيغة YAML، ويقيّم الملفات والأوامر التي أنتجها، ويمكنه إفشال البناء في CI عندما تنخفض الجودة. وهو ليس لوحة ترتيب: أنت من يحدد المهام وطريقة التقييم.",
+    "how": "تحتوي كل مهمة YAML على التعليمات وإعدادات الوكيل وبيئة العزل ومعايير نجاح موزونة تُقيَّم من 0 إلى 1 (فحص الملفات، وتشغيل الأوامر، وتشابه الشيفرة، ومعايير يقيّمها نموذج لغوي، وفحص أن مهارة معينة استُخدمت فعلًا). وتبديل الـ harness حقل واحد هو `agent.type`، وتُضاف أدوات harness جديدة عبر واجهة إضافات. تعمل المهام في مجلد مؤقت (ليس حدًا أمنيًا) أو في حاوية Docker جديدة بحدود للذاكرة والمعالج وعدد العمليات. وفي سطر الأوامر `plan` (تحقق دون استهلاك رموز) و`run` و`report`؛ وتقارن طبقة التجارب إعدادات الوكلاء جنبًا إلى جنب، ويُسجَّل كل استدعاء أداة ورموزه وتكلفته، ويحوّل إجراء GitHub مع مخرجات JUnit مجموعة المهام إلى بوابة في CI. وجمع بيانات الاستخدام مجهولة الهوية مفعّل افتراضيًا، ويُوقف بالإعداد `TELEMETRY_ENABLED=false`.",
+    "features": [
+     "مهام تصريحية بصيغة YAML بمعايير موزونة من 0 إلى 1 وحدود للنجاح",
+     "أدوات الـ harness: Claude Code وCodex وAntigravity ‏(Gemini) وOpenCode وPi، وغيرها عبر واجهة إضافات",
+     "طبقة تجارب للمقارنة: نموذج مقابل نموذج، وharness مقابل harness، وتعليمات مقابل تعليمات",
+     "فحص `skill_triggered` للتأكد من أن الوكيل استخدم مهارة معينة فعلًا",
+     "تسجيل كل استدعاء أداة مع الرموز والتكلفة، وتقارير evalboard مع اتجاهات التشغيلات المجدولة",
+     "إجراء GitHub ومخرجات JUnit لجعل جودة الوكيل بوابة في CI",
+     "بيئة عزل بمجلد مؤقت أو بحاوية Docker مع حدود للموارد"
+    ],
+    "strengths": [
+     "يقدّم فعلًا أشياء خططت عزم لبنائها: ملف YAML لكل مهمة، وتبديل الـ harness بحقل واحد، وتسجيل التكلفة، وبوابة CI، وتقارير الاتجاهات",
+     "ترخيص متساهل، وشركة كبيرة خلفه، وإصدارات متكررة (من 0.8 في يوليو إلى 0.12.18 في نوفمبر 2026)",
+     "فحص استخدام المهارة يناسب سؤال المسار 1: هل تُستخدم المعايير فعلًا؟"
+    ],
+    "weaknesses": [
+     "عزل بمجلد مؤقت أو Docker فقط؛ لا دعم لآلات افتراضية مصغّرة أو بيئات عزل سحابية",
+     "غير مبني على Harbor، فالمهام بصيغته الخاصة",
+     "جمع بيانات الاستخدام مفعّل افتراضيًا",
+     "حديث (أول إصدار في يوليو 2026، ولم يبلغ الإصدار 1.0)"
+    ],
+    "gaps": [
+     "لا يستخرج المهام من مستودعاتنا، ولا يملك موصّلات لأدوات دورة التطوير مثل squad-kit وazm-harness، ولا يقيس الالتزام بالمعايير"
+    ],
+    "role": "عمل سابق لملف المهام الخاص بكل فريق وموصّلات الـ harness وبوابة CI. قبل أن نبني محمّل suite.yaml وبوابة CI الخاصين بنا، نشغّل مجموعة تجريبية عبره، ثم نقرر: هل نعتمد صيغة مهامه، أم نساهم فيه بموصّلات squad-kit وazm-harness، أم ننسخ تصميمه فقط.",
+    "pricing": "مجاني"
+   }
+  },
+  {
+   "id": "natea-harness-eval",
+   "name": "harness-eval (natea)",
+   "category": "eval",
+   "kind": "open-source",
+   "vendor": "Independent developer (natea)",
+   "repo": "natea/harness-eval",
+   "url": "https://github.com/natea/harness-eval",
+   "license": "No license file in the repository",
+   "pricing": "Free to read",
+   "status": "beta",
+   "version": "No tagged release (last commit 1 Nov 2026)",
+   "tier": "brief",
+   "summary": "An open project that ranks agentic coding frameworks (Superpowers, Compound Engineering, Agent Skills and GSD) by having each build the same product from the same spec, with the same harness and model, in fresh sandboxes. Its first target is OpenAI's Symphony specification, built with Claude Code.",
+   "how": "A registry pins each framework's version, install commands and session script. Each target has a product spec, a frozen weighted test plan and fixtures. Claude Code runs headless in a fresh sandbox per trial (Daytona, E2B, Docker, macOS Virtualization or a git worktree) with time and cost caps. Two graders score the result: an evaluator that runs the test plan and cites evidence, and a blind judge that scores code quality on a copy with framework-identifying files removed. Output is results.json, a scorecard and a dashboard.",
+   "features": [
+    "Version-pinned registry of SDLC frameworks and their session scripts",
+    "Frozen, weighted test plan per target",
+    "Evidence-based evaluator plus a blind code-quality judge",
+    "Pluggable sandboxes (Daytona, E2B, Docker, macOS VMs, worktrees) and models"
+   ],
+   "strengths": [
+    "The only project found that compares SDLC kits (not just agents) under fixed harness and model",
+    "Blind judging and infra-vs-candidate failure handling are directly reusable ideas"
+   ],
+   "weaknesses": [
+    "One developer, no license file and no release",
+    "Greenfield product specs only; no tasks from real repos"
+   ],
+   "gaps": [
+    "No squad-kit or azm-harness entry, no standards score, no per-team configuration"
+   ],
+   "fit": {
+    "verdict": "inspire",
+    "role": "Prior art for comparing SDLC kits such as squad-kit against Superpowers or GSD. Borrow its candidate registry, fairness rules and blind-judge step for our harness adapters and scoring; do not depend on the code (no license)."
+   },
+   "scores": {
+    "fit": 4,
+    "maturity": 2,
+    "openness": 2,
+    "agnostic": 3,
+    "config": 4,
+    "measure": 4,
+    "safety": 3
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/natea/harness-eval"
+    ]
+   ],
+   "sources": [
+    "https://github.com/natea/harness-eval"
+   ],
+   "ar": {
+    "summary": "مشروع مفتوح يرتّب أطر البرمجة بالوكلاء (Superpowers وCompound Engineering وAgent Skills وGSD) بأن يجعل كلًّا منها يبني المنتج نفسه من المواصفات نفسها، بالـ harness والنموذج نفسيهما، في بيئات عزل جديدة. وهدفه الأول مواصفات Symphony من OpenAI، ويُبنى بواسطة Claude Code.",
+    "how": "سجلّ يثبّت إصدار كل إطار وأوامر تثبيته ونص جلسته. ولكل هدف مواصفات منتج وخطة اختبار موزونة مجمّدة وبيانات مساعدة. يعمل Claude Code دون واجهة في بيئة عزل جديدة لكل محاولة (Daytona أو E2B أو Docker أو آلة macOS افتراضية أو git worktree) مع حدود للوقت والتكلفة. ويقيّم النتيجةَ مقيّمان: مقيّم يشغّل خطة الاختبار ويستشهد بالأدلة، وحَكَم أعمى يقيّم جودة الشيفرة على نسخة حُذفت منها الملفات التي تكشف الإطار. والمخرجات ملف results.json وبطاقة نتائج ولوحة عرض.",
+    "features": [
+     "سجلّ مثبّت الإصدارات لأطر دورة التطوير ونصوص جلساتها",
+     "خطة اختبار موزونة ومجمّدة لكل هدف",
+     "مقيّم قائم على الأدلة وحَكَم أعمى لجودة الشيفرة",
+     "بيئات عزل ونماذج قابلة للتبديل (Daytona وE2B وDocker وآلات macOS وworktree)"
+    ],
+    "strengths": [
+     "المشروع الوحيد الذي وجدناه يقارن أطر دورة التطوير (لا الوكلاء فقط) مع تثبيت الـ harness والنموذج",
+     "التحكيم الأعمى والتمييز بين أعطال البنية وأخطاء الإطار فكرتان قابلتان للاستعمال مباشرة"
+    ],
+    "weaknesses": [
+     "مطوّر واحد، بلا ملف ترخيص ولا إصدار",
+     "مواصفات منتجات جديدة فقط؛ لا مهام من مستودعات حقيقية"
+    ],
+    "gaps": [
+     "لا يتضمن squad-kit أو azm-harness، ولا درجة للمعايير، ولا إعدادات لكل فريق"
+    ],
+    "role": "عمل سابق لمقارنة أطر دورة التطوير مثل squad-kit مقابل Superpowers أو GSD. نستعير منه سجلّ المرشحين وقواعد العدالة وخطوة الحَكَم الأعمى لموصّلات الـ harness والتقييم عندنا، ولا نعتمد على شيفرته (لا ترخيص لها).",
+    "pricing": "مجاني للاطلاع"
+   }
+  },
+  {
+   "id": "reponorm",
+   "name": "RepoNorm",
+   "category": "eval",
+   "kind": "open-source",
+   "vendor": "SYSUSELab (Sun Yat-sen University)",
+   "repo": "SYSUSELab/RepoNorm",
+   "url": "https://github.com/SYSUSELab/RepoNorm",
+   "license": "No license file in the repository",
+   "pricing": "Free to read",
+   "status": "beta",
+   "version": "Paper (arXiv 2610.07757, Oct 2026)",
+   "tier": "brief",
+   "summary": "A research method and benchmark that pulls a repository's own development rules (its 'norms') out of its guides, configs, CI and code history, checks each rule against evidence, and hands the accepted rules to coding agents as Markdown. RepoNormBench (121 tasks from 6 Python repositories) measures whether agents follow those rules.",
+   "how": "Written rules come from contribution guides, configs and CI workflows; unwritten conventions are proposed as hypotheses and tested by counting or sampling the code. A verifier model checks each rule, using git history when needed, and a fixed policy marks it accepted, needs review or rejected. The repository ships the implementation, the benchmark and data to reproduce the results without model calls.",
+   "features": [
+    "Extracts written and unwritten repository rules",
+    "Evidence check for every rule, with accept / review / reject",
+    "Exports accepted rules as Markdown agents can read",
+    "RepoNormBench: 121 tasks, 160 reference rules, public leaderboard"
+   ],
+   "strengths": [
+    "Gives a way to generate the rule list a standards-compliance scorer checks, per repository"
+   ],
+   "weaknesses": [
+    "Research code with no license file",
+    "Python repositories only so far"
+   ],
+   "gaps": [
+    "Does not score Azm's own written standards from Track 1 or run inside a harness benchmark"
+   ],
+   "fit": {
+    "verdict": "inspire",
+    "role": "Prior art for the standards-compliance scorer: use its method to turn each repo's guides and history into checkable rules, then score runs against them alongside Track 1's standards."
+   },
+   "scores": {
+    "fit": 4,
+    "maturity": 1,
+    "openness": 2,
+    "agnostic": 4,
+    "config": 3,
+    "measure": 4,
+    "safety": 2
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/SYSUSELab/RepoNorm"
+    ],
+    [
+     "Paper",
+     "https://arxiv.org/abs/2610.07757"
+    ],
+    [
+     "Dataset",
+     "https://huggingface.co/datasets/SYSUSELab/RepoNormBench"
+    ]
+   ],
+   "sources": [
+    "https://github.com/SYSUSELab/RepoNorm",
+    "https://arxiv.org/html/2610.07757"
+   ],
+   "ar": {
+    "summary": "طريقة بحثية ومقياس يستخرجان قواعد التطوير الخاصة بالمستودع («أعرافه») من أدلته وإعداداته وCI وتاريخ شيفرته، ويتحققان من كل قاعدة بالأدلة، ثم يسلّمان القواعد المقبولة لوكلاء البرمجة بصيغة Markdown. ويقيس RepoNormBench ‏(121 مهمة من 6 مستودعات Python) مدى التزام الوكلاء بهذه القواعد.",
+    "how": "تأتي القواعد المكتوبة من أدلة المساهمة والإعدادات وسير عمل CI، وتُطرح الأعراف غير المكتوبة فرضياتٍ تُختبر بإحصاء الشيفرة أو بأخذ عينات منها. ويتحقق نموذج من كل قاعدة مستعينًا بتاريخ git عند الحاجة، ثم تصنّفها سياسة ثابتة: مقبولة، أو تحتاج مراجعة، أو مرفوضة. ويضم المستودع التنفيذ والمقياس وبيانات لإعادة إنتاج النتائج دون استدعاء نماذج.",
+    "features": [
+     "يستخرج قواعد المستودع المكتوبة وغير المكتوبة",
+     "تحقق بالأدلة من كل قاعدة مع قبول أو مراجعة أو رفض",
+     "يصدّر القواعد المقبولة بصيغة Markdown يقرؤها الوكلاء",
+     "RepoNormBench: ‏121 مهمة و160 قاعدة مرجعية ولوحة نتائج عامة"
+    ],
+    "strengths": [
+     "يقدّم طريقة لتوليد قائمة القواعد التي يفحصها مقيّم الالتزام بالمعايير، لكل مستودع"
+    ],
+    "weaknesses": [
+     "شيفرة بحثية بلا ملف ترخيص",
+     "مستودعات Python فقط حتى الآن"
+    ],
+    "gaps": [
+     "لا يقيّم معايير عزم المكتوبة في المسار 1، ولا يعمل داخل قياس للـ harness"
+    ],
+    "role": "عمل سابق لمقيّم الالتزام بالمعايير: نستخدم طريقته لتحويل أدلة كل مستودع وتاريخه إلى قواعد قابلة للفحص، ثم نقيّم التشغيلات عليها إلى جانب معايير المسار 1.",
+    "pricing": "مجاني للاطلاع"
    }
   }
  ]

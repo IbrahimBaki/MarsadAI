@@ -1,6 +1,6 @@
 {
  "category": "sandbox",
- "checked": "2026-11-10",
+ "checked": "2026-11-12",
  "tools": [
   {
    "id": "e2b",
@@ -347,7 +347,7 @@
    "url": "https://github.com/superradcompany/microsandbox",
    "license": "Apache-2.0",
    "pricing": "Free",
-   "version": "v0.7.14",
+   "version": "v0.7.15 (11 Nov 2026)",
    "summary": "Self-hosted microVM sandboxes (libkrun) that start in under 200 ms, run OCI images, and expose an MCP server for agents.",
    "how": "A local server runs microVMs from container images; SDKs and MCP let agents run code.",
    "features": [
@@ -480,7 +480,7 @@
     "role": "مرجع لنموذج السياسات في طبقة الأمان ببيئة الاختبار.",
     "pricing": "مجاني"
    },
-   "version": "v0.1.7"
+   "version": "v0.1.8 (10 Nov 2026)"
   },
   {
    "id": "sandbox-runtime",
@@ -913,10 +913,10 @@
    "vendor": "Daytona",
    "repo": "daytonaio/daytona",
    "url": "https://daytona.io",
-   "license": "AGPL-3.0 (open-source repo, unmaintained since June 2026)",
+   "license": "Proprietary since 11 Jun 2026 (last public AGPL-3.0 code unmaintained)",
    "pricing": "Usage-based; BYOC available",
    "status": "caution",
-   "summary": "Fast (<90 ms) container/VM sandboxes with LSP support and Harbor integration. The public open-source repository has had no commits since 2026-06-25; the managed service continues.",
+   "summary": "Fast (<90 ms) container/VM sandboxes with LSP support and Harbor integration. Daytona announced on 11 Jun 2026 that it is going closed source for security reasons: the production code is now proprietary, the old public repository is unmaintained, and only SDKs and docs stay public. The managed service continues.",
    "how": "SDK creates sandboxes from images or snapshots; Harbor supports --env daytona.",
    "features": [
     "Very fast start",
@@ -953,12 +953,13 @@
    ],
    "sources": [
     "https://upstash.com/blog/ai-agent-sandbox-providers-compared-2026",
-    "https://github.com/daytonaio/daytona"
+    "https://github.com/daytonaio/daytona",
+    "https://www.daytona.io/dotfiles/updates/daytona-is-going-closed-source"
    ],
    "tier": "brief",
    "category": "sandbox",
    "ar": {
-    "summary": "بيئات عزل سريعة جدًا (أقل من 90 جزءًا من الثانية) بحاويات أو آلات افتراضية مع دعم LSP وتكامل مع Harbor. لم يُحدَّث مستودعها المفتوح منذ 25 يونيو 2026، بينما تستمر الخدمة المُدارة.",
+    "summary": "بيئات عزل سريعة جدًا (أقل من 90 جزءًا من الثانية) بحاويات أو آلات افتراضية مع دعم LSP وتكامل مع Harbor. أعلنت Daytona في 11 يونيو 2026 أنها أصبحت مغلقة المصدر لأسباب أمنية: الشيفرة التشغيلية صارت مملوكة، والمستودع العام القديم لم يعد يُصان، ولا يبقى عامًا إلا حزم SDK والتوثيق. وتستمر الخدمة المُدارة.",
     "how": "تنشئ الحزمة بيئات من صور أو لقطات؛ ويدعم Harbor الخيار ‎--env daytona‎.",
     "features": [
      "بدء سريع جدًا",
@@ -2076,6 +2077,86 @@
     ],
     "role": "خيار خدمة مُدارة للفرق التي تعمل أصلًا على Google Cloud؛ أما Agent Substrate فهو مسار Google للاستضافة الذاتية.",
     "pricing": "لم تُنشر بعد (نسخة تجريبية، نوفمبر 2026)"
+   }
+  },
+  {
+   "id": "aws-nitro-sandboxes",
+   "name": "AWS Nitro Sandboxes",
+   "category": "sandbox",
+   "kind": "commercial",
+   "vendor": "Amazon Web Services",
+   "repo": null,
+   "url": "https://aws.amazon.com/blogs/containers/aws-nitro-sandboxes-hardware-enforced-workload-isolation-on-amazon-eks/",
+   "license": "Proprietary (AWS service)",
+   "pricing": "No separate price listed in the AWS announcement (Nov 2026)",
+   "status": "active",
+   "version": "Announced 9 Nov 2026 (all commercial regions)",
+   "tier": "brief",
+   "summary": "A new AWS feature that gives each EKS pod, ECS task or EC2 workload its own lightweight virtual machine, using the same Nitro hardware isolation that separates EC2 instances. It is switched on with one line in the pod spec and needs no image changes, so a coding harness runs as is but behind a VM boundary.",
+   "how": "You set `runtimeClassName: isolated-sandbox` on a pod. Kubernetes still sees a normal pod, so logs, exec and port-forward keep working. An isolated mode protects the host and neighbouring pods; a confidential mode also treats the operator as untrusted and releases keys only after attestation. A `network-isolated` annotation removes all networking except loopback, and warm pools of pre-booted VMs come through the Kubernetes agent-sandbox project.",
+   "features": [
+    "One VM per pod, task or workload with Nitro hardware isolation",
+    "Turned on with one pod-spec line; no image changes",
+    "Isolated and confidential (attested) modes",
+    "Network-isolated option and warm pools via Kubernetes agent-sandbox"
+   ],
+   "strengths": [
+    "VM-strength isolation inside our own AWS account",
+    "Works with the Kubernetes agent-sandbox we already picked",
+    "Harness containers run unchanged"
+   ],
+   "weaknesses": [
+    "AWS only",
+    "Start time and effect on benchmark noise not yet measured by anyone we found"
+   ],
+   "gaps": [
+    "Only useful if Azm's servers are on AWS; no help on developer machines or other clouds"
+   ],
+   "fit": {
+    "verdict": "watch",
+    "role": "If Azm runs Kubernetes on AWS, this is the simplest way to harden the agent-sandbox pick from containers to VMs without changing harness images. Re-check when we choose where the self-hosted runner lives."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 4,
+    "openness": 2,
+    "agnostic": 5,
+    "config": 4,
+    "measure": 2,
+    "safety": 5
+   },
+   "links": [
+    [
+     "AWS blog",
+     "https://aws.amazon.com/blogs/containers/aws-nitro-sandboxes-hardware-enforced-workload-isolation-on-amazon-eks/"
+    ]
+   ],
+   "sources": [
+    "https://aws.amazon.com/blogs/containers/aws-nitro-sandboxes-hardware-enforced-workload-isolation-on-amazon-eks/"
+   ],
+   "ar": {
+    "summary": "ميزة جديدة من AWS تعطي كل pod في EKS أو مهمة في ECS أو عمل على EC2 آلة افتراضية خفيفة خاصة به، بعزل Nitro العتادي نفسه الذي يفصل خوادم EC2 بعضها عن بعض. تُفعَّل بسطر واحد في تعريف الـ pod ولا تحتاج إلى تغيير الصور، فيعمل الـ harness كما هو لكن خلف حدود آلة افتراضية.",
+    "how": "تضع `runtimeClassName: isolated-sandbox` في تعريف الـ pod. ويبقى Kubernetes يرى pod عاديًا، فتستمر السجلات وأوامر exec وتمرير المنافذ في العمل. يحمي الوضع المعزول الخادم والـ pods المجاورة، ويعامل الوضع السري المشغّل نفسه كطرف غير موثوق ولا يسلّم المفاتيح إلا بعد التحقق. ويزيل الوسم `network-isolated` كل اتصال شبكي عدا الاتصال الداخلي، وتأتي مجموعات الآلات المُقلعة مسبقًا عبر مشروع agent-sandbox الخاص بـ Kubernetes.",
+    "features": [
+     "آلة افتراضية لكل pod أو مهمة أو عمل بعزل Nitro العتادي",
+     "تُفعَّل بسطر واحد في تعريف الـ pod دون تغيير الصور",
+     "وضع معزول ووضع سري مع التحقق",
+     "خيار عزل الشبكة ومجموعات آلات جاهزة عبر agent-sandbox"
+    ],
+    "strengths": [
+     "عزل بقوة الآلات الافتراضية داخل حساب AWS الخاص بنا",
+     "يعمل مع agent-sandbox الخاص بـ Kubernetes الذي اخترناه",
+     "تعمل حاويات الـ harness دون تغيير"
+    ],
+    "weaknesses": [
+     "خاصة بـ AWS فقط",
+     "لم نجد من قاس زمن الإقلاع وأثره على تذبذب نتائج القياس"
+    ],
+    "gaps": [
+     "مفيدة فقط إن كانت خوادم عزم على AWS؛ ولا تفيد على أجهزة المطورين أو في سحابات أخرى"
+    ],
+    "role": "إن كانت عزم تشغّل Kubernetes على AWS، فهذه أبسط طريقة لتقوية خيار agent-sandbox من الحاويات إلى الآلات الافتراضية دون تغيير صور الـ harness. نعيد النظر فيها عند اختيار مكان المشغّل المستضاف ذاتيًا.",
+    "pricing": "لا يذكر إعلان AWS سعرًا منفصلًا (نوفمبر 2026)"
    }
   }
  ]
