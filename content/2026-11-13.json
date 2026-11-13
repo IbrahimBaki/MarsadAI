@@ -1,0 +1,546 @@
+{
+ "date": "2026-11-13",
+ "headline": "أضاف Claude Code 2.1.323 وضع Code Mode التجريبي وقيّد الإضافات بنطاق إصدارات وأصلح ثغرات في أذونات Bash؛ وأتاحت Microsoft منصة Scope المفتوحة لمقارنة وكلاء البرمجة وإعداداتهم بحَكَم آلي.",
+ "headline_en": "Claude Code 2.1.323 adds experimental Code Mode, limits plugins to version ranges and fixes Bash permission gaps; Microsoft released Scope, an open platform for comparing coding agents and their setups with an AI judge.",
+ "items": [
+  {
+   "id": "claude-code-2-1-323-code-mode",
+   "section": "claude",
+   "kind": "release",
+   "title": "Claude Code 2.1.323: وضع Code Mode التجريبي، وتقييد الإضافات بنطاق إصدارات، وإصلاحات كثيرة في الأذونات",
+   "summary": "أضاف Claude Code 2.1.323 وضع Code Mode التجريبي الاختياري الذي يكتب فيه Claude شيفرة JavaScript لاستدعاء أدواته، وحقل engines في plugin.json لمنع تحميل الإضافات خارج نطاق الإصدارات المدعوم، مع عشرات الإصلاحات في الجلسات وتسجيل الدخول وأذونات Bash.",
+   "why": "لمن يدير إضافات لفريق أو يعتمد على قواعد السماح في Bash: الإصدار يغلق ثغرات في الأذونات، مثل قواعد بنمط Bash(ls*) كانت تتخطى طلب الإذن، ويمنع تثبيت إضافة لا تتوافق مع إصدار Claude Code المثبّت.",
+   "about": "Code Mode وضع تجريبي يجب تفعيله يدويًا: بدلًا من استدعاء كل أداة على حدة، يكتب Claude شيفرة JavaScript تستدعي أدواته. ويمكن للمؤسسات إيقافه، والتوثيق الرسمي يشرح طريقة التفعيل والإيقاف.\n\nللإضافات: صار بإمكان ملف plugin.json أن يحدد engines[\"claude-code\"]، فلا تُثبَّت الإضافة ولا تُحدَّث ولا تُحمَّل خارج هذا النطاق، ويختار التثبيت أحدث إصدار متوافق. كما يفحص الأمر claude plugin validate الآن أنواع TypeScript في وحدة الخطافات، ويُفشل الفحص مع الخيار --strict.\n\nفي الأمان: إصلاح حالات كانت فيها قواعد السماح ذات النمط الملحق مثل Bash(ls*) تتخطى طلب الإذن، وحالة كان فيها sandbox الخاص بـ Bash يتوقف أثناء الجلسة، وحالة تقدير خاطئ لمجلد أمر rm، وبدء الوضع auto في وضع أكثر تساهلًا عندما لا يكون متاحًا (يبدأ الآن في الوضع اليدوي). وتظهر الآن رسالة تحذير عند بدء التشغيل لقواعد Bash التي تضع * داخل قيمة متغير.\n\nإصلاحات أخرى: الأمر /compact لم يعد يلخّص رسالة لم يُجب عنها، ونبضة تقدم كل 30 ثانية أثناء الخطافات الطويلة في claude -p، ودعم ملفات .docx في رفع الأصول، وإصلاحات عديدة لانتقال الجلسات الخلفية بين حسابات تسجيل الدخول.",
+   "features": [
+    "Code Mode تجريبي: Claude يكتب JavaScript لاستدعاء أدواته",
+    "حقل engines في plugin.json لتقييد الإضافة بنطاق إصدارات Claude Code",
+    "فحص أنواع TypeScript لخطافات الإضافات في claude plugin validate",
+    "إصلاح تخطي طلبات الإذن في بعض قواعد Bash وتوقف sandbox أثناء الجلسة",
+    "تحذير عند بدء التشغيل لقواعد Bash التي تضع * في قيمة متغير"
+   ],
+   "install": [
+    {
+     "label": "تحديث Claude Code",
+     "cmd": "claude update"
+    }
+   ],
+   "repo": "anthropics/claude-code",
+   "alternatives": [
+    "ess-claude-code-docs"
+   ],
+   "links": [
+    {
+     "label": "سجل التغييرات",
+     "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+    },
+    {
+     "label": "توثيق Code Mode",
+     "url": "https://code.claude.com/docs/en/code-mode"
+    }
+   ],
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.323",
+   "source": "github.com",
+   "importance": 3,
+   "tags": [
+    "claude-code",
+    "release",
+    "plugins",
+    "permissions"
+   ],
+   "en": {
+    "title": "Claude Code 2.1.323: experimental Code Mode, version ranges for plugins, and many permission fixes",
+    "summary": "Claude Code 2.1.323 adds Code Mode, an experimental opt-in where Claude writes JavaScript to call its tools, and an engines field in plugin.json so plugins outside their supported version range are not loaded, plus dozens of fixes to sessions, sign-in and Bash permissions.",
+    "why": "For anyone managing plugins for a team or relying on Bash allow rules: it closes permission gaps, such as Bash(ls*)-style rules that skipped the prompt, and stops a plugin from installing on a Claude Code version it does not support.",
+    "about": "Code Mode is experimental and must be turned on: instead of calling each tool separately, Claude writes JavaScript that calls its tools. Organizations can turn it off, and the official docs explain how to enable or disable it.\n\nFor plugins: plugin.json can now set engines[\"claude-code\"], and a plugin outside that range is not installed, updated or loaded; install picks the newest version that fits. claude plugin validate now type-checks a plugin's TypeScript hooks module and fails on findings with --strict.\n\nOn security: fixes cases where Bash allow rules with an attached wildcard such as Bash(ls*) skipped the permission prompt, a case where the Bash sandbox could switch off mid-session, a case where an rm was judged from the wrong folder, and auto mode starting in a more permissive mode when unavailable (it now starts in Manual mode). A startup warning now flags Bash rules with a * inside a variable's value.\n\nOther fixes: /compact no longer summarizes away an unanswered message, a 30-second progress heartbeat during long hooks in claude -p, .docx support for asset uploads, and many fixes for background sessions moving between sign-ins.",
+    "features": [
+     "Experimental Code Mode: Claude writes JavaScript to call its tools",
+     "engines field in plugin.json to limit a plugin to a Claude Code version range",
+     "TypeScript type checking of plugin hooks in claude plugin validate",
+     "Fixes for some Bash rules skipping the prompt and the sandbox switching off mid-session",
+     "Startup warning for Bash rules with a * in a variable's value"
+    ],
+    "install": [
+     "Update Claude Code"
+    ],
+    "links": [
+     "Changelog",
+     "Code Mode docs"
+    ]
+   }
+  },
+  {
+   "id": "microsoft-scope-agent-eval",
+   "section": "testing",
+   "kind": "tool",
+   "title": "Scope من Microsoft: منصة مفتوحة المصدر لمقارنة وكلاء البرمجة وإعداداتهم على المهمة نفسها",
+   "summary": "أتاحت Microsoft منصة Scope بترخيص MIT كمعاينة بحثية. تحدّد فيها سيناريو مهمة، وتشغّله بعدة إعدادات للوكيل، ثم يقيّم حَكَم آلي كل تشغيل وفق بوابات ومعايير نجاح، مع عرض الرموز والوقت. المدعوم اليوم GitHub Copilot وClaude Code.",
+   "why": "لفريق يريد أن يعرف بالأرقام هل تحسّن مهارة أو خادم MCP أو إضافة أداء الوكيل في مهامه، بدل الاعتماد على الانطباع: مثلًا مقارنة الوكيل مع خادم MCP لقاعدة البيانات ومن دونه.",
+   "about": "Scope منصة لتقييم «تجربة الوكيل»: كيف يستخدم الوكيل منتجك ويتعامل مع مهام حقيقية. كل «ملف تعريف» هو وكيل مع إعداداته من خوادم MCP والمهارات والإضافات، فتقارن عدة ملفات تعريف على السيناريو نفسه.\n\nيفحص الحَكَم بوابات متتابعة (المتطلبات ثم البناء ثم الاختبار)، ومكتبة معايير قابلة لإعادة الاستخدام مرتبة في شبكة اعتماديات، ويعرض التقرير نسب النجاح والرموز والمدة، مع إمكانية متابعة كل تشغيل مباشرة عبر البوابة أو سطر الأوامر. وتوصي المنصة بعدة محاولات لكل ملف تعريف لأن نتائج الوكلاء غير ثابتة.\n\nحدود: المنصة في مرحلة معاينة بحثية، والمدعوم اليوم GitHub Copilot وClaude Code، مع خطة لدعم OpenAI Codex وOpenCode دون موعد. ويذكر التوثيق أن الحَكَم الآلي قد يخطئ وأن الاستنتاجات المهمة تحتاج إلى مراجعة بشرية، وأن بيئة التطوير المحلية ليست بيئة عزل آمنة للمهام غير الموثوقة.",
+   "features": [
+    "مقارنة ملفات تعريف الوكيل (MCP والمهارات والإضافات) على السيناريو نفسه",
+    "حَكَم آلي ببوابات متتابعة ومكتبة معايير قابلة لإعادة الاستخدام",
+    "تقارير عن نسبة النجاح والرموز والمدة، ومتابعة مباشرة لكل تشغيل",
+    "بوابة ويب وسطر أوامر، وتُستضاف ذاتيًا"
+   ],
+   "repo": "microsoft/scope",
+   "pricing": {
+    "model": "oss",
+    "note": "مفتوحة المصدر بترخيص MIT، وتحتاج إلى اشتراك في الوكيل الذي تقيّمه"
+   },
+   "links": [
+    {
+     "label": "إعلان Microsoft",
+     "url": "https://opensource.microsoft.com/blog/2026/10/19/introducing-scope-open-source-evaluation-for-ai-coding-agents/"
+    },
+    {
+     "label": "التوثيق",
+     "url": "https://microsoft.github.io/scope/"
+    },
+    {
+     "label": "المستودع",
+     "url": "https://github.com/microsoft/scope"
+    }
+   ],
+   "url": "https://github.com/microsoft/scope",
+   "source": "github.com",
+   "importance": 2,
+   "tags": [
+    "evaluation",
+    "coding-agents",
+    "mcp",
+    "microsoft",
+    "open-source"
+   ],
+   "en": {
+    "title": "Microsoft Scope: an open-source platform to compare coding agents and their setups on the same task",
+    "summary": "Microsoft released Scope under the MIT licence as a research preview. You define a task scenario, run it with several agent setups, and an AI judge scores each run against gates and success criteria, alongside tokens and time. GitHub Copilot and Claude Code are supported today.",
+    "why": "For a team that wants numbers on whether a skill, MCP server or extension actually improves an agent on its tasks, instead of relying on impressions: for example, the agent with and without a database MCP server.",
+    "about": "Scope evaluates the \"agentic experience\": how an agent uses your product and handles real tasks. Each \"profile\" is an agent plus its MCP servers, skills and extensions, so you compare several profiles on the same scenario.\n\nThe judge checks sequential gates (Requirements, then Build, then Test) and a reusable library of criteria arranged as a dependency graph, and the report shows pass rates, tokens and duration; each run can be followed live in the Portal or CLI. It recommends several attempts per profile because agent results vary.\n\nLimits: it is a research preview; GitHub Copilot and Claude Code are supported today, with OpenAI Codex and OpenCode planned but undated. The docs say the AI judge can make mistakes and important conclusions need human review, and that the local development setup is not a security sandbox for untrusted tasks.",
+    "features": [
+     "Compare agent profiles (MCP, skills, extensions) on the same scenario",
+     "AI judge with sequential gates and a reusable criteria library",
+     "Reports pass rate, tokens and duration, with live run tracking",
+     "Web portal and CLI, self-hosted"
+    ],
+    "links": [
+     "Microsoft announcement",
+     "Docs",
+     "Repository"
+    ],
+    "pricingNote": "Open source under MIT; you need access to the agent you evaluate"
+   }
+  },
+  {
+   "id": "sphinx-understanding-check",
+   "section": "testing",
+   "kind": "tool",
+   "title": "Sphinx: اختبار فهم قبل git push للشيفرة التي كتبها الوكيل",
+   "summary": "أداة مفتوحة المصدر (MIT) توقف git push إلى فرع محمي وتسألك عن سلوك التغيير: ماذا يحدث عند فشل معين، وما الثوابت التي يحفظها. الأسئلة يولّدها نموذج مراجعة منفصل يقرأ التغيير فقط، ثم يكتمل الدفع بعد إجابتك الصحيحة.",
+   "why": "لمن يدمج شيفرة كتبها وكيل دون أن يقرأها جيدًا: تجبرك على فهم ما ستدفعه إلى main قبل أن يصل، مثلًا ماذا يحدث لمهمة في الطابور إذا تعطل العامل قبل تأكيد استلامها.",
+   "about": "عند الدفع إلى فرع محمي، ينتظر Git بينما تفتح Sphinx صفحة محلية في المتصفح وتسألك أن تتوقع ما سيفعله تغييرك. إن أخطأت تشرح السبب وتعطيك سيناريو جديدًا. والأسئلة عن السلوك وحالات الفشل والثوابت، لا عن أسماء الملفات، ويمكنك قراءة الشيفرة أثناء الإجابة.\n\nيعمل مع Claude Code وCodex وCursor وOpenCode وPi أو مع git push عادي، ويستخدم نموذج مراجعة من اشتراك Claude Code أو Codex، أو OpenRouter، أو أي واجهة متوافقة مع OpenAI. ولا يرى النموذج المراجع المحادثة التي أنتجت الشيفرة.\n\nتنبيهات من الوثائق: يضبط التثبيت core.hooksPath على مستوى الجهاز كله، فتُفحص عمليات الدفع إلى main أو master في كل المستودعات؛ ويُرسل التغيير وإجاباتك إلى مزوّد النموذج (مع استثناء ملفات .env والمفاتيح الشائعة)؛ ولا يوجد حد افتراضي لعدد الطلبات (نحو 5 إلى 8 طلبات للفحص الواحد). وهي أداة تدريب لا بوابة أمان، ويمكن تجاوزها.",
+   "features": [
+    "أسئلة عن السلوك وحالات الفشل قبل الدفع إلى فرع محمي",
+    "نموذج مراجعة منفصل لا يرى محادثة الوكيل",
+    "يعمل مع Claude Code وCodex وCursor وOpenCode وPi",
+    "إعدادات لكل مستودع عبر sphinx init وملف .sphinxignore"
+   ],
+   "install": [
+    {
+     "label": "التثبيت",
+     "cmd": "npm install -g sphinx-understand"
+    },
+    {
+     "label": "الإعداد",
+     "cmd": "sphinx install"
+    }
+   ],
+   "requirements": [
+    "Node.js 22.19 أو أحدث",
+    "Git على macOS أو Linux أو WSL"
+   ],
+   "repo": "parthh01/sphinx",
+   "pricing": {
+    "model": "oss",
+    "note": "مجانية، لكن طلبات النموذج المراجع تُحسب على اشتراكك أو مفتاح API"
+   },
+   "links": [
+    {
+     "label": "المستودع",
+     "url": "https://github.com/parthh01/sphinx"
+    }
+   ],
+   "url": "https://github.com/parthh01/sphinx",
+   "source": "github.com",
+   "importance": 2,
+   "tags": [
+    "git-hooks",
+    "code-review",
+    "coding-agents",
+    "learning"
+   ],
+   "en": {
+    "title": "Sphinx: an understanding check before git push for agent-written code",
+    "summary": "An open-source tool (MIT) that pauses a git push to a protected branch and asks you about the change's behavior: what happens on a given failure, which invariants it keeps. A separate reviewer model that only reads the change writes the questions, and the push continues once you answer correctly.",
+    "why": "For anyone merging code an agent wrote without reading it closely: it makes you understand what you push to main before it lands, for example what happens to a queued job if the worker crashes before acknowledging it.",
+    "about": "When you push to a protected branch, Git waits while Sphinx opens a local browser page and asks you to predict what your change does. If you miss something, it explains and gives you a new scenario. Questions cover behavior, failure modes and invariants, not file names, and you can read the code while answering.\n\nIt works with Claude Code, Codex, Cursor, OpenCode, Pi or a plain git push, and uses a reviewer model from your Claude Code or Codex plan, OpenRouter, or any OpenAI-compatible endpoint. The reviewer does not see the conversation that produced the code.\n\nCaveats from the docs: install sets core.hooksPath globally, so pushes to main or master are checked in every repository; the change and your answers go to the model provider (.env files and common keys are excluded); there is no default cap on calls (about 5 to 8 requests per check). It is practice, not a security gate, and can be bypassed.",
+    "features": [
+     "Behavior and failure-mode questions before pushing to a protected branch",
+     "Separate reviewer model that does not see the agent's conversation",
+     "Works with Claude Code, Codex, Cursor, OpenCode and Pi",
+     "Per-repository settings via sphinx init and a .sphinxignore file"
+    ],
+    "install": [
+     "Install",
+     "Set up"
+    ],
+    "requirements": [
+     "Node.js 22.19 or newer",
+     "Git on macOS, Linux or WSL"
+    ],
+    "links": [
+     "Repository"
+    ],
+    "pricingNote": "Free, but reviewer-model calls use your plan or API key"
+   }
+  },
+  {
+   "id": "cheap-agent-mcp",
+   "section": "mcp",
+   "kind": "mcp",
+   "title": "Cheap Agent: خادم MCP يحيل تنفيذ التعديلات إلى نموذج أرخص بينما يخطط Claude Code أو Codex ويراجع",
+   "summary": "خادم MCP وإضافة مفتوحة المصدر (MIT) لـ Claude Code وCodex: يكتب النموذج الرئيسي مهمة قصيرة، وينفذها نموذج أرخص في git worktree منفصل، ويجب أن يكتب اختبارًا يفشل قبل الإصلاح وينجح بعده. وتصل التغييرات غير مُثبَّتة (uncommitted) لتراجعها.",
+   "why": "لمن تنفد حصة اشتراكه سريعًا: يوفر رموز النموذج الكبير في الأعمال الروتينية مثل إضافة حقل أو إصلاح خطأ صغير. ويذكر المطوّر في عرضه أن ميزة واحدة استهلكت 63% رموزًا أقل من Opus، وهذا رقم من المطوّر نفسه.",
+   "about": "الفكرة أن النموذج الكبير يعمل كمهندس رئيسي لا يكتب كل سطر. يرسل مهمة قصيرة، فيعمل نموذج رخيص في نسخة خاصة من المشروع (git worktree)، ويكتب اختبارًا يعيد إنتاج المشكلة ثم يصلح الشيفرة. ويشغّل Cheap Agent الاختبارات بنفسه، ولا يقبل إلا العمل الذي يجتاز الفحص.\n\nإذا لم يكمل النموذج الرخيص المهمة، يكملها مساعد Sonnet بدل Opus. وتمنع خطافات الأداة النموذج الرئيسي من إعادة عمل اجتاز الفحص بالفعل.\n\nالمزودون المدعومون: OpenRouter وDeepSeek وOpenCode Go وCommand Code وOpenCode Zen، أو أي واجهة متوافقة مع OpenAI بما فيها نموذج محلي. تحتاج إلى مفتاح API برصيد قليل. الأرقام المنشورة كلها من مطوّر الأداة.",
+   "features": [
+    "تنفيذ التعديلات بنموذج أرخص في git worktree منفصل",
+    "اختبار يفشل قبل الإصلاح وينجح بعده لكل تغيير",
+    "التغييرات تصل غير مُثبَّتة لمراجعة الفرق",
+    "يدعم Claude Code وCodex ومزودين متعددين ونماذج محلية"
+   ],
+   "install": [
+    {
+     "label": "الإعداد لـ Claude Code أو Codex",
+     "cmd": "npx cheap-agent"
+    },
+    {
+     "label": "إضافة سوق الإضافات في Codex",
+     "cmd": "codex plugin marketplace add muaaz9329/cheap-ag"
+    },
+    {
+     "label": "تثبيت الإضافة في Codex",
+     "cmd": "codex plugin add cheapag@cheap-agent"
+    }
+   ],
+   "usage": [
+    "/cheapag:allow"
+   ],
+   "requirements": [
+    "Node.js 20+",
+    "Claude Code أو Codex",
+    "مفتاح API من مزوّد مدعوم أو نموذج محلي"
+   ],
+   "repo": "muaaz9329/cheap-ag",
+   "pricing": {
+    "model": "oss",
+    "note": "الأداة مجانية؛ تدفع لمزوّد النموذج الرخيص"
+   },
+   "links": [
+    {
+     "label": "المستودع",
+     "url": "https://github.com/muaaz9329/cheap-ag"
+    }
+   ],
+   "url": "https://github.com/muaaz9329/cheap-ag",
+   "source": "github.com",
+   "importance": 2,
+   "tags": [
+    "mcp",
+    "claude-code",
+    "codex",
+    "cost",
+    "worktree"
+   ],
+   "en": {
+    "title": "Cheap Agent: an MCP server that hands edits to a cheaper model while Claude Code or Codex plans and reviews",
+    "summary": "An open-source MCP server and plugin (MIT) for Claude Code and Codex: the main model writes a short task, a cheaper model does it in a separate git worktree and must write a test that fails before the fix and passes after. Changes land uncommitted for you to review.",
+    "why": "For anyone whose plan runs out quickly: it saves frontier-model tokens on routine work such as adding a field or fixing a small bug. The author's demo reports 63% fewer Opus tokens on one feature; that figure comes from the author.",
+    "about": "The idea is that the frontier model acts as a principal engineer and does not type every line. It sends a short task; a cheap model works in a private copy of the project (a git worktree), writes a test reproducing the issue, then fixes the code. Cheap Agent runs the tests itself and only accepts work that passes.\n\nIf the cheap model cannot finish, a Sonnet helper finishes the step instead of Opus. Its hooks stop the main model from redoing work that already passed.\n\nSupported providers: OpenRouter, DeepSeek, OpenCode Go, Command Code, OpenCode Zen, or any OpenAI-compatible endpoint including a local model. You need an API key with a few dollars on it. All published numbers come from the tool's author.",
+    "features": [
+     "Edits done by a cheaper model in a separate git worktree",
+     "A test that fails before and passes after every change",
+     "Changes land uncommitted for diff review",
+     "Supports Claude Code, Codex, several providers and local models"
+    ],
+    "install": [
+     "Set up for Claude Code or Codex",
+     "Add the Codex plugin marketplace",
+     "Install the Codex plugin"
+    ],
+    "usage": [
+     "/cheapag:allow"
+    ],
+    "requirements": [
+     "Node.js 20+",
+     "Claude Code or Codex",
+     "An API key from a supported provider, or a local model"
+    ],
+    "links": [
+     "Repository"
+    ],
+    "pricingNote": "The tool is free; you pay the cheap-model provider"
+   }
+  },
+  {
+   "id": "cc-remote-acp",
+   "section": "devtools",
+   "kind": "tool",
+   "title": "cc-remote: شغّل Claude Code على خادم عبر SSH بينما تُنفَّذ أدواته على جهازك",
+   "summary": "أداة مفتوحة المصدر تشغّل Claude Code المسجّل دخوله على خادم تصل إليه عبر ssh، وتنفذ كل أداة يستدعيها (القراءة والكتابة والتعديل وBash وخوادم MCP المحلية) على جهازك. وهي وكيل ACP يعمل مع Zed وأي عميل ACP.",
+   "why": "لمن يعمل على أكثر من جهاز ويريد تسجيل دخول واحد واشتراكًا واحدًا: يبقى الحساب على خادم التطوير، بينما تبقى الشيفرة والأدوات وإعدادات git على جهازك، فلا تحتاج إلى تثبيت Claude Code أو تسجيل الدخول على كل حاسوب.",
+   "about": "الفرق عن الدخول إلى الخادم بـ ssh وتشغيل claude هناك أن الملفات التي تُعدَّل والأوامر التي تُنفَّذ هي التي على جهازك، بأدواتك وتبعياتك. أما النموذج وموجّه النظام والجلسة والبحث في الويب والوكلاء الفرعيون والمهارات فتبقى على الخادم.\n\nالأداة مبنية على claude-agent-acp، محوّل ACP الخاص بـ Claude Code، مع تغيير واحد: claude يعمل على الخادم. لذلك تعمل الجلسات وطلبات الأذونات والأوضاع والنماذج كالمعتاد. ولا تحتاج إلى تثبيت أي شيء على الخادم سوى Claude Code مسجّل الدخول.\n\nالمتطلبات: اتصال ssh بالمفتاح دون كلمة مرور، وClaude Code 2.1.248 أو أحدث على الخادم، وBun على جهازك لبناء الملف التنفيذي، الذي يعمل على macOS وLinux وWindows.",
+   "features": [
+    "أدوات Read وWrite وEdit وBash تعمل على جهازك",
+    "النموذج وتسجيل الدخول والاشتراك تبقى على الخادم",
+    "خوادم MCP المحلية تعمل على جهازك، بما فيها تسجيلات OAuth",
+    "وكيل ACP يعمل مع Zed وأي عميل ACP"
+   ],
+   "install": [
+    {
+     "label": "نسخ المستودع",
+     "cmd": "git clone https://github.com/AkaraChen/cc-remote && cd cc-remote"
+    },
+    {
+     "label": "تثبيت التبعيات",
+     "cmd": "bun install"
+    },
+    {
+     "label": "بناء الملف التنفيذي",
+     "cmd": "bun run compile"
+    },
+    {
+     "label": "إضافته إلى PATH",
+     "cmd": "bun link"
+    }
+   ],
+   "requirements": [
+    "ssh إلى الخادم دون كلمة مرور",
+    "Claude Code 2.1.248+ مسجّل الدخول على الخادم",
+    "Bun على جهازك للبناء"
+   ],
+   "repo": "AkaraChen/cc-remote",
+   "pricing": {
+    "model": "oss"
+   },
+   "links": [
+    {
+     "label": "المستودع",
+     "url": "https://github.com/AkaraChen/cc-remote"
+    }
+   ],
+   "url": "https://github.com/AkaraChen/cc-remote",
+   "source": "github.com",
+   "importance": 1,
+   "tags": [
+    "claude-code",
+    "ssh",
+    "acp",
+    "remote",
+    "zed"
+   ],
+   "en": {
+    "title": "cc-remote: run Claude Code on a server over SSH while its tools run on your machine",
+    "summary": "An open-source tool that runs a logged-in Claude Code on a server you reach over ssh, and runs every tool it calls (Read, Write, Edit, Bash and local MCP servers) on your machine. It is an ACP agent that works with Zed and any ACP client.",
+    "why": "For people who work across several computers and want one login and one subscription: the account stays on the dev server, while your code, tools and git config stay local, so you do not install or sign into Claude Code on every machine.",
+    "about": "Unlike ssh-ing into the server and running claude there, the files edited and the commands run are the ones on your machine, with your tools and dependencies. The model, system prompt, session, web search, subagents and skills stay on the server.\n\nIt is built on claude-agent-acp, the ACP adapter for Claude Code, with one change: claude runs on the server. Sessions, permission prompts, modes and models work as usual. Nothing needs installing on the server besides a logged-in Claude Code.\n\nRequirements: key-based ssh without a password prompt, Claude Code 2.1.248 or later on the server, and Bun on your machine to build the binary, which runs on macOS, Linux and Windows.",
+    "features": [
+     "Read, Write, Edit and Bash run on your machine",
+     "Model, login and subscription stay on the server",
+     "Local MCP servers run on your machine, OAuth logins included",
+     "ACP agent for Zed and any ACP client"
+    ],
+    "install": [
+     "Clone the repository",
+     "Install dependencies",
+     "Build the binary",
+     "Put it on your PATH"
+    ],
+    "requirements": [
+     "Passwordless ssh to the server",
+     "Claude Code 2.1.248+ logged in on the server",
+     "Bun on your machine to build"
+    ],
+    "links": [
+     "Repository"
+    ]
+   }
+  },
+  {
+   "id": "openosint-mcp",
+   "section": "security",
+   "kind": "tool",
+   "title": "OpenOSINT: وكيل مفتوح المصدر لجمع المعلومات من المصادر العامة، مع خادم MCP وإضافة لـ Claude Code",
+   "summary": "أداة مفتوحة المصدر (MIT) تجمع 21 أداة بحث في المصادر العامة (DNS وRDAP وWHOIS وعناوين IP ومواقع اللصق وغيرها) خلف واجهة باللغة الطبيعية، مع خادم MCP منشور في سجل MCP. وكل معلومة في الإجابة مربوطة باستدعاء الأداة الذي أنتجها.",
+   "why": "لفرق الأمان ومن يراجع إعدادات نطاقه: فحص سريع لنطاق مثل ضبط DMARC وترويسات HTTP بأمر واحد ودون مفاتيح، أو تحقيق في نطاق مشبوه من داخل Claude Code مع مصدر لكل معلومة.",
+   "about": "تعمل OpenOSINT كتطبيق ويب محلي فيه محادثة ورسم بياني وخريطة، أو كسطر أوامر لفحوص مباشرة دون ذكاء اصطناعي، أو كخادم MCP يمكن ربطه بـ Claude Code أو أي عميل MCP.\n\nالأدوات السلبية فقط مفعّلة افتراضيًا. ومثال من الوثائق: الأمر exposure على نطاق يعطي درجة من 100 ويذكر مشكلات مثل غياب ترويسة Strict-Transport-Security أو غياب عنوان تقارير DMARC. بعض الأدوات تحتاج إلى مفتاح، وبعضها برعاية مزوّدين تجاريين.\n\nتنبيه: استخدم الأداة فقط على أهداف يحق لك فحصها؛ بعض الفحوص مثل TLS وترويسات HTTP تتصل بالهدف مباشرة.",
+   "features": [
+    "21 أداة بحث في المصادر العامة، والأدوات السلبية فقط مفعّلة افتراضيًا",
+    "مصدر لكل معلومة مرتبط باستدعاء الأداة",
+    "تطبيق ويب محلي وسطر أوامر وخادم MCP",
+    "فحص exposure لنطاق دون مفاتيح API"
+   ],
+   "install": [
+    {
+     "label": "تشغيل التطبيق المحلي",
+     "cmd": "uvx openosint web"
+    },
+    {
+     "label": "فحص نطاق مباشرة",
+     "cmd": "uvx openosint exposure example.com"
+    }
+   ],
+   "requirements": [
+    "uv"
+   ],
+   "repo": "OpenOSINT/OpenOSINT",
+   "pricing": {
+    "model": "oss",
+    "note": "مفتوحة المصدر، ولها نسخة سحابية بفحص أول مجاني"
+   },
+   "links": [
+    {
+     "label": "المستودع",
+     "url": "https://github.com/OpenOSINT/OpenOSINT"
+    },
+    {
+     "label": "التوثيق",
+     "url": "https://openosint.tech/docs/"
+    }
+   ],
+   "url": "https://github.com/OpenOSINT/OpenOSINT",
+   "source": "github.com",
+   "importance": 2,
+   "tags": [
+    "osint",
+    "security",
+    "mcp",
+    "dns",
+    "claude-code"
+   ],
+   "en": {
+    "title": "OpenOSINT: an open-source public-source investigation agent with an MCP server and a Claude Code plugin",
+    "summary": "An open-source tool (MIT) that puts 21 public-source lookup tools (DNS, RDAP, WHOIS, IP, paste sites and more) behind a natural-language interface, with an MCP server published in the MCP Registry. Every claim in an answer links to the tool call that produced it.",
+    "why": "For security teams and anyone checking their own domain setup: a quick domain check such as DMARC and HTTP headers with one command and no keys, or an investigation of a suspicious domain from inside Claude Code with a source for every finding.",
+    "about": "OpenOSINT runs as a local web app with chat, graph and globe, as a CLI for direct checks without AI, or as an MCP server for Claude Code or any MCP client.\n\nOnly passive tools are on by default. An example from the docs: the exposure command on a domain returns a score out of 100 and flags issues such as a missing Strict-Transport-Security header or a DMARC record without a report address. Some tools need a key, and some are sponsored by commercial providers.\n\nNote: use it only on targets you are allowed to check; some checks, such as TLS and HTTP headers, contact the target directly.",
+    "features": [
+     "21 public-source lookup tools, only passive ones on by default",
+     "A source for every claim, linked to the tool call",
+     "Local web app, CLI and MCP server",
+     "Domain exposure check without API keys"
+    ],
+    "install": [
+     "Run the local app",
+     "Check a domain directly"
+    ],
+    "requirements": [
+     "uv"
+    ],
+    "links": [
+     "Repository",
+     "Docs"
+    ],
+    "pricingNote": "Open source, with a cloud version whose first check is free"
+   }
+  },
+  {
+   "id": "openmontage-video",
+   "section": "video",
+   "kind": "repo",
+   "title": "OpenMontage: نظام مفتوح المصدر يحوّل وكيل البرمجة إلى استوديو إنتاج فيديو",
+   "summary": "مشروع مفتوح المصدر (AGPLv3) يجعل Claude Code أو Cursor أو Copilot أو Codex يتولى إنتاج فيديو كامل من وصف نصي: البحث والسيناريو وتوليد المواد والمونتاج والتركيب النهائي. ويمكنه بناء فيديو من لقطات حقيقية من مكتبات مجانية لا من صور ثابتة فقط.",
+   "why": "لصانعي المحتوى والفرق الصغيرة: فيديو شرح أو إعلان قصير من وصف واحد داخل أداة البرمجة التي تستخدمها، مثلًا «فيديو شرح مدته 60 ثانية عن كيفية تعلم الشبكات العصبية».",
+   "about": "تفتح المشروع في مساعد البرمجة وتصف ما تريد، فيتولى الوكيل خطوات الإنتاج: البحث، وكتابة السيناريو، وتخطيط المشاهد، وتوليد المواد أو جلبها، والمونتاج، والتصيير النهائي. ويدعم مسار «اللقطات الحقيقية» الذي يبني مجموعة من لقطات المخزون المجانية والأرشيفات المفتوحة ويقطّعها على خط زمني.\n\nيمكن استخدام مزودي توليد مدفوعين مثل Veo للمشاهد، وتعرض الوثائق أمثلة منها إعلان خيال علمي أُنتج بالكامل عبر المشروع مع تركيب بـ Remotion.\n\nالترخيص AGPLv3، وهذا مهم إن أردت دمجه في خدمة تجارية. والمتطلبات: Python 3.10+ وFFmpeg وNode.js بإصدار مُحدَّث.",
+   "features": [
+    "إنتاج فيديو كامل من وصف نصي داخل وكيل البرمجة",
+    "مسار للقطات حقيقية من مكتبات مجانية وأرشيفات مفتوحة",
+    "يعمل مع Claude Code وCursor وCopilot وWindsurf وCodex",
+    "مزودو توليد اختياريون للمشاهد والصوت"
+   ],
+   "install": [
+    {
+     "label": "نسخ المستودع",
+     "cmd": "git clone https://github.com/calesthio/OpenMontage.git"
+    },
+    {
+     "label": "الدخول إلى المجلد",
+     "cmd": "cd OpenMontage"
+    },
+    {
+     "label": "الإعداد",
+     "cmd": "make setup"
+    }
+   ],
+   "usage": [
+    "اصنع فيديو شرح متحركًا مدته 60 ثانية عن كيفية تعلم الشبكات العصبية"
+   ],
+   "requirements": [
+    "Python 3.10+",
+    "FFmpeg",
+    "Node.js 22.23.4+ أو 24.22.1+ أو 26.12.1+"
+   ],
+   "repo": "OpenMontageInc/OpenMontage",
+   "pricing": {
+    "model": "oss",
+    "note": "مفتوح المصدر (AGPLv3)؛ مزودو التوليد المدفوعون اختياريون"
+   },
+   "links": [
+    {
+     "label": "المستودع",
+     "url": "https://github.com/OpenMontageInc/OpenMontage"
+    },
+    {
+     "label": "الموقع",
+     "url": "https://openmontage.video"
+    }
+   ],
+   "url": "https://github.com/OpenMontageInc/OpenMontage",
+   "source": "github.com",
+   "importance": 2,
+   "tags": [
+    "video",
+    "agents",
+    "remotion",
+    "open-source"
+   ],
+   "en": {
+    "title": "OpenMontage: an open-source system that turns a coding agent into a video production studio",
+    "summary": "An open-source project (AGPLv3) that has Claude Code, Cursor, Copilot or Codex produce a full video from a text description: research, script, asset generation, editing and final composition. It can build a video from real footage from free libraries, not just still images.",
+    "why": "For creators and small teams: an explainer or short promo from one description inside the coding tool you already use, for example \"a 60-second animated explainer about how neural networks learn\".",
+    "about": "You open the project in your coding assistant and describe what you want; the agent handles research, scripting, scene planning, generating or fetching assets, editing and the final render. A real-footage path builds a corpus from free stock footage and open archives and cuts actual motion clips on a timeline.\n\nPaid generation providers such as Veo can be used for scenes; the docs show examples including a sci-fi trailer produced entirely through the project with Remotion composition.\n\nThe licence is AGPLv3, which matters if you want to build it into a commercial service. Requirements: Python 3.10+, FFmpeg and a patched Node.js release.",
+    "features": [
+     "Full video production from a text description inside a coding agent",
+     "Real-footage path from free libraries and open archives",
+     "Works with Claude Code, Cursor, Copilot, Windsurf and Codex",
+     "Optional generation providers for scenes and audio"
+    ],
+    "install": [
+     "Clone the repository",
+     "Enter the folder",
+     "Set up"
+    ],
+    "usage": [
+     "Make a 60-second animated explainer about how neural networks learn"
+    ],
+    "requirements": [
+     "Python 3.10+",
+     "FFmpeg",
+     "Node.js 22.23.4+, 24.22.1+ or 26.12.1+"
+    ],
+    "links": [
+     "Repository",
+     "Website"
+    ],
+    "pricingNote": "Open source (AGPLv3); paid generation providers are optional"
+   }
+  }
+ ]
+}
