@@ -1,6 +1,6 @@
 {
  "category": "eval",
- "checked": "2026-11-12",
+ "checked": "2026-11-13",
  "tools": [
   {
    "id": "harbor",
@@ -2117,6 +2117,167 @@
     ],
     "role": "عمل سابق لمقيّم الالتزام بالمعايير: نستخدم طريقته لتحويل أدلة كل مستودع وتاريخه إلى قواعد قابلة للفحص، ثم نقيّم التشغيلات عليها إلى جانب معايير المسار 1.",
     "pricing": "مجاني للاطلاع"
+   }
+  },
+  {
+   "id": "microsoft-scope",
+   "name": "Scope (Microsoft)",
+   "category": "eval",
+   "kind": "open-source",
+   "vendor": "Microsoft",
+   "repo": "microsoft/scope",
+   "url": "https://microsoft.github.io/scope/",
+   "license": "MIT",
+   "pricing": "Free (open source)",
+   "status": "beta",
+   "version": "Research preview (open-sourced 19 Oct 2026)",
+   "tier": "brief",
+   "summary": "Microsoft's open-source platform for measuring and comparing AI coding agents, released as a research preview. You define a task scenario, run it with several agent setups (profiles), and an AI judge scores each run against gates and success criteria, alongside tokens and time.",
+   "how": "Each profile is an agent plus its configuration (MCP servers, skills, extensions). Workers drive the agent on the scenario; GitHub Copilot and Claude Code are supported today, with OpenAI Codex and OpenCode planned. A judge then checks sequential gates (Requirements, Build, Test) and a reusable library of criteria arranged as a dependency graph, and the report compares pass rates, tokens and duration. Tasks are tagged with prompt features so results can be grouped across different tasks.",
+   "features": [
+    "Compare agent profiles (agent plus MCP servers, skills and extensions) on the same scenario",
+    "AI judge with sequential gates (Requirements, Build, Test) and a reusable criteria library",
+    "Reports quality, tokens and time; recommends several attempts per profile",
+    "Prompt-feature tags to compare agents across different tasks"
+   ],
+   "strengths": [
+    "Backed by Microsoft, MIT licence, self-hosted",
+    "Compares agent configurations, not just models: close to how Azm wants to compare harness setups"
+   ],
+   "weaknesses": [
+    "Research preview; only Copilot and Claude Code are supported today",
+    "The docs say local runs are not a security sandbox and the judge can make mistakes"
+   ],
+   "gaps": [
+    "No hidden-test grading on mined tasks, no squad-kit or azm-harness worker, no standards score"
+   ],
+   "fit": {
+    "verdict": "benchmark",
+    "role": "Prior art for the comparison report and per-setup profiles. Pilot it on a few Azm scenarios next to Harbor and copy its gates-plus-criteria judging and profile idea; do not make it the main runner while it is a preview."
+   },
+   "scores": {
+    "fit": 4,
+    "maturity": 2,
+    "openness": 4,
+    "agnostic": 3,
+    "config": 4,
+    "measure": 4,
+    "safety": 2
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/microsoft/scope"
+    ],
+    [
+     "Announcement",
+     "https://opensource.microsoft.com/blog/2026/10/19/introducing-scope-open-source-evaluation-for-ai-coding-agents/"
+    ],
+    [
+     "Docs",
+     "https://microsoft.github.io/scope/"
+    ]
+   ],
+   "sources": [
+    "https://github.com/microsoft/scope",
+    "https://opensource.microsoft.com/blog/2026/10/19/introducing-scope-open-source-evaluation-for-ai-coding-agents/"
+   ],
+   "ar": {
+    "summary": "منصة مفتوحة المصدر من Microsoft لقياس وكلاء البرمجة بالذكاء الاصطناعي ومقارنتهم، صدرت كمعاينة بحثية. تحدّد سيناريو مهمة، وتشغّله بعدة إعدادات للوكيل (ملفات تعريف)، ثم يقيّم حَكَم آلي كل تشغيل وفق بوابات ومعايير نجاح، إلى جانب عدد الرموز والوقت.",
+    "how": "كل ملف تعريف هو وكيل مع إعداداته (خوادم MCP والمهارات والإضافات). تشغّل وحداتُ العمل الوكيلَ على السيناريو؛ والمدعوم اليوم GitHub Copilot وClaude Code، مع خطة لدعم OpenAI Codex وOpenCode. ثم يفحص الحَكَم بوابات متتابعة (المتطلبات ثم البناء ثم الاختبار) ومكتبة معايير قابلة لإعادة الاستخدام مرتبة في شبكة اعتماديات، ويقارن التقرير نسب النجاح والرموز والمدة. وتُوسَم المهام بخصائص الطلب لتجميع النتائج عبر مهام مختلفة.",
+    "features": [
+     "مقارنة ملفات تعريف الوكيل (الوكيل مع خوادم MCP والمهارات والإضافات) على السيناريو نفسه",
+     "حَكَم آلي ببوابات متتابعة (المتطلبات، البناء، الاختبار) ومكتبة معايير قابلة لإعادة الاستخدام",
+     "تقارير عن الجودة والرموز والوقت، مع توصية بعدة محاولات لكل ملف تعريف",
+     "وسوم لخصائص الطلب لمقارنة الوكلاء عبر مهام مختلفة"
+    ],
+    "strengths": [
+     "مدعومة من Microsoft، بترخيص MIT، وتُستضاف على خوادمنا",
+     "تقارن إعدادات الوكيل لا النماذج فقط، وهذا قريب مما تريده عزم في مقارنة إعدادات الـ harness"
+    ],
+    "weaknesses": [
+     "معاينة بحثية؛ لا تدعم اليوم إلا Copilot وClaude Code",
+     "يذكر التوثيق أن التشغيل المحلي ليس بيئة عزل آمنة وأن الحَكَم قد يخطئ"
+    ],
+    "gaps": [
+     "لا تقييم باختبارات مخفية على مهام مستخرجة، ولا وحدة عمل لـ squad-kit أو azm-harness، ولا درجة للمعايير"
+    ],
+    "role": "عمل سابق لتقرير المقارنة ولفكرة ملفات التعريف لكل إعداد. نجرّبها على بضعة سيناريوهات من عزم بجانب Harbor، وننسخ أسلوب التحكيم بالبوابات والمعايير وفكرة ملفات التعريف، ولا نجعلها المشغّل الأساسي ما دامت معاينة.",
+    "pricing": "مجانية (مفتوحة المصدر)"
+   }
+  },
+  {
+   "id": "repo-to-bench",
+   "name": "repo-to-bench",
+   "category": "eval",
+   "kind": "open-source",
+   "vendor": "Independent developer (GGGODLIN)",
+   "repo": "GGGODLIN/repo-to-bench",
+   "url": "https://github.com/GGGODLIN/repo-to-bench",
+   "license": "MIT",
+   "pricing": "Free (open source)",
+   "status": "beta",
+   "version": "v0.1.0 (Harbor-backed; last commit 20 Oct 2026)",
+   "tier": "brief",
+   "summary": "A small open-source toolkit that turns a real fix in your own repository into a coding-agent benchmark task in Harbor's format. It checks the task is valid before any agent result counts, then prepares anonymous results for review.",
+   "how": "You give it the repository, the revision before the fix, the known-good revision and a test command. It confirms the old revision fails and the fix passes, then packages a Harbor-compatible task. The agent starts from the broken revision while the hidden tests and the reference patch stay outside its workspace. Afterwards it checks every planned run produced a result, rebuilds the Claude Code or Codex changes, and builds an anonymous review packet whose verdicts must match the candidates.",
+   "features": [
+    "Turns a base and fixed Git revision plus a test command into a Harbor task",
+    "Validates that the base fails and the reference fix passes",
+    "Keeps hidden tests and the reference patch out of the agent's workspace",
+    "Anonymous candidates and a checked review packet to avoid reviewer bias"
+   ],
+   "strengths": [
+    "Does exactly the mining step Azm planned, and outputs Harbor tasks, our chosen runner"
+   ],
+   "weaknesses": [
+    "Very early: one developer, a handful of stars, one release"
+   ],
+   "gaps": [
+    "No ticket-to-brief writing, no per-team suites, no standards score"
+   ],
+   "fit": {
+    "verdict": "inspire",
+    "role": "Prior art for the task-mining pipeline. Try it on one Azm repo before writing our own miner; reuse its validation and anti-leak rules even if we do not keep the code."
+   },
+   "scores": {
+    "fit": 4,
+    "maturity": 1,
+    "openness": 4,
+    "agnostic": 3,
+    "config": 3,
+    "measure": 3,
+    "safety": 3
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/GGGODLIN/repo-to-bench"
+    ]
+   ],
+   "sources": [
+    "https://github.com/GGGODLIN/repo-to-bench"
+   ],
+   "ar": {
+    "summary": "أداة صغيرة مفتوحة المصدر تحوّل إصلاحًا حقيقيًا في مستودعك إلى مهمة قياس لوكلاء البرمجة بصيغة Harbor. وتتحقق من صلاحية المهمة قبل احتساب أي نتيجة للوكيل، ثم تُعدّ النتائج دون أسماء للمراجعة.",
+    "how": "تعطيها المستودع، والنسخة قبل الإصلاح، والنسخة السليمة، وأمر الاختبار. فتتأكد أن النسخة القديمة تفشل وأن الإصلاح ينجح، ثم تُنشئ مهمة متوافقة مع Harbor. يبدأ الوكيل من النسخة المعطوبة، وتبقى الاختبارات المخفية والإصلاح المرجعي خارج مساحة عمله. وبعد التشغيل تتحقق من أن كل تشغيل مخطط أنتج نتيجة، وتعيد بناء تعديلات Claude Code أو Codex، وتُعدّ حزمة مراجعة دون أسماء يجب أن تطابق أحكامُها المرشحين.",
+    "features": [
+     "تحويل نسخة Git الأساسية والنسخة المُصلحة مع أمر اختبار إلى مهمة Harbor",
+     "التحقق من أن النسخة الأساسية تفشل وأن الإصلاح المرجعي ينجح",
+     "إبقاء الاختبارات المخفية والإصلاح المرجعي خارج مساحة عمل الوكيل",
+     "مرشحون دون أسماء وحزمة مراجعة مفحوصة لتجنب تحيّز المراجع"
+    ],
+    "strengths": [
+     "تنفّذ تمامًا خطوة استخراج المهام التي خططت لها عزم، وتُخرج مهام Harbor، وهو المشغّل الذي اخترناه"
+    ],
+    "weaknesses": [
+     "مبكرة جدًا: مطوّر واحد، وعدد قليل من النجوم، وإصدار واحد"
+    ],
+    "gaps": [
+     "لا كتابة لوصف المهمة من التذكرة، ولا مجموعات لكل فريق، ولا درجة للمعايير"
+    ],
+    "role": "عمل سابق لخط استخراج المهام. نجرّبها على مستودع واحد من عزم قبل كتابة أداة الاستخراج الخاصة بنا، ونعيد استخدام قواعد التحقق ومنع التسريب فيها حتى لو لم نُبقِ شيفرتها.",
+    "pricing": "مجانية (مفتوحة المصدر)"
    }
   }
  ]

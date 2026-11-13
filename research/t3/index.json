@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12",
+ "updated": "2026-11-13",
  "sources": [
   {
    "name": "Picrew/awesome-agent-harness",
@@ -8119,6 +8119,91 @@
    "ar": {
     "summary": "بيئة عزل صغيرة بآلات Firecracker الافتراضية المصغّرة مع دعم MCP.",
     "group": "بيئات العزل والتنفيذ"
+   }
+  },
+  {
+   "stars": null,
+   "tags": [
+    "web-search"
+   ],
+   "lists": [],
+   "name": "Scope (Microsoft)",
+   "repo": "microsoft/scope",
+   "url": "https://github.com/microsoft/scope",
+   "category": "eval",
+   "group": "Evaluation & Benchmarks",
+   "summary": "Research-preview platform to compare coding agents and their setups with an AI judge.",
+   "ar": {
+    "summary": "منصة في مرحلة المعاينة البحثية لمقارنة وكلاء البرمجة وإعداداتهم بحَكَم آلي.",
+    "group": "التقييم والمقاييس"
+   }
+  },
+  {
+   "stars": null,
+   "tags": [
+    "web-search"
+   ],
+   "lists": [],
+   "name": "repo-to-bench",
+   "repo": "GGGODLIN/repo-to-bench",
+   "url": "https://github.com/GGGODLIN/repo-to-bench",
+   "category": "eval",
+   "group": "Evaluation & Benchmarks",
+   "summary": "Turns repository revisions into Harbor-compatible coding-agent benchmark tasks.",
+   "ar": {
+    "summary": "يحوّل نسخ المستودع إلى مهام قياس لوكلاء البرمجة متوافقة مع Harbor.",
+    "group": "التقييم والمقاييس"
+   }
+  },
+  {
+   "stars": null,
+   "tags": [
+    "web-search"
+   ],
+   "lists": [],
+   "name": "Repo-Trials",
+   "repo": "PozziTiv4ik/Repo-Trials",
+   "url": "https://github.com/PozziTiv4ik/Repo-Trials",
+   "category": "eval",
+   "group": "Evaluation & Benchmarks",
+   "summary": "SWE-bench for your own repository: mines Git history into private, reproducible agent evaluations.",
+   "ar": {
+    "summary": "‏SWE-bench لمستودعك أنت: يستخرج من سجل Git تقييمات خاصة وقابلة للتكرار للوكلاء.",
+    "group": "التقييم والمقاييس"
+   }
+  },
+  {
+   "stars": null,
+   "tags": [
+    "web-search"
+   ],
+   "lists": [],
+   "name": "agenthangar evals",
+   "repo": "agenthangar/evals",
+   "url": "https://github.com/agenthangar/evals",
+   "category": "eval",
+   "group": "Evaluation & Benchmarks",
+   "summary": "Reproducible private benchmarks for choosing coding-agent configurations, with cost per success.",
+   "ar": {
+    "summary": "مقاييس خاصة قابلة للتكرار لاختيار إعدادات وكلاء البرمجة، مع تكلفة كل نجاح.",
+    "group": "التقييم والمقاييس"
+   }
+  },
+  {
+   "stars": null,
+   "tags": [
+    "web-search"
+   ],
+   "lists": [],
+   "name": "Doc2Harness",
+   "repo": "YuyaoGe/doc2harness",
+   "url": "https://github.com/YuyaoGe/doc2harness",
+   "category": "eval",
+   "group": "Evaluation & Benchmarks",
+   "summary": "Code for a benchmark of LLMs doing long-horizon harness engineering for coding agents.",
+   "ar": {
+    "summary": "شيفرة مقياس للنماذج اللغوية في هندسة الـ harness لوكلاء البرمجة على مهام طويلة.",
+    "group": "التقييم والمقاييس"
    }
   }
  ],

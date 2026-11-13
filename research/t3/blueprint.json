@@ -1,6 +1,6 @@
 {
  "track": "t3",
- "checked": "2026-11-12",
+ "checked": "2026-11-13",
  "goal": {
   "en": "Build one place where Azm can run any harness (squad-kit, azm-harness, Claude Code, others) on the same real Azm tasks, in isolation, and get a clear answer: which harness, with which model, gives the best quality for the cost, and does it follow our standards?",
   "ar": "بناء مكان واحد تشغّل فيه عزم أي harness (مثل squad-kit وazm-harness وClaude Code وغيرها) على المهام الحقيقية نفسها من مشاريع عزم، في بيئة معزولة، لتحصل على إجابة واضحة: أي harness، مع أي نموذج، يعطي أفضل جودة مقابل التكلفة، وهل يلتزم بمعاييرنا؟"
@@ -94,8 +94,8 @@
    },
    "decision": "build",
    "plan": {
-    "en": "Build Azm's own task set with the SWE-bench recipe: take a closed ticket, pin the repo before the fix, write the brief from the ticket, and keep hidden tests that fail before and pass after. Start with 10 tasks from one repo, grow to 20-50 per team. Keep a small slice of Terminal-Bench as a public sanity check, pinned to one version (2.0 matches most published harness studies; 4.x is the current leaderboard), because scores do not carry across versions. New in Scale's SWE-Bench Pro V2 (Sept 2026), a protocol to copy for our own tasks: during the run the agent can reach only the model endpoint (web tools off, because agents were fetching the fixing commits), and every answer is re-graded on a clean image, which caught a model forging a Go checksum. Invalid tasks were dropped (731 to 642) and a task only ships if it passes with the reference fix and fails with an empty one. A second warning from Shanghai AI Lab's SWE-Bench Pro Verified (Sept 2026): agents could read the answer files in 103 tasks locally and 49 over the network, and one model's score fell from 78.8% to 57.3% once that was blocked. So our task images must not contain the fix, the answer key or the hidden tests until grading starts. Prior art for mining (Nov 2026): SessionFarmer (ByteDance and partners) already turns developer-and-agent sessions plus commits into executable tasks, including from private enterprise logs, and checks each task's tests against deliberately broken code and a blind solver. Trace2Eval does the same from agent traces with human-calibrated rubrics. Read both before building the miner and copy their test checks.",
-    "ar": "نبني مجموعة مهام خاصة بعزم على طريقة SWE-bench: نأخذ تذكرة مغلقة، ونثبّت المستودع على حالته قبل الإصلاح، ونكتب وصف المهمة من التذكرة، ونحتفظ باختبارات مخفية تفشل قبل الإصلاح وتنجح بعده. نبدأ بعشر مهام من مستودع واحد، ثم نصل إلى 20-50 مهمة لكل فريق. ونُبقي جزءًا صغيرًا من Terminal-Bench للتحقق العام، مثبّتًا على إصدار واحد (2.0 يطابق معظم دراسات الـ harness المنشورة، و4.x هو لوحة النتائج الحالية)، لأن الدرجات لا تنتقل بين الإصدارات. جديد في SWE-Bench Pro V2 من Scale ‏(سبتمبر 2026)، وهو بروتوكول ننسخه لمهامنا: أثناء التشغيل لا يصل الوكيل إلا إلى خادم النموذج (أدوات الويب معطلة لأن وكلاء كانوا يجلبون الـ commits التي تحتوي الإصلاح)، وتُعاد درجة كل إجابة على صورة نظيفة، وقد كشف ذلك نموذجًا زوّر بصمة تحقق في Go. وحُذفت المهام غير الصالحة (من 731 إلى 642)، ولا تُعتمد مهمة إلا إذا نجحت مع الإصلاح المرجعي وفشلت مع إصلاح فارغ. وتحذير ثانٍ من SWE-Bench Pro Verified الصادر عن مختبر شنغهاي للذكاء الاصطناعي (سبتمبر 2026): استطاع الوكلاء قراءة ملفات الإجابة في 103 مهام محليًا و49 عبر الشبكة، وهبطت نتيجة أحد النماذج من 78.8% إلى 57.3% بعد سد هذه الثغرة. لذلك يجب ألا تحتوي صور مهامنا على الإصلاح أو مفتاح الإجابة أو الاختبارات المخفية قبل بدء التقييم. عمل سابق للاستخراج (نوفمبر 2026): يحوّل SessionFarmer ‏(ByteDance وشركاؤها) فعلًا جلسات المطورين مع الوكلاء والـ commits إلى مهام قابلة للتشغيل، بما في ذلك من سجلات مؤسسية خاصة، ويتحقق من اختبارات كل مهمة بشيفرة مكسورة عمدًا وبحلّال أعمى. ويفعل Trace2Eval الشيء نفسه من مسارات عمل الوكلاء بمعايير معايَرة على البشر. نقرأ الاثنين قبل بناء أداة الاستخراج وننسخ طرق التحقق من الاختبارات."
+    "en": "Build Azm's own task set with the SWE-bench recipe: take a closed ticket, pin the repo before the fix, write the brief from the ticket, and keep hidden tests that fail before and pass after. Start with 10 tasks from one repo, grow to 20-50 per team. Keep a small slice of Terminal-Bench as a public sanity check, pinned to one version (2.0 matches most published harness studies; 4.x is the current leaderboard), because scores do not carry across versions. New in Scale's SWE-Bench Pro V2 (Sept 2026), a protocol to copy for our own tasks: during the run the agent can reach only the model endpoint (web tools off, because agents were fetching the fixing commits), and every answer is re-graded on a clean image, which caught a model forging a Go checksum. Invalid tasks were dropped (731 to 642) and a task only ships if it passes with the reference fix and fails with an empty one. A second warning from Shanghai AI Lab's SWE-Bench Pro Verified (Sept 2026): agents could read the answer files in 103 tasks locally and 49 over the network, and one model's score fell from 78.8% to 57.3% once that was blocked. So our task images must not contain the fix, the answer key or the hidden tests until grading starts. Prior art for mining (Nov 2026): SessionFarmer (ByteDance and partners) already turns developer-and-agent sessions plus commits into executable tasks, including from private enterprise logs, and checks each task's tests against deliberately broken code and a blind solver. Trace2Eval does the same from agent traces with human-calibrated rubrics. Read both before building the miner and copy their test checks. More ready-made miners (Nov 2026): repo-to-bench (MIT) turns a base and fixed revision plus a test command into a Harbor task, checks the base fails and the fix passes, and keeps hidden tests out of the agent's workspace; Repo-Trials (Apache-2.0) mines Git history into fail-to-pass tasks in a one-commit workspace; agenthangar/evals reports cost per successful attempt. All are early one-person projects, so we try repo-to-bench on one repo before writing our own miner and copy their anti-leak rules.",
+    "ar": "نبني مجموعة مهام خاصة بعزم على طريقة SWE-bench: نأخذ تذكرة مغلقة، ونثبّت المستودع على حالته قبل الإصلاح، ونكتب وصف المهمة من التذكرة، ونحتفظ باختبارات مخفية تفشل قبل الإصلاح وتنجح بعده. نبدأ بعشر مهام من مستودع واحد، ثم نصل إلى 20-50 مهمة لكل فريق. ونُبقي جزءًا صغيرًا من Terminal-Bench للتحقق العام، مثبّتًا على إصدار واحد (2.0 يطابق معظم دراسات الـ harness المنشورة، و4.x هو لوحة النتائج الحالية)، لأن الدرجات لا تنتقل بين الإصدارات. جديد في SWE-Bench Pro V2 من Scale ‏(سبتمبر 2026)، وهو بروتوكول ننسخه لمهامنا: أثناء التشغيل لا يصل الوكيل إلا إلى خادم النموذج (أدوات الويب معطلة لأن وكلاء كانوا يجلبون الـ commits التي تحتوي الإصلاح)، وتُعاد درجة كل إجابة على صورة نظيفة، وقد كشف ذلك نموذجًا زوّر بصمة تحقق في Go. وحُذفت المهام غير الصالحة (من 731 إلى 642)، ولا تُعتمد مهمة إلا إذا نجحت مع الإصلاح المرجعي وفشلت مع إصلاح فارغ. وتحذير ثانٍ من SWE-Bench Pro Verified الصادر عن مختبر شنغهاي للذكاء الاصطناعي (سبتمبر 2026): استطاع الوكلاء قراءة ملفات الإجابة في 103 مهام محليًا و49 عبر الشبكة، وهبطت نتيجة أحد النماذج من 78.8% إلى 57.3% بعد سد هذه الثغرة. لذلك يجب ألا تحتوي صور مهامنا على الإصلاح أو مفتاح الإجابة أو الاختبارات المخفية قبل بدء التقييم. عمل سابق للاستخراج (نوفمبر 2026): يحوّل SessionFarmer ‏(ByteDance وشركاؤها) فعلًا جلسات المطورين مع الوكلاء والـ commits إلى مهام قابلة للتشغيل، بما في ذلك من سجلات مؤسسية خاصة، ويتحقق من اختبارات كل مهمة بشيفرة مكسورة عمدًا وبحلّال أعمى. ويفعل Trace2Eval الشيء نفسه من مسارات عمل الوكلاء بمعايير معايَرة على البشر. نقرأ الاثنين قبل بناء أداة الاستخراج وننسخ طرق التحقق من الاختبارات. أدوات استخراج جاهزة أخرى (نوفمبر 2026): ‏repo-to-bench ‏(MIT) تحوّل النسخة الأساسية والنسخة المُصلحة مع أمر اختبار إلى مهمة Harbor، وتتحقق من أن الأساسية تفشل وأن الإصلاح ينجح، وتُبقي الاختبارات المخفية خارج مساحة عمل الوكيل؛ وRepo-Trials ‏(Apache-2.0) تستخرج من سجل Git مهام «فشل ← نجاح» في مساحة عمل من commit واحد؛ وagenthangar/evals تعرض تكلفة كل محاولة ناجحة. وكلها مشاريع مبكرة لمطوّر واحد، لذا نجرّب repo-to-bench على مستودع واحد قبل كتابة أداة الاستخراج الخاصة بنا، وننسخ قواعدها لمنع التسريب."
    },
    "pick": [
     "swe-bench"
@@ -104,7 +104,8 @@
     "terminal-bench",
     "skillsbench",
     "aws-harness-benchmarks",
-    "qihoo-harness-bench"
+    "qihoo-harness-bench",
+    "repo-to-bench"
    ],
    "compare": {
     "tools": [
@@ -700,8 +701,8 @@
    },
    "decision": "adopt",
    "plan": {
-    "en": "Use Harbor. It already runs Claude Code, Codex CLI, OpenHands and others in containers, locally or in cloud sandboxes, and accepts our own tasks. We write one adapter per Azm harness. Use Inspect AI only for non-code tasks (spec quality, reviews). Exgentic is a smaller 'any agent on any benchmark' framework that already runs Claude Code, Codex CLI and Gemini CLI; keep it as a cross-check, not a replacement. New serious alternative: AgentCompass (Shanghai AI Lab, Apache-2.0, v1.1 Nov 2026) separates model, benchmark, harness and sandbox, already runs Claude Code and Codex, and loads Harbor-format tasks, so our tasks stay portable; we will run a few through both to check the scores agree. Prior art found (Nov 2026): UiPath's Coder Eval (Apache-2.0) already runs Claude Code, Codex, OpenCode, Pi and Antigravity on YAML tasks, records cost per tool call and ships a GitHub Action as a CI gate. It does not replace Harbor's scale or sandboxes, but it covers the per-team suite file and CI gate we planned to build, so we pilot it before writing our own.",
-    "ar": "نستخدم Harbor؛ فهو يشغّل بالفعل Claude Code وCodex CLI وOpenHands وغيرها داخل حاويات، محليًا أو في بيئات سحابية، ويقبل مهامنا الخاصة. نكتب موصّلًا واحدًا لكل harness من عزم. ونستخدم Inspect AI للمهام غير البرمجية فقط (جودة المواصفات والمراجعات). وExgentic إطار أصغر من نوع «أي وكيل على أي مقياس» يشغّل فعلًا Claude Code وCodex CLI وGemini CLI؛ نبقيه للتحقق المتقاطع لا بديلًا. بديل جادّ جديد: AgentCompass ‏(مختبر شنغهاي للذكاء الاصطناعي، Apache-2.0، الإصدار 1.1 في نوفمبر 2026) يفصل النموذج والمقياس والـ harness وبيئة العزل، ويشغّل فعلًا Claude Code وCodex، ويحمّل المهام بصيغة Harbor، فتبقى مهامنا قابلة للنقل؛ وسنشغّل بعضها عبر الاثنين للتأكد من تطابق النتائج. عمل سابق وُجد في نوفمبر 2026: يشغّل Coder Eval من UiPath ‏(Apache-2.0) فعلًا Claude Code وCodex وOpenCode وPi وAntigravity على مهام YAML، ويسجّل تكلفة كل استدعاء أداة، ويأتي بإجراء GitHub بوصفه بوابة CI. لا يحل محل Harbor في الحجم وبيئات العزل، لكنه يغطي ملف المهام لكل فريق وبوابة CI اللذين خططنا لبنائهما، فنجرّبه قبل أن نكتب نسختنا."
+    "en": "Use Harbor. It already runs Claude Code, Codex CLI, OpenHands and others in containers, locally or in cloud sandboxes, and accepts our own tasks. We write one adapter per Azm harness. Use Inspect AI only for non-code tasks (spec quality, reviews). Exgentic is a smaller 'any agent on any benchmark' framework that already runs Claude Code, Codex CLI and Gemini CLI; keep it as a cross-check, not a replacement. New serious alternative: AgentCompass (Shanghai AI Lab, Apache-2.0, v1.1 Nov 2026) separates model, benchmark, harness and sandbox, already runs Claude Code and Codex, and loads Harbor-format tasks, so our tasks stay portable; we will run a few through both to check the scores agree. Prior art found (Nov 2026): UiPath's Coder Eval (Apache-2.0) already runs Claude Code, Codex, OpenCode, Pi and Antigravity on YAML tasks, records cost per tool call and ships a GitHub Action as a CI gate. It does not replace Harbor's scale or sandboxes, but it covers the per-team suite file and CI gate we planned to build, so we pilot it before writing our own. Prior art found (Nov 2026): Microsoft open-sourced Scope (MIT, research preview), which compares agent setups (MCP servers, skills, extensions) on the same scenario with an AI judge that checks gates and criteria and reports tokens and time. It supports only Copilot and Claude Code today and is not a sandbox, so it does not replace Harbor, but its profiles and gates-plus-criteria judging cover part of the report we planned; we pilot it on a few scenarios first.",
+    "ar": "نستخدم Harbor؛ فهو يشغّل بالفعل Claude Code وCodex CLI وOpenHands وغيرها داخل حاويات، محليًا أو في بيئات سحابية، ويقبل مهامنا الخاصة. نكتب موصّلًا واحدًا لكل harness من عزم. ونستخدم Inspect AI للمهام غير البرمجية فقط (جودة المواصفات والمراجعات). وExgentic إطار أصغر من نوع «أي وكيل على أي مقياس» يشغّل فعلًا Claude Code وCodex CLI وGemini CLI؛ نبقيه للتحقق المتقاطع لا بديلًا. بديل جادّ جديد: AgentCompass ‏(مختبر شنغهاي للذكاء الاصطناعي، Apache-2.0، الإصدار 1.1 في نوفمبر 2026) يفصل النموذج والمقياس والـ harness وبيئة العزل، ويشغّل فعلًا Claude Code وCodex، ويحمّل المهام بصيغة Harbor، فتبقى مهامنا قابلة للنقل؛ وسنشغّل بعضها عبر الاثنين للتأكد من تطابق النتائج. عمل سابق وُجد في نوفمبر 2026: يشغّل Coder Eval من UiPath ‏(Apache-2.0) فعلًا Claude Code وCodex وOpenCode وPi وAntigravity على مهام YAML، ويسجّل تكلفة كل استدعاء أداة، ويأتي بإجراء GitHub بوصفه بوابة CI. لا يحل محل Harbor في الحجم وبيئات العزل، لكنه يغطي ملف المهام لكل فريق وبوابة CI اللذين خططنا لبنائهما، فنجرّبه قبل أن نكتب نسختنا. عمل سابق جديد (نوفمبر 2026): فتحت Microsoft مصدر Scope ‏(MIT، معاينة بحثية)، وهي تقارن إعدادات الوكيل (خوادم MCP والمهارات والإضافات) على السيناريو نفسه بحَكَم آلي يفحص البوابات والمعايير ويعرض الرموز والوقت. لا تدعم اليوم إلا Copilot وClaude Code وليست بيئة عزل، فلا تحل محل Harbor، لكن ملفات التعريف والتحكيم بالبوابات والمعايير فيها تغطي جزءًا من التقرير الذي خططنا له؛ لذا نجرّبها أولًا على بضعة سيناريوهات."
    },
    "pick": [
     "harbor"
@@ -713,7 +714,8 @@
     "openhands-benchmarks",
     "exgentic",
     "agentcompass",
-    "coder-eval"
+    "coder-eval",
+    "microsoft-scope"
    ],
    "compare": {
     "tools": [
@@ -722,7 +724,8 @@
      "aws-harness-benchmarks",
      "runloop-benchmarks",
      "agentcompass",
-     "coder-eval"
+     "coder-eval",
+     "microsoft-scope"
     ],
     "rows": [
      {
@@ -754,6 +757,10 @@
        {
         "en": "Open source (Apache-2.0)",
         "ar": "مفتوح المصدر (Apache-2.0)"
+       },
+       {
+        "en": "Open source (MIT), research preview",
+        "ar": "مفتوح المصدر (MIT)، معاينة بحثية"
        }
       ]
      },
@@ -786,6 +793,10 @@
        {
         "en": "Yes: Claude Code, Codex, Antigravity, OpenCode, Pi",
         "ar": "نعم: Claude Code وCodex وAntigravity وOpenCode وPi"
+       },
+       {
+        "en": "Copilot and Claude Code today; Codex and OpenCode planned",
+        "ar": "Copilot وClaude Code اليوم؛ وCodex وOpenCode مخطط لهما"
        }
       ]
      },
@@ -818,6 +829,10 @@
        {
         "en": "Temp folder or Docker",
         "ar": "مجلد مؤقت أو Docker"
+       },
+       {
+        "en": "Docker workers; docs say it is not a security sandbox",
+        "ar": "وحدات عمل Docker؛ ويذكر التوثيق أنها ليست بيئة عزل آمنة"
        }
       ]
      },
@@ -850,6 +865,10 @@
        {
         "en": "Weighted YAML criteria, LLM rubrics, skill-used check",
         "ar": "معايير YAML موزونة، ومعايير يقيّمها نموذج، وفحص استخدام المهارة"
+       },
+       {
+        "en": "AI judge with gates (Requirements, Build, Test) and criteria",
+        "ar": "حَكَم آلي ببوابات (المتطلبات، البناء، الاختبار) ومعايير"
        }
       ]
      },
@@ -874,6 +893,10 @@
        {
         "en": "Usage-based",
         "ar": "حسب الاستخدام"
+       },
+       {
+        "en": "Free",
+        "ar": "مجاني"
        },
        {
         "en": "Free",
@@ -914,6 +937,10 @@
        {
         "en": "Per-team YAML suites and a CI gate",
         "ar": "مجموعات YAML لكل فريق وبوابة CI"
+       },
+       {
+        "en": "Comparing agent setups (MCP, skills, extensions) side by side",
+        "ar": "مقارنة إعدادات الوكيل (MCP والمهارات والإضافات) جنبًا إلى جنب"
        }
       ]
      }

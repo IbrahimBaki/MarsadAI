@@ -1,6 +1,6 @@
 {
  "track": "t3",
- "checked": "2026-11-12",
+ "checked": "2026-11-13",
  "articles": [
   {
    "id": "fullscript-bench",
@@ -1602,6 +1602,78 @@
    "summary": "AWS announces a pod-level switch that runs each EKS pod, ECS task or EC2 workload in its own Nitro-isolated lightweight VM, with isolated and confidential modes and warm pools through Kubernetes agent-sandbox.",
    "ar": {
     "summary": "تعلن AWS خيارًا على مستوى الـ pod يشغّل كل pod في EKS أو مهمة في ECS أو عمل على EC2 في آلة افتراضية خفيفة معزولة بتقنية Nitro، مع وضع معزول ووضع سري ومجموعات آلات جاهزة عبر agent-sandbox الخاص بـ Kubernetes."
+   }
+  },
+  {
+   "id": "microsoft-scope-intro",
+   "title": "Scope: Open-source evaluation for AI coding agents",
+   "source": "Microsoft Open Source Blog",
+   "date": "2026-10-19",
+   "url": "https://opensource.microsoft.com/blog/2026/10/19/introducing-scope-open-source-evaluation-for-ai-coding-agents/",
+   "type": "reading",
+   "tags": [
+    "prior-art",
+    "eval"
+   ],
+   "priority": "must",
+   "summary": "Microsoft open-sources Scope, a self-hosted research preview for comparing AI coding agents and their setups on the same scenario, scored by an AI judge with gates and criteria alongside tokens and time.",
+   "why": "It covers part of the comparison report and per-setup profiles Azm planned to build; pilot it before building our own report layer.",
+   "ar": {
+    "summary": "تفتح Microsoft مصدر Scope، وهي معاينة بحثية تُستضاف ذاتيًا لمقارنة وكلاء البرمجة وإعداداتهم على السيناريو نفسه، يقيّمها حَكَم آلي ببوابات ومعايير إلى جانب الرموز والوقت.",
+    "why": "تغطي جزءًا من تقرير المقارنة وملفات التعريف لكل إعداد التي خططت عزم لبنائها؛ نجرّبها قبل بناء طبقة التقارير الخاصة بنا."
+   }
+  },
+  {
+   "id": "repotrials-devto",
+   "title": "RepoTrials: Turn your Git history into private coding-agent benchmarks",
+   "source": "DEV Community",
+   "date": "2026-11",
+   "url": "https://dev.to/repotrials/repotrials-turn-your-git-history-into-private-coding-agent-benchmarks-4462",
+   "type": "method",
+   "tags": [
+    "prior-art",
+    "task-mining"
+   ],
+   "priority": "read",
+   "summary": "Introduces Repo-Trials (Apache-2.0), which scans Git history for changes that touch both code and tests, rebuilds the repo just before the fix, and grades agents with real fail-to-pass and pass-to-pass tests in a one-commit workspace with no future history.",
+   "why": "Another ready-made recipe for the task-mining step; its leak-resistant workspace rule is worth copying.",
+   "ar": {
+    "summary": "يعرّف بأداة Repo-Trials ‏(Apache-2.0) التي تبحث في سجل Git عن تغييرات تمس الشيفرة والاختبارات معًا، وتعيد بناء المستودع قبل الإصلاح مباشرة، وتقيّم الوكلاء باختبارات حقيقية من نوع «فشل ← نجاح» و«نجاح ← نجاح» في مساحة عمل من commit واحد بلا تاريخ لاحق.",
+    "why": "وصفة جاهزة أخرى لخطوة استخراج المهام؛ وتستحق قاعدتها لمساحة عمل مقاومة للتسريب أن ننسخها."
+   }
+  },
+  {
+   "id": "doc2harness-paper",
+   "title": "Doc2Harness: Benchmarking LLMs on Long-Horizon Harness Engineering of Coding Agents",
+   "source": "arXiv 2610.20344",
+   "date": "2026-10",
+   "url": "https://hyper.ai/en/papers/2610.20344",
+   "type": "paper",
+   "tags": [
+    "eval",
+    "harness-engineering"
+   ],
+   "priority": "read",
+   "summary": "A new benchmark that tests how reliably language models can build coding-agent harnesses over long tasks. Code is public (YuyaoGe/doc2harness).",
+   "ar": {
+    "summary": "مقياس جديد يختبر مدى قدرة النماذج اللغوية على بناء أدوات harness لوكلاء البرمجة بشكل موثوق في مهام طويلة. والشيفرة منشورة (YuyaoGe/doc2harness)."
+   }
+  },
+  {
+   "id": "expo-cloud-simulators",
+   "title": "Expo Launches Cloud iOS Simulators and Android Emulators for AI Coding Agents",
+   "source": "PR Newswire",
+   "date": "2026-11-12",
+   "url": "https://www.morningstar.com/news/pr-newswire/20261112sf95952/expo-launches-cloud-ios-simulators-and-android-emulators-for-ai-coding-agents",
+   "type": "reading",
+   "tags": [
+    "sandbox",
+    "mobile"
+   ],
+   "priority": "reference",
+   "summary": "Expo offers cloud iOS simulators and Android emulators that coding agents such as Claude Code and Codex can drive, reported at about $6 per hour. Relevant if Azm's tasks include mobile apps that need a device to test on.",
+   "ar": {
+    "summary": "تقدّم Expo محاكيات iOS ومحاكيات Android سحابية يستطيع وكلاء البرمجة مثل Claude Code وCodex تشغيلها، بسعر يُذكر أنه نحو 6 دولارات في الساعة. وهذا مهم إن تضمنت مهام عزم تطبيقات جوال تحتاج إلى جهاز للاختبار."
    }
   }
  ]
