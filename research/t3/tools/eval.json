@@ -1,6 +1,6 @@
 {
  "category": "eval",
- "checked": "2026-11-13",
+ "checked": "2026-11-14",
  "tools": [
   {
    "id": "harbor",
@@ -13,7 +13,7 @@
    "license": "Apache-2.0",
    "pricing": "Free; you pay for model tokens and any cloud sandbox",
    "status": "active",
-   "version": "v0.25.0",
+   "version": "v0.26.0 (13 Nov 2026)",
    "tier": "deep",
    "summary": "The official harness behind Terminal-Bench 2.0: a framework for running any agent (Claude Code, Codex CLI, OpenHands and more) on containerized tasks, in parallel, locally or in cloud sandboxes, and scoring the results. Also used to build custom benchmarks and to generate RL rollouts.",
    "how": "A task is a container image plus an instruction and a hidden verification script. Harbor starts one environment per trial, installs or attaches the agent, lets it work, then runs the verifier and records the score, logs and trajectory. Agents plug in by subclassing BaseInstalledAgent (a CLI installed inside the container, like Claude Code) or BaseAgent. Environments run on local Docker or, with --env, on cloud providers (Daytona, Modal, Blaxel, Tensorlake, LangSmith and others), so thousands of trials can run in parallel. Third-party datasets such as SWE-bench and Aider Polyglot are available through adapters.",
@@ -22,13 +22,15 @@
     "Task format: Docker image + instruction + hidden tests, so tasks from your own repos fit",
     "Local Docker or cloud sandboxes via --env, with --n-concurrent parallelism",
     "Dataset registry with Terminal-Bench 2.0 and adapters for SWE-bench, Aider Polyglot and others",
-    "Trajectories and logs per trial; also produces RL rollouts"
+    "Trajectories and logs per trial; also produces RL rollouts",
+    "API server (0.26, Nov 2026): `harbor serve` with a Python SDK and MCP tools that list the available agents and sandboxes, submit jobs (with dry runs and bulk actions), show retry history and upload finished jobs to Harbor Hub",
+    "Each job's full configuration is saved and versioned with its results (0.26), so a run can be traced and repeated; adds a native OpenCode v2 agent and egress rules for Azure Container Apps sandboxes"
    ],
    "strengths": [
     "De-facto standard runner for agent benchmarks in 2026; Vercel Sandbox and Tensorlake integrate it",
     "Agent-agnostic by design: a harness is just another installed agent",
     "Same tool for public benchmarks and private, company-built task sets",
-    "Apache-2.0, active (v0.25.0, commits daily)"
+    "Apache-2.0, active (v0.26.0, commits daily)"
    ],
    "weaknesses": [
     "Python-first tooling; task authoring for private repos still needs work (images, hidden tests)",
@@ -72,7 +74,8 @@
    "sources": [
     "https://github.com/harbor-framework/harbor",
     "https://huggingface.co/datasets/harborframework/terminal-bench-2.0/blob/main/README.md",
-    "https://upstash.com/blog/ai-agent-sandbox-providers-compared-2026"
+    "https://upstash.com/blog/ai-agent-sandbox-providers-compared-2026",
+    "https://github.com/harbor-framework/harbor/releases/tag/v0.26.0"
    ],
    "ar": {
     "summary": "إطار التشغيل الرسمي لمقياس Terminal-Bench 2.0: يشغّل أي وكيل (Claude Code وCodex CLI وOpenHands وغيرها) على مهام داخل حاويات، بالتوازي، محليًا أو في بيئات عزل سحابية، ثم يقيّم النتائج. يُستخدم أيضًا لبناء مقاييس مخصصة ولتوليد بيانات تدريب بالتعلم المعزز.",
@@ -82,13 +85,15 @@
      "صيغة المهمة: صورة Docker وتعليمات واختبارات مخفية، فتصلح مهام مستودعاتك أنت",
      "Docker محليًا أو بيئات عزل سحابية عبر ‎--env‎، مع تشغيل متوازٍ عبر ‎--n-concurrent‎",
      "سجل لمجموعات البيانات يضم Terminal-Bench 2.0 وموصّلات لـ SWE-bench وAider Polyglot وغيرها",
-     "مسارات تنفيذ وسجلات لكل محاولة، ويولّد أيضًا بيانات للتعلم المعزز"
+     "مسارات تنفيذ وسجلات لكل محاولة، ويولّد أيضًا بيانات للتعلم المعزز",
+     "خادم واجهة برمجية (الإصدار 0.26، نوفمبر 2026): الأمر ‎`harbor serve`‎ مع حزمة Python وأدوات MCP تعرض الوكلاء وبيئات العزل المتاحة، وتُرسل المهام (مع تشغيل تجريبي بلا نماذج وإجراءات جماعية)، وتعرض سجل إعادة المحاولات، وترفع المهام المنتهية إلى Harbor Hub",
+     "تُحفظ إعدادات كل مهمة كاملة ومرقّمة الإصدار مع نتائجها (0.26)، فيمكن تتبّع التشغيل وتكراره؛ ويضيف وكيل OpenCode v2 مدمجًا وقواعد للاتصال الخارجي في بيئات Azure Container Apps"
     ],
     "strengths": [
      "المشغّل المعتمد فعليًا لمقاييس الوكلاء في 2026؛ تتكامل معه Vercel Sandbox وTensorlake",
      "محايد تجاه الوكلاء بتصميمه: كل harness مجرد وكيل آخر مُثبَّت",
      "الأداة نفسها للمقاييس العامة ولمجموعات المهام الخاصة بالشركة",
-     "ترخيص Apache-2.0، ونشط (الإصدار v0.25.0 وتحديثات يومية)"
+     "ترخيص Apache-2.0، ونشط (الإصدار v0.26.0 وتحديثات يومية)"
     ],
     "weaknesses": [
      "أدواته مبنية على Python أولًا، وتأليف مهام المستودعات الخاصة ما زال يحتاج جهدًا (الصور والاختبارات المخفية)",
@@ -2278,6 +2283,94 @@
     ],
     "role": "عمل سابق لخط استخراج المهام. نجرّبها على مستودع واحد من عزم قبل كتابة أداة الاستخراج الخاصة بنا، ونعيد استخدام قواعد التحقق ومنع التسريب فيها حتى لو لم نُبقِ شيفرتها.",
     "pricing": "مجانية (مفتوحة المصدر)"
+   }
+  },
+  {
+   "id": "harness2",
+   "name": "Harness² (Google Research)",
+   "category": "eval",
+   "kind": "open-source",
+   "vendor": "Google Research (research project, not an official Google product)",
+   "repo": "google-research/harness2",
+   "url": "https://github.com/google-research/harness2",
+   "license": "Apache-2.0",
+   "pricing": "Free; model API costs apply",
+   "status": "beta",
+   "version": "0.1.0 (code public Oct 2026; last commit 2 Nov 2026)",
+   "tier": "brief",
+   "summary": "A research framework that improves an agent's harness (its prompts, rules, memory, skills, sub-agents, scripts and plugins) while the task is running, without changing the model. It drives real coding agents, OpenCode by default or Codex, and keeps a running notebook of what worked to guide the next task.",
+   "how": "For each new task it proposes several edits to the harness, runs each edited version on the same task, compares how they behaved, and combines the useful edits into a final harness, with no answer key needed. A separate 'improvement harness' stores adopted harnesses and evidence-backed lessons for later tasks. It runs in 'parallel' (try many edits at once) or 'sequential' (build on the previous round) mode; `--k` sets how many rounds. The README reports, after one step, up to +11.5 points on WorkBuddy-Bench, +4.5 on JobBench and +11.8 percentage points on LAB with GLM-5 and Gemini 3.5 Flash. The README warns that executors have open network access and that Codex runs with its sandbox off, so benchmark answers can leak unless the network is restricted.",
+   "features": [
+    "Eight editable harness parts: system prompt, guardrails, memory, tool guidance, sub-agents, skills, scripts and plugins",
+    "Propose, probe and compose step inside one task, without a known correct answer",
+    "Persistent 'improvement harness' that carries lessons across tasks",
+    "OpenCode and Codex executors; JobBench, LAB and WorkBuddy-Bench runners with judge and report commands, dry runs and resume"
+   ],
+   "strengths": [
+    "Works on real coding-agent CLIs rather than a toy agent, and its eight-part list is a clear map of what a harness contains",
+    "Open code under Apache-2.0 with runnable commands and a credential-free demo"
+   ],
+   "weaknesses": [
+    "Benchmarks are office, legal and general work, not software delivery; extra rounds multiply model calls and cost",
+    "Research release (0.1.0, Linux, Vertex AI setup); executors run without network limits by default"
+   ],
+   "gaps": [
+    "No SDLC tasks, hidden-test scoring or per-team suites; would need our task set and Harbor runs to tune squad-kit or azm-harness"
+   ],
+   "fit": {
+    "verdict": "inspire",
+    "role": "A candidate for the later 'improve harnesses automatically' phase, and the first one that edits OpenCode and Codex setups directly. Its eight-part harness map is useful for describing squad-kit and azm-harness in Harness Cards."
+   },
+   "scores": {
+    "fit": 2,
+    "maturity": 1,
+    "openness": 4,
+    "agnostic": 3,
+    "config": 2,
+    "measure": 3,
+    "safety": 1
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/google-research/harness2"
+    ],
+    [
+     "Paper",
+     "https://arxiv.org/pdf/2610.14224"
+    ],
+    [
+     "InfoQ write-up (via 36Kr)",
+     "https://eu.36kr.com/en/p/4032417712542340"
+    ]
+   ],
+   "sources": [
+    "https://github.com/google-research/harness2",
+    "https://eu.36kr.com/en/p/4032417712542340"
+   ],
+   "checked": "2026-11-14",
+   "ar": {
+    "summary": "إطار بحثي يحسّن الـ harness الخاص بالوكيل (تعليماته وقواعده وذاكرته ومهاراته ووكلاءه الفرعيين ونصوصه البرمجية وإضافاته) أثناء تنفيذ المهمة، دون تغيير النموذج. ويشغّل وكلاء برمجة حقيقيين، OpenCode افتراضيًا أو Codex، ويحتفظ بسجل مستمر لما نجح ليوجّه المهمة التالية.",
+    "how": "لكل مهمة جديدة يقترح عدة تعديلات على الـ harness، ويشغّل كل نسخة معدّلة على المهمة نفسها، ويقارن سلوكها، ثم يجمع التعديلات المفيدة في harness نهائي، دون حاجة إلى إجابة نموذجية. ويخزّن «harness التحسين» المنفصل النسخ المعتمدة والدروس المدعومة بالأدلة للمهام اللاحقة. ويعمل بنمط «متوازٍ» (تجربة تعديلات كثيرة معًا) أو «متتابع» (البناء على الجولة السابقة)، ويحدد الخيار ‎`--k`‎ عدد الجولات. ويذكر ملف README بعد خطوة واحدة تحسنًا يصل إلى 11.5 نقطة على WorkBuddy-Bench و4.5 نقاط على JobBench و11.8 نقطة مئوية على LAB مع GLM-5 وGemini 3.5 Flash. ويحذّر الملف من أن المنفّذين يصلون إلى الشبكة بلا قيود وأن Codex يعمل وبيئة عزله معطّلة، فقد تتسرب إجابات المقاييس ما لم تُقيَّد الشبكة.",
+    "features": [
+     "ثمانية أجزاء قابلة للتعديل في الـ harness: تعليمات النظام، وضوابط الحماية، والذاكرة، وإرشادات الأدوات، والوكلاء الفرعيون، والمهارات، والنصوص البرمجية، والإضافات",
+     "خطوة اقتراح ثم اختبار ثم دمج داخل المهمة الواحدة، دون إجابة صحيحة معروفة",
+     "«harness تحسين» دائم ينقل الدروس من مهمة إلى أخرى",
+     "منفّذان: OpenCode وCodex؛ ومشغّلات لمقاييس JobBench وLAB وWorkBuddy-Bench مع أوامر للتحكيم والتقارير، وتشغيل تجريبي، واستئناف"
+    ],
+    "strengths": [
+     "يعمل على أدوات سطر الأوامر الحقيقية لوكلاء البرمجة لا على وكيل تجريبي، وقائمته ذات الأجزاء الثمانية خريطة واضحة لمحتوى أي harness",
+     "شيفرة مفتوحة بترخيص Apache-2.0 مع أوامر قابلة للتشغيل وعرض تجريبي لا يحتاج إلى بيانات دخول"
+    ],
+    "weaknesses": [
+     "المقاييس أعمال مكتبية وقانونية وعامة، لا تسليم برمجيات؛ وكل جولة إضافية تضاعف استدعاءات النموذج وتكلفته",
+     "إصدار بحثي (0.1.0، يعمل على Linux، ويُعدّ عبر Vertex AI)؛ والمنفّذون يعملون بلا قيود على الشبكة افتراضيًا"
+    ],
+    "gaps": [
+     "لا مهام لدورة التطوير ولا تقييم بالاختبارات المخفية ولا مجموعات مهام لكل فريق؛ ويحتاج إلى مجموعة مهامنا وتشغيلات Harbor ليضبط squad-kit أو azm-harness"
+    ],
+    "role": "مرشّح لمرحلة «تحسين الـ harness تلقائيًا» اللاحقة، وأول أداة تعدّل إعدادات OpenCode وCodex مباشرة. وخريطته ذات الأجزاء الثمانية مفيدة لوصف squad-kit وazm-harness في «بطاقات الـ harness».",
+    "pricing": "مجاني؛ تُدفع تكلفة استدعاءات النماذج"
    }
   }
  ]

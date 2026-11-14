@@ -1,6 +1,6 @@
 {
  "track": "t3",
- "checked": "2026-11-13",
+ "checked": "2026-11-14",
  "goal": {
   "en": "Build one place where Azm can run any harness (squad-kit, azm-harness, Claude Code, others) on the same real Azm tasks, in isolation, and get a clear answer: which harness, with which model, gives the best quality for the cost, and does it follow our standards?",
   "ar": "بناء مكان واحد تشغّل فيه عزم أي harness (مثل squad-kit وazm-harness وClaude Code وغيرها) على المهام الحقيقية نفسها من مشاريع عزم، في بيئة معزولة، لتحصل على إجابة واضحة: أي harness، مع أي نموذج، يعطي أفضل جودة مقابل التكلفة، وهل يلتزم بمعاييرنا؟"
@@ -429,8 +429,8 @@
       },
       "values": [
        {
-        "en": "Azure DevOps",
-        "ar": "Azure DevOps"
+        "en": "Azure DevOps, GitHub Issues/Projects, Jira Cloud (1.3.22)",
+        "ar": "Azure DevOps وGitHub Issues/Projects وJira Cloud ‏(1.3.22)"
        },
        {
         "en": "GitHub",
@@ -1783,8 +1783,8 @@
    },
    "decision": "later",
    "plan": {
-    "en": "Phase 2. Try Meta-Harness or auto-harness against our task set to tune squad-kit and azm-harness, and SkillOpt for Track 1 skills. Not before the task set and scoring are stable.",
-    "ar": "المرحلة الثانية: نجرب Meta-Harness أو auto-harness على مجموعة مهامنا لضبط squad-kit وazm-harness، وSkillOpt لمهارات المسار 1. ليس قبل أن تستقر مجموعة المهام والتقييم."
+    "en": "Phase 2. Try Meta-Harness, auto-harness or Harness² (which already edits OpenCode and Codex setups) against our task set to tune squad-kit and azm-harness, and SkillOpt for Track 1 skills. Not before the task set and scoring are stable.",
+    "ar": "المرحلة الثانية: نجرب Meta-Harness أو auto-harness أو Harness² (الذي يعدّل إعدادات OpenCode وCodex مباشرة) على مجموعة مهامنا لضبط squad-kit وazm-harness، وSkillOpt لمهارات المسار 1. ليس قبل أن تستقر مجموعة المهام والتقييم."
    },
    "pick": [
     "meta-harness",
@@ -1794,7 +1794,8 @@
     "ahe",
     "skillopt",
     "harnessflow",
-    "starharness"
+    "starharness",
+    "harness2"
    ],
    "compare": {
     "tools": [
@@ -1803,7 +1804,8 @@
      "ahe",
      "skillopt",
      "harnessflow",
-     "starharness"
+     "starharness",
+     "harness2"
     ],
     "rows": [
      {
@@ -1835,6 +1837,10 @@
        {
         "en": "Harness, by search across task groups",
         "ar": "الـ harness، ببحث عبر مجموعات المهام"
+       },
+       {
+        "en": "Eight harness parts, edited during the task",
+        "ar": "ثمانية أجزاء من الـ harness، تُعدَّل أثناء المهمة"
        }
       ]
      },
@@ -1867,6 +1873,10 @@
        {
         "en": "ITBench: 40.0% → 75.0% (GPT-5.4), lower cost",
         "ar": "ITBench: من 40.0% إلى 75.0% ‏(GPT-5.4)، بتكلفة أقل"
+       },
+       {
+        "en": "WorkBuddy-Bench +11.5, JobBench +4.5, LAB +11.8 pp after one step",
+        "ar": "WorkBuddy-Bench ‏+11.5، وJobBench ‏+4.5، وLAB ‏+11.8 نقطة مئوية بعد خطوة واحدة"
        }
       ]
      },
@@ -1899,6 +1909,10 @@
        {
         "en": "Paper with code link (ServiceNow, Aug 2026)",
         "ar": "ورقة مع رابط للشيفرة (ServiceNow، أغسطس 2026)"
+       },
+       {
+        "en": "Open code (Google Research, Apache-2.0, 0.1.0); drives OpenCode or Codex",
+        "ar": "شيفرة مفتوحة (Google Research، ‏Apache-2.0، الإصدار 0.1.0)؛ تشغّل OpenCode أو Codex"
        }
       ]
      }

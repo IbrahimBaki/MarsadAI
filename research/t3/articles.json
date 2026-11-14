@@ -1,6 +1,6 @@
 {
  "track": "t3",
- "checked": "2026-11-13",
+ "checked": "2026-11-14",
  "articles": [
   {
    "id": "fullscript-bench",
@@ -1674,6 +1674,26 @@
    "summary": "Expo offers cloud iOS simulators and Android emulators that coding agents such as Claude Code and Codex can drive, reported at about $6 per hour. Relevant if Azm's tasks include mobile apps that need a device to test on.",
    "ar": {
     "summary": "تقدّم Expo محاكيات iOS ومحاكيات Android سحابية يستطيع وكلاء البرمجة مثل Claude Code وCodex تشغيلها، بسعر يُذكر أنه نحو 6 دولارات في الساعة. وهذا مهم إن تضمنت مهام عزم تطبيقات جوال تحتاج إلى جهاز للاختبار."
+   }
+  },
+  {
+   "id": "testdino-harness-overhead",
+   "title": "Harness Overhead Benchmark: How Many Tokens 11 Coding Agents Burn Before the Test Starts",
+   "source": "TestDino blog",
+   "date": "2026-11-05",
+   "url": "https://testdino.com/blog/harness-overhead-benchmark",
+   "type": "benchmark",
+   "tags": [
+    "cost",
+    "harness",
+    "measurement"
+   ],
+   "priority": "reference",
+   "summary": "Measures the fixed input a harness sends before any real work, by asking 11 coding-agent CLIs to reply 'OK' in the same tiny repo (median of 3 runs, versions pinned, Oct 2026). First-call input ranged from about 1.9k tokens (Pi) to about 31.5k (Claude Code) and 31.8k (Kiro), a 16.8x spread; Codex, OpenCode, Cursor and Qwen Code sat near 13–15k. Updated 5 Nov 2026.",
+   "why": "Supports measuring each harness's fixed overhead as its own cost line in our reports, and running this one-word test on our own setups, since the numbers change with every release and with each team's rules and MCP servers.",
+   "ar": {
+    "summary": "يقيس المدخلات الثابتة التي يرسلها الـ harness قبل أي عمل فعلي، بأن يطلب من 11 أداة سطر أوامر لوكلاء البرمجة الرد بكلمة «OK» في المستودع الصغير نفسه (الوسيط من 3 تشغيلات، بإصدارات محددة، أكتوبر 2026). وتراوحت مدخلات الاستدعاء الأول بين نحو 1.9 ألف رمز (Pi) ونحو 31.5 ألفًا (Claude Code) و31.8 ألفًا (Kiro)، أي فرق 16.8 ضعفًا؛ وجاءت Codex وOpenCode وCursor وQwen Code قرب 13–15 ألفًا. حُدّث في 5 نوفمبر 2026.",
+    "why": "يدعم قياس العبء الثابت لكل harness بندًا مستقلًا للتكلفة في تقاريرنا، وإجراء هذا الاختبار ذي الكلمة الواحدة على إعداداتنا نحن، لأن الأرقام تتغير مع كل إصدار ومع قواعد كل فريق وخوادم MCP لديه."
    }
   }
  ]
