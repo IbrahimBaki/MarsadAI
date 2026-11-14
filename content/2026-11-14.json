@@ -1,0 +1,443 @@
+{
+  "date": "2026-11-14",
+  "headline": "يصلح Claude Code 2.1.325 مشكلة أمنية في فك ضغط zstd ويسد ثغرات في أذونات Bash وsandbox؛ ويضيف Harbor 0.26 خادمًا وأدوات MCP لتشغيل اختبارات وكلاء البرمجة؛ وتنشر Google Research مشروع Harness² لتحسين الـ harness دون تغيير النموذج.",
+  "headline_en": "Claude Code 2.1.325 fixes a zstd decoding security issue and closes gaps in Bash permissions and the sandbox; Harbor 0.26 adds a server and MCP tools for running coding-agent tests; Google Research releases Harness² for improving a harness without changing the model.",
+  "items": [
+    {
+      "id": "claude-code-2-1-325-security-fixes",
+      "section": "claude",
+      "kind": "release",
+      "title": "Claude Code 2.1.325: إصلاح أمني في فك ضغط zstd، وسد ثغرات في أذونات Bash وحماية sandbox",
+      "summary": "إصدار إصلاحات كبير: يعالج مشكلة أمنية في فك الردود المضغوطة بصيغة zstd، ويغلق ثغرات كانت تسمح لبعض أوامر Bash المركّبة بالعمل دون طلب إذن، ويقوّي حماية sandbox لإعدادات الـ worktree وخطافاته، مع عشرات الإصلاحات للوكلاء الفرعيين وخوادم MCP والجلسات.",
+      "why": "لكل من يعتمد على قواعد المنع والسماح في Claude Code أو يشغّله داخل sandbox: هذا الإصدار يغلق حالات كانت فيها قاعدة سماح تشغّل برنامجًا غير الذي تسمّيه، أو قاعدة منع نسبية مثل Read(./.env) تتوقف عن العمل بعد أمر cd. يُنصح بالتحديث.",
+      "about": "في الأمان: إصلاح مشكلة في طريقة فك الردود المضغوطة بـ zstd، وأوامر Bash مركّبة كانت تعمل دون طلب إذن صارت تطلبه، وقاعدة سماح لـ Bash لم تعد تستطيع تشغيل برنامج مختلف عن الذي تسمّيه. كما صارت قواعد المنع والطلب النسبية مثل Read(./.env) تغطي المشروع بعد تغيير المجلد وتنطبق في المجلدات المضافة.\n\nفي sandbox: لم تعد الأوامر المعزولة تستطيع الكتابة في مجلد تنزيل أداة التحديث، وصارت إعدادات الـ worktree وخطافاته ومجلد git المشترك في الـ worktree المرتبط محمية بالكامل. ويتلقى Claude ملاحظة حين لا يستطيع أمر git داخل sandbox تحديث ملفات محمية مثل ملفات ‎.claude.\n\nإصلاحات أخرى: الوكلاء الفرعيون الذين لهم نموذج خاص لم يعودوا يُنقلون إلى نموذج وضع التخطيط، والجلسات عبر بوابات خارجية كثيرة صارت تضغط السياق بدل التوقف بخطأ طول السياق، ومهام MCP الخلفية لم تعد تعلق بعد انقطاع الاتصال، ولم تعد الجلسات الخلفية التي بدأت بحساب claude.ai تستخدم مفتاح API من الطرفية وتُحاسَب عليه.",
+      "features": [
+        "إصلاح أمني في فك الردود المضغوطة بصيغة zstd",
+        "أوامر Bash المركّبة التي كانت تتخطى طلب الإذن صارت تطلبه",
+        "قواعد المنع النسبية مثل Read(./.env) تبقى فعّالة بعد cd وفي المجلدات المضافة",
+        "حماية sandbox كاملة لإعدادات الـ worktree وخطافاته ومجلد git المشترك",
+        "الجلسات الخلفية على حساب claude.ai لم تعد تُحاسَب على مفتاح API من الطرفية"
+      ],
+      "install": [
+        {
+          "label": "تحديث Claude Code",
+          "cmd": "claude update"
+        }
+      ],
+      "repo": "anthropics/claude-code",
+      "alternatives": [
+        "ess-claude-code-docs",
+        "ess-claude-code-hooks"
+      ],
+      "links": [
+        {
+          "label": "سجل التغييرات",
+          "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+        }
+      ],
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.325",
+      "source": "github.com",
+      "importance": 3,
+      "tags": [
+        "claude-code",
+        "release",
+        "security",
+        "permissions",
+        "sandbox"
+      ],
+      "en": {
+        "title": "Claude Code 2.1.325: a zstd decoding security fix, and closed gaps in Bash permissions and sandbox protection",
+        "summary": "A large fix release: it fixes a security issue in decoding zstd-compressed responses, closes gaps that let some compound Bash commands run without asking, and hardens the sandbox around worktree settings and hooks, plus dozens of fixes for subagents, MCP servers and sessions.",
+        "why": "For anyone relying on Claude Code's deny and allow rules or running it in a sandbox: it closes cases where an allow rule could run a different program than the one it names, or a relative deny rule such as Read(./.env) stopped working after a cd. Updating is recommended.",
+        "about": "Security: a fix in how zstd-compressed responses are decoded; compound Bash commands that could run without asking now ask; a Bash allow rule can no longer run a different program than the one it names. Relative deny and ask rules such as Read(./.env) now cover the project after a directory change and also apply in added directories.\n\nSandbox: sandboxed commands can no longer write to the native updater's download folder, and a worktree's settings and hooks, and a linked worktree's shared git folder, are now fully protected. Claude gets a note when a sandboxed git command cannot update protected files such as those in .claude.\n\nOther fixes: subagents with their own model are no longer moved to the plan-mode model; sessions on many third-party gateways now compact instead of stopping with a context-length error; background MCP tasks no longer get stuck after a lost connection; and background sessions started on a claude.ai login no longer use and bill an API key from the shell.",
+        "features": [
+          "Security fix in decoding zstd-compressed responses",
+          "Compound Bash commands that skipped the permission prompt now ask",
+          "Relative deny rules such as Read(./.env) keep working after cd and in added directories",
+          "Full sandbox protection for worktree settings, hooks and the shared git folder",
+          "Background sessions on a claude.ai login no longer bill an API key from the shell"
+        ],
+        "install": [
+          "Update Claude Code"
+        ],
+        "links": [
+          "Changelog"
+        ]
+      }
+    },
+    {
+      "id": "harbor-0-26-api-server",
+      "section": "testing",
+      "kind": "release",
+      "title": "Harbor 0.26: خادم واجهة برمجية وحزمة SDK وأدوات MCP لتشغيل اختبارات وكلاء البرمجة",
+      "summary": "أصدر Harbor، الإطار المفتوح الذي يشغّل وكلاء البرمجة مثل Claude Code وCodex على مهام داخل حاويات ويقيّم نتائجهم، الإصدار 0.26.0 في 13 نوفمبر 2026. يضيف خادمًا عبر harbor serve مع حزمة Python وأدوات MCP، وتشغيلًا تجريبيًا وإجراءات جماعية، ورفع النتائج إلى Harbor Hub.",
+      "why": "للفرق التي تقارن وكلاء البرمجة على مهامها: صار ممكنًا إرسال التشغيلات ومتابعتها من برنامج أو من وكيل عبر MCP بدل سطر الأوامر فقط، مثل خط CI يقيس كل تغيير في إعدادات الوكيل على مجموعة مهام ثابتة.",
+      "about": "Harbor هو الإطار الذي يقف وراء مقياس Terminal-Bench: كل مهمة صورة حاوية مع تعليمات واختبار مخفي، ويشغّل Harbor الوكيل عليها محليًا عبر Docker أو في بيئات عزل سحابية، ثم يسجّل الدرجة والسجلات.\n\nالجديد في 0.26: الأمر harbor serve يشغّل خادم واجهة برمجية (المنفذ 8390 افتراضيًا) مع حزمة SDK وأدوات MCP تعرض الوكلاء وبيئات العزل المتاحة، وإرسال المهام مع تشغيل تجريبي يحسب عدد التجارب دون استدعاء النماذج، وإجراءات جماعية للإلغاء وإعادة المحاولة، وسجل لإعادة المحاولات، ورفع المهام المنتهية إلى Harbor Hub.\n\nكما تُحفظ إعدادات كل مهمة كاملة ومرقّمة الإصدار مع نتائجها، ويضيف الإصدار تكاملًا مدمجًا مع OpenCode v2، وقواعد اتصال خارجي لبيئات Azure Container Apps، وإصلاحًا لتسرب بيئات Daytona عند فشل الإنشاء.",
+      "features": [
+        "خادم harbor serve مع حزمة SDK وأدوات MCP",
+        "تشغيل تجريبي وإجراءات جماعية وسجل لإعادة المحاولات",
+        "رفع المهام المنتهية إلى Harbor Hub",
+        "حفظ إعدادات كل مهمة كاملة ومرقّمة مع نتائجها",
+        "تكامل مدمج مع OpenCode v2"
+      ],
+      "install": [
+        {
+          "label": "التثبيت عبر uv",
+          "cmd": "uv tool install harbor"
+        },
+        {
+          "label": "أو عبر pip",
+          "cmd": "pip install harbor"
+        }
+      ],
+      "usage": [
+        "harbor run --dataset terminal-bench@2.0 --agent claude-code --model anthropic/claude-opus-5-5 --n-concurrent 4"
+      ],
+      "repo": "harbor-framework/harbor",
+      "alternatives": [
+        "ess-playwright"
+      ],
+      "links": [
+        {
+          "label": "صفحة الإصدار",
+          "url": "https://github.com/harbor-framework/harbor/releases/tag/v0.26.0"
+        },
+        {
+          "label": "المستودع",
+          "url": "https://github.com/harbor-framework/harbor"
+        }
+      ],
+      "url": "https://github.com/harbor-framework/harbor/releases/tag/v0.26.0",
+      "source": "github.com",
+      "importance": 2,
+      "tags": [
+        "benchmark",
+        "coding-agents",
+        "evaluation",
+        "release"
+      ],
+      "en": {
+        "title": "Harbor 0.26: an API server, SDK and MCP tools for running coding-agent tests",
+        "summary": "Harbor, the open framework that runs coding agents such as Claude Code and Codex on containerized tasks and scores them, released 0.26.0 on 13 Nov 2026. It adds a server via harbor serve with a Python SDK and MCP tools, dry runs and bulk actions, and uploads of results to Harbor Hub.",
+        "why": "For teams comparing coding agents on their own tasks: runs can now be submitted and tracked from code or from an agent over MCP, not only from the command line, for example a CI job that measures every change to an agent's setup on a fixed task set.",
+        "about": "Harbor is the framework behind the Terminal-Bench benchmark: each task is a container image with instructions and a hidden test, and Harbor runs the agent on it locally with Docker or in cloud sandboxes, then records the score and logs.\n\nNew in 0.26: harbor serve starts an API server (port 8390 by default) with an SDK and MCP tools that list available agents and sandboxes, job submission with dry runs that count trials without calling models, bulk cancel and retry actions, retry history, and uploads of finished jobs to Harbor Hub.\n\nEach job's full configuration is now saved and versioned with its results, and the release adds a native OpenCode v2 integration, egress rules for Azure Container Apps sandboxes, and a fix for Daytona sandboxes leaking on failed creates.",
+        "features": [
+          "harbor serve API server with an SDK and MCP tools",
+          "Dry runs, bulk actions and retry history",
+          "Uploads of finished jobs to Harbor Hub",
+          "Full, versioned job configuration saved with results",
+          "Native OpenCode v2 integration"
+        ],
+        "usage": [
+          "harbor run --dataset terminal-bench@2.0 --agent claude-code --model anthropic/claude-opus-5-5 --n-concurrent 4"
+        ],
+        "install": [
+          "Install with uv",
+          "Or with pip"
+        ],
+        "links": [
+          "Release page",
+          "Repository"
+        ]
+      }
+    },
+    {
+      "id": "google-harness2",
+      "section": "agents",
+      "kind": "repo",
+      "title": "Harness² من Google Research: تحسين الأداة المحيطة بوكيل البرمجة أثناء المهمة دون تغيير النموذج",
+      "summary": "مشروع بحثي مفتوح المصدر يعدّل «الـ harness» المحيط بالنموذج، أي تعليماته وقواعده وذاكرته ومهاراته ووكلاءه الفرعيين، أثناء تنفيذ المهمة، ويحتفظ بما ينجح للمهام التالية. يستخدم OpenCode افتراضيًا ويمكن تبديله إلى Codex.",
+      "why": "لمن يبني إعدادات لوكلاء البرمجة: يوضح أن تحسين ما حول النموذج قد يرفع النتائج دون تغيير النموذج، ويقدّم قائمة واضحة بثمانية أجزاء يمكن ضبطها، مثل تعليمات النظام والمهارات والإضافات.",
+      "about": "لكل مهمة جديدة يقترح Harness² عدة تعديلات على الـ harness، ويشغّل كل نسخة على المهمة نفسها، ويقارن سلوكها، ثم يجمع التعديلات المفيدة دون حاجة إلى إجابة نموذجية. ويحتفظ بسجل دائم للنسخ المعتمدة والدروس ليوجّه المهام اللاحقة. ويعمل بنمط متوازٍ أو متتابع، ويحدد الخيار --k عدد الجولات.\n\nيذكر ملف README أن خطوة واحدة رفعت النتائج حتى 11.5 نقطة على WorkBuddy-Bench و4.5 نقاط على JobBench و11.8 نقطة مئوية على LAB مع النموذجين GLM-5 وGemini 3.5 Flash. وهذه مقاييس لأعمال مكتبية وقانونية وعامة، لا لتسليم البرمجيات.\n\nتنبيهات: المشروع بحثي وليس منتجًا رسميًا من Google، ويعمل على Linux مع Python 3.12، والتشغيلات المعتمدة على النماذج تكلّف مالًا، وكل جولة إضافية تزيد الاستدعاءات. ويحذّر الملف من أن المنفّذين يصلون إلى الشبكة بلا قيود وأن Codex يعمل وبيئة عزله معطّلة، فيجب تقييد الشبكة قبل أي تقييم.",
+      "features": [
+        "ثمانية أجزاء قابلة للتعديل: تعليمات النظام والضوابط والذاكرة وإرشادات الأدوات والوكلاء الفرعيون والمهارات والنصوص البرمجية والإضافات",
+        "اقتراح ثم اختبار ثم دمج داخل المهمة الواحدة دون إجابة نموذجية",
+        "سجل دائم للدروس ينتقل من مهمة إلى أخرى",
+        "منفّذان: OpenCode وCodex، وعرض تجريبي لا يحتاج إلى بيانات دخول"
+      ],
+      "install": [
+        {
+          "label": "إنشاء بيئة Python",
+          "cmd": "uv venv --python 3.12 .venv"
+        },
+        {
+          "label": "التثبيت من المستودع",
+          "cmd": "uv pip install -e '.[render]'"
+        },
+        {
+          "label": "تشغيل العرض التجريبي",
+          "cmd": "harness2-demo --output runs/demo --k 2"
+        }
+      ],
+      "requirements": [
+        "Linux وPython 3.12 وuv",
+        "Node.js 20+ وGoogle Cloud CLI للمقاييس المعتمدة على النماذج"
+      ],
+      "repo": "google-research/harness2",
+      "pricing": {
+        "model": "oss",
+        "note": "مجاني بترخيص Apache-2.0؛ تُدفع تكلفة استدعاءات النماذج"
+      },
+      "alternatives": [
+        "ess-opencode",
+        "ess-openai-codex-cli"
+      ],
+      "links": [
+        {
+          "label": "المستودع",
+          "url": "https://github.com/google-research/harness2"
+        },
+        {
+          "label": "الورقة البحثية",
+          "url": "https://arxiv.org/pdf/2610.14224"
+        }
+      ],
+      "url": "https://github.com/google-research/harness2",
+      "source": "github.com",
+      "importance": 2,
+      "tags": [
+        "harness",
+        "coding-agents",
+        "research",
+        "opencode",
+        "codex"
+      ],
+      "en": {
+        "title": "Google Research's Harness²: improving a coding agent's harness during the task without changing the model",
+        "summary": "An open-source research project that edits the 'harness' around a model, its prompts, rules, memory, skills and sub-agents, while a task runs, and keeps what works for later tasks. It uses OpenCode by default and can switch to Codex.",
+        "why": "For anyone building coding-agent setups: it shows that improving what surrounds the model can raise results without changing the model, and gives a clear list of eight parts that can be tuned, such as the system prompt, skills and plugins.",
+        "about": "For each new task Harness² proposes several edits to the harness, runs each version on the same task, compares how they behaved, and combines the useful edits, with no answer key needed. It keeps a lasting record of adopted harnesses and lessons to guide later tasks. It runs in parallel or sequential mode, and --k sets the number of rounds.\n\nThe README reports that one step raised results by up to 11.5 points on WorkBuddy-Bench, 4.5 on JobBench and 11.8 percentage points on LAB with GLM-5 and Gemini 3.5 Flash. These are office, legal and general work benchmarks, not software delivery.\n\nCaveats: it is a research project, not an official Google product; it runs on Linux with Python 3.12; model-backed runs cost money and each extra round adds calls. The README warns that executors have open network access and that Codex runs with its sandbox off, so the network should be restricted before any evaluation.",
+        "features": [
+          "Eight editable parts: system prompt, guardrails, memory, tool guidance, sub-agents, skills, scripts and plugins",
+          "Propose, probe and compose within one task, with no answer key",
+          "A lasting record of lessons carried from task to task",
+          "OpenCode and Codex executors, and a demo that needs no credentials"
+        ],
+        "install": [
+          "Create a Python environment",
+          "Install from the repository",
+          "Run the demo"
+        ],
+        "requirements": [
+          "Linux, Python 3.12 and uv",
+          "Node.js 20+ and the Google Cloud CLI for model-backed benchmarks"
+        ],
+        "links": [
+          "Repository",
+          "Paper"
+        ],
+        "pricingNote": "Free under Apache-2.0; model API calls are paid"
+      }
+    },
+    {
+      "id": "testdino-harness-overhead-benchmark",
+      "section": "agents",
+      "kind": "article",
+      "title": "كم رمزًا يستهلك وكيل البرمجة قبل أن يبدأ العمل؟ مقارنة 11 أداة",
+      "summary": "قاس مقال من TestDino المدخلات الثابتة التي ترسلها 11 أداة سطر أوامر لوكلاء البرمجة في أول استدعاء، بطلب الرد بكلمة «OK» في مستودع صغير نظيف. تراوح الرقم بين نحو 1.9 ألف رمز في Pi ونحو 31.5 ألفًا في Claude Code و31.8 ألفًا في Kiro، أي فرق 16.8 ضعفًا.",
+      "why": "لمن يدير تكلفة وكلاء البرمجة في فريق: هذا العبء الثابت يتكرر مع كل طلب، والمقال يقدّم اختبارًا بسيطًا يمكن تكراره على إعداداتك، فالأرقام تتغير مع كل إصدار ومع القواعد وخوادم MCP التي تضيفها.",
+      "about": "الطريقة: شُغّلت كل أداة دون واجهة في المستودع نفسه (ملف إعداد وملف اختبار وREADME وإيداع واحد، بلا ملفات تعليمات أو خوادم MCP أو مهارات) ثلاث مرات، وأُخذ الوسيط، بإصدارات محددة في 8 أكتوبر 2026، وحُدّث المقال في 5 نوفمبر 2026. وجُمعت المدخلات غير المخزنة وكتابات الذاكرة المؤقتة وقراءاتها.\n\nالنتائج: Kiro نحو 31.8 ألفًا وClaude Code نحو 31.5 ألفًا (ونحو 34.2 ألفًا مع ملف CLAUDE.md عام وذاكرة تلقائية وثلاثة خوادم MCP)، ثم Copilot CLI نحو 17 ألفًا، وCodex CLI وQwen Code وOpenCode وCursor CLI بين 13 و15 ألفًا، وGemini CLI نحو 9.3 آلاف، وCline نحو 5.4 آلاف، وAider نحو 2.5 ألف، وPi نحو 1.9 ألف.\n\nتنبيهات: استخدمت كل أداة نموذجها الافتراضي، فالأرقام تأتي من أربعة مقسّمات رموز مختلفة، وبعضها تقديري. والمقال لا يقيس جودة الحلول، ويخلص إلى أن حجم هذا العبء بند في الميزانية وليس مؤشرًا على الجودة. والناشر شركة أدوات اختبار تجارية.",
+      "features": [
+        "11 أداة بإصدارات محددة والوسيط من ثلاث تشغيلات",
+        "فرق 16.8 ضعفًا بين الأخف والأثقل",
+        "إعدادات المستخدم في Claude Code أضافت نحو 2.7 ألف رمز",
+        "نصائح: تأجيل تعريفات الأدوات، واختصار التعليمات الدائمة، وتصفية مخرجات الأدوات"
+      ],
+      "links": [
+        {
+          "label": "المقال",
+          "url": "https://testdino.com/blog/harness-overhead-benchmark"
+        }
+      ],
+      "alternatives": [
+        "ess-opencode",
+        "ess-aider"
+      ],
+      "url": "https://testdino.com/blog/harness-overhead-benchmark",
+      "source": "testdino.com",
+      "importance": 2,
+      "tags": [
+        "coding-agents",
+        "cost",
+        "tokens",
+        "benchmark"
+      ],
+      "en": {
+        "title": "How many tokens does a coding agent use before it starts working? 11 tools compared",
+        "summary": "A TestDino article measured the fixed input that 11 coding-agent CLIs send on the first call, by asking each to reply 'OK' in a small clean repo. The figure ranged from about 1.9k tokens for Pi to about 31.5k for Claude Code and 31.8k for Kiro, a 16.8x spread.",
+        "why": "For anyone managing coding-agent costs in a team: this fixed overhead repeats on every request, and the article gives a simple test you can rerun on your own setup, since the numbers change with each release and with the rules and MCP servers you add.",
+        "about": "Method: each tool ran headless in the same repo (one config file, one spec, a README and one commit, with no instruction files, MCP servers or skills) three times and the median was taken, with pinned versions on 8 Oct 2026; the article was updated on 5 Nov 2026. Uncached input, cache writes and cache reads were added together.\n\nResults: Kiro about 31.8k and Claude Code about 31.5k (about 34.2k with a global CLAUDE.md, auto memory and three MCP servers), then Copilot CLI about 17k, Codex CLI, Qwen Code, OpenCode and Cursor CLI between 13k and 15k, Gemini CLI about 9.3k, Cline about 5.4k, Aider about 2.5k and Pi about 1.9k.\n\nCaveats: each tool used its default model, so the counts come from four different tokenizers, and some are estimates. The article does not measure solution quality, and concludes that this overhead is a budget line, not a quality signal. The publisher is a commercial testing-tools company.",
+        "features": [
+          "11 tools at pinned versions, median of three runs",
+          "A 16.8x spread between lightest and heaviest",
+          "Claude Code's user-level setup added about 2.7k tokens",
+          "Advice: defer tool schemas, keep always-on instructions short, filter tool output"
+        ],
+        "links": [
+          "Article"
+        ]
+      }
+    },
+    {
+      "id": "bama-mac-app-skills",
+      "section": "skills",
+      "kind": "plugin",
+      "title": "BAMA: إضافة من 21 مهارة تأخذ تطبيق macOS أصليًا من الفكرة إلى الإصدار بـ Swift وSwiftUI",
+      "summary": "حزمة مهارات مفتوحة المصدر لـ Claude Code وCodex ووكلاء آخرين تقود الوكيل في بناء تطبيق macOS أصلي دون واجهة Xcode: من موجز الفكرة وقصص المستخدم إلى الشيفرة والتصميم والاختبارات، مع لقطة لكل صفحة في الوضعين الفاتح والداكن قبل كل إيداع.",
+      "why": "لمن يريد بناء أداة صغيرة لسطح مكتب Mac، مثل مدير حافظة أو مشغّل سريع، بمساعدة وكيل: المهارات تفرض خطوات واضحة وقصة واحدة لكل إيداع وفحوصًا للتصميم والأداء، بدل شيفرة Swift عشوائية.",
+      "about": "تنقسم المهارات الإحدى والعشرون إلى خمس مراحل: البدء (موجّه يختار المهارة التالية، وموجز التطبيق، وقالب Swift package مع SwiftData)، والتخطيط (بحث، والتقاط لقطات لكل شاشة من تطبيق مرجعي، وقصص مستخدم بمعايير قبول قابلة للتحقق)، والشيفرة (Swift 6 وتكاملات النظام والأداء وإعادة الهيكلة)، والتصميم (تصميم Mac وLiquid Glass وشبكة 4 نقاط وأيقونة التطبيق)، والإصدار (البناء والتحقق واختبارات Swift Testing وحلقة تحسين تعمل قصةً بعد قصة).\n\nيضم المستودع أيضًا 12 خطة بناء جاهزة لتطبيقات صغيرة، مثل ترتيب النوافذ وسجل الحافظة ومسجّل الشاشة، ومهارة اختيارية تضيف سطر أوامر وخادم MCP كي تتحكم الوكلاء في التطبيق.\n\nالمتطلبات: macOS 26 أو أحدث وSwift 6.2. والترخيص MIT. وعند نسخ مظهر تطبيق موجود، يبقى على المستخدم احترام حقوق ذلك التطبيق وعلامته.",
+      "features": [
+        "21 مهارة في خمس مراحل: البدء والتخطيط والشيفرة والتصميم والإصدار",
+        "لقطة لكل صفحة بالوضعين الفاتح والداكن وتشغيل الاختبارات قبل كل إيداع",
+        "12 خطة بناء جاهزة لتطبيقات Mac صغيرة",
+        "تعمل مع Claude Code وCodex وCursor وGemini CLI وغيرها"
+      ],
+      "install": [
+        {
+          "label": "إضافة السوق في Claude Code",
+          "cmd": "/plugin marketplace add daveebbelaar/bama"
+        },
+        {
+          "label": "تثبيت الإضافة",
+          "cmd": "/plugin install bama@bama"
+        },
+        {
+          "label": "أو لأي وكيل عبر skills.sh",
+          "cmd": "npx skills@latest add daveebbelaar/bama"
+        }
+      ],
+      "usage": [
+        "/bama"
+      ],
+      "requirements": [
+        "macOS 26+",
+        "Swift 6.2"
+      ],
+      "repo": "daveebbelaar/bama",
+      "pricing": {
+        "model": "oss"
+      },
+      "alternatives": [
+        "ess-anthropics-skills",
+        "ess-superpowers"
+      ],
+      "links": [
+        {
+          "label": "المستودع",
+          "url": "https://github.com/daveebbelaar/bama"
+        }
+      ],
+      "url": "https://github.com/daveebbelaar/bama",
+      "source": "github.com",
+      "importance": 2,
+      "tags": [
+        "skills",
+        "macos",
+        "swift",
+        "swiftui",
+        "claude-code",
+        "codex"
+      ],
+      "en": {
+        "title": "BAMA: a 21-skill plugin that takes a native macOS app from idea to release with Swift and SwiftUI",
+        "summary": "An open-source skill pack for Claude Code, Codex and other agents that guides the agent through building a native macOS app without the Xcode GUI: from an idea brief and user stories to code, design and tests, with a snapshot of every page in light and dark mode before each commit.",
+        "why": "For anyone who wants to build a small Mac desktop tool, such as a clipboard manager or a launcher, with an agent: the skills enforce clear steps, one story per commit and checks for design and performance, instead of ad hoc Swift code.",
+        "about": "The 21 skills fall into five stages: Start (a router that picks the next skill, an app brief, and a Swift package template with SwiftData), Plan (research, screenshots of every screen of a reference app, and user stories with checkable acceptance criteria), Code (Swift 6, OS integrations, performance and refactoring), Design (Mac design and Liquid Glass, a 4 pt grid and an app icon), and Ship (build and verify, Swift Testing, and an improvement loop that works story by story).\n\nThe repo also includes 12 ready build plans for small apps, such as a window snapper, clipboard history and a screen recorder, and an optional skill that adds a command line and MCP server so agents can drive the app.\n\nRequirements: macOS 26 or later and Swift 6.2. The license is MIT. When copying the look of an existing app, respecting that app's rights and brand remains the user's responsibility.",
+        "features": [
+          "21 skills in five stages: start, plan, code, design and ship",
+          "A snapshot of every page in light and dark mode and a test run before each commit",
+          "12 ready build plans for small Mac apps",
+          "Works with Claude Code, Codex, Cursor, Gemini CLI and others"
+        ],
+        "usage": [
+          "/bama"
+        ],
+        "requirements": [
+          "macOS 26+",
+          "Swift 6.2"
+        ],
+        "install": [
+          "Add the marketplace in Claude Code",
+          "Install the plugin",
+          "Or for any agent via skills.sh"
+        ],
+        "links": [
+          "Repository"
+        ]
+      }
+    },
+    {
+      "id": "stageshow-product-illustrations-skill",
+      "section": "design",
+      "kind": "skill",
+      "title": "Stageshow: مهارة وحزمة React لرسوم توضيحية متحركة لواجهات المنتجات",
+      "summary": "مهارة مفتوحة المصدر لوكلاء البرمجة تساعدهم على صنع رسوم توضيحية لواجهة المنتج: صور ثابتة وبطاقات ميزات وعروض بمؤشر متحرك وشبكات bento، مبنية بـ React، مع أدوات تسجّل النتيجة كي يتحقق الوكيل من عمله.",
+      "why": "لمن يصنع صفحة هبوط أو صفحة ميزات لمنتج برمجي: بدل لقطات شاشة جامدة، يبني الوكيل مشاهد متحركة خفيفة تحاكي الواجهة، مثل عرض لمؤشر ينقر زرًّا ويفتح لوحة، بقواعد واضحة للتكوين والحركة.",
+      "about": "تتضمن المهارة إرشادات للتكوين والحركة، وحزمة مكونات React تُنسخ إلى المشروع، وأمثلة، وبيئة تجريبية فيها تسعة أنماط بصرية وأزواج «سيئ/جيد» للتعليم، مع إيقاف وإعادة وإبطاء وتقدم إطارًا بإطار، ووضع للحركة المخففة.\n\nالمشاهد رسوم مؤلَّفة: النقرات فيها مكتوبة مسبقًا ولا تتحكم في واجهة تطبيق حقيقي. وتتطلب البيئة التجريبية Node 20.19 أو أحدث، والترخيص MIT مع ملاحظات للأصول الخارجية.",
+      "features": [
+        "رسوم ثابتة وبطاقات ميزات وعروض بمؤشر وشبكات bento",
+        "حزمة مكونات React تُنسخ إلى المشروع",
+        "بيئة تجريبية بتسعة أنماط وأمثلة سيئة وجيدة",
+        "أدوات تسجّل النتيجة ليراجعها الوكيل"
+      ],
+      "install": [
+        {
+          "label": "تثبيت المهارة",
+          "cmd": "npx skills add benjitaylor/skills --skill stageshow"
+        }
+      ],
+      "requirements": [
+        "Node 20.19+ للبيئة التجريبية"
+      ],
+      "repo": "benjitaylor/skills",
+      "pricing": {
+        "model": "oss"
+      },
+      "alternatives": [
+        "ess-ui-ux-pro-max",
+        "ess-impeccable"
+      ],
+      "links": [
+        {
+          "label": "المستودع",
+          "url": "https://github.com/benjitaylor/skills"
+        },
+        {
+          "label": "شرح المهارة",
+          "url": "https://benji.org/stageshow"
+        }
+      ],
+      "url": "https://github.com/benjitaylor/skills",
+      "source": "github.com",
+      "importance": 1,
+      "tags": [
+        "design",
+        "motion",
+        "react",
+        "skill"
+      ],
+      "en": {
+        "title": "Stageshow: a skill and React kit for animated product UI illustrations",
+        "summary": "An open-source skill for coding agents that helps them make product UI illustrations: stills, feature cards, cursor demos and bento grids, built in React, with tools that film the result so the agent can check its work.",
+        "why": "For anyone making a landing or feature page for a software product: instead of static screenshots, the agent builds light animated scenes that mimic the UI, such as a cursor clicking a button and opening a panel, with clear rules for composition and motion.",
+        "about": "The skill includes guidance on composition and motion, a React component kit you copy into your project, examples, and a playground with nine visual styles and labeled bad/good teaching pairs, with pause, replay, slow motion, frame stepping and a reduced-motion mode.\n\nScenes are authored illustrations: clicks are scripted and do not drive a real application's controls. The playground needs Node 20.19 or later, and the license is MIT with notices for third-party assets.",
+        "features": [
+          "Stills, feature cards, cursor demos and bento grids",
+          "A React component kit copied into the project",
+          "A playground with nine styles and bad/good examples",
+          "Tools that film the result for the agent to review"
+        ],
+        "requirements": [
+          "Node 20.19+ for the playground"
+        ],
+        "install": [
+          "Install the skill"
+        ],
+        "links": [
+          "Repository",
+          "How it works"
+        ]
+      }
+    }
+  ]
+}
