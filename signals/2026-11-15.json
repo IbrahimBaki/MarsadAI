@@ -1,6 +1,6 @@
 {
   "date": "2026-11-15",
-  "generated": "2026-11-15T05:43:07.675Z",
+  "generated": "2026-11-15T11:59:22.151Z",
   "awesome": [
     {
       "list": "jqueryscript/awesome-claude-code",
@@ -585,6 +585,54 @@
       "url": "https://github.com/arcmira/mcp",
       "desc": "Arcmira - Search YouTube and podcast transcripts for timestamped quotes and mentions",
       "heading": "Table of Contents"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "Eronred/aso-skills",
+      "url": "https://github.com/Eronred/aso-skills",
+      "desc": "Eronred/aso-skills - 30+ App Store Optimization skills for keyword research, metadata optimization, competitor analysis, creative optimization, and mobile growth strategies via Appeeky API",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "JimmySadek/youtube-fetcher",
+      "url": "https://github.com/JimmySadek/youtube-fetcher-to-markdown",
+      "desc": "JimmySadek/youtube-fetcher - Create Obsidian-ready Markdown notes from YouTube videos",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "bablobanov/hermes-telegram-checklist",
+      "url": "https://github.com/bablobanov/hermes-telegram-checklist",
+      "desc": "bablobanov/hermes-telegram-checklist - Create and manage native Telegram checklists with verified writes",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "Ryan-yang125/motion-lexicon",
+      "url": "https://github.com/Ryan-yang125/motion-lexicon/tree/main/skills/motion-lexicon",
+      "desc": "Ryan-yang125/motion-lexicon - Build and review product motion with installable React components",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "half144/cutaway",
+      "url": "https://github.com/half144/cutaway",
+      "desc": "half144/cutaway - Record polished demo videos of web flows with Playwright",
+      "heading": "Community Skills"
+    },
+    {
+      "list": "VoltAgent/awesome-agent-skills",
+      "section": "skills",
+      "name": "awrshift/claude-memory-kit",
+      "url": "https://github.com/awrshift/claude-memory-kit",
+      "desc": "awrshift/claude-memory-kit - Persistent memory with hooks, wiki, and daily synthesis for multi-project workflows",
+      "heading": "Community Skills"
     }
   ],
   "releases": [
@@ -595,7 +643,711 @@
       "tag": "0.3.290",
       "previous": "0.3.289",
       "url": "https://github.com/UKGovernmentBEIS/inspect_ai/releases/tag/0.3.290"
+    },
+    {
+      "repo": "AzmSquad/squad-kit",
+      "section": "agents",
+      "track": "t3",
+      "tag": "v1.3.23",
+      "previous": "v1.3.22",
+      "url": "https://github.com/AzmSquad/squad-kit/releases/tag/v1.3.23"
     }
   ],
-  "trending": []
+  "trending": [
+    {
+      "repo": "KKKKhazix/agent-autoloop",
+      "section": "skills",
+      "topic": "claude-code",
+      "url": "https://github.com/KKKKhazix/agent-autoloop",
+      "description": "让你的命令行 Agent 在后台自己接活、自己跟进到底；平时不烦你，遇到拿不准的事才发卡片找你拍板。",
+      "stars": 5430,
+      "created": "2026-11-03T08:02:11Z",
+      "language": "TypeScript",
+      "new": false
+    },
+    {
+      "repo": "caru-ini/stack-diagram",
+      "section": "skills",
+      "topic": "claude-code",
+      "url": "https://github.com/caru-ini/stack-diagram",
+      "description": "Agent skill: describe your stack in a sentence, get an architecture diagram with official logos",
+      "stars": 2506,
+      "created": "2026-11-01T05:35:12Z",
+      "language": "TypeScript",
+      "new": false
+    },
+    {
+      "repo": "DIYgod/pinky",
+      "section": "skills",
+      "topic": "claude-code",
+      "url": "https://github.com/DIYgod/pinky",
+      "description": "Let AI use your iPhone or Android phone, with you in the loop: any MCP agent from macOS, Windows or Linux, or Pinky itself, right on the phone.",
+      "stars": 2188,
+      "created": "2026-11-06T16:53:14Z",
+      "language": "Go",
+      "new": false
+    },
+    {
+      "repo": "agentes-chat/agentes-chat",
+      "section": "skills",
+      "topic": "claude-code",
+      "url": "https://github.com/agentes-chat/agentes-chat",
+      "description": "Open-source, self-hosted Slack alternative where your team and AI agents work together in channels and DMs. Agents run on Claude, ChatGPT/Codex, Gemini or Grok, with MCP tools, their own computer and browser, routines, memory and approvals. Web, desktop and phone apps. Docker Compose + Postgres. AGPL-3.0.",
+      "stars": 1456,
+      "created": "2026-11-09T00:50:28Z",
+      "language": "TypeScript",
+      "new": false
+    },
+    {
+      "repo": "alexeyw/lot-map",
+      "section": "skills",
+      "topic": "claude-code",
+      "url": "https://github.com/alexeyw/lot-map",
+      "description": "A live map beside the chat that shows what Claude Code is doing: tool calls, model steps, hooks, skills and subagents light up as they happen. Local only, in 7 languages.",
+      "stars": 852,
+      "created": "2026-11-09T19:13:52Z",
+      "language": "TypeScript",
+      "new": false
+    },
+    {
+      "repo": "artemnovitckii/claude-animation-skills",
+      "section": "skills",
+      "topic": "claude-code",
+      "url": "https://github.com/artemnovitckii/claude-animation-skills",
+      "description": "Six Claude Code skills that make animations for reels, no footage needed: 3D cartoon explainer, stick figure, minimal line art, 3D map route, exploded view, line graph.",
+      "stars": 778,
+      "created": "2026-11-01T02:53:31Z",
+      "language": "JavaScript",
+      "new": false
+    },
+    {
+      "repo": "Dodaios/ste80-humanizer",
+      "section": "skills",
+      "topic": "claude-code",
+      "url": "https://github.com/Dodaios/ste80-humanizer",
+      "description": "STE80 Humanizer: agent skill that removes AI tells and rewrites text 80% of the way to ASD-STE100 (Simplified Technical English), the method Andrej Karpathy shared.",
+      "stars": 652,
+      "created": "2026-11-09T17:18:59Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "ersinkoc/phonebox",
+      "section": "skills",
+      "topic": "claude-code",
+      "url": "https://github.com/ersinkoc/phonebox",
+      "description": "Turn an old Android phone into a local desk panel for Windows, Linux and macOS. 55 widgets, Smart Stack, AI quotas and sessions, media controls, USB or paired Wi-Fi.",
+      "stars": 558,
+      "created": "2026-11-07T16:45:16Z",
+      "language": "C#",
+      "new": true
+    },
+    {
+      "repo": "mhfed/vn-law-check",
+      "section": "skills",
+      "topic": "claude-code",
+      "url": "https://github.com/mhfed/vn-law-check",
+      "description": "Audit pháp lý website theo luật Việt Nam (BVDLCN 91/2025, TMĐT 122/2025, ANM 116/2025, AI 134/2025) cho Claude Code, Cursor, Copilot, Windsurf, Cline",
+      "stars": 501,
+      "created": "2026-11-02T09:22:02Z",
+      "language": "Shell",
+      "new": false
+    },
+    {
+      "repo": "Moh4696/cinematic-skill",
+      "section": "skills",
+      "topic": "claude-code",
+      "url": "https://github.com/Moh4696/cinematic-skill",
+      "description": "Agent skill for narrated cinematic films built entirely from code: one continuous camera over photos, maps and cards, timed to the voice. Claude Code, Codex, Cursor, Gemini CLI.",
+      "stars": 436,
+      "created": "2026-11-09T07:58:11Z",
+      "language": "Python",
+      "new": true
+    },
+    {
+      "repo": "caru-ini/stack-diagram",
+      "section": "skills",
+      "topic": "claude-skills",
+      "url": "https://github.com/caru-ini/stack-diagram",
+      "description": "Agent skill: describe your stack in a sentence, get an architecture diagram with official logos",
+      "stars": 2506,
+      "created": "2026-11-01T05:35:12Z",
+      "language": "TypeScript",
+      "new": false
+    },
+    {
+      "repo": "artemnovitckii/claude-animation-skills",
+      "section": "skills",
+      "topic": "claude-skills",
+      "url": "https://github.com/artemnovitckii/claude-animation-skills",
+      "description": "Six Claude Code skills that make animations for reels, no footage needed: 3D cartoon explainer, stick figure, minimal line art, 3D map route, exploded view, line graph.",
+      "stars": 778,
+      "created": "2026-11-01T02:53:31Z",
+      "language": "JavaScript",
+      "new": false
+    },
+    {
+      "repo": "Dodaios/ste80-humanizer",
+      "section": "skills",
+      "topic": "claude-skills",
+      "url": "https://github.com/Dodaios/ste80-humanizer",
+      "description": "STE80 Humanizer: agent skill that removes AI tells and rewrites text 80% of the way to ASD-STE100 (Simplified Technical English), the method Andrej Karpathy shared.",
+      "stars": 652,
+      "created": "2026-11-09T17:18:59Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "mhfed/vn-law-check",
+      "section": "skills",
+      "topic": "claude-skills",
+      "url": "https://github.com/mhfed/vn-law-check",
+      "description": "Audit pháp lý website theo luật Việt Nam (BVDLCN 91/2025, TMĐT 122/2025, ANM 116/2025, AI 134/2025) cho Claude Code, Cursor, Copilot, Windsurf, Cline",
+      "stars": 501,
+      "created": "2026-11-02T09:22:02Z",
+      "language": "Shell",
+      "new": false
+    },
+    {
+      "repo": "op7418/guizang-game-skill",
+      "section": "skills",
+      "topic": "claude-skills",
+      "url": "https://github.com/op7418/guizang-game-skill",
+      "description": "歸藏 Game Skill：让 AI 从零做出能在浏览器里玩的 3D 动作游戏，附可玩演示《雾锁山门》。Agent skill for Claude Code / Codex that builds a playable browser 3D action game with AI-generated assets (three.js, single-HTML). Playable demo included.",
+      "stars": 349,
+      "created": "2026-11-11T16:28:54Z",
+      "language": "JavaScript",
+      "new": false
+    },
+    {
+      "repo": "threerocks/article2media",
+      "section": "skills",
+      "topic": "claude-skills",
+      "url": "https://github.com/threerocks/article2media",
+      "description": "把一篇文章或一条视频（抖音、B 站、YouTube，先转逐字稿）一键做成小红书图文、杂志长图、公众号排版和 AI 配音口播短视频的开源 Claude Code / Codex Skill。21 套主题，自动验收，零 npm 依赖。",
+      "stars": 338,
+      "created": "2026-11-08T08:07:28Z",
+      "language": "JavaScript",
+      "new": false
+    },
+    {
+      "repo": "nishant-Tiwari24/cracked",
+      "section": "skills",
+      "topic": "claude-skills",
+      "url": "https://github.com/nishant-Tiwari24/cracked",
+      "description": "Skills for getting hired. Company-wise mock interviews, OAs with hidden tests and brutal resume roasts for 470+ companies, straight from your terminal.",
+      "stars": 308,
+      "created": "2026-11-06T08:50:47Z",
+      "language": "TypeScript",
+      "new": false
+    },
+    {
+      "repo": "ScottDuncanAI/PID-to-Knowledge-Graph",
+      "section": "skills",
+      "topic": "claude-skills",
+      "url": "https://github.com/ScottDuncanAI/PID-to-Knowledge-Graph",
+      "description": "P&ID to Knowledge Graph: a Claude skill that turns P&ID PDFs (digital or scanned) into a process knowledge graph of flow, instruments and control loops.",
+      "stars": 271,
+      "created": "2026-11-08T18:58:21Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "owoevan-dev/music-skill",
+      "section": "skills",
+      "topic": "claude-skills",
+      "url": "https://github.com/owoevan-dev/music-skill",
+      "description": "An Agent Skill that writes original instrumental music as editable notes, then performs, mixes and masters it on free sampled instruments (CC0 or free for any use) and synthesizers. MIDI, stems and game loops; no audio-generation model.",
+      "stars": 227,
+      "created": "2026-11-02T10:25:32Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "Bil0000/Hill-Climb",
+      "section": "skills",
+      "topic": "claude-skills",
+      "url": "https://github.com/Bil0000/Hill-Climb",
+      "description": "Make your coding agent prove \"done\". Each change is kept only if a locked test or benchmark scores it better. Claude Code and Codex skill.",
+      "stars": 136,
+      "created": "2026-11-02T20:15:32Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "caru-ini/stack-diagram",
+      "section": "skills",
+      "topic": "agent-skills",
+      "url": "https://github.com/caru-ini/stack-diagram",
+      "description": "Agent skill: describe your stack in a sentence, get an architecture diagram with official logos",
+      "stars": 2506,
+      "created": "2026-11-01T05:35:12Z",
+      "language": "TypeScript",
+      "new": false
+    },
+    {
+      "repo": "dabingfy-dot/solo-to-team-skills",
+      "section": "skills",
+      "topic": "agent-skills",
+      "url": "https://github.com/dabingfy-dot/solo-to-team-skills",
+      "description": "Human-led MAS toolkit: 16 roles, 6 group templates, four platform bundles, evidence-based review and handoff. 一人成队：一个人统筹多智能体协作。",
+      "stars": 892,
+      "created": "2026-11-07T01:36:28Z",
+      "language": "HTML",
+      "new": false
+    },
+    {
+      "repo": "kubai087/kubai-icons",
+      "section": "skills",
+      "topic": "agent-skills",
+      "url": "https://github.com/kubai087/kubai-icons",
+      "description": "An agent skill that draws animated icons in one consistent style, for Claude Code, Codex and other coding agents. Comes with 2,600+ open-source icons for React, Vue and SVG, and a website to browse them.",
+      "stars": 852,
+      "created": "2026-11-03T09:52:39Z",
+      "language": "JavaScript",
+      "new": false
+    },
+    {
+      "repo": "trackboatwrightplan/GitHub-Copilot-app",
+      "section": "skills",
+      "topic": "agent-skills",
+      "url": "https://github.com/trackboatwrightplan/GitHub-Copilot-app",
+      "description": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories. ",
+      "stars": 672,
+      "created": "2026-11-14T19:16:41Z",
+      "language": null,
+      "new": true
+    },
+    {
+      "repo": "TrapAccountant/GitHub-Copilot-app",
+      "section": "skills",
+      "topic": "agent-skills",
+      "url": "https://github.com/TrapAccountant/GitHub-Copilot-app",
+      "description": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories. ",
+      "stars": 670,
+      "created": "2026-11-14T19:16:47Z",
+      "language": null,
+      "new": true
+    },
+    {
+      "repo": "trackersnailgrip/GitHub-Copilot-app",
+      "section": "skills",
+      "topic": "agent-skills",
+      "url": "https://github.com/trackersnailgrip/GitHub-Copilot-app",
+      "description": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories. ",
+      "stars": 666,
+      "created": "2026-11-14T19:16:41Z",
+      "language": null,
+      "new": true
+    },
+    {
+      "repo": "toppatronweave/GitHub-Copilot-app",
+      "section": "skills",
+      "topic": "agent-skills",
+      "url": "https://github.com/toppatronweave/GitHub-Copilot-app",
+      "description": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories. ",
+      "stars": 666,
+      "created": "2026-11-14T19:25:20Z",
+      "language": null,
+      "new": true
+    },
+    {
+      "repo": "TradesmanRecord/GitHub-Copilot-app",
+      "section": "skills",
+      "topic": "agent-skills",
+      "url": "https://github.com/TradesmanRecord/GitHub-Copilot-app",
+      "description": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories. ",
+      "stars": 665,
+      "created": "2026-11-14T19:16:41Z",
+      "language": null,
+      "new": true
+    },
+    {
+      "repo": "TurkeyDesignate/GitHub-Copilot-app",
+      "section": "skills",
+      "topic": "agent-skills",
+      "url": "https://github.com/TurkeyDesignate/GitHub-Copilot-app",
+      "description": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories. ",
+      "stars": 664,
+      "created": "2026-11-14T19:25:18Z",
+      "language": null,
+      "new": true
+    },
+    {
+      "repo": "TrapBladesmith/GitHub-Copilot-app",
+      "section": "skills",
+      "topic": "agent-skills",
+      "url": "https://github.com/TrapBladesmith/GitHub-Copilot-app",
+      "description": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories. ",
+      "stars": 664,
+      "created": "2026-11-14T19:16:50Z",
+      "language": null,
+      "new": true
+    },
+    {
+      "repo": "DIYgod/pinky",
+      "section": "mcp",
+      "topic": "mcp-server",
+      "url": "https://github.com/DIYgod/pinky",
+      "description": "Let AI use your iPhone or Android phone, with you in the loop: any MCP agent from macOS, Windows or Linux, or Pinky itself, right on the phone.",
+      "stars": 2188,
+      "created": "2026-11-06T16:53:14Z",
+      "language": "Go",
+      "new": false
+    },
+    {
+      "repo": "zovulrira1974/blender-ai-copilot-assets",
+      "section": "mcp",
+      "topic": "mcp-server",
+      "url": "https://github.com/zovulrira1974/blender-ai-copilot-assets",
+      "description": "An asset-savvy AI copilot for Blender—search Poly Haven, Sketchfab and Poly Pizza mid-conversation, check what fits, import after your confirmation, with 27 scene tools and a built-in MCP server alongside. · blender-ai-copilot-assets · blender · blender 3d · blender addon · blender plugin · blender extension · blender scripting · blender automation",
+      "stars": 450,
+      "created": "2026-11-12T19:39:54Z",
+      "language": null,
+      "new": true
+    },
+    {
+      "repo": "racdeufindurch198812/Blender-AI-MCP-Studio",
+      "section": "mcp",
+      "topic": "mcp-server",
+      "url": "https://github.com/racdeufindurch198812/Blender-AI-MCP-Studio",
+      "description": "Blender AI MCP Studio is an AI assistant and built-in Model Context Protocol MCP server for Blender that turns plain-language briefs into inspected, approved and reversible 3D scene operations — with a visual chat workspace, multi-agent teams and your choice of AI models. · blender ai mcp studio · mcp-for-blender · mcp for blender pro",
+      "stars": 449,
+      "created": "2026-11-12T19:28:20Z",
+      "language": null,
+      "new": true
+    },
+    {
+      "repo": "credoksopho1984/blender-ai-copilot-studio",
+      "section": "mcp",
+      "topic": "mcp-server",
+      "url": "https://github.com/credoksopho1984/blender-ai-copilot-studio",
+      "description": "An AI copilot and MCP server for Blender that turns plain-language briefs into scene operations—inside a visual chat studio with multi-agent teams, your choice of AI models, and 27 built-in scene tools. · blender-ai-copilot-studio · blender ai · ai for blender · blender copilot · blender ai copilot · blender ai assistant · blender mcp server",
+      "stars": 448,
+      "created": "2026-11-12T19:30:32Z",
+      "language": null,
+      "new": false
+    },
+    {
+      "repo": "Doug-218/blender-ai-copilot-forge",
+      "section": "mcp",
+      "topic": "mcp-server",
+      "url": "https://github.com/Doug-218/blender-ai-copilot-forge",
+      "description": "A scene-forging AI copilot for Blender—describe the layout and watch primitives, cameras, lights, materials and parenting assemble in ordered steps, with approvals, named undo and a built-in MCP server. · blender-ai-copilot-forge · blender · blender 3d · blender addon · blender plugin · blender extension · blender scripting · blender automation",
+      "stars": 447,
+      "created": "2026-11-12T19:35:10Z",
+      "language": null,
+      "new": false
+    },
+    {
+      "repo": "tiobeharxi1987/blender-ai-copilot-flow",
+      "section": "mcp",
+      "topic": "mcp-server",
+      "url": "https://github.com/tiobeharxi1987/blender-ai-copilot-flow",
+      "description": "A controlled AI workflow for Blender: every copilot edit is a supervised tool call—proposed, approved, executed in sequence, cancellable after the current step and undoable by name—inside a visual studio with a built-in MCP server. · blender-ai-copilot-flow · blender · blender 3d · blender addon · blender plugin · blender extension",
+      "stars": 447,
+      "created": "2026-11-12T19:38:53Z",
+      "language": null,
+      "new": false
+    },
+    {
+      "repo": "baiblinocun1986/blender-ai-copilot-hub",
+      "section": "mcp",
+      "topic": "mcp-server",
+      "url": "https://github.com/baiblinocun1986/blender-ai-copilot-hub",
+      "description": "A multi-provider AI copilot hub for Blender—bring OpenAI, Anthropic Claude, Google Gemini, OpenRouter, OpenCode Zen, Ollama and custom endpoints into one hub of saved connections, with 27 supervised scene tools and a built-in MCP server. · blender-ai-copilot-hub · blender · blender 3d · blender addon · blender plugin · blender extension",
+      "stars": 442,
+      "created": "2026-11-12T19:32:22Z",
+      "language": null,
+      "new": true
+    },
+    {
+      "repo": "precygtrucqui1981/blender-ai-copilot-lab",
+      "section": "mcp",
+      "topic": "mcp-server",
+      "url": "https://github.com/precygtrucqui1981/blender-ai-copilot-lab",
+      "description": "An AI lab for Blender where manager–worker–reviewer agent teams run multi-step scene briefs as supervised experiments—a live task board, review findings, one correction attempt per blocked task, named undo, and a built-in MCP server. · blender-ai-copilot-lab · blender · blender 3d · blender addon · blender plugin · blender extension",
+      "stars": 441,
+      "created": "2026-11-12T19:33:16Z",
+      "language": null,
+      "new": false
+    },
+    {
+      "repo": "fumbdendade19718/blender-ai-copilot-desk",
+      "section": "mcp",
+      "topic": "mcp-server",
+      "url": "https://github.com/fumbdendade19718/blender-ai-copilot-desk",
+      "description": "A visual AI desk for Blender—chat, scene objects, viewport snapshots, approvals and a live task board in one companion window, backed by your choice of models and a built-in MCP server. · blender-ai-copilot-desk · blender · blender 3d · blender addon · blender plugin · blender extension · blender scripting · blender automation · blender mcp",
+      "stars": 440,
+      "created": "2026-11-12T19:37:25Z",
+      "language": null,
+      "new": true
+    },
+    {
+      "repo": "hitkeeen/blender-ai-mcp-addon",
+      "section": "mcp",
+      "topic": "mcp-server",
+      "url": "https://github.com/hitkeeen/blender-ai-mcp-addon",
+      "description": "AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with ChatGPT/GPT, Claude, Gemini, Ollama, OpenCode. Blender AI addon, copilot for 3D, bpy Python scripting, MCP integration.",
+      "stars": 438,
+      "created": "2026-11-12T14:32:15Z",
+      "language": null,
+      "new": false
+    },
+    {
+      "repo": "devvmhq/devvm",
+      "section": "agents",
+      "topic": "coding-agent",
+      "url": "https://github.com/devvmhq/devvm",
+      "description": "One VM for every project. An isolated sandbox with your project’s toolchain, ready for you or a coding agent to start coding",
+      "stars": 639,
+      "created": "2026-11-06T07:02:30Z",
+      "language": "Go",
+      "new": false
+    },
+    {
+      "repo": "Lanqiao-Luca/ai-java-workflow",
+      "section": "agents",
+      "topic": "coding-agent",
+      "url": "https://github.com/Lanqiao-Luca/ai-java-workflow",
+      "description": "☕ 用 AI 辅助 Java / Spring Boot 研发（AI for Java / AI for Spring）｜需求、实现、测试、审查与交付｜Graph → Loop → Workflow → Agent / Skill、虚构可运行案例及 worktree / Docker 工具｜面向业务开发，非 Spring AI 框架实现",
+      "stars": 336,
+      "created": "2026-11-01T16:23:49Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "imsai-sh/fish-pocket",
+      "section": "agents",
+      "topic": "coding-agent",
+      "url": "https://github.com/imsai-sh/fish-pocket",
+      "description": "DSH iOS 移动版：在 iPhone 和 iPad 上本机运行 DeepSeek Harness，界面完全原生，不连电脑和服务器。Run DSH (DeepSeek Harness) natively on iPhone and iPad: no computer, no server.",
+      "stars": 270,
+      "created": "2026-11-05T01:10:38Z",
+      "language": "Swift",
+      "new": false
+    },
+    {
+      "repo": "Balanov/uncut",
+      "section": "agents",
+      "topic": "coding-agent",
+      "url": "https://github.com/Balanov/uncut",
+      "description": "The lossless, headless coding agent harness. One 7 MB static binary, four tools, plain stdin/stdout, no silent cuts.",
+      "stars": 267,
+      "created": "2026-11-01T17:19:30Z",
+      "language": "Go",
+      "new": false
+    },
+    {
+      "repo": "sksarvesh007/antiglaude",
+      "section": "agents",
+      "topic": "coding-agent",
+      "url": "https://github.com/sksarvesh007/antiglaude",
+      "description": "Production compatibility gateway bridge & observability platform connecting Claude Code CLI with Google Antigravity & Gemini inference models via Anthropic Messages API",
+      "stars": 171,
+      "created": "2026-11-03T19:49:06Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "bytesbay/pi-gpui",
+      "section": "agents",
+      "topic": "coding-agent",
+      "url": "https://github.com/bytesbay/pi-gpui",
+      "description": "A native GUI for the pi coding agent, built with Rust and GPUI. For macOS (Apple silicon) and Linux.",
+      "stars": 164,
+      "created": "2026-11-04T22:12:59Z",
+      "language": "Rust",
+      "new": false
+    },
+    {
+      "repo": "Bil0000/Hill-Climb",
+      "section": "agents",
+      "topic": "coding-agent",
+      "url": "https://github.com/Bil0000/Hill-Climb",
+      "description": "Make your coding agent prove \"done\". Each change is kept only if a locked test or benchmark scores it better. Claude Code and Codex skill.",
+      "stars": 136,
+      "created": "2026-11-02T20:15:32Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "chiang21fcb/hygieia",
+      "section": "agents",
+      "topic": "coding-agent",
+      "url": "https://github.com/chiang21fcb/hygieia",
+      "description": "Inspect, evaluate, and stress-test an existing semantic layer. Runs fully offline.",
+      "stars": 106,
+      "created": "2026-11-06T05:01:45Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "sshah03/recalc",
+      "section": "agents",
+      "topic": "coding-agent",
+      "url": "https://github.com/sshah03/recalc",
+      "description": "A spreadsheet you share with your AI agents: every cell can hold a value, a formula, a terminal command, or a Claude Code or Codex agent.",
+      "stars": 76,
+      "created": "2026-11-03T21:16:08Z",
+      "language": "Rust",
+      "new": false
+    },
+    {
+      "repo": "CrommaAI/crommacode",
+      "section": "agents",
+      "topic": "coding-agent",
+      "url": "https://github.com/CrommaAI/crommacode",
+      "description": "CrommaCode — the gamified IDE for coding agents. Watch Claude Code, Codex, Gemini CLI, Cursor CLI or OpenCode work as a game, and send a swarm of worker agents. Free for macOS, Windows and Linux.",
+      "stars": 52,
+      "created": "2026-11-12T04:02:00Z",
+      "language": null,
+      "new": true
+    },
+    {
+      "repo": "KKKKhazix/agent-autoloop",
+      "section": "automation",
+      "topic": "ai-agents",
+      "url": "https://github.com/KKKKhazix/agent-autoloop",
+      "description": "让你的命令行 Agent 在后台自己接活、自己跟进到底；平时不烦你，遇到拿不准的事才发卡片找你拍板。",
+      "stars": 5430,
+      "created": "2026-11-03T08:02:11Z",
+      "language": "TypeScript",
+      "new": false
+    },
+    {
+      "repo": "expo/exact",
+      "section": "automation",
+      "topic": "ai-agents",
+      "url": "https://github.com/expo/exact",
+      "description": "Write an app once. It runs natively on the web, macOS, iOS, and Linux, and an AI agent can build it, run it, see it, and test it on every one of them.",
+      "stars": 4232,
+      "created": "2026-11-02T01:29:01Z",
+      "language": "Rust",
+      "new": false
+    },
+    {
+      "repo": "voyager-so/vork",
+      "section": "automation",
+      "topic": "ai-agents",
+      "url": "https://github.com/voyager-so/vork",
+      "description": "Headless 3D and VFX engine for agents. Research preview.",
+      "stars": 1587,
+      "created": "2026-11-05T22:37:07Z",
+      "language": "Rust",
+      "new": false
+    },
+    {
+      "repo": "agentes-chat/agentes-chat",
+      "section": "automation",
+      "topic": "ai-agents",
+      "url": "https://github.com/agentes-chat/agentes-chat",
+      "description": "Open-source, self-hosted Slack alternative where your team and AI agents work together in channels and DMs. Agents run on Claude, ChatGPT/Codex, Gemini or Grok, with MCP tools, their own computer and browser, routines, memory and approvals. Web, desktop and phone apps. Docker Compose + Postgres. AGPL-3.0.",
+      "stars": 1456,
+      "created": "2026-11-09T00:50:28Z",
+      "language": "TypeScript",
+      "new": false
+    },
+    {
+      "repo": "JosssphZhou/poki",
+      "section": "automation",
+      "topic": "ai-agents",
+      "url": "https://github.com/JosssphZhou/poki",
+      "description": "Let AI agents operate a real iPhone. Local MCP server and agent, no jailbreak, no extra hardware.",
+      "stars": 1312,
+      "created": "2026-11-05T15:04:31Z",
+      "language": "Swift",
+      "new": false
+    },
+    {
+      "repo": "dabingfy-dot/solo-to-team-skills",
+      "section": "automation",
+      "topic": "ai-agents",
+      "url": "https://github.com/dabingfy-dot/solo-to-team-skills",
+      "description": "Human-led MAS toolkit: 16 roles, 6 group templates, four platform bundles, evidence-based review and handoff. 一人成队：一个人统筹多智能体协作。",
+      "stars": 892,
+      "created": "2026-11-07T01:36:28Z",
+      "language": "HTML",
+      "new": false
+    },
+    {
+      "repo": "alexeyw/lot-map",
+      "section": "automation",
+      "topic": "ai-agents",
+      "url": "https://github.com/alexeyw/lot-map",
+      "description": "A live map beside the chat that shows what Claude Code is doing: tool calls, model steps, hooks, skills and subagents light up as they happen. Local only, in 7 languages.",
+      "stars": 852,
+      "created": "2026-11-09T19:13:52Z",
+      "language": "TypeScript",
+      "new": false
+    },
+    {
+      "repo": "kubai087/kubai-icons",
+      "section": "automation",
+      "topic": "ai-agents",
+      "url": "https://github.com/kubai087/kubai-icons",
+      "description": "An agent skill that draws animated icons in one consistent style, for Claude Code, Codex and other coding agents. Comes with 2,600+ open-source icons for React, Vue and SVG, and a website to browse them.",
+      "stars": 852,
+      "created": "2026-11-03T09:52:39Z",
+      "language": "JavaScript",
+      "new": false
+    },
+    {
+      "repo": "Topkiflare74/ai--manus2.0",
+      "section": "automation",
+      "topic": "ai-agents",
+      "url": "https://github.com/Topkiflare74/ai--manus2.0",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "stars": 678,
+      "created": "2026-11-14T19:15:24Z",
+      "language": null,
+      "new": true
+    },
+    {
+      "repo": "topapothecarycanal/ai--manus2.0",
+      "section": "automation",
+      "topic": "ai-agents",
+      "url": "https://github.com/topapothecarycanal/ai--manus2.0",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "stars": 666,
+      "created": "2026-11-14T19:15:24Z",
+      "language": null,
+      "new": true
+    },
+    {
+      "repo": "serveroshq/panel",
+      "section": "laravel",
+      "topic": "laravel",
+      "url": "https://github.com/serveroshq/panel",
+      "description": "The open source ServerOS panel: one place to run the Linux servers you already own.",
+      "stars": 827,
+      "created": "2026-11-09T00:47:33Z",
+      "language": "PHP",
+      "new": false
+    },
+    {
+      "repo": "Balanov/uncut",
+      "section": "agents",
+      "track": "t3",
+      "topic": "agent-harness",
+      "url": "https://github.com/Balanov/uncut",
+      "description": "The lossless, headless coding agent harness. One 7 MB static binary, four tools, plain stdin/stdout, no silent cuts.",
+      "stars": 267,
+      "created": "2026-11-01T17:19:30Z",
+      "language": "Go",
+      "new": false
+    },
+    {
+      "repo": "sshah03/recalc",
+      "section": "agents",
+      "track": "t3",
+      "topic": "harness-engineering",
+      "url": "https://github.com/sshah03/recalc",
+      "description": "A spreadsheet you share with your AI agents: every cell can hold a value, a formula, a terminal command, or a Claude Code or Codex agent.",
+      "stars": 76,
+      "created": "2026-11-03T21:16:08Z",
+      "language": "Rust",
+      "new": false
+    }
+  ]
 }
