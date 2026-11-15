@@ -1,6 +1,6 @@
 {
  "track": "t3",
- "checked": "2026-11-14",
+ "checked": "2026-11-15",
  "articles": [
   {
    "id": "fullscript-bench",
@@ -1694,6 +1694,44 @@
    "ar": {
     "summary": "يقيس المدخلات الثابتة التي يرسلها الـ harness قبل أي عمل فعلي، بأن يطلب من 11 أداة سطر أوامر لوكلاء البرمجة الرد بكلمة «OK» في المستودع الصغير نفسه (الوسيط من 3 تشغيلات، بإصدارات محددة، أكتوبر 2026). وتراوحت مدخلات الاستدعاء الأول بين نحو 1.9 ألف رمز (Pi) ونحو 31.5 ألفًا (Claude Code) و31.8 ألفًا (Kiro)، أي فرق 16.8 ضعفًا؛ وجاءت Codex وOpenCode وCursor وQwen Code قرب 13–15 ألفًا. حُدّث في 5 نوفمبر 2026.",
     "why": "يدعم قياس العبء الثابت لكل harness بندًا مستقلًا للتكلفة في تقاريرنا، وإجراء هذا الاختبار ذي الكلمة الواحدة على إعداداتنا نحن، لأن الأرقام تتغير مع كل إصدار ومع قواعد كل فريق وخوادم MCP لديه."
+   }
+  },
+  {
+   "id": "task-coevolve",
+   "title": "Task-CoEvolve: Efficient Harness Optimization via Adaptive Validation Task Selection",
+   "source": "arXiv (The University of Tokyo)",
+   "url": "https://arxiv.org/abs/2608.20169",
+   "type": "paper",
+   "tags": [
+    "harness-optimization",
+    "evaluation",
+    "cost"
+   ],
+   "priority": "reference",
+   "summary": "Argues that the validation tasks used to tune a harness should change along with the harness: it samples more often the tasks where candidate harnesses disagree and estimates full-set scores from partial runs. The authors report the same final result as full-set search with 80% fewer evaluations, on text classification and Terminal-Bench 2.1. Code is promised but not yet published.",
+   "why": "If we tune squad-kit or azm-harness in phase 2, this is a way to cut the number of paid task runs per round without losing accuracy.",
+   "ar": {
+    "summary": "تحتج الورقة بأن مهام التحقق المستعملة لضبط الـ harness يجب أن تتغير مع الـ harness نفسه: فهي تختار أكثر المهامَ التي تختلف عليها النسخ المرشحة، وتقدّر درجة المجموعة كاملة من تشغيلات جزئية. ويذكر الباحثون أنهم بلغوا النتيجة النهائية نفسها التي يبلغها البحث على المجموعة كاملة بعدد تقييمات أقل بنسبة 80%، على تصنيف النصوص وTerminal-Bench 2.1. والشيفرة موعودة ولم تُنشر بعد.",
+    "why": "إذا ضبطنا squad-kit أو azm-harness في المرحلة الثانية، فهذه طريقة لتقليل عدد تشغيلات المهام المدفوعة في كل جولة دون خسارة الدقة."
+   }
+  },
+  {
+   "id": "agent-harness-survey",
+   "title": "Agent Harness for Large Language Model Agents: A Survey (and Awesome-Agent-Harness index)",
+   "source": "Preprints.org / GitHub (Gloriaameng/Awesome-Agent-Harness)",
+   "url": "https://github.com/Gloriaameng/Awesome-Agent-Harness",
+   "type": "list",
+   "tags": [
+    "harness",
+    "survey",
+    "benchmarks"
+   ],
+   "priority": "reference",
+   "summary": "A survey dedicated to agent harnesses, with a curated index of 34 evidence-coded systems, 30 harness benchmarks and 168 references (CC-BY-4.0). The index was last refreshed in mid-October 2026.",
+   "why": "A second checklist for the research hub: we compare its systems and benchmarks against our dossiers so nothing it lists is missed.",
+   "ar": {
+    "summary": "مسح علمي مخصص لأدوات الـ harness الخاصة بالوكلاء، مع فهرس منتقى يضم 34 نظامًا موثّقًا بالأدلة و30 مقياسًا للـ harness و168 مرجعًا (بترخيص CC-BY-4.0). وحُدّث الفهرس آخر مرة في منتصف أكتوبر 2026.",
+    "why": "قائمة تحقق ثانية لمركز البحث: نقارن أنظمتها ومقاييسها بملفاتنا حتى لا يفوتنا شيء مما تذكره."
    }
   }
  ]

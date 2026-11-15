@@ -1,6 +1,6 @@
 {
  "category": "eval",
- "checked": "2026-11-14",
+ "checked": "2026-11-15",
  "tools": [
   {
    "id": "harbor",
@@ -180,7 +180,8 @@
    ],
    "sources": [
     "https://aisi.gov.uk/blog/the-inspect-sandboxing-toolkit-scalable-and-secure-ai-agent-evaluations",
-    "https://codelabs.developers.google.com/codelabs/evaluate-agent-skills-using-open-source-frameworks"
+    "https://codelabs.developers.google.com/codelabs/evaluate-agent-skills-using-open-source-frameworks",
+    "https://github.com/UKGovernmentBEIS/inspect_ai/releases/tag/0.3.290"
    ],
    "ar": {
     "summary": "إطار تقييم مفتوح المصدر وصارم من معهد أمان الذكاء الاصطناعي البريطاني. المهام والحلول والمقيّمات تُكتب بلغة Python، وتعمل الوكلاء داخل بيئات عزل (Docker وKubernetes وأجهزة Proxmox الافتراضية)، وتغلّف إضافة Inspect SWE وكلاء البرمجة مثل Claude Code وCodex CLI وGemini CLI.",
@@ -210,7 +211,7 @@
     "role": "بديل أو مكمّل لـ Harbor في المهام غير البرمجية (أسئلة المستودع، مراجعة التصميم، أسئلة المعايير) وللعزل الصارم عبر إضافاته.",
     "pricing": "مجاني"
    },
-   "version": "0.3.289 (10 Nov 2026)"
+   "version": "0.3.290 (13 Nov 2026)"
   },
   {
    "id": "aws-harness-benchmarks",
@@ -2371,6 +2372,186 @@
     ],
     "role": "مرشّح لمرحلة «تحسين الـ harness تلقائيًا» اللاحقة، وأول أداة تعدّل إعدادات OpenCode وCodex مباشرة. وخريطته ذات الأجزاء الثمانية مفيدة لوصف squad-kit وazm-harness في «بطاقات الـ harness».",
     "pricing": "مجاني؛ تُدفع تكلفة استدعاءات النماذج"
+   }
+  },
+  {
+   "id": "superqode",
+   "name": "SuperQode",
+   "category": "eval",
+   "kind": "open-source",
+   "vendor": "Superagentic AI",
+   "repo": "SuperagenticAI/superqode",
+   "url": "https://superqode.dev",
+   "license": "Apache-2.0",
+   "pricing": "Free (you pay for the models or agent plans you connect)",
+   "status": "active",
+   "version": "2.31.17 (14 Nov 2026); macOS app public beta 0.4.10",
+   "tier": "deep",
+   "summary": "An open-source 'harness layer' for coding agents. It turns the harness (model, tools, memory, sandbox, approvals, workflow) into one YAML file kept in the repository, runs it on its own engine or through existing agents such as Codex, Claude, Copilot and ACP agents like OpenCode, and can evaluate, compare and gate changes to that harness.",
+   "how": "A HarnessSpec YAML file describes the harness. 'superqode harness eval --spec base.yaml --variant candidate.yaml --tasks tasks.yaml' runs both on the same task file and prints a scorecard; its 'seesaw gate' exits with an error if the candidate fails any task the baseline solved, so it can block a change in CI. 'harness test' gives a failure digest tagged by nine harness areas. Optimization is a separate step (its metaharness package or GEPA Omni) that keeps a sealed held-out check before a new spec is promoted. 'sq gauge' writes a release record (the open SuperGauge format) and 'sq gauge gate' checks it in CI.",
+   "features": [
+    "One portable HarnessSpec YAML per repository: runtime, model policy, tools, memory, search, sandbox, approvals and workflow",
+    "Drives existing agents: Codex, Claude, GitHub Copilot, Devin, Factory Droid and Kiro plans, any ACP agent (OpenCode, Goose, Cline, OpenHands), and runtimes such as DeepAgents, PydanticAI, Google ADK and OpenAI Agents SDK",
+    "Baseline-versus-candidate evaluation on a task file, with a 'seesaw' regression gate that fails when a candidate loses a task",
+    "Failure digest that tags each failure with one of nine harness areas (model selection, context, memory, tools, execution, evaluation, control and safety, observability and more)",
+    "Optional optimizers (metaharness, GEPA Omni) with a sealed held-out gate before promotion",
+    "SuperGauge release records and a CI gate command ('sq gauge gate --level L2')",
+    "Headless mode ('superqode --print'), a terminal UI, a macOS app, and an A2A server mode"
+   ],
+   "strengths": [
+    "Closest open match found so far to our planned per-team YAML plus CI regression gate, and it already wraps many of the harnesses we want to compare",
+    "Apache-2.0, very active (Python engine 2.31.17 released 14 Nov 2026) and documented",
+    "Separates run, measure and optimize clearly, and never edits the spec during evaluation, which matches our rule that scoring must not change the subject"
+   ],
+   "weaknesses": [
+    "Built as a single-developer workbench (terminal and Mac app), not a shared service that runs many teams' suites in parallel",
+    "Agent tools run with the host user's access by default; Docker isolation is optional, so it is not a sandbox on its own",
+    "Very fast release pace from one vendor, so behaviour and file formats may change often"
+   ],
+   "gaps": [
+    "No mining of tasks with hidden tests from our repositories and tickets",
+    "No squad-kit or azm-harness route and no standards-compliance score from Track 1",
+    "No harness x model x team matrix or cross-team reports"
+   ],
+   "fit": {
+    "verdict": "inspire",
+    "role": "Prior art for our per-team suite file and CI regression gate. Pilot its eval and seesaw gate on one team's tasks, borrow the HarnessSpec and SuperGauge record ideas for our config and reports, and keep Harbor as the runner for scale and sandboxes."
+   },
+   "scores": {
+    "fit": 4,
+    "maturity": 3,
+    "openness": 4,
+    "agnostic": 4,
+    "config": 5,
+    "measure": 4,
+    "safety": 3
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/SuperagenticAI/superqode"
+    ],
+    [
+     "Website",
+     "https://superqode.dev"
+    ],
+    [
+     "Launch post (0.2.0, Jun 2026)",
+     "https://shashikant86.substack.com/p/superqode-020-a-harness-engineering"
+    ]
+   ],
+   "sources": [
+    "https://github.com/SuperagenticAI/superqode",
+    "https://github.com/SuperagenticAI/superqode/blob/main/docs/advanced/harness-optimization.md",
+    "https://shashikant86.substack.com/p/superqode-020-a-harness-engineering"
+   ],
+   "ar": {
+    "summary": "«طبقة harness» مفتوحة المصدر لوكلاء البرمجة. تحوّل الـ harness (النموذج والأدوات والذاكرة وبيئة العزل والموافقات وسير العمل) إلى ملف YAML واحد يُحفظ في المستودع، وتشغّله بمحركها الخاص أو عبر وكلاء موجودين مثل Codex وClaude وCopilot ووكلاء ACP مثل OpenCode، وتستطيع تقييم التغييرات على ذلك الـ harness ومقارنتها وإيقافها عند البوابة.",
+    "how": "يصف ملف HarnessSpec بصيغة YAML الـ harness. ويشغّل الأمر 'superqode harness eval --spec base.yaml --variant candidate.yaml --tasks tasks.yaml' النسختين على ملف المهام نفسه ويعرض بطاقة نتائج؛ و«بوابة الأرجوحة» فيه تنتهي بخطأ إذا فشلت النسخة المرشحة في أي مهمة نجحت فيها النسخة الأساسية، فيمكنها منع التغيير في CI. ويعطي 'harness test' ملخص أعطال مصنّفًا في تسعة مجالات للـ harness. والتحسين خطوة منفصلة (حزمة metaharness أو GEPA Omni) تُبقي فحصًا محجوزًا على مهام لم تُستعمل في التحسين قبل اعتماد أي ملف جديد. ويكتب 'sq gauge' سجلّ إصدار (بصيغة SuperGauge المفتوحة)، ويفحصه 'sq gauge gate' في CI.",
+    "features": [
+     "ملف HarnessSpec واحد بصيغة YAML لكل مستودع: بيئة التشغيل وسياسة النماذج والأدوات والذاكرة والبحث وبيئة العزل والموافقات وسير العمل",
+     "يشغّل وكلاء موجودين: اشتراكات Codex وClaude وGitHub Copilot وDevin وFactory Droid وKiro، وأي وكيل ACP ‏(OpenCode وGoose وCline وOpenHands)، وبيئات مثل DeepAgents وPydanticAI وGoogle ADK وOpenAI Agents SDK",
+     "تقييم النسخة الأساسية مقابل المرشحة على ملف مهام، مع بوابة تراجع «الأرجوحة» تفشل إذا خسرت النسخة المرشحة مهمة",
+     "ملخص أعطال يصنّف كل عطل في واحد من تسعة مجالات للـ harness (اختيار النموذج والسياق والذاكرة والأدوات والتنفيذ والتقييم والتحكم والأمان والمراقبة وغيرها)",
+     "أدوات تحسين اختيارية (metaharness وGEPA Omni) مع بوابة على مهام محجوزة قبل الاعتماد",
+     "سجلات إصدار SuperGauge وأمر بوابة لـ CI ‏('sq gauge gate --level L2')",
+     "وضع دون واجهة ('superqode --print')، وواجهة طرفية، وتطبيق macOS، ووضع خادم A2A"
+    ],
+    "strengths": [
+     "أقرب أداة مفتوحة وجدناها حتى الآن لما نخطط له من ملف YAML لكل فريق وبوابة تراجع في CI، وهي تغلّف فعلًا كثيرًا من أدوات الـ harness التي نريد مقارنتها",
+     "بترخيص Apache-2.0، ونشطة جدًا (صدر المحرك 2.31.17 في 14 نوفمبر 2026)، وموثّقة",
+     "تفصل بوضوح بين التشغيل والقياس والتحسين، ولا تعدّل الملف أثناء التقييم، وهذا يوافق قاعدتنا بأن التقييم لا يغيّر ما يُقيَّم"
+    ],
+    "weaknesses": [
+     "مبنية منضدةَ عمل لمطوّر واحد (واجهة طرفية وتطبيق Mac)، لا خدمة مشتركة تشغّل مجموعات مهام فرق كثيرة بالتوازي",
+     "تعمل أدوات الوكيل افتراضيًا بصلاحيات مستخدم الجهاز؛ وعزل Docker اختياري، فهي ليست بيئة عزل بذاتها",
+     "وتيرة إصدارات سريعة جدًا من مورّد واحد، فقد يتغير السلوك وصيغ الملفات كثيرًا"
+    ],
+    "gaps": [
+     "لا تستخرج مهامًا باختبارات مخفية من مستودعاتنا وتذاكرنا",
+     "لا مسار لـ squad-kit أو azm-harness، ولا درجة للالتزام بمعايير المسار 1",
+     "لا مصفوفة harness × نموذج × فريق ولا تقارير عبر الفرق"
+    ],
+    "role": "عمل سابق لملف المهام لكل فريق وبوابة التراجع في CI اللذين نخطط لهما. نجرّب تقييمها وبوابة الأرجوحة على مهام فريق واحد، ونستعير فكرتي HarnessSpec وسجلّ SuperGauge للإعدادات والتقارير عندنا، ونُبقي Harbor مشغّلًا للحجم الكبير وبيئات العزل.",
+    "pricing": "مجانية (تدفع ثمن النماذج أو اشتراكات الوكلاء التي توصلها)"
+   }
+  },
+  {
+   "id": "headless-harness-bench",
+   "name": "headless-harness-bench",
+   "category": "eval",
+   "kind": "open-source",
+   "vendor": "Independent developer (aaronjmars)",
+   "repo": "aaronjmars/headless-harness-bench",
+   "url": "https://github.com/aaronjmars/headless-harness-bench",
+   "license": "No license file in the repository",
+   "pricing": "Free to read",
+   "status": "beta",
+   "version": "No tagged release (last commit 10 Nov 2026; last scored runs Oct 2026)",
+   "tier": "brief",
+   "summary": "A public study that scores nine coding-agent harnesses on one job: being started and controlled by another program (a control plane) rather than by a person at a keyboard. It combines a source-code audit with live tests of that control contract and one small golden task with cost and time.",
+   "how": "Tier 1 audits each harness's source against 42 criteria in 8 weighted areas (total out of 81, with file and line citations). Tier 2 runs live driver-contract tests (start as a child process, pass a prompt, tool allowlist and system-prompt addition, read structured output, scope secrets, kill on timeout; out of 21) and a golden task (add --version to a CLI) recording tokens, USD and wall time, using the same model for 7 of the 9 harnesses. Each run is a manifest with samples, checked by a validator in CI.",
+   "features": [
+    "Nine harnesses: omp (Oh My Pi), pi, fx, opencode, DeepSeek Harness, crush, nanocodex, and the flue and eve frameworks",
+    "Static source audit: 42 criteria, weighted total out of 81, stated noise of about +/-3",
+    "Live driver-contract tests (out of 21) plus a golden task with tokens, cost and time",
+    "Per-run manifests, generated results and an evidence validator in CI"
+   ],
+   "strengths": [
+    "The only study found that tests exactly what our harness adapters need: can a harness be driven headless, with structured output, scoped secrets and clean timeouts",
+    "Honest about noise: verdicts stay 'snapshot' until repeated runs exist"
+   ],
+   "weaknesses": [
+    "One developer, no license file, no release; results are a snapshot (Tier 1 top scores: omp 66.1, DeepSeek Harness 65.6 out of 81)",
+    "Only one tiny golden task, so it says little about code quality on real work"
+   ],
+   "gaps": [
+    "Does not cover Claude Code, Codex CLI, squad-kit or azm-harness; no hidden-test tasks or standards score"
+   ],
+   "fit": {
+    "verdict": "inspire",
+    "role": "Use its driver-contract checklist (child process, prompt and tool allowlist in, structured output out, scoped secrets, timeout kill) as the acceptance test for each harness adapter we write. Do not reuse the code (no license)."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 2,
+    "openness": 2,
+    "agnostic": 4,
+    "config": 2,
+    "measure": 3,
+    "safety": 3
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/aaronjmars/headless-harness-bench"
+    ]
+   ],
+   "sources": [
+    "https://github.com/aaronjmars/headless-harness-bench"
+   ],
+   "ar": {
+    "summary": "دراسة عامة تقيّم تسع أدوات harness لوكلاء البرمجة في مهمة واحدة: أن يشغّلها برنامج آخر (طبقة تحكم) ويتحكم فيها، لا شخص أمام لوحة المفاتيح. وتجمع بين تدقيق في الشيفرة المصدرية واختبارات حية لعقد التحكم هذا ومهمة ذهبية صغيرة واحدة مع التكلفة والوقت.",
+    "how": "المستوى الأول يدقّق شيفرة كل harness وفق 42 معيارًا في 8 مجالات موزونة (المجموع من 81، مع الإشارة إلى الملف والسطر). والمستوى الثاني يشغّل اختبارات حية لعقد التحكم (التشغيل عمليةً فرعية، وتمرير التعليمات وقائمة الأدوات المسموح بها وإضافة إلى تعليمات النظام، وقراءة المخرجات المنظَّمة، وحصر الأسرار، والإيقاف عند انتهاء المهلة؛ من 21) ومهمة ذهبية (إضافة --version إلى أداة سطر أوامر) تسجّل الرموز والتكلفة بالدولار والوقت، بالنموذج نفسه لسبع من الأدوات التسع. وكل تشغيل ملف وصف مع عيّناته، يفحصه مدقّق في CI.",
+    "features": [
+     "تسع أدوات harness: ‏omp ‏(Oh My Pi) وpi وfx وopencode وDeepSeek Harness وcrush وnanocodex، وإطارا flue وeve",
+     "تدقيق ثابت للشيفرة: 42 معيارًا، ومجموع موزون من 81، مع ضوضاء معلنة نحو ±3",
+     "اختبارات حية لعقد التحكم (من 21) ومهمة ذهبية مع الرموز والتكلفة والوقت",
+     "ملف وصف لكل تشغيل، ونتائج مولّدة آليًا، ومدقّق للأدلة في CI"
+    ],
+    "strengths": [
+     "الدراسة الوحيدة التي وجدناها تختبر بالضبط ما تحتاجه موصّلات الـ harness عندنا: هل يمكن تشغيل الأداة دون واجهة، بمخرجات منظَّمة وأسرار محصورة وإيقاف نظيف عند المهلة",
+     "صريحة بشأن الضوضاء: تبقى الأحكام «لقطة» حتى تتوفر تشغيلات متكررة"
+    ],
+    "weaknesses": [
+     "مطوّر واحد، بلا ملف ترخيص ولا إصدار؛ والنتائج لقطة (أعلى درجات المستوى الأول: omp ‏66.1، وDeepSeek Harness ‏65.6 من 81)",
+     "مهمة ذهبية صغيرة واحدة فقط، فلا تقول الكثير عن جودة الشيفرة في العمل الحقيقي"
+    ],
+    "gaps": [
+     "لا تغطي Claude Code أو Codex CLI أو squad-kit أو azm-harness؛ ولا مهام باختبارات مخفية ولا درجة للمعايير"
+    ],
+    "role": "نستعمل قائمة فحص عقد التحكم فيها (عملية فرعية، وإدخال التعليمات وقائمة الأدوات، وإخراج منظَّم، وأسرار محصورة، وإيقاف عند المهلة) اختبارَ قبول لكل موصّل harness نكتبه. ولا نعيد استعمال الشيفرة (لا ترخيص لها).",
+    "pricing": "مجاني للاطلاع"
    }
   }
  ]

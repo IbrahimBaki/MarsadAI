@@ -1,6 +1,6 @@
 {
  "track": "t3",
- "checked": "2026-11-14",
+ "checked": "2026-11-15",
  "goal": {
   "en": "Build one place where Azm can run any harness (squad-kit, azm-harness, Claude Code, others) on the same real Azm tasks, in isolation, and get a clear answer: which harness, with which model, gives the best quality for the cost, and does it follow our standards?",
   "ar": "بناء مكان واحد تشغّل فيه عزم أي harness (مثل squad-kit وazm-harness وClaude Code وغيرها) على المهام الحقيقية نفسها من مشاريع عزم، في بيئة معزولة، لتحصل على إجابة واضحة: أي harness، مع أي نموذج، يعطي أفضل جودة مقابل التكلفة، وهل يلتزم بمعاييرنا؟"
@@ -701,8 +701,8 @@
    },
    "decision": "adopt",
    "plan": {
-    "en": "Use Harbor. It already runs Claude Code, Codex CLI, OpenHands and others in containers, locally or in cloud sandboxes, and accepts our own tasks. We write one adapter per Azm harness. Use Inspect AI only for non-code tasks (spec quality, reviews). Exgentic is a smaller 'any agent on any benchmark' framework that already runs Claude Code, Codex CLI and Gemini CLI; keep it as a cross-check, not a replacement. New serious alternative: AgentCompass (Shanghai AI Lab, Apache-2.0, v1.1 Nov 2026) separates model, benchmark, harness and sandbox, already runs Claude Code and Codex, and loads Harbor-format tasks, so our tasks stay portable; we will run a few through both to check the scores agree. Prior art found (Nov 2026): UiPath's Coder Eval (Apache-2.0) already runs Claude Code, Codex, OpenCode, Pi and Antigravity on YAML tasks, records cost per tool call and ships a GitHub Action as a CI gate. It does not replace Harbor's scale or sandboxes, but it covers the per-team suite file and CI gate we planned to build, so we pilot it before writing our own. Prior art found (Nov 2026): Microsoft open-sourced Scope (MIT, research preview), which compares agent setups (MCP servers, skills, extensions) on the same scenario with an AI judge that checks gates and criteria and reports tokens and time. It supports only Copilot and Claude Code today and is not a sandbox, so it does not replace Harbor, but its profiles and gates-plus-criteria judging cover part of the report we planned; we pilot it on a few scenarios first.",
-    "ar": "نستخدم Harbor؛ فهو يشغّل بالفعل Claude Code وCodex CLI وOpenHands وغيرها داخل حاويات، محليًا أو في بيئات سحابية، ويقبل مهامنا الخاصة. نكتب موصّلًا واحدًا لكل harness من عزم. ونستخدم Inspect AI للمهام غير البرمجية فقط (جودة المواصفات والمراجعات). وExgentic إطار أصغر من نوع «أي وكيل على أي مقياس» يشغّل فعلًا Claude Code وCodex CLI وGemini CLI؛ نبقيه للتحقق المتقاطع لا بديلًا. بديل جادّ جديد: AgentCompass ‏(مختبر شنغهاي للذكاء الاصطناعي، Apache-2.0، الإصدار 1.1 في نوفمبر 2026) يفصل النموذج والمقياس والـ harness وبيئة العزل، ويشغّل فعلًا Claude Code وCodex، ويحمّل المهام بصيغة Harbor، فتبقى مهامنا قابلة للنقل؛ وسنشغّل بعضها عبر الاثنين للتأكد من تطابق النتائج. عمل سابق وُجد في نوفمبر 2026: يشغّل Coder Eval من UiPath ‏(Apache-2.0) فعلًا Claude Code وCodex وOpenCode وPi وAntigravity على مهام YAML، ويسجّل تكلفة كل استدعاء أداة، ويأتي بإجراء GitHub بوصفه بوابة CI. لا يحل محل Harbor في الحجم وبيئات العزل، لكنه يغطي ملف المهام لكل فريق وبوابة CI اللذين خططنا لبنائهما، فنجرّبه قبل أن نكتب نسختنا. عمل سابق جديد (نوفمبر 2026): فتحت Microsoft مصدر Scope ‏(MIT، معاينة بحثية)، وهي تقارن إعدادات الوكيل (خوادم MCP والمهارات والإضافات) على السيناريو نفسه بحَكَم آلي يفحص البوابات والمعايير ويعرض الرموز والوقت. لا تدعم اليوم إلا Copilot وClaude Code وليست بيئة عزل، فلا تحل محل Harbor، لكن ملفات التعريف والتحكيم بالبوابات والمعايير فيها تغطي جزءًا من التقرير الذي خططنا له؛ لذا نجرّبها أولًا على بضعة سيناريوهات."
+    "en": "Use Harbor. It already runs Claude Code, Codex CLI, OpenHands and others in containers, locally or in cloud sandboxes, and accepts our own tasks. We write one adapter per Azm harness. Use Inspect AI only for non-code tasks (spec quality, reviews). Exgentic is a smaller 'any agent on any benchmark' framework that already runs Claude Code, Codex CLI and Gemini CLI; keep it as a cross-check, not a replacement. New serious alternative: AgentCompass (Shanghai AI Lab, Apache-2.0, v1.1 Nov 2026) separates model, benchmark, harness and sandbox, already runs Claude Code and Codex, and loads Harbor-format tasks, so our tasks stay portable; we will run a few through both to check the scores agree. Prior art found (Nov 2026): UiPath's Coder Eval (Apache-2.0) already runs Claude Code, Codex, OpenCode, Pi and Antigravity on YAML tasks, records cost per tool call and ships a GitHub Action as a CI gate. It does not replace Harbor's scale or sandboxes, but it covers the per-team suite file and CI gate we planned to build, so we pilot it before writing our own. Prior art found (Nov 2026): Microsoft open-sourced Scope (MIT, research preview), which compares agent setups (MCP servers, skills, extensions) on the same scenario with an AI judge that checks gates and criteria and reports tokens and time. It supports only Copilot and Claude Code today and is not a sandbox, so it does not replace Harbor, but its profiles and gates-plus-criteria judging cover part of the report we planned; we pilot it on a few scenarios first. Prior art found (Nov 2026): SuperQode (Apache-2.0) keeps a harness as one YAML file in the repo, drives Codex, Claude, Copilot and ACP agents, compares a candidate harness with the baseline on a task file, and fails CI when the candidate loses any task. It is a one-developer workbench without strong isolation, so it does not replace Harbor, but it covers much of the per-team suite file and regression gate we planned; we pilot it on one team before building ours. For our adapters, the headless-harness-bench checklist (start as a child, structured output, scoped secrets, timeout kill) becomes the acceptance test.",
+    "ar": "نستخدم Harbor؛ فهو يشغّل بالفعل Claude Code وCodex CLI وOpenHands وغيرها داخل حاويات، محليًا أو في بيئات سحابية، ويقبل مهامنا الخاصة. نكتب موصّلًا واحدًا لكل harness من عزم. ونستخدم Inspect AI للمهام غير البرمجية فقط (جودة المواصفات والمراجعات). وExgentic إطار أصغر من نوع «أي وكيل على أي مقياس» يشغّل فعلًا Claude Code وCodex CLI وGemini CLI؛ نبقيه للتحقق المتقاطع لا بديلًا. بديل جادّ جديد: AgentCompass ‏(مختبر شنغهاي للذكاء الاصطناعي، Apache-2.0، الإصدار 1.1 في نوفمبر 2026) يفصل النموذج والمقياس والـ harness وبيئة العزل، ويشغّل فعلًا Claude Code وCodex، ويحمّل المهام بصيغة Harbor، فتبقى مهامنا قابلة للنقل؛ وسنشغّل بعضها عبر الاثنين للتأكد من تطابق النتائج. عمل سابق وُجد في نوفمبر 2026: يشغّل Coder Eval من UiPath ‏(Apache-2.0) فعلًا Claude Code وCodex وOpenCode وPi وAntigravity على مهام YAML، ويسجّل تكلفة كل استدعاء أداة، ويأتي بإجراء GitHub بوصفه بوابة CI. لا يحل محل Harbor في الحجم وبيئات العزل، لكنه يغطي ملف المهام لكل فريق وبوابة CI اللذين خططنا لبنائهما، فنجرّبه قبل أن نكتب نسختنا. عمل سابق جديد (نوفمبر 2026): فتحت Microsoft مصدر Scope ‏(MIT، معاينة بحثية)، وهي تقارن إعدادات الوكيل (خوادم MCP والمهارات والإضافات) على السيناريو نفسه بحَكَم آلي يفحص البوابات والمعايير ويعرض الرموز والوقت. لا تدعم اليوم إلا Copilot وClaude Code وليست بيئة عزل، فلا تحل محل Harbor، لكن ملفات التعريف والتحكيم بالبوابات والمعايير فيها تغطي جزءًا من التقرير الذي خططنا له؛ لذا نجرّبها أولًا على بضعة سيناريوهات. عمل سابق وُجد في نوفمبر 2026: تحفظ SuperQode ‏(Apache-2.0) الـ harness ملفَّ YAML واحدًا في المستودع، وتشغّل Codex وClaude وCopilot ووكلاء ACP، وتقارن الـ harness المرشح بالأساسي على ملف مهام، وتُفشل CI إذا خسر المرشح أي مهمة. وهي منضدة عمل لمطوّر واحد بلا عزل قوي، فلا تحل محل Harbor، لكنها تغطي جزءًا كبيرًا من ملف المهام لكل فريق وبوابة التراجع اللذين خططنا لهما؛ لذا نجرّبها مع فريق واحد قبل بناء نسختنا. أما موصّلاتنا، فتصبح قائمة فحص headless-harness-bench ‏(التشغيل عمليةً فرعية، والمخرجات المنظَّمة، وحصر الأسرار، والإيقاف عند المهلة) اختبارَ القبول لها."
    },
    "pick": [
     "harbor"
@@ -715,7 +715,9 @@
     "exgentic",
     "agentcompass",
     "coder-eval",
-    "microsoft-scope"
+    "microsoft-scope",
+    "superqode",
+    "headless-harness-bench"
    ],
    "compare": {
     "tools": [
@@ -725,7 +727,8 @@
      "runloop-benchmarks",
      "agentcompass",
      "coder-eval",
-     "microsoft-scope"
+     "microsoft-scope",
+     "superqode"
     ],
     "rows": [
      {
@@ -761,6 +764,10 @@
        {
         "en": "Open source (MIT), research preview",
         "ar": "مفتوح المصدر (MIT)، معاينة بحثية"
+       },
+       {
+        "en": "Open source (Apache-2.0)",
+        "ar": "مفتوح المصدر (Apache-2.0)"
        }
       ]
      },
@@ -797,6 +804,10 @@
        {
         "en": "Copilot and Claude Code today; Codex and OpenCode planned",
         "ar": "Copilot وClaude Code اليوم؛ وCodex وOpenCode مخطط لهما"
+       },
+       {
+        "en": "Yes: Codex, Claude, Copilot and any ACP agent such as OpenCode",
+        "ar": "نعم: Codex وClaude وCopilot وأي وكيل ACP مثل OpenCode"
        }
       ]
      },
@@ -833,6 +844,10 @@
        {
         "en": "Docker workers; docs say it is not a security sandbox",
         "ar": "وحدات عمل Docker؛ ويذكر التوثيق أنها ليست بيئة عزل آمنة"
+       },
+       {
+        "en": "Host by default; optional Docker",
+        "ar": "الجهاز نفسه افتراضيًا؛ وDocker اختياري"
        }
       ]
      },
@@ -869,6 +884,10 @@
        {
         "en": "AI judge with gates (Requirements, Build, Test) and criteria",
         "ar": "حَكَم آلي ببوابات (المتطلبات، البناء، الاختبار) ومعايير"
+       },
+       {
+        "en": "Task scorecard, baseline vs candidate, regression gate",
+        "ar": "بطاقة نتائج للمهام، والأساسية مقابل المرشحة، وبوابة تراجع"
        }
       ]
      },
@@ -893,6 +912,10 @@
        {
         "en": "Usage-based",
         "ar": "حسب الاستخدام"
+       },
+       {
+        "en": "Free",
+        "ar": "مجاني"
        },
        {
         "en": "Free",
@@ -941,6 +964,10 @@
        {
         "en": "Comparing agent setups (MCP, skills, extensions) side by side",
         "ar": "مقارنة إعدادات الوكيل (MCP والمهارات والإضافات) جنبًا إلى جنب"
+       },
+       {
+        "en": "Gating changes to one repo's harness file in CI",
+        "ar": "إيقاف التغييرات على ملف الـ harness لمستودع واحد عند بوابة CI"
        }
       ]
      }
@@ -1795,7 +1822,8 @@
     "skillopt",
     "harnessflow",
     "starharness",
-    "harness2"
+    "harness2",
+    "superqode"
    ],
    "compare": {
     "tools": [

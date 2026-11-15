@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14",
+ "updated": "2026-11-15",
  "sources": [
   {
    "name": "Picrew/awesome-agent-harness",
@@ -8221,6 +8221,61 @@
    "summary": "Research framework that improves an agent's harness during a task (prompts, memory, skills, sub-agents and more) using OpenCode or Codex as the executor; Apache-2.0.",
    "ar": {
     "summary": "إطار بحثي يحسّن الـ harness الخاص بالوكيل أثناء المهمة (التعليمات والذاكرة والمهارات والوكلاء الفرعيون وغيرها) مستخدمًا OpenCode أو Codex منفّذًا؛ بترخيص Apache-2.0.",
+    "group": "التقييم والمقاييس"
+   }
+  },
+  {
+   "stars": null,
+   "tags": [
+    "harness-evaluation",
+    "regression-gate",
+    "yaml"
+   ],
+   "lists": [],
+   "name": "SuperQode",
+   "repo": "SuperagenticAI/superqode",
+   "url": "https://github.com/SuperagenticAI/superqode",
+   "category": "eval",
+   "group": "Evaluation & Benchmarks",
+   "summary": "Harness layer for coding agents: one YAML harness spec per repo, drives Codex, Claude, Copilot and ACP agents, compares harness variants and gates regressions in CI; Apache-2.0.",
+   "ar": {
+    "summary": "طبقة harness لوكلاء البرمجة: ملف YAML واحد لكل مستودع، وتشغّل Codex وClaude وCopilot ووكلاء ACP، وتقارن نسخ الـ harness وتوقف التراجعات في CI؛ بترخيص Apache-2.0.",
+    "group": "التقييم والمقاييس"
+   }
+  },
+  {
+   "stars": null,
+   "tags": [
+    "harness-evaluation",
+    "headless"
+   ],
+   "lists": [],
+   "name": "headless-harness-bench",
+   "repo": "aaronjmars/headless-harness-bench",
+   "url": "https://github.com/aaronjmars/headless-harness-bench",
+   "category": "eval",
+   "group": "Evaluation & Benchmarks",
+   "summary": "Scores nine coding-agent harnesses on being driven headless by a control plane: source audit out of 81, live contract tests out of 21, and a golden task with cost and time; no license file.",
+   "ar": {
+    "summary": "يقيّم تسع أدوات harness لوكلاء البرمجة في قابلية تشغيلها دون واجهة عبر طبقة تحكم: تدقيق للشيفرة من 81، واختبارات حية للعقد من 21، ومهمة ذهبية مع التكلفة والوقت؛ بلا ملف ترخيص.",
+    "group": "التقييم والمقاييس"
+   }
+  },
+  {
+   "stars": null,
+   "tags": [
+    "survey",
+    "harness"
+   ],
+   "lists": [],
+   "name": "Awesome-Agent-Harness (survey index)",
+   "repo": "Gloriaameng/Awesome-Agent-Harness",
+   "url": "https://github.com/Gloriaameng/Awesome-Agent-Harness",
+   "category": "eval",
+   "group": "Evaluation & Benchmarks",
+   "summary": "Repository for the survey 'Agent Harness for Large Language Model Agents': 34 evidence-coded systems, 30 harness benchmarks, 168 references; CC-BY-4.0.",
+   "ar": {
+    "summary": "مستودع المسح العلمي «Agent Harness for Large Language Model Agents»: ‏34 نظامًا موثّقًا بالأدلة، و30 مقياسًا للـ harness، و168 مرجعًا؛ بترخيص CC-BY-4.0.",
     "group": "التقييم والمقاييس"
    }
   }
