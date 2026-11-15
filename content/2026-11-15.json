@@ -1,0 +1,316 @@
+{
+ "date": "2026-11-15",
+ "headline": "أداة SuperQode المفتوحة تجعل إعداد وكيل البرمجة ملف YAML في المستودع وتوقف أي تغيير يُضعف نتائجه في CI، ودراسة جديدة تقيس أي الوكلاء يصلح للتشغيل الآلي دون واجهة، وLaravel 13.41 يضيف حدث MigrationFailed ويشدّد TokenGuard.",
+ "headline_en": "The open tool SuperQode turns a coding agent's setup into a YAML file in the repo and blocks any change that weakens its results in CI, a new study measures which agents can be driven headless, and Laravel 13.41 adds a MigrationFailed event and tightens TokenGuard.",
+ "items": [
+  {
+   "id": "superqode-harness-layer",
+   "section": "agents",
+   "kind": "tool",
+   "title": "SuperQode: ملف YAML واحد يصف إعداد وكيل البرمجة، مع تقييم وبوابة تراجع في CI",
+   "summary": "SuperQode أداة مفتوحة المصدر (Apache-2.0) تحوّل إعداد وكيل البرمجة، أي النموذج والأدوات والذاكرة والموافقات وسير العمل، إلى ملف YAML يُحفظ في المستودع، وتشغّله بمحركها أو عبر Codex وClaude وCopilot ووكلاء ACP مثل OpenCode. صدر محركها 2.31.17 في 14 نوفمبر 2026.",
+   "why": "للفرق التي تعدّل تعليمات وكيلها وأدواته باستمرار: يمكن تشغيل الإعداد القديم والجديد على قائمة المهام نفسها ومنع الدمج في CI إذا فشل الجديد في مهمة كان القديم ينجح فيها.",
+   "about": "تعامل SuperQode إعداد الوكيل (ما تسميه harness) بوصفه ملفًا في المستودع يمكن قراءته ومراجعته وإصدار نسخ منه، بدل أن يبقى مخفيًا داخل أداة المورّد. يصف ملف HarnessSpec بيئة التشغيل وسياسة النماذج والأدوات والذاكرة والبحث وبيئة العزل والموافقات.\n\nيقارن الأمر harness eval بين ملف أساسي وملف مرشح على ملف مهام واحد، وينتهي بخطأ إذا خسر المرشح أي مهمة نجح فيها الأساسي، فيصلح بوابةً في CI. ويعطي harness test ملخص أعطال مصنّفًا في تسعة مجالات، ويكتب sq gauge سجلّ إصدار يمكن فحصه في CI.\n\nتعمل الأداة من الطرفية أو عبر تطبيق macOS تجريبي (0.4.10). تنبيه: تعمل أدوات الوكيل افتراضيًا بصلاحيات مستخدم الجهاز، وعزل Docker اختياري، والإصدارات سريعة جدًا فقد تتغير الصيغ.",
+   "features": [
+    "ملف HarnessSpec بصيغة YAML لكل مستودع",
+    "تشغيل Codex وClaude وCopilot وأي وكيل ACP من الأداة نفسها",
+    "مقارنة الإعداد الأساسي بالمرشح مع بوابة تراجع",
+    "ملخص أعطال مصنّف حسب مجالات الإعداد",
+    "وضع دون واجهة عبر superqode --print"
+   ],
+   "install": [
+    {
+     "label": "التثبيت عبر uv",
+     "cmd": "uv tool install --python 3.13 superqode"
+    }
+   ],
+   "usage": [
+    "superqode --print \"fix the failing test and summarize the change\"",
+    "superqode harness eval --spec base.yaml --variant candidate.yaml --tasks tasks.yaml"
+   ],
+   "requirements": [
+    "Python 3.13 عبر uv، أو تطبيق macOS على Apple Silicon بنظام macOS 14 أو أحدث"
+   ],
+   "repo": "SuperagenticAI/superqode",
+   "pricing": {
+    "model": "oss",
+    "note": "مجانية؛ تدفع ثمن النماذج أو اشتراكات الوكلاء التي توصلها"
+   },
+   "links": [
+    {
+     "label": "المستودع",
+     "url": "https://github.com/SuperagenticAI/superqode"
+    },
+    {
+     "label": "دليل التقييم والتحسين",
+     "url": "https://github.com/SuperagenticAI/superqode/blob/main/docs/advanced/harness-optimization.md"
+    }
+   ],
+   "url": "https://github.com/SuperagenticAI/superqode",
+   "source": "github.com",
+   "importance": 3,
+   "tags": [
+    "coding-agents",
+    "harness",
+    "evaluation",
+    "ci"
+   ],
+   "en": {
+    "title": "SuperQode: one YAML file that describes a coding agent's setup, with evaluation and a CI regression gate",
+    "summary": "SuperQode is an open-source tool (Apache-2.0) that turns a coding agent's setup, meaning its model, tools, memory, approvals and workflow, into a YAML file kept in the repository, and runs it on its own engine or through Codex, Claude, Copilot and ACP agents such as OpenCode. Its engine 2.31.17 shipped on 14 Nov 2026.",
+    "why": "For teams that keep changing their agent's instructions and tools: run the old and new setup on the same task list and block the merge in CI if the new one fails a task the old one passed.",
+    "about": "SuperQode treats an agent's setup (what it calls a harness) as a file in the repository that can be read, reviewed and versioned, instead of something hidden inside a vendor's tool. A HarnessSpec file describes the runtime, model policy, tools, memory, search, sandbox and approvals.\n\nThe harness eval command compares a baseline file with a candidate on one task file and exits with an error if the candidate loses any task the baseline solved, so it works as a CI gate. harness test gives a failure digest grouped into nine areas, and sq gauge writes a release record that can be checked in CI.\n\nIt runs from the terminal or as a beta macOS app (0.4.10). Caveat: agent tools run with the host user's access by default, Docker isolation is optional, and releases are very frequent, so formats may change.",
+    "features": [
+     "One HarnessSpec YAML file per repository",
+     "Runs Codex, Claude, Copilot and any ACP agent from the same tool",
+     "Baseline versus candidate comparison with a regression gate",
+     "Failure digest grouped by setup area",
+     "Headless mode with superqode --print"
+    ],
+    "usage": [
+     "superqode --print \"fix the failing test and summarize the change\"",
+     "superqode harness eval --spec base.yaml --variant candidate.yaml --tasks tasks.yaml"
+    ],
+    "requirements": [
+     "Python 3.13 via uv, or the macOS app on Apple Silicon with macOS 14 or later"
+    ],
+    "install": [
+     "Install with uv"
+    ],
+    "links": [
+     "Repository",
+     "Evaluation and optimization guide"
+    ],
+    "pricingNote": "Free; you pay for the models or agent plans you connect"
+   }
+  },
+  {
+   "id": "headless-harness-bench",
+   "section": "agents",
+   "kind": "repo",
+   "title": "headless-harness-bench: أي وكلاء البرمجة يصلح للتشغيل من برنامج آخر دون واجهة؟",
+   "summary": "دراسة مفتوحة تقيّم تسع أدوات لوكلاء البرمجة، منها opencode وpi وcrush وDeepSeek Harness، في قابلية تشغيلها من نظام تحكم لا من شخص: تدقيق للشيفرة من 81 نقطة، واختبارات حية من 21، ومهمة صغيرة تُسجَّل فيها التكلفة والوقت.",
+   "why": "لمن يبني منصة داخلية تشغّل الوكلاء آليًا، مثل بوت يعالج التذاكر: تعطيك قائمة فحص جاهزة لما يجب أن يدعمه الوكيل قبل اعتماده، كالمخرجات المنظَّمة وحصر الأسرار والإيقاف عند المهلة.",
+   "about": "الفكرة أن وكيل البرمجة لا يُستعمل دائمًا من الطرفية؛ ففي الأنظمة الآلية يشغّله برنامج آخر عمليةً فرعية، ويمرّر له التعليمات وقائمة الأدوات المسموح بها، ويقرأ مخرجاته بصيغة منظَّمة، ويوقفه إذا تجاوز المهلة.\n\nالمستوى الأول تدقيق للشيفرة المصدرية وفق 42 معيارًا في 8 مجالات (المجموع من 81، والضوضاء نحو ±3)، والمستوى الثاني اختبارات حية لهذا العقد ومهمة ذهبية (إضافة --version إلى أداة سطر أوامر) بالنموذج نفسه لسبع أدوات من تسع. أعلى درجتين في التدقيق: omp ‏66.1 وDeepSeek Harness ‏65.6.\n\nتنبيه: النتائج لقطة من أكتوبر 2026 دون تشغيلات متكررة بعد، والمستودع بلا ملف ترخيص، ولا يشمل Claude Code أو Codex CLI.",
+   "features": [
+    "تسع أدوات وإطاران ضمن المقارنة",
+    "تدقيق شيفرة بـ 42 معيارًا مع الإشارة إلى الملفات",
+    "اختبارات حية لعقد التشغيل دون واجهة",
+    "تسجيل الرموز والتكلفة والوقت لمهمة ذهبية"
+   ],
+   "repo": "aaronjmars/headless-harness-bench",
+   "pricing": {
+    "model": "free",
+    "note": "مجاني للاطلاع؛ بلا ملف ترخيص"
+   },
+   "links": [
+    {
+     "label": "المستودع",
+     "url": "https://github.com/aaronjmars/headless-harness-bench"
+    }
+   ],
+   "url": "https://github.com/aaronjmars/headless-harness-bench",
+   "source": "github.com",
+   "importance": 2,
+   "tags": [
+    "coding-agents",
+    "benchmark",
+    "headless",
+    "automation"
+   ],
+   "en": {
+    "title": "headless-harness-bench: which coding agents can be driven headless by another program?",
+    "summary": "An open study that scores nine coding-agent tools, including opencode, pi, crush and DeepSeek Harness, on how well a control system (not a person) can drive them: a source audit out of 81, live tests out of 21, and a small task that records cost and time.",
+    "why": "For anyone building an internal platform that runs agents automatically, such as a bot that works on tickets: it gives a ready checklist of what an agent must support before you adopt it, like structured output, scoped secrets and clean timeouts.",
+    "about": "The idea is that a coding agent is not always used from a terminal; in automated systems another program starts it as a child process, passes instructions and an allowed tool list, reads structured output, and stops it if it runs past a timeout.\n\nTier 1 audits the source against 42 criteria in 8 areas (total out of 81, noise about +/-3). Tier 2 runs live tests of this contract plus a golden task (adding --version to a CLI) with the same model for 7 of the 9 tools. Top audit scores: omp 66.1 and DeepSeek Harness 65.6.\n\nCaveat: results are an October 2026 snapshot without repeated runs yet, the repository has no license file, and it does not cover Claude Code or Codex CLI.",
+    "features": [
+     "Nine tools and two frameworks compared",
+     "Source audit with 42 criteria and file citations",
+     "Live tests of the headless driving contract",
+     "Tokens, cost and time recorded for a golden task"
+    ],
+    "links": [
+     "Repository"
+    ],
+    "pricingNote": "Free to read; no license file"
+   }
+  },
+  {
+   "id": "inspect-ai-0-3-290",
+   "section": "llm",
+   "kind": "release",
+   "title": "Inspect AI 0.3.290: تتبّع أدق لرسائل الوكلاء وإيقاف استدعاءات النماذج بعد بلوغ الحد",
+   "summary": "أصدر معهد أمن الذكاء الاصطناعي البريطاني الإصدار 0.3.290 من إطار التقييم المفتوح Inspect AI في 13 نوفمبر 2026. تحتفظ كل رسالة بمعرّف واحد عبر جسر الوكيل والسجل، ولا يستدعي الوكيل الموصول أي نموذج بعد بلوغ الحد، مع دعم Gemini 4 Carbon وMistral Large 4.",
+   "why": "لمن يقيّم الوكلاء أو تطبيقات النماذج على مهامه: سجلات أوضح لمعرفة أي رسالة اقترحت كل أداة، وحماية من تكاليف غير متوقعة بعد بلوغ حد الرموز أو الوقت.",
+   "about": "Inspect AI إطار مفتوح بلغة Python لبناء تقييمات النماذج والوكلاء: مهام ومحلِّلات ومقيِّمات، مع تشغيل الوكلاء داخل بيئات عزل مثل Docker وKubernetes.\n\nفي هذا الإصدار تحتفظ كل رسالة بمعرّف واحد عبر جسر الوكيل والسجل، وتسجّل أحداث الأدوات الرسالة التي اقترحتها. وتُستبعد الدورات المستثناة من حساب النتيجة، وتحتفظ سجلات التقييمات الملغاة أو الفاشلة بالعدد الكلي للعينات، ويوقّع الإطار الطلبات إلى خدمة sentinel الجانبية بدل إرسال رمز التقييم.\n\nومن الإصلاحات: الوكيل الموصول بالجسر وأدواته لا يجريان أي استدعاء للنموذج بعد بلوغ الحد. ويضيف دعم Gemini 4 Carbon وGemini 4 Hydrogen وMistral Large 4 وMuse Ember 1.0 وMuse Wonder 1.0.",
+   "features": [
+    "معرّف ثابت لكل رسالة عبر الجسر والسجل",
+    "لا استدعاءات للنموذج بعد بلوغ الحد",
+    "توقيع الطلبات إلى خدمة sentinel الجانبية",
+    "دعم Gemini 4 Carbon وMistral Large 4 وMuse"
+   ],
+   "repo": "UKGovernmentBEIS/inspect_ai",
+   "links": [
+    {
+     "label": "صفحة الإصدار",
+     "url": "https://github.com/UKGovernmentBEIS/inspect_ai/releases/tag/0.3.290"
+    }
+   ],
+   "url": "https://github.com/UKGovernmentBEIS/inspect_ai/releases/tag/0.3.290",
+   "source": "github.com",
+   "importance": 1,
+   "tags": [
+    "evals",
+    "agents",
+    "release"
+   ],
+   "en": {
+    "title": "Inspect AI 0.3.290: clearer tracking of agent messages and no model calls after a limit",
+    "summary": "The UK AI Security Institute released 0.3.290 of the open evaluation framework Inspect AI on 13 Nov 2026. Each message keeps one id through the agent bridge and the log, a bridged agent makes no model call after a limit is reached, and Gemini 4 Carbon and Mistral Large 4 are supported.",
+    "why": "For anyone evaluating agents or model apps on their own tasks: clearer logs that show which message proposed each tool call, and protection from surprise costs after a token or time limit is hit.",
+    "about": "Inspect AI is an open Python framework for building evaluations of models and agents: tasks, solvers and scorers, with agents running inside sandboxes such as Docker and Kubernetes.\n\nIn this release each message keeps one id through the agent bridge and the log, and tool events record the message that proposed them. Excluded epochs are left out of score reduction, logs of errored or cancelled evals keep their total sample count, and calls to a sentinel sidecar are signed instead of sending the eval's token.\n\nAmong the fixes: a bridged agent and its host tools make no model call after a limit is reached. It also adds support for Gemini 4 Carbon, Gemini 4 Hydrogen, Mistral Large 4, Muse Ember 1.0 and Muse Wonder 1.0.",
+    "features": [
+     "Stable id per message across the bridge and log",
+     "No model calls after a limit is reached",
+     "Signed calls to the sentinel sidecar",
+     "Support for Gemini 4 Carbon, Mistral Large 4 and Muse"
+    ],
+    "links": [
+     "Release page"
+    ]
+   }
+  },
+  {
+   "id": "laravel-13-41",
+   "section": "laravel",
+   "kind": "release",
+   "title": "Laravel 13.41: حدث MigrationFailed، وuuid() وulid() للطلبات، وتشديد TokenGuard",
+   "summary": "صدر Laravel 13.41.0 في 10 نوفمبر 2026 (وتبعه 13.42.0 بتحديث رقم الإصدار فقط). يضيف حدث MigrationFailed، ودالتي uuid() وulid() لقراءة بيانات الطلب، ودالة origin() في Uri، ويجعل TokenGuard::validate() يقارن الرمز مجزّأً عند تفعيل التجزئة.",
+   "why": "لفرق Laravel: يمكن تنبيه الفريق عند فشل ترحيل قاعدة البيانات في النشر، وقراءة المعرّفات من الطلب بنوعها الصحيح مباشرة، وإغلاق ثغرة في التحقق بالرموز المجزّأة.",
+   "about": "إصدار صيانة من سلسلة 13.x فيه إضافات صغيرة مفيدة. الحدث الجديد MigrationFailed يُطلق عند فشل ترحيل، فيمكن ربطه بتنبيه في خط النشر.\n\nتضيف سمة InteractsWithData دالتي uuid() وulid() لقراءة قيمة من الطلب بوصفها معرّفًا، وتدعم Blueprint::foreignIdFor() نوع المفتاح العددي، وتحترم cursor() إعداد preventLazyLoading عند المرور على عدة نماذج، ويضيف Uri الدالة origin().\n\nفي الأمان: صار TokenGuard::validate() يجزّئ الرمز قبل المقارنة عند تفعيل التجزئة. ويضيف الإصدار سبب التخطي ScheduledTaskSkipReason للمهام المجدولة، ودعم ably/pubsub-server 2، وإصلاحات لقواعد بيانات PostgreSQL وSQLite.",
+   "features": [
+    "حدث MigrationFailed عند فشل الترحيل",
+    "دالتا uuid() وulid() في InteractsWithData",
+    "TokenGuard::validate() يجزّئ الرمز عند تفعيل التجزئة",
+    "cursor() يحترم preventLazyLoading",
+    "Uri::origin() وسبب تخطي المهام المجدولة"
+   ],
+   "repo": "laravel/framework",
+   "links": [
+    {
+     "label": "صفحة الإصدار",
+     "url": "https://github.com/laravel/framework/releases/tag/v13.41.0"
+    }
+   ],
+   "url": "https://github.com/laravel/framework/releases/tag/v13.41.0",
+   "source": "github.com",
+   "importance": 2,
+   "tags": [
+    "laravel",
+    "php",
+    "release"
+   ],
+   "en": {
+    "title": "Laravel 13.41: a MigrationFailed event, uuid() and ulid() for requests, and a stricter TokenGuard",
+    "summary": "Laravel 13.41.0 shipped on 10 Nov 2026 (followed by 13.42.0, a version bump only). It adds a MigrationFailed event, uuid() and ulid() helpers for reading request data, an origin() method on Uri, and makes TokenGuard::validate() compare the hashed token when hashing is enabled.",
+    "why": "For Laravel teams: alert the team when a database migration fails during a deploy, read ids from a request with the right type directly, and close a gap in hashed-token validation.",
+    "about": "A maintenance release in the 13.x line with small useful additions. The new MigrationFailed event fires when a migration fails, so it can be wired to an alert in the deploy pipeline.\n\nInteractsWithData gains uuid() and ulid() to read a request value as an id, Blueprint::foreignIdFor() supports the integer key type, cursor() respects preventLazyLoading when iterating multiple models, and Uri gains origin().\n\nOn security: TokenGuard::validate() now hashes the token before comparing when hashing is enabled. The release also adds ScheduledTaskSkipReason for scheduled tasks, support for ably/pubsub-server 2, and PostgreSQL and SQLite fixes.",
+    "features": [
+     "MigrationFailed event when a migration fails",
+     "uuid() and ulid() on InteractsWithData",
+     "TokenGuard::validate() hashes the token when hashing is enabled",
+     "cursor() respects preventLazyLoading",
+     "Uri::origin() and a skip reason for scheduled tasks"
+    ],
+    "links": [
+     "Release page"
+    ]
+   }
+  },
+  {
+   "id": "task-coevolve-paper",
+   "section": "llm",
+   "kind": "article",
+   "title": "Task-CoEvolve: ضبط إعداد الوكيل بعدد تقييمات أقل بنسبة 80%",
+   "summary": "ورقة من جامعة طوكيو تقترح أن تتغير مهام التحقق المستعملة لتحسين إعداد الوكيل مع الإعداد نفسه، فتركّز على المهام التي تختلف عليها النسخ المرشحة. ويذكر الباحثون نتيجة نهائية مماثلة للبحث على المجموعة كاملة بعدد تقييمات أقل بنسبة 80%، على Terminal-Bench 2.1 وتصنيف النصوص.",
+   "why": "لمن يحسّن تعليمات وكيله آليًا على مجموعة اختبارات: فكرة عملية لتقليل عدد التشغيلات المدفوعة في كل جولة تحسين دون فقدان الدقة.",
+   "about": "تحسين إعداد الوكيل آليًا (التعليمات والأدوات وغيرها) يتطلب عادة تشغيل كل نسخة مرشحة على مجموعة المهام كاملة، وهذا مكلف.\n\nتختار الطريقة المقترحة المهام التي تختلف عليها النسخ المرشحة أكثر من غيرها، وتقدّر درجة المجموعة كاملة من تشغيلات جزئية. وبحسب الورقة، بلغت النتيجة النهائية نفسها التي يبلغها البحث الكامل مع تقليل التقييمات أثناء التحسين بنسبة 80%.\n\nتنبيه: الشيفرة موعودة في الورقة ولم تُنشر بعد، والنتائج من تجارب الباحثين أنفسهم.",
+   "features": [
+    "اختيار مهام التحقق التي تختلف عليها النسخ المرشحة",
+    "تقدير درجة المجموعة كاملة من تشغيلات جزئية",
+    "اختبار على Terminal-Bench 2.1 وتصنيف النصوص"
+   ],
+   "links": [
+    {
+     "label": "الورقة على arXiv",
+     "url": "https://arxiv.org/abs/2608.20169"
+    }
+   ],
+   "url": "https://arxiv.org/abs/2608.20169",
+   "source": "arxiv.org",
+   "importance": 1,
+   "tags": [
+    "research",
+    "agents",
+    "evaluation",
+    "cost"
+   ],
+   "en": {
+    "title": "Task-CoEvolve: tuning an agent's setup with 80% fewer evaluations",
+    "summary": "A paper from the University of Tokyo proposes that the validation tasks used to improve an agent's setup should change along with the setup, focusing on tasks where candidate versions disagree. The authors report a final result similar to full-set search with 80% fewer evaluations, on Terminal-Bench 2.1 and text classification.",
+    "why": "For anyone tuning an agent's instructions automatically on a test set: a practical way to cut the number of paid runs per tuning round without losing accuracy.",
+    "about": "Automatically improving an agent's setup (instructions, tools and more) usually means running every candidate version on the full task set, which is expensive.\n\nThe proposed method picks the tasks where candidate versions disagree most and estimates the full-set score from partial runs. According to the paper, it reached the same final result as full search while cutting evaluations during optimization by 80%.\n\nCaveat: the code is promised in the paper but not yet published, and the results come from the authors' own experiments.",
+    "features": [
+     "Picks validation tasks where candidate versions disagree",
+     "Estimates the full-set score from partial runs",
+     "Tested on Terminal-Bench 2.1 and text classification"
+    ],
+    "links": [
+     "Paper on arXiv"
+    ]
+   }
+  },
+  {
+   "id": "agent-harness-survey-index",
+   "section": "llm",
+   "kind": "article",
+   "title": "مسح علمي لأدوات تشغيل الوكلاء: 34 نظامًا و30 مقياسًا و168 مرجعًا في فهرس مفتوح",
+   "summary": "مستودع مفتوح بترخيص CC-BY-4.0 يرافق المسح العلمي «Agent Harness for Large Language Model Agents»، ويضم فهرسًا لـ 34 نظامًا موثّقًا بالأدلة و30 مقياسًا لأدوات تشغيل الوكلاء و168 مرجعًا، وحُدّث في منتصف أكتوبر 2026.",
+   "why": "لمن يختار أداة لتشغيل وكلاء البرمجة أو يبني واحدة: نقطة بداية واحدة لمعرفة ما هو موجود فعلًا وكيف يُقاس، قبل إعادة بناء شيء متوفر.",
+   "about": "يقصد المسح بـ harness كل ما يحيط بالنموذج في نظام الوكيل: الأدوات والذاكرة والسياق وحلقة التنفيذ والتحقق والحماية. ويجمع المستودع الأنظمة والمقاييس والأوراق وتقارير الممارسين في فهرس واحد.\n\nيصنّف الفهرس 34 نظامًا بحسب الأدلة المتاحة عنها، ويجمع 30 مقياسًا لتقييم هذه الأدوات، مع 168 مرجعًا. والمسح نُشر نسخة أولية في أبريل 2026، والفهرس حُدّث في أكتوبر.\n\nتنبيه: هو فهرس بحثي لا أداة تشغيل، وبعض الأنظمة الأحدث من أكتوبر غير مذكورة فيه.",
+   "features": [
+    "34 نظامًا موثّقًا بالأدلة",
+    "30 مقياسًا لأدوات تشغيل الوكلاء",
+    "168 مرجعًا بترخيص CC-BY-4.0"
+   ],
+   "links": [
+    {
+     "label": "المستودع",
+     "url": "https://github.com/Gloriaameng/Awesome-Agent-Harness"
+    }
+   ],
+   "url": "https://github.com/Gloriaameng/Awesome-Agent-Harness",
+   "source": "github.com",
+   "importance": 1,
+   "tags": [
+    "research",
+    "agents",
+    "survey"
+   ],
+   "en": {
+    "title": "A survey of agent harnesses: 34 systems, 30 benchmarks and 168 references in an open index",
+    "summary": "An open CC-BY-4.0 repository that accompanies the survey 'Agent Harness for Large Language Model Agents', with an index of 34 evidence-coded systems, 30 benchmarks for agent harnesses and 168 references, last refreshed in mid-October 2026.",
+    "why": "For anyone choosing or building a tool that runs coding agents: one starting point to see what already exists and how it is measured, before rebuilding something that is already available.",
+    "about": "The survey uses harness to mean everything around the model in an agent system: tools, memory, context, the execution loop, verification and guardrails. The repository gathers systems, benchmarks, papers and practitioner reports in one index.\n\nThe index codes 34 systems by the evidence available about them, collects 30 benchmarks for evaluating these tools, and lists 168 references. The survey was posted as a preprint in April 2026 and the index was updated in October.\n\nCaveat: it is a research index, not a tool to run, and some systems newer than October are not in it.",
+    "features": [
+     "34 evidence-coded systems",
+     "30 benchmarks for agent harnesses",
+     "168 references under CC-BY-4.0"
+    ],
+    "links": [
+     "Repository"
+    ]
+   }
+  }
+ ]
+}
