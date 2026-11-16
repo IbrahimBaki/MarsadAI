@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15",
+ "updated": "2026-11-16",
  "sources": [
   {
    "name": "Picrew/awesome-agent-harness",
@@ -8276,6 +8276,130 @@
    "summary": "Repository for the survey 'Agent Harness for Large Language Model Agents': 34 evidence-coded systems, 30 harness benchmarks, 168 references; CC-BY-4.0.",
    "ar": {
     "summary": "مستودع المسح العلمي «Agent Harness for Large Language Model Agents»: ‏34 نظامًا موثّقًا بالأدلة، و30 مقياسًا للـ harness، و168 مرجعًا؛ بترخيص CC-BY-4.0.",
+    "group": "التقييم والمقاييس"
+   }
+  },
+  {
+   "stars": null,
+   "tags": [
+    "benchmark",
+    "long-horizon"
+   ],
+   "lists": [],
+   "name": "LoopsBench",
+   "repo": "microsoft/Loopsbench",
+   "url": "https://github.com/microsoft/Loopsbench",
+   "category": "eval",
+   "group": "Evaluation & Benchmarks",
+   "summary": "Microsoft benchmark of 112 long coding tasks from real pull-request sequences, run across six coding-agent harnesses; MIT.",
+   "ar": {
+    "summary": "مقياس من مايكروسوفت يضم 112 مهمة برمجية طويلة من سلاسل طلبات دمج حقيقية، يُشغَّل على ستة harness لوكلاء البرمجة؛ بترخيص MIT.",
+    "group": "التقييم والمقاييس"
+   }
+  },
+  {
+   "stars": null,
+   "tags": [
+    "harness-optimization"
+   ],
+   "lists": [],
+   "name": "AutoSaddler",
+   "repo": "microsoft/AutoSaddler",
+   "url": "https://github.com/microsoft/AutoSaddler",
+   "category": "eval",
+   "group": "Evaluation & Benchmarks",
+   "summary": "Automatic harness optimization from failed-run traces, tested on SWE-Bench Pro and Terminal-Bench 2.0; MIT.",
+   "ar": {
+    "summary": "تحسين تلقائي للـ harness انطلاقًا من سجلات التشغيلات الفاشلة، مُختبَر على SWE-Bench Pro وTerminal-Bench 2.0؛ بترخيص MIT.",
+    "group": "التقييم والمقاييس"
+   }
+  },
+  {
+   "stars": null,
+   "tags": [
+    "safety",
+    "benchmark"
+   ],
+   "lists": [],
+   "name": "HarnessRisk",
+   "repo": "Baiyajing/HarnessRisk",
+   "url": "https://github.com/Baiyajing/HarnessRisk",
+   "category": "eval",
+   "group": "Evaluation & Benchmarks",
+   "summary": "Safety benchmark of 128 sandboxed attack cases across six stages of a harness's life; MIT.",
+   "ar": {
+    "summary": "مقياس أمان من 128 حالة هجوم معزولة عبر ست مراحل من حياة الـ harness؛ بترخيص MIT.",
+    "group": "التقييم والمقاييس"
+   }
+  },
+  {
+   "stars": null,
+   "tags": [
+    "benchmark",
+    "resources"
+   ],
+   "lists": [],
+   "name": "harness-resource-bench",
+   "repo": "leonardcser/harness-resource-bench",
+   "url": "https://github.com/leonardcser/harness-resource-bench",
+   "category": "eval",
+   "group": "Evaluation & Benchmarks",
+   "summary": "Benchmarks the CPU, memory and disk use of coding agents; MIT; created Nov 2026.",
+   "ar": {
+    "summary": "يقيس استهلاك وكلاء البرمجة للمعالج والذاكرة والقرص؛ بترخيص MIT؛ أُنشئ في نوفمبر 2026.",
+    "group": "التقييم والمقاييس"
+   }
+  },
+  {
+   "stars": null,
+   "tags": [
+    "benchmark",
+    "harness"
+   ],
+   "lists": [],
+   "name": "harness-bench (amontlabs)",
+   "repo": "amontlabs/harness-bench",
+   "url": "https://github.com/amontlabs/harness-bench",
+   "category": "eval",
+   "group": "Evaluation & Benchmarks",
+   "summary": "Compares coding-agent harnesses on the same model (Claude Code vs nanocode on Terminal-Bench 2.1 and SWE-rebench); created Nov 2026.",
+   "ar": {
+    "summary": "يقارن أدوات الـ harness لوكلاء البرمجة على النموذج نفسه (Claude Code مقابل nanocode على Terminal-Bench 2.1 وSWE-rebench)؛ أُنشئ في نوفمبر 2026.",
+    "group": "التقييم والمقاييس"
+   }
+  },
+  {
+   "stars": null,
+   "tags": [
+    "eval",
+    "traces"
+   ],
+   "lists": [],
+   "name": "agent-eval-loop",
+   "repo": "relai-ai/agent-eval-loop",
+   "url": "https://github.com/relai-ai/agent-eval-loop",
+   "category": "eval",
+   "group": "Evaluation & Benchmarks",
+   "summary": "Builds evals from traces, code and coding sessions, then measures and improves agent behavior, including coding agents; Apache-2.0; created Nov 2026.",
+   "ar": {
+    "summary": "يبني تقييمات من سجلات التشغيل والشيفرة وجلسات البرمجة، ثم يقيس سلوك الوكلاء ويحسّنه، ومنهم وكلاء البرمجة؛ بترخيص Apache-2.0؛ أُنشئ في نوفمبر 2026.",
+    "group": "التقييم والمقاييس"
+   }
+  },
+  {
+   "stars": null,
+   "tags": [
+    "harness-optimization"
+   ],
+   "lists": [],
+   "name": "self-evolving-harness",
+   "repo": "xqkkk/self-evolving-harness",
+   "url": "https://github.com/xqkkk/self-evolving-harness",
+   "category": "eval",
+   "group": "Evaluation & Benchmarks",
+   "summary": "Code for 'Multi-Task Self-Evolving Harnesses with the Agent as Its Own Optimizer'; Apache-2.0; created Nov 2026.",
+   "ar": {
+    "summary": "شيفرة ورقة «Multi-Task Self-Evolving Harnesses with the Agent as Its Own Optimizer»؛ بترخيص Apache-2.0؛ أُنشئت في نوفمبر 2026.",
     "group": "التقييم والمقاييس"
    }
   }

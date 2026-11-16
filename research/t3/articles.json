@@ -1,6 +1,6 @@
 {
  "track": "t3",
- "checked": "2026-11-15",
+ "checked": "2026-11-16",
  "articles": [
   {
    "id": "fullscript-bench",
@@ -1732,6 +1732,44 @@
    "ar": {
     "summary": "مسح علمي مخصص لأدوات الـ harness الخاصة بالوكلاء، مع فهرس منتقى يضم 34 نظامًا موثّقًا بالأدلة و30 مقياسًا للـ harness و168 مرجعًا (بترخيص CC-BY-4.0). وحُدّث الفهرس آخر مرة في منتصف أكتوبر 2026.",
     "why": "قائمة تحقق ثانية لمركز البحث: نقارن أنظمتها ومقاييسها بملفاتنا حتى لا يفوتنا شيء مما تذكره."
+   }
+  },
+  {
+   "id": "loopsbench-paper",
+   "title": "LoopsBench: From Harness Engineering to Loop Engineering in Coding Agent Evaluation",
+   "source": "arXiv (Microsoft and university partners)",
+   "url": "https://arxiv.org/abs/2608.00267",
+   "type": "paper",
+   "tags": [
+    "benchmark",
+    "harness",
+    "long-horizon"
+   ],
+   "priority": "must",
+   "summary": "112 long coding tasks from real sources, run across six coding-agent harnesses. Adding an outer 'keep going' loop raised Claude Code with Opus 4.7 from 16.96% to 25.00% of tasks solved, and Codex with GPT-5.4 from 13.39% to 18.75%.",
+   "why": "The loop around a harness moves results as much as the harness itself, so our reports must record and compare that loop; its repo-to-task method is prior art for our task mining.",
+   "ar": {
+    "summary": "112 مهمة برمجية طويلة من مصادر حقيقية، تُشغَّل على ستة harness لوكلاء البرمجة. وأدت إضافة حلقة خارجية «للمواصلة» إلى رفع Claude Code مع Opus 4.7 من 16.96% إلى 25.00% من المهام المحلولة، وCodex مع GPT-5.4 من 13.39% إلى 18.75%.",
+    "why": "الحلقة المحيطة بالـ harness تحرّك النتائج بقدر ما يحركها الـ harness نفسه، فيجب أن تسجّل تقاريرنا هذه الحلقة وتقارن بينها؛ وطريقته في تحويل المستودع إلى مهام عمل سابق لاستخراج مهامنا."
+   }
+  },
+  {
+   "id": "harnessrisk-paper",
+   "title": "HarnessRisk: A Lifecycle-Oriented Benchmark for Agent Harness Safety",
+   "source": "arXiv (UNC Chapel Hill and partners)",
+   "url": "https://arxiv.org/abs/2608.17597",
+   "type": "paper",
+   "tags": [
+    "safety",
+    "harness",
+    "benchmark"
+   ],
+   "priority": "read",
+   "summary": "128 sandboxed attack cases over six stages of a harness's life. Attack success ranged from 12.6% to 80.9% across 14 model-and-harness setups, while usefulness stayed between 75.0% and 97.6%.",
+   "why": "Shows that safety depends on the harness, not only the model, so a harness report should carry a safety score.",
+   "ar": {
+    "summary": "128 حالة هجوم معزولة عبر ست مراحل من حياة الـ harness. وتراوح نجاح الهجوم بين 12.6% و80.9% عبر 14 تركيبة من النماذج وأدوات الـ harness، بينما بقيت الفائدة بين 75.0% و97.6%.",
+    "why": "يبيّن أن الأمان يعتمد على الـ harness لا على النموذج وحده، فينبغي أن يحمل تقرير الـ harness درجة للأمان."
    }
   }
  ]

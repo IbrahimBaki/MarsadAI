@@ -1,6 +1,6 @@
 {
  "category": "eval",
- "checked": "2026-11-15",
+ "checked": "2026-11-16",
  "tools": [
   {
    "id": "harbor",
@@ -2552,6 +2552,259 @@
     ],
     "role": "نستعمل قائمة فحص عقد التحكم فيها (عملية فرعية، وإدخال التعليمات وقائمة الأدوات، وإخراج منظَّم، وأسرار محصورة، وإيقاف عند المهلة) اختبارَ قبول لكل موصّل harness نكتبه. ولا نعيد استعمال الشيفرة (لا ترخيص لها).",
     "pricing": "مجاني للاطلاع"
+   }
+  },
+  {
+   "id": "loopsbench",
+   "name": "LoopsBench",
+   "category": "eval",
+   "kind": "open-source",
+   "vendor": "Microsoft (research, with university partners)",
+   "repo": "microsoft/Loopsbench",
+   "url": "https://arxiv.org/abs/2608.00267",
+   "license": "MIT",
+   "pricing": "Free (open source)",
+   "status": "beta",
+   "version": "Paper (arXiv 2608.00267) with open data and code (last commit 6 Nov 2026)",
+   "tier": "deep",
+   "summary": "A Microsoft research benchmark for long coding projects rather than single fixes. Each of its 112 tasks is built from real sources (sequences of pull requests, course labs, research repos) and split into many testable steps, so it measures whether a coding agent, plus the loop that keeps it going, can finish a whole piece of work without breaking what already passed.",
+   "how": "Each task is a map of development steps that depend on each other (more than 5,300 steps across 8 programming languages and 9 domains). Tests are released step by step as the agent progresses, and tests already passed stay as checks against regressions. Each task runs in Docker; the authors generate the Dockerfiles with a Claude Code step from the repo's dependencies and confirm the tests with the reference solution. It compares Claude Code, Codex, Copilot, OpenHands, SWE-agent and mini-SWE-agent, with and without an outer 'keep going' loop. Best result: Claude Code with Opus 4.7 and the outer loop solved 25.00% of tasks (16.96% without it); with GPT-5.4, Codex went from 13.39% to 18.75%.",
+   "features": [
+    "112 long-horizon tasks from real pull-request sequences, course labs and research repos",
+    "More than 5,300 separately testable development steps, 8 languages, 9 domains",
+    "Tests released step by step; passed tests stay as regression checks",
+    "Docker environment per task, generated from the repo and checked with the reference solution",
+    "Runs six coding-agent harnesses, with and without an outer continuation loop"
+   ],
+   "strengths": [
+    "Built from real repositories and their history, the same idea as Azm's planned task mining",
+    "Measures long work and regressions, not only one-shot bug fixes",
+    "Shows that the loop around the harness changes results by several points, so it must be part of what we measure",
+    "Open data and code under MIT from a large vendor"
+   ],
+   "weaknesses": [
+    "New and small (dozens of stars); a research release, not a product",
+    "Scores are low across the board, so runs are long and costly per task"
+   ],
+   "gaps": [
+    "No per-team suite files, no ticket-to-task writing and no standards score",
+    "Not packaged in Harbor format, our chosen runner"
+   ],
+   "fit": {
+    "verdict": "inspire",
+    "role": "Prior art for the task-mining pipeline: copy its method of turning a repo's pull-request history into staged tasks with regression checks, and its generated-and-verified Docker setup. Consider a few of its tasks as a long-horizon public baseline."
+   },
+   "scores": {
+    "fit": 4,
+    "maturity": 2,
+    "openness": 4,
+    "agnostic": 4,
+    "config": 2,
+    "measure": 4,
+    "safety": 3
+   },
+   "links": [
+    [
+     "Paper",
+     "https://arxiv.org/abs/2608.00267"
+    ],
+    [
+     "GitHub",
+     "https://github.com/microsoft/Loopsbench"
+    ],
+    [
+     "Project page",
+     "https://loopsbench.ai/"
+    ]
+   ],
+   "sources": [
+    "https://arxiv.org/abs/2608.00267",
+    "https://github.com/microsoft/Loopsbench"
+   ],
+   "ar": {
+    "summary": "مقياس بحثي من مايكروسوفت للمشاريع البرمجية الطويلة لا للإصلاحات المنفردة. كل مهمة من مهامه الـ 112 مبنية من مصادر حقيقية (سلاسل طلبات دمج، وتمارين مقررات جامعية، ومستودعات بحثية) ومقسّمة إلى خطوات كثيرة قابلة للاختبار، فيقيس قدرة وكيل البرمجة، ومعه الحلقة التي تُبقيه يعمل، على إنهاء عمل كامل دون كسر ما نجح من قبل.",
+    "how": "كل مهمة خريطة من خطوات تطوير يعتمد بعضها على بعض (أكثر من 5,300 خطوة في 8 لغات برمجة و9 مجالات). تُكشف الاختبارات خطوة بخطوة مع تقدم الوكيل، وتبقى الاختبارات التي نجحت فحوصًا ضد التراجع. تعمل كل مهمة في Docker؛ ويولّد الباحثون ملفات Dockerfile بخطوة من Claude Code انطلاقًا من اعتماديات المستودع، ثم يتأكدون من الاختبارات بالحل المرجعي. ويقارن Claude Code وCodex وCopilot وOpenHands وSWE-agent وmini-SWE-agent، مع حلقة خارجية «للمواصلة» وبدونها. أفضل نتيجة: Claude Code مع Opus 4.7 والحلقة الخارجية حلّ 25.00% من المهام (16.96% بدونها)؛ ومع GPT-5.4 ارتفع Codex من 13.39% إلى 18.75%.",
+    "features": [
+     "112 مهمة طويلة من سلاسل طلبات دمج حقيقية وتمارين مقررات ومستودعات بحثية",
+     "أكثر من 5,300 خطوة تطوير قابلة للاختبار منفردة، في 8 لغات و9 مجالات",
+     "اختبارات تُكشف خطوة بخطوة، وتبقى الاختبارات الناجحة فحوصًا ضد التراجع",
+     "بيئة Docker لكل مهمة، مولّدة من المستودع ومُتحقَّق منها بالحل المرجعي",
+     "يشغّل ستة harness لوكلاء البرمجة، مع حلقة مواصلة خارجية وبدونها"
+    ],
+    "strengths": [
+     "مبني من مستودعات حقيقية وتاريخها، وهي فكرة استخراج المهام نفسها التي تخطط لها عزم",
+     "يقيس العمل الطويل والتراجعات، لا الإصلاحات ذات المحاولة الواحدة فقط",
+     "يبيّن أن الحلقة المحيطة بالـ harness تغيّر النتائج بعدة نقاط، فيجب أن تكون جزءًا مما نقيسه",
+     "بيانات وشيفرة مفتوحة بترخيص MIT من شركة كبيرة"
+    ],
+    "weaknesses": [
+     "جديد وصغير (عشرات النجوم)؛ إصدار بحثي لا منتج",
+     "النتائج منخفضة عمومًا، فالتشغيل طويل ومكلف لكل مهمة"
+    ],
+    "gaps": [
+     "لا ملفات مهام لكل فريق، ولا كتابة للمهمة من التذكرة، ولا درجة للمعايير",
+     "غير مُعَدّ بصيغة Harbor، المشغّل الذي اخترناه"
+    ],
+    "role": "عمل سابق لخط استخراج المهام: ننسخ طريقته في تحويل تاريخ طلبات الدمج في المستودع إلى مهام مرحلية مع فحوص ضد التراجع، وطريقته في توليد بيئة Docker والتحقق منها. ويمكن أخذ بعض مهامه مرجعًا عامًا للمهام الطويلة.",
+    "pricing": "مجاني (مفتوح المصدر)"
+   }
+  },
+  {
+   "id": "autosaddler",
+   "name": "AutoSaddler",
+   "category": "eval",
+   "kind": "open-source",
+   "vendor": "Microsoft with POSTECH and KAIST (research)",
+   "repo": "microsoft/AutoSaddler",
+   "url": "https://arxiv.org/abs/2608.23041",
+   "license": "MIT",
+   "pricing": "Free (open source)",
+   "status": "beta",
+   "version": "Paper (arXiv 2608.23041, 24 Aug 2026); repo last commit 4 Nov 2026",
+   "tier": "brief",
+   "summary": "A research system that improves an agent's harness automatically by reading the traces of failed runs and writing small, checked patches to its prompts, tools and middleware. It reports gains of 9 to 10 points on SWE-Bench Pro, Terminal-Bench 2.0 and GAIA2.",
+   "how": "It treats the harness as code. In a loop it studies failed runs from a small batch, proposes a structured patch, checks it on that batch and then on a separate development set, and keeps a tree of past harness versions to guide new attempts. With Claude Opus 4.6: SWE-Bench Pro average from 37.3 (SWE-agent) to 46.9; Terminal-Bench 2.0 test split (40 tasks) from 40.0 (Terminus 2) to 50.0.",
+   "features": [
+    "Patches prompts, tools and middleware from failed-run traces",
+    "Checks every patch on a batch and on a held-out set before keeping it",
+    "Keeps a history tree of harness versions"
+   ],
+   "strengths": [
+    "Tested on coding benchmarks (SWE-Bench Pro, Terminal-Bench 2.0), with code from Microsoft under MIT"
+   ],
+   "weaknesses": [
+    "Research code; results reported on one model, and starting points are plain public harnesses"
+   ],
+   "gaps": [
+    "Not tested on SDLC harnesses such as squad-kit; no per-team configuration"
+   ],
+   "fit": {
+    "verdict": "inspire",
+    "role": "Another option for the later 'improve harnesses automatically' phase, closer to coding than most; its held-out check is a good guard against tuning a harness to the test set."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 1,
+    "openness": 4,
+    "agnostic": 3,
+    "config": 1,
+    "measure": 3,
+    "safety": 1
+   },
+   "links": [
+    [
+     "Paper",
+     "https://arxiv.org/abs/2608.23041"
+    ],
+    [
+     "GitHub",
+     "https://github.com/microsoft/AutoSaddler"
+    ]
+   ],
+   "sources": [
+    "https://arxiv.org/abs/2608.23041",
+    "https://github.com/microsoft/AutoSaddler"
+   ],
+   "ar": {
+    "summary": "نظام بحثي يحسّن الـ harness الخاص بالوكيل تلقائيًا بقراءة سجلات التشغيلات الفاشلة وكتابة تعديلات صغيرة مفحوصة على تعليماته وأدواته وطبقاته الوسيطة. ويذكر مكاسب من 9 إلى 10 نقاط على SWE-Bench Pro وTerminal-Bench 2.0 وGAIA2.",
+    "how": "يعامل الـ harness على أنه شيفرة. وفي حلقة متكررة يدرس التشغيلات الفاشلة من دفعة صغيرة، ويقترح تعديلًا منظَّمًا، ويفحصه على تلك الدفعة ثم على مجموعة تطوير منفصلة، ويحتفظ بشجرة من نسخ الـ harness السابقة لتوجيه المحاولات الجديدة. مع Claude Opus 4.6: متوسط SWE-Bench Pro من 37.3 ‏(SWE-agent) إلى 46.9؛ وقسم الاختبار في Terminal-Bench 2.0 ‏(40 مهمة) من 40.0 ‏(Terminus 2) إلى 50.0.",
+    "features": [
+     "يعدّل التعليمات والأدوات والطبقات الوسيطة انطلاقًا من سجلات التشغيلات الفاشلة",
+     "يفحص كل تعديل على دفعة وعلى مجموعة محجوزة قبل اعتماده",
+     "يحتفظ بشجرة تاريخية لنسخ الـ harness"
+    ],
+    "strengths": [
+     "مُختبَر على مقاييس برمجة (SWE-Bench Pro وTerminal-Bench 2.0)، بشيفرة من مايكروسوفت بترخيص MIT"
+    ],
+    "weaknesses": [
+     "شيفرة بحثية؛ النتائج على نموذج واحد، ونقاط البداية أدوات harness عامة بسيطة"
+    ],
+    "gaps": [
+     "لم يُختبر على أدوات harness لدورة التطوير مثل squad-kit؛ ولا ضبط لكل فريق"
+    ],
+    "role": "خيار آخر لمرحلة «تحسين أدوات الـ harness تلقائيًا» اللاحقة، وهو أقرب إلى البرمجة من معظم البدائل؛ وفحصه على مجموعة محجوزة حماية جيدة من ضبط الـ harness على مجموعة الاختبار.",
+    "pricing": "مجاني (مفتوح المصدر)"
+   }
+  },
+  {
+   "id": "harnessrisk",
+   "name": "HarnessRisk",
+   "category": "eval",
+   "kind": "open-source",
+   "vendor": "UNC Chapel Hill and partners (research)",
+   "repo": "Baiyajing/HarnessRisk",
+   "url": "https://arxiv.org/abs/2608.17597",
+   "license": "MIT",
+   "pricing": "Free (open source)",
+   "status": "beta",
+   "version": "Paper (arXiv 2608.17597); repo last commit 19 Aug 2026",
+   "tier": "brief",
+   "summary": "A safety benchmark for agent harnesses: 128 sandboxed cases, each a normal task with a hostile instruction hidden in a file or tool output, spread over six stages of a harness's life (setup, extensions, running, memory, actions, recovery). It shows the same model can be much safer or much less safe depending on the harness.",
+   "how": "Each run starts from a fresh environment with mock services and no real network. A model judge scores usefulness, attack success, whether the attack persists, and whether the agent noticed it. Across 14 model-and-harness setups (OpenClaw, Hermes, Nanobot), attack success ranged from 12.6% to 80.9% while usefulness stayed between 75.0% and 97.6%.",
+   "features": [
+    "128 cases across six harness life stages",
+    "Fresh isolated environment with mock services per run",
+    "Scores usefulness, attack success, persistence and detection"
+   ],
+   "strengths": [
+    "Measures safety per harness, not only per model, with open cases and adapters"
+   ],
+   "weaknesses": [
+    "Tested on general assistant harnesses, not coding harnesses; isolation is mock services, not an OS-level sandbox"
+   ],
+   "gaps": [
+    "No adapters for squad-kit, azm-harness or coding CLIs such as Claude Code or Codex"
+   ],
+   "fit": {
+    "verdict": "inspire",
+    "role": "A model for a safety score in our harness reports: borrow its six stages and its 'attack success vs usefulness' pair when we add a safety row next to quality, cost and speed."
+   },
+   "scores": {
+    "fit": 3,
+    "maturity": 1,
+    "openness": 4,
+    "agnostic": 3,
+    "config": 2,
+    "measure": 4,
+    "safety": 4
+   },
+   "links": [
+    [
+     "Paper",
+     "https://arxiv.org/abs/2608.17597"
+    ],
+    [
+     "GitHub",
+     "https://github.com/Baiyajing/HarnessRisk"
+    ],
+    [
+     "Project page",
+     "https://baiyajing.github.io/harness-risk/"
+    ]
+   ],
+   "sources": [
+    "https://arxiv.org/abs/2608.17597",
+    "https://github.com/Baiyajing/HarnessRisk"
+   ],
+   "ar": {
+    "summary": "مقياس أمان لأدوات الـ harness الخاصة بالوكلاء: 128 حالة معزولة، كل منها مهمة عادية مع تعليمات عدائية مخبأة في ملف أو في مخرجات أداة، موزعة على ست مراحل من حياة الـ harness (الإعداد، والإضافات، والتشغيل، والذاكرة، والأفعال، والتعافي). ويبيّن أن النموذج نفسه قد يكون أكثر أمانًا بكثير أو أقل بكثير بحسب الـ harness.",
+    "how": "يبدأ كل تشغيل من بيئة جديدة فيها خدمات محاكاة ولا شبكة حقيقية. ويقيّم نموذج حَكَم الفائدة، ونجاح الهجوم، واستمراره، وهل لاحظه الوكيل. وعبر 14 تركيبة من النماذج وأدوات الـ harness ‏(OpenClaw وHermes وNanobot) تراوح نجاح الهجوم بين 12.6% و80.9%، بينما بقيت الفائدة بين 75.0% و97.6%.",
+    "features": [
+     "128 حالة عبر ست مراحل من حياة الـ harness",
+     "بيئة معزولة جديدة بخدمات محاكاة لكل تشغيل",
+     "يقيس الفائدة ونجاح الهجوم واستمراره واكتشافه"
+    ],
+    "strengths": [
+     "يقيس الأمان لكل harness لا لكل نموذج فقط، بحالات ومحوّلات مفتوحة"
+    ],
+    "weaknesses": [
+     "مُختبَر على أدوات harness لمساعدين عامين لا لوكلاء البرمجة؛ والعزل خدمات محاكاة لا بيئة معزولة على مستوى نظام التشغيل"
+    ],
+    "gaps": [
+     "لا محوّلات لـ squad-kit أو azm-harness أو لأدوات سطر الأوامر للبرمجة مثل Claude Code وCodex"
+    ],
+    "role": "نموذج لدرجة الأمان في تقارير الـ harness لدينا: نستعير مراحله الست وثنائية «نجاح الهجوم مقابل الفائدة» حين نضيف صف الأمان بجانب الجودة والتكلفة والسرعة.",
+    "pricing": "مجاني (مفتوح المصدر)"
    }
   }
  ]
