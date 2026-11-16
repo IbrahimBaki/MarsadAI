@@ -1,0 +1,451 @@
+{
+ "date": "2026-11-16",
+ "headline": "إضافة agent-eval-loop تحوّل طلبات الدمج القديمة في المستودع إلى تقييمات تقيس وكيل البرمجة على شيفرتك، ومايكروسوفت تنشر LoopsBench لمهام برمجية طويلة، ومقياس HarnessRisk يبيّن أن أمان الوكيل يعتمد على إعدادات الإطار المحيط به.",
+ "headline_en": "The agent-eval-loop plugin turns a repo's past pull requests into evaluations that measure a coding agent on your own code, Microsoft publishes LoopsBench for long coding tasks, and the HarnessRisk benchmark shows agent safety depends on the surrounding framework's settings.",
+ "items": [
+  {
+   "id": "relai-agent-eval-loop",
+   "section": "testing",
+   "kind": "plugin",
+   "title": "agent-eval-loop: إضافة تحوّل طلبات الدمج القديمة في مستودعك إلى تقييمات لوكيل البرمجة",
+   "summary": "agent-eval-loop إضافة مفتوحة المصدر (Apache-2.0) لـ Claude Code وCodex ووكلاء آخرين تبني التقييمات أولًا ثم تحسّن الوكيل على أساسها. تحوّل مهارة coding-evals طلبات الدمج المدموجة والتراجعات في مستودعك إلى مهام بصيغة Harbor باختبارات مخفية، ثم تقيس نسبة المهام التي يحلها الوكيل وتكلفة كل مهمة محلولة.",
+   "why": "للفرق التي تريد معرفة هل يفيد نموذج جديد أو ملف CLAUDE.md جديد أو مهارة جديدة على شيفرتها هي لا على مقياس عام: مثل مقارنة إعدادين على 20 إصلاحًا حقيقيًا من الأشهر الستة الماضية قبل تعميم التغيير.",
+   "about": "تأتي الإضافة بسبع مهارات تعمل داخل وكيل البرمجة: start وdiscover وtrace-review وeval وimprove وloop وcoding-evals. ولوكلاء البرمجة تبدأ كل مهمة من الـ commit السابق لإصلاح حقيقي، وتتضمن المستودع وأدواته، وتُقيَّم باختبارات مخفية وفحوص يجب أن يجتازها الإصلاح الحقيقي. ولا يستدعي بناء المهام وفحص صلاحيتها أي نموذج.\n\nتُراجَع أدوات التقييم وتُجمَّد قبل أول تشغيل، وتعرض النتائج التباين وتفصل أخطاء البنية التحتية عن إخفاقات الوكيل. ثم تعدّل مهارة improve ملف CLAUDE.md والمهارات في فرع منفصل، وتعرض نسبة الحل وتكلفة المهمة المحلولة قبل التعديل وبعده.\n\nتنبيه: المشروع جديد جدًا (أُنشئ في نوفمبر 2026)، ويحتاج إلى Harbor ومحرك حاويات، وتشغيل التقييمات يستهلك رصيد وكيل البرمجة أو مفاتيح النماذج.",
+   "features": [
+    "استخراج مهام باختبارات مخفية من طلبات الدمج والتراجعات",
+    "قياس نسبة الحل وتكلفة كل مهمة محلولة لأي وكيل برمجة",
+    "تحسين CLAUDE.md والمهارات على تقييمات مجمَّدة في فرع منفصل",
+    "أدوات تقييم تُراجَع وتُجمَّد قبل التشغيل مع عرض التباين"
+   ],
+   "install": [
+    {
+     "label": "Claude Code: إضافة السوق",
+     "cmd": "claude plugin marketplace add relai-ai/agent-eval-loop"
+    },
+    {
+     "label": "Claude Code: تثبيت الإضافة",
+     "cmd": "claude plugin install relai@agent-eval-loop"
+    },
+    {
+     "label": "Codex: إضافة السوق",
+     "cmd": "codex plugin marketplace add relai-ai/agent-eval-loop"
+    },
+    {
+     "label": "Codex: تثبيت الإضافة",
+     "cmd": "codex plugin add relai@agent-eval-loop"
+    }
+   ],
+   "usage": [
+    "Use RELAI's coding-evals skill to build 20 evals from the last six months of merged pull requests and reverts in the repo {name-of-the-repo}",
+    "Use RELAI's coding-evals skill to evaluate Claude Code on these evals and report the solved rate and cost per solved task"
+   ],
+   "requirements": [
+    "Harbor ومحرك حاويات وuv، وPython 3.11 أو أحدث لمهارة eval"
+   ],
+   "repo": "relai-ai/agent-eval-loop",
+   "pricing": {
+    "model": "oss",
+    "note": "مجانية؛ تدفع ثمن استدعاءات النماذج أثناء التشغيل"
+   },
+   "links": [
+    {
+     "label": "المستودع",
+     "url": "https://github.com/relai-ai/agent-eval-loop"
+    },
+    {
+     "label": "مشغّل Harbor",
+     "url": "https://github.com/harbor-framework/harbor"
+    }
+   ],
+   "url": "https://github.com/relai-ai/agent-eval-loop",
+   "source": "github.com",
+   "importance": 3,
+   "tags": [
+    "evaluation",
+    "coding-agents",
+    "claude-code",
+    "codex",
+    "plugin"
+   ],
+   "en": {
+    "title": "agent-eval-loop: a plugin that turns your repo's past pull requests into evaluations for your coding agent",
+    "summary": "agent-eval-loop is an open-source (Apache-2.0) plugin for Claude Code, Codex and other agents that builds evaluations first and then improves the agent against them. Its coding-evals skill turns the merged pull requests and reverts in your repo into Harbor-format tasks with hidden tests, then measures the share of tasks the agent solves and the cost per solved task.",
+    "why": "For teams that want to know whether a new model, CLAUDE.md file or skill helps on their own code rather than a public benchmark: for example, compare two setups on 20 real fixes from the last six months before rolling a change out.",
+    "about": "The plugin ships seven skills that run inside the coding agent: start, discover, trace-review, eval, improve, loop and coding-evals. For coding agents, each task starts at the commit before a real fix, ships the repository and its toolchain, and is graded by hidden tests and checks the real fix must pass. Building tasks and checking their health call no model.\n\nGraders are reviewed and frozen before the first run, and results report variation and separate infrastructure errors from agent failures. The improve skill then changes CLAUDE.md and skills on a separate branch and reports the solved rate and cost per solved task before and after.\n\nCaveat: the project is very new (created in November 2026), needs Harbor and a container engine, and running evaluations uses your coding agent's plan or model keys.",
+    "features": [
+     "Mines hidden-test tasks from pull requests and reverts",
+     "Measures solved rate and cost per solved task for any coding agent",
+     "Improves CLAUDE.md and skills against frozen evals on a separate branch",
+     "Graders reviewed and frozen before runs, with variation reported"
+    ],
+    "usage": [
+     "Use RELAI's coding-evals skill to build 20 evals from the last six months of merged pull requests and reverts in the repo {name-of-the-repo}",
+     "Use RELAI's coding-evals skill to evaluate Claude Code on these evals and report the solved rate and cost per solved task"
+    ],
+    "requirements": [
+     "Harbor, a container engine and uv, plus Python 3.11 or later for the eval skill"
+    ],
+    "install": [
+     "Claude Code: add the marketplace",
+     "Claude Code: install the plugin",
+     "Codex: add the marketplace",
+     "Codex: install the plugin"
+    ],
+    "links": [
+     "Repository",
+     "Harbor runner"
+    ],
+    "pricingNote": "Free; you pay for model calls during runs"
+   }
+  },
+  {
+   "id": "loopsbench-long-horizon-benchmark",
+   "section": "testing",
+   "kind": "repo",
+   "title": "LoopsBench: مقياس مفتوح من مايكروسوفت لمهام برمجية طويلة متعددة الخطوات",
+   "summary": "LoopsBench مقياس وأداة تشغيل مفتوحة المصدر (MIT) من مايكروسوفت تقيس قدرة وكلاء البرمجة على إنهاء مهام طويلة داخل الطرفية: 112 مهمة من مصادر حقيقية في 8 لغات، مقسّمة إلى أكثر من 5,300 وحدة قابلة للاختبار، مع محوّلات جاهزة لـ Claude Code وCodex وCopilot وOpenHands وغيرها.",
+   "why": "لمن يختار وكيل برمجة لعمل حقيقي يتجاوز الإصلاح السريع، مثل بناء ميزة كاملة عبر عدة وحدات: يقيس هل يكمل الوكيل العمل دون أن يكسر ما نجح سابقًا.",
+   "about": "تتكون كل مهمة في LoopsBench من مساحة عمل يراها الوكيل، ومتطلبات لكل وحدة، وخريطة اعتماديات بين الوحدات، وبيئة Docker، وأدوات تحقق تميّز الحل الناقص من الجزئي من الكامل. وتُكشف الاختبارات تدريجيًا، وتبقى الاختبارات التي نجحت فحوصًا ضد التراجع.\n\nتقول الورقة المنشورة على arXiv إن أفضل تركيبة، Claude Code مع Opus 4.7 وحلقة خارجية تدفع الوكيل إلى المواصلة، حلّت 25.00% من المهام، مقابل 16.96% دون تلك الحلقة. أي أن الحلقة المحيطة بالوكيل تغيّر النتيجة بوضوح.\n\nالمهام متاحة حزمةً على Hugging Face مع بصمة SHA-256، وتُبنى صور Docker محليًا افتراضيًا. تنبيه: المشروع بحثي وجديد، والمهام طويلة فتشغيلها يستهلك وقتًا وتكلفة نماذج كبيرة.",
+   "features": [
+    "112 مهمة طويلة من مصادر حقيقية في 8 لغات و9 مجالات",
+    "وحدات قابلة للاختبار منفردة مع خريطة اعتماديات",
+    "بيئة Docker لكل مهمة مع تحقق بالحل المرجعي",
+    "محوّلات لـ Claude Code وCursor وCodex وCopilot وOpenHands وSWE-agent وQwen Code"
+   ],
+   "install": [
+    {
+     "label": "التثبيت عبر uv",
+     "cmd": "uv sync --dev"
+    }
+   ],
+   "usage": [
+    "loopsbench tasks list --tasks-dir tasks",
+    "loopsbench run --dataset-path tasks --task-id task_tcp_course_stack --agent oracle"
+   ],
+   "requirements": [
+    "Python 3.12 أو أحدث، وDocker"
+   ],
+   "repo": "microsoft/Loopsbench",
+   "pricing": {
+    "model": "oss",
+    "note": "مجاني؛ تدفع ثمن النماذج التي تشغّلها"
+   },
+   "links": [
+    {
+     "label": "المستودع",
+     "url": "https://github.com/microsoft/Loopsbench"
+    },
+    {
+     "label": "الورقة البحثية",
+     "url": "https://arxiv.org/abs/2608.00267"
+    }
+   ],
+   "url": "https://github.com/microsoft/Loopsbench",
+   "source": "github.com",
+   "importance": 2,
+   "tags": [
+    "benchmark",
+    "coding-agents",
+    "evaluation"
+   ],
+   "en": {
+    "title": "LoopsBench: an open Microsoft benchmark for long, multi-step coding tasks",
+    "summary": "LoopsBench is an open-source (MIT) benchmark and runner from Microsoft that measures whether coding agents can finish long tasks in the terminal: 112 tasks from real sources in 8 languages, split into more than 5,300 testable units, with ready adapters for Claude Code, Codex, Copilot, OpenHands and others.",
+    "why": "For anyone choosing a coding agent for real work beyond quick fixes, such as building a full feature across several modules: it measures whether the agent finishes the work without breaking what already passed.",
+    "about": "Each LoopsBench task has an agent-visible workspace, per-unit requirements, a dependency map between units, a Docker environment, and verifiers that tell incomplete, partial and complete solutions apart. Tests are revealed gradually, and tests that passed stay as regression checks.\n\nThe arXiv paper reports that the best setup, Claude Code with Opus 4.7 and an outer loop that pushes the agent to continue, solved 25.00% of tasks, against 16.96% without that loop. In other words, the loop around the agent clearly changes the result.\n\nTasks ship as a bundle on Hugging Face with a SHA-256 checksum, and Docker images are built locally by default. Caveat: it is a new research project, and the tasks are long, so runs take significant time and model cost.",
+    "features": [
+     "112 long tasks from real sources in 8 languages and 9 domains",
+     "Separately testable units with a dependency map",
+     "A Docker environment per task, verified with the reference solution",
+     "Adapters for Claude Code, Cursor, Codex, Copilot, OpenHands, SWE-agent and Qwen Code"
+    ],
+    "usage": [
+     "loopsbench tasks list --tasks-dir tasks",
+     "loopsbench run --dataset-path tasks --task-id task_tcp_course_stack --agent oracle"
+    ],
+    "requirements": [
+     "Python 3.12 or later, and Docker"
+    ],
+    "install": [
+     "Install with uv"
+    ],
+    "links": [
+     "Repository",
+     "Research paper"
+    ],
+    "pricingNote": "Free; you pay for the models you run"
+   }
+  },
+  {
+   "id": "autosaddler-harness-optimization",
+   "section": "agents",
+   "kind": "repo",
+   "title": "AutoSaddler: تحسين إعداد وكيل الذكاء الاصطناعي تلقائيًا من سجلات أخطائه",
+   "summary": "AutoSaddler مشروع بحثي مفتوح المصدر (MIT) من مايكروسوفت وجامعات شريكة، قُبل في NeurIPS 2026، يحلّل سجلات تشغيل الوكيل الفاشلة ويعدّل تعليماته وأدواته وطبقاته الوسيطة، ثم يُبقي التعديلات التي تنجح على مهام لم يرها. ويذكر تحسنًا بين 9.0 و10.0 نقاط على GAIA2 وSWE-Bench Pro وTerminal-Bench 2.0.",
+   "why": "للفرق التي تبني وكيلًا خاصًا بها: بدل تعديل التعليمات يدويًا بعد كل فشل، يقترح النظام تعديلات منظّمة ويختبرها على مهام محجوزة قبل اعتمادها.",
+   "about": "يعامل AutoSaddler الإطار المحيط بالنموذج، أي التعليمات وتعريفات الأدوات والطبقات الوسيطة وحلقة الوكيل، على أنه شيفرة قابلة للتحسين. في كل دورة يشخّص أسباب الفشل في سجلات التشغيل، ويطبّق تعديلًا من أنواع محددة، ثم يتحقق منه على مجموعة منفصلة.\n\nالنتائج المنشورة في المستودع: SWE-Bench Pro من 37.3 إلى 46.9 مع SWE-agent، وTerminal-Bench 2.0 من 40.0 إلى 50.0 مع Terminus 2، وGAIA2 من 53.0 إلى 62.0.\n\nتنبيه: هذه شيفرة بحثية تحتاج إلى ميزانية نماذج كبيرة لتشغيل دورات التحسين، والنتائج أولية بحسب وصف المستودع نفسه.",
+   "features": [
+    "تشخيص أسباب الفشل من سجلات التشغيل",
+    "تعديلات منظّمة على التعليمات والأدوات والطبقات الوسيطة",
+    "اختيار التعديلات التي تنجح على مهام محجوزة",
+    "سجل أحداث قابل للاستئناف لكل دورة تحسين"
+   ],
+   "requirements": [
+    "Python 3.12 إلى 3.14"
+   ],
+   "repo": "microsoft/AutoSaddler",
+   "pricing": {
+    "model": "oss",
+    "note": "مجاني؛ تدفع ثمن النماذج المستخدمة في التحسين"
+   },
+   "links": [
+    {
+     "label": "المستودع",
+     "url": "https://github.com/microsoft/AutoSaddler"
+    },
+    {
+     "label": "الورقة البحثية",
+     "url": "https://arxiv.org/abs/2608.23041"
+    }
+   ],
+   "url": "https://github.com/microsoft/AutoSaddler",
+   "source": "github.com",
+   "importance": 2,
+   "tags": [
+    "agents",
+    "harness",
+    "research"
+   ],
+   "en": {
+    "title": "AutoSaddler: improving an AI agent's setup automatically from its failure logs",
+    "summary": "AutoSaddler is an open-source (MIT) research project from Microsoft and partner universities, accepted at NeurIPS 2026. It analyzes an agent's failed run logs, edits its instructions, tools and middleware, and keeps the edits that work on tasks it has not seen. It reports gains of 9.0 to 10.0 points on GAIA2, SWE-Bench Pro and Terminal-Bench 2.0.",
+    "why": "For teams building their own agent: instead of hand-editing instructions after every failure, the system proposes structured edits and tests them on held-out tasks before keeping them.",
+    "about": "AutoSaddler treats the framework around the model, meaning the instructions, tool definitions, middleware and agent loop, as code that can be improved. In each round it diagnoses why runs failed, applies an edit from a defined set of types, and then checks it on a separate set.\n\nResults published in the repository: SWE-Bench Pro from 37.3 to 46.9 with SWE-agent, Terminal-Bench 2.0 from 40.0 to 50.0 with Terminus 2, and GAIA2 from 53.0 to 62.0.\n\nCaveat: this is research code that needs a large model budget to run optimization rounds, and the repository itself calls the results preliminary.",
+    "features": [
+     "Diagnoses failure causes from run logs",
+     "Structured edits to instructions, tools and middleware",
+     "Keeps edits that work on held-out tasks",
+     "Resumable event log for every optimization round"
+    ],
+    "requirements": [
+     "Python 3.12 to 3.14"
+    ],
+    "links": [
+     "Repository",
+     "Research paper"
+    ],
+    "pricingNote": "Free; you pay for the models used during optimization"
+   }
+  },
+  {
+   "id": "harnessrisk-agent-safety-benchmark",
+   "section": "security",
+   "kind": "repo",
+   "title": "HarnessRisk: مقياس يبيّن أن أمان الوكيل يعتمد على الإطار المحيط به لا على النموذج وحده",
+   "summary": "HarnessRisk مقياس أمان مفتوح المصدر (MIT) من جامعات أمريكية يضم 128 حالة معزولة، كل منها مهمة عادية مع هجوم مخفي في ملف أو مهارة أو رسالة. وعبر 14 تركيبة من النماذج والأطر تراوح نجاح الهجوم بين 12.6% و80.9%، بينما بقي إنجاز المهمة بين 75.0% و97.6%.",
+   "why": "لمن يشغّل وكلاء لهم صلاحيات على ملفات وأدوات: يذكّر بأن تقييم أمان النموذج وحده لا يكفي، وأن إعدادات الإطار نفسها هي أضعف نقطة، فيجب اختبار التركيبة كما ستُستخدم فعلًا.",
+   "about": "يقسّم HarnessRisk أمان الإطار المحيط بالوكيل إلى ست مراحل: الإعداد، والإضافات، والتشغيل، والحالة المحفوظة، والتحكم في الأفعال، والتعافي من الحوادث. ويقيس كل تشغيل بأربعة مؤشرات: هل أنجز المهمة، وهل نجح الهجوم، وهل ترك أثرًا دائمًا في الذاكرة أو الإعداد، وهل لاحظ الوكيل الخطر.\n\nمن نتائجه أن مرحلة الإعداد هي الأضعف في الأطر الثلاثة المختبرة، وأن ملاحظة الخطر لا تعني تجنبه: بعض التركيبات لاحظت الخطر في أكثر من 90% من التشغيلات ومع ذلك نجح الهجوم كثيرًا.\n\nتنبيه: الأطر المختبرة مساعدون عامون لا أدوات برمجة، والعزل يعتمد على خدمات محاكاة.",
+   "features": [
+    "128 حالة هجوم معزولة عبر ست مراحل",
+    "أربعة مؤشرات: الإنجاز، ونجاح الهجوم، والأثر الدائم، والاكتشاف",
+    "بيانات منشورة على Hugging Face"
+   ],
+   "repo": "Baiyajing/HarnessRisk",
+   "pricing": {
+    "model": "oss"
+   },
+   "links": [
+    {
+     "label": "المستودع",
+     "url": "https://github.com/Baiyajing/HarnessRisk"
+    },
+    {
+     "label": "الورقة البحثية",
+     "url": "https://arxiv.org/abs/2608.17597"
+    }
+   ],
+   "url": "https://github.com/Baiyajing/HarnessRisk",
+   "source": "github.com",
+   "importance": 2,
+   "tags": [
+    "security",
+    "agents",
+    "prompt-injection",
+    "benchmark"
+   ],
+   "en": {
+    "title": "HarnessRisk: a benchmark showing agent safety depends on the surrounding framework, not just the model",
+    "summary": "HarnessRisk is an open-source (MIT) safety benchmark from US universities with 128 sandboxed cases, each a normal task with an attack hidden in a file, skill or message. Across 14 model and framework combinations, attack success ranged from 12.6% to 80.9%, while task completion stayed between 75.0% and 97.6%.",
+    "why": "For anyone running agents with access to files and tools: a reminder that testing the model's safety alone is not enough, and that the framework's own settings are the weakest point, so test the combination as it will actually be used.",
+    "about": "HarnessRisk splits the safety of the framework around an agent into six stages: configuration, extensions, runtime, saved state, action control and incident recovery. Each run is scored on four measures: did it finish the task, did the attack succeed, did it leave a lasting trace in memory or settings, and did the agent notice the risk.\n\nAmong its findings, configuration is the weakest stage in all three frameworks tested, and noticing a risk does not mean avoiding it: some combinations flagged the risk in more than 90% of runs yet the attack still often succeeded.\n\nCaveat: the frameworks tested are general assistants, not coding tools, and isolation relies on mock services.",
+    "features": [
+     "128 sandboxed attack cases across six stages",
+     "Four measures: completion, attack success, lasting trace and detection",
+     "Dataset published on Hugging Face"
+    ],
+    "links": [
+     "Repository",
+     "Research paper"
+    ]
+   }
+  },
+  {
+   "id": "nightshift-agent-punch-list",
+   "section": "skills",
+   "kind": "plugin",
+   "title": "Nightshift: إضافة تُبقي وكيل البرمجة يعمل على قائمة مهام حتى آخرها وتعطي إيصالًا لكل بند",
+   "summary": "Nightshift إضافة مفتوحة المصدر (MIT) لـ Claude Code وCodex وCursor تحوّل الخطة إلى قائمة بنود يعمل عليها الوكيل حتى ينهيها كلها، وتسجّل القرارات المعلّقة لمراجعتها لاحقًا، وتعطي لكل بند إيصالًا بما سُلّم والفحوص التي جرت والمدة والرموز المستهلكة. أحدث إصدار 0.34.0 في 14 نوفمبر 2026.",
+   "why": "لمن يترك الوكيل يعمل ساعات طويلة على مهام كثيرة: بدل محادثة طويلة يصعب مراجعتها، تحصل على نتيجة منظّمة لكل بند، مثل تنفيذ عشر مهام صيانة في فرع واحد بـ commit لكل مهمة.",
+   "about": "تعمل Nightshift على ثلاث مراحل. في التخطيط تجمع الأسئلة الصعبة وتقارن الحلول وتحدد معيار الانتهاء لكل بند. وفي التنفيذ تُبقي الوكيل يعمل حتى تُشطب كل البنود، وإذا احتاج إلى قرار اختار إجابة افتراضية وسجّلها في قائمة للمراجعة بدل التوقف.\n\nوفي المراجعة يحصل كل بند على إيصال يذكر ما سُلّم وما جُرّب ورُفض والفحوص التي جرت مع الأدلة والمدة والرموز. ويمكن نقل العمل بين الوكلاء على الفرع نفسها، كأن يكمل Cursor ما بدأه Claude Code.\n\nتعمل الإضافة على macOS وLinux وWindows دون خدمة أو مفتاح منفصل. تنبيه: في Codex يجب مراجعة الـ hooks الخاصة بها والموافقة عليها.",
+   "features": [
+    "قائمة بنود مع معيار انتهاء لكل بند",
+    "تشغيل متواصل حتى إنهاء كل البنود",
+    "قائمة للقرارات المعلّقة مع الإجابة الافتراضية وسببها",
+    "إيصال لكل بند بالأدلة والمدة والرموز"
+   ],
+   "install": [
+    {
+     "label": "Claude Code: إضافة السوق",
+     "cmd": "/plugin marketplace add orwa-mahmoud/nightshift"
+    },
+    {
+     "label": "Claude Code: تثبيت الإضافة",
+     "cmd": "/plugin install nightshift@nightshift"
+    },
+    {
+     "label": "Codex: إضافة السوق",
+     "cmd": "codex plugin marketplace add orwa-mahmoud/nightshift"
+    },
+    {
+     "label": "Codex: تثبيت الإضافة",
+     "cmd": "codex plugin add nightshift@nightshift"
+    }
+   ],
+   "repo": "orwa-mahmoud/nightshift",
+   "pricing": {
+    "model": "oss"
+   },
+   "links": [
+    {
+     "label": "المستودع",
+     "url": "https://github.com/orwa-mahmoud/nightshift"
+    },
+    {
+     "label": "سجل التغييرات",
+     "url": "https://github.com/orwa-mahmoud/nightshift/blob/main/CHANGELOG.md"
+    }
+   ],
+   "url": "https://github.com/orwa-mahmoud/nightshift",
+   "source": "github.com",
+   "importance": 2,
+   "tags": [
+    "claude-code",
+    "codex",
+    "plugin",
+    "long-running"
+   ],
+   "en": {
+    "title": "Nightshift: a plugin that keeps a coding agent working through a punch list and gives a receipt per item",
+    "summary": "Nightshift is an open-source (MIT) plugin for Claude Code, Codex and Cursor that turns a plan into a punch list the agent works through until every item is done, records pending decisions for later review, and gives each item a receipt of what was delivered, which checks ran, duration and tokens used. Latest release 0.34.0 on 14 Nov 2026.",
+    "why": "For anyone who leaves an agent running for hours on many tasks: instead of a long chat that is hard to review, you get a structured result per item, such as ten maintenance tasks on one branch with one commit each.",
+    "about": "Nightshift works in three stages. In planning it gathers the hard questions, compares approaches and sets a definition of done for each item. In execution it keeps the agent working until every item is checked off, and when a decision is needed it picks a default answer and records it for review instead of stopping.\n\nIn review each item gets a receipt listing what was delivered, what was tried and rejected, and which checks ran, with evidence, duration and tokens. Work can move between agents on the same branch, for example Cursor finishing what Claude Code started.\n\nThe plugin runs on macOS, Linux and Windows with no separate service or key. Caveat: in Codex you must review and trust its hooks.",
+    "features": [
+     "Punch list with a definition of done per item",
+     "Keeps running until every item is done",
+     "Parking lot for pending decisions with the default chosen and why",
+     "Receipt per item with evidence, duration and tokens"
+    ],
+    "install": [
+     "Claude Code: add the marketplace",
+     "Claude Code: install the plugin",
+     "Codex: add the marketplace",
+     "Codex: install the plugin"
+    ],
+    "links": [
+     "Repository",
+     "Changelog"
+    ]
+   }
+  },
+  {
+   "id": "deja-vu-agent-session-search",
+   "section": "devtools",
+   "kind": "tool",
+   "title": "deja-vu 0.24.2: بحث محلي في جلسات 48 وكيل برمجة واستعادة الشيفرة التي استبدلها الوكيل",
+   "summary": "deja-vu أداة مفتوحة المصدر (MIT) في ملف تنفيذي واحد بلغة Go تفهرس محليًا الجلسات التي يحفظها Claude Code وCodex وCursor وGemini CLI وOpenCode وعشرات الوكلاء الآخرين، دون أي استدعاء لنموذج. أضاف إصدار 0.24.2 (12 نوفمبر 2026) الأمر deja audit لفحص خطر حذف الجلسات، وإضافات لـ JetBrains وNeovim وTmux.",
+   "why": "لمن يعمل بأكثر من وكيل: يمكنك البحث عن قرار اتُّخذ قبل أشهر، أو نقل الجلسة الجارية إلى وكيل آخر، أو استعادة ملف عدّله الوكيل قبل أي commit.",
+   "about": "معظم وكلاء البرمجة يحفظون جلساتهم على القرص بصيغ مختلفة. تجمع deja-vu هذه السجلات في فهرس محلي واحد يسمح بالبحث النصي والبنيوي، ومعرفة أي جلسة كتبت سطرًا معيّنًا، واستعادة نسخ الملفات التي استُبدلت قبل الحفظ في git.\n\nفي الإصدار 0.24.2 صار الأمر deja audit يفحص عدد الجلسات وحجمها وخطر حذفها التلقائي، ويقيس deja bench live فائدة التذكيرات التي تُحقن في الوكيل، وتسجّل deja sessions النموذج والرموز وعدد استدعاءات الأدوات لكل جلسة.\n\nتنبيه: الأداة تربط نفسها بالوكلاء عبر hooks، فراجع ما يُضاف قبل تفعيله في مشروع حساس.",
+   "features": [
+    "بحث موحّد في جلسات عشرات وكلاء البرمجة",
+    "نقل الجلسة الجارية إلى وكيل آخر",
+    "استعادة الشيفرة التي استبدلها الوكيل وتتبع من كتب كل سطر",
+    "فحص خطر حذف الجلسات عبر deja audit"
+   ],
+   "install": [
+    {
+     "label": "التثبيت وربط الوكلاء المثبتين",
+     "cmd": "npx @vshulcz/deja-vu install --auto"
+    },
+    {
+     "label": "التثبيت عبر Homebrew",
+     "cmd": "brew install deja-vu && deja install --auto"
+    }
+   ],
+   "usage": [
+    "deja \"jwt refresh token\"",
+    "deja handoff --to codex",
+    "deja restore internal/auth/jwt.go",
+    "deja audit"
+   ],
+   "repo": "vshulcz/deja-vu",
+   "pricing": {
+    "model": "oss"
+   },
+   "links": [
+    {
+     "label": "المستودع",
+     "url": "https://github.com/vshulcz/deja-vu"
+    },
+    {
+     "label": "سجل التغييرات",
+     "url": "https://github.com/vshulcz/deja-vu/blob/main/CHANGELOG.md"
+    }
+   ],
+   "url": "https://github.com/vshulcz/deja-vu",
+   "source": "github.com",
+   "importance": 2,
+   "tags": [
+    "coding-agents",
+    "memory",
+    "cli",
+    "search"
+   ],
+   "en": {
+    "title": "deja-vu 0.24.2: local search across 48 coding agents' sessions and recovery of code the agent overwrote",
+    "summary": "deja-vu is an open-source (MIT) single Go binary that locally indexes the sessions saved by Claude Code, Codex, Cursor, Gemini CLI, OpenCode and dozens of other agents, with no model calls. Release 0.24.2 (12 Nov 2026) adds deja audit to check session-deletion risk, plus plugins for JetBrains, Neovim and Tmux.",
+    "why": "For anyone working with more than one agent: search for a decision made months ago, hand the current session to another agent, or recover a file the agent changed before any commit.",
+    "about": "Most coding agents save their sessions to disk in different formats. deja-vu brings these logs into one local index that supports lexical and structural search, shows which session wrote a given line, and recovers file versions that were overwritten before being saved in git.\n\nIn 0.24.2, deja audit checks session counts, sizes and automatic-deletion risk, deja bench live measures how useful the reminders injected into the agent are, and deja sessions records the model, tokens and tool-call count per session.\n\nCaveat: the tool wires itself into agents through hooks, so review what is added before enabling it in a sensitive project.",
+    "features": [
+     "One search across the sessions of dozens of coding agents",
+     "Hand the current session to another agent",
+     "Recover code the agent overwrote and trace who wrote each line",
+     "Session-deletion risk check with deja audit"
+    ],
+    "install": [
+     "Install and wire installed agents",
+     "Install with Homebrew"
+    ],
+    "usage": [
+     "deja \"jwt refresh token\"",
+     "deja handoff --to codex",
+     "deja restore internal/auth/jwt.go",
+     "deja audit"
+    ],
+    "links": [
+     "Repository",
+     "Changelog"
+    ]
+   }
+  }
+ ]
+}
