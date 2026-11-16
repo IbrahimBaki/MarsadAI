@@ -2806,6 +2806,99 @@
     "role": "نموذج لدرجة الأمان في تقارير الـ harness لدينا: نستعير مراحله الست وثنائية «نجاح الهجوم مقابل الفائدة» حين نضيف صف الأمان بجانب الجودة والتكلفة والسرعة.",
     "pricing": "مجاني (مفتوح المصدر)"
    }
+  },
+  {
+   "id": "agent-eval-loop",
+   "name": "RELAI agent-eval-loop",
+   "category": "eval",
+   "kind": "open-source",
+   "vendor": "RELAI",
+   "repo": "relai-ai/agent-eval-loop",
+   "url": "https://github.com/relai-ai/agent-eval-loop",
+   "license": "Apache-2.0",
+   "pricing": "Free (open source); you pay for the agent and judge model calls",
+   "status": "beta",
+   "version": "0.1.0 (plugin manifest; repo created 11 Nov 2026, last commit 13 Nov 2026)",
+   "tier": "deep",
+   "summary": "An open-source plugin for Claude Code, Codex and other coding agents that builds evaluations first and then improves an agent against them. For coding agents, its coding-evals skill turns a repo's merged pull requests and reverts into Harbor tasks with hidden tests, runs Claude Code, Codex, OpenHands or your own setup on them, and reports solved rate and cost per solved task.",
+   "how": "It ships seven skills (start, discover, trace-review, eval, improve, loop, coding-evals) that work inside your coding agent. coding-evals builds tasks that start at the commit before a real fix, ship the repo and its toolchain, and are graded by hidden tests and checks the real fix must pass; building and health checks call no model. Graders (code checks and LLM judges) are reviewed and frozen before the first run, results report variation and separate infrastructure or judge errors from agent failures, and held-out evals are optional. The improve skill then changes a team's CLAUDE.md and skills against the same frozen evals and reports the solved rate with its noise before and after, cost per solved task, and the evals where the two setups differ.",
+   "features": [
+    "Mines Harbor-format coding tasks from merged pull requests and reverts, with hidden tests",
+    "Evaluates any coding agent on them and reports solved rate and cost per solved task",
+    "Improves CLAUDE.md and skills against frozen evals, on a separate branch with before/after scores",
+    "Graders reviewed and frozen before runs; reports variation; separates infrastructure and judge errors",
+    "Installs as a Claude Code or Codex plugin, or as skills for Gemini CLI, Cursor, OpenCode, Copilot and others"
+   ],
+   "strengths": [
+    "Covers the same loop Azm planned: mine tasks from our own history, compare setups on our code, gate changes",
+    "Outputs Harbor tasks, our chosen runner, so tasks are portable",
+    "Careful measurement: frozen graders, noise reporting, optional held-out set",
+    "Open source under Apache-2.0 with clear install, update and removal steps"
+   ],
+   "weaknesses": [
+    "Brand new (first release line, created Nov 2026, dozens of stars); a small vendor",
+    "Runs inside one developer's coding agent, not as a shared service"
+   ],
+   "gaps": [
+    "No per-team suite file or multi-team reports",
+    "No squad-kit or azm-harness adapters and no Track 1 standards score",
+    "No ticket-to-task writing for non-code SDLC steps"
+   ],
+   "fit": {
+    "verdict": "benchmark",
+    "role": "Prior art for the task-mining pipeline and the setup-comparison report. Pilot its coding-evals skill on one Azm repo next to repo-to-bench before writing our own miner, and reuse its frozen-grader and noise rules."
+   },
+   "scores": {
+    "fit": 4,
+    "maturity": 2,
+    "openness": 4,
+    "agnostic": 4,
+    "config": 3,
+    "measure": 4,
+    "safety": 3
+   },
+   "links": [
+    [
+     "GitHub",
+     "https://github.com/relai-ai/agent-eval-loop"
+    ],
+    [
+     "Design notes",
+     "https://github.com/relai-ai/agent-eval-loop/blob/main/DESIGN.md"
+    ]
+   ],
+   "sources": [
+    "https://github.com/relai-ai/agent-eval-loop",
+    "https://github.com/relai-ai/agent-eval-loop/blob/main/README.md"
+   ],
+   "ar": {
+    "summary": "إضافة مفتوحة المصدر لـ Claude Code وCodex ووكلاء برمجة آخرين تبني التقييمات أولًا ثم تحسّن الوكيل على أساسها. ولوكلاء البرمجة تحوّل مهارة coding-evals طلبات الدمج المدموجة والتراجعات في المستودع إلى مهام Harbor باختبارات مخفية، وتشغّل عليها Claude Code أو Codex أو OpenHands أو إعدادك الخاص، وتعرض نسبة المهام المحلولة وتكلفة كل مهمة محلولة.",
+    "how": "تأتي بسبع مهارات (start وdiscover وtrace-review وeval وimprove وloop وcoding-evals) تعمل داخل وكيل البرمجة لديك. تبني coding-evals مهام تبدأ من الـ commit السابق لإصلاح حقيقي، وتتضمن المستودع وأدواته، وتُقيَّم باختبارات مخفية وفحوص يجب أن يجتازها الإصلاح الحقيقي؛ ولا يستدعي البناء وفحوص الصلاحية أي نموذج. وتُراجَع أدوات التقييم (فحوص شيفرة ونماذج حَكَم) وتُجمَّد قبل أول تشغيل، وتعرض النتائج التباين وتفصل أخطاء البنية التحتية أو الحَكَم عن إخفاقات الوكيل، والمجموعة المحجوزة اختيارية. ثم تعدّل مهارة improve ملف CLAUDE.md والمهارات الخاصة بالفريق على التقييمات المجمَّدة نفسها، وتعرض نسبة الحل مع تباينها قبل التعديل وبعده، وتكلفة كل مهمة محلولة، والمهام التي يختلف فيها الإعدادان.",
+    "features": [
+     "تستخرج مهام برمجة بصيغة Harbor من طلبات الدمج المدموجة والتراجعات، باختبارات مخفية",
+     "تقيّم أي وكيل برمجة عليها وتعرض نسبة الحل وتكلفة كل مهمة محلولة",
+     "تحسّن CLAUDE.md والمهارات على تقييمات مجمَّدة، في فرع منفصل مع نتائج قبل وبعد",
+     "أدوات تقييم تُراجَع وتُجمَّد قبل التشغيل؛ وتعرض التباين؛ وتفصل أخطاء البنية التحتية والحَكَم",
+     "تُثبَّت إضافةً لـ Claude Code أو Codex، أو مهاراتٍ لـ Gemini CLI وCursor وOpenCode وCopilot وغيرها"
+    ],
+    "strengths": [
+     "تغطي الحلقة نفسها التي خططت لها عزم: استخراج المهام من تاريخنا، ومقارنة الإعدادات على شيفرتنا، وضبط التغييرات ببوابة",
+     "تُخرج مهام Harbor، المشغّل الذي اخترناه، فتكون المهام قابلة للنقل",
+     "قياس دقيق: أدوات تقييم مجمَّدة، وعرض للتباين، ومجموعة محجوزة اختيارية",
+     "مفتوحة المصدر بترخيص Apache-2.0 مع خطوات واضحة للتثبيت والتحديث والإزالة"
+    ],
+    "weaknesses": [
+     "جديدة تمامًا (أول خط إصدارات، أُنشئت في نوفمبر 2026، وعشرات النجوم)؛ ومن مورّد صغير",
+     "تعمل داخل وكيل برمجة لدى مطوّر واحد، لا خدمةً مشتركة"
+    ],
+    "gaps": [
+     "لا ملف مهام لكل فريق ولا تقارير لفرق متعددة",
+     "لا محوّلات لـ squad-kit أو azm-harness ولا درجة لمعايير المسار 1",
+     "لا كتابة للمهام من التذاكر لخطوات دورة التطوير غير البرمجية"
+    ],
+    "role": "عمل سابق لخط استخراج المهام ولتقرير مقارنة الإعدادات. نجرّب مهارة coding-evals على مستودع واحد من عزم بجانب repo-to-bench قبل كتابة أداة الاستخراج الخاصة بنا، ونعيد استخدام قواعدها في تجميد أدوات التقييم وعرض التباين.",
+    "pricing": "مجانية (مفتوحة المصدر)؛ تدفع ثمن استدعاءات نماذج الوكيل والحَكَم"
+   }
   }
  ]
 }

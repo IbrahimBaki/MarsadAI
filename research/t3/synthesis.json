@@ -9,7 +9,8 @@
   "squad-kit (1.3, now a full harness) has no direct equivalent that covers idea → tagged release with human gates and readable project memory; Archon (YAML workflows, MIT) and AI-DLC (one core, seven tools) are the closest peers to test it against. Its main gaps for the sandbox: a headless mode, more engines than Claude Code, and isolation.",
   "The real gap, unclaimed by any tool found: measuring harnesses on a company's own SDLC work, including standards compliance and non-code steps, with per-team configuration.",
   "New prior art (Nov 2026) narrows what is left to build: UiPath's Coder Eval already offers per-task YAML, harness switching, cost telemetry and a CI gate; SessionFarmer and Trace2Eval mine tasks from real sessions; SWE-CC and RepoNorm show how to score repository-rule compliance. Azm's unique part is now mainly the SDLC-harness adapters, Track 1 standards scoring and per-team reports, assembled from these pieces.",
-  "Mid-November 2026 prior art: Microsoft's Scope (MIT, preview) already compares agent setups with an AI judge, and small open tools such as repo-to-bench already turn your own Git fixes into Harbor tasks. Pilot both before building the report and task-mining layers ourselves."
+  "Mid-November 2026 prior art: Microsoft's Scope (MIT, preview) already compares agent setups with an AI judge, and small open tools such as repo-to-bench already turn your own Git fixes into Harbor tasks. Pilot both before building the report and task-mining layers ourselves.",
+  "New prior art on 16 Nov 2026: RELAI agent-eval-loop (Apache-2.0) and Microsoft's LoopsBench (MIT) already mine runnable, hidden-test tasks from a repo's pull-request history and compare coding agents on them. Pilot them before building our own task miner; Azm's own work narrows further to the multi-team service, SDLC-harness adapters and standards scoring."
  ],
  "priorArt": [
   {
@@ -113,6 +114,12 @@
    "ref": "loopsbench",
    "takes": "Long tasks mined from real pull-request sequences and repos, split into testable steps with staged hidden tests and regression checks; Docker environments generated from the repo and verified with the reference solution; the same tasks run across six coding-agent harnesses.",
    "lacks": "Per-team suite files, ticket-to-task writing, Harbor packaging, standards scoring, squad-kit and azm-harness adapters."
+  },
+  {
+   "name": "RELAI agent-eval-loop",
+   "ref": "agent-eval-loop",
+   "takes": "Harbor tasks with hidden tests mined from a repo's merged pull requests and reverts; any coding agent run on them with solved rate and cost per solved task; frozen graders with noise reporting; CLAUDE.md and skills improved against the same frozen tasks on a branch.",
+   "lacks": "A shared multi-team service, per-team suite files, squad-kit and azm-harness adapters, standards scoring, and ticket-to-task writing for non-code steps."
   }
  ],
  "architecture": [
@@ -251,7 +258,8 @@
    "لا يوجد مقابل مباشر لـ squad-kit (الإصدار 1.3، وأصبح harness كاملًا) يغطي الفكرة ← الإصدار الموسوم مع بوابات بشرية وذاكرة مشروع مقروءة؛ وأقرب النظراء لاختباره أمامهم Archon (سير عمل YAML، ترخيص MIT) وAI-DLC (نواة واحدة لسبع أدوات). وأبرز نواقصه لبيئة الاختبار: وضع تشغيل بلا واجهة، ومحركات غير Claude Code، والعزل.",
    "الفجوة الحقيقية التي لم تتبنها أي أداة وجدناها: قياس أدوات الـ harness على عمل دورة التطوير الخاص بالشركة، بما في ذلك الالتزام بالمعايير والخطوات غير البرمجية، مع إعدادات لكل فريق.",
    "عمل سابق جديد (نوفمبر 2026) يضيّق ما بقي علينا بناؤه: يقدّم Coder Eval من UiPath فعلًا ملف YAML لكل مهمة، وتبديل الـ harness، وتسجيل التكلفة، وبوابة CI؛ ويستخرج SessionFarmer وTrace2Eval المهام من جلسات حقيقية؛ ويبيّن SWE-CC وRepoNorm كيف نقيّم الالتزام بقواعد المستودع. وصار الجزء الخاص بعزم أساسًا موصّلات أدوات دورة التطوير، وتقييم معايير المسار 1، وتقارير الفرق، مجمّعة من هذه القطع.",
-   "عمل سابق في منتصف نوفمبر 2026: Scope من Microsoft ‏(MIT، معاينة) تقارن فعلًا إعدادات الوكيل بحَكَم آلي، وأدوات مفتوحة صغيرة مثل repo-to-bench تحوّل فعلًا إصلاحات Git الخاصة بك إلى مهام Harbor. نجرّب الاثنتين قبل أن نبني بأنفسنا طبقتي التقارير واستخراج المهام."
+   "عمل سابق في منتصف نوفمبر 2026: Scope من Microsoft ‏(MIT، معاينة) تقارن فعلًا إعدادات الوكيل بحَكَم آلي، وأدوات مفتوحة صغيرة مثل repo-to-bench تحوّل فعلًا إصلاحات Git الخاصة بك إلى مهام Harbor. نجرّب الاثنتين قبل أن نبني بأنفسنا طبقتي التقارير واستخراج المهام.",
+   "عمل سابق جديد في 16 نوفمبر 2026: تستخرج RELAI agent-eval-loop ‏(Apache-2.0) وLoopsBench من مايكروسوفت (MIT) فعلًا مهام قابلة للتشغيل باختبارات مخفية من تاريخ طلبات الدمج في المستودع، وتقارنان وكلاء البرمجة عليها. نجرّبهما قبل بناء أداة استخراج المهام الخاصة بنا؛ ويضيق عمل عزم أكثر ليقتصر على الخدمة المشتركة للفرق ومحوّلات أدوات دورة التطوير ودرجة المعايير."
   ],
   "priorArt": [
    {
@@ -321,6 +329,10 @@
    {
     "takes": "مهام طويلة مستخرجة من سلاسل طلبات دمج ومستودعات حقيقية، مقسّمة إلى خطوات قابلة للاختبار باختبارات مخفية مرحلية وفحوص ضد التراجع؛ وبيئات Docker مولّدة من المستودع ومُتحقَّق منها بالحل المرجعي؛ والمهام نفسها تُشغَّل على ستة harness لوكلاء البرمجة.",
     "lacks": "ملفات مهام لكل فريق، وكتابة المهمة من التذكرة، والتغليف بصيغة Harbor، ودرجة المعايير، ومحوّلات squad-kit وazm-harness."
+   },
+   {
+    "takes": "مهام Harbor باختبارات مخفية مستخرجة من طلبات الدمج المدموجة والتراجعات في المستودع؛ وتشغيل أي وكيل برمجة عليها مع نسبة الحل وتكلفة كل مهمة محلولة؛ وأدوات تقييم مجمَّدة مع عرض التباين؛ وتحسين CLAUDE.md والمهارات على المهام المجمَّدة نفسها في فرع منفصل.",
+    "lacks": "خدمة مشتركة لفرق متعددة، وملفات مهام لكل فريق، ومحوّلات squad-kit وazm-harness، ودرجة المعايير، وكتابة المهام من التذاكر للخطوات غير البرمجية."
    }
   ],
   "names": [

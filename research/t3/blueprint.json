@@ -94,8 +94,8 @@
    },
    "decision": "build",
    "plan": {
-    "en": "Build Azm's own task set with the SWE-bench recipe: take a closed ticket, pin the repo before the fix, write the brief from the ticket, and keep hidden tests that fail before and pass after. Start with 10 tasks from one repo, grow to 20-50 per team. Keep a small slice of Terminal-Bench as a public sanity check, pinned to one version (2.0 matches most published harness studies; 4.x is the current leaderboard), because scores do not carry across versions. New in Scale's SWE-Bench Pro V2 (Sept 2026), a protocol to copy for our own tasks: during the run the agent can reach only the model endpoint (web tools off, because agents were fetching the fixing commits), and every answer is re-graded on a clean image, which caught a model forging a Go checksum. Invalid tasks were dropped (731 to 642) and a task only ships if it passes with the reference fix and fails with an empty one. A second warning from Shanghai AI Lab's SWE-Bench Pro Verified (Sept 2026): agents could read the answer files in 103 tasks locally and 49 over the network, and one model's score fell from 78.8% to 57.3% once that was blocked. So our task images must not contain the fix, the answer key or the hidden tests until grading starts. Prior art for mining (Nov 2026): SessionFarmer (ByteDance and partners) already turns developer-and-agent sessions plus commits into executable tasks, including from private enterprise logs, and checks each task's tests against deliberately broken code and a blind solver. Trace2Eval does the same from agent traces with human-calibrated rubrics. Read both before building the miner and copy their test checks. More ready-made miners (Nov 2026): repo-to-bench (MIT) turns a base and fixed revision plus a test command into a Harbor task, checks the base fails and the fix passes, and keeps hidden tests out of the agent's workspace; Repo-Trials (Apache-2.0) mines Git history into fail-to-pass tasks in a one-commit workspace; agenthangar/evals reports cost per successful attempt. All are early one-person projects, so we try repo-to-bench on one repo before writing our own miner and copy their anti-leak rules. Long tasks (Nov 2026): LoopsBench (Microsoft, MIT) already turns real pull-request sequences into long tasks with staged hidden tests, keeps passed tests as regression checks, and generates each task's Docker setup from the repo and verifies it with the reference solution. We copy that staged design for multi-step Azm tasks instead of inventing our own, and record the outer loop around each harness, since it alone moved results by 5 to 8 points.",
-    "ar": "نبني مجموعة مهام خاصة بعزم على طريقة SWE-bench: نأخذ تذكرة مغلقة، ونثبّت المستودع على حالته قبل الإصلاح، ونكتب وصف المهمة من التذكرة، ونحتفظ باختبارات مخفية تفشل قبل الإصلاح وتنجح بعده. نبدأ بعشر مهام من مستودع واحد، ثم نصل إلى 20-50 مهمة لكل فريق. ونُبقي جزءًا صغيرًا من Terminal-Bench للتحقق العام، مثبّتًا على إصدار واحد (2.0 يطابق معظم دراسات الـ harness المنشورة، و4.x هو لوحة النتائج الحالية)، لأن الدرجات لا تنتقل بين الإصدارات. جديد في SWE-Bench Pro V2 من Scale ‏(سبتمبر 2026)، وهو بروتوكول ننسخه لمهامنا: أثناء التشغيل لا يصل الوكيل إلا إلى خادم النموذج (أدوات الويب معطلة لأن وكلاء كانوا يجلبون الـ commits التي تحتوي الإصلاح)، وتُعاد درجة كل إجابة على صورة نظيفة، وقد كشف ذلك نموذجًا زوّر بصمة تحقق في Go. وحُذفت المهام غير الصالحة (من 731 إلى 642)، ولا تُعتمد مهمة إلا إذا نجحت مع الإصلاح المرجعي وفشلت مع إصلاح فارغ. وتحذير ثانٍ من SWE-Bench Pro Verified الصادر عن مختبر شنغهاي للذكاء الاصطناعي (سبتمبر 2026): استطاع الوكلاء قراءة ملفات الإجابة في 103 مهام محليًا و49 عبر الشبكة، وهبطت نتيجة أحد النماذج من 78.8% إلى 57.3% بعد سد هذه الثغرة. لذلك يجب ألا تحتوي صور مهامنا على الإصلاح أو مفتاح الإجابة أو الاختبارات المخفية قبل بدء التقييم. عمل سابق للاستخراج (نوفمبر 2026): يحوّل SessionFarmer ‏(ByteDance وشركاؤها) فعلًا جلسات المطورين مع الوكلاء والـ commits إلى مهام قابلة للتشغيل، بما في ذلك من سجلات مؤسسية خاصة، ويتحقق من اختبارات كل مهمة بشيفرة مكسورة عمدًا وبحلّال أعمى. ويفعل Trace2Eval الشيء نفسه من مسارات عمل الوكلاء بمعايير معايَرة على البشر. نقرأ الاثنين قبل بناء أداة الاستخراج وننسخ طرق التحقق من الاختبارات. أدوات استخراج جاهزة أخرى (نوفمبر 2026): ‏repo-to-bench ‏(MIT) تحوّل النسخة الأساسية والنسخة المُصلحة مع أمر اختبار إلى مهمة Harbor، وتتحقق من أن الأساسية تفشل وأن الإصلاح ينجح، وتُبقي الاختبارات المخفية خارج مساحة عمل الوكيل؛ وRepo-Trials ‏(Apache-2.0) تستخرج من سجل Git مهام «فشل ← نجاح» في مساحة عمل من commit واحد؛ وagenthangar/evals تعرض تكلفة كل محاولة ناجحة. وكلها مشاريع مبكرة لمطوّر واحد، لذا نجرّب repo-to-bench على مستودع واحد قبل كتابة أداة الاستخراج الخاصة بنا، وننسخ قواعدها لمنع التسريب. المهام الطويلة (نوفمبر 2026): يحوّل LoopsBench ‏(مايكروسوفت، MIT) فعلًا سلاسل طلبات الدمج الحقيقية إلى مهام طويلة باختبارات مخفية مرحلية، ويُبقي الاختبارات الناجحة فحوصًا ضد التراجع، ويولّد بيئة Docker لكل مهمة من المستودع ويتحقق منها بالحل المرجعي. ننسخ هذا التصميم المرحلي لمهام عزم متعددة الخطوات بدل ابتكار تصميم خاص بنا، ونسجّل الحلقة الخارجية حول كل harness، لأنها وحدها حرّكت النتائج بين 5 و8 نقاط."
+    "en": "Build Azm's own task set with the SWE-bench recipe: take a closed ticket, pin the repo before the fix, write the brief from the ticket, and keep hidden tests that fail before and pass after. Start with 10 tasks from one repo, grow to 20-50 per team. Keep a small slice of Terminal-Bench as a public sanity check, pinned to one version (2.0 matches most published harness studies; 4.x is the current leaderboard), because scores do not carry across versions. New in Scale's SWE-Bench Pro V2 (Sept 2026), a protocol to copy for our own tasks: during the run the agent can reach only the model endpoint (web tools off, because agents were fetching the fixing commits), and every answer is re-graded on a clean image, which caught a model forging a Go checksum. Invalid tasks were dropped (731 to 642) and a task only ships if it passes with the reference fix and fails with an empty one. A second warning from Shanghai AI Lab's SWE-Bench Pro Verified (Sept 2026): agents could read the answer files in 103 tasks locally and 49 over the network, and one model's score fell from 78.8% to 57.3% once that was blocked. So our task images must not contain the fix, the answer key or the hidden tests until grading starts. Prior art for mining (Nov 2026): SessionFarmer (ByteDance and partners) already turns developer-and-agent sessions plus commits into executable tasks, including from private enterprise logs, and checks each task's tests against deliberately broken code and a blind solver. Trace2Eval does the same from agent traces with human-calibrated rubrics. Read both before building the miner and copy their test checks. More ready-made miners (Nov 2026): repo-to-bench (MIT) turns a base and fixed revision plus a test command into a Harbor task, checks the base fails and the fix passes, and keeps hidden tests out of the agent's workspace; Repo-Trials (Apache-2.0) mines Git history into fail-to-pass tasks in a one-commit workspace; agenthangar/evals reports cost per successful attempt. All are early one-person projects, so we try repo-to-bench on one repo before writing our own miner and copy their anti-leak rules. Long tasks (Nov 2026): LoopsBench (Microsoft, MIT) already turns real pull-request sequences into long tasks with staged hidden tests, keeps passed tests as regression checks, and generates each task's Docker setup from the repo and verifies it with the reference solution. We copy that staged design for multi-step Azm tasks instead of inventing our own, and record the outer loop around each harness, since it alone moved results by 5 to 8 points. Newest prior art (16 Nov 2026): RELAI agent-eval-loop (Apache-2.0) already builds Harbor tasks with hidden tests from a repo's merged pull requests and reverts, runs any coding agent on them, reports solved rate and cost per solved task, and improves CLAUDE.md and skills against the frozen tasks. Pilot it alongside repo-to-bench on one Azm repo before writing our miner.",
+    "ar": "نبني مجموعة مهام خاصة بعزم على طريقة SWE-bench: نأخذ تذكرة مغلقة، ونثبّت المستودع على حالته قبل الإصلاح، ونكتب وصف المهمة من التذكرة، ونحتفظ باختبارات مخفية تفشل قبل الإصلاح وتنجح بعده. نبدأ بعشر مهام من مستودع واحد، ثم نصل إلى 20-50 مهمة لكل فريق. ونُبقي جزءًا صغيرًا من Terminal-Bench للتحقق العام، مثبّتًا على إصدار واحد (2.0 يطابق معظم دراسات الـ harness المنشورة، و4.x هو لوحة النتائج الحالية)، لأن الدرجات لا تنتقل بين الإصدارات. جديد في SWE-Bench Pro V2 من Scale ‏(سبتمبر 2026)، وهو بروتوكول ننسخه لمهامنا: أثناء التشغيل لا يصل الوكيل إلا إلى خادم النموذج (أدوات الويب معطلة لأن وكلاء كانوا يجلبون الـ commits التي تحتوي الإصلاح)، وتُعاد درجة كل إجابة على صورة نظيفة، وقد كشف ذلك نموذجًا زوّر بصمة تحقق في Go. وحُذفت المهام غير الصالحة (من 731 إلى 642)، ولا تُعتمد مهمة إلا إذا نجحت مع الإصلاح المرجعي وفشلت مع إصلاح فارغ. وتحذير ثانٍ من SWE-Bench Pro Verified الصادر عن مختبر شنغهاي للذكاء الاصطناعي (سبتمبر 2026): استطاع الوكلاء قراءة ملفات الإجابة في 103 مهام محليًا و49 عبر الشبكة، وهبطت نتيجة أحد النماذج من 78.8% إلى 57.3% بعد سد هذه الثغرة. لذلك يجب ألا تحتوي صور مهامنا على الإصلاح أو مفتاح الإجابة أو الاختبارات المخفية قبل بدء التقييم. عمل سابق للاستخراج (نوفمبر 2026): يحوّل SessionFarmer ‏(ByteDance وشركاؤها) فعلًا جلسات المطورين مع الوكلاء والـ commits إلى مهام قابلة للتشغيل، بما في ذلك من سجلات مؤسسية خاصة، ويتحقق من اختبارات كل مهمة بشيفرة مكسورة عمدًا وبحلّال أعمى. ويفعل Trace2Eval الشيء نفسه من مسارات عمل الوكلاء بمعايير معايَرة على البشر. نقرأ الاثنين قبل بناء أداة الاستخراج وننسخ طرق التحقق من الاختبارات. أدوات استخراج جاهزة أخرى (نوفمبر 2026): ‏repo-to-bench ‏(MIT) تحوّل النسخة الأساسية والنسخة المُصلحة مع أمر اختبار إلى مهمة Harbor، وتتحقق من أن الأساسية تفشل وأن الإصلاح ينجح، وتُبقي الاختبارات المخفية خارج مساحة عمل الوكيل؛ وRepo-Trials ‏(Apache-2.0) تستخرج من سجل Git مهام «فشل ← نجاح» في مساحة عمل من commit واحد؛ وagenthangar/evals تعرض تكلفة كل محاولة ناجحة. وكلها مشاريع مبكرة لمطوّر واحد، لذا نجرّب repo-to-bench على مستودع واحد قبل كتابة أداة الاستخراج الخاصة بنا، وننسخ قواعدها لمنع التسريب. المهام الطويلة (نوفمبر 2026): يحوّل LoopsBench ‏(مايكروسوفت، MIT) فعلًا سلاسل طلبات الدمج الحقيقية إلى مهام طويلة باختبارات مخفية مرحلية، ويُبقي الاختبارات الناجحة فحوصًا ضد التراجع، ويولّد بيئة Docker لكل مهمة من المستودع ويتحقق منها بالحل المرجعي. ننسخ هذا التصميم المرحلي لمهام عزم متعددة الخطوات بدل ابتكار تصميم خاص بنا، ونسجّل الحلقة الخارجية حول كل harness، لأنها وحدها حرّكت النتائج بين 5 و8 نقاط. أحدث عمل سابق (16 نوفمبر 2026): تبني RELAI agent-eval-loop ‏(Apache-2.0) فعلًا مهام Harbor باختبارات مخفية من طلبات الدمج المدموجة والتراجعات في المستودع، وتشغّل عليها أي وكيل برمجة، وتعرض نسبة الحل وتكلفة كل مهمة محلولة، وتحسّن CLAUDE.md والمهارات على المهام المجمَّدة. نجرّبها بجانب repo-to-bench على مستودع واحد من عزم قبل كتابة أداة الاستخراج الخاصة بنا."
    },
    "pick": [
     "swe-bench"
@@ -106,7 +106,8 @@
     "aws-harness-benchmarks",
     "qihoo-harness-bench",
     "repo-to-bench",
-    "loopsbench"
+    "loopsbench",
+    "agent-eval-loop"
    ],
    "compare": {
     "tools": [
@@ -114,7 +115,8 @@
      "terminal-bench",
      "skillsbench",
      "aws-harness-benchmarks",
-     "loopsbench"
+     "loopsbench",
+     "agent-eval-loop"
     ],
     "rows": [
      {
@@ -142,6 +144,10 @@
        {
         "en": "Real pull-request sequences, labs and research repos",
         "ar": "سلاسل طلبات دمج حقيقية وتمارين ومستودعات بحثية"
+       },
+       {
+        "en": "Your own merged PRs and reverts",
+        "ar": "طلبات الدمج المدموجة والتراجعات في مستودعك"
        }
       ]
      },
@@ -170,6 +176,10 @@
        {
         "en": "Staged hidden tests; passed tests become regression checks",
         "ar": "اختبارات مخفية مرحلية؛ والاختبارات الناجحة تصبح فحوصًا ضد التراجع"
+       },
+       {
+        "en": "Hidden tests plus frozen checks and judges",
+        "ar": "اختبارات مخفية مع فحوص ونماذج حَكَم مجمَّدة"
        }
       ]
      },
@@ -198,6 +208,10 @@
        {
         "en": "112 long tasks, 5,300+ steps",
         "ar": "112 مهمة طويلة، وأكثر من 5,300 خطوة"
+       },
+       {
+        "en": "As many as you mine (e.g. 20 from six months)",
+        "ar": "بقدر ما تستخرج (مثلًا 20 من ستة أشهر)"
        }
       ]
      },
@@ -226,6 +240,10 @@
        {
         "en": "Prior art for mining long tasks from repo history",
         "ar": "عمل سابق لاستخراج مهام طويلة من تاريخ المستودع"
+       },
+       {
+        "en": "Closest ready-made miner; pilot it first",
+        "ar": "أقرب أداة استخراج جاهزة؛ نجرّبها أولًا"
        }
       ]
      },
@@ -254,6 +272,10 @@
        {
         "en": "New research release; long, costly runs",
         "ar": "إصدار بحثي جديد؛ وتشغيلات طويلة ومكلفة"
+       },
+       {
+        "en": "Brand new; runs per developer, not as a service",
+        "ar": "جديدة تمامًا؛ تعمل لكل مطوّر لا خدمةً مشتركة"
        }
       ]
      }
@@ -1847,7 +1869,8 @@
     "starharness",
     "harness2",
     "superqode",
-    "autosaddler"
+    "autosaddler",
+    "agent-eval-loop"
    ],
    "compare": {
     "tools": [
