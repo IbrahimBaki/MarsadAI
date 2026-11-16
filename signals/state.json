@@ -1,64 +1,64 @@
 {
   "awesome": {
     "hesreallyhim/awesome-claude-code": {
-      "sha": "1c88da78767b4ae664e76861b7afc17a2754d4d4",
-      "date": "2026-11-15T11:59:22.435Z"
+      "sha": "dc3f57657ee0a5426c835b1bf90231f313227f6e",
+      "date": "2026-11-16T05:43:28.608Z"
     },
     "jqueryscript/awesome-claude-code": {
-      "sha": "4d0db41e85da437e354a8efcac6e8201d3b187d0",
-      "date": "2026-11-15T11:59:22.719Z"
+      "sha": "eb21de0595a9b55aa22794e9976e7a319992f9df",
+      "date": "2026-11-16T05:43:30.633Z"
     },
     "ComposioHQ/awesome-claude-skills": {
       "sha": "be2a406907dbc61b73e6827ded415c96139d13a2",
-      "date": "2026-11-15T11:59:23.011Z"
+      "date": "2026-11-16T05:43:31.522Z"
     },
     "travisvn/awesome-claude-skills": {
       "sha": "1da55aa810f206d3fe2005e7e3989b15a275d942",
-      "date": "2026-11-15T11:59:23.256Z"
+      "date": "2026-11-16T05:43:32.461Z"
     },
     "VoltAgent/awesome-agent-skills": {
-      "sha": "a6f9992ceaef05841a9b92e6849d90004a61710c",
-      "date": "2026-11-15T11:59:23.538Z"
+      "sha": "20c57162c790d59d35e47c1538dc534c5c59e60d",
+      "date": "2026-11-16T05:43:34.027Z"
     },
     "VoltAgent/awesome-claude-code-subagents": {
-      "sha": "408d3c9eee2d0c75c12a3abb5de29e53c2ca6b9e",
-      "date": "2026-11-15T11:59:24.412Z"
+      "sha": "ed74d115b7fb7026a22a4f816a8e3250f425e3b4",
+      "date": "2026-11-16T05:43:36.053Z"
     },
     "punkpeye/awesome-mcp-servers": {
-      "sha": "f225f117f92626e6b7d5d2912746d9269e3d037b",
-      "date": "2026-11-15T11:59:24.777Z"
+      "sha": "f431a5cd95cebf038e587715635b9d1a0a4d0c02",
+      "date": "2026-11-16T05:43:38.925Z"
     },
     "wong2/awesome-mcp-servers": {
       "sha": "39eb1d76d76e562657f3c657266a504cea159e23",
-      "date": "2026-11-15T11:59:25.015Z"
+      "date": "2026-11-16T05:43:39.844Z"
     },
     "appcypher/awesome-mcp-servers": {
       "sha": "280218b4bba97a49facf929f8012dec5e30384b6",
-      "date": "2026-11-15T11:59:25.277Z"
+      "date": "2026-11-16T05:43:40.826Z"
     },
     "e2b-dev/awesome-ai-agents": {
       "sha": "9596ab1e69fbbb6c95291141c8dab5c181083216",
-      "date": "2026-11-15T11:59:25.871Z"
+      "date": "2026-11-16T05:43:43.174Z"
     },
     "Shubhamsaboo/awesome-llm-apps": {
-      "sha": "6c16b23f1bacd0fdf240bb5141ef45e59e82c306",
-      "date": "2026-11-15T11:59:26.219Z"
+      "sha": "4f40918e7f6fb90db5d736f77e91c9a80800dd7e",
+      "date": "2026-11-16T05:43:44.684Z"
     },
     "github/awesome-copilot": {
-      "sha": "5269f7ea2d6c3a9bfda5ed878b6726cf509121fd",
-      "date": "2026-11-15T11:59:26.611Z"
+      "sha": "dc0083dbe22133bfa7ce3500dee85e187e0cd47a",
+      "date": "2026-11-16T05:43:46.492Z"
     },
     "VoltAgent/official-mcp-servers": {
-      "sha": "3964a7030860613df3550c6c58974ea10615498f",
-      "date": "2026-11-15T11:59:25.595Z"
+      "sha": "b34404d7fc9284118309b0df65d8015a43ed138b",
+      "date": "2026-11-16T05:43:42.249Z"
     },
     "Picrew/awesome-agent-harness": {
-      "sha": "1ae44c112978de3fdaaad5d199cb3ce8580e44f3",
-      "date": "2026-11-15T11:59:26.915Z"
+      "sha": "e7e8f8d268f7ac5311b778832327e4be2f555507",
+      "date": "2026-11-16T05:43:48.501Z"
     },
     "AutoJunjie/awesome-agent-harness": {
       "sha": "1e3f26371ec1a765efe0268b1e63374bee2aaa04",
-      "date": "2026-11-15T11:59:27.161Z"
+      "date": "2026-11-16T05:43:49.473Z"
     }
   },
   "releases": {
@@ -77,7 +77,7 @@
     "laravel/boost": "v2.10.4",
     "laravel/ai": "v1.4.0",
     "laravel/mcp": "v1.2.0",
-    "filamentphp/filament": "v5.11.3",
+    "filamentphp/filament": "v5.11.4",
     "livewire/livewire": "v4.4.8",
     "prism-php/prism": "v0.103.0",
     "vercel/next.js": "v16.4.6",
