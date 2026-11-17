@@ -2,77 +2,77 @@
   "awesome": {
     "hesreallyhim/awesome-claude-code": {
       "sha": "1c88da78767b4ae664e76861b7afc17a2754d4d4",
-      "date": "2026-11-16T12:49:51.235Z"
+      "date": "2026-11-17T13:31:09.295Z"
     },
     "jqueryscript/awesome-claude-code": {
       "sha": "4d0db41e85da437e354a8efcac6e8201d3b187d0",
-      "date": "2026-11-16T12:49:51.481Z"
+      "date": "2026-11-17T13:31:09.616Z"
     },
     "ComposioHQ/awesome-claude-skills": {
       "sha": "be2a406907dbc61b73e6827ded415c96139d13a2",
-      "date": "2026-11-16T12:49:51.665Z"
+      "date": "2026-11-17T13:31:09.930Z"
     },
     "travisvn/awesome-claude-skills": {
       "sha": "1da55aa810f206d3fe2005e7e3989b15a275d942",
-      "date": "2026-11-16T12:49:51.854Z"
+      "date": "2026-11-17T13:31:10.256Z"
     },
     "VoltAgent/awesome-agent-skills": {
       "sha": "a6f9992ceaef05841a9b92e6849d90004a61710c",
-      "date": "2026-11-16T12:49:52.307Z"
+      "date": "2026-11-17T13:31:10.625Z"
     },
     "VoltAgent/awesome-claude-code-subagents": {
       "sha": "408d3c9eee2d0c75c12a3abb5de29e53c2ca6b9e",
-      "date": "2026-11-16T12:49:52.505Z"
+      "date": "2026-11-17T13:31:10.972Z"
     },
     "punkpeye/awesome-mcp-servers": {
       "sha": "f225f117f92626e6b7d5d2912746d9269e3d037b",
-      "date": "2026-11-16T12:49:52.841Z"
+      "date": "2026-11-17T13:31:11.327Z"
     },
     "wong2/awesome-mcp-servers": {
       "sha": "39eb1d76d76e562657f3c657266a504cea159e23",
-      "date": "2026-11-16T12:49:53.053Z"
+      "date": "2026-11-17T13:31:11.644Z"
     },
     "appcypher/awesome-mcp-servers": {
       "sha": "280218b4bba97a49facf929f8012dec5e30384b6",
-      "date": "2026-11-16T12:49:53.291Z"
+      "date": "2026-11-17T13:31:11.956Z"
     },
     "e2b-dev/awesome-ai-agents": {
       "sha": "9596ab1e69fbbb6c95291141c8dab5c181083216",
-      "date": "2026-11-16T12:49:53.961Z"
+      "date": "2026-11-17T13:31:12.645Z"
     },
     "Shubhamsaboo/awesome-llm-apps": {
       "sha": "6c16b23f1bacd0fdf240bb5141ef45e59e82c306",
-      "date": "2026-11-16T12:49:54.373Z"
+      "date": "2026-11-17T13:31:12.995Z"
     },
     "github/awesome-copilot": {
       "sha": "5269f7ea2d6c3a9bfda5ed878b6726cf509121fd",
-      "date": "2026-11-16T12:49:54.644Z"
+      "date": "2026-11-17T13:31:13.312Z"
     },
     "VoltAgent/official-mcp-servers": {
       "sha": "3964a7030860613df3550c6c58974ea10615498f",
-      "date": "2026-11-16T12:49:53.734Z"
+      "date": "2026-11-17T13:31:12.310Z"
     },
     "Picrew/awesome-agent-harness": {
       "sha": "1ae44c112978de3fdaaad5d199cb3ce8580e44f3",
-      "date": "2026-11-16T12:49:54.876Z"
+      "date": "2026-11-17T13:31:13.672Z"
     },
     "AutoJunjie/awesome-agent-harness": {
       "sha": "1e3f26371ec1a765efe0268b1e63374bee2aaa04",
-      "date": "2026-11-16T12:49:55.087Z"
+      "date": "2026-11-17T13:31:13.997Z"
     }
   },
   "releases": {
-    "anthropics/claude-code": "v2.1.325",
-    "anthropics/claude-agent-sdk-python": "v0.2.182",
-    "anthropics/claude-agent-sdk-typescript": "v0.3.325",
+    "anthropics/claude-code": "v2.1.326",
+    "anthropics/claude-agent-sdk-python": "v0.2.183",
+    "anthropics/claude-agent-sdk-typescript": "v0.3.326",
     "obra/superpowers": "v7.0.2",
     "openai/codex": "rust-v0.169.0",
     "google-gemini/gemini-cli": "v0.68.0",
     "anomalyco/opencode": "v2.3.0",
     "cline/cline": "v4.1.26",
     "microsoft/playwright-mcp": "v0.0.85",
-    "github/github-mcp-server": "v2.1.0",
-    "upstash/context7": "@upstash/context7-mcp@4.7.0",
+    "github/github-mcp-server": "v2.2.0",
+    "upstash/context7": "@upstash/context7-mcp@4.7.2",
     "laravel/framework": "v13.42.0",
     "laravel/boost": "v2.10.4",
     "laravel/ai": "v1.4.0",
@@ -83,11 +83,11 @@
     "vercel/next.js": "v16.4.6",
     "tailwindlabs/tailwindcss": "v4.3.5",
     "microsoft/playwright": "v1.65.1",
-    "github/spec-kit": "v1.4.0",
-    "n8n-io/n8n": "n8n@3.2.2",
+    "github/spec-kit": "v1.4.1",
+    "n8n-io/n8n": "n8n@3.3.0",
     "ollama/ollama": "v0.40.16",
     "vercel/ai": "ai@7.0.173",
-    "docker/compose": "v5.7.1",
+    "docker/compose": "v5.8.0",
     "coollabsio/coolify": "v4.7.5",
     "AzmSquad/squad-kit": "v1.3.24",
     "harbor-framework/harbor": "v0.26.0",
@@ -95,13 +95,13 @@
     "Chorus-AIDLC/Chorus": "v0.24.1",
     "awslabs/aidlc-workflows": "v2.11.4",
     "UKGovernmentBEIS/inspect_ai": "0.3.290",
-    "OpenHands/OpenHands": "v1.40.0",
+    "OpenHands/OpenHands": "v1.41.0",
     "e2b-dev/E2B": "v0.1.4",
     "kubernetes-sigs/agent-sandbox": "v1.0.11",
     "multica-ai/multica": "v0.10.0",
     "paperclipai/paperclip": "v2026.1106.0",
     "bmad-code-org/BMAD-METHOD": "v6.12.4",
-    "langfuse/langfuse": "v4.80.0",
+    "langfuse/langfuse": "v4.81.0",
     "TencentCloud/CubeSandbox": "v0.8.0",
     "superradcompany/microsandbox": "v0.7.15",
     "NVIDIA/OpenShell": "v0.1.8",
@@ -174,7 +174,7 @@
     "phone-harness/mcp": "2026-11-06",
     "exzade/EXZA-Remote": "2026-11-05",
     "Lanqiao-Luca/ai-video-marker": "2026-11-08",
-    "KKKKhazix/agent-autoloop": "2026-11-16",
+    "KKKKhazix/agent-autoloop": "2026-11-17",
     "artemnovitckii/claude-animation-skills": "2026-11-15",
     "wendersoon/radar-cnpj-mcp": "2026-11-13",
     "rudderlabs/devbox": "2026-11-10",
@@ -187,15 +187,15 @@
     "sirioberati/YouTube-AI-Motion-Graphics": "2026-11-10",
     "chutingyean/Agent-Cockpit": "2026-11-09",
     "Glen-Web-App/best-agent-memory-mcp": "2026-11-14",
-    "sksarvesh007/antiglaude": "2026-11-16",
+    "sksarvesh007/antiglaude": "2026-11-17",
     "notivn/AIEVv2": "2026-11-09",
     "pedrojaques99/visant-skills-public": "2026-11-08",
     "Riley-Coyote/mnemos-mcp": "2026-11-10",
     "FireTable/comfy-colab-kit": "2026-11-07",
     "glincker/awesome-selfhosted-ai": "2026-11-13",
-    "devvmhq/devvm": "2026-11-16",
-    "voyager-so/vork": "2026-11-16",
-    "JosssphZhou/poki": "2026-11-16",
+    "devvmhq/devvm": "2026-11-17",
+    "voyager-so/vork": "2026-11-17",
+    "JosssphZhou/poki": "2026-11-17",
     "eust-w/opengeniemaster": "2026-11-10",
     "kyy-logs/code-review-skill": "2026-11-08",
     "stubbi/asm": "2026-11-14",
@@ -206,65 +206,71 @@
     "synchopate/llama-modchip": "2026-11-12",
     "zhanghao123vip/ai-manju-skills": "2026-11-14",
     "dustinliang666-blip/lava-mcp": "2026-11-09",
-    "kubai087/kubai-icons": "2026-11-16",
+    "kubai087/kubai-icons": "2026-11-17",
     "kyy-logs/code-review-gate-skill": "2026-11-09",
     "bnlqn/overlook": "2026-11-11",
-    "imsai-sh/fish-pocket": "2026-11-16",
+    "imsai-sh/fish-pocket": "2026-11-17",
     "GalacticBehindvalor/ua-free-telegram-rpocket-team-autopilot": "2026-11-13",
-    "dabingfy-dot/solo-to-team-skills": "2026-11-16",
-    "Dodaios/ste80-humanizer": "2026-11-16",
-    "nishant-Tiwari24/cracked": "2026-11-16",
+    "dabingfy-dot/solo-to-team-skills": "2026-11-17",
+    "Dodaios/ste80-humanizer": "2026-11-17",
+    "nishant-Tiwari24/cracked": "2026-11-17",
     "DevCrabs-Inc/yandex-metrika-mcp": "2026-11-13",
-    "sshah03/recalc": "2026-11-16",
+    "sshah03/recalc": "2026-11-17",
     "dhruvthakur11/youtube-ai-video-editing-system": "2026-11-14",
     "Pluviobyte/saas-growth-agents": "2026-11-13",
-    "ScottDuncanAI/PID-to-Knowledge-Graph": "2026-11-16",
+    "ScottDuncanAI/PID-to-Knowledge-Graph": "2026-11-17",
     "NJohansen/handle-mcp": "2026-11-13",
     "expo/exact": "2026-11-16",
     "mdiri-ai/SoduWork": "2026-11-12",
-    "agentes-chat/agentes-chat": "2026-11-16",
+    "agentes-chat/agentes-chat": "2026-11-17",
     "phuryn/product-engineering": "2026-11-12",
-    "threerocks/article2media": "2026-11-16",
-    "op7418/guizang-game-skill": "2026-11-16",
+    "threerocks/article2media": "2026-11-17",
+    "op7418/guizang-game-skill": "2026-11-17",
     "claudememory/claude-memory": "2026-11-13",
     "auscaster/silvertongue": "2026-11-12",
-    "bytesbay/pi-gpui": "2026-11-16",
+    "bytesbay/pi-gpui": "2026-11-17",
     "Bil0000/Hill-Climb": "2026-11-16",
-    "chiang21fcb/hygieia": "2026-11-16",
-    "serveroshq/panel": "2026-11-16",
-    "alexeyw/lot-map": "2026-11-16",
+    "chiang21fcb/hygieia": "2026-11-17",
+    "serveroshq/panel": "2026-11-17",
+    "alexeyw/lot-map": "2026-11-17",
     "aa1143/NamiAgent": "2026-11-13",
     "pqthangv/AutoInternshipClaude": "2026-11-13",
     "owoevan-dev/music-skill": "2026-11-16",
     "Moh4696/open-3d-skills": "2026-11-14",
-    "MiniMax-AI/MiniMax-H3-Image": "2026-11-16",
+    "MiniMax-AI/MiniMax-H3-Image": "2026-11-17",
     "pktq/lasik": "2026-11-13",
-    "DIYgod/pinky": "2026-11-16",
+    "DIYgod/pinky": "2026-11-17",
     "Leonxlnx/cook": "2026-11-14",
-    "precygtrucqui1981/blender-ai-copilot-lab": "2026-11-16",
-    "credoksopho1984/blender-ai-copilot-studio": "2026-11-16",
-    "tiobeharxi1987/blender-ai-copilot-flow": "2026-11-16",
-    "hitkeeen/blender-ai-mcp-addon": "2026-11-16",
-    "Doug-218/blender-ai-copilot-forge": "2026-11-16",
-    "ersinkoc/phonebox": "2026-11-16",
-    "Moh4696/cinematic-skill": "2026-11-16",
+    "precygtrucqui1981/blender-ai-copilot-lab": "2026-11-17",
+    "credoksopho1984/blender-ai-copilot-studio": "2026-11-17",
+    "tiobeharxi1987/blender-ai-copilot-flow": "2026-11-17",
+    "hitkeeen/blender-ai-mcp-addon": "2026-11-17",
+    "Doug-218/blender-ai-copilot-forge": "2026-11-17",
+    "ersinkoc/phonebox": "2026-11-17",
+    "Moh4696/cinematic-skill": "2026-11-17",
     "trackboatwrightplan/GitHub-Copilot-app": "2026-11-16",
     "TrapAccountant/GitHub-Copilot-app": "2026-11-15",
-    "trackersnailgrip/GitHub-Copilot-app": "2026-11-16",
-    "toppatronweave/GitHub-Copilot-app": "2026-11-16",
+    "trackersnailgrip/GitHub-Copilot-app": "2026-11-17",
+    "toppatronweave/GitHub-Copilot-app": "2026-11-17",
     "TradesmanRecord/GitHub-Copilot-app": "2026-11-15",
     "TurkeyDesignate/GitHub-Copilot-app": "2026-11-15",
     "TrapBladesmith/GitHub-Copilot-app": "2026-11-15",
-    "zovulrira1974/blender-ai-copilot-assets": "2026-11-16",
-    "racdeufindurch198812/Blender-AI-MCP-Studio": "2026-11-16",
-    "baiblinocun1986/blender-ai-copilot-hub": "2026-11-16",
-    "fumbdendade19718/blender-ai-copilot-desk": "2026-11-16",
-    "CrommaAI/crommacode": "2026-11-16",
+    "zovulrira1974/blender-ai-copilot-assets": "2026-11-17",
+    "racdeufindurch198812/Blender-AI-MCP-Studio": "2026-11-17",
+    "baiblinocun1986/blender-ai-copilot-hub": "2026-11-17",
+    "fumbdendade19718/blender-ai-copilot-desk": "2026-11-17",
+    "CrommaAI/crommacode": "2026-11-17",
     "Topkiflare74/ai--manus2.0": "2026-11-15",
     "topapothecarycanal/ai--manus2.0": "2026-11-15",
-    "BigPizzaV3/ClaudeMom": "2026-11-16",
-    "erkamyaman/unslopovich": "2026-11-16",
-    "TubeLabHQ/youtube-research-skills": "2026-11-16",
-    "berkantay/gpucanvas": "2026-11-16"
+    "BigPizzaV3/ClaudeMom": "2026-11-17",
+    "erkamyaman/unslopovich": "2026-11-17",
+    "TubeLabHQ/youtube-research-skills": "2026-11-17",
+    "berkantay/gpucanvas": "2026-11-17",
+    "sybil-solutions/inference-optimisation-skill": "2026-11-17",
+    "Sunghwan0112/spritecast": "2026-11-17",
+    "anhnx000/viet-nhu-nguoi": "2026-11-17",
+    "Jakeschincariol/whale-skill": "2026-11-17",
+    "kociden/sakurai-skill": "2026-11-17",
+    "TIGER-AI-Lab/WebsiteBench": "2026-11-17"
   }
 }
