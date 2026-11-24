@@ -1,0 +1,835 @@
+{
+  "date": "2026-11-24",
+  "generated": "2026-11-24T14:55:35.874Z",
+  "awesome": [],
+  "releases": [
+    {
+      "repo": "anthropics/claude-code",
+      "section": "claude",
+      "tag": "v2.1.331",
+      "previous": "v2.1.330",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.331"
+    },
+    {
+      "repo": "anthropics/claude-agent-sdk-python",
+      "section": "claude",
+      "tag": "v0.2.188",
+      "previous": "v0.2.187",
+      "url": "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.188"
+    },
+    {
+      "repo": "anthropics/claude-agent-sdk-typescript",
+      "section": "claude",
+      "tag": "v0.3.331",
+      "previous": "v0.3.330",
+      "url": "https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.331"
+    },
+    {
+      "repo": "openai/codex",
+      "section": "agents",
+      "tag": "rust-v0.172.0",
+      "previous": "rust-v0.171.0",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.172.0"
+    },
+    {
+      "repo": "google-gemini/gemini-cli",
+      "section": "agents",
+      "tag": "v0.71.1",
+      "previous": "v0.70.0",
+      "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.71.1"
+    },
+    {
+      "repo": "anomalyco/opencode",
+      "section": "agents",
+      "tag": "v2.4.1",
+      "previous": "v2.4.0",
+      "url": "https://github.com/anomalyco/opencode/releases/tag/v2.4.1"
+    },
+    {
+      "repo": "upstash/context7",
+      "section": "mcp",
+      "tag": "@upstash/context7-mcp@4.8.0",
+      "previous": "@upstash/context7-mcp@4.7.3",
+      "url": "https://github.com/upstash/context7/releases/tag/%40upstash%2Fcontext7-mcp%404.8.0"
+    },
+    {
+      "repo": "livewire/livewire",
+      "section": "laravel",
+      "tag": "v4.4.10",
+      "previous": "v4.4.9",
+      "url": "https://github.com/livewire/livewire/releases/tag/v4.4.10"
+    },
+    {
+      "repo": "github/spec-kit",
+      "section": "architecture",
+      "track": "t3",
+      "tag": "v1.4.4",
+      "previous": "v1.4.3",
+      "url": "https://github.com/github/spec-kit/releases/tag/v1.4.4"
+    },
+    {
+      "repo": "n8n-io/n8n",
+      "section": "automation",
+      "tag": "n8n@3.4.0",
+      "previous": "n8n@3.3.0",
+      "url": "https://github.com/n8n-io/n8n/releases/tag/n8n%403.4.0"
+    },
+    {
+      "repo": "ollama/ollama",
+      "section": "llm",
+      "tag": "v0.40.18",
+      "previous": "v0.40.17",
+      "url": "https://github.com/ollama/ollama/releases/tag/v0.40.18"
+    },
+    {
+      "repo": "vercel/ai",
+      "section": "llm",
+      "tag": "ai@7.0.181",
+      "previous": "ai@7.0.179",
+      "url": "https://github.com/vercel/ai/releases/tag/ai%407.0.181"
+    },
+    {
+      "repo": "AzmSquad/squad-kit",
+      "section": "agents",
+      "track": "t3",
+      "tag": "v1.3.37",
+      "previous": "v1.3.25",
+      "url": "https://github.com/AzmSquad/squad-kit/releases/tag/v1.3.37"
+    },
+    {
+      "repo": "UKGovernmentBEIS/inspect_ai",
+      "section": "agents",
+      "track": "t3",
+      "tag": "0.3.292",
+      "previous": "0.3.291",
+      "url": "https://github.com/UKGovernmentBEIS/inspect_ai/releases/tag/0.3.292"
+    },
+    {
+      "repo": "OpenHands/OpenHands",
+      "section": "agents",
+      "track": "t3",
+      "tag": "v1.45.0",
+      "previous": "v1.43.0",
+      "url": "https://github.com/OpenHands/OpenHands/releases/tag/v1.45.0"
+    },
+    {
+      "repo": "multica-ai/multica",
+      "section": "agents",
+      "track": "t3",
+      "tag": "v0.12.2",
+      "previous": "v0.12.0",
+      "url": "https://github.com/multica-ai/multica/releases/tag/v0.12.2"
+    },
+    {
+      "repo": "langfuse/langfuse",
+      "section": "agents",
+      "track": "t3",
+      "tag": "v4.85.0",
+      "previous": "v4.84.0",
+      "url": "https://github.com/langfuse/langfuse/releases/tag/v4.85.0"
+    },
+    {
+      "repo": "superradcompany/microsandbox",
+      "section": "agents",
+      "track": "t3",
+      "tag": "v0.8.2",
+      "previous": "v0.8.1",
+      "url": "https://github.com/superradcompany/microsandbox/releases/tag/v0.8.2"
+    },
+    {
+      "repo": "NVIDIA/OpenShell",
+      "section": "agents",
+      "track": "t3",
+      "tag": "v0.1.10",
+      "previous": "v0.1.9",
+      "url": "https://github.com/NVIDIA/OpenShell/releases/tag/v0.1.10"
+    }
+  ],
+  "trending": [
+    {
+      "repo": "erkamyaman/rust-anything",
+      "section": "skills",
+      "topic": "claude-code",
+      "url": "https://github.com/erkamyaman/rust-anything",
+      "description": "Rewrite your whole app in Rust, one piece at a time, checked against the original's recorded behavior at every step. CLIs, HTTP servers and libraries in TypeScript, Python, C, Go, Ruby and Java.",
+      "stars": 9082,
+      "created": "2026-11-16T12:10:36Z",
+      "language": "Rust",
+      "new": false
+    },
+    {
+      "repo": "XinaTian/MROffice",
+      "section": "skills",
+      "topic": "claude-code",
+      "url": "https://github.com/XinaTian/MROffice",
+      "description": "MR Office — the open-source editors of the AI office suite closest to Microsoft Office: documents, spreadsheets, presentations, PDF and code in the browser. Copilot in every editor edits real Word, Excel and PowerPoint files with you; an MCP server lets Claude, ChatGPT, Cursor and Codex create and edit them; embed it in your app with one line.",
+      "stars": 3656,
+      "created": "2026-11-10T17:54:07Z",
+      "language": "TypeScript",
+      "new": false
+    },
+    {
+      "repo": "EL4CTEO/fast-anything",
+      "section": "skills",
+      "topic": "claude-code",
+      "url": "https://github.com/EL4CTEO/fast-anything",
+      "description": "Don't rewrite it in Rust. Rewrite the 5% that's slow: profile Python, Node or Ruby apps, port the hot functions with your coding agent, prove they behave the same.",
+      "stars": 3491,
+      "created": "2026-11-21T14:40:27Z",
+      "language": "Rust",
+      "new": false
+    },
+    {
+      "repo": "sybil-solutions/inference-optimisation-skill",
+      "section": "skills",
+      "topic": "claude-code",
+      "url": "https://github.com/sybil-solutions/inference-optimisation-skill",
+      "description": "Agent skill for hill-climbing local LLM serving speed (decode, speculative decoding, prefill, KV, startup, TTFT) on any hardware and quantization",
+      "stars": 2450,
+      "created": "2026-11-16T18:40:04Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "pierridotite/mobile-agent-testers",
+      "section": "skills",
+      "topic": "claude-code",
+      "url": "https://github.com/pierridotite/mobile-agent-testers",
+      "description": "20 AI testers on 20 different phones, in parallel, on GitHub's free runners: Claude Code agents on iOS Simulators and Android emulators that find broken flows, translation, layout and accessibility bugs",
+      "stars": 1699,
+      "created": "2026-11-16T19:11:44Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "boringmarketer/boring-marketing-skills",
+      "section": "skills",
+      "topic": "claude-code",
+      "url": "https://github.com/boringmarketer/boring-marketing-skills",
+      "description": "32 free marketing skills for your AI agent: research, positioning, copy, pages, SEO, AI search, ads, email and content, plus a deep local-business pack. MIT.",
+      "stars": 831,
+      "created": "2026-11-16T15:09:46Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "mankidev/antialgorithm",
+      "section": "skills",
+      "topic": "claude-code",
+      "url": "https://github.com/mankidev/antialgorithm",
+      "description": "Agent skill that steers the model away from its first, most average pick in creative work: names, ideas, logo, posters, UI.",
+      "stars": 806,
+      "created": "2026-11-14T09:48:23Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "danielwh2/sprite-stacking",
+      "section": "skills",
+      "topic": "claude-code",
+      "url": "https://github.com/danielwh2/sprite-stacking",
+      "description": "Agent skill: turn four pixel art views into fake-3D sprites you can spin. Works with Claude Code, Codex, Cursor, OpenCode, Gemini CLI, Pi.",
+      "stars": 745,
+      "created": "2026-11-20T14:32:43Z",
+      "language": "HTML",
+      "new": false
+    },
+    {
+      "repo": "BigPizzaV3/ClaudeMom",
+      "section": "skills",
+      "topic": "claude-code",
+      "url": "https://github.com/BigPizzaV3/ClaudeMom",
+      "description": "不用 Claude 账号！把 API Key 变成登录模式，Claude 桌面版全功能解锁（汉化 / 语音 / 电脑控制）",
+      "stars": 692,
+      "created": "2026-11-12T07:06:59Z",
+      "language": "JavaScript",
+      "new": false
+    },
+    {
+      "repo": "erkamyaman/safe-anything",
+      "section": "skills",
+      "topic": "claude-code",
+      "url": "https://github.com/erkamyaman/safe-anything",
+      "description": "Find the holes before someone else does. A fast, 100% Rust vulnerability scanner: XSS, SQL injection, leaked secrets, dependency CVEs and AI agent setups.",
+      "stars": 587,
+      "created": "2026-11-22T16:44:10Z",
+      "language": "Rust",
+      "new": true
+    },
+    {
+      "repo": "mankidev/antialgorithm",
+      "section": "skills",
+      "topic": "claude-skills",
+      "url": "https://github.com/mankidev/antialgorithm",
+      "description": "Agent skill that steers the model away from its first, most average pick in creative work: names, ideas, logo, posters, UI.",
+      "stars": 806,
+      "created": "2026-11-14T09:48:23Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "op7418/guizang-game-skill",
+      "section": "skills",
+      "topic": "claude-skills",
+      "url": "https://github.com/op7418/guizang-game-skill",
+      "description": "歸藏 Game Skill：让 AI 从零做出能在浏览器里玩的 3D 动作游戏，附可玩演示《雾锁山门》。Agent skill for Claude Code / Codex that builds a playable browser 3D action game with AI-generated assets (three.js, single-HTML). Playable demo included.",
+      "stars": 486,
+      "created": "2026-11-11T16:28:54Z",
+      "language": "JavaScript",
+      "new": false
+    },
+    {
+      "repo": "tammo1007/alyn",
+      "section": "skills",
+      "topic": "claude-skills",
+      "url": "https://github.com/tammo1007/alyn",
+      "description": "The best AI skills for Claude Code, Cursor and Codex, ranked every week. CLI, Alyn MCP and skills.",
+      "stars": 117,
+      "created": "2026-11-11T16:22:09Z",
+      "language": "JavaScript",
+      "new": false
+    },
+    {
+      "repo": "byttrade/bytx-skills",
+      "section": "skills",
+      "topic": "claude-skills",
+      "url": "https://github.com/byttrade/bytx-skills",
+      "description": "Crypto trading skills for AI assistants on bytx: MCP server + CLI + Claude skills. Paper by default, never without your yes.",
+      "stars": 90,
+      "created": "2026-11-18T14:14:01Z",
+      "language": "Python",
+      "new": true
+    },
+    {
+      "repo": "jaronhonda387-design/virtual-card-usdt-anthropic-ipo-claude52-vcc-applepay",
+      "section": "skills",
+      "topic": "claude-skills",
+      "url": "https://github.com/jaronhonda387-design/virtual-card-usdt-anthropic-ipo-claude52-vcc-applepay",
+      "description": "借势 Anthropic 冲刺纳斯达克 1.4 万亿美元估值 IPO 与 Claude Fable 5.2 发布热点，深度剖析 Stripe Radar 风控底层逻辑与发卡行清算机制，用 CoreGold 商业虚拟卡（VCC）+ USDT + Apple Pay 彻底解决绑卡拒付与 Ghost Cancel 砍单。",
+      "stars": 81,
+      "created": "2026-11-16T07:47:45Z",
+      "language": null,
+      "new": false
+    },
+    {
+      "repo": "lowdevco/Clip-Forge",
+      "section": "skills",
+      "topic": "claude-skills",
+      "url": "https://github.com/lowdevco/Clip-Forge",
+      "description": "ClipForge is a skill for Claude. You give it a YouTube link or a video file. It finds the best moments, shows you a scored shortlist, and turns the ones you choose into finished vertical clips for YouTube Shorts, Instagram Reels and TikTok",
+      "stars": 77,
+      "created": "2026-11-13T06:37:00Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "qualixar/brief2mp4",
+      "section": "skills",
+      "topic": "claude-skills",
+      "url": "https://github.com/qualixar/brief2mp4",
+      "description": "Claude Code and Codex skill: turn a written brief into a finished, checked MP4. Motion graphics, explainer videos and documentaries, YouTube Shorts, 3D and Blender animation, 82 art forms, talking characters. Also installs brief2motion for animated websites. Free, MIT.",
+      "stars": 63,
+      "created": "2026-11-14T11:57:20Z",
+      "language": "Python",
+      "new": true
+    },
+    {
+      "repo": "maximilianfeix/plinkfx",
+      "section": "skills",
+      "topic": "claude-skills",
+      "url": "https://github.com/maximilianfeix/plinkfx",
+      "description": "Game sound effects as code: 180 CC0 SFX, a 2.9 kB Web Audio player, a CLI to WAV/OGG and an agent skill. No audio files.",
+      "stars": 63,
+      "created": "2026-11-12T09:37:42Z",
+      "language": "TypeScript",
+      "new": false
+    },
+    {
+      "repo": "next-token-tv/next-token-skill",
+      "section": "skills",
+      "topic": "claude-skills",
+      "url": "https://github.com/next-token-tv/next-token-skill",
+      "description": "让 AI Agent 检索 Next Token｜词元之外 播客的 Skill：回答 AI 问题时引用主理人观点，并附 B 站 / YouTube 时间戳直跳链接",
+      "stars": 62,
+      "created": "2026-11-12T09:55:17Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "lonely-dance-lab/self-media-guide",
+      "section": "skills",
+      "topic": "claude-skills",
+      "url": "https://github.com/lonely-dance-lab/self-media-guide",
+      "description": "自媒体创作不完全指南：起号方法论、对标拆解模板和 Agent Skill。核心是二创，不是搬运。",
+      "stars": 59,
+      "created": "2026-11-15T06:24:10Z",
+      "language": "JavaScript",
+      "new": true
+    },
+    {
+      "repo": "erkamyaman/rust-anything",
+      "section": "skills",
+      "topic": "agent-skills",
+      "url": "https://github.com/erkamyaman/rust-anything",
+      "description": "Rewrite your whole app in Rust, one piece at a time, checked against the original's recorded behavior at every step. CLIs, HTTP servers and libraries in TypeScript, Python, C, Go, Ruby and Java.",
+      "stars": 9082,
+      "created": "2026-11-16T12:10:36Z",
+      "language": "Rust",
+      "new": false
+    },
+    {
+      "repo": "EL4CTEO/fast-anything",
+      "section": "skills",
+      "topic": "agent-skills",
+      "url": "https://github.com/EL4CTEO/fast-anything",
+      "description": "Don't rewrite it in Rust. Rewrite the 5% that's slow: profile Python, Node or Ruby apps, port the hot functions with your coding agent, prove they behave the same.",
+      "stars": 3491,
+      "created": "2026-11-21T14:40:27Z",
+      "language": "Rust",
+      "new": false
+    },
+    {
+      "repo": "boringmarketer/boring-marketing-skills",
+      "section": "skills",
+      "topic": "agent-skills",
+      "url": "https://github.com/boringmarketer/boring-marketing-skills",
+      "description": "32 free marketing skills for your AI agent: research, positioning, copy, pages, SEO, AI search, ads, email and content, plus a deep local-business pack. MIT.",
+      "stars": 831,
+      "created": "2026-11-16T15:09:46Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "mankidev/antialgorithm",
+      "section": "skills",
+      "topic": "agent-skills",
+      "url": "https://github.com/mankidev/antialgorithm",
+      "description": "Agent skill that steers the model away from its first, most average pick in creative work: names, ideas, logo, posters, UI.",
+      "stars": 806,
+      "created": "2026-11-14T09:48:23Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "danielwh2/sprite-stacking",
+      "section": "skills",
+      "topic": "agent-skills",
+      "url": "https://github.com/danielwh2/sprite-stacking",
+      "description": "Agent skill: turn four pixel art views into fake-3D sprites you can spin. Works with Claude Code, Codex, Cursor, OpenCode, Gemini CLI, Pi.",
+      "stars": 745,
+      "created": "2026-11-20T14:32:43Z",
+      "language": "HTML",
+      "new": false
+    },
+    {
+      "repo": "kociden/sakurai-skill",
+      "section": "skills",
+      "topic": "agent-skills",
+      "url": "https://github.com/kociden/sakurai-skill",
+      "description": "桜井政博のゲーム作るには 全本編257本の字幕から作ったゲーム制作の Agent Skill（非公式・日本語）",
+      "stars": 516,
+      "created": "2026-11-12T15:54:56Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "op7418/guizang-game-skill",
+      "section": "skills",
+      "topic": "agent-skills",
+      "url": "https://github.com/op7418/guizang-game-skill",
+      "description": "歸藏 Game Skill：让 AI 从零做出能在浏览器里玩的 3D 动作游戏，附可玩演示《雾锁山门》。Agent skill for Claude Code / Codex that builds a playable browser 3D action game with AI-generated assets (three.js, single-HTML). Playable demo included.",
+      "stars": 486,
+      "created": "2026-11-11T16:28:54Z",
+      "language": "JavaScript",
+      "new": false
+    },
+    {
+      "repo": "JimLiu/open-artifact",
+      "section": "skills",
+      "topic": "agent-skills",
+      "url": "https://github.com/JimLiu/open-artifact",
+      "description": "Open, agent- and model-agnostic artifacts, all saved locally as plain files — edit, comment on, and export slides, UI designs, design systems, whiteboards, sheets, dashboards, docs, and motion.",
+      "stars": 468,
+      "created": "2026-11-17T02:25:25Z",
+      "language": "TypeScript",
+      "new": false
+    },
+    {
+      "repo": "diego3g/craft",
+      "section": "skills",
+      "topic": "agent-skills",
+      "url": "https://github.com/diego3g/craft",
+      "description": "Design skills for AI agents: /craft-setup writes your design brief, /craft designs screens with every state from your design system and reviews them. Works with Paper, pen.dev, Figma or HTML.",
+      "stars": 458,
+      "created": "2026-11-15T20:08:15Z",
+      "language": "JavaScript",
+      "new": true
+    },
+    {
+      "repo": "staryone/motlab",
+      "section": "skills",
+      "topic": "agent-skills",
+      "url": "https://github.com/staryone/motlab",
+      "description": "Video as code: canvas scenes rendered with WebCodecs in headless Chrome, a review viewer, and agent skills that build the video from your references.",
+      "stars": 457,
+      "created": "2026-11-16T13:45:47Z",
+      "language": "JavaScript",
+      "new": true
+    },
+    {
+      "repo": "XinaTian/MROffice",
+      "section": "mcp",
+      "topic": "mcp-server",
+      "url": "https://github.com/XinaTian/MROffice",
+      "description": "MR Office — the open-source editors of the AI office suite closest to Microsoft Office: documents, spreadsheets, presentations, PDF and code in the browser. Copilot in every editor edits real Word, Excel and PowerPoint files with you; an MCP server lets Claude, ChatGPT, Cursor and Codex create and edit them; embed it in your app with one line.",
+      "stars": 3656,
+      "created": "2026-11-10T17:54:07Z",
+      "language": "TypeScript",
+      "new": false
+    },
+    {
+      "repo": "EL4CTEO/fast-anything",
+      "section": "mcp",
+      "topic": "mcp-server",
+      "url": "https://github.com/EL4CTEO/fast-anything",
+      "description": "Don't rewrite it in Rust. Rewrite the 5% that's slow: profile Python, Node or Ruby apps, port the hot functions with your coding agent, prove they behave the same.",
+      "stars": 3491,
+      "created": "2026-11-21T14:40:27Z",
+      "language": "Rust",
+      "new": false
+    },
+    {
+      "repo": "INK-Q/agy-fast",
+      "section": "mcp",
+      "topic": "mcp-server",
+      "url": "https://github.com/INK-Q/agy-fast",
+      "description": "Non-invasive MCP accelerator plugin for Google Antigravity (CLI/Desktop/IDE): cuts LLM turns (-34%), token quota (-31%), and upload traffic (-40%) without affecting native UI or diffs.",
+      "stars": 984,
+      "created": "2026-11-19T04:58:46Z",
+      "language": "TypeScript",
+      "new": false
+    },
+    {
+      "repo": "racdeufindurch198812/Blender-AI-MCP-Studio",
+      "section": "mcp",
+      "topic": "mcp-server",
+      "url": "https://github.com/racdeufindurch198812/Blender-AI-MCP-Studio",
+      "description": "Blender AI MCP Studio is an AI assistant and built-in Model Context Protocol MCP server for Blender that turns plain-language briefs into inspected, approved and reversible 3D scene operations — with a visual chat workspace, multi-agent teams and your choice of AI models. · blender ai mcp studio · mcp-for-blender · mcp for blender pro",
+      "stars": 520,
+      "created": "2026-11-12T19:28:20Z",
+      "language": null,
+      "new": false
+    },
+    {
+      "repo": "credoksopho1984/blender-ai-copilot-studio",
+      "section": "mcp",
+      "topic": "mcp-server",
+      "url": "https://github.com/credoksopho1984/blender-ai-copilot-studio",
+      "description": "An AI copilot and MCP server for Blender that turns plain-language briefs into scene operations—inside a visual chat studio with multi-agent teams, your choice of AI models, and 27 built-in scene tools. · blender-ai-copilot-studio · blender ai · ai for blender · blender copilot · blender ai copilot · blender ai assistant · blender mcp server",
+      "stars": 517,
+      "created": "2026-11-12T19:30:32Z",
+      "language": null,
+      "new": false
+    },
+    {
+      "repo": "tiobeharxi1987/blender-ai-copilot-flow",
+      "section": "mcp",
+      "topic": "mcp-server",
+      "url": "https://github.com/tiobeharxi1987/blender-ai-copilot-flow",
+      "description": "A controlled AI workflow for Blender: every copilot edit is a supervised tool call—proposed, approved, executed in sequence, cancellable after the current step and undoable by name—inside a visual studio with a built-in MCP server. · blender-ai-copilot-flow · blender · blender 3d · blender addon · blender plugin · blender extension",
+      "stars": 516,
+      "created": "2026-11-12T19:38:53Z",
+      "language": null,
+      "new": false
+    },
+    {
+      "repo": "zovulrira1974/blender-ai-copilot-assets",
+      "section": "mcp",
+      "topic": "mcp-server",
+      "url": "https://github.com/zovulrira1974/blender-ai-copilot-assets",
+      "description": "An asset-savvy AI copilot for Blender—search Poly Haven, Sketchfab and Poly Pizza mid-conversation, check what fits, import after your confirmation, with 27 scene tools and a built-in MCP server alongside. · blender-ai-copilot-assets · blender · blender 3d · blender addon · blender plugin · blender extension · blender scripting · blender automation",
+      "stars": 510,
+      "created": "2026-11-12T19:39:54Z",
+      "language": null,
+      "new": false
+    },
+    {
+      "repo": "Doug-218/blender-ai-copilot-forge",
+      "section": "mcp",
+      "topic": "mcp-server",
+      "url": "https://github.com/Doug-218/blender-ai-copilot-forge",
+      "description": "A scene-forging AI copilot for Blender—describe the layout and watch primitives, cameras, lights, materials and parenting assemble in ordered steps, with approvals, named undo and a built-in MCP server. · blender-ai-copilot-forge · blender · blender 3d · blender addon · blender plugin · blender extension · blender scripting · blender automation",
+      "stars": 510,
+      "created": "2026-11-12T19:35:10Z",
+      "language": null,
+      "new": false
+    },
+    {
+      "repo": "precygtrucqui1981/blender-ai-copilot-lab",
+      "section": "mcp",
+      "topic": "mcp-server",
+      "url": "https://github.com/precygtrucqui1981/blender-ai-copilot-lab",
+      "description": "An AI lab for Blender where manager–worker–reviewer agent teams run multi-step scene briefs as supervised experiments—a live task board, review findings, one correction attempt per blocked task, named undo, and a built-in MCP server. · blender-ai-copilot-lab · blender · blender 3d · blender addon · blender plugin · blender extension",
+      "stars": 506,
+      "created": "2026-11-12T19:33:16Z",
+      "language": null,
+      "new": false
+    },
+    {
+      "repo": "fumbdendade19718/blender-ai-copilot-desk",
+      "section": "mcp",
+      "topic": "mcp-server",
+      "url": "https://github.com/fumbdendade19718/blender-ai-copilot-desk",
+      "description": "A visual AI desk for Blender—chat, scene objects, viewport snapshots, approvals and a live task board in one companion window, backed by your choice of models and a built-in MCP server. · blender-ai-copilot-desk · blender · blender 3d · blender addon · blender plugin · blender extension · blender scripting · blender automation · blender mcp",
+      "stars": 506,
+      "created": "2026-11-12T19:37:25Z",
+      "language": null,
+      "new": false
+    },
+    {
+      "repo": "INK-Q/agy-fast",
+      "section": "agents",
+      "topic": "coding-agent",
+      "url": "https://github.com/INK-Q/agy-fast",
+      "description": "Non-invasive MCP accelerator plugin for Google Antigravity (CLI/Desktop/IDE): cuts LLM turns (-34%), token quota (-31%), and upload traffic (-40%) without affecting native UI or diffs.",
+      "stars": 984,
+      "created": "2026-11-19T04:58:46Z",
+      "language": "TypeScript",
+      "new": false
+    },
+    {
+      "repo": "w01fb0ss/PiBot",
+      "section": "agents",
+      "topic": "coding-agent",
+      "url": "https://github.com/w01fb0ss/PiBot",
+      "description": "Open-source, local-first AI agent team for your desktop: multi-agent group chats, computer use, browser, MCP, routines and approvals. macOS, Windows, Linux + Android. Built on pi.",
+      "stars": 543,
+      "created": "2026-11-21T06:54:24Z",
+      "language": "TypeScript",
+      "new": false
+    },
+    {
+      "repo": "JimLiu/open-artifact",
+      "section": "agents",
+      "topic": "coding-agent",
+      "url": "https://github.com/JimLiu/open-artifact",
+      "description": "Open, agent- and model-agnostic artifacts, all saved locally as plain files — edit, comment on, and export slides, UI designs, design systems, whiteboards, sheets, dashboards, docs, and motion.",
+      "stars": 468,
+      "created": "2026-11-17T02:25:25Z",
+      "language": "TypeScript",
+      "new": false
+    },
+    {
+      "repo": "oriliz/agent-crop",
+      "section": "agents",
+      "topic": "coding-agent",
+      "url": "https://github.com/oriliz/agent-crop",
+      "description": "给 AI 编程助手一根马鞭：本地记录时间去向，把复盘写回 agent 指令/技能/工具；改没改好，用数据说话。 | A whip for coding agents: local timing, red-line nudges, and an evidence-backed, auditable self-improvement loop. DSH / Claude Code / Codex.",
+      "stars": 313,
+      "created": "2026-11-14T07:36:17Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "Peshiemaina21/telegram-news-autopilot",
+      "section": "agents",
+      "topic": "coding-agent",
+      "url": "https://github.com/Peshiemaina21/telegram-news-autopilot",
+      "description": "Telegram Autopilot: Community-Driven, Feature-Rich Bot for Discord and Telegram",
+      "stars": 154,
+      "created": "2026-11-15T20:46:03Z",
+      "language": "TypeScript",
+      "new": false
+    },
+    {
+      "repo": "earayu/Mingle",
+      "section": "agents",
+      "topic": "coding-agent",
+      "url": "https://github.com/earayu/Mingle",
+      "description": "Bring your agent companion into the chat apps you already use. Runs on your machine, no server.",
+      "stars": 153,
+      "created": "2026-11-11T07:47:51Z",
+      "language": "TypeScript",
+      "new": false
+    },
+    {
+      "repo": "CrommaAI/crommacode",
+      "section": "agents",
+      "topic": "coding-agent",
+      "url": "https://github.com/CrommaAI/crommacode",
+      "description": "CrommaCode — the gamified IDE for coding agents. Watch Claude Code, Codex, Gemini CLI, Cursor CLI or OpenCode work as a game, and send a swarm of worker agents. Free for macOS, Windows and Linux.",
+      "stars": 129,
+      "created": "2026-11-12T04:02:00Z",
+      "language": null,
+      "new": false
+    },
+    {
+      "repo": "keli-wen/cospan",
+      "section": "agents",
+      "topic": "coding-agent",
+      "url": "https://github.com/keli-wen/cospan",
+      "description": "Unified orchestration across coding agents — connect Antigravity, Codex, Claude Code, and DeepSeek Harness through one async delegation protocol.",
+      "stars": 65,
+      "created": "2026-11-15T18:09:13Z",
+      "language": "JavaScript",
+      "new": true
+    },
+    {
+      "repo": "EL4CTEO/fast-anything",
+      "section": "automation",
+      "topic": "ai-agents",
+      "url": "https://github.com/EL4CTEO/fast-anything",
+      "description": "Don't rewrite it in Rust. Rewrite the 5% that's slow: profile Python, Node or Ruby apps, port the hot functions with your coding agent, prove they behave the same.",
+      "stars": 3491,
+      "created": "2026-11-21T14:40:27Z",
+      "language": "Rust",
+      "new": false
+    },
+    {
+      "repo": "pierridotite/mobile-agent-testers",
+      "section": "automation",
+      "topic": "ai-agents",
+      "url": "https://github.com/pierridotite/mobile-agent-testers",
+      "description": "20 AI testers on 20 different phones, in parallel, on GitHub's free runners: Claude Code agents on iOS Simulators and Android emulators that find broken flows, translation, layout and accessibility bugs",
+      "stars": 1699,
+      "created": "2026-11-16T19:11:44Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "boringmarketer/boring-marketing-skills",
+      "section": "automation",
+      "topic": "ai-agents",
+      "url": "https://github.com/boringmarketer/boring-marketing-skills",
+      "description": "32 free marketing skills for your AI agent: research, positioning, copy, pages, SEO, AI search, ads, email and content, plus a deep local-business pack. MIT.",
+      "stars": 831,
+      "created": "2026-11-16T15:09:46Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "erkamyaman/safe-anything",
+      "section": "automation",
+      "topic": "ai-agents",
+      "url": "https://github.com/erkamyaman/safe-anything",
+      "description": "Find the holes before someone else does. A fast, 100% Rust vulnerability scanner: XSS, SQL injection, leaked secrets, dependency CVEs and AI agent setups.",
+      "stars": 587,
+      "created": "2026-11-22T16:44:10Z",
+      "language": "Rust",
+      "new": false
+    },
+    {
+      "repo": "fendouai/ViralForge",
+      "section": "automation",
+      "topic": "ai-agents",
+      "url": "https://github.com/fendouai/ViralForge",
+      "description": "Agent-native viral video studio: deconstruct scripts, replicate structures, export editable projects and costed variants. Website: https://wearai.net/ai-video-generator",
+      "stars": 557,
+      "created": "2026-11-11T07:13:59Z",
+      "language": "TypeScript",
+      "new": false
+    },
+    {
+      "repo": "berkantay/gpucanvas",
+      "section": "automation",
+      "topic": "ai-agents",
+      "url": "https://github.com/berkantay/gpucanvas",
+      "description": "Put thousands of live DOM nodes on an infinite canvas: the GPU draws them, an editor selects, moves and resizes them, shaders and transitions run on them, and an AI agent can read them and point at them.",
+      "stars": 554,
+      "created": "2026-11-12T23:19:42Z",
+      "language": "TypeScript",
+      "new": false
+    },
+    {
+      "repo": "w01fb0ss/PiBot",
+      "section": "automation",
+      "topic": "ai-agents",
+      "url": "https://github.com/w01fb0ss/PiBot",
+      "description": "Open-source, local-first AI agent team for your desktop: multi-agent group chats, computer use, browser, MCP, routines and approvals. macOS, Windows, Linux + Android. Built on pi.",
+      "stars": 543,
+      "created": "2026-11-21T06:54:24Z",
+      "language": "TypeScript",
+      "new": false
+    },
+    {
+      "repo": "op7418/guizang-game-skill",
+      "section": "automation",
+      "topic": "ai-agents",
+      "url": "https://github.com/op7418/guizang-game-skill",
+      "description": "歸藏 Game Skill：让 AI 从零做出能在浏览器里玩的 3D 动作游戏，附可玩演示《雾锁山门》。Agent skill for Claude Code / Codex that builds a playable browser 3D action game with AI-generated assets (three.js, single-HTML). Playable demo included.",
+      "stars": 486,
+      "created": "2026-11-11T16:28:54Z",
+      "language": "JavaScript",
+      "new": false
+    },
+    {
+      "repo": "JimLiu/open-artifact",
+      "section": "automation",
+      "topic": "ai-agents",
+      "url": "https://github.com/JimLiu/open-artifact",
+      "description": "Open, agent- and model-agnostic artifacts, all saved locally as plain files — edit, comment on, and export slides, UI designs, design systems, whiteboards, sheets, dashboards, docs, and motion.",
+      "stars": 468,
+      "created": "2026-11-17T02:25:25Z",
+      "language": "TypeScript",
+      "new": false
+    },
+    {
+      "repo": "hovocope135-tech/DSH-projects",
+      "section": "automation",
+      "topic": "ai-agents",
+      "url": "https://github.com/hovocope135-tech/DSH-projects",
+      "description": "探索人与 AI 的最佳协作方式 · Exploring the best way for people and AI to work together. DSH-projects is an open-source plugin for DeepSeek Harness: state a goal in one sentence, it asks what is unclear, runs the tasks in parallel, and brings finished work back to you.",
+      "stars": 437,
+      "created": "2026-11-17T07:42:18Z",
+      "language": "JavaScript",
+      "new": true
+    },
+    {
+      "repo": "nforst/fagus",
+      "section": "laravel",
+      "topic": "laravel",
+      "url": "https://github.com/nforst/fagus",
+      "description": "HTML and CSS to PDF for PHP and Laravel, without a browser. Renders like Chrome prints, with PDF/A, PDF/UA and ZUGFeRD/Factur-X.",
+      "stars": 197,
+      "created": "2026-11-13T18:04:09Z",
+      "language": "Rust",
+      "new": false
+    },
+    {
+      "repo": "oriliz/agent-crop",
+      "section": "agents",
+      "track": "t3",
+      "topic": "harness-engineering",
+      "url": "https://github.com/oriliz/agent-crop",
+      "description": "给 AI 编程助手一根马鞭：本地记录时间去向，把复盘写回 agent 指令/技能/工具；改没改好，用数据说话。 | A whip for coding agents: local timing, red-line nudges, and an evidence-backed, auditable self-improvement loop. DSH / Claude Code / Codex.",
+      "stars": 313,
+      "created": "2026-11-14T07:36:17Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "Agentic-Intelligence-Lab/CleanRUA",
+      "section": "agents",
+      "track": "t3",
+      "topic": "harness-engineering",
+      "url": "https://github.com/Agentic-Intelligence-Lab/CleanRUA",
+      "description": "CleanRUA: Clean Implementations of Robot-Use Agents",
+      "stars": 91,
+      "created": "2026-11-16T03:02:15Z",
+      "language": "Python",
+      "new": false
+    },
+    {
+      "repo": "cubeplexai/cubepod",
+      "section": "agents",
+      "track": "t3",
+      "topic": "agent-sandbox",
+      "url": "https://github.com/cubeplexai/cubepod",
+      "description": "CubePod — Persistent Writable RootFS MicroVM execution platform for AI Agents",
+      "stars": 80,
+      "created": "2026-11-11T02:38:51Z",
+      "language": "Go",
+      "new": false
+    }
+  ]
+}
