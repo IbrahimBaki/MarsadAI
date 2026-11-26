@@ -2,63 +2,63 @@
   "awesome": {
     "hesreallyhim/awesome-claude-code": {
       "sha": "1c88da78767b4ae664e76861b7afc17a2754d4d4",
-      "date": "2026-11-25T14:29:27.276Z"
+      "date": "2026-11-26T13:57:20.553Z"
     },
     "jqueryscript/awesome-claude-code": {
       "sha": "4d0db41e85da437e354a8efcac6e8201d3b187d0",
-      "date": "2026-11-25T14:29:27.671Z"
+      "date": "2026-11-26T13:57:20.729Z"
     },
     "ComposioHQ/awesome-claude-skills": {
       "sha": "be2a406907dbc61b73e6827ded415c96139d13a2",
-      "date": "2026-11-25T14:29:28.078Z"
+      "date": "2026-11-26T13:57:20.892Z"
     },
     "travisvn/awesome-claude-skills": {
       "sha": "1da55aa810f206d3fe2005e7e3989b15a275d942",
-      "date": "2026-11-25T14:29:28.477Z"
+      "date": "2026-11-26T13:57:21.034Z"
     },
     "VoltAgent/awesome-agent-skills": {
       "sha": "a6f9992ceaef05841a9b92e6849d90004a61710c",
-      "date": "2026-11-25T14:29:28.899Z"
+      "date": "2026-11-26T13:57:21.181Z"
     },
     "VoltAgent/awesome-claude-code-subagents": {
       "sha": "408d3c9eee2d0c75c12a3abb5de29e53c2ca6b9e",
-      "date": "2026-11-25T14:29:29.315Z"
+      "date": "2026-11-26T13:57:21.341Z"
     },
     "punkpeye/awesome-mcp-servers": {
       "sha": "f225f117f92626e6b7d5d2912746d9269e3d037b",
-      "date": "2026-11-25T14:29:29.687Z"
+      "date": "2026-11-26T13:57:21.510Z"
     },
     "wong2/awesome-mcp-servers": {
       "sha": "39eb1d76d76e562657f3c657266a504cea159e23",
-      "date": "2026-11-25T14:29:30.078Z"
+      "date": "2026-11-26T13:57:21.663Z"
     },
     "appcypher/awesome-mcp-servers": {
       "sha": "280218b4bba97a49facf929f8012dec5e30384b6",
-      "date": "2026-11-25T14:29:30.457Z"
+      "date": "2026-11-26T13:57:21.826Z"
     },
     "e2b-dev/awesome-ai-agents": {
       "sha": "9596ab1e69fbbb6c95291141c8dab5c181083216",
-      "date": "2026-11-25T14:29:31.215Z"
+      "date": "2026-11-26T13:57:22.154Z"
     },
     "Shubhamsaboo/awesome-llm-apps": {
       "sha": "6c16b23f1bacd0fdf240bb5141ef45e59e82c306",
-      "date": "2026-11-25T14:29:31.618Z"
+      "date": "2026-11-26T13:57:22.305Z"
     },
     "github/awesome-copilot": {
       "sha": "5269f7ea2d6c3a9bfda5ed878b6726cf509121fd",
-      "date": "2026-11-25T14:29:32.017Z"
+      "date": "2026-11-26T13:57:22.539Z"
     },
     "VoltAgent/official-mcp-servers": {
       "sha": "3964a7030860613df3550c6c58974ea10615498f",
-      "date": "2026-11-25T14:29:30.838Z"
+      "date": "2026-11-26T13:57:21.997Z"
     },
     "Picrew/awesome-agent-harness": {
       "sha": "1ae44c112978de3fdaaad5d199cb3ce8580e44f3",
-      "date": "2026-11-25T14:29:32.406Z"
+      "date": "2026-11-26T13:57:22.710Z"
     },
     "AutoJunjie/awesome-agent-harness": {
       "sha": "1e3f26371ec1a765efe0268b1e63374bee2aaa04",
-      "date": "2026-11-25T14:29:32.788Z"
+      "date": "2026-11-26T13:57:22.883Z"
     }
   },
   "releases": {
@@ -68,8 +68,8 @@
     "obra/superpowers": "v7.0.2",
     "openai/codex": "rust-v0.172.0",
     "google-gemini/gemini-cli": "v0.71.1",
-    "anomalyco/opencode": "v2.4.1",
-    "cline/cline": "v4.1.27",
+    "anomalyco/opencode": "v2.4.2",
+    "cline/cline": "v4.1.28",
     "microsoft/playwright-mcp": "v0.0.86",
     "github/github-mcp-server": "v2.3.0",
     "upstash/context7": "@upstash/context7-mcp@4.8.0",
@@ -83,12 +83,12 @@
     "vercel/next.js": "v16.4.6",
     "tailwindlabs/tailwindcss": "v4.3.5",
     "microsoft/playwright": "v1.65.1",
-    "github/spec-kit": "v1.4.4",
-    "n8n-io/n8n": "n8n@3.4.0",
+    "github/spec-kit": "v1.4.5",
+    "n8n-io/n8n": "n8n@3.4.1",
     "ollama/ollama": "v0.40.18",
-    "vercel/ai": "ai@7.0.181",
+    "vercel/ai": "ai@7.0.183",
     "docker/compose": "v5.8.0",
-    "coollabsio/coolify": "v4.7.8",
+    "coollabsio/coolify": "v4.7.9",
     "AzmSquad/squad-kit": "v1.3.42",
     "harbor-framework/harbor": "v0.27.0",
     "coleam00/Archon": "v0.15.0",
@@ -101,9 +101,9 @@
     "multica-ai/multica": "v0.13.0",
     "paperclipai/paperclip": "v2026.1117.0",
     "bmad-code-org/BMAD-METHOD": "v6.12.4",
-    "langfuse/langfuse": "v4.86.0",
+    "langfuse/langfuse": "v4.87.0",
     "TencentCloud/CubeSandbox": "v0.8.0",
-    "superradcompany/microsandbox": "v0.8.2",
+    "superradcompany/microsandbox": "v0.8.3",
     "NVIDIA/OpenShell": "v0.1.10",
     "earendil-works/pi": "v1.6.1",
     "agent-substrate/substrate": "v1.0.1"
@@ -241,11 +241,11 @@
     "pktq/lasik": "2026-11-13",
     "DIYgod/pinky": "2026-11-20",
     "Leonxlnx/cook": "2026-11-14",
-    "precygtrucqui1981/blender-ai-copilot-lab": "2026-11-25",
-    "credoksopho1984/blender-ai-copilot-studio": "2026-11-25",
-    "tiobeharxi1987/blender-ai-copilot-flow": "2026-11-25",
+    "precygtrucqui1981/blender-ai-copilot-lab": "2026-11-26",
+    "credoksopho1984/blender-ai-copilot-studio": "2026-11-26",
+    "tiobeharxi1987/blender-ai-copilot-flow": "2026-11-26",
     "hitkeeen/blender-ai-mcp-addon": "2026-11-17",
-    "Doug-218/blender-ai-copilot-forge": "2026-11-25",
+    "Doug-218/blender-ai-copilot-forge": "2026-11-26",
     "ersinkoc/phonebox": "2026-11-21",
     "Moh4696/cinematic-skill": "2026-11-23",
     "trackboatwrightplan/GitHub-Copilot-app": "2026-11-16",
@@ -255,70 +255,76 @@
     "TradesmanRecord/GitHub-Copilot-app": "2026-11-15",
     "TurkeyDesignate/GitHub-Copilot-app": "2026-11-15",
     "TrapBladesmith/GitHub-Copilot-app": "2026-11-15",
-    "zovulrira1974/blender-ai-copilot-assets": "2026-11-25",
+    "zovulrira1974/blender-ai-copilot-assets": "2026-11-26",
     "racdeufindurch198812/Blender-AI-MCP-Studio": "2026-11-24",
-    "baiblinocun1986/blender-ai-copilot-hub": "2026-11-25",
-    "fumbdendade19718/blender-ai-copilot-desk": "2026-11-25",
-    "CrommaAI/crommacode": "2026-11-25",
+    "baiblinocun1986/blender-ai-copilot-hub": "2026-11-26",
+    "fumbdendade19718/blender-ai-copilot-desk": "2026-11-26",
+    "CrommaAI/crommacode": "2026-11-26",
     "Topkiflare74/ai--manus2.0": "2026-11-15",
     "topapothecarycanal/ai--manus2.0": "2026-11-22",
-    "BigPizzaV3/ClaudeMom": "2026-11-25",
+    "BigPizzaV3/ClaudeMom": "2026-11-26",
     "erkamyaman/unslopovich": "2026-11-22",
     "TubeLabHQ/youtube-research-skills": "2026-11-18",
-    "berkantay/gpucanvas": "2026-11-25",
-    "sybil-solutions/inference-optimisation-skill": "2026-11-25",
+    "berkantay/gpucanvas": "2026-11-26",
+    "sybil-solutions/inference-optimisation-skill": "2026-11-26",
     "Sunghwan0112/spritecast": "2026-11-17",
     "anhnx000/viet-nhu-nguoi": "2026-11-21",
     "Jakeschincariol/whale-skill": "2026-11-20",
-    "kociden/sakurai-skill": "2026-11-25",
+    "kociden/sakurai-skill": "2026-11-26",
     "TIGER-AI-Lab/WebsiteBench": "2026-11-18",
-    "erkamyaman/rust-anything": "2026-11-25",
-    "boringmarketer/boring-marketing-skills": "2026-11-25",
+    "erkamyaman/rust-anything": "2026-11-26",
+    "boringmarketer/boring-marketing-skills": "2026-11-26",
     "LemonFace0309/charles-skills": "2026-11-21",
-    "Peshiemaina21/telegram-news-autopilot": "2026-11-25",
+    "Peshiemaina21/telegram-news-autopilot": "2026-11-26",
     "tammo1007/alyn": "2026-11-25",
-    "oriliz/agent-crop": "2026-11-25",
+    "oriliz/agent-crop": "2026-11-26",
     "databasifylabs/databasify": "2026-11-20",
-    "nforst/fagus": "2026-11-25",
+    "nforst/fagus": "2026-11-26",
     "bookwjitchieni1986/blender-ai-mcp-addon": "2026-11-23",
     "ai-timon/timon": "2026-11-20",
     "fendouai/ViralForge": "2026-11-25",
-    "mankidev/antialgorithm": "2026-11-25",
-    "lowdevco/Clip-Forge": "2026-11-25",
+    "mankidev/antialgorithm": "2026-11-26",
+    "lowdevco/Clip-Forge": "2026-11-26",
     "findavoulot1973/Blender-AI-MCP-Suite": "2026-11-21",
-    "INK-Q/agy-fast": "2026-11-25",
+    "INK-Q/agy-fast": "2026-11-26",
     "wozniakalan323-bit/opencode-project-workbench": "2026-11-23",
     "zavi2997-droid/claude-code-agent-workspace": "2026-11-23",
     "marketzy/codex-cli-repo-workbench": "2026-11-23",
     "toppatronweave/ai--manus2.0": "2026-11-22",
     "mohanndahmed3-del/laravel-microsoft-graph-basamar": "2026-11-23",
-    "Agentic-Intelligence-Lab/CleanRUA": "2026-11-25",
-    "EL4CTEO/fast-anything": "2026-11-25",
+    "Agentic-Intelligence-Lab/CleanRUA": "2026-11-26",
+    "EL4CTEO/fast-anything": "2026-11-26",
     "migasahara-ship-it/claude-duet-proactive-agent-pay": "2026-11-23",
     "next-token-tv/next-token-skill": "2026-11-24",
-    "JimLiu/open-artifact": "2026-11-25",
-    "w01fb0ss/PiBot": "2026-11-25",
+    "JimLiu/open-artifact": "2026-11-26",
+    "w01fb0ss/PiBot": "2026-11-26",
     "earayu/Mingle": "2026-11-25",
     "XinaTian/MROffice": "2026-11-24",
-    "pierridotite/mobile-agent-testers": "2026-11-25",
+    "pierridotite/mobile-agent-testers": "2026-11-26",
     "erkamyaman/unslop-anything": "2026-11-23",
-    "jaronhonda387-design/virtual-card-usdt-anthropic-ipo-claude52-vcc-applepay": "2026-11-25",
+    "jaronhonda387-design/virtual-card-usdt-anthropic-ipo-claude52-vcc-applepay": "2026-11-26",
     "maximilianfeix/plinkfx": "2026-11-25",
-    "danielwh2/sprite-stacking": "2026-11-25",
+    "danielwh2/sprite-stacking": "2026-11-26",
     "cubeplexai/cubepod": "2026-11-25",
-    "erkamyaman/safe-anything": "2026-11-25",
-    "byttrade/bytx-skills": "2026-11-25",
+    "erkamyaman/safe-anything": "2026-11-26",
+    "byttrade/bytx-skills": "2026-11-26",
     "qualixar/brief2mp4": "2026-11-24",
-    "lonely-dance-lab/self-media-guide": "2026-11-25",
-    "diego3g/craft": "2026-11-25",
-    "staryone/motlab": "2026-11-25",
-    "keli-wen/cospan": "2026-11-25",
-    "hovocope135-tech/DSH-projects": "2026-11-24",
-    "Developing-Gamer/agent-sim": "2026-11-25",
-    "blotato/contentskills": "2026-11-25",
-    "scrolltide/ai-studio-skill": "2026-11-25",
-    "chanke17/KuroCat": "2026-11-25",
-    "appbranchlab/nova-editor": "2026-11-25",
-    "spatie/laravel-suspicious-login": "2026-11-25"
+    "lonely-dance-lab/self-media-guide": "2026-11-26",
+    "diego3g/craft": "2026-11-26",
+    "staryone/motlab": "2026-11-26",
+    "keli-wen/cospan": "2026-11-26",
+    "hovocope135-tech/DSH-projects": "2026-11-26",
+    "Developing-Gamer/agent-sim": "2026-11-26",
+    "blotato/contentskills": "2026-11-26",
+    "scrolltide/ai-studio-skill": "2026-11-26",
+    "chanke17/KuroCat": "2026-11-26",
+    "appbranchlab/nova-editor": "2026-11-26",
+    "spatie/laravel-suspicious-login": "2026-11-26",
+    "qianyiai/kurocat": "2026-11-26",
+    "fahniazz/claude-shorts-skills": "2026-11-26",
+    "uxpilot-ai/frontend-design-skill": "2026-11-26",
+    "gitroomhq/postiz-content-skills": "2026-11-26",
+    "lukendeasy/open-diagram": "2026-11-26",
+    "jackson-cmd/claude-multi-desktop": "2026-11-26"
   }
 }
